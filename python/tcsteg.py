@@ -219,4 +219,3 @@ if __name__ == "__main__":
     except ProcessingError, e:
         print >>sys.stderr, "Error:", e
         sys.exit(1)
-
