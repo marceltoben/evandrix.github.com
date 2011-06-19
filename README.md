@@ -1,6 +1,5 @@
-default sample README for my GitHub page
-===
+## default sample README for my GitHub page
 
-Python > Scraping
----
+### Python > Scraping
+===
 [Scrapy](http://scrapy.org)
