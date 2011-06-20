@@ -3,3 +3,6 @@
 
 ### Python > Scraping
  * [Scrapy](http://scrapy.org)
+
+### Javascript > Beautifying & Deobfuscation
+ * [JSBeautifier](http://jsbeautifier.org/)
