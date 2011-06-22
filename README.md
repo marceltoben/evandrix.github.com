@@ -8,3 +8,6 @@
 
 ### Javascript > Beautifying & Deobfuscation
  * [JSBeautifier](http://jsbeautifier.org/)
+
+### Web > Color Scheme Generator & Picker
+ * [Color Scheme Generator](http://www.colorschemer.com/online.html)
