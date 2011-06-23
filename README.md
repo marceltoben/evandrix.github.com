@@ -12,7 +12,7 @@
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
 
-### Python > Templating Engine
+### Python > Templating Engines
  * Cheetah
  * Jinja
  * Genshi
