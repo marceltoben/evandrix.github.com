@@ -1,0 +1,11 @@
+38531f0431e981675e5675d55421ef6a 1e183e29723571da46d613996fcc0446 ffffffffffffffffffffffffffffffff 238 /Users/evandrix/Documents/Dropbox/yr3/test/build/Release-iphonesimulator/test.app
+000000004cdb12c2000000000000581c 2d09e4de08399119e79ffe7fa1862e28 ffffffffffffffffffffffffffffffff 3535 /Users/evandrix/Documents/Dropbox/yr3/test/build/Release-iphonesimulator/test.app/testViewController.nib
+000000004cd6fbb30000000000004e05 9ee6c91e19fead8abf5d3e1972340acb ffffffffffffffffffffffffffffffff 1675 /Users/evandrix/Documents/Dropbox/yr3/test/build/Release-iphonesimulator/test.app/MainWindow.nib
+00000000000000000000000000000000 226725533f2f5c47eea86b67d9c3f81a ffffffffffffffffffffffffffffffff 8 /Users/evandrix/Documents/Dropbox/yr3/test/build/Release-iphonesimulator/test.app/PkgInfo
+00000000000000000000000000000000 226725533f2f5c47eea86b67d9c3f81a ffffffffffffffffffffffffffffffff 648 /Users/evandrix/Documents/Dropbox/yr3/test/build/Release-iphonesimulator/test.app/Info.plist
+00000000000000000000000000000000 ce9dccc95805a69b06f3c6ec1de729dd ffffffffffffffffffffffffffffffff 102 /Users/evandrix/Documents/Dropbox/yr3/test/build/Release-iphonesimulator/test.app.dSYM
+77b8d09200f2b979f9714d74f0c25178 fc04e25620d1edfcffe5f8c777518ce8 ffffffffffffffffffffffffffffffff 18588 /Users/evandrix/Documents/Dropbox/yr3/test/build/Release-iphonesimulator/test.app/test
+29df67cdddaeb10716ace537516ebfdb 6ad4a47ad9c96723ab25242435819dd7 ffffffffffffffffffffffffffffffff 41496 /Users/evandrix/Documents/Dropbox/yr3/test/build/test.build/Release-iphonesimulator/test.build/Objects-normal/i386/testViewController.o
+29df67cddd17ebe116ace537516eb5ae 414c481d5b80caf56486a11a5ad045bc ffffffffffffffffffffffffffffffff 47300 /Users/evandrix/Documents/Dropbox/yr3/test/build/test.build/Release-iphonesimulator/test.build/Objects-normal/i386/testAppDelegate.o
+29df67cd917842fa16ace537516eb72b 75ff5b3813c0fe62207e2d7dcf1f911d ffffffffffffffffffffffffffffffff 6296 /Users/evandrix/Documents/Dropbox/yr3/test/build/test.build/Release-iphonesimulator/test.build/Objects-normal/i386/main.o
+000000004ceef7ff0000000000001d1a 29df67cddd220f5b16ace537516ea29a ffffffffffffffffffffffffffffffff 14871568 /var/folders/Yu/YuSO59eTH70htkUQPuGtRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-fcicdeuqbcccprbzlsughgihxiir/test_Prefix.pch.gch

@@ -1,0 +1,204 @@
+TSwapMeSolver
+v7
+r0
+t310435386.601257
+cCheck dependencies
+cDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/main-D2430BA48DF54B52.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Grid-C9652A01B919F079.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Cell-25971C67F6C01D66.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Enum-8E0CD9713454BC6E.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/MyMove-BD6DB9724BF1DB7D.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/SwapMeSolver normal i386
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BC1384E0000000000B37440
+t1270954062
+s11760704
+
+N/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B90FBB700000000000013E6
+t1267792823
+s5094
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.h
+c000000004CD0A5590000000000000197
+t1288742233
+s407
+i"Enum.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.m
+c000000004CD0A57500000000000006A4
+t1288742261
+s1700
+i"Cell.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.h
+c000000004C89A97F000000000000016F
+t1284090239
+s367
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.m
+c000000004C89A68A000000000000037C
+t1284089482
+s892
+i"Enum.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.h
+c000000004CD0A5050000000000000239
+t1288742149
+s569
+i"Cell.h"
+i"Enum.h"
+i"MyMove.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.m
+c000000004CD0A4A60000000000002D8A
+t1288742054
+s11658
+i"Grid.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.h
+c000000004CD0A5A700000000000001ED
+t1288742311
+s493
+i"Cell.h"
+i"Enum.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.m
+c000000004CD0A5BA000000000000055C
+t1288742330
+s1372
+i"MyMove.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/SwapMeSolver_Prefix.pch
+c000000004C8BA01F0000000000000061
+t1284218911
+s97
+i<Foundation/Foundation.h>
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/SwapMeSolver
+t1288742586
+s36508
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Cell-25971C67F6C01D66.o
+t1288742585
+s14884
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Enum-8E0CD9713454BC6E.o
+t1288742585
+s9632
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Grid-C9652A01B919F079.o
+t1288742585
+s35028
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/MyMove-BD6DB9724BF1DB7D.o
+t1288742586
+s14448
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/SwapMeSolver.LinkFileList
+c000000004CD0A6B800000000000002B4
+t1288742584
+s692
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/main-D2430BA48DF54B52.o
+t1288742585
+s9740
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/debug.h
+c000000004CD096380000000000000B8C
+t1288738360
+s2956
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/main.h
+c000000004C890C0A0000000000000010
+t1284049930
+s16
+i"Grid.h"
+
+N/Users/lwy08/Documents/Dropbox/SwapMeSolver/main.m
+c000000004CD0A38500000000000005C3
+t1288741765
+s1475
+i"main.h"
+i"debug.h"
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies310435384#310435384#0(667"[WARN]warning: no rule to process file '$(PROJECT_DIR)/Grid.h' of type sourcecode.c.h for architecture i386[WARN]warning: no rule to process file '$(PROJECT_DIR)/SwapMeSolver_Prefix.pch' of type sourcecode.c.h for architecture i386[WARN]warning: no rule to process file '$(PROJECT_DIR)/Cell.h' of type sourcecode.c.h for architecture i386[WARN]warning: no rule to process file '$(PROJECT_DIR)/main.h' of type sourcecode.c.h for architecture i386[WARN]warning: no rule to process file '$(PROJECT_DIR)/Enum.h' of type sourcecode.c.h for architecture i386[WARN]warning: no rule to process file '$(PROJECT_DIR)/MyMove.h' of type sourcecode.c.h for architecture i3866(22@101"warning: no rule to process file '$(PROJECT_DIR)/Grid.h' of type sourcecode.c.h for architecture i386310435384#18446744073709551615#0#0(1@0"0(22@118"warning: no rule to process file '$(PROJECT_DIR)/SwapMeSolver_Prefix.pch' of type sourcecode.c.h for architecture i386310435384#18446744073709551615#0#0(1@0"0(22@101"warning: no rule to process file '$(PROJECT_DIR)/Cell.h' of type sourcecode.c.h for architecture i386310435384#18446744073709551615#0#0(1@0"0(22@101"warning: no rule to process file '$(PROJECT_DIR)/main.h' of type sourcecode.c.h for architecture i386310435384#18446744073709551615#0#0(1@0"0(22@101"warning: no rule to process file '$(PROJECT_DIR)/Enum.h' of type sourcecode.c.h for architecture i386310435384#18446744073709551615#0#0(1@0"0(22@103"warning: no rule to process file '$(PROJECT_DIR)/MyMove.h' of type sourcecode.c.h for architecture i386310435384#18446744073709551615#0#0(1@0"0(0#1#0"27866456492998768#0"0#
+
+CDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Cell-25971C67F6C01D66.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310435384.376731
+e310435385.835614
+r1
+xDistributed-CompileC
+xbuild/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Cell-25971C67F6C01D66.o
+x/Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Distribute compilation of /Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.m310435384#310435385#0(0"0(0#0#50"/Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.m8603104928#1691"    cd /Users/lwy08/Documents/Dropbox/SwapMeSolver    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5664)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.4 (10F569, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wno-format -Wno-pointer-sign -mfix-and-continue -Wno-protocol -Wno-deprecated-declarations -gdwarf-2 -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-generated-files.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-own-target-headers.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-all-target-headers.hmap -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/include -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources/i386 -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources -include /Users/lwy08/Documents/Dropbox/SwapMeSolver/SwapMeSolver_Prefix.pch -c /Users/lwy08/Documents/Dropbox/SwapMeSolver/Cell.m -o /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Cell-25971C67F6C01D66.o0#
+
+CDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Enum-8E0CD9713454BC6E.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310435384.378836
+e310435385.796312
+r1
+xDistributed-CompileC
+xbuild/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Enum-8E0CD9713454BC6E.o
+x/Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Distribute compilation of /Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.m310435384#310435385#0(0"0(0#0#50"/Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.m8602751904#1691"    cd /Users/lwy08/Documents/Dropbox/SwapMeSolver    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5664)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.4 (10F569, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wno-format -Wno-pointer-sign -mfix-and-continue -Wno-protocol -Wno-deprecated-declarations -gdwarf-2 -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-generated-files.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-own-target-headers.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-all-target-headers.hmap -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/include -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources/i386 -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources -include /Users/lwy08/Documents/Dropbox/SwapMeSolver/SwapMeSolver_Prefix.pch -c /Users/lwy08/Documents/Dropbox/SwapMeSolver/Enum.m -o /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Enum-8E0CD9713454BC6E.o0#
+
+CDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Grid-C9652A01B919F079.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310435384.368784
+e310435385.911154
+r1
+xDistributed-CompileC
+xbuild/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Grid-C9652A01B919F079.o
+x/Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Distribute compilation of /Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.m310435384#310435385#0(0"0(0#0#50"/Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.m8603407072#1691"    cd /Users/lwy08/Documents/Dropbox/SwapMeSolver    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5664)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.4 (10F569, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wno-format -Wno-pointer-sign -mfix-and-continue -Wno-protocol -Wno-deprecated-declarations -gdwarf-2 -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-generated-files.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-own-target-headers.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-all-target-headers.hmap -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/include -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources/i386 -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources -include /Users/lwy08/Documents/Dropbox/SwapMeSolver/SwapMeSolver_Prefix.pch -c /Users/lwy08/Documents/Dropbox/SwapMeSolver/Grid.m -o /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/Grid-C9652A01B919F079.o0#
+
+CDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/MyMove-BD6DB9724BF1DB7D.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310435385.796481
+e310435386.577525
+r1
+xDistributed-CompileC
+xbuild/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/MyMove-BD6DB9724BF1DB7D.o
+x/Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Distribute compilation of /Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.m310435385#310435386#0(0"0(0#0#52"/Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.m8602297856#1695"    cd /Users/lwy08/Documents/Dropbox/SwapMeSolver    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5664)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.4 (10F569, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wno-format -Wno-pointer-sign -mfix-and-continue -Wno-protocol -Wno-deprecated-declarations -gdwarf-2 -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-generated-files.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-own-target-headers.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-all-target-headers.hmap -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/include -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources/i386 -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources -include /Users/lwy08/Documents/Dropbox/SwapMeSolver/SwapMeSolver_Prefix.pch -c /Users/lwy08/Documents/Dropbox/SwapMeSolver/MyMove.m -o /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/MyMove-BD6DB9724BF1DB7D.o0#
+
+CDistributed-CompileC build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/main-D2430BA48DF54B52.o /Users/lwy08/Documents/Dropbox/SwapMeSolver/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310435384.362207
+e310435385.861259
+r1
+xDistributed-CompileC
+xbuild/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/main-D2430BA48DF54B52.o
+x/Users/lwy08/Documents/Dropbox/SwapMeSolver/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Distribute compilation of /Users/lwy08/Documents/Dropbox/SwapMeSolver/main.m310435384#310435385#0(0"0(0#0#50"/Users/lwy08/Documents/Dropbox/SwapMeSolver/main.m7954884667766686720#1691"    cd /Users/lwy08/Documents/Dropbox/SwapMeSolver    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5664)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.4 (10F569, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wno-format -Wno-pointer-sign -mfix-and-continue -Wno-protocol -Wno-deprecated-declarations -gdwarf-2 -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-generated-files.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-own-target-headers.hmap -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-all-target-headers.hmap -iquote /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/SwapMeSolver-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/include -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources/i386 -I/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/DerivedSources -include /Users/lwy08/Documents/Dropbox/SwapMeSolver/SwapMeSolver_Prefix.pch -c /Users/lwy08/Documents/Dropbox/SwapMeSolver/main.m -o /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/main-D2430BA48DF54B52.o0#
+
+CLd /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/SwapMeSolver normal i386
+s310435386.577617
+e310435386.601202
+r1
+xLd
+x/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/SwapMeSolver
+xnormal
+xi386
+lSLF07#2@73"Link /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/SwapMeSolver310435386#310435386#0(0"0(0#0#0"8601905088#453"    cd /Users/lwy08/Documents/Dropbox/SwapMeSolver    /Developer/usr/bin/gcc-4.2 -arch i386 -L/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug -F/Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug -filelist /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/SwapMeSolver.build/Debug/SwapMeSolver.build/Objects-normal/i386/SwapMeSolver.LinkFileList -framework Foundation -o /Users/lwy08/Documents/Dropbox/SwapMeSolver/build/Debug/SwapMeSolver0#
+

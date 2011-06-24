@@ -1,0 +1,5 @@
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#endif
+#define ROW_WIDTH 6
+#define COL_HEIGHT 7

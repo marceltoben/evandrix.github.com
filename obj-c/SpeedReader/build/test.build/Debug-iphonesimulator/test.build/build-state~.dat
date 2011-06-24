@@ -1,0 +1,256 @@
+Ttest
+v7
+r0
+t310850363.709844
+cCheck dependencies
+cProcessInfoPlistFile /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/Info.plist test-Info.plist
+cCompileXIB /Users/HassassiN/Documents/iPhoneDev/test/MainWindow.xib
+cCompileXIB /Users/HassassiN/Documents/iPhoneDev/test/testViewController.xib
+cProcessPCH /var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch.gch test_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/main.o /Users/HassassiN/Documents/iPhoneDev/test/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testAppDelegate.o /Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testViewController.o /Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test normal i386
+cGenerateDSYMFile /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app.dSYM /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test
+cTouch /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C3F85590000000000000132
+t1279231321
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.h
+c000000004CD6FBB300000000000001CD
+t1289157555
+s461
+i<UIKit/UIKit.h>
+
+N/Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.m
+c000000004CD6FBB30000000000000A7C
+t1289157555
+s2684
+i"testAppDelegate.h"
+i"testViewController.h"
+
+N/Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.h
+c000000004CD6FBB300000000000000E5
+t1289157555
+s229
+i<UIKit/UIKit.h>
+
+N/Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.m
+c000000004CD6FBB300000000000005AD
+t1289157555
+s1453
+i"testViewController.h"
+
+N/Users/HassassiN/Documents/iPhoneDev/test/MainWindow.xib
+c000000004CD6FBB30000000000004E05
+t1289157555
+s19973
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app
+t1289157563
+s238
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app.dSYM
+t1289157563
+s102
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/Info.plist
+t1289157560
+s579
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/MainWindow.nib
+t1289157560
+s1117
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/PkgInfo
+t1289157560
+s8
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test
+t1289157563
+s16928
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/testViewController.nib
+t1289157560
+s795
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/main.o
+t1289157562
+s6308
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/test.LinkFileList
+c000000004CD6FBB8000000000000017E
+t1289157560
+s382
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testAppDelegate.o
+t1289157562
+s47568
+
+N/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testViewController.o
+t1289157563
+s34340
+
+N/Users/HassassiN/Documents/iPhoneDev/test/main.m
+c000000004CD6FBB30000000000000166
+t1289157555
+s358
+i<UIKit/UIKit.h>
+
+N/Users/HassassiN/Documents/iPhoneDev/test/testViewController.xib
+c000000004CD6FBB30000000000001A39
+t1289157555
+s6713
+
+N/Users/HassassiN/Documents/iPhoneDev/test/test_Prefix.pch
+c000000004CD6FBB300000000000000B1
+t1289157555
+s177
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch.gch
+t1289157562
+s15232016
+
+Ntest-Info.plist
+c000000004CD6FBB3000000000000038D
+t1289157555
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies310850360#310850360#0(0"0(0#1#0"8620612192#0"0#
+
+CCompileC build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/main.o /Users/HassassiN/Documents/iPhoneDev/test/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310850362.585370
+e310850362.748358
+r1
+xCompileC
+xbuild/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/main.o
+x/Users/HassassiN/Documents/iPhoneDev/test/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@56"Compile /Users/HassassiN/Documents/iPhoneDev/test/main.m310850362#310850362#0(0"0(0#0#48"/Users/HassassiN/Documents/iPhoneDev/test/main.m8611530240#1874"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-generated-files.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-own-target-headers.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-all-target-headers.hmap -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-project-headers.hmap -F/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator -I/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/include -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources/i386 -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources -include /var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch -c /Users/HassassiN/Documents/iPhoneDev/test/main.m -o /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/main.o0#
+
+CCompileC build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testAppDelegate.o /Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310850362.586268
+e310850362.904392
+r1
+xCompileC
+xbuild/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testAppDelegate.o
+x/Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.m310850362#310850362#0(0"0(0#0#67"/Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.m8621636256#1904"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-generated-files.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-own-target-headers.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-all-target-headers.hmap -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-project-headers.hmap -F/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator -I/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/include -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources/i386 -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources -include /var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch -c /Users/HassassiN/Documents/iPhoneDev/test/Classes/testAppDelegate.m -o /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testAppDelegate.o0#
+
+CCompileC build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testViewController.o /Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310850362.748454
+e310850363.138584
+r1
+xCompileC
+xbuild/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testViewController.o
+x/Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.m310850362#310850363#0(0"0(0#0#70"/Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.m8611676864#1910"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-generated-files.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-own-target-headers.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-all-target-headers.hmap -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-project-headers.hmap -F/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator -I/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/include -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources/i386 -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources -include /var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch -c /Users/HassassiN/Documents/iPhoneDev/test/Classes/testViewController.m -o /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/testViewController.o0#
+
+CCompileXIB /Users/HassassiN/Documents/iPhoneDev/test/MainWindow.xib
+s310850360.260113
+e310850360.623012
+r1
+xCompileXIB
+x/Users/HassassiN/Documents/iPhoneDev/test/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib310850360#310850360#0(0"0(0#0#56"/Users/HassassiN/Documents/iPhoneDev/test/MainWindow.xib8619073280#576"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/MainWindow.nib /Users/HassassiN/Documents/iPhoneDev/test/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/HassassiN/Documents/iPhoneDev/test/testViewController.xib
+s310850360.260737
+e310850360.631872
+r1
+xCompileXIB
+x/Users/HassassiN/Documents/iPhoneDev/test/testViewController.xib
+lSLF07#2@33"CompileXIB testViewController.xib310850360#310850360#0(0"0(0#0#64"/Users/HassassiN/Documents/iPhoneDev/test/testViewController.xib8618035872#592"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/testViewController.nib /Users/HassassiN/Documents/iPhoneDev/test/testViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CGenerateDSYMFile /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app.dSYM /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test
+s310850363.315480
+e310850363.707328
+r1
+xGenerateDSYMFile
+x/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app.dSYM
+x/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test
+lSLF07#2@100"GenerateDSYMFile build/Debug-iphonesimulator/test.app.dSYM build/Debug-iphonesimulator/test.app/test310850363#310850363#0(0"0(0#0#83"/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test8608506624#383"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test -o /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app.dSYM0#
+
+CLd /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test normal i386
+s310850363.138842
+e310850363.315383
+r1
+xLd
+x/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test
+xnormal
+xi386
+lSLF07#2@88"Link /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test310850363#310850363#0(0"0(0#0#0"8609593472#900"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator -F/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator -filelist /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/Objects-normal/i386/test.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/test0#
+
+CProcessInfoPlistFile /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/Info.plist test-Info.plist
+s310850360.256710
+e310850360.260049
+r1
+xProcessInfoPlistFile
+x/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/Info.plist
+xtest-Info.plist
+lSLF07#2@23"Process test-Info.plist310850360#310850360#0(0"0(0#0#57"/Users/HassassiN/Documents/iPhoneDev/test/test-Info.plist8608774816#479"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility test-Info.plist -genpkginfo /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app/Info.plist0#
+
+CProcessPCH /var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch.gch test_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s310850360.631985
+e310850362.585239
+r1
+xProcessPCH
+x/var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch.gch
+xtest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@26"Precompile test_Prefix.pch310850360#310850362#0(0"0(0#0#57"/Users/HassassiN/Documents/iPhoneDev/test/test_Prefix.pch8619942720#1766"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-generated-files.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-own-target-headers.hmap -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-all-target-headers.hmap -iquote /Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/test-project-headers.hmap -F/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator -I/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/include -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources/i386 -I/Users/HassassiN/Documents/iPhoneDev/test/build/test.build/Debug-iphonesimulator/test.build/DerivedSources -c /Users/HassassiN/Documents/iPhoneDev/test/test_Prefix.pch -o /var/folders/7q/7qha0IuUF1CO8y8MRJoiVU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/test_Prefix-bjphmmkydrxvjnealpuydbvfhfew/test_Prefix.pch.gch0#
+
+CTouch /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app
+s310850363.707413
+e310850363.709820
+r1
+xTouch
+x/Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app
+lSLF07#2@84"Touch /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app310850363#310850363#0(0"0(0#0#0"8617775232#281"    cd /Users/HassassiN/Documents/iPhoneDev/test    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/HassassiN/Documents/iPhoneDev/test/build/Debug-iphonesimulator/test.app0#
+
