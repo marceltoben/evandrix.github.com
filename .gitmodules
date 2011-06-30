@@ -1,0 +1,3 @@
+[submodule "xcode-ios/PagePeel"]
+	path = xcode-ios/PagePeel
+	url = git://github.com/markrickert/iOS-PagePeel-Example.git
