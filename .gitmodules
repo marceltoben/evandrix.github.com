@@ -4,3 +4,6 @@
 [submodule "macruby/HelloApp"]
 	path = macruby/HelloApp
 	url = git://github.com/jamesotron/HelloApp.git
+[submodule "js/js-beautify"]
+	path = js/js-beautify
+	url = git://github.com/einars/js-beautify.git
