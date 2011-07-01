@@ -1,0 +1,271 @@
+TContacts
+v7
+r0
+t331165428.394775
+cCheck dependencies
+cProcessInfoPlistFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Info.plist Contacts-Info.plist
+cCopyStringsFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/MainMenu.xib
+cDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/main.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/ContactsAppDelegate.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Controller.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/PeopleModel.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Person.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/MacOS/Contacts normal x86_64
+cTouch /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004E0C1E2F00000000000000EE
+t1309417007
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.h
+c000000004E0A70D1000000000000015C
+t1309307089
+s348
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.m
+c000000004E0A70D10000000000000192
+t1309307089
+s402
+i"ContactsAppDelegate.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Contacts_Prefix.pch
+c000000004E0A70D10000000000000093
+t1309307089
+s147
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.h
+c000000004E0A70D100000000000002AB
+t1309307089
+s683
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.m
+c000000004E0A70D10000000000000DB0
+t1309307089
+s3504
+i"Controller.h"
+i"PeopleModel.h"
+i"Person.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/InfoPlist.strings
+c000000004E0A70D1000000000000002D
+t1309307089
+s45
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/MainMenu.xib
+c000000004E0A70D1000000000003633E
+t1309307089
+s222014
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.h
+c000000004E0A70D10000000000000195
+t1309307089
+s405
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.m
+c000000004E0A70D10000000000000327
+t1309307089
+s807
+i"PeopleModel.h"
+i"Person.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.h
+c000000004E0A70D100000000000002BA
+t1309307089
+s698
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.m
+c000000004E0A70D1000000000000042B
+t1309307089
+s1067
+i"Person.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Contacts.LinkFileList
+c000000004E0CF77100000000000002B2
+t1309472625
+s690
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/ContactsAppDelegate.o
+t1309472627
+s21176
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Controller.o
+t1309472627
+s35072
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/PeopleModel.o
+t1309472627
+s12644
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Person.o
+t1309472628
+s15192
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/main.o
+t1309472627
+s5040
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app
+t1309472628
+s102
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Info.plist
+t1309472625
+s1287
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/MacOS/Contacts
+t1309472628
+s30032
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/PkgInfo
+t1309472625
+s8
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1309472625
+s92
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Resources/English.lproj/MainMenu.nib
+t1309472625
+s44624
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/main.m
+c000000004E0A70D1000000000000011C
+t1309307089
+s284
+i<Cocoa/Cocoa.h>
+
+NContacts-Info.plist
+c000000004E0A70D100000000000003EA
+t1309307089
+s1002
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331165425#331165425#0(0"0(0#1#0"8247620834010738688#0"0#
+
+CCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/MainMenu.xib
+s331165425.200401
+e331165425.832653
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib331165425#331165425#0(0"0(0#0#87"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/MainMenu.xib8600720576#431"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Resources/English.lproj/MainMenu.nib /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/MainMenu.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCopyStringsFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s331165425.199560
+e331165425.231582
+r1
+xCopyStringsFile
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings331165425#331165425#0(0"0(0#0#92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/English.lproj/InfoPlist.strings8601212320#410"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Resources/English.lproj0#
+
+CDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/ContactsAppDelegate.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165425.835165
+e331165427.405951
+r1
+xDistributed-CompileC
+xbuild/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/ContactsAppDelegate.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@108"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.m331165425#331165427#0(0"0(0#0#82"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.m8604519808#1874"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Contacts_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/ContactsAppDelegate.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/ContactsAppDelegate.o0#
+
+CDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Controller.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165425.836588
+e331165427.467317
+r1
+xDistributed-CompileC
+xbuild/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Controller.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@99"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.m331165425#331165427#0(0"0(0#0#73"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.m8604296896#1856"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Contacts_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Controller.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Controller.o0#
+
+CDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/PeopleModel.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165425.838010
+e331165427.471642
+r1
+xDistributed-CompileC
+xbuild/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/PeopleModel.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.m331165425#331165427#0(0"0(0#0#74"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.m8604213568#1858"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Contacts_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/PeopleModel.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/PeopleModel.o0#
+
+CDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Person.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165427.406337
+e331165428.324351
+r1
+xDistributed-CompileC
+xbuild/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Person.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@95"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.m331165427#331165428#0(0"0(0#0#69"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.m8600395776#1848"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Contacts_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Person.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Person.o0#
+
+CDistributed-CompileC build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/main.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165425.832816
+e331165427.452754
+r1
+xDistributed-CompileC
+xbuild/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/main.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/main.m331165425#331165427#0(0"0(0#0#67"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/main.m8605837728#1844"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Contacts-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Contacts_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/main.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/main.o0#
+
+CLd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/MacOS/Contacts normal x86_64
+s331165428.324484
+e331165428.389804
+r1
+xLd
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/MacOS/Contacts
+xnormal
+xx86_64
+lSLF07#2@114"Link /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/MacOS/Contacts331165428#331165428#0(0"0(0#0#0"8605826336#657"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug -filelist /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Contacts.build/Debug/Contacts.build/Objects-normal/x86_64/Contacts.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/MacOS/Contacts0#
+
+CProcessInfoPlistFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Info.plist Contacts-Info.plist
+s331165425.193970
+e331165425.199460
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Info.plist
+xContacts-Info.plist
+lSLF07#2@27"Process Contacts-Info.plist331165425#331165425#0(0"0(0#0#80"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/Contacts-Info.plist8603401888#379"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    builtin-infoPlistUtility Contacts-Info.plist -genpkginfo /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app/Contents/Info.plist0#
+
+CTouch /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app
+s331165428.389929
+e331165428.394702
+r1
+xTouch
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app
+lSLF07#2@91"Touch /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app331165428#331165428#0(0"0(0#0#0"8604521824#176"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts    /usr/bin/touch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/Contacts/build/Debug/Contacts.app0#
+

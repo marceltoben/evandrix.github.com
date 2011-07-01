@@ -1,0 +1,193 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* ContactsAppAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {635, 286}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{32, 477}";
+		};
+	};
+	1D3623250D0F684500981E51 /* ContactsAppAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {810, 624}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 363}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* ContactsApp */ = {
+		activeExec = 0;
+		executables = (
+			B4BE07671255786B00AFB1C8 /* ContactsApp */,
+		);
+	};
+	28A0AAE50D9B0CCF005BE974 /* ContactsApp_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {670, 195}}";
+			sepNavSelRange = "{293, 0}";
+			sepNavVisRange = "{0, 328}";
+		};
+	};
+	28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {635, 245}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 270}";
+		};
+	};
+	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1048, 2288}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{2274, 1393}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = B4BE07671255786B00AFB1C8 /* ContactsApp */;
+		activeSDKPreference = iphonesimulator3.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* ContactsApp */;
+		codeSenseManager = B4BE0785125578B000AFB1C8 /* Code sense */;
+		executables = (
+			B4BE07671255786B00AFB1C8 /* ContactsApp */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = 1;
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					707,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 308611844;
+			PBXWorkspaceStateSaveDate = 308611844;
+		};
+		perUserProjectItems = {
+			B41BF65812650B40006671D9 /* PBXTextBookmark */ = B41BF65812650B40006671D9 /* PBXTextBookmark */;
+			B4BE078C1255797B00AFB1C8 /* PBXTextBookmark */ = B4BE078C1255797B00AFB1C8 /* PBXTextBookmark */;
+			B4BE078D1255797B00AFB1C8 /* PBXTextBookmark */ = B4BE078D1255797B00AFB1C8 /* PBXTextBookmark */;
+			B4BE078E1255797B00AFB1C8 /* PBXTextBookmark */ = B4BE078E1255797B00AFB1C8 /* PBXTextBookmark */;
+			B4BE078F1255797B00AFB1C8 /* PBXTextBookmark */ = B4BE078F1255797B00AFB1C8 /* PBXTextBookmark */;
+			B4BE07911255797B00AFB1C8 /* PBXTextBookmark */ = B4BE07911255797B00AFB1C8 /* PBXTextBookmark */;
+		};
+		sourceControlManager = B4BE0784125578B000AFB1C8 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	B41BF65812650B40006671D9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1393;
+		vrLoc = 2274;
+	};
+	B4BE07671255786B00AFB1C8 /* ContactsApp */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ContactsApp;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	B4BE0784125578B000AFB1C8 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	B4BE0785125578B000AFB1C8 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	B4BE078C1255797B00AFB1C8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28A0AAE50D9B0CCF005BE974 /* ContactsApp_Prefix.pch */;
+		name = "ContactsApp_Prefix.pch: 7";
+		rLen = 0;
+		rLoc = 190;
+		rType = 0;
+		vrLen = 328;
+		vrLoc = 0;
+	};
+	B4BE078D1255797B00AFB1C8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286DF0D94DF7D0034E888 /* RootViewController.h */;
+		name = "RootViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 270;
+		vrLoc = 0;
+	};
+	B4BE078E1255797B00AFB1C8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* ContactsAppAppDelegate.m */;
+		name = "ContactsAppAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 363;
+		vrLoc = 0;
+	};
+	B4BE078F1255797B00AFB1C8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* ContactsAppAppDelegate.h */;
+		name = "ContactsAppAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 32;
+	};
+	B4BE07911255797B00AFB1C8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1394;
+		vrLoc = 2274;
+	};
+}

@@ -1,0 +1,266 @@
+TTouch
+v7
+r0
+t331172134.056524
+cCheck dependencies
+cProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Info.plist Touch-Info.plist
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+cDistributed-CompileC build/Touch.build/Debug/Touch.build/Objects-normal/i386/main.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchViewController.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004E0C1E2F00000000000000EE
+t1309417007
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000000000000000000000000000
+t2
+s0
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004D5A279000000000000C7160
+t1297754000
+s815456
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC401D100000000000013E6
+t1287913937
+s5094
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h
+c000000004E0A70D600000000000001F1
+t1309307094
+s497
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m
+c000000004E0A70D600000000000002B7
+t1309307094
+s695
+i"TouchAppDelegate.h"
+i"TouchViewController.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h
+c000000004E0A70D60000000000000106
+t1309307094
+s262
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m
+c000000004E0A70D600000000000006A3
+t1309307094
+s1699
+i"TouchViewController.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+c000000004E0A70D60000000000002636
+t1309307094
+s9782
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+c000000004E0A70D60000000000001A3D
+t1309307094
+s6717
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch
+c000000004E0A70D600000000000000B3
+t1309307094
+s179
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app
+t1309479332
+s102
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Info.plist
+t1309479332
+s1198
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/MacOS/Touch
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/PkgInfo
+t1309479332
+s8
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Resources/MainWindow.nib
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Resources/TouchViewController.nib
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Objects-normal/i386/Touch.LinkFileList
+c000000004E0D11A400000000000001E0
+t1309479332
+s480
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchAppDelegate.o
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchViewController.o
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m
+c000000004E0A70D60000000000000185
+t1309307094
+s389
+i<UIKit/UIKit.h>
+
+NTouch-Info.plist
+c000000004E0A70D6000000000000038D
+t1309307094
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331172132#331172132#0(0"0(0#1#0"8247620834010738688#0"0#
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+s331172132.835632
+e331172132.987236
+r0
+xCompileXIB
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+o2011-07-01 01:15:32.981 ibtool[26262:607] Unexpected SDK identifier macosx10.6
+o/* com.apple.ibtool.errors */
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib: error: ibtool failed with exception: Unexpected SDK identifier macosx10.6
+lSLF07#2@25"CompileXIB MainWindow.xib331172132#331172132#0(287"2011-07-01 01:15:32.981 ibtool[26262:607] Unexpected SDK identifier macosx10.6/* com.apple.ibtool.errors *//Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib: error: ibtool failed with exception: Unexpected SDK identifier macosx10.61(4@66"ibtool failed with exception: Unexpected SDK identifier macosx10.6331172132#18446744073709551615#0#0(6@102"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib330999894#0#0#0#0#0"0(0#0#102"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib8605257504#485"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Resources/MainWindow.nib /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib --sdk /Developer/SDKs/MacOSX10.6.sdk1#
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+s331172132.836480
+e331172132.981285
+r0
+xCompileXIB
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+o2011-07-01 01:15:32.972 ibtool[26263:607] Unexpected SDK identifier macosx10.6
+o/* com.apple.ibtool.errors */
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib: error: ibtool failed with exception: Unexpected SDK identifier macosx10.6
+lSLF07#2@34"CompileXIB TouchViewController.xib331172132#331172132#0(296"2011-07-01 01:15:32.972 ibtool[26263:607] Unexpected SDK identifier macosx10.6/* com.apple.ibtool.errors *//Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib: error: ibtool failed with exception: Unexpected SDK identifier macosx10.61(4@66"ibtool failed with exception: Unexpected SDK identifier macosx10.6331172132#18446744073709551615#0#0(6@111"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib330999894#0#0#0#0#0"0(0#0#111"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib8605123296#503"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Resources/TouchViewController.nib /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib --sdk /Developer/SDKs/MacOSX10.6.sdk1#
+
+CDistributed-CompileC build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331172132.988695
+e331172134.055882
+r0
+xDistributed-CompileC
+xbuild/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchAppDelegate.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from <command-line>:0:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directory
+odistcc[26265] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m on localhost:3632/4 failed
+odistcc[26265] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m' failed, retrying locally
+odistcc[26265] Warning: failed to distribute /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m to localhost:3632/4, running locally instead
+oIn file included from <command-line>:0:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directory
+oIn file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:9:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:13: error: cannot find protocol declaration for 'UIApplicationDelegate'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:14: error: expected specifier-qualifier-list before 'UIWindow'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:18: error: expected specifier-qualifier-list before 'IBOutlet'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:19: error: expected specifier-qualifier-list before 'IBOutlet'
+oIn file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:10:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h:11: error: cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:14: error: no declaration of property 'window' found in the interface
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:15: error: no declaration of property 'viewController' found in the interface
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:18: error: expected ')' before 'UIApplication'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m: In function '-[TouchAppDelegate application:didFinishLaunchingWithOptions:]':
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: 'window' undeclared (first use in this function)
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: (Each undeclared identifier is reported only once
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: for each function it appears in.)
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: request for member 'view' in something not a structure or union
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m: In function '-[TouchAppDelegate dealloc]':
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: 'TouchViewController' may not respond to '-release'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: (Messages without a matching method signature
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: will be assumed to return 'id' and accept
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: '...' as arguments.)
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:30: error: 'window' undeclared (first use in this function)
+odistcc[26265] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m on localhost failed
+lSLF07#2@140"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m331172132#331172134#0(4813"In file included from <command-line>:0:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directorydistcc[26265] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m on localhost:3632/4 faileddistcc[26265] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m' failed, retrying locallydistcc[26265] Warning: failed to distribute /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m to localhost:3632/4, running locally insteadIn file included from <command-line>:0:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directoryIn file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:9:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:13: error: cannot find protocol declaration for 'UIApplicationDelegate'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:14: error: expected specifier-qualifier-list before 'UIWindow'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:18: error: expected specifier-qualifier-list before 'IBOutlet'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h:19: error: expected specifier-qualifier-list before 'IBOutlet'In file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:10:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h:11: error: cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:14: error: no declaration of property 'window' found in the interface/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:15: error: no declaration of property 'viewController' found in the interface/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:18: error: expected ')' before 'UIApplication'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m: In function '-[TouchAppDelegate application:didFinishLaunchingWithOptions:]':/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: 'window' undeclared (first use in this function)/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: (Each undeclared identifier is reported only once/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: for each function it appears in.)/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:21: error: request for member 'view' in something not a structure or union/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m: In function '-[TouchAppDelegate dealloc]':/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: 'TouchViewController' may not respond to '-release'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: (Messages without a matching method signature/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: will be assumed to return 'id' and accept/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:29: warning: '...' as arguments.)/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m:30: error: 'window' undeclared (first use in this function)distcc[26265] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m on localhost failed15(4@40"UIKit/UIKit.h: No such file or directory331172133#40#159#2(7@36"In file included from <command-line>331172133#18446744073709551615#0#0(6@14"<command-line>331172133#0#0#0#0#0"0(13@148"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch331172133#18446744073709551615#0#0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#0"0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#28"*: No such file or directory0(4@40"UIKit/UIKit.h: No such file or directory331172134#823#159#2(7@36"In file included from <command-line>331172134#18446744073709551615#0#0(6@14"<command-line>331172134#0#0#0#0#0"0(13@148"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch331172134#18446744073709551615#0#0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#0"0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#28"*: No such file or directory0(4@60"Cannot find protocol declaration for 'UIApplicationDelegate'331172134#1122#187#2(7@136"In file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#9#0#9#0#0"0(13@178"Cannot find protocol declaration for 'UIApplicationDelegate' in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#13#0#13#0#0"0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#13#0#13#0#0"0(4@51"Expected specifier-qualifier-list before 'UIWindow'331172134#1309#178#2(7@136"In file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#9#0#9#0#0"0(13@169"Expected specifier-qualifier-list before 'UIWindow' in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#14#0#14#0#0"0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#14#0#14#0#19"expected * before *0(4@51"Expected specifier-qualifier-list before 'IBOutlet'331172134#1487#178#2(7@136"In file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#9#0#9#0#0"0(13@169"Expected specifier-qualifier-list before 'IBOutlet' in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#18#0#18#0#0"0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#18#0#18#0#19"expected * before *0(4@51"Expected specifier-qualifier-list before 'IBOutlet'331172134#1665#178#2(7@136"In file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#9#0#9#0#0"0(13@169"Expected specifier-qualifier-list before 'IBOutlet' in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#19#0#19#0#0"0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h330999894#19#0#19#0#19"expected * before *0(4@93"Cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController'331172134#1984#223#2(7@136"In file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m331172134#18446744073709551615#0#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#10#0#10#0#0"0(13@214"Cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController' in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h331172134#18446744073709551615#0#0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h330999894#11#0#11#0#0"0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h330999894#11#0#11#0#60"cannot find interface declaration for '*', superclass of '*'0(4@58"No declaration of property 'window' found in the interface331172134#2207#185#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#14#0#14#0#0"0(4@66"No declaration of property 'viewController' found in the interface331172134#2392#193#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#15#0#15#0#0"0(4@35"Expected ')' before 'UIApplication'331172134#2585#162#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#18#0#18#0#19"expected * before *0(4@48"'window' undeclared (first use in this function)331172134#2941#175#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#21#0#21#0#43"'*' undeclared (first use in this function)0(4@63"Request for member 'view' in something not a structure or union331172134#3452#190#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#21#0#21#0#0"0(22@51"'TouchViewController' may not respond to '-release'331172134#3801#180#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#29#0#29#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)331172134#3981#174#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#29#0#29#0#0"0(4@48"'window' undeclared (first use in this function)331172134#4474#175#0(6@114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m330999894#30#0#30#0#43"'*' undeclared (first use in this function)0(0#0#114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m8601269312#2136"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/DerivedSources/i386 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchAppDelegate.o1#
+
+CDistributed-CompileC build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchViewController.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331172132.989635
+e331172134.056449
+r0
+xDistributed-CompileC
+xbuild/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchViewController.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from <command-line>:0:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directory
+odistcc[26266] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m on localhost:3632/4 failed
+odistcc[26266] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m' failed, retrying locally
+odistcc[26266] Warning: failed to distribute /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m to localhost:3632/4, running locally instead
+oIn file included from <command-line>:0:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directory
+oIn file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:9:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h:11: error: cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:13: error: expected ')' before 'UIEvent'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:18: error: expected ')' before 'UIEvent'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m: In function '-[TouchViewController didReceiveMemoryWarning]':
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:60: error: no super class declared in @interface for 'TouchViewController'
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m: In function '-[TouchViewController dealloc]':
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:72: error: no super class declared in @interface for 'TouchViewController'
+odistcc[26266] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m on localhost failed
+lSLF07#2@143"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m331172132#331172134#0(2574"In file included from <command-line>:0:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directorydistcc[26266] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m on localhost:3632/4 faileddistcc[26266] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m' failed, retrying locallydistcc[26266] Warning: failed to distribute /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m to localhost:3632/4, running locally insteadIn file included from <command-line>:0:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directoryIn file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:9:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h:11: error: cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:13: error: expected ')' before 'UIEvent'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:18: error: expected ')' before 'UIEvent'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m: In function '-[TouchViewController didReceiveMemoryWarning]':/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:60: error: no super class declared in @interface for 'TouchViewController'/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m: In function '-[TouchViewController dealloc]':/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m:72: error: no super class declared in @interface for 'TouchViewController'distcc[26266] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m on localhost failed7(4@40"UIKit/UIKit.h: No such file or directory331172133#40#159#2(7@36"In file included from <command-line>331172133#18446744073709551615#0#0(6@14"<command-line>331172133#0#0#0#0#0"0(13@148"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch331172133#18446744073709551615#0#0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#0"0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#28"*: No such file or directory0(4@40"UIKit/UIKit.h: No such file or directory331172134#832#159#2(7@36"In file included from <command-line>331172134#18446744073709551615#0#0(6@14"<command-line>331172134#0#0#0#0#0"0(13@148"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch331172134#18446744073709551615#0#0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#0"0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#28"*: No such file or directory0(4@93"Cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController'331172134#1134#223#2(7@139"In file included from /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m331172134#18446744073709551615#0#0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m330999894#9#0#9#0#0"0(13@214"Cannot find interface declaration for 'UIViewController', superclass of 'TouchViewController' in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h331172134#18446744073709551615#0#0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h330999894#11#0#11#0#0"0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h330999894#11#0#11#0#60"cannot find interface declaration for '*', superclass of '*'0(4@29"Expected ')' before 'UIEvent'331172134#1357#159#0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m330999894#13#0#13#0#19"expected * before *0(4@29"Expected ')' before 'UIEvent'331172134#1516#159#0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m330999894#18#0#18#0#19"expected * before *0(4@63"No super class declared in @interface for 'TouchViewController'331172134#1856#193#0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m330999894#60#0#60#0#0"0(4@63"No super class declared in @interface for 'TouchViewController'331172134#2214#193#0(6@117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m330999894#72#0#72#0#0"0(0#0#117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m8602857120#2142"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/DerivedSources/i386 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Objects-normal/i386/TouchViewController.o1#
+
+CDistributed-CompileC build/Touch.build/Debug/Touch.build/Objects-normal/i386/main.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331172132.987332
+e331172134.016276
+r0
+xDistributed-CompileC
+xbuild/Touch.build/Debug/Touch.build/Objects-normal/i386/main.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from <command-line>:0:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directory
+odistcc[26264] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m on localhost:3632/4 failed
+odistcc[26264] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m' failed, retrying locally
+odistcc[26264] Warning: failed to distribute /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m to localhost:3632/4, running locally instead
+oIn file included from <command-line>:0:
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directory
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m: In function 'main':
+o/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m:14: warning: implicit declaration of function 'UIApplicationMain'
+odistcc[26264] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m on localhost failed
+lSLF07#2@120"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m331172132#331172134#0(1343"In file included from <command-line>:0:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directorydistcc[26264] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m on localhost:3632/4 faileddistcc[26264] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m' failed, retrying locallydistcc[26264] Warning: failed to distribute /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m to localhost:3632/4, running locally insteadIn file included from <command-line>:0:/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch:7:28: error: UIKit/UIKit.h: No such file or directory/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m: In function 'main':/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m:14: warning: implicit declaration of function 'UIApplicationMain'distcc[26264] ERROR: compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m on localhost failed3(4@40"UIKit/UIKit.h: No such file or directory331172133#40#159#2(7@36"In file included from <command-line>331172133#18446744073709551615#0#0(6@14"<command-line>331172133#0#0#0#0#0"0(13@148"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch331172133#18446744073709551615#0#0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#0"0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#28"*: No such file or directory0(4@40"UIKit/UIKit.h: No such file or directory331172133#763#159#2(7@36"In file included from <command-line>331172133#18446744073709551615#0#0(6@14"<command-line>331172133#0#0#0#0#0"0(13@148"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch331172133#18446744073709551615#0#0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#0"0(6@104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch330999894#7#0#7#0#28"*: No such file or directory0(22@52"Implicit declaration of function 'UIApplicationMain'331172133#1038#161#0(6@94"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m330999894#14#0#14#0#36"implicit declaration of function '*'0(0#0#94"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m3256156613658895360#2104"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Touch-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/DerivedSources/i386 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug/Touch.build/Objects-normal/i386/main.o1#
+
+CLd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/MacOS/Touch normal i386
+r0
+
+CProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Info.plist Touch-Info.plist
+s331172132.824754
+e331172132.835527
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Info.plist
+xTouch-Info.plist
+lSLF07#2@24"Process Touch-Info.plist331172132#331172132#0(0"0(0#0#104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch-Info.plist19140500286341228#451"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    builtin-infoPlistUtility Touch-Info.plist -genpkginfo /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Info.plist0#
+
+CTouch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app
+r0
+

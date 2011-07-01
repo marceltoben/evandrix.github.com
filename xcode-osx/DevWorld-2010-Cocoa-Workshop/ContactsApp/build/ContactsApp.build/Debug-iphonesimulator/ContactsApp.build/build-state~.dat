@@ -1,0 +1,244 @@
+TContactsApp
+v7
+r0
+t331001478.999979
+cCheck dependencies
+cProcessInfoPlistFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/Info.plist ContactsApp-Info.plist
+cCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib
+cCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib
+cDistributed-CompileC build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/main.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/RootViewController.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp normal i386
+cGenerateDSYMFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app.dSYM /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp
+cTouch /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk
+c000000004D5C9B4E0000000000000110
+t1297914702
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004D54CFFA00000000002999B0
+t1297403898
+s2726320
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004D54CFE5000000000029DA70
+t1297403877
+s2742896
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D54CFB80000000000001466
+t1297403832
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004D5615B40000000000000AA1
+t1297487284
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004D5616030000000000766870
+t1297487363
+s7759984
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/Availability.h
+c000000004D4F7A2B0000000000001B19
+t1297054251
+s6937
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h
+c000000004E0A70D200000000000001FD
+t1309307090
+s509
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m
+c000000004E0A70D20000000000000396
+t1309307090
+s918
+i"ContactsAppAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h
+c000000004E0A70D2000000000000010E
+t1309307090
+s270
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m
+c000000004E0A70D200000000000011CC
+t1309307090
+s4556
+i"RootViewController.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch
+c000000004E0A70D20000000000000148
+t1309307090
+s328
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib
+c000000004E0A70D20000000000002F50
+t1309307090
+s12112
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib
+c000000004E0A70D200000000000043E7
+t1309307090
+s17383
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/ContactsApp.LinkFileList
+c000000004E0A770600000000000001F1
+t1309308678
+s497
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o
+t1309308678
+s51216
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/RootViewController.o
+t1309308678
+s43228
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/main.o
+t1309308678
+s6360
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app
+t1309308678
+s238
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app.dSYM
+t1309308678
+s102
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp
+t1309308678
+s17496
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/Info.plist
+t1309308678
+s607
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/MainWindow.nib
+t1309308678
+s1513
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/PkgInfo
+t1309308678
+s8
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/RootViewController.nib
+t1309308678
+s971
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m
+c000000004E0A70D2000000000000018B
+t1309307090
+s395
+i<UIKit/UIKit.h>
+
+NContactsApp-Info.plist
+c000000004E0A70D2000000000000038D
+t1309307090
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331001478#331001478#0(0"0(0#1#0"8609076896#0"0#
+
+CCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib
+s331001478.121149
+e331001478.545012
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib331001478#331001478#0(0"0(0#0#78"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib8607289024#649"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/MainWindow.nib /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib
+s331001478.122069
+e331001478.521687
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib331001478#331001478#0(0"0(0#0#86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib8607354496#665"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/RootViewController.nib /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CDistributed-CompileC build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331001478.546441
+e331001478.946594
+r1
+xDistributed-CompileC
+xbuild/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@122"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331001478#331001478#0(0"0(0#0#96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m8606313056#2445"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/distcc /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/DerivedSources/i386 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o0#
+
+CDistributed-CompileC build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/RootViewController.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331001478.547525
+e331001478.924925
+r1
+xDistributed-CompileC
+xbuild/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/RootViewController.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@118"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m331001478#331001478#0(0"0(0#0#92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m8606111968#2437"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/distcc /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/DerivedSources/i386 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/RootViewController.o0#
+
+CDistributed-CompileC build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/main.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331001478.545148
+e331001478.901361
+r1
+xDistributed-CompileC
+xbuild/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/main.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@96"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m331001478#331001478#0(0"0(0#0#70"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m8606517024#2401"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/distcc /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/ContactsApp-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/DerivedSources/i386 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/main.o0#
+
+CGenerateDSYMFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app.dSYM /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp
+s331001478.973152
+e331001478.997161
+r1
+xGenerateDSYMFile
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app.dSYM
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp
+lSLF07#2@121"GenerateDSYMFile build/Debug-iphonesimulator/ContactsApp.app.dSYM build/Debug-iphonesimulator/ContactsApp.app/ContactsApp331001478#331001478#0(0"0(0#0#119"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp8607102144#470"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app.dSYM0#
+
+CLd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp normal i386
+s331001478.946794
+e331001478.973048
+r1
+xLd
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp
+xnormal
+xi386
+lSLF07#2@124"Link /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp331001478#331001478#0(0"0(0#0#0"8607530400#1045"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -L/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator -filelist /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug-iphonesimulator/ContactsApp.build/Objects-normal/i386/ContactsApp.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/ContactsApp0#
+
+CProcessInfoPlistFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/Info.plist ContactsApp-Info.plist
+s331001478.112928
+e331001478.121024
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/Info.plist
+xContactsApp-Info.plist
+lSLF07#2@30"Process ContactsApp-Info.plist331001478#331001478#0(0"0(0#0#86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp-Info.plist8604025696#566"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility ContactsApp-Info.plist -genpkginfo /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app/Info.plist0#
+
+CTouch /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app
+s331001478.997287
+e331001478.999944
+r1
+xTouch
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app
+lSLF07#2@113"Touch /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app331001478#331001478#0(0"0(0#0#0"8606986048#332"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug-iphonesimulator/ContactsApp.app0#
+

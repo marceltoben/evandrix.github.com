@@ -1,0 +1,241 @@
+TTouch
+v7
+r0
+t331172216.902100
+cCheck dependencies
+cProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Info.plist Touch-Info.plist
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+cDistributed-CompileC build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/main.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchViewController.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch normal i386
+cGenerateDSYMFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app.dSYM /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch
+cTouch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk
+c000000004E0C1E180000000000000110
+t1309416984
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004D54CFFA00000000002999B0
+t1297403898
+s2726320
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004D54CFE5000000000029DA70
+t1297403877
+s2742896
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D54CFB80000000000001466
+t1297403832
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004D5615B40000000000000AA1
+t1297487284
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004D5616030000000000766870
+t1297487363
+s7759984
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.h
+c000000004E0A70D600000000000001F1
+t1309307094
+s497
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m
+c000000004E0A70D600000000000002B7
+t1309307094
+s695
+i"TouchAppDelegate.h"
+i"TouchViewController.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.h
+c000000004E0A70D60000000000000106
+t1309307094
+s262
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m
+c000000004E0A70D600000000000006A3
+t1309307094
+s1699
+i"TouchViewController.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+c000000004E0A70D60000000000002636
+t1309307094
+s9782
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+c000000004E0A70D60000000000001A3D
+t1309307094
+s6717
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch
+c000000004E0A70D600000000000000B3
+t1309307094
+s179
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app
+t1309479416
+s238
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app.dSYM
+t1309479387
+s102
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Info.plist
+t1309479416
+s588
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/MainWindow.nib
+t1309479387
+s1677
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/PkgInfo
+t1309479416
+s8
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch
+t1309479387
+s16724
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/TouchViewController.nib
+t1309479387
+s1269
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/Touch.LinkFileList
+c000000004E0D11DB0000000000000210
+t1309479387
+s528
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchAppDelegate.o
+t1309479387
+s48936
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchViewController.o
+t1309479387
+s39388
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/main.o
+t1309479387
+s6408
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m
+c000000004E0A70D60000000000000185
+t1309307094
+s389
+i<UIKit/UIKit.h>
+
+NTouch-Info.plist
+c000000004E0A70D6000000000000038D
+t1309307094
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331172216#331172216#0(0"0(0#1#0"8605541504#0"0#
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+s331172187.062223
+e331172187.456031
+r1
+xCompileXIB
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib331172187#331172187#0(0"0(0#0#102"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib8606237568#715"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/MainWindow.nib /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+s331172187.063042
+e331172187.445971
+r1
+xCompileXIB
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+lSLF07#2@34"CompileXIB TouchViewController.xib331172187#331172187#0(0"0(0#0#111"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib8606149664#733"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/TouchViewController.nib /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CDistributed-CompileC build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331172187.457374
+e331172187.776720
+r1
+xDistributed-CompileC
+xbuild/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchAppDelegate.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+odistcc[26408] (dcc_build_somewhere) Warning: failed to distribute, running locally instead
+lSLF07#2@140"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m331172187#331172187#0(91"distcc[26408] (dcc_build_somewhere) Warning: failed to distribute, running locally instead0(0#0#114"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m8606318560#2607"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/distcc /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/DerivedSources/i386 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchAppDelegate.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchAppDelegate.o0#
+
+CDistributed-CompileC build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchViewController.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331172187.458345
+e331172187.766960
+r1
+xDistributed-CompileC
+xbuild/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchViewController.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+odistcc[26409] (dcc_build_somewhere) Warning: failed to distribute, running locally instead
+lSLF07#2@143"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m331172187#331172187#0(91"distcc[26409] (dcc_build_somewhere) Warning: failed to distribute, running locally instead0(0#0#117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m8605883392#2613"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/distcc /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/DerivedSources/i386 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Classes/TouchViewController.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/TouchViewController.o0#
+
+CDistributed-CompileC build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/main.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331172187.456168
+e331172187.758796
+r1
+xDistributed-CompileC
+xbuild/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/main.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+odistcc[26407] (dcc_build_somewhere) Warning: failed to distribute, running locally instead
+lSLF07#2@120"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m331172187#331172187#0(91"distcc[26407] (dcc_build_somewhere) Warning: failed to distribute, running locally instead0(0#0#94"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m8606782656#2575"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/distcc /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Touch-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/DerivedSources/i386 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/main.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/main.o0#
+
+CGenerateDSYMFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app.dSYM /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch
+s331172187.890210
+e331172187.914835
+r1
+xGenerateDSYMFile
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app.dSYM
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch
+lSLF07#2@103"GenerateDSYMFile build/Debug-iphonesimulator/Touch.app.dSYM build/Debug-iphonesimulator/Touch.app/Touch331172187#331172187#0(0"0(0#0#131"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch8605641056#524"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app.dSYM0#
+
+CLd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch normal i386
+s331172187.776835
+e331172187.890090
+r1
+xLd
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch
+xnormal
+xi386
+lSLF07#2@136"Link /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch331172187#331172187#0(0"0(0#0#0"8605835168#1135"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -L/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator -filelist /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Touch.build/Debug-iphonesimulator/Touch.build/Objects-normal/i386/Touch.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Touch0#
+
+CProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Info.plist Touch-Info.plist
+s331172216.895253
+e331172216.898422
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Info.plist
+xTouch-Info.plist
+lSLF07#2@24"Process Touch-Info.plist331172216#331172216#0(0"0(0#0#104"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/Touch-Info.plist8607159104#620"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Touch-Info.plist -genpkginfo /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app/Info.plist0#
+
+CTouch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app
+s331172216.899255
+e331172216.902063
+r1
+xTouch
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app
+lSLF07#2@131"Touch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app331172216#331172216#0(0"0(0#0#0"8606627232#374"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug-iphonesimulator/Touch.app0#
+

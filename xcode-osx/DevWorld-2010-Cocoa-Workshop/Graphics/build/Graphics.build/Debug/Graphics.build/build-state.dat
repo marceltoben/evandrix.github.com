@@ -1,0 +1,208 @@
+TGraphics
+v7
+r0
+t331172089.596834
+cCheck dependencies
+cProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Info.plist Graphics-Info.plist
+cCopyStringsFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/MainMenu.xib
+cDistributed-CompileC build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/main.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/GraphicsAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/MyView.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/MacOS/Graphics normal x86_64
+cTouch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004E0C1E2F00000000000000EE
+t1309417007
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/InfoPlist.strings
+c000000004E0A70D5000000000000002D
+t1309307093
+s45
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/MainMenu.xib
+c000000004E0A70D5000000000002C278
+t1309307093
+s180856
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.h
+c000000004E0A70D5000000000000015C
+t1309307093
+s348
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.m
+c000000004E0A70D50000000000000192
+t1309307093
+s402
+i"GraphicsAppDelegate.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/Graphics_Prefix.pch
+c000000004E0A70D50000000000000093
+t1309307093
+s147
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.h
+c000000004E0A70D5000000000000020B
+t1309307093
+s523
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.m
+c000000004E0A70D500000000000008F7
+t1309307093
+s2295
+i"MyView.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app
+t1309479289
+s102
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Info.plist
+t1309479287
+s1287
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/MacOS/Graphics
+t1309479289
+s23144
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/PkgInfo
+t1309479287
+s8
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1309479287
+s92
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Resources/English.lproj/MainMenu.nib
+t1309479288
+s34648
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/Graphics.LinkFileList
+c000000004E0D117700000000000001F7
+t1309479287
+s503
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/GraphicsAppDelegate.o
+t1309479289
+s21240
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/MyView.o
+t1309479289
+s33280
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/main.o
+t1309479289
+s5104
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/main.m
+c000000004E0A70D5000000000000011C
+t1309307093
+s284
+i<Cocoa/Cocoa.h>
+
+NGraphics-Info.plist
+c000000004E0A70D500000000000003EA
+t1309307093
+s1002
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331172087#331172087#0(0"0(0#1#0"8247620834010738688#0"0#
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/MainMenu.xib
+s331172087.736525
+e331172088.078594
+r1
+xCompileXIB
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib331172087#331172088#0(0"0(0#0#117"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/MainMenu.xib8604091232#521"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Resources/English.lproj/MainMenu.nib /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/MainMenu.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCopyStringsFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s331172087.733589
+e331172087.777591
+r1
+xCopyStringsFile
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings331172087#331172087#0(0"0(0#0#122"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/English.lproj/InfoPlist.strings8601065824#470"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Resources/English.lproj0#
+
+CDistributed-CompileC build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/GraphicsAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331172088.079869
+e331172089.511068
+r1
+xDistributed-CompileC
+xbuild/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/GraphicsAppDelegate.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@138"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.m331172088#331172089#0(0"0(0#0#112"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.m8600976576#2234"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/DerivedSources/x86_64 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/Graphics_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/GraphicsAppDelegate.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/GraphicsAppDelegate.o0#
+
+CDistributed-CompileC build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/MyView.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331172088.080926
+e331172089.543639
+r1
+xDistributed-CompileC
+xbuild/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/MyView.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@125"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.m331172088#331172089#0(0"0(0#0#99"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.m8603416800#2208"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/DerivedSources/x86_64 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/Graphics_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/MyView.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/MyView.o0#
+
+CDistributed-CompileC build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/main.o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331172088.078714
+e331172089.510494
+r1
+xDistributed-CompileC
+xbuild/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/main.o
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@123"Distribute compilation of /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/main.m331172088#331172089#0(0"0(0#0#97"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/main.m8600881728#2204"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-generated-files.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-own-target-headers.hmap -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-all-target-headers.hmap -iquote /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Graphics-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/include -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/DerivedSources/x86_64 -I/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/DerivedSources -include /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/Graphics_Prefix.pch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/main.m -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/main.o0#
+
+CLd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/MacOS/Graphics normal x86_64
+s331172089.543823
+e331172089.594106
+r1
+xLd
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/MacOS/Graphics
+xnormal
+xx86_64
+lSLF07#2@144"Link /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/MacOS/Graphics331172089#331172089#0(0"0(0#0#0"8601412608#807"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug -F/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug -filelist /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Graphics.build/Debug/Graphics.build/Objects-normal/x86_64/Graphics.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/MacOS/Graphics0#
+
+CProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Info.plist Graphics-Info.plist
+s331172087.720188
+e331172087.733211
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Info.plist
+xGraphics-Info.plist
+lSLF07#2@27"Process Graphics-Info.plist331172087#331172087#0(0"0(0#0#110"/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/Graphics-Info.plist30962560973865076#469"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    builtin-infoPlistUtility Graphics-Info.plist -genpkginfo /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app/Contents/Info.plist0#
+
+CTouch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app
+s331172089.594315
+e331172089.596779
+r1
+xTouch
+x/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app
+lSLF07#2@121"Touch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app331172089#331172089#0(0"0(0#0#0"8598900736#236"    cd /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics    /usr/bin/touch -c /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Graphics/build/Debug/Graphics.app0#
+

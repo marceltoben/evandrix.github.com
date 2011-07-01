@@ -1,0 +1,277 @@
+TContactsApp
+v7
+r0
+t331000810.286259
+cCheck dependencies
+
+N/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000000000000000000000000000
+t2
+s0
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004DDDB0010000000000B38DD0
+t1306374145
+s11767248
+
+N/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC401D100000000000013E6
+t1287913937
+s5094
+
+N/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h
+c000000004E0A70D200000000000001FD
+t1309307090
+s509
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m
+c000000004E0A70D20000000000000396
+t1309307090
+s918
+i"ContactsAppAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h
+c000000004E0A70D2000000000000010E
+t1309307090
+s270
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m
+c000000004E0A70D200000000000011CC
+t1309307090
+s4556
+i"RootViewController.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch
+c000000004E0A70D20000000000000148
+t1309307090
+s328
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib
+c000000004E0A70D20000000000002F50
+t1309307090
+s12112
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib
+c000000004E0A70D200000000000043E7
+t1309307090
+s17383
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/ContactsApp.LinkFileList
+c000000004E0A746800000000000001C1
+t1309308008
+s449
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o
+t2
+s0
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/RootViewController.o
+t2
+s0
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app
+t1309308008
+s102
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Info.plist
+t1309308008
+s1211
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/MacOS/ContactsApp
+t2
+s0
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/PkgInfo
+t1309308008
+s8
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Resources/MainWindow.nib
+t1309308008
+s2460
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Resources/RootViewController.nib
+t1309308008
+s1493
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m
+c000000004E0A70D2000000000000018B
+t1309307090
+s395
+i<UIKit/UIKit.h>
+
+N/usr/include/Availability.h
+c000000004A11A9B300000000000019DB
+t1242671539
+s6619
+
+NContactsApp-Info.plist
+c000000004E0A70D2000000000000038D
+t1309307090
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331001328#331001328#0(74"[BEROR]error: There is no SDK with the name or path 'iphonesimulator 4.3'1(4@66"error: There is no SDK with the name or path 'iphonesimulator 4.3'331001328#18446744073709551615#0#0(1@0"0(0#1#0"8603002816#0"0#
+
+CCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib
+s331000808.480227
+e331000808.900278
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib331000808#331000808#0(0"0(0#0#78"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib8606122976#391"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Resources/MainWindow.nib /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/MainWindow.xib --sdk ""0#
+
+CCompileXIB /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib
+s331000808.482772
+e331000808.893003
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib331000808#331000808#0(0"0(0#0#86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib8605858176#407"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Resources/RootViewController.nib /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/RootViewController.xib --sdk ""0#
+
+CDistributed-CompileC build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331000808.901698
+e331000810.219678
+r0
+xDistributed-CompileC
+xbuild/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from <command-line>:0:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directory
+odistcc[38237] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m on localhost:3632/4 failed
+odistcc[38237] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m' failed, retrying locally
+odistcc[38237] Warning: failed to distribute /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m to localhost:3632/4, running locally instead
+oIn file included from <command-line>:0:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directory
+oIn file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:9:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:11: error: cannot find protocol declaration for 'UIApplicationDelegate'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:13: error: expected specifier-qualifier-list before 'UIWindow'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:14: error: expected specifier-qualifier-list before 'UINavigationController'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:17: error: expected specifier-qualifier-list before 'IBOutlet'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:18: error: expected specifier-qualifier-list before 'IBOutlet'
+oIn file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:10:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h:12: error: cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:15: error: no declaration of property 'window' found in the interface
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:16: error: no declaration of property 'navigationController' found in the interface
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:22: error: expected ')' before 'UIApplication'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m: In function '-[ContactsAppAppDelegate application:didFinishLaunchingWithOptions:]':
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: 'window' undeclared (first use in this function)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: (Each undeclared identifier is reported only once
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: for each function it appears in.)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: 'navigationController' undeclared (first use in this function)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m: At top level:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:31: error: expected ')' before 'UIApplication'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m: In function '-[ContactsAppAppDelegate dealloc]':
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:40: error: 'navigationController' undeclared (first use in this function)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:41: error: 'window' undeclared (first use in this function)
+odistcc[38237] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m on localhost failed
+lSLF07#2@122"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331000808#331000810#0(4343"In file included from <command-line>:0:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directorydistcc[38237] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m on localhost:3632/4 faileddistcc[38237] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m' failed, retrying locallydistcc[38237] Warning: failed to distribute /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m to localhost:3632/4, running locally insteadIn file included from <command-line>:0:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directoryIn file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:9:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:11: error: cannot find protocol declaration for 'UIApplicationDelegate'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:13: error: expected specifier-qualifier-list before 'UIWindow'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:14: error: expected specifier-qualifier-list before 'UINavigationController'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:17: error: expected specifier-qualifier-list before 'IBOutlet'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h:18: error: expected specifier-qualifier-list before 'IBOutlet'In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:10:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h:12: error: cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:15: error: no declaration of property 'window' found in the interface/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:16: error: no declaration of property 'navigationController' found in the interface/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:22: error: expected ')' before 'UIApplication'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m: In function '-[ContactsAppAppDelegate application:didFinishLaunchingWithOptions:]':/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: 'window' undeclared (first use in this function)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: (Each undeclared identifier is reported only once/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: for each function it appears in.)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:25: error: 'navigationController' undeclared (first use in this function)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m: At top level:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:31: error: expected ')' before 'UIApplication'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m: In function '-[ContactsAppAppDelegate dealloc]':/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:40: error: 'navigationController' undeclared (first use in this function)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m:41: error: 'window' undeclared (first use in this function)distcc[38237] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m on localhost failed17(4@40"UIKit/UIKit.h: No such file or directory331000809#40#142#2(7@36"In file included from <command-line>331000809#18446744073709551615#0#0(6@14"<command-line>331000809#0#0#0#0#0"0(13@130"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch331000809#18446744073709551615#0#0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#0"0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#28"*: No such file or directory0(4@40"UIKit/UIKit.h: No such file or directory331000810#752#142#2(7@36"In file included from <command-line>331000810#18446744073709551615#0#0(6@14"<command-line>331000810#0#0#0#0#0"0(13@130"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch331000810#18446744073709551615#0#0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#0"0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#28"*: No such file or directory0(4@60"Cannot find protocol declaration for 'UIApplicationDelegate'331000810#1016#169#2(7@118"In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#9#0#9#0#0"0(13@160"Cannot find protocol declaration for 'UIApplicationDelegate' in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#11#0#11#0#0"0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#11#0#11#0#0"0(4@51"Expected specifier-qualifier-list before 'UIWindow'331000810#1185#160#2(7@118"In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#9#0#9#0#0"0(13@151"Expected specifier-qualifier-list before 'UIWindow' in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#13#0#13#0#0"0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#13#0#13#0#19"expected * before *0(4@65"Expected specifier-qualifier-list before 'UINavigationController'331000810#1345#174#2(7@118"In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#9#0#9#0#0"0(13@165"Expected specifier-qualifier-list before 'UINavigationController' in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#14#0#14#0#0"0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#14#0#14#0#19"expected * before *0(4@51"Expected specifier-qualifier-list before 'IBOutlet'331000810#1519#160#2(7@118"In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#9#0#9#0#0"0(13@151"Expected specifier-qualifier-list before 'IBOutlet' in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#17#0#17#0#0"0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#17#0#17#0#19"expected * before *0(4@51"Expected specifier-qualifier-list before 'IBOutlet'331000810#1679#160#2(7@118"In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#9#0#9#0#0"0(13@151"Expected specifier-qualifier-list before 'IBOutlet' in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#18#0#18#0#0"0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.h330999890#18#0#18#0#19"expected * before *0(4@97"Cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController'331000810#1962#202#2(7@118"In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m331000810#18446744073709551615#0#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#10#0#10#0#0"0(13@193"Cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController' in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h331000810#18446744073709551615#0#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h330999890#12#0#12#0#0"0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h330999890#12#0#12#0#60"cannot find interface declaration for '*', superclass of '*'0(4@58"No declaration of property 'window' found in the interface331000810#2164#167#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#15#0#15#0#0"0(4@72"No declaration of property 'navigationController' found in the interface331000810#2331#181#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#16#0#16#0#0"0(4@35"Expected ')' before 'UIApplication'331000810#2512#144#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#22#0#22#0#19"expected * before *0(4@48"'window' undeclared (first use in this function)331000810#2838#157#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#25#0#25#0#43"'*' undeclared (first use in this function)0(4@62"'navigationController' undeclared (first use in this function)331000810#3295#171#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#25#0#25#0#43"'*' undeclared (first use in this function)0(23@13"At top level:331000810#3466#112#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#0#0#0#0#0"0(4@35"Expected ')' before 'UIApplication'331000810#3578#144#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#31#0#31#0#19"expected * before *0(4@62"'navigationController' undeclared (first use in this function)331000810#3869#171#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#40#0#40#0#43"'*' undeclared (first use in this function)0(4@48"'window' undeclared (first use in this function)331000810#4040#157#0(6@96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m330999890#41#0#41#0#43"'*' undeclared (first use in this function)0(0#0#96"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m8604108672#1907"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -fvisibility=hidden -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/DerivedSources/i386 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/ContactsAppAppDelegate.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/ContactsAppAppDelegate.o1#
+
+CDistributed-CompileC build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/RootViewController.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331000808.902621
+e331000810.286178
+r0
+xDistributed-CompileC
+xbuild/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/RootViewController.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from <command-line>:0:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directory
+odistcc[38238] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m on localhost:3632/4 failed
+odistcc[38238] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m' failed, retrying locally
+odistcc[38238] Warning: failed to distribute /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m to localhost:3632/4, running locally instead
+oIn file included from <command-line>:0:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directory
+oIn file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:9:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h:12: error: cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:61: error: expected ')' before 'UITableView'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:67: error: expected ')' before 'UITableView'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:78: error: expected ')' before 'UITableViewCell'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:78: error: expected ')' before 'UITableView'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: 'UITableViewCell' undeclared (first use in this function)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: (Each undeclared identifier is reported only once
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: for each function it appears in.)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: 'cell' undeclared (first use in this function)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: no '-dequeueReusableCellWithIdentifier:' method found
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: (Messages without a matching method signature
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: will be assumed to return 'id' and accept
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: '...' as arguments.)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:84: error: 'UITableViewCellStyleSubtitle' undeclared (first use in this function)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:90: warning: 'NSIndexPath' may not respond to '-row'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:93: error: 'UITableViewCellAccessoryDetailDisclosureButton' undeclared (first use in this function)
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:97: warning: control reaches end of non-void function
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: At top level:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:143: error: expected ')' before 'UITableView'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:145: warning: 'RootViewController' may not respond to '+alloc'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:145: warning: no '-initWithNibName:bundle:' method found
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:148: error: request for member 'navigationController' in something not a structure or union
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:149: warning: 'RootViewController' may not respond to '-release'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController didReceiveMemoryWarning]':
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:159: error: no super class declared in @interface for 'RootViewController'
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController dealloc]':
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:171: error: no super class declared in @interface for 'RootViewController'
+odistcc[38238] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m on localhost failed
+lSLF07#2@118"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m331000808#331000810#0(5609"In file included from <command-line>:0:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directorydistcc[38238] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m on localhost:3632/4 faileddistcc[38238] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m' failed, retrying locallydistcc[38238] Warning: failed to distribute /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m to localhost:3632/4, running locally insteadIn file included from <command-line>:0:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directoryIn file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:9:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h:12: error: cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:61: error: expected ')' before 'UITableView'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:67: error: expected ')' before 'UITableView'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:78: error: expected ')' before 'UITableViewCell'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:78: error: expected ')' before 'UITableView'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: 'UITableViewCell' undeclared (first use in this function)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: (Each undeclared identifier is reported only once/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: for each function it appears in.)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: error: 'cell' undeclared (first use in this function)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: no '-dequeueReusableCellWithIdentifier:' method found/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: (Messages without a matching method signature/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: will be assumed to return 'id' and accept/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:82: warning: '...' as arguments.)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:84: error: 'UITableViewCellStyleSubtitle' undeclared (first use in this function)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:90: warning: 'NSIndexPath' may not respond to '-row'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:93: error: 'UITableViewCellAccessoryDetailDisclosureButton' undeclared (first use in this function)/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:97: warning: control reaches end of non-void function/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: At top level:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:143: error: expected ')' before 'UITableView'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:145: warning: 'RootViewController' may not respond to '+alloc'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:145: warning: no '-initWithNibName:bundle:' method found/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:148: error: request for member 'navigationController' in something not a structure or union/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:149: warning: 'RootViewController' may not respond to '-release'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController didReceiveMemoryWarning]':/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:159: error: no super class declared in @interface for 'RootViewController'/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m: In function '-[RootViewController dealloc]':/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m:171: error: no super class declared in @interface for 'RootViewController'distcc[38238] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m on localhost failed23(4@40"UIKit/UIKit.h: No such file or directory331000809#40#142#2(7@36"In file included from <command-line>331000809#18446744073709551615#0#0(6@14"<command-line>331000809#0#0#0#0#0"0(13@130"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch331000809#18446744073709551615#0#0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#0"0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#28"*: No such file or directory0(4@40"UIKit/UIKit.h: No such file or directory331000810#740#142#2(7@36"In file included from <command-line>331000810#18446744073709551615#0#0(6@14"<command-line>331000810#0#0#0#0#0"0(13@130"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch331000810#18446744073709551615#0#0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#0"0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#28"*: No such file or directory0(4@97"Cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController'331000810#1000#202#2(7@114"In file included from /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m331000810#18446744073709551615#0#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#9#0#9#0#0"0(13@193"Cannot find interface declaration for 'UITableViewController', superclass of 'RootViewController' in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h331000810#18446744073709551615#0#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h330999890#12#0#12#0#0"0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.h330999890#12#0#12#0#60"cannot find interface declaration for '*', superclass of '*'0(4@33"Expected ')' before 'UITableView'331000810#1202#138#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#61#0#61#0#19"expected * before *0(4@33"Expected ')' before 'UITableView'331000810#1340#138#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#67#0#67#0#19"expected * before *0(4@37"Expected ')' before 'UITableViewCell'331000810#1478#142#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#78#0#78#0#19"expected * before *0(4@33"Expected ')' before 'UITableView'331000810#1620#138#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#78#0#78#0#19"expected * before *0(4@57"'UITableViewCell' undeclared (first use in this function)331000810#1922#162#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#82#0#82#0#43"'*' undeclared (first use in this function)0(4@46"'cell' undeclared (first use in this function)331000810#2376#151#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#82#0#82#0#43"'*' undeclared (first use in this function)0(22@53"No '-dequeueReusableCellWithIdentifier:' method found331000810#2527#160#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#82#0#82#0#19"no '*' method found0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)331000810#2687#152#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#82#0#82#0#0"0(4@70"'UITableViewCellStyleSubtitle' undeclared (first use in this function)331000810#3114#175#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#84#0#84#0#43"'*' undeclared (first use in this function)0(22@39"'NSIndexPath' may not respond to '-row'331000810#3289#146#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#90#0#90#0#26"'*' may not respond to '*'0(4@88"'UITableViewCellAccessoryDetailDisclosureButton' undeclared (first use in this function)331000810#3435#193#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#93#0#93#0#43"'*' undeclared (first use in this function)0(22@40"Control reaches end of non-void function331000810#3628#147#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#97#0#97#0#40"control reaches end of non-void function0(23@13"At top level:331000810#3775#108#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#0#0#0#0#0"0(4@33"Expected ')' before 'UITableView'331000810#3883#139#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#143#0#143#0#19"expected * before *0(22@48"'RootViewController' may not respond to '+alloc'331000810#4188#156#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#145#0#145#0#26"'*' may not respond to '*'0(22@42"No '-initWithNibName:bundle:' method found331000810#4344#150#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#145#0#145#0#19"no '*' method found0(4@79"Request for member 'navigationController' in something not a structure or union331000810#4494#185#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#148#0#148#0#0"0(22@50"'RootViewController' may not respond to '-release'331000810#4679#158#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#149#0#149#0#26"'*' may not respond to '*'0(4@62"No super class declared in @interface for 'RootViewController'331000810#4992#168#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#159#0#159#0#0"0(4@62"No super class declared in @interface for 'RootViewController'331000810#5299#168#0(6@92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m330999890#171#0#171#0#0"0(0#0#92"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m8603884384#1899"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -fvisibility=hidden -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/DerivedSources/i386 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/Classes/RootViewController.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/RootViewController.o1#
+
+CDistributed-CompileC build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/main.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s331000808.900422
+e331000810.274201
+r0
+xDistributed-CompileC
+xbuild/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/main.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from <command-line>:0:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directory
+odistcc[38236] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m on localhost:3632/4 failed
+odistcc[38236] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m' failed, retrying locally
+odistcc[38236] Warning: failed to distribute /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m to localhost:3632/4, running locally instead
+oIn file included from <command-line>:0:
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directory
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m: In function 'main':
+o/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m:14: warning: implicit declaration of function 'UIApplicationMain'
+odistcc[38236] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m on localhost failed
+lSLF07#2@96"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m331000808#331000810#0(1165"In file included from <command-line>:0:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directorydistcc[38236] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m on localhost:3632/4 faileddistcc[38236] (dcc_build_somewhere) Warning: remote compilation of '/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m' failed, retrying locallydistcc[38236] Warning: failed to distribute /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m to localhost:3632/4, running locally insteadIn file included from <command-line>:0:/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch:13:28: error: UIKit/UIKit.h: No such file or directory/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m: In function 'main':/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m:14: warning: implicit declaration of function 'UIApplicationMain'distcc[38236] ERROR: compile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m on localhost failed3(4@40"UIKit/UIKit.h: No such file or directory331000809#40#142#2(7@36"In file included from <command-line>331000809#18446744073709551615#0#0(6@14"<command-line>331000809#0#0#0#0#0"0(13@130"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch331000809#18446744073709551615#0#0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#0"0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#28"*: No such file or directory0(4@40"UIKit/UIKit.h: No such file or directory331000810#674#142#2(7@36"In file included from <command-line>331000810#18446744073709551615#0#0(6@14"<command-line>331000810#0#0#0#0#0"0(13@130"UIKit/UIKit.h: No such file or directory in /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch331000810#18446744073709551615#0#0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#0"0(6@86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch330999890#13#0#13#0#28"*: No such file or directory0(22@52"Implicit declaration of function 'UIApplicationMain'331000810#908#137#0(6@70"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m330999890#14#0#14#0#36"implicit declaration of function '*'0(0#0#70"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m8604234848#1863"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -fvisibility=hidden -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/ContactsApp-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/DerivedSources/i386 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/main.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/ContactsApp.build/Debug/ContactsApp.build/Objects-normal/i386/main.o1#
+
+CLd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/MacOS/ContactsApp normal i386
+r0
+
+CProcessInfoPlistFile /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Info.plist ContactsApp-Info.plist
+s331000808.475473
+e331000808.480113
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Info.plist
+xContactsApp-Info.plist
+lSLF07#2@30"Process ContactsApp-Info.plist331000808#331000808#0(0"0(0#0#86"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/ContactsApp-Info.plist30962724183932976#397"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp    builtin-infoPlistUtility ContactsApp-Info.plist -genpkginfo /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app/Contents/Info.plist0#
+
+CTouch /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/ContactsApp/build/Debug/ContactsApp.app
+r0
+

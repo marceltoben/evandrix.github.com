@@ -1,0 +1,15 @@
+Example code from the DevWorld 2010 Pre-Conference Cocoa Workshop
+
+I have split each example up into separate branches:
+
+- FirstCmdLine
+  A very simple command line application.
+- Contacts
+  Simple contacts app.
+- ContactsApp
+  The same contacts app, ported to iOS.
+- Touch
+  Demonstration that logs touch events to the console.
+- Graphics
+  Demonstration of graphics and mouse events.
+  

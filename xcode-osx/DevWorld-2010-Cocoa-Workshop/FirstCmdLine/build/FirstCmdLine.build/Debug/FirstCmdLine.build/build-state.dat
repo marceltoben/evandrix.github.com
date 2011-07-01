@@ -1,0 +1,143 @@
+TFirstCmdLine
+v7
+r0
+t331165379.460342
+cCheck dependencies
+cDistributed-CompileC build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/FirstCmdLine.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/Person.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/PeopleModel.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/FirstCmdLine normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004E0C1E2F00000000000000EE
+t1309417007
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC401D100000000000013E6
+t1287913937
+s5094
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004DDDB0010000000000B38DD0
+t1306374145
+s11767248
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine.m
+c000000004E0A70D40000000000000357
+t1309307092
+s855
+i<Foundation/Foundation.h>
+i"Person.h"
+i"PeopleModel.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine_Prefix.pch
+c000000004E0A70D400000000000000A6
+t1309307092
+s166
+i<Foundation/Foundation.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.h
+c000000004E0A70D40000000000000195
+t1309307092
+s405
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.m
+c000000004E0A70D40000000000000327
+t1309307092
+s807
+i"PeopleModel.h"
+i"Person.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.h
+c000000004E0A70D400000000000001F8
+t1309307092
+s504
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.m
+c000000004E0A70D40000000000000286
+t1309307092
+s646
+i"Person.h"
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/FirstCmdLine
+t1309472578
+s17120
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/FirstCmdLine.LinkFileList
+c000000004E0CF74000000000000001C1
+t1309472576
+s449
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/FirstCmdLine.o
+t1309472578
+s10004
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/PeopleModel.o
+t1309472578
+s12652
+
+N/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/Person.o
+t1309472578
+s13108
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331165379#331165379#0(0"0(0#1#0"8604478016#0"0#
+
+CDistributed-CompileC build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/FirstCmdLine.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165376.842173
+e331165378.402289
+r1
+xDistributed-CompileC
+xbuild/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/FirstCmdLine.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@105"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine.m331165376#331165378#0(0"0(0#0#79"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine.m3414973617650413056#1984"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/FirstCmdLine.o0#
+
+CDistributed-CompileC build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/PeopleModel.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165376.858216
+e331165378.353062
+r1
+xDistributed-CompileC
+xbuild/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/PeopleModel.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@104"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.m331165376#331165378#0(0"0(0#0#78"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.m8603999136#1982"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/PeopleModel.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/PeopleModel.o0#
+
+CDistributed-CompileC build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/Person.o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331165376.852863
+e331165378.405573
+r1
+xDistributed-CompileC
+xbuild/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/Person.o
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@99"Distribute compilation of /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.m331165376#331165378#0(0"0(0#0#73"/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.m8604466144#1972"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-generated-files.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-own-target-headers.hmap -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-all-target-headers.hmap -iquote /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/FirstCmdLine-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/include -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/DerivedSources -include /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/FirstCmdLine_Prefix.pch -c /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/Person.m -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/Person.o0#
+
+CLd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/FirstCmdLine normal x86_64
+s331165378.405699
+e331165378.445234
+r1
+xLd
+x/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/FirstCmdLine
+xnormal
+xx86_64
+lSLF07#2@94"Link /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/FirstCmdLine331165378#331165378#0(0"0(0#0#0"8604384192#670"    cd /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug -F/Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug -filelist /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/FirstCmdLine.build/Debug/FirstCmdLine.build/Objects-normal/x86_64/FirstCmdLine.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/lwy08/Downloads/DevWorld-2010-Cocoa-Workshop/FirstCmdLine/build/Debug/FirstCmdLine0#
+

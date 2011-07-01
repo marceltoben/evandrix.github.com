@@ -1,0 +1,56 @@
+TTouch
+v7
+r1
+cCheck dependencies
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+c000000004E0A70D60000000000002636
+t1309307094
+s9782
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+c000000004E0A70D60000000000001A3D
+t1309307094
+s6717
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Info.plist
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Resources/MainWindow.nib
+t2
+s0
+
+N/Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Resources/TouchViewController.nib
+t2
+s0
+
+NTouch-Info.plist
+c000000004E0A70D6000000000000038D
+t1309307094
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331172103#331172103#0(66"[BEROR]error: There is no SDK with the name or path 'iphoneos3.2'1(4@58"error: There is no SDK with the name or path 'iphoneos3.2'331172103#18446744073709551615#0#0(1@0"0(0#1#0"8247620834010738688#0"0#
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/MainWindow.xib
+r0
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/TouchViewController.xib
+r0
+
+CProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app/Contents/Info.plist Touch-Info.plist
+r0
+
+CTouch /Users/lwy08/Documents/evandrix.github.com/xcode-osx/DevWorld-2010-Cocoa-Workshop/Touch/build/Debug/Touch.app
+r0
+
