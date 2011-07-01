@@ -7,3 +7,6 @@
 [submodule "js/beautify"]
 	path = js/beautify
 	url = git://github.com/einars/js-beautify.git
+[submodule "xcode-osx/DevWorld-2010-Cocoa-Workshop"]
+	path = xcode-osx/DevWorld-2010-Cocoa-Workshop
+	url = git://github.com/jamesotron/DevWorld-2010-Cocoa-Workshop.git
