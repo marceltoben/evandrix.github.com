@@ -1,0 +1,64 @@
+#VERSION,2.05
+# $Id: nikto_report_csv.plugin 632 2011-02-19 02:49:31Z sullo $
+###############################################################################
+#  Copyright (C) 2007 CIRT, Inc.
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; version 2
+#  of the License only.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+###############################################################################
+# PURPOSE:
+# Reporting
+###############################################################################
+sub nikto_report_csv_init {
+    my $id = { name          => "report_csv",
+               full_name     => "CSV reports",
+               author        => "Deity",
+               description   => "Produces a CSV report.",
+               report_head   => \&csv_open,
+               report_item   => \&csv_item,
+               report_format => 'csv',
+               copyright     => "2008 CIRT Inc."
+               };
+    return $id;
+}
+
+sub csv_open {
+    my ($file) = @_;
+
+    # Open file and produce header
+    open(OUT, ">>$file") || die print STDERR "+ ERROR: Unable to open '$file' for write: $@\n";
+
+    # Write header
+    print OUT
+      "\"meta\",\"meta\",\"$VARIABLES{'name'}\",\"v$VARIABLES{'version'}/$VARIABLES{'core_version'}\"\n";
+    return OUT;
+}
+
+sub csv_item {
+    my ($handle, $mark, $item) = @_;
+    foreach my $uri (split(' ', $item->{'uri'})) {
+        my $line;
+        $line .= "\"$item->{'mark'}->{'hostname'}\",";
+        $line .= "\"$item->{'mark'}->{'port'}\",";
+        $line .= "\"";
+        if ($item->{'osvdb'})  { $line .= "OSVDB-$item->{'osvdb'}: " }
+        if ($item->{'method'}) { $line .= "$item->{'method'} " }
+        if ($uri)              { $line .= "${'uri'}: " }
+        $line .= $item->{'message'};
+        $line .= "\"";
+        print $handle "$line\n";
+    }
+}
+
+1;

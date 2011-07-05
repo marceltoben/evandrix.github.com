@@ -1,0 +1,206 @@
+#VERSION,2.03
+# $Id: nikto_single.plugin 632 2011-02-19 02:49:31Z sullo $
+###############################################################################
+#  Copyright (C) 2004 CIRT, Inc.
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; version 2
+#  of the License only.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+###############################################################################
+# PURPOSE:
+# Perform single request mode
+###############################################################################
+sub single {
+    LW2::http_init_request(\%request);
+    $width = 44;
+
+    # never ask for @SKIPS in questions
+    my @SKIPS = qw/normalize_incoming_headers lowercase_incoming_headers MAGIC http_eol/;
+
+    # set this to defaults so it will ask
+    $request{'whisker'}->{'force_close'}         = 1;
+    $request{'whisker'}->{'uri_user'}            = "";
+    $request{'whisker'}->{'uri_password'}        = "";
+    $request{'whisker'}->{'include_host_in_uri'} = 0;
+    $request{'whisker'}->{'retry'}               = 0;
+    $request{'User-Agent'} = "Mozilla/4.75 ($VARIABLES{'name'}/$VARIABLES{'version'}";
+
+#### Ask
+    print "-" x $width, "  Nikto $VARIABLES{'version'}\n";
+    print "-" x $width, "  Single Request Mode\n";
+
+    $request{'whisker'}{'host'}         = ask("Hostname or IP") || die print "Must specify host\n";
+    $request{'whisker'}{'port'}         = ask("Port (80)")      || 80;
+    $request{'whisker'}{'uri'}          = ask("URI (/)")        || "/";
+    $request{'whisker'}{'ssl'}          = ask("SSL (0)")        || $request{'whisker'}{'ssl'};
+    $request{'whisker'}->{'proxy_host'} = ask("Proxy host")     || "";
+    $request{'whisker'}->{'proxy_port'} = ask("Proxy port")     || "";
+    if ($request{'whisker'}->{'proxy_host'} ne "") {
+        my $id = ask("Proxy ID");
+        my $pw = ask("Proxy PW");
+        if (($id ne "") || ($pw ne "")) { LW2::auth_set("proxy-basic", \%request, $id, $pw); }
+    }
+    else {
+        delete $request{'whisker'}->{'proxy_host'};
+        delete $request{'whisker'}->{'proxy_port'};
+    }
+
+    $VARS{'html'} = ask("Show HTML Response (1)") || 1;
+    $request{'whisker'}{'version'} = ask("HTTP Version ($request{'whisker'}{'version'})")
+      || $request{'whisker'}{'version'};
+    $request{'whisker'}{'method'} = ask("HTTP Method ($request{'whisker'}{'method'})")
+      || $request{'whisker'}{'method'};
+
+    #$request{'Host'}                = ask("Virtual Host")                                   || "";
+    $request{'User-Agent'} = ask("User-Agent ($request{'User-Agent'})") || $request{'User-Agent'};
+    $request{'Connection'} = ask("Connection ($request{'Connection'})") || $request{'Connection'};
+    $request{'data'}       = ask("Data");
+    if ($request{'data'} ne "") {
+        $request{'Content-Length'} = length($request{'data'});
+        $request{'Content-Length'} = ask("Content-Length ($request{'Content-Length'})")
+          || $request{'Content-Length'};
+    }
+
+    # get request->whisker hash answers
+    foreach my $key (sort keys %{ $request{'whisker'} }) {
+
+        # already asked these
+        if ($key eq "whisker")                  { next; }
+        if ($key eq "host")                     { next; }
+        if ($key eq "port")                     { next; }
+        if ($key eq "uri")                      { next; }
+        if ($key eq "ssl")                      { next; }
+        if ($key eq "version")                  { next; }
+        if ($key eq "method")                   { next; }
+        if ($key eq "data")                     { next; }
+        if ($key eq "uri_param_sep")            { next; }
+        if ($key eq "trailing_slurp")           { next; }
+        if ($key eq "ignore_duplicate_headers") { next; }
+        if ($key eq "force_open")               { next; }
+        if ($key eq "proxy_host")               { next; }
+        if ($key eq "proxy_port")               { next; }
+
+        # skips
+        my $s = 0;
+        foreach my $skip (@SKIPS) {
+            if ($key eq $skip) { $s = 1; last; }
+        }
+        if ($s) { next; }
+
+        $request{'whisker'}{$key} = ask("$key ($request{'whisker'}{$key})")
+          || $request{'whisker'}{$key};
+    }
+
+    $request{'whisker'}->{'encode_anti_ids'} = ask("Enable Encoding (0)");
+    if ($request{'whisker'}->{'encode_anti_ids'} eq 1) {
+        print "
+\t1 Random URI encoding (non-UTF8)
+\t2 Directory self-reference (/./)
+\t3 Premature URL ending
+\t4 Prepend long random string
+\t5 Fake parameter
+\t6 TAB as request spacer
+\t7 Random case sensitivity
+\t8 Use Windows directory separator (\\)\n";
+
+        $request{'whisker'}{'encode_anti_ids'} = ask("Encoding Methods");
+        if ($request{'whisker'}{'encode_anti_ids'} eq "") {
+            delete($request{'whisker'}->{'encode_anti_ids'});
+        }
+    }
+    else {
+        delete($request{'whisker'}->{'encode_anti_ids'});
+    }
+
+    print "-" x $width, "  Done with questions\n";
+
+#### fixup
+    if ($request{'whisker'}{'ssl'}) { $request{'whisker'}->{'ssl_save_info'} = 1; }
+    if ($request{'whisker'}{'data'} eq "") {
+        delete $request{'whisker'}{'data'};
+        delete $request{'whisker'}{'Content-Length'};
+    }
+
+    if ($request{'whisker'}->{'uri_user'} eq "") { delete $request{'whisker'}->{'uri_user'}; }
+    if ($request{'whisker'}->{'uri_password'} eq "") {
+        delete $request{'whisker'}->{'uri_password'};
+    }
+    if ($request{'whisker'}->{'host'} eq "") { delete $request{'whisker'}->{'host'}; }
+
+    my ($hostname, $ip) = resolve($request{'whisker'}{'host'});
+    if ($ip eq "") { nprint("+ ERROR: could not resolve host name"); exit; }
+
+#### do request
+    LW2::http_reset();    # force-close any old connections
+    LW2::http_fixup_request(\%request);
+    LW2::http_do_request_timeout(\%request, \%result);
+
+#### print output
+    print "\tHost Name: $hostname\n";
+    print "\tHost IP: $ip\n";
+    print "\tHTTP Response Code: $result{'whisker'}->{'code'}\n";
+
+    print "-" x $width, "  Connection Details\n";
+    foreach my $item (sort keys %request) {
+        if ($item eq "whisker")       { next; }
+        if ($item eq "ssl_save_info") { next; }
+        print "\t$item: $request{$item}\n";
+    }
+    foreach my $item (sort keys %{ $request{'whisker'} }) {
+        if ($item eq "MAGIC")                      { next; }
+        if ($item eq "lowercase_incoming_headers") { next; }
+        if ($item eq "normalize_incoming_headers") { next; }
+        if ($item eq "stats_reqs")                 { next; }
+        if ($item eq "stats_syns")                 { next; }
+        if ($item eq "socket_state")               { next; }
+        if ($item eq "http_eol")                   { next; }
+        print "\t$item: $request{'whisker'}->{$item}\n";
+    }
+
+    print "-" x $width, "  Response Headers\n";
+
+    foreach my $item (sort keys %result) {
+        if ($item eq "whisker") { next; }
+        print "\t$item: $result{$item}\n";
+    }
+    foreach my $item (sort keys %{ $result{'whisker'} }) {
+        if ($item eq "data")                       { next; }
+        if ($item eq "MAGIC")                      { next; }
+        if ($item eq "header_order")               { next; }
+        if ($item eq "lowercase_incoming_headers") { next; }
+        if ($item eq "stats_reqs")                 { next; }
+        if ($item eq "stats_syns")                 { next; }
+        if ($item eq "socket_state")               { next; }
+        print "\t$item: $result{'whisker'}->{$item}\n";
+    }
+
+    if ($VARS{'html'}) {
+        print "-" x $width, "  Response Content\n";
+        print "$result{'whisker'}->{'data'}\n";
+    }
+
+    exit;
+}
+
+sub ask {
+    my $q = $_[0];
+    $q =~ s/\s$//;
+    print " " x ($width - length($q)), "$q: ";
+    my $input = <STDIN>;
+    chomp($input);
+    return $input;
+}
+
+sub nikto_single { }    # so core doesn't freak
+
+1;

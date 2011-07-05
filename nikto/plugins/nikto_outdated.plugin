@@ -1,0 +1,184 @@
+#VERSION,2.08
+# $Id: nikto_outdated.plugin 632 2011-02-19 02:49:31Z sullo $
+###############################################################################
+#  Copyright (C) 2006 CIRT, Inc.
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; version 2
+#  of the License only.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+###############################################################################
+# PURPOSE:
+# Check for outdated items in banner
+###############################################################################
+sub nikto_outdated_init {
+    my $id = { name        => "outdated",
+               full_name   => "Outdated",
+               author      => "Sullo",
+               description => "Checks to see whether the web server is the latest version.",
+               copyright   => "2008 CIRT Inc.",
+               hooks       => { scan => { method => \&nikto_outdated, }, },
+               };
+    return $id;
+}
+
+sub nikto_outdated {
+    return if $mark->{'terminate'};
+    my ($mark) = @_;
+
+    # populate @BUILDITEMS with appropriate values
+    # if Apache, split on space...
+    if ($mark->{'banner'} =~ /apache/i) {
+        foreach my $item (split(/ /, $mark->{'banner'})) {
+            $mark->{'components'}->{$item} = 1;
+        }
+    }
+    elsif ($mark->{'banner'} =~ /weblogic/i)    # strip all the date info...
+    {
+        my @T = split(/ /, $mark->{'banner'});
+        $mark->{'components'}->{ $T[0] . '\/' . $T[1] } = 1;
+    }
+    elsif ($mark->{'banner'} =~ /sitescope/i)    # strip all the date info...
+    {
+        my @T = split(/ /, $mark->{'banner'});
+        $mark->{'components'}->{ $T[0] } = 1;
+    }
+    else {
+        if ($mark->{'banner'} !~ /\s/)           # has no spaces
+        {
+            $MATCHSTRING = $mark->{'banner'};
+        }
+        elsif ($mark->{'banner'} =~ /\//)        # has spaces and / sepr
+        {
+            $MATCHSTRING = $mark->{'banner'};
+            $MATCHSTRING =~ s/\s+//g;
+        }
+        else                                     # must create  sepr
+        {
+
+            # use the last non 0-9 . a-z char as a sepr (' ', '-', '_' etc)
+            my $sepr = $mark->{'banner'};
+            $sepr =~ s/[a-zA-Z0-9\.\(\)]//gi;
+            $sepr = substr($sepr, (length($sepr) - 1), 1);
+
+            # $sepr=~ s/\s+/ /g;
+            # break up ID string on $sepr
+            my @T = split(/$sepr/, $mark->{'banner'});
+
+            # assume last is version...
+            for ($i = 0 ; $i < $#T ; $i++) { $MATCHSTRING .= "$T[$i] "; }
+        }
+        $MATCHSTRING =~ s/\s+$//;
+
+        $mark->{'components'}->{$MATCHSTRING} = 1;
+        nprint("Server Version String:$MATCHSTRING", "d");
+    }
+
+    my ($v, $V, $BI, $k) = "";
+
+    foreach $BI (keys %{ $mark->{'components'} }) {
+        my $have_match = 0;
+        foreach $V (sort keys %OVERS) {
+            next if $V eq '';
+            if ($BI =~ /^$V/i)    # software name matched
+            {
+                $have_match = 1;
+                foreach $k (keys %{ $OVERS{$V} }) {
+                    if ($k eq "")    { next; }
+                    if ($k eq "tid") { next; }
+                    $v = $k;
+                }
+                if (vereval($v, $BI, $V, $mark))    # version check
+                {
+                    my $msg = $OVERS{$V}{$v};
+                    $msg =~ s/\@RUNNING_VER/$BI/g;
+                    $msg =~ s/\@CURRENT_VER/$v/g;
+                    chomp($msg);
+                    add_vulnerability($mark, $msg, $OVERS{$V}{'tid'}, 0, "HEAD");
+                }
+            }
+        }
+        if (!$have_match) { $mark->{'components'}->{'$BI'} = 2; }
+    }
+    return;
+}
+
+sub vereval {
+
+    # split both by last char of @_[0], as it is the name to version separator
+    my $sepr = substr($_[2], (length($_[2]) - 1), 1);
+    nprint("nikto_outdated.plugin: verstring: $_[2], sepr:$sepr", "d");
+
+    my $CURRENT      = lc($_[0]);
+    my $RUNNING      = lc($_[1]);
+    my $CURRENT_ORIG = $CURRENT;
+    my $RUNNING_ORIG = $RUNNING;
+    my $mark         = $_[3];
+
+    nprint("nikto_outdated.plugin: \$CURRENT:$CURRENT:\$RUNNING:$RUNNING:", "d");
+
+    my @T = split(/$sepr/, $CURRENT);
+    $CURRENT = $T[$#T];                    # should be version...
+    @T       = split(/$sepr/, $RUNNING);
+    $RUNNING = $T[$#T];                    # should be version...
+
+    # convert alphas to numerics so we can do a real comparison
+    $CURRENT =~ s/([^0-9\.]){1}/"." . ord($1) . "."/eg;
+    $RUNNING =~ s/([^0-9\.]){1}/"." . ord($1) . "."/eg;
+    $RUNNING =~ s/\.+/\./g;
+    $CURRENT =~ s/\.+/\./g;
+    $RUNNING =~ s/^\.//;
+    $CURRENT =~ s/^\.//;
+    $RUNNING =~ s/\.$//;
+    $CURRENT =~ s/\.$//;
+
+    nprint("nikto_outdated.plugin: \$CURRENT:$CURRENT:\$RUNNING:$RUNNING\: (after numberifcation)",
+           "d");
+
+    if (($CURRENT !~ /[a-z]/) && ($RUNNING !~ /[a-z]/)) {
+        @CUR = split(/\./, $CURRENT);
+        @RUN = split(/\./, $RUNNING);
+    }
+    else {
+        @CUR = split(//, $CURRENT);
+        @RUN = split(//, $RUNNING);
+    }
+
+    # Check to see whether the arrays both have the same length
+    if (scalar(@RUN) != scalar(@CUR)) {
+        add_vulnerability(
+            $mark,
+            "Number of sections in the version string differ from those in the database, the server reports: $RUNNING_ORIG while the database has: $CURRENT. This may cause false positives.",
+            699999,
+            0,
+            "HEAD"
+            );
+    }
+
+    # start with 0... eval each in turn...
+    for (my $i = 0 ; $i <= $#CUR ; $i++) {
+        nprint("nikto_outdated.plugin: major compare: \$CUR[$i]:$CUR[$i]: \$RUN[$i]:$RUN[$i]:",
+               "d");
+        if ($CUR[$i] > $RUN[$i]) { return 1; }    # running is older
+        if (($CUR[$i] ne "") && ($RUN[$i] eq "")) { return 1; }    # running is older
+        if ($CUR[$i] < $RUN[$i])                                   # running is newer
+        {
+            my $string = $_[1];
+            $string =~ s/\s/\%20/g;
+            $mark->{'components'}->{$string} = 2;
+            return 0;
+        }
+    }
+    return 0;    # running is the same version if we make it here
+}
+
+1;

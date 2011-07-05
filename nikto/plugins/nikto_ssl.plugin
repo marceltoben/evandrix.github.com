@@ -1,0 +1,48 @@
+#VERSION,2.00
+# $Id: nikto_ssl.plugin 632 2011-02-19 02:49:31Z sullo $
+###############################################################################
+#  Copyright (C) 2010 CIRT, Inc.
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; version 2
+#  of the License only.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+###############################################################################
+# PURPOSE:
+# Test certificate information
+###############################################################################
+sub nikto_ssl_init {
+    my $id = { name        => "ssl",
+               full_name   => "SSL and cert checks",
+               author      => "Sullo",
+               description => "Perform checks on SSL/Certificates",
+               hooks       => { scan => { method => \&nikto_ssl, } },
+               copyright   => "2010 CIRT Inc."
+               };
+    return $id;
+}
+
+sub nikto_ssl {
+    my ($mark) = @_;
+
+    if ($mark->{ssl}) {
+        $mark->{'ssl_cert_subject'} =~ /CN=([^$\/ ]+)/;
+        my $cn_name = $1;
+        if (($mark->{'hostname'} ne $cn_name) && ($cn_name ne '')) {
+            add_vulnerability($mark,
+                        "Hostname '$mark->{'hostname'}' does not match certificate's CN '$cn_name'",
+                        999992, 0);
+        }
+    }
+}
+
+1;

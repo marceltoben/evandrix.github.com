@@ -1,0 +1,75 @@
+#VERSION,2.06
+# $Id: nikto_embedded.plugin 632 2011-02-19 02:49:31Z sullo $
+###############################################################################
+#  Copyright (C) 2006 CIRT, Inc.
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; version 2
+#  of the License only.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+###############################################################################
+# PURPOSE:
+# Various messages relating to the server banner
+###############################################################################
+# NOTES:
+# versions are loaded from the "db_server_msgs" file, which should be in the
+# plugins directory this plugin checks the server version to see if there are
+# any version specific items in the4 db_server_msgs this differs from
+# nikto_outdated because that is ONLY checking to see if it is an old version,
+# whereas this checks to see if the versions match
+###############################################################################
+sub nikto_embedded_init {
+    my $id = { name        => "embedded",
+               full_name   => "Embedded Detection",
+               author      => "Deity",
+               description => "Checks to see whether the host is an embedded server.",
+               hooks       => { scan => { method => \&nikto_embedded, }, },
+               copyright   => "2009 CIRT Inc."
+               };
+    return $id;
+}
+
+sub nikto_embedded {
+    return if $mark->{'terminate'};
+    my ($mark) = @_;
+    my $dbarray;
+    $dbarray = init_db("db_embedded");
+
+    foreach my $item (@$dbarray) {
+        return if $mark->{'terminate'};
+        (my $res, $content) =
+          nfetch($mark, $item->{'uri'}, "GET", "", "", "", "embedded detection");
+        if ($res eq "200") {
+            $item->{'match'} = validate_and_fix_regex($item->{'match'});
+            my @lines = split(/\n/, $content);
+            foreach my $line (@lines) {
+
+                # Check for the matches and pull out information
+                if ($line =~ /$item->{'match'}/) {
+
+                    # Now pull out the make
+                    my $model = $line;
+                    $model =~ s/$item->{'match'}/$item->{'model'}/ee;
+                    $model =~ s/\+/ /g;
+
+                    if ($model ne "") {
+                        add_vulnerability($mark, "$item->{'message'} $model",
+                                          $item->{'nikto_id'}, 0, "GET", $item->{'uri'});
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+1;

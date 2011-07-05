@@ -1,0 +1,1 @@
+To enable SSL support: `sudo port install p5-net-ssleay`
