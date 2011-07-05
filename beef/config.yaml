@@ -1,0 +1,70 @@
+#
+#   Copyright 2011 Wade Alcorn wade@bindshell.net
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+# BeEF Configuration file
+beef:
+    version: '0.4.2.7-alpha'
+    debug: false
+
+    restrictions:
+        # subnet of browser ip addresses that can hook to the framework 
+        permitted_hooking_subnet: "0.0.0.0/0"
+        # subnet of browser ip addresses that can connect to the UI 
+        # permitted_ui_subnet = "127.0.0.1/32"
+        permitted_ui_subnet: "0.0.0.0/0"
+    
+    http:
+        host: "0.0.0.0"
+        port: "3000"
+        # if running behind a nat set the public ip address here
+        #public: ""
+        dns: "localhost"
+        demo_path: "/demos/basic.html"
+        panel_path: "/ui/panel"
+        hook_file: "/hook.js"
+        hook_session_name: "BEEFHOOK"
+        session_cookie_name: "BEEFSESSION"
+
+    database:
+        #supported DBs: sqlite, mysql
+        
+        default: "sqlite"
+        # MySQL Notes:
+        #   Your system will require MySQL, MySQL-Server, MySQL-Devel and Ruby's MySQL libraries installed
+        #   You will also need to "sudo gem install dm-mysql-adapter"
+        #
+        #   please note that the db should exists. Schema will be created automatically.
+        #   mysql> create database beef;
+        #   mysql> grant all privileges on beef.* to 'beef'@'localhost' identified by 'beef123';
+        
+        mysql:
+          db_host: "localhost"
+          db_name: "beef"
+          db_user: "beef"
+          db_passwd: "beef123"
+
+        sqlite:
+          db_name: "beef.db"
+
+    crypto_default_value_length: 80
+
+    # You may override default extension configuration parameters here
+    extension:
+        requester:
+            enable: true 
+        proxy:
+            enable: true 
+        metasploit:
+            enable: true
