@@ -20,6 +20,15 @@
 ### Javascript > Beautifying & Deobfuscation
  * [JSBeautifier](http://jsbeautifier.org/)
 
+### Javascript > Documentation
+ * [Mozilla Developer Network](https://developer.mozilla.org/en/javascript)
+ * [jQuery API](http://jqapi.com)
+ * [JS Fiddle](http://jsfiddle.net)
+ * [Eloquent JS](http://eloquentjavascript.net)
+ * [Douglas Crockford's JavaScript Videos](http://www.yuiblog.com/crockford)
+ * [How To Node](http://howtonode.org)
+ * [DailyJS](http://dailyjs.com)
+
 ### Python > Scraping
  * [Scrapy](http://scrapy.org)
 
