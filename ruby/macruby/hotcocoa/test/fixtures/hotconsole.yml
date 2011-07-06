@@ -1,0 +1,9 @@
+name: HotConsole
+load: lib/application.rb
+version: "1.0"
+icon: resources/HotConsole.icns
+resources:
+  - resources/**/*.*
+sources:
+  - lib/**/*.rb
+signature: girb
