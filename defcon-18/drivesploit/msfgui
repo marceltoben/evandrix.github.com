@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $Id$
+#
+# Graphical user interface written in Java with rpc.
+#
+# $Revision$
+#
+
+java -jar `dirname $0`/data/gui/msfgui.jar
+

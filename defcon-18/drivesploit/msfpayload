@@ -1,0 +1,158 @@
+#!/usr/bin/env ruby
+#
+# $Id$
+# $Revision$
+#
+
+msfbase = __FILE__
+while File.symlink?(msfbase)
+	msfbase = File.expand_path(File.readlink(msfbase), File.dirname(msfbase))
+end
+
+$:.unshift(File.join(File.dirname(msfbase), 'lib'))
+$:.unshift(ENV['MSF_LOCAL_LIB']) if ENV['MSF_LOCAL_LIB']
+
+require 'rex'
+require 'msf/ui'
+require 'msf/base'
+
+#
+# Dump the list of payloads
+#
+def dump_payloads
+	tbl = Rex::Ui::Text::Table.new(
+		'Indent'  => 4,
+		'Header'  => "Framework Payloads (#{$framework.stats.num_payloads} total)",
+		'Columns' =>
+			[
+				"Name",
+				"Description"
+			])
+
+	$framework.payloads.each_module { |name, mod|
+		tbl << [ name, mod.new.description ]
+	}
+
+	"\n" + tbl.to_s + "\n"
+end
+
+# Initialize the simplified framework instance.
+$framework = Msf::Simple::Framework.create(
+	:module_types => [ Msf::MODULE_PAYLOAD, Msf::MODULE_ENCODER, Msf::MODULE_NOP ]
+)
+
+
+if (ARGV.length <= 1)
+	puts "\n" + "    Usage: #{$0} <payload> [var=val] <[S]ummary|C|[P]erl|Rub[y]|[R]aw|[J]avascript|e[X]ecutable|[V]BA|[W]ar>\n"
+	puts dump_payloads
+	exit
+end
+
+# Get the payload name we'll be using
+payload_name = ARGV.shift
+
+# Process special var/val pairs...
+Msf::Ui::Common.process_cli_arguments($framework, ARGV)
+
+# Create the payload instance
+payload = $framework.payloads.create(payload_name)
+
+if (payload == nil)
+	puts "Invalid payload: #{payload_name}"
+	exit
+end
+
+# Evalulate the command
+cmd = ARGV.pop.downcase
+
+# Populate the framework datastore
+options = ARGV.join(',')
+
+if (cmd =~ /^(p|y|r|c|j|x|b|v|w)/)
+	fmt = 'perl' if (cmd =~ /^p/)
+	fmt = 'ruby' if (cmd =~ /^y/)
+	fmt = 'raw' if (cmd =~ /^(r|x)/)
+	fmt = 'raw' if (cmd =~ /^v/)
+	fmt = 'c' if (cmd == 'c')
+	fmt = 'js_be' if (cmd =~ /^j/ and Rex::Arch.endian(payload.arch) == ENDIAN_BIG)
+	fmt = 'js_le' if (cmd =~ /^j/ and ! fmt)
+	fmt = 'java'  if (cmd =~ /^b/)
+	fmt = 'raw' if (cmd =~ /^w/)
+	enc = options['ENCODER']
+
+	begin
+		buf = payload.generate_simple(
+				'Format'    => fmt,
+				'OptionStr' => options,
+				'Encoder'   => enc)
+	rescue
+		puts "Error generating payload: #{$!}"
+		exit
+	end
+
+	$stdout.binmode
+
+	if (cmd =~ /^x/)
+		note =
+			"Created by msfpayload (http://www.metasploit.com).\n" +
+			"Payload: " + payload.refname + "\n" +
+			" Length: " + buf.length.to_s + "\n" +
+			"Options: " + options + "\n"
+
+		arch = payload.arch
+		plat = payload.platform.platforms
+
+		exe  = Msf::Util::EXE.to_executable($framework, arch, plat, buf)
+
+		if(exe)
+			$stderr.puts(note)
+			$stdout.write(exe)
+			exit(0)
+		end
+
+		$stderr.puts "No executable format support for this arch/platform"
+		exit(-1)
+	end
+
+	if(cmd =~ /^v/)
+		exe = Msf::Util::EXE.to_win32pe($framework, buf)
+		note =
+			"'Created by msfpayload (http://www.metasploit.com).\r\n" +
+			"'Payload: " + payload.refname + "\r\n" +
+			"' Length: " + buf.length.to_s + "\r\n" +
+			"'Options: " + options + "\r\n"
+
+		vba = note + "\r\n" + Msf::Util::EXE.to_exe_vba(exe)
+		$stdout.write(vba)
+		exit(0)
+	end
+
+	if(cmd =~ /^w/)
+		note =
+			"Created by msfpayload (http://www.metasploit.com).\n" +
+			"Payload: " + payload.refname + "\n" +
+			" Length: " + buf.length.to_s + "\n" +
+			"Options: " + options + "\n"
+
+		arch = payload.arch
+		plat = payload.platform.platforms
+
+		exe  = Msf::Util::EXE.to_jsp_war($framework, arch, plat, buf)
+
+
+		if(exe)
+			$stderr.puts(note)
+			$stdout.write(exe)
+			exit(0)
+		end
+
+		$stderr.puts "No executable format support for this arch/platform"
+		exit(-1)
+	end
+
+	$stdout.puts(buf)
+
+elsif (cmd =~ /^(s|o)/)
+	payload.datastore.import_options_from_s(ARGV.join('_|_'), '_|_')
+	puts Msf::Serializer::ReadableText.dump_module(payload)
+end
