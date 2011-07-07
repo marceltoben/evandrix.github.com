@@ -1,0 +1,14 @@
+;Extra credit
+Make sure it does not have overflow bugs.
+
+The line in the pseudocode above to calculate the mean of two integers:
+<pre>mid = (low + high) / 2</pre>
+could produce the wrong result in some programming languages when used with a bounded integer type, if the addition causes an overflow. (This can occur if the array size is greater than half the maximum integer value.) If signed integers are used, and <code>low + high</code> overflows, it becomes a negative number, and dividing by 2 will still result in a negative number. Indexing an array with a negative number could produce an out-of-bounds exception, or other undefined behaviour. If unsigned integers are used, an overflow will result in losing the largest bit, which will produce the wrong result.
+
+One way to fix it is to manually add half the range to the low number:
+<pre>mid = low + (high - low) / 2</pre>
+Even though this is mathematically equivalent to the above, it is not susceptible to overflow.
+
+Another way for signed integers, possibly faster, is the following:
+<pre>mid = (low + high) >>> 1</pre>
+where <code> >>> </code> is the logical right shift operator. The reason why this works is that, for signed integers, even though it overflows, when viewed as an unsigned number, the value is still the correct sum. To divide an unsigned number by 2, simply do a logical right shift to the right.
