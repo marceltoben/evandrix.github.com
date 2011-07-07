@@ -1,0 +1,513 @@
+<!DOCTYPE chapter SYSTEM "../resources/plainbook/plainbook.dtd" >
+<chapter title="Cucumber feature files" id="chp_feature_files">
+  <p>In this chapter, we look at the structure of a Cucumber feature file. You will learn:</p>
+  <ul>
+    <li>The elements of feature files</li>
+    <li>How to write some basic scenarios so that Cucumber can understand them</li>
+    <li>What makes a good feature file</li>
+  </ul>
+<section id="sec_cucumber_jargon" title="Cucumber jargon">
+        <p>We all know that Ninjas all speak Japanese fluently, but this book is in English. To ensure that nobody gets killed by mistake by
+        saying a wrong word, here are some of the basic phrases that you need to memorise:</p>
+        <section title="Stakeholder">
+            <p>
+                A <define>stakeholder</define> is a person who gets some value out of the system. Typical stakeholders are
+                representative of groups of users, for example a trader or an administrator. Some teams describe
+                stakeholders with user personae
+                (explained in <i>User Stories Applied</i><bib ref="cohn:userstory"/>). Personae are particularly useful
+                for web-based projects as they encourage you to think about how a typical user is likely to interact with
+                the system &ndash; for example, to look at a monitor in despair.
+            </p>
+        </section>
+        <section title="Feature">
+            <p>
+                A
+                <define>feature</define> 
+                is a piece of system functionality that delivers value to one or more stakeholders. Executable
+                specifications work best when described from the perspective of stakeholders, not software developers,
+ since this enables business users to understand them better and engage more in
+                discussions about what makes a particular feature complete.
+            </p>
+            <p>Features are normally vertical
+                functional slices of the system, for example credit card processing. Horizontal infrastructural
+                slices, for example database caching, are not good as features. They do not deliver value
+                directly to any stakeholders. Stakeholders will not be able to engage properly in specifying the
+                acceptance
+                criteria for such functionality, pretty much defeating the point of specification by example.
+            </p>
+        </section>
+        <section title="User story">
+            <p>
+                A
+                <define>user story</define>
+                is a rough description of scope for future work, used as a planning tool. Stories are vertical
+                slices of system functionality that are deliverable independently. Each story should specify the
+                value it brings to one or more stakeholders, the stakeholders that care about the story
+                and the scope of the intended work. A common format for the stories is:
+            </p>
+
+            <quote>
+                In order to..., As a ..., I want ...
+            </quote>
+            <p>
+                There are alternative formats, such as:
+            </p>
+            <quote>As a ..., I want..., So that...</quote>
+            <p>Many a ninja has died in the futile format wars and some silly shoguns will try to convince you that 
+one way of telling stories is significantly better than the other one. Ninja cucumber disagrees! For the purposes of
+ this document all the formats are equivalent and we won't enter into a discussion
+                on which one is better.
+            </p>
+            <p>
+                Stories often impact several features &ndash; a payment story might have an impact on card
+                processing, fraud control and back-office reporting. Stories are often
+                relatively small chunks of work, helping developers to deliver new functionality frequently. A single feature might be delivered through a large number of
+                stories.
+            </p>
+            <note title="Stories are more than just the format">
+                <p>
+                    Many junior ninjas confuse stories with the cards that they are written on. Here is an example of a good user story:
+                </p>
+                <quote>In order to reduce fraud, as a financial controller I want the system to automatically
+                    send Chuck Norris to beat up suspected fraudsters.
+                </quote>
+                <p>This story clearly states who cares about some functionality, why it is important and what it delivers. This provides
+                    enough
+                    information for a meaningful discussion on the specifications when the time comes to implement it.
+                    Here is
+                    an example of a bad user story:
+                </p>
+                <quote>As a trader I want to enter a trade because I want to trade</quote>
+                <p>Although this story obeys the form, it is too broad, too generic and it does not state a clear
+                    benefit.
+                    It would be much better to specify a full flow of activities that provides
+                    some end-to-end value to a stakeholder. We would normally look for thin slices of functionality, for
+                    example
+                    not supporting all possible trade types or trade workflows from the start but only one type. In this
+                    way,
+                    once a story is delivered some stakeholders can actually start getting the value from it.
+                </p>
+            </note>
+        </section>
+        <section title="Feature file">
+            <p>A
+                <define>feature file</define>
+                describes a feature or a part of a feature with representative examples of expected outcomes. Cucumber
+                uses these files to validate some system functionality against its specifications. Feature files are
+                plain-text files, ideally stored in the same version control system as the related project.
+            </p>
+            <p>Here is an example of a Cucumber feature file:</p>
+            <code file="ruby/NinjaSurvivalRate/features/ninja_survival_rate.feature"/>
+            <p>Later in this chapter we cover how Cucumber interprets this file.</p>
+        </section>
+        <section title="Key examples">
+            <p>
+                Each feature should be illustrated with
+                <define>key examples</define>. The examples show the expected outcomes in specific representative
+                cases with very precise
+                information. This makes it absolutely clear what the system is expected to do and helps to avoid
+                any misunderstanding and ambiguity. It also makes it possible for an automation tool, such as
+                Cucumber, to check whether the system works according to the specification.
+            </p>
+        </section>
+        <section title="Scenario">
+            <p>
+                A
+                <define>scenario</define>
+                captures one key example for a feature in the feature file. It represents a way that the system
+                delivers some value to a stakeholder. Scenarios are units of specifications for Cucumber. They
+                allow us to chop up feature functionality like sushi, into chunks that can be separately consumed. 
+                Examples of good scenarios for credit card processing might be successful
+                transaction authorisation, transaction failure due to lack of funds, transaction failure due to
+                wrong verification code and so on.
+            </p>
+        </section>
+        <section title="Step">
+            <p>
+                <define>Steps</define>
+                are domain language phrases that we can combine to write scenarios. They can refer to the context
+                of a scenario, an action that the scenario describes, or a way to validate the action. The steps that
+                define the context of a scenario generally begin with the
+                <define>Given</define>
+                keyword, for example:
+                <quote>Given the ninja has a third-level black belt</quote>
+             
+The steps that define an action generally begin with the
+                <define>When</define>
+                keyword, for example:
+                <quote>When attacked by a samurai</quote>
+                The steps that define an expected outcome generally start with the
+                <define>Then</define>
+                keyword, for example:
+                <quote>Then the ninja should engage the opponent</quote>              
+            </p>
+        </section>
+        <section title="Step definitions">
+            <p>
+                <define>Step definitions</define>
+                are reusable automation components that execute individual steps. They tell Cucumber what to do when
+                interpreting a particular step (see <link ref="img_cuke_steps"/>). Programmers or automation specialists
+                write step definitions where necessary when implementing scenarios to validate that they work correctly.
+                Once a step definition is implemented, the step can be reused in other scenarios. We cover how to write
+                step definitions in Ruby, .NET and Java in the following chapters.
+            </p>
+        </section>
+        <img src="cuke-steps.png" title="Cucumber step definitions automate validation" id="img_cuke_steps"/>
+        <section title="Gherkin">
+            <p>
+                <define>Gherkin</define>
+                is the language for describing Cucumber feature files. It is also the name of a separate piece of
+                software that interprets that language.
+            </p>
+            <p>Gherkin the language defines the structure of a feature
+                file and the keywords that can be used to describe features. 
+                Gherkin the software parses files for Cucumber and related projects, such as
+                Specflow.<footnote>
+                    <url link="http://specflow.org"/> is a native .NET implementation
+                of a Gherkin-compliant automation tool
+                </footnote>
+                You can use it to implement your own version
+                of Cucumber for a platform that is not currently supported, if you can find one.
+            </p>
+        </section>
+    </section>
+
+<section title="How Cucumber interprets feature files" id="sec_file_interpret">
+	<p>
+		Let's look into how Cucumber interprets files. Here is the previous
+		example again, with italics added to point out the keywords (Cucumber files are normally just
+		plain text):
+	</p>
+<code>
+<i>Feature:</i>	Fight or flight
+  In order to increase the ninja survival rate,
+  As a ninja commander
+  I want my ninjas to decide whether to take on an 
+  opponent based on their skill levels
+ 
+<i>Scenario:</i> Weaker opponent
+    <i>Given</i> the ninja has a third level black-belt 
+    <i>When</i> attacked by a samurai
+    <i>Then</i> the ninja should engage the opponent
+
+ 
+<i>Scenario:</i> Stronger opponent
+    <i>Given</i> the ninja has a third level black-belt 
+    <i>When </i> attacked by Chuck Norris
+    <i>Then </i> the ninja should run for his life 
+</code>
+	    <p>Each feature file starts with the
+			<code>Feature</code> keyword (if in English, we'll deal with other languages later). The keyword is followed by a colon and the feature title. In this case, the feature title is: 
+			    <quote>Fight or flight</quote>
+			The title of a feature should help a reader understand what the file is about. 
+			<note>
+			A good technique for deciding on
+			a title is to think about what you would type into Google to search for this file if it were online.
+			</note>
+			</p>
+			<p>
+				The paragraph that follows the feature title is free-form text that describes the 
+				purpose of the feature. In this case, the feature description is:
+				<quote> In order to increase the ninja survival rate, as a ninja commander I want my ninjas to
+					decide whether to take on an opponent based on their skill levels</quote>
+This paragraph should provide the context to enable the reader to understand the rest of
+				the file. 
+			To describe a feature, name the stakeholder, the benefit and
+				the intended solution. 	
+</p>
+<p>
+Describing features in the user-story format is a common practice, although they do not
+				necessarily map directly onto user stories. A description in the user-story format also helps people decide later whether a new scenario
+				belongs to a particular feature file or not. 
+			<note>
+			A good strategy for describing a feature is to
+				write the scenarios first, then summarise them and explain them to someone who hasn't seen them before.
+				Capture the explanation you used and put it into the Feature paragraph the file. This will ensure that the
+				feature file is self-explanatory.
+			</note>
+			</p>
+			<p>
+				One or more scenarios follow the introductory paragraph, each starting with the
+				<code>Scenario</code>
+				keyword, followed by a colon and a scenario title on the first line. In this example, the
+				scenarios are:
+				<quote>Weaker opponent</quote>
+				and
+				<quote>Stronger opponent</quote>
+				The title of a scenario should provide the context to enable the reader to understand the key example described by
+				the scenario. A good strategy to use when deciding on a scenario title is to try to summarise the purpose of
+				an example covered by the scenario to another person, and capture the phrase you used to explain
+				it.
+			</p>
+			<p>
+				Each scenario is described with one or more steps. In this example, the steps of the second
+				scenario are:<quote><p>Given the ninja has a third-level black belt</p> 
+				    <p>When attacked by Chuck Norris</p>
+				    <p>Then the ninja should run for his life</p>
+			    </quote>
+		    </p>
+	<note title="Feature files are your katanas">
+		<p>Ninja always knows where his katana is. You should know the same for your feature files. 
+		      They form living documentation for a software system. They allow developers to
+			understand what needs to be implemented, testers to understand what is being automatically
+			checked and business users and support staff to quickly discover exactly what the system does.
+			They are not just test scripts. Feature files should be kept safe and secure as much as the
+			system code. When the code is branched, tagged or merged, these specifications should follow. The
+			easiest way to do this is to keep them in the same version control system as the code.</p>
+	</note>
+    </section>
+    <section id="sec_good_feature_file" title="What makes a good feature file">
+	<p>
+		The long term benefit of using Cucumber comes from living documentation, a source of information
+		on system functionality that is easily accessible to everyone and always current. To achieve that,
+		a feature file should be:
+	</p>
+	    <ul>
+		    <li>Easy to understand</li>
+		    <li>Consistent</li>
+		    <li>Easy to access</li>
+	    </ul>
+		<p>To serve as a target for development that prevents misunderstanding and ambiguity, scenarios
+		in a feature file should be:</p>   
+	    <ul>    
+		    <li>Precise and testable</li>
+		    <li>Specifications, not scripts</li>
+		    <li>About business functionality, not about software design</li>
+	    </ul>
+	    <p>Once a feature is implemented, the related file becomes a living document for the feature. 
+	    To allow the software to evolve and provide functional regression checks, the scenarios should be:</p>
+	    <ul>
+		    <li>Self-explanatory</li>
+		    <li>Focused</li>
+		    <li>In domain language</li>
+	    </ul>
+		<p>Write your feature files as if they will be read by an angry Chuck Norris looking for an excuse to beat you up
+		if they are hard to understand. Think about them as documentation that will be read much more than it
+		will be changed. Consider that other people will need to read and understand it months or years
+		after you write it. Here are some things to watch out for:</p>
+		<ul>
+			<li>Very long files or scenarios: these are hard to understand, so break them apart or try to
+				describe the feature from a higher level of abstraction</li>
+			<li>Technical automation concepts: these belong in step definitions (code), not scenarios
+				(human-readable text). Mixing the two makes the scenarios harder to understand and change.</li>
+			<li>Generic values in examples: For example &lsquo;Given a card with a valid number&rsquo; where
+				valid is not precisely defined somewhere else, or &lsquo;Then the system should work
+				correctly&rsquo;. Generic values can be ambiguous and cause misunderstanding. Examples should be
+				realistic and very precise. Use an example of a valid number (and specify another scenario that
+				illustrates an invalid number). Define what &lsquo;correctly&rsquo; means by illustrating it with
+				the precise output.</li>
+			<li>Inconsistent language: As the project evolves, the domain language might change. Cucumber
+				feature files are your documentation, update them to be consistent with the updated language or people
+				won't be able to understand them later.</li>
+			<li>Several actions or mixed validations and actions: although a scenario that checks several
+				cases makes a perfectly good regression check, it is really hard to understand. Each scenario
+				should be independent, focused on a single example and perform a single action. That will make them
+				easier to understand later. It also enables developers and testers to get quick
+				feedback from individual checks.</li>
+			<li>Generic feature explanations or titles of features and scenarios that do not explain the
+				content of the file completely. Feature files should be self-explanatory. A good litmus test for
+				this is to show the feature file to someone who hasn't seen it and ask them to explain it back to
+				you. If their understanding of it differs from yours, then the descriptions are wrong.</li>
+		</ul>
+    </section>	
+	<section id="sec_collaborative_feature_files" title="Feature files should be written collaboratively">
+		<p>Many beginners fail with specification by example by expecting the business analysts or business users
+		to write feature files on their own. You can see people often complaining how Cucumber doesn't work for them because
+		their business analysts don't want to write feature files. This is a huge misunderstanding of the process
+		and you should avoid having them write the files on their own, even if they are willing. Feature files should be 
+		a universally accepted definition of what makes a particular story complete, from all the perspectives.		
+		That is why they need to be specified and written collaboratively. Everyone should contribute. 
+		A good feature file contains the following key examples:
+		</p>
+			<ul>
+				<li>A representative example illustrating each important aspect of business functionality. Business
+					users, analysts or customers will typically define these.</li>
+				<li>An example illustrating each important technical edge case, such as
+					technical boundary conditions.
+					Developers will typically suggest such examples when they are concerned about functional gaps
+					or inconsistencies. Business users, analysts or customers will
+					define the correct expected behaviour.</li>
+				<li>An example illustrating each particularly troublesome area of the expected implementation,					
+					such as cases that caused bugs in the past and boundary conditions that might not be explicitly
+					illustrated by previous examples. Testers will typically suggest these and business
+					users, analysts or customers will define the correct behaviour.</li>
+			</ul>
+		</section>
+        <section id="sec_structuring_scenarios" title="Structuring scenarios">
+		<p>
+			Although there is no syntax check to prevent misuse, the steps in a scenario should follow the
+			<define>Given-When-Then</define>
+			flow, which means that the preconditions come first, then an action, and then the expected
+			outcome of the action. Structuring scenarios like this ensures that they are focused and makes them
+			easier to understand.
+		</p>
+		<section title="Given">
+			<p>
+				A
+				<code>Given</code>
+				step defines the preconditions for a scenario, such as Chunk Norris showing up being a precondition for a good fight. Technically, the step definition that automates it
+				should put the system into a known state for an automated test.
+			</p>
+			<p>
+				<code>Given</code>
+				steps should describe the state of the world before an interesting action. Avoid writing them as
+				actions, but instead explain the state. For example, it is much better to write:
+			</p>
+			<code>Given a ninja is in the room</code>
+			<p>than</p>
+			<code>Given a ninja enters a room</code>
+			<p> This distinction might not seem so important initially, but it helps to focus
+				readers' attention on the important action in the scenario and avoid falling into the
+				trap of scripting.</p>
+		</section>
+		<section title="When">
+			<p>
+				A
+				<code>When</code>
+				step describes the primary action of a scenario &ndash;
+in the case of Chuck Norris almost guaranteed to involve some kicking. Some good examples of the primary action are:
+			</p>
+			<ul>
+				<li>An activity of a user</li>
+				<li>A domain event</li>
+				<li>A system function</li>
+			</ul>
+			<p>
+				Try to write
+				<code>When</code> steps
+				as actions, something that happens. This will focus the attention of the reader on the actions. It will
+				also help developers understand where to put the business logic and how to call the appropriate code
+				modules to implement the functionality.
+			</p>
+		</section>
+	<section title="Then">
+		<p>
+			A
+			<code>Then</code>
+			step specifies tears, black eyes and such. They are post-conditions, expected observable outcomes of the primary action in the given
+			context. It is important that these are observable outcomes, something that the business users can
+			actually understand and see. Otherwise, they won't be able to engage in specifying it.
+			Internal state changes, though they may be easy to test, do not guarantee that the user of the
+			system benefits in any way from the feature.
+		</p>
+		<important title="But I want to verify internal changes">
+			<p>Verifying internal changes might be very important from a technical perspective, but the
+				business users often couldn't care less about it. Use a technical tool (such as your
+				favourite unit testing tool) to specify and verify such things. You'll get a much faster
+				turnround from a technical perspective. You don't really need a test that is readable and
+				accessible by business users for these kinds of checks, so using Cucumber for them won't give you any real
+ benefits.</p>
+		</important>
+	</section>
+	<p>You can use three double-quote symbols (<code>"""</code>) to start and end a multi-line block. For example:
+	<code>
+	Given a ninja has the following hit-list """
+		5 Samurai
+		10 Peasants
+		1 Shogun
+		0 Chucks
+	"""
+	</code>
+	</p>
+	
+<section id="sec_difference_when_then" title="The difference between When and Then">
+	<p>
+		Spoken languages have quite a lot of ambiguity and flexibility. The same thing can be said in lots
+		of different ways, which often confuses people when they start with Gherkin. For example, we can
+		say:
+		<quote>Given the opponent is Chuck Norris, then the ninja should run for his life</quote>
+		Using
+		<code>When</code>
+		instead of
+		<code>Given</code>
+		doesn't change the meaning at all:
+		<quote>When the opponent is Chuck Norris, then the ninja should run for his life</quote>
+	</p>
+	<note title="Syntax error in the previous example">
+	<p>
+		Those among you
+		who read this carefully will surely know that it is a syntax error to use Chuck Norris in a
+		<code>Given</code>
+		step, as he does not take orders from anyone. The current version of Cucumber has a bug and does
+		not report this as a syntax error but this will probably be fixed in the future.
+	</p>
+	</note>
+	<p>
+	In Gherkin, however, there is a huge difference.
+	<code>Given</code>
+	steps describe the world as it is before an action happens, and
+	<code>When</code>
+	describes the action that is played out in a scenario. Think of it this way: each scenario explains
+	an action. A context for the action (<code>Given</code>) is optional, but the action (<code>When</code>) is mandatory.
+</p>	
+</section>
+</section>
+
+<section id="sec_internationalisation" title="Internationalisation">
+	<p>One of the biggest advantages of Cucumber over other literal automation tools is that it fully supports
+	 internationalisation. You do not have to use keywords in English. You can write the feature file in around 40
+	  languages, including some very obscure such as LOLCATS and artificial languages such as Welsh.
+          Here is, for example, the feature file from the introduction in French:</p>		
+		<code>
+Fonctionnalit&eacute;: Lutte ou de fuite
+    Afin d'augmenter le taux de survie ninja,
+    Tant que commandant ninja
+    Je veux que mon ninjas de d&eacute;cider de prendre un adversaire 
+      en fonction de leurs niveaux de comp&eacute;tences
+
+Plan du Sc&eacute;nario: ennemi plus faible
+    Soit le Ninja a un troisi&egrave;me niveau ceinture noire
+    Lorsqu'il est attaqu&eacute; par un samoura&iuml;
+    Alors le ninja doit engager l'adversaire
+
+Plan du Sc&eacute;nario: ennemi plus fort
+    Soit le Ninja a un troisi&egrave;me niveau ceinture noire
+    Lorsqu'il est attaqu&eacute; par Jean-Claude Van Damme
+    Alors le ninja doit fuir pour sauver sa vie
+		</code>
+		<p>See the 
+		<url title="Cucumber wiki examples" link="http://github.com/aslakhellesoy/cucumber/blob/master/examples/i18n" /> for 
+		more examples in all the supported languages.</p>
+</section>
+       
+
+<section id="sec_gherkin_tag" title="Tagging for fun and profit">
+<p>After a few months, scenarios and features in a project can become unwieldy. With hundreds of feature files, we might 
+not want to run everything all the time. It is often useful to be able to quickly find or check just a subset of the 
+features, for 
+example in order to omit one or two very slow tests to get faster feedback. </p>
+<p>Cucumber allows us to manage large groups of scenarios more easily with tags. Tags are free-form text comments assigned to a scenario. They
+provide meta-data about the type, nature or group of that scenario. You can assign a tag to a scenario by putting it before the scenario header, adding
+an &lsquo;at&rsquo; sign (@) before the tag name. For example:</p>
+<code>
+ @slowtest
+ Scenario: end-to-end signup
+ ...
+</code>
+<p>You can execute only the scenarios with a particular tag using the <code>--tags</code> option, for example:</p>
+<code>cucumber --tags @fasttest</code>
+<p>Another option is to skip the scenarios with a particular tag. For this, prefix the tag with a tilde (~). Here is an example:</p>
+<code>cucumber --tags ~@slowtest</code>
+<p>Here are some useful things you can do with tags:</p>
+<ul>
+<li>Identify work-in-progress to avoid breaking the build when newly introduced scenarios fail.</li>
+<li>Separate quick and slow checks and execute as cascaded builds on the build server to speed up feedback.</li>
+<li>Execute some checks overnight only.</li>
+<li>Cross-reference stories and features or scenarios.</li>
+<li>Link entire feature areas and scenarios that have cross-cutting issues.</li>
+</ul>
+
+<p>You can tag a feature or a scenario. Feature tags are automatically inherited by all the enclosed scenarios and scenario outlines. Cucumber
+also supports some more advanced tag features, such as enforcing the limit on the number of scenarios with a particular tag (useful for work-in-progress) and
+running scenarios that satisfy a combination of tags. For information on those options, have a look at 
+the <url link="https://github.com/aslakhellesoy/cucumber/wiki/tags" title="tags page on the Cucumber wiki"/>.</p>
+</section>
+<section title="Remember">
+<ul>
+<li>Describe features from the perspectives of users and stakeholders, not software developers</li>
+<li>Think of feature files as documentation when you write them.</li>
+<li>Define the examples for feature files collaboratively.</li>
+<li>Given steps describe the world as it was before an action. When steps describe activities that cause the world to change. Then steps specify how the world shuld change.</li> 
+</ul>
+</section>
+</chapter>

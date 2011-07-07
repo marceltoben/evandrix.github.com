@@ -1,0 +1,41 @@
+To install the dependencies using the Nu package manager
+
+Prerequisites:
+Install ruby
+Put the ruby bin folder on your PATH 
+	1. Right click Computer in explorer
+	2. Click advanced system settings
+	3. Select advanced tab 
+	4. Click Environment Variables button
+	5. Select Path from environment variables
+	6. Click edit button
+	7. Add ;c:\Ruby\bin; to end of path 
+
+
+Installing Nu
+1. Get gems up to date
+
+	gem update
+	
+2. Install Nu
+
+	gem install nu
+	
+3. Install nunit into your gem repository
+
+	gem install nunit
+	
+	
+4. Install nunit into lib folder under this directory
+
+	nu install nunit
+	
+
+
+5. Install Selenium 2.0 into the lib folder
+
+	Ceate a directory under the lib folder called selenium-2.0b1
+
+	Download from http://code.google.com/p/selenium/downloads/list
+	
+	Unzip the file and copy the files to the directory you created

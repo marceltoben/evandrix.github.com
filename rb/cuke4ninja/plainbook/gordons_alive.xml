@@ -1,0 +1,257 @@
+<!DOCTYPE chapter SYSTEM "../resources/plainbook/plainbook.dtd" >
+<chapter title="Getting Ruby ready to exercise the UI" id="chp_gordons_alive">
+	<p>
+		In this chapter we will be covering the basic requirements for testing Web applications in Ruby. We will
+		introduce Rails quickly, but go into more detail about how to set up Cucumber with Sinatra.
+	</p>
+	<section title="Rails" id="sec_gordons_alive.ruby.rails">
+		<p>
+			If you are at all serious about using Cucumber to test Rails sites, then you should get hold of the RSpec Book <bib ref="chelimsky:rspec" />, which
+			includes a section discussing BDD outside-in rails development using cucumber in great detail. We will, however, give a very brief overview of the
+			basics for Rails here.
+		</p>
+		
+		<section title="Rails 2" id="sec_gordons_alive.ruby.rails2">
+
+		<p>
+			To use Cucumber with Rails 2, you will need the following gems installed on your system:
+			<ul>
+				<li>rails </li>
+				<li>cucumber</li>
+				<li>cucumber-rails</li>
+				<li>rspec-rails</li>
+				<li>webrat</li>
+				<li>selenium-client</li>
+			</ul>
+			Install each of these using ruby gems.
+		</p>
+		<p>
+			Once you have these installed, get things running using the following commands:
+		</p>
+		<code>
+			rails ninjas4Hire
+			cd ninjas4Hire
+			script/generate rspec
+			script/generate cucumber --webrat --rspec
+		</code>
+		<p>
+			You should now be able to run cucumber tests using the command:
+		</p>
+		<code>rake cucumber</code>
+		<p>
+			... and get a response like this:
+		</p>
+		<code>
+			0 scenarios
+			0 steps
+		</code>
+		<p>
+			You should now be able to add cucumber features into the <code>features</code> directory, and step definitions into
+			the <code>features/step_definitions</code> directory.
+		</p>
+		</section>
+		<section title="Rails 3" id="sec_gordons_alive.ruby.rails3">
+			<p>
+				For a Rails 3 application, first create the Rails site using the following command in a terminal window.
+			</p>
+			<code>rails new ninjas4hire</code>
+			<p>
+				This will create a directory called <code>ninjas4hire</code>. Navigate to that directory in your terminal and create a file
+				called <code>gemfile</code>.  Edit this file so it looks like the example below.
+			</p>
+			<code file="ruby/ninjas4hire/gemfile-rails"/>
+			<p>
+				You can now install the gem dependencies using <code>bundler</code>: 
+			</p>
+			<code>bundle install</code>
+			<p>
+				Once this is complete you should be able to setup the cucumber configuration using the command:
+			</p>
+			<code> ruby script/rails generate cucumber:install --rspec --capybara</code>
+		</section>
+	</section>
+	<section title="Sinatra" id="sec_gordons_alive.ruby.sinatra">
+		<p>
+			Due to the fact that Ninjas like to travel light (their deep appreciation of 20th century easy listening crooners is also a factor)
+			we will be using <url title='Sinatra' link="http://www.sinatrarb.com/intro"/> to illustrate how to use Cucumber to support web application development.
+		</p>
+		<sidebar title="What is Sinatra, Sensei?" id="sb_gordons_alive.sidebar.sinatra">
+			<p>
+				Sinatra is a lightweight framework for creating web applications using Ruby.
+				As an example, the following is given for a helloworld example on the Sinatra site.
+			</p>
+			<p>
+				Create a ruby file called myapp.rb:
+			</p>
+			<code>
+				# myapp.rb
+				require 'sinatra'
+
+				get '/' do
+					'Hello world!'
+				end
+			</code>
+			<p>
+				Install the sinatra gem
+			</p>
+			<code>gem install sinatra</code>
+			<p>
+				Then, run in the directory where you created the file
+			</p>
+			<code>
+				ruby -rubygems myapp.rb
+			</code>
+			<p>
+				View the output by pointing your browser at <code>http://localhost:4567</code>.
+			Pretty hep, no?</p>
+		</sidebar>
+		<section title="Gordon is alive?!" id="sec_gordons_alive.ruby.cucumber-sinatra">
+			<p>
+				To get started, we are going to set up a simple sinatra app, and exercise it with cucumber.
+				First, create a directory called <code>ninjas4hire</code>, and get a terminal window pointing at the directory.
+			</p>
+			<p>
+				Now add a subdirectory called <code>src</code> and create a file in there called <code>ninjas4hire_app.rb</code>.
+				Edit the file, so it looks like the example below.
+			</p>
+			<code file="ruby/ninjas4hire/src/ninjas4hire_app.rb.001" part="code" />
+			<p>
+				If you haven't done it already, install the sinatra gem.
+			</p>
+			<code>
+				gem install sinatra
+			</code>
+			<p>
+				Now we're going to test that what we have done so far runs. To do this we can use irb.<footnote>Interactive Ruby (see <url
+				link="http://www.ruby-lang.org/en/documentation/quickstart/"/> for more info)</footnote> In the terminal window, type
+			</p>
+			<code file="ruby/ninjas4hire/src/ninjas4hire_app.rb.001" part="run" />
+			<sidebar title="What did I just do?" id="sb.sinatra.startup">
+				<p>
+					These commands do three things
+					<ol>
+						<li>Start the interactive ruby environment</li>
+						<li>Load the <code>Ninjas4HireApp</code> class we created in the <code>ninjas4hire_app.rb</code> file</li>
+						<li>Run the Sinatra app</li>
+					</ol>
+				</p>
+			</sidebar>
+			<p>
+				You should see some output in the terminal window like this:
+			</p>
+			<code file="ruby/ninjas4hire/src/ninjas4hire_app.rb.001" part="output" />
+			<p>
+				If you open a browser and navigate to <code>http://localhost:4567/cukeTest</code> then you should see the word
+				"up" displayed. You can shut down the irb session by typing <code>Ctrl+C</code> to shut down the app and then
+				entering <code>quit</code>.
+			</p>
+			<p>
+				Since we don't want to go through such a long winded process each time we run the app, the next step is  to
+				create a rake file. In the <code>ninjas4hire</code> directory, create a file called <code>rakefile</code> and
+				edit it so that it looks like the example below
+			</p>
+			<code file="ruby/ninjas4hire/rakefile.001"/>
+			<p>If you don't have rake installed, install it now using rubygems:</p>
+			<code>gem install rake</code>
+			<p>Now test that you can run the app using the rake command:</p>
+			<code>rake run</code>
+		</section>
+		<section title="Feeding Sinatra with cucumbers" id="sec_gordons_alive.ruby.cucumber">
+			<p>
+				Now we have Sinatra up and running, the next step is to get Cucumber involved. To help with this
+				we will use the <code>cucumber-sinatra</code> gem.<footnote><url link="https://github.com/aslakhellesoy/cucumber/wiki/Sinatra"/></footnote>
+				This will create some directories and files in our sinatra project, so it is configured for testing with cucumber, RSpec and Capybara.<footnote><url
+				link="https://github.com/jnicklas/capybara"/></footnote>
+			</p>
+			<note title="You will need to have the cucumber gem" id="sb_gordons_alive.ruby.cucumber">
+				<p>If you haven't installed cucumber, gherkin or RSpec yet, there are instructions in <link ref="sec_ruby_install_cucumber"/></p>
+			</note>
+			<p>
+				First we will need to install the gems for capybara and cucumber-sinatra. The example below also installs a
+				gem called launchy<footnote><url link="http://rubygems.org/gems/launchy/versions/0.3.7"/></footnote> which
+				is a helper library for launching cross-platform applications.
+			</p>
+			<code>gem install cucumber-sinatra capybara launchy</code>
+			<p>
+				Then we will use cucumber-sinatra to set up the configuration for our project
+			</p>
+			<code>cucumber-sinatra init Ninjas4HireApp src/ninjas4hire_app.rb</code>
+			<p>You should see an output like the one in the figure below</p>
+			<img src="cucumber-sinatra-output.png" id="img.cucumber-sinatra-output" />
+			<p>
+				The three files it created are:
+				<ol>
+					<li><code>features/support/env.rb</code> sets up capybara and rspec.</li>
+					<li><code>features/support/paths.rb</code> enables the overriding of paths with readable alternatives.</li>
+					<li><code>features/step_definitions/web_steps.rb</code> created some reusable steps.</li>
+				</ol>
+			</p>
+			<p>
+				Now we are going to create a simple feature file to check everything is working. First, add the following
+				lines to <code>paths.rb</code>. These will map the text &lsquo;the cucumber test page&rsquo;
+				to the path <code>/cukeTest</code>
+			</p>
+			<code file="ruby/ninjas4hire/features/support/paths.rb" part="hello"/>
+			<p>
+				The next step is to add a cucumber feature file to the features directory. You can call it whatever you want,
+				so long as it has the correct extension (<code>.feature</code>).
+				<footnote>I called mine gordon.feature because I thought of Brian Blessed shouting "Gordon is ALIVE?!" in the Flash Gordon film</footnote>
+				Edit the feature file so it looks like the example below.
+			</p>
+			<code file="ruby/ninjas4hire/features/gordon.feature" />
+			<p>Now run the cucumber feature by opening a terminal window in the root of the project, and typing </p>
+			<code>cucumber features</code>
+			<p>
+				You should see some terminal output similar to the figure below, and a browser window should open, displaying the page.
+			</p>
+			<img src="cucumber-sinatra-hello.png" id="img.cucumber-sinatra-hello" />
+			<img src="cucumber-sinatra-fox.png" id="img.cucumber-sinatra-fox" />
+			<p>
+				So, we wrote a Cucumber feature and it ran and passed without having to write any step definitions!
+			</p>
+			<p>
+				This is possible because the <code>cucumber-sinatra</code> gem sets up some default steps out of the box. If you take a look at
+				<code>features/step_definitions/web_steps.rb</code> you should see a function definition like the one illustrated
+				below.
+			</p>
+			<code file="ruby/ninjas4hire/features/step_definitions/web_steps.rb" part="step1"/>
+			<p>
+				This is the step corresponding to the feature file line:
+			</p>
+			<code>When I go to the cucumber test page</code>
+			<p>
+				The body of the method uses two pieces of functionality. Firstly there is a call to <code>path_to(page_name)</code>. This function is defined in <code>paths.rb</code>.
+				We added a url mapping to this earlier in the chapter. Secondly, the result of this function is passed to visit, which is picked up by
+				capybara to automate the loading of the page at the <code>/cukeTest</code> url.
+			</p>
+			<p>
+				Take a few minutes to look at the step definitions provided in <code>web_steps.rb</code>. In the next chapter we will be
+				putting into practice some of the theory outlined in the previous chapter, so we will be using these predefined steps as 
+				a template for the technical layer we will be creating.
+			</p>
+		</section>
+        <section title="Raking your cucumber patch" id="sec_gordons_alive.ruby.cucumber.rake">
+            <p>
+                As a final step, we are going to edit our rake file so that we can run our cucumber features using the <code>rake</code> command.
+                Happily, Cucumber ships with a rake task so it is simple to do.
+            </p>
+            <p>
+                Rake adds some overhead, so it is not recommended to use this directly.
+                The usefulness of the rake task comes when running cucumber as part of an automated process because it allows a greater 
+                level of control over how and when the cucumber feature are run.
+            </p>
+            <p>
+                First, edit the file called <code>rakefile</code> in the root directory of your ninjas4hire project so it looks like the example below
+            </p>
+            <code file="ruby/ninjas4hire_chp8/rakefile"/>
+            <p>
+                Now create a file called <code>gemfile</code> if you don't have one already, and edit it so it looks like the example below
+            </p>
+            <code file="ruby/ninjas4hire_chp8/gemfile"/>
+            <p>
+                Once you have done this, you should be able run the task using the command: <code>rake features</code>
+            </p>
+
+        </section>
+	</section>
+</chapter>
