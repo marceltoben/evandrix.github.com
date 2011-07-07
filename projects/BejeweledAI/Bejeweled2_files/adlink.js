@@ -1,0 +1,1 @@
+if (typeof(TIF) == 'object' && typeof(TIF.clbPrPry) == 'function') { TIF.clbPrPry('tg=CGB'); } else { if (typeof(window.adlinkCreateSetter)=='function') { window.adlinkCreateSetter('tg=CGB'); }; }

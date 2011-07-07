@@ -1,0 +1,439 @@
+###############################################################################
+#
+# Regular Platform Project
+#
+# Copyright (c) 2007, Aaron "Caustik" Robinson
+# All rights reserved.
+# 
+# File := Makefile
+# Desc := regplat generic base Makefile
+# 
+# Redistribution and use in source and binary forms, with or without 
+# modification, are permitted provided that the following conditions are met:
+#
+# * Redistributions of source code must retain the above copyright notice, 
+#   this list of conditions and the following disclaimer.
+#
+# * Redistributions in binary form must reproduce the above copyright notice, 
+#   this list of conditions and the following disclaimer in the documentation 
+#   and/or other materials provided with the distribution.
+#
+# * Neither the name of Aaron "Caustik" Robinson nor the names of its 
+#   contributors may be used to endorse or promote products derived from this 
+#   software without specific prior written permission.
+# 
+#   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+#   "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+#   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+#   A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+#   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+#   EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#   PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+#   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+#   LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+#   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+#   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# 
+##############################################################################
+
+#
+# Common Makefile
+# 
+
+include $(REGPLAT_BASE)/regplat/Makefile.common
+
+#
+# Default options
+#
+
+CP       = g++
+AR       = ar
+SP       = strip
+OE       = .o
+BE       =
+AE       = .a
+CPPFLAGS = -Wall -O7
+ifeq ($(findstring debug,$(SUBTAR)), debug)
+CPPFLAGS += -g
+endif
+ARFLAGS  = rcs
+ARFLAGS += # force a space
+CPSF     = -c
+CPOF     = -o 
+CLOF     = -o
+LINK     = $(CP) $(CPPFLAGS)
+PLATFORM = template
+ifeq ($(findstring liblib,lib$(CURPRJ)), liblib)
+LIB_PREFIX =
+else
+LIB_PREFIX = lib
+endif
+
+ifeq ($(CURPRJ),)
+CURPRJ = $(PROJECT_NAME)
+endif
+
+ifeq ($(SUBTAR),)
+SUBTAR = release-static
+endif
+
+OUT_PDB  =
+OUT_IDB  =
+TST_PDB  =
+
+#
+# Target specific options
+#
+
+ifeq ($(findstring -linux,$(TARGET)), -linux)
+PLATFORM = linux
+EXT_DEP = LD_LIBRARY_PATH="$(subst ; ,;,$(strip $(foreach lib, $(PROJECT_DEP), $(lib);)))"
+BIN_LXX = $(foreach lib, $(BIN_LIB), -l$(lib)) $(foreach pth, $(BIN_LPH), -L$(pth))
+endif
+
+ifeq ($(TARGET), arm-linux)
+CP       = arm-linux-g++
+AR       = arm-linux-ar
+SP       = arm-linux-strip
+endif
+
+ifeq ($(TARGET), cygwin-linux)
+BE = .exe
+endif
+
+ifeq ($(TARGET), cygwin-vs60)
+VCBASE   = "$(VCINSTALLDIR)\\Bin\\"
+OUT_PDB  = ../bin/$(TARGET)/$(SUBTAR)/$(CURPRJ).pdb
+EXP_PDB = ../export/$(TARGET)/$(SUBTAR)/$(PROJECT_TYPE)/$(LIB_PREFIX)$(CURPRJ).pdb
+OUT_IDB  = ../bin/$(TARGET)/$(SUBTAR)/$(CURPRJ).idb
+TST_PDB  = ../bin/$(TARGET)/$(SUBTAR)/test.pdb
+CPPFLAGS = /EHsc /Zc:wchar_t- /Fd"$(OUT_PDB)"
+PROJECT_DEF += WIN32 _CRT_SECURE_NO_DEPRECATE WINVER=0x0400 UNICODE _UNICODE
+# <debug vs release>
+ifeq ($(findstring debug,$(SUBTAR)), debug)
+CPPFLAGS += /nologo /c /Zi /W3 /TP /Od /Gm /RTC1 /MDd
+PROJECT_DEF += _DEBUG
+else
+CPPFLAGS += /nologo /c /Zi /W3 /TP /O2 /Ob1 /Ot /GF /MD /Gy
+PROJECT_DEF += NDEBUG
+endif
+# </debug vs release>
+ARFLAGS  = /nologo /OUT:
+CP       = cl
+AR       = lib
+SP       = \#
+OE       = .obj
+BE       = .exe
+AE       = .lib
+MT       = mt.exe -nologo
+CPSF     = 
+CPOF     = /Fo
+CLOF     = /OUT:
+LINK     = $(VCBASE)/LINK.EXE /MACHINE:X86 /nologo
+# <debug vs release>
+ifeq ($(findstring debug,$(SUBTAR)), debug)
+LINK    += /INCREMENTAL:NO /DEBUG /PDB:$(TST_PDB)
+LINK    += /NODEFAULTLIB:"libc.lib" /NODEFAULTLIB:"libcmt.lib" /NODEFAULTLIB:"msvcrt.lib" /NODEFAULTLIB:"libcd.lib" /NODEFAULTLIB:"libcmtd.lib"
+else
+LINK    += /INCREMENTAL:NO
+LINK    += /NODEFAULTLIB:"libc.lib" /NODEFAULTLIB:"libcmt.lib" /NODEFAULTLIB:"msvcrtd.lib" /NODEFAULTLIB:"libcd.lib" /NODEFAULTLIB:"libcmtd.lib"
+endif
+PLATFORM = win32
+LIB_PREFIX = 
+EXT_DEP = PATH=\"$$PATH:$(subst : ,:,$(strip $(abspath $(foreach lib, $(PROJECT_DEP), $(lib):))))\"
+BIN_LXX = $(foreach lib, $(BIN_LIB), $(lib).lib) $(foreach pth, $(BIN_LPH), /LIBPATH:$(pth))
+endif
+
+#
+# Common source files
+#
+
+SOURCES  = $(wildcard ../src/$(CURPRJ)/*.cpp) 
+SOURCES += $(wildcard ../src/$(CURPRJ)/common/*.cpp) 
+SOURCES += $(wildcard ../src/$(CURPRJ)/$(PLATFORM)/*.cpp)
+SOURCES += $(PROJECT_XSRC)
+
+#
+# Common non-exported include files
+# 
+
+INCLUDES += $(wildcard ../src/$(CURPRJ)/*.h) 
+INCLUDES += $(wildcard ../src/$(CURPRJ)/common/*.h) 
+INCLUDES += $(wildcard ../src/$(CURPRJ)/$(PLATFORM)/*.h)
+
+#
+# Common exported include files
+# 
+
+PRJ_INC  = $(wildcard ../include/*.h)
+PRJ_INC += $(wildcard ../include/*.inl)
+PRJ_INC += $(wildcard ../include/$(CURPRJ)/*.h)
+PRJ_INC += $(wildcard ../include/$(CURPRJ)/*.inl)
+PRJ_INC += $(wildcard ../include/$(CURPRJ)/common/*.h) 
+PRJ_INC += $(wildcard ../include/$(CURPRJ)/common/*.inl) 
+PRJ_INC += $(foreach platform, $(PLATFORMS), $(wildcard ../include/$(CURPRJ)/$(platform)/*.h))
+PRJ_INC += $(foreach platform, $(PLATFORMS), $(wildcard ../include/$(CURPRJ)/$(platform)/*.inl))
+
+#
+# Source include paths
+# 
+
+SRC_INC  = ../include
+SRC_INC += ../src/$(CURPRJ)/$(PLATFORM)
+
+#
+# Project-specific include files
+#
+
+EXT_INC  = $(foreach dir, $(PROJECT_INCL), -I$(dir))
+EXT_INC += $(foreach dir, $(SRC_INC), -I$(dir))
+
+#
+# Project-specific preprocessor defines
+#
+
+PRJ_DEF = $(foreach def, $(PROJECT_DEF), -D$(def))
+
+#
+# Generate objects list based on source files
+# 
+
+OBJECTS = $(SOURCES:.cpp=.$(TARGET).$(SUBTAR)$(OE))
+
+#
+# Test source, object, and data files
+# 
+
+TST_SRC  = $(wildcard ../test/src/*.cpp)
+TST_SRC += $(wildcard ../test/src/common/*.cpp)
+TST_SRC += $(wildcard ../test/src/$(PLATFORM)/*.cpp)
+TST_OBJ  = $(TST_SRC:.cpp=.$(TARGET).$(SUBTAR)$(OE))
+TST_DAT  = $(wildcard ../test/data/*.*)
+
+#
+# Test include files
+# 
+
+TST_INC  = $(wildcard ../test/src/*.h)
+TST_INC += $(wildcard ../test/src/*.inl)
+TST_INC += $(wildcard ../test/src/common/*.h)
+TST_INC += $(wildcard ../test/src/common/*.inl)
+TST_INC += $(foreach platform, $(PLATFORMS), $(wildcard ../test/src/$(platform)/*.h))
+TST_INC += $(foreach platform, $(PLATFORMS), $(wildcard ../test/src/$(platform)/*.inl))
+
+#
+# Output library
+#
+
+OUT_DIR = ../bin/$(TARGET)/$(SUBTAR)/
+OUT_LIB = ../bin/$(TARGET)/$(SUBTAR)/$(LIB_PREFIX)$(CURPRJ)$(AE)
+OUT_BIN = ../bin/$(TARGET)/$(SUBTAR)/$(CURPRJ)$(BE)
+OUT_TST = ../bin/$(TARGET)/$(SUBTAR)/test$(BE)
+EXP_LIB = ../export/$(TARGET)/$(SUBTAR)/lib/$(LIB_PREFIX)$(CURPRJ)$(AE)
+EXP_BIN = ../export/$(TARGET)/$(SUBTAR)/bin/$(CURPRJ)$(BE)
+EXP_INC = $(patsubst ../include%, ../export/all/all/include%, $(PRJ_INC))
+
+#
+# Arguments for project generator
+#
+
+PRJ_ARG  = $(subst /,\\,$(foreach src, $(SOURCES), -s ../$(src)))
+PRJ_ARG += $(subst /,\\,$(foreach src, $(INCLUDES), -s ../$(src)))
+PRJ_ARG += $(subst /,\\,$(foreach dat, $(TST_DAT), -dt ../$(dat)))
+PRJ_ARG += $(subst /,\\,$(foreach src, $(TST_SRC), -st ../$(src)))
+PRJ_ARG += $(subst /,\\,$(foreach hdr, $(PRJ_INC), -h ../$(hdr)))
+PRJ_ARG += $(subst /,\\,$(foreach hdr, $(TST_INC), -ht ../$(hdr)))
+PRJ_ARG += $(subst /,\\,$(foreach pth, $(BIN_LPH), -l ../$(pth)))
+PRJ_ARG += $(subst /,\\,$(foreach lib, $(BIN_LIB), -b $(lib).lib))
+PRJ_ARG += $(subst /,\\,$(foreach inc, $(PROJECT_INCL) $(SRC_INC), -i ../$(inc)))
+PRJ_ARG += -v RP_PROJECT_NAME $(CURPRJ)
+PRJ_ARG += -g $(TARGET)
+PRJ_ARG += -y $(PROJECT_TYPE)
+
+#
+# Target: all-project - Build for the current project ("$(CURPRJ)")
+# 
+
+ifeq ($(PROJECT_TYPE), bin)
+all-project: $(OUT_DIR) $(OUT_BIN) all-project-custom
+else
+all-project: $(OUT_DIR) $(OUT_LIB) $(OUT_TST) all-project-custom
+endif
+	@echo "" > /dev/null
+
+#
+# Target: Output directory
+# 
+
+$(OUT_DIR):
+	@mkdir -p $@
+
+#
+# Target: Output library
+# 
+
+$(OUT_LIB): $(OBJECTS)
+	@echo "  A $@"
+	@$(AR) $(ARFLAGS)$@ $(OBJECTS)
+ifneq ($(findstring debug,$(SUBTAR)), debug)
+	@$(SP) -d $@
+endif
+
+#
+# Target: Output binary
+# 
+
+$(OUT_BIN): $(OBJECTS) 
+	@echo "  L $(OUT_BIN)"
+	@$(LINK) $(OBJECTS) $(CLOF)$@ $(BIN_LXX)
+ifneq ($(findstring debug,$(SUBTAR)), debug)
+	@$(SP) -d $@
+endif
+ifeq ($(TARGET), cygwin-vs60)
+	@$(MT) -manifest $(OUT_BIN).manifest -outputresource:$(OUT_BIN)\;1
+	@-rm $(OUT_BIN).manifest
+endif
+
+#
+# Target: Output test binary
+#
+
+$(OUT_TST): $(OUT_LIB) $(TST_OBJ)
+	@echo "  L $(OUT_TST)"
+	@$(LINK) $(TST_OBJ) $(OUT_LIB) $(CLOF)$@ $(BIN_LXX)
+ifneq ($(findstring debug,$(SUBTAR)), debug)
+	@$(SP) -d $@
+endif
+ifeq ($(TARGET), cygwin-vs60)
+	@$(MT) -manifest $(OUT_TST).manifest -outputresource:$(OUT_TST)\;1
+	@-rm $(OUT_TST).manifest
+endif
+
+#
+# Target: .cpp files
+# 
+
+$(OBJECTS): $(SOURCES) $(PRJ_INC)
+	@echo "  C $@"
+	@$(CP) $(CPPFLAGS) $(PRJ_DEF) $(EXT_INC) $(CPSF) $(@:.$(TARGET).$(SUBTAR)$(OE)=.cpp) $(CPOF)$@
+
+$(TST_OBJ): $(TST_SRC) $(TST_INC)
+	@echo "  C $@"
+	@$(CP) $(CPPFLAGS) $(PRJ_DEF) $(EXT_INC) $(CPSF) $(@:.$(TARGET).$(SUBTAR)$(OE)=.cpp) $(CPOF)$@ 
+
+#
+# Target: test-project - Test for the current project ("$(CURPRJ)")
+# 
+
+test-project: all-project
+ifeq ($(PROJECT_TYPE), bin)
+	@echo "  T $(OUT_BIN)"
+	@$(EXT_DEP) $(EXT_TOOL) $(OUT_BIN) $(BIN_ARG)
+else
+	@echo "  T $(OUT_TST)"
+	@$(EXT_DEP) $(EXT_TOOL) $(OUT_TST) $(TST_ARG) ../test/data/
+endif
+
+#
+# Target: edit-project - Edit the current target ("$(TARGET)")
+# 
+
+edit-project:
+	@echo "  E $@"
+	@$(EDITCMD) $(SOURCES) > /dev/null &
+	@$(EDITCMD) $(PRJ_INC) > /dev/null &
+	@$(EDITCMD) $(TST_SRC) > /dev/null &
+	@$(EDITCMD) $(TST_INC) > /dev/null &
+
+#
+# Target: linecount-project - Line count the current target ("$(TARGET)")
+# 
+
+linecount-project:
+	@echo "Project '$(CURPRJ)'"
+	@touch regplat.empty
+	@echo "SOURCES  : `cat regplat.empty $(SOURCES)  | grep -c .`"
+	@echo "INCLUDES : `cat regplat.empty $(INCLUDES) | grep -c .`"
+	@echo "PRJ_INC  : `cat regplat.empty $(PRJ_INC)  | grep -c .`"
+	@echo "TST_INC  : `cat regplat.empty $(TST_INC)  | grep -c .`"
+	@echo "Total    : `cat regplat.empty $(SOURCES) $(INCLUDES) $(PRJ_INC) $(TST_INC) | grep -c .`"
+	@rm -f regplat.empty
+
+#
+# Target: export-comprj
+#
+
+ifeq ($(PROJECT_TYPE), bin)
+export-comprj: export-custom
+else
+export-comprj: $(EXP_INC) export-custom
+endif
+	@echo $(REVISION) > ../export/all/all/revision.txt
+
+#
+# Target: export-project Build exports for the current project ("$(CURPRJ)")
+# @todo export should only occur if test-project is successful
+#
+
+ifeq ($(PROJECT_TYPE), bin)
+export-project: all-project $(EXP_BIN)
+else
+export-project: all-project $(EXP_LIB)
+endif
+	@echo $(REVISION) > ../export/$(TARGET)/$(SUBTAR)/revision.txt
+
+#
+# Target: Export lib for the current target
+# 
+
+$(EXP_LIB): $(OUT_LIB)
+	@echo "  E $(EXP_LIB)"
+	@mkdir -p ../export/$(TARGET)/$(SUBTAR)/lib
+	@-cp $(OUT_LIB) $(EXP_LIB)
+ifeq ($(TARGET), cygwin-vs60)
+	@-cp $(OUT_PDB) $(EXP_PDB)
+endif
+
+#
+# Target: Export binary for current target */
+# 
+
+$(EXP_BIN): $(OUT_BIN)
+	@echo "  E $(EXP_BIN)"
+	@mkdir -p ../export/$(TARGET)/$(SUBTAR)/bin
+	@-cp $(OUT_BIN) $(EXP_BIN)
+ifeq ($(TARGET), cygwin-vs60)
+	@-cp $(OUT_PDB) $(EXP_PDB)
+endif
+
+#
+# Target: Exported header files
+# 
+
+$(EXP_INC): $(PRJ_INC)
+	@echo "  E $@"
+	@mkdir -p ../export/all/all/include
+	@mkdir -p ../export/all/all/include/$(CURPRJ)
+	@mkdir -p $(dir $@)
+	@-cp $(subst ../export/all/all/include, ../include, $@) $@
+
+#
+# Target: clean-project - Clean for the current project ("$(CURPRJ)")
+# 
+
+clean-project: clean-custom
+	@echo "  X $(TARGET) $(SUBTAR) [binaries].."
+	@-rm -rf $(OUT_LIB)
+	@-rm -rf $(OUT_BIN)
+	@-rm -rf $(OUT_PDB)
+	@-rm -rf $(OUT_IDB)
+	@-rm -rf $(OUT_TST)
+	@-rm -rf $(TST_PDB)
+	@echo "  X $(TARGET) $(SUBTAR) [objects]..."
+	@-rm -rf $(OBJECTS)
+	@-rm -rf $(TST_OBJ)
+
+.PHONY : all-project-custom $(OUT_DIR)
+.PHONY : $(EXP_INC) export-comprj export-custom 
+.PHONY : clean-custom
+

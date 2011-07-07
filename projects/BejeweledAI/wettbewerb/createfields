@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir -p wettbewerbsfelder
+for (( I=1; $I <= 100; I++ ))
+do
+    ./fm-game.bin wettbewerbsfelder/wettbewerbsfeld$I.dat create
+    sleep 2;
+done

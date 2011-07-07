@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0087)http://www.charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Creating a Bejeweled Blitz Bot in C#
+</title><meta name="author" content="CCook"><meta name="Generator" content="Subtext Version 1.9.5.177"><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://charlesrcook.com/Rss.aspx"><link type="text/css" rel="stylesheet" href="./Creating a Bejeweled Blitz Bot in C#_files/csharp.css">
+<link type="text/css" rel="stylesheet" href="./Creating a Bejeweled Blitz Bot in C#_files/commonstyle.css">
+<link type="text/css" rel="stylesheet" href="./Creating a Bejeweled Blitz Bot in C#_files/commonlayout.css">
+<link media="print" type="text/css" rel="stylesheet" href="./Creating a Bejeweled Blitz Bot in C#_files/print.css">
+<link id="MainStyle" type="text/css" rel="stylesheet" href="./Creating a Bejeweled Blitz Bot in C#_files/style.css"><link id="Rsd" rel="EditURI" type="application/rsd+xml" title="RSD" href="http://charlesrcook.com/rsd.xml.ashx"><link id="AtomLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://charlesrcook.com/Rss.aspx"><script src="./Creating a Bejeweled Blitz Bot in C#_files/common.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var subtextAllowedHtmlTags = ['a', 'b', 'strong', 'blockquote', 'i', 'em', 'u', 'strike', 'super', 'sub', 'code'];
+			var subtextBlogInfo = new blogInfo('/', '/');
+		</script>
+		<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="string_finder.js"></head>
+	<body>
+		<form name="Form1" method="post" action="./Creating a Bejeweled Blitz Bot in C#_files/Creating a Bejeweled Blitz Bot in C#.htm" onsubmit="javascript:return WebForm_OnSubmit();" id="Form1">
+<div>
+<input type="hidden" name="PostComment_ascx_ctl00_answer" id="PostComment_ascx_ctl00_answer" value="8">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="PostComment_ascx_ctl00_encrypted" id="PostComment_ascx_ctl00_encrypted" value="LrwHh7WpFf5PfRzOm++f1JikZ1e2BRXmTS4KUs1Mn/Y=">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Creating a Bejeweled Blitz Bot in C#_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./Creating a Bejeweled Blitz Bot in C#_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Creating a Bejeweled Blitz Bot in C#_files/WebResource(1).axd" type="text/javascript"></script>
+<script src="./Creating a Bejeweled Blitz Bot in C#_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./Creating a Bejeweled Blitz Bot in C#_files/ScriptResource(2).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWEwL+raDpAgLIxJekBAKh2JmhBQL+3ZGoBALZ0YTdDQL4oNG+CQLTntyYCQKKxo21BQLluYDqDgLUw76tDQKvt7HiBgKm1I3fAwKyqIecCQLH9YpTAq+a5rsPAoqv5pwLAq/bzYAMAqX8uYIOAsnZ7LoEDkv8WbUYDOHMrzjvBqVN1u1T6Ic=">
+</div>
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('SubtextScriptManager', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tsearch$searchUpdate','tapnlCommentsWrapper'], ['search$btnSearch'], [], 90);
+//]]>
+</script>
+
+			
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tbody><tr>
+		<td>
+			<h1><a id="Header1_HeaderTitle" title="The Title Of This Blog." class="headermaintitle" href="http://www.charlesrcook.com/Default.aspx">CCook's Blog</a></h1>
+			<span id="subtitle"></span>
+		</td>
+	</tr>
+</tbody></table>
+</div>
+<div id="sub">
+<div class="BlogStats">posts - 57, comments - 78, trackbacks - 4</div></div>
+
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="2" class="LeftCell">
+			<div id="leftmenu">
+				
+					
+<h3>My Links</h3>
+<ul>
+	<li>
+		<a id="MyLinks1_HomeLink" title="Link to the home page." href="http://www.charlesrcook.com/Default.aspx">Home</a>
+	</li><li>
+		<a id="MyLinks1_ContactLink" accesskey="9" title="Contact form." href="http://www.charlesrcook.com/contact.aspx">Contact</a>
+	</li><li>
+		<a id="MyLinks1_XMLLink" title="Subscribe to this feed." href="http://charlesrcook.com/Rss.aspx"><img title="Subscribe to this feed." src="./Creating a Bejeweled Blitz Bot in C#_files/xml.gif" alt="RSS 2.0 Feed" style="border-width:0px;"></a>
+	</li><li>
+		<a id="MyLinks1_Admin" title="Login Form." href="http://www.charlesrcook.com/login.aspx">Login</a></li>
+</ul>
+
+					
+<div id="searchWrapper">
+	<div id="search">
+		<input name="search$txtSearch" type="text" id="search_txtSearch" class="searchterm"> <input type="submit" name="search$btnSearch" value="Search" id="search_btnSearch" class="searchButton">
+	</div>
+	<div id="search_searchUpdate">
+	
+			
+		
+</div>
+	<div id="search_searchProgress" style="display:none;">
+	
+			<div id="search-progress">
+			</div>
+		
+</div>
+</div>
+					
+					
+					
+		<h3>Archives</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" title="" href="http://www.charlesrcook.com/archive/2011/01.aspx">January, 2011 (1)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" title="" href="http://www.charlesrcook.com/archive/2010/12.aspx">December, 2010 (1)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" title="" href="http://www.charlesrcook.com/archive/2010/10.aspx">October, 2010 (1)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" title="" href="http://www.charlesrcook.com/archive/2010/09.aspx">September, 2010 (1)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" title="" href="http://www.charlesrcook.com/archive/2009/06.aspx">June, 2009 (1)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link" title="" href="http://www.charlesrcook.com/archive/2009/03.aspx">March, 2009 (1)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link" title="" href="http://www.charlesrcook.com/archive/2009/02.aspx">February, 2009 (1)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link" title="" href="http://www.charlesrcook.com/archive/2009/01.aspx">January, 2009 (5)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link" title="" href="http://www.charlesrcook.com/archive/2008/12.aspx">December, 2008 (3)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link" title="" href="http://www.charlesrcook.com/archive/2008/11.aspx">November, 2008 (2)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link" title="" href="http://www.charlesrcook.com/archive/2008/10.aspx">October, 2008 (7)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link" title="" href="http://www.charlesrcook.com/archive/2008/09.aspx">September, 2008 (7)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link" title="" href="http://www.charlesrcook.com/archive/2008/08.aspx">August, 2008 (4)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link" title="" href="http://www.charlesrcook.com/archive/2008/07.aspx">July, 2008 (4)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link" title="" href="http://www.charlesrcook.com/archive/2008/06.aspx">June, 2008 (6)</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link" title="" href="http://www.charlesrcook.com/archive/2008/05.aspx">May, 2008 (12)</a> <!----></li>
+			
+				</ul>
+			
+	
+		<h3>Post Categories</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" title="" href="http://www.charlesrcook.com/category/1.aspx">Web Programming</a> <!--<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink" title="Subscribe to Web Programming" href="/category/1.aspx/rss">(rss)</a>--></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" title="" href="http://www.charlesrcook.com/category/2.aspx">Technical Computing</a> <!--<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_RssLink" title="Subscribe to Technical Computing" href="/category/2.aspx/rss">(rss)</a>--></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" title="" href="http://www.charlesrcook.com/category/3.aspx">School</a> <!--<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_RssLink" title="Subscribe to School" href="/category/3.aspx/rss">(rss)</a>--></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" title="" href="http://www.charlesrcook.com/category/5.aspx">Fortran 90</a> <!--<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_RssLink" title="Subscribe to Fortran 90" href="/category/5.aspx/rss">(rss)</a>--></li>
+			
+				</ul>
+			
+	
+		<h3>Projects</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link" title="" href="http://www.greatvocab.com/">Great Vocab</a> <!----></li>
+			
+				</ul>
+			
+	
+		<h3>Web Dev</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link" title="" rel="external" href="http://asp.net/mvc/">ASP.NET MVC</a> <!----></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_Link" title="" rel="external" href="http://weblogs.asp.net/scottgu/">Scott Gu's Blog</a> <!--<a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_RssLink" title="Subscribe to Scott Gu's Blog" href="http://weblogs.asp.net/scottgu/rss.aspx">(rss)</a>--></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl03_Link" title="" href="http://www.codeplex.com/unifico">Unifico Framework</a> <!----></li>
+			
+				</ul>
+			
+	
+
+				
+                <center>
+
+                    <script type="text/javascript"><!--
+google_ad_client = "pub-5067602200134082";
+/* 120x240, created 7/17/08 */
+google_ad_slot = "1088009752";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+                    </script>
+
+                    <script type="text/javascript" src="./Creating a Bejeweled Blitz Bot in C#_files/show_ads.js">
+                    </script><script src="./Creating a Bejeweled Blitz Bot in C#_files/show_ads_impl.js"></script><script src="./Creating a Bejeweled Blitz Bot in C#_files/expansion_embed.js"></script><script src="./Creating a Bejeweled Blitz Bot in C#_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display:inline-table;border:none;height:240px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><ins id="google_ads_frame1_anchor" style="display:block;border:none;height:240px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><iframe allowtransparency="true" frameborder="0" height="240" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" scrolling="no" src="./Creating a Bejeweled Blitz Bot in C#_files/ads.htm" style="left:0;position:absolute;top:0" vspace="0" width="120"></iframe></ins></ins>
+
+                </center>
+			</div>
+		</td>
+		<td class="MainCell">
+			<div id="main">
+				
+					
+<div class="previousNext">
+	<a id="viewpost_ascx_PreviousNext_PrevLink" title="previous post" href="http://charlesrcook.com/archive/2009/06/07/undo-within-selected.aspx">&lt;&lt; Undo Within Selected</a>
+	<span id="viewpost_ascx_PreviousNext_LeftPipe" class="prevNextSeparator"> | </span>
+	<a id="viewpost_ascx_PreviousNext_MainLink" href="http://www.charlesrcook.com/Default.aspx">Home</a>
+	<span id="viewpost_ascx_PreviousNext_RightPipe" class="prevNextSeparator"> | </span>
+	<a id="viewpost_ascx_PreviousNext_NextLink" title="next post" href="http://charlesrcook.com/archive/2010/10/01/generating-a-symbolic-vector-in-matlab.aspx">Generating a Symbolic Vector in Matlab &gt;&gt;</a>
+</div>
+
+
+	<div class="post">
+		<h2>
+			<a id="viewpost_ascx_TitleUrl" title="Title of this entry." href="./Creating a Bejeweled Blitz Bot in C#_files/Creating a Bejeweled Blitz Bot in C#.htm">Creating a Bejeweled Blitz Bot in C#</a>
+		</h2>
+		<script type="text/javascript"><!--
+google_ad_client = "pub-5067602200134082";
+/* inner content ad */
+google_ad_slot = "4024974970";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="./Creating a Bejeweled Blitz Bot in C#_files/show_ads.js">
+</script><script src="./Creating a Bejeweled Blitz Bot in C#_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><ins id="google_ads_frame2_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><iframe allowtransparency="true" frameborder="0" height="60" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" scrolling="no" src="./Creating a Bejeweled Blitz Bot in C#_files/ads(1).htm" style="left:0;position:absolute;top:0" vspace="0" width="468"></iframe></ins></ins>
+		<p>One of the more addictive games out there is Bejeweled Blitz on Facebook.   It's fun to play, but as a programmer one thing nags at you as you play.  The thought 'I could program something that would do this much better.'  I program mostly scientific codes and business applications.  A bot application is quite different, and hence a great project.  I'll cover the process of making a bot here; however, I will not give a direct download.  If you want to run the bot you will have to compile your own application.  Cheating isn't the goal here.
+</p><p>First, credit where it is due, <a href="http://mikevallotton.wordpress.com/2009/08/19/i-cheat-at-bejeweled-blitz/">Mike Vallotton posted on the same topic</a>.  Between this and his article assembling a bot should be straight forward.  My additions are in locating the game window, using statistics to identify game pieces, and using a damper on game moves.  He reports a score of 212K; I have reached 1.06M without much attention to the pattern recognition.  
+</p><p>The approach is to create a bot that interfaces with the game in the same way a user would, through the mouse.  Doing so involves three major steps, reading the game state from the screen, solving for a move, and finally making the move.  Reading the game state from screenshots may be the trickiest of the three.
+</p><h2>Locating the game window
+</h2><p>Locating where the game window is on the screen was one of the more interesting problems to solve.  While we could use some libraries to get the window location of a browser which contains the Bejeweled game, we would not know where within the window the game resides.  Further, when needing to know where the game is to the pixel, the game location on the page is far too volatile with changing ads, content, etc.  
+</p><p>To find the window I use a screenshot of the whole desktop and then find the game within this image.  Doing a per-pixel match is absurdly expensive, so I use an idea I borrowed from <a href="http://www.math.ust.hk/~mawang/teaching/math532/mgtut.pdf">multigrid solvers</a>, yet much simpler.    To find the window I first capture a screenshot and crop it down to the game I want to find, and save it to disk; In this case the title screen of the game.  Then I take a screenshot of the desktop captured during the run and attempt to find the title screen within.
+</p><p>To find the title screen I first convert both images to grayscale by simply taking the red channel.  With grayscale images we then have a two dimensional array to work with, speeding things up a bit.  To speed things up further, both images are scaled down to 0.10 their original size (this is the idea of successive scales is borrowed from the multigrid solver).  Then the title screen is subtracted from the array at various locations.  After the subtraction the two dimensional array is summed to get a total sum value.  The location where the sum has the least value is taken to be the location where the window is located. 
+</p><p>For the first levels of locating we do not need to be exact; we are just looking for regions where the title screen is so that the next level will have a reduced area to search.  For the first search I stepped across the screenshot by 2 pixels (20 pixels on the original image).  This then locates the game title screen to +/- (2*10) pixels on the screen.  Great, now we can resize to 0.25 and search a 10 by 10 region.  This is repeated at 0.50 before searching the final full scale screenshot.  I prefer to work in Matlab for such operations.  This does require <a href="http://www.mathworks.com/matlabcentral/fileexchange/12987-integrating-matlab-with-c">compiling the Matlab code and referencing it from the .NET application</a>.  
+</p><p>The C# code to get a screenshot and call the compiled Matlab function:
+</p><p></p><pre><code><span style="font-family:Consolas"><span style="color:blue">private</span>&nbsp;<span style="color:blue">void</span>&nbsp;FindGameScreen()<br>{<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">Rectangle</span>&nbsp;r&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Rectangle</span>(0,&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">Screen</span>.PrimaryScreen.Bounds.Width,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">Screen</span>.PrimaryScreen.Bounds.Height);<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">Bitmap</span>&nbsp;bmp&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Bitmap</span>(r.Width,&nbsp;r.Height);<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">using</span>&nbsp;(<span style="color:#2b91af">Graphics</span>&nbsp;g&nbsp;=&nbsp;<span style="color:#2b91af">Graphics</span>.FromImage(bmp))<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.CopyFromScreen(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Point</span>(0,&nbsp;0),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Point</span>(0,&nbsp;0),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.Size);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">int</span>[,]&nbsp;bmpmat&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:blue">int</span>[r.Height,&nbsp;r.Width];<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">for</span>&nbsp;(<span style="color:blue">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;r.Width;&nbsp;i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">for</span>&nbsp;(<span style="color:blue">int</span>&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;r.Height;&nbsp;j++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">Color</span>&nbsp;pixelColor&nbsp;=&nbsp;bmp.GetPixel(i,&nbsp;j);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bmpmat[j,&nbsp;i]&nbsp;=&nbsp;pixelColor.R;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+					<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">var</span>&nbsp;bmpinp&nbsp;=&nbsp;(<span style="color:#2b91af">MWNumericArray</span>)bmpmat;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">var</span>&nbsp;fileinp&nbsp;=&nbsp;(<span style="color:#2b91af">MWCharArray</span>)<span style="color:#a31515">@"gametitle.bmp"</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">MWArray</span>&nbsp;test&nbsp;=&nbsp;(<span style="color:#2b91af">MWNumericArray</span>)findWindow.findwindow(bmpinp,&nbsp;fileinp);<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">double</span>[,]&nbsp;data&nbsp;=&nbsp;(<span style="color:blue">double</span>[,])test.ToArray();<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">double</span>&nbsp;x&nbsp;=&nbsp;data[0,&nbsp;0];<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">double</span>&nbsp;y&nbsp;=&nbsp;data[0,&nbsp;1];<br>&nbsp;&nbsp;&nbsp;&nbsp;gamex&nbsp;=&nbsp;<span style="color:#2b91af">Convert</span>.ToInt32(x);<br>&nbsp;&nbsp;&nbsp;&nbsp;gamey&nbsp;=&nbsp;<span style="color:#2b91af">Convert</span>.ToInt32(y);<br>}
+</span></code></pre><p>
+&nbsp;</p><p>The Matlab code which performs the described method:
+</p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">%</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">% Uses rescaling to find successive approximate locations of the window,</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">% finally finding the location to the pixel.</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:blue">function</span><span style="color:black"> [data]= findwindow(fullscreen, game_filename)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    gametitle = imread(game_filename);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    fullscreen = uint8(fullscreen);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    gametitle = gametitle(:,:,1);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    fullscreen2 = imresize(fullscreen,.1);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    gametitle2 = imresize(gametitle,.1);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    [x,y] = findwindow2(fullscreen2,gametitle2,1,1,0,0,2);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    x = x*10;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    y = y*10;    </span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    fullscreen2 = imresize(fullscreen,.25);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    gametitle2 = imresize(gametitle,.25);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    x = x*.25-6*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    y = y*.25-6*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    xn = x+2*6*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    yn = y+2*6*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (x&lt;1)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        x=1;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (y&lt;1)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        y=1;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    [x,y] = findwindow2(fullscreen2,gametitle2,x,y,xn,yn,3);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    x = x*4;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    y = y*4;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (x&lt;1)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        x=1;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (y&lt;1)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        y=1;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">%     </span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    fullscreen2 = imresize(fullscreen,.5);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    gametitle2 = imresize(gametitle,.5);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">%     </span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    x = x*.5-3*3</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    y = y*.5-3*3</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    xn = x+2*3*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    yn = y+2*3*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">%     </span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    [x,y] = findwindow2(fullscreen2,gametitle2,x,y,xn,yn,3);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    x = x*2;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    y=y*2;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (x&lt;1)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        x=1;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (y&lt;1)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        y=1;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">%    </span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    x = x-2*3</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    y = y-2*3</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    xn = x+2*2*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    yn = y+2*2*3;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:forestgreen; font-size:10pt">%    </span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    [x,y] = findwindow2(fullscreen,gametitle,x,y,xn,yn,1);</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    data = [x,y]</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:blue; font-size:10pt">end</span><span style="font-size:12pt">
+			</span></span></p><p> 
+&nbsp;</p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:blue">function</span><span style="color:black"> [x,y] = findwindow2(fullscreen,gametitle,x0,y0,xn,yn,stepsize)</span></span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    xmin=0;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    ymin=0;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    testmin = inf;</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    [gheight, gwidth] = size(gametitle);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    [fheight, fwidth] = size(fullscreen)</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (xn == 0)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        xn=fwidth-gwidth-stepsize</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (yn == 0)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">        yn = fheight-gheight-stepsize</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">for</span><span style="color:black">(x=x0:stepsize:xn)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">for</span><span style="color:black">(y=y0:stepsize:yn)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">            test = error_fun([x,y]);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">if</span><span style="color:black"> (test &lt; testmin)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">                xmin = x;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">                ymin = y;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">                testmin = test;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    x=xmin;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">    y=ymin;</span><span style="font-size:12pt">
+			</span></span></p><p>    
+&nbsp;</p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">function</span><span style="color:black"> f = error_fun(x)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">         f= test_sub(x(1),x(2),fullscreen,gametitle);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:black">
+				</span><span style="color:blue">end</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:blue; font-size:10pt">end</span><span style="font-size:12pt">
+			</span></span></p><p> 
+&nbsp;</p><p><span style="font-family:Courier New"><span style="font-size:10pt"><span style="color:blue">function</span><span style="color:black"> fit = test_sub(x, y, full, game)</span></span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">   x = round(x);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">   y = round(y);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">   [height, width] = size(game);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">   sub = full(y:y+height-1,x:x+width-1);</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">   sub = sub-game;</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:black; font-size:10pt">   fit = sum(sum(sub,1));</span><span style="font-size:12pt">
+			</span></span></p><p><span style="font-family:Courier New"><span style="color:blue; font-size:10pt">end</span><span style="font-size:12pt">
+			</span></span></p><p>
+&nbsp;</p><h2>Recognizing pieces
+</h2><p>To get the game state from the screenshots I chose to avoid OCR methods and just go with a statistical approach.  The idea was that the histogram for a piece will be unique from the other colors.  For example, the mean red value for red would be different than that of the other pieces.  To get the reference statistics from the game I used <a href="http://www.aforgenet.com/">AForge.NET</a>.  The Framework comes with a nice application to work with images and a library to reference from the bot.  
+</p><p>The first step is to collect statistics for all the game pieces.  To do this, get a screenshot of all of them, and then crop down to just the game pieces.  Each piece has some shape surrounded by the background board.  To improve the statistics I chose to grab a 20 by 20 pixel box centered on the piece location.  That is to say, crop down the 40 by 40 location to just the inner 20 by 20 and what remains is the core of a game piece.  
+</p><p>The statistics I collected using AForge .NET. 
+</p><div><table style="border-collapse:collapse" border="0"><colgroup><col style="width:64px"><col style="width:89px"><col style="width:103px"><col style="width:93px"></colgroup><tbody valign="top"><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  solid #4f81bd 1.0pt; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p><span style="color:black"><strong>Piece</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid #4f81bd 1.0pt; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p style="text-align: right"><span style="color:black"><strong>Red Mean</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid #4f81bd 1.0pt; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p style="text-align: right"><span style="color:black"><strong>Green Mean</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid #4f81bd 1.0pt; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p style="text-align: right"><span style="color:black"><strong>Blue Mean</strong></span></p></td></tr><tr style="height: 20px; background: #d3dfee"><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p><span style="color:black"><strong>white</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">218.79</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">218.79</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">218.79</span></p></td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px"><p><span style="color:black"><strong>purple</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">176.7325</span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">38.1</span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">177.2425</span></p></td></tr><tr style="height: 20px; background: #d3dfee"><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p><span style="color:black"><strong>blue</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">16.975</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">109.5675</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">204.7625</span></p></td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px"><p><span style="color:black"><strong>green</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">43.06</span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">214.2775</span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">75.365</span></p></td></tr><tr style="height: 20px; background: #d3dfee"><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p><span style="color:black"><strong>yellow</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">227.01</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">197.165</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-right:  none"><p style="text-align: right"><span style="color:black">28</span></p></td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px"><p><span style="color:black"><strong>orange</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">238.49</span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">143.535</span></p></td><td style="padding-left: 7px; padding-right: 7px"><p style="text-align: right"><span style="color:black">55.7425</span></p></td></tr><tr style="height: 20px; background: #d3dfee"><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p><span style="color:black"><strong>red</strong></span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p style="text-align: right"><span style="color:black">242.855</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p style="text-align: right"><span style="color:black">31.28</span></p></td><td style="padding-left: 7px; padding-right: 7px; border-left:  none; border-bottom:  solid #4f81bd 1.0pt; border-right:  none"><p style="text-align: right"><span style="color:black">62.07</span></p></td></tr></tbody></table></div><p>
+&nbsp;</p><p>Great, we now have readily available statistics to match a game piece too.  Further, the statistics are calculated by the same library so matching should be good.
+</p><p>Matching a piece to the statistics is straightforward using a <a href="http://en.wikipedia.org/wiki/Sum_of_squares">Root Sum Square</a> error approach.  For a statistic at a location we calculate the error to each piece and take the one with the smallest error.  The code would look something like:
+</p><p><span style="font-family:Consolas; font-size:10pt"><span style="color:blue">double</span>&nbsp;bestScore&nbsp;=&nbsp;255;<br><span style="color:blue">double</span>&nbsp;curScore&nbsp;=&nbsp;0;<br><span style="color:blue">foreach</span>&nbsp;(<span style="color:#2b91af">KeyValuePair</span>&lt;<span style="color:#2b91af">Color</span>,&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&gt;&nbsp;item&nbsp;<span style="color:blue">in</span>&nbsp;statReference)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;curScore&nbsp;=&nbsp;<span style="color:#2b91af">Math</span>.Pow(item.Value[0]&nbsp;/&nbsp;255&nbsp;-&nbsp;stats.Red.Mean&nbsp;/&nbsp;255,&nbsp;2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;<span style="color:#2b91af">Math</span>.Pow(item.Value[1]&nbsp;/&nbsp;255&nbsp;-&nbsp;stats.Green.Mean&nbsp;/&nbsp;255,&nbsp;2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;<span style="color:#2b91af">Math</span>.Pow(item.Value[2]&nbsp;/&nbsp;255&nbsp;-&nbsp;stats.Blue.Mean&nbsp;/&nbsp;255,&nbsp;2);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">if</span>&nbsp;(curScore&nbsp;&lt;&nbsp;bestScore)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PieceColor&nbsp;=&nbsp;item.Key;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">if</span>&nbsp;(item.Key&nbsp;==&nbsp;<span style="color:#2b91af">Color</span>.YellowGreen)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PieceColor&nbsp;=&nbsp;<span style="color:#2b91af">Color</span>.Yellow;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">if</span>&nbsp;(item.Key&nbsp;==&nbsp;<span style="color:#2b91af">Color</span>.MediumPurple)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PieceColor&nbsp;=&nbsp;<span style="color:#2b91af">Color</span>.Purple;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bestScore&nbsp;=&nbsp;curScore;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}
+</span></p><p>
+&nbsp;</p><p>In this implementation a score, or error, is calculated by differencing the mean color values from an 'ideal' value and them performing the RSS on that value.  The score with the smallest error indicates the piece which has the closest match.  With pieces 20 by 20 and a cheap RSS being used, this method parses the game state very fast and accurately.  Note that it is important to crop down to the 'core' of the game piece as the background board tends to smooth out the statistics, especially between yellow and orange.
+</p><p>Finding the statistics for the pieces can be done like so, where <span style="font-family:Consolas">game</span> is the current screenshot cropped to the game and <span style="font-family:Consolas">gGamePieces</span> is an array of initialized Graphics objects.
+</p><p></p><pre><code><span style="font-family:Consolas"><span style="color:blue">for</span>&nbsp;(<span style="color:blue">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;8;&nbsp;i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">for</span>&nbsp;(<span style="color:blue">int</span>&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;8;&nbsp;j++)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gGamePieces[i,&nbsp;j].DrawImage(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Rectangle</span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Point</span>(0,&nbsp;0),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Size</span>(20,&nbsp;20)),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Rectangle</span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Point</span>(gameStartX&nbsp;+&nbsp;(i&nbsp;*&nbsp;40)&nbsp;+&nbsp;10,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gameStartY&nbsp;+&nbsp;(j&nbsp;*&nbsp;40)&nbsp;+&nbsp;10),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Size</span>(20,&nbsp;20)),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">GraphicsUnit</span>.Pixel);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">ImageStatistics</span>&nbsp;stats&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">ImageStatistics</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bmpGamePieces[i,&nbsp;j]);<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2b91af">ImageStatisticsYCbCr</span>&nbsp;stats2&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">ImageStatisticsYCbCr</span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bmpGamePieces[i,&nbsp;j]);<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pGame[i,&nbsp;j].Parse(stats,&nbsp;stats2);<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+</span></code></pre><p>
+&nbsp;</p><p>I chose to store the piece reference statistics in a dictionary and initialize as follows:
+</p><p></p><pre><code><span style="font-family:Consolas"><span style="color:blue">private</span>&nbsp;<span style="color:blue">void</span>&nbsp;BuildReference()<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green">//RedMeanB&nbsp;&nbsp;&nbsp;&nbsp;GreenMeanB&nbsp;&nbsp;&nbsp;&nbsp;BlueMeanB</span><br>&nbsp;&nbsp;&nbsp;&nbsp;statReference&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">Dictionary</span>&lt;<span style="color:#2b91af">Color</span>,&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;statReference.Add(<span style="color:#2b91af">Color</span>.White,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&nbsp;{&nbsp;218.79,&nbsp;218.79,&nbsp;218.79&nbsp;});<br>&nbsp;&nbsp;&nbsp;&nbsp;statReference.Add(<span style="color:#2b91af">Color</span>.Purple,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&nbsp;{&nbsp;176.7325,&nbsp;38.1,&nbsp;177.2425&nbsp;});<br>&nbsp;&nbsp;&nbsp;&nbsp;statReference.Add(<span style="color:#2b91af">Color</span>.Blue,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&nbsp;{&nbsp;16.975,&nbsp;109.5675,&nbsp;204.7625&nbsp;});<br>&nbsp;&nbsp;&nbsp;&nbsp;statReference.Add(<span style="color:#2b91af">Color</span>.Green,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&nbsp;{&nbsp;43.06,&nbsp;214.2775,&nbsp;75.365&nbsp;});<br>&nbsp;&nbsp;&nbsp;&nbsp;statReference.Add(<span style="color:#2b91af">Color</span>.Yellow,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&nbsp;{&nbsp;227.01,&nbsp;197.165,&nbsp;28&nbsp;});<br>&nbsp;&nbsp;&nbsp;&nbsp;statReference.Add(<span style="color:#2b91af">Color</span>.Orange,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&nbsp;{&nbsp;238.49,&nbsp;143.535,&nbsp;55.7425&nbsp;});<br>&nbsp;&nbsp;&nbsp;&nbsp;statReference.Add(<span style="color:#2b91af">Color</span>.Red,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">List</span>&lt;<span style="color:blue">double</span>&gt;&nbsp;{&nbsp;242.855,&nbsp;31.28,&nbsp;62.07&nbsp;});<br>}
+</span></code></pre><p>
+&nbsp;</p><p>We now have a way to locate the game window and identify the game pieces on the board.  We have our game state, great.
+</p><h2>Determining a move
+</h2><p>For this I did not do anything fancy.  With our known game state I simply search the board for any locations where swapping two pieces resulted in a three piece chain.  I didn't bother to add any checks for larger combos as I did not see this as accomplishing anything other than improving a score. 
+</p><p>There was an additional component to determining the moves.  After doing a simple implementation I noticed an interesting dynamic feedback on the game.  The bot would move fast enough to try and create combos where they did not exist.  For example, it would swap a piece and while it was moving notice that if it also moved another piece a combo would be created while the pieces moved.  The game does not allow you to move two pieces to create a combo, so this just resulted in a bunch of spinning pieces that oscillated back and forth.  I chose to damp the board to prevent this.  
+</p><p>To do this, I used an eight by eight double array to keep track of a delay.  Any time a move was performed I added 550 to that location and 275 to locations around it.  The values are delay values in milliseconds.  This way the bot will not move pieces away from an action in that area.  Every tick of the engine would subtract the elapsed time from the entire array.  Game moves are only made to locations where the delay value is zero (negative values are kept to zero).  This allows us to simply call all possible moves without destroying previous moves.  Note that for each tick I send moves for every possible match on the board.  I don't perform a move and exit the loop; I send them all without a Sleep.  The game does remarkably well at handling this.
+</p><p>Running the bot is similar to a game loop.  I just created a timer which ticked at 50 milliseconds and stopped after 63 seconds (typically three seconds from the game pausing for specials).  
+</p><h2>Making the move
+</h2><p>Making the move involves an Interop call to user32.  Here I refer you to <a href="http://mikevallotton.wordpress.com/2009/08/19/i-cheat-at-bejeweled-blitz/">Mike Vallotton's post</a>. One 'gotcha' here, if you are running on x64 you need to change the offsets in the class or nothing will happen.  Also, I suggest putting in a Thread.Sleep while you test; the last thing you want is your mouse moving out of control with a bug, clicking around your Facebook page at 20 Hz.
+</p><p></p><pre><code><span style="font-family:Consolas">[<span style="color:#2b91af">StructLayout</span>(<span style="color:#2b91af">LayoutKind</span>.Explicit)]<br><span style="color:blue">private</span>&nbsp;<span style="color:blue">struct</span>&nbsp;<span style="color:#2b91af">INPUT</span><br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;[<span style="color:#2b91af">FieldOffset</span>(0)]<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">public</span>&nbsp;<span style="color:blue">int</span>&nbsp;type;<br>&nbsp;&nbsp;&nbsp;&nbsp;[<span style="color:#2b91af">FieldOffset</span>(8)]<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">public</span>&nbsp;<span style="color:#2b91af">MOUSEINPUT</span>&nbsp;mi;<br>&nbsp;&nbsp;&nbsp;&nbsp;[<span style="color:#2b91af">FieldOffset</span>(8)]<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">public</span>&nbsp;<span style="color:#2b91af">KEYBDINPUT</span>&nbsp;ki;<br>&nbsp;&nbsp;&nbsp;&nbsp;[<span style="color:#2b91af">FieldOffset</span>(8)]<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">public</span>&nbsp;<span style="color:#2b91af">HARDWAREINPUT</span>&nbsp;hi;<br>}
+</span></code></pre><p>
+&nbsp;</p><p>Of course you will need to figure out the pixel offsets for the game board within the game and how to calculate piece locations as well.  Something like the following where the <span style="font-family:Consolas">gameStart </span>values are found by using an image editor (the game seems to change every once in a while as they update) and the <span style="font-family:Consolas">game </span>locations come from the title screen locating.
+</p><p></p><pre><code><span style="font-family:Consolas"><span style="color:blue">var</span>&nbsp;x1&nbsp;=&nbsp;i1&nbsp;*&nbsp;40&nbsp;+&nbsp;gameStartX&nbsp;+&nbsp;gameX&nbsp;+&nbsp;20;<br><span style="color:blue">var</span>&nbsp;y1&nbsp;=&nbsp;j1&nbsp;*&nbsp;40&nbsp;+&nbsp;gameStartY&nbsp;+&nbsp;gameY&nbsp;+&nbsp;20;<br><span style="color:blue">var</span>&nbsp;x2&nbsp;=&nbsp;i2&nbsp;*&nbsp;40&nbsp;+&nbsp;gameStartX&nbsp;+&nbsp;gameX&nbsp;+&nbsp;20;<br><span style="color:blue">var</span>&nbsp;y2&nbsp;=&nbsp;j2&nbsp;*&nbsp;40&nbsp;+&nbsp;gameStartY&nbsp;+&nbsp;gameY&nbsp;+&nbsp;20;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><span style="color:#2b91af">SendInputClass</span>.Click(x1,&nbsp;y1);<br>
+					<br><span style="color:#2b91af">SendInputClass</span>.Click(x2,&nbsp;y2);
+</span></code></pre><p>
+&nbsp;</p><p>Good luck, and have fun.
+</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>
+&nbsp;</p><p>  
+&nbsp;</p>
+
+		<p class="postfoot">
+			<a href="javascript:window.print();" class="printIcon"><span>Print</span></a> | posted on Sunday, September 05, 2010 3:43 PM | 
+		</p>
+		
+					<a href="http://www.dotnetkicks.com/kick/?url=http://www.charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx">
+      <img alt="kick it on DotNetKicks.com" src="./Creating a Bejeweled Blitz Bot in C#_files/KickItImageGenerator.ashx" border="0"></a>
+	
+	
+		</div>
+	<link rel="pingback" href="http://charlesrcook.com/Services/Pingback.aspx">
+	
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx"
+dc:identifier="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx"
+dc:title="Creating a Bejeweled Blitz Bot in C#"
+trackback:ping="http://charlesrcook.com/services/trackbacks/59.aspx" />
+</rdf:RDF>
+-->
+
+	
+<div id="apnlCommentsWrapper">
+	
+<a name="feedback" title="feedback anchor"></a>
+<div id="comments">
+<h3>Feedback</h3>
+	
+	
+		    <img id="Comments_ascx_CommentList_ctl00_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/IdenticonHandler.ashx" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#182">#</a>&nbsp;<a name="182"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl00_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl00$EditLink','')"></a>
+				</h2>
+				Awesome!! :) Thanks
+				<div class="postfoot">
+					9/12/2010 12:29 AM | <a id="Comments_ascx_CommentList_ctl00_NameLink" title="Brett" target="_blank">Brett</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl01_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/IdenticonHandler(1).ashx" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#265">#</a>&nbsp;<a name="265"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl01_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl01$EditLink','')"></a>
+				</h2>
+				Nice Job. By the way, how do you determine when the game ends. Does your program waits for a "hotkey" or did you use a more "intelligent" approach?
+				<div class="postfoot">
+					10/15/2010 6:18 PM | <a id="Comments_ascx_CommentList_ctl01_NameLink" title="Royce" target="_blank">Royce</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl02_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/IdenticonHandler(2).ashx" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#269">#</a>&nbsp;<a name="269"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl02_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl02$EditLink','')"></a>
+				</h2>
+				Fortunately they game tends to take a certain amount of time on average, about +6 seconds so I just had a timer that stops the bot at a certain point.  A more correct way would be to read the progress bar at the bottom of the screen (should be simple to pull from the screen scrape).<br><br>
+				<div class="postfoot">
+					10/17/2010 8:40 PM | <a id="Comments_ascx_CommentList_ctl02_NameLink" title="http://www.charlesrcook.com/" class="author" href="http://www.charlesrcook.com/" target="_blank">Charles</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl03_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/IdenticonHandler(3).ashx" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#306">#</a>&nbsp;<a name="306"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl03_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl03$EditLink','')"></a>
+				</h2>
+				I noticed in your code to find the window you have two findwindows. Did you split your matlab code between findWindow and findwindow and reference them separately?<br><br>MWArray test = (MWNumericArray)findWindow.findwindow(bmpinp, fileinp);
+				<div class="postfoot">
+					11/15/2010 6:48 AM | <a id="Comments_ascx_CommentList_ctl03_NameLink" title="Charles" target="_blank">Charles</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl04_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/avatar.php" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#308">#</a>&nbsp;<a name="308"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl04_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl04$EditLink','')"></a>
+				</h2>
+				There are two functions within the matlab script, but the second function is called from the matlab script by findwindow.  findwindow2 is called a few times by findwindow for successive resolutions of the image.  findwindow is called just once from c#, by the line you show.
+				<div class="postfoot">
+					11/15/2010 7:43 PM | <a id="Comments_ascx_CommentList_ctl04_NameLink" title="http://www.charlesrcook.com/" href="http://www.charlesrcook.com/" target="_blank">Charles</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl05_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/avatar(1).php" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#418">#</a>&nbsp;<a name="418"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl05_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl05$EditLink','')"></a>
+				</h2>
+				I wrote a similar bot in c#.  I like your approach for finding the board.  I just have a UI that allows you position a grid over the board to identify it's location.  The rest of the approach was very similar to yours.  I did match on all 3, 4, 5 gem permutations and rank order the best moves.  I also first look for hyper gems and match the most colors on the board to take them out.  Hyper gems are very hard to identify because they spin and constantly change color.  Also, when you get "Blazing Speed" the colors of the gems change as there are flashes and statistics change for identifying yellow and orange.  Thanks for posting your article.  It's nice to see that other people are thinking the same things.
+				<div class="postfoot">
+					12/4/2010 1:24 PM | <a id="Comments_ascx_CommentList_ctl05_NameLink" title="Mark Lindell" target="_blank">Mark Lindell</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl06_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/avatar.php" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#427">#</a>&nbsp;<a name="427"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl06_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl06$EditLink','')"></a>
+				</h2>
+				The changing game states and holiday theming definitely makes keeping up to date with the game tricky.  At one point they even changed the sizes.  Nice work on ranking the best moves first!
+				<div class="postfoot">
+					12/8/2010 8:56 PM | <a id="Comments_ascx_CommentList_ctl06_NameLink" title="http://www.charlesrcook.com/" class="author" href="http://www.charlesrcook.com/" target="_blank">Charles</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl07_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/IdenticonHandler(4).ashx" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#497">#</a>&nbsp;<a name="497"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl07_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl07$EditLink','')"></a>
+				</h2>
+				is there a way to dowload this?
+				<div class="postfoot">
+					1/1/2011 5:58 AM | <a id="Comments_ascx_CommentList_ctl07_NameLink" title="AWESOMER THAN YOU" target="_blank">AWESOMER THAN YOU</a>
+				</div>
+			</div>
+		
+		    <img id="Comments_ascx_CommentList_ctl08_GravatarImg" class="avatar" src="./Creating a Bejeweled Blitz Bot in C#_files/IdenticonHandler(5).ashx" alt="Gravatar" style="border-width:0px;">
+			<div class="post">
+				<h2>
+					<a title="permalink: re: Creating a Bejeweled Blitz Bot in C#" href="http://charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx#501">#</a>&nbsp;<a name="501"></a>re: Creating a Bejeweled Blitz Bot in C#
+					<a id="Comments_ascx_CommentList_ctl08_EditLink" href="javascript:__doPostBack('Comments_ascx$CommentList$ctl08$EditLink','')"></a>
+				</h2>
+				@ Awesomer Than You: "I will not give a direct download"
+				<div class="postfoot">
+					1/8/2011 10:36 AM | <a id="Comments_ascx_CommentList_ctl08_NameLink" title="Kenny" target="_blank">Kenny</a>
+				</div>
+			</div>
+		
+</div>
+<div id="commentform">
+<h3>Post Comment</h3>
+	<table cellspacing="1" cellpadding="1" border="0">
+		<tbody><tr>
+			<td>Title</td>
+			<td>
+				<input name="PostComment_ascx$tbTitle" type="text" value="re: Creating a Bejeweled Blitz Bot in C#" maxlength="128" id="PostComment_ascx_tbTitle" class="Textbox" size="40" style="width:300px;"></td>
+			<td>
+				<span id="PostComment_ascx_RequiredFieldValidator1" style="color:Red;visibility:hidden;">Please enter a title</span></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>
+				<input name="PostComment_ascx$tbName" type="text" maxlength="32" id="PostComment_ascx_tbName" class="Textbox" size="40" style="width:300px;"></td>
+			<td>
+				<span id="PostComment_ascx_RequiredFieldValidator2" style="color:Red;visibility:hidden;">Please enter your name</span></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>
+				<input name="PostComment_ascx$tbEmail" type="text" maxlength="128" id="PostComment_ascx_tbEmail" class="Textbox" size="40" style="width:300px;">
+			</td>
+			<td>
+				<span id="PostComment_ascx_vldEmail" style="color:Red;display:none;">Email is not required, but it must be valid if specified.</span>
+			</td>
+		</tr>		
+		<tr>
+			<td>Url</td>
+			<td>
+				<input name="PostComment_ascx$tbUrl" type="text" maxlength="256" id="PostComment_ascx_tbUrl" class="Textbox" size="40" style="width:300px;">
+			</td>
+			<td>
+				<span id="PostComment_ascx_vldUrl" style="color:Red;display:none;">Url is not required, but it must be valid if specified.</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">Comment&nbsp;
+				<span id="PostComment_ascx_RequiredFieldValidator3" style="color:Red;visibility:hidden;">Please enter a comment</span><br>
+				<textarea name="PostComment_ascx$tbComment" rows="10" cols="50" id="PostComment_ascx_tbComment" style="height:193px;width:100%;"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<input id="PostComment_ascx_chkRemember" type="checkbox" name="PostComment_ascx$chkRemember" checked="checked"><label for="PostComment_ascx_chkRemember">Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td>
+				<span id="PostComment_ascx_ctl00" style="color:Red;display:none;">Please enter the answer to the supplied question.</span><span id="PostComment_ascx_ctl00_subtext_captcha" style="display: none; ">Please add 5 and 3 and type the answer here: <input type="text" name="PostComment_ascx_ctl00_visibleanswer" value=""></span><input type="hidden" name="PostComment_ascx_captcha_encrypted" value="1qxppp9Q/Tv4hViQ7FEYHTxdHCVriTYtJZemrZeu6tI="><div id="PostComment_ascx_captcha" class="captcha"><img src="./Creating a Bejeweled Blitz Bot in C#_files/CaptchaImage.ashx" border="0" width="180" height="50"><label for="PostComment_ascx_captcha_answer">Enter the code shown above:</label><span id="PostComment_ascx_captcha" style="display:inline-block;color:Red;height:50px;width:180px;display:none;">Please enter the correct word</span><input name="PostComment_ascx_captcha_answer" type="text" size="4" maxlength="4" value=""></div><input type="submit" name="PostComment_ascx$btnSubmit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;PostComment_ascx$btnSubmit&quot;, &quot;&quot;, true, &quot;SubtextComment&quot;, &quot;&quot;, false, false))" id="PostComment_ascx_btnSubmit" class="Button"></td>
+			<td colspan="2">
+				<span id="PostComment_ascx_Message" style="color:Red;"></span></td>
+		</tr>
+	</tbody></table>
+</div>
+
+</div>
+				
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="FooterCell">
+			
+<p id="footer">
+	</p><p class="powererdby">
+	Powered by: <br>
+	<a id="Footer1_Hyperlink2" title="Powered By Subtext" name="Hyperlink1" href="http://sourceforge.net/projects/subtext/"><img title="Powered By Subtext" src="./Creating a Bejeweled Blitz Bot in C#_files/PoweredBySubtext85x33.png" style="border-width:0px;"></a>
+	<a id="Footer1_Hyperlink3" title="Powered By ASP.NET" href="http://asp.net/"><img title="Powered By ASP.NET" src="./Creating a Bejeweled Blitz Bot in C#_files/PoweredByAsp.Net.gif" style="border-width:0px;"></a>
+	</p>
+	<p class="copyright">
+	Copyright © CCook
+	</p>
+<p></p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Creating a Bejeweled Blitz Bot in C#_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4443809-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+		</td>
+	</tr>
+</tbody></table>
+
+		
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("PostComment_ascx_RequiredFieldValidator1"), document.getElementById("PostComment_ascx_RequiredFieldValidator2"), document.getElementById("PostComment_ascx_vldEmail"), document.getElementById("PostComment_ascx_vldUrl"), document.getElementById("PostComment_ascx_RequiredFieldValidator3"), document.getElementById("PostComment_ascx_ctl00"), document.getElementById("PostComment_ascx_captcha"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var PostComment_ascx_RequiredFieldValidator1 = document.all ? document.all["PostComment_ascx_RequiredFieldValidator1"] : document.getElementById("PostComment_ascx_RequiredFieldValidator1");
+PostComment_ascx_RequiredFieldValidator1.controltovalidate = "PostComment_ascx_tbTitle";
+PostComment_ascx_RequiredFieldValidator1.errormessage = "Please enter a title";
+PostComment_ascx_RequiredFieldValidator1.validationGroup = "SubtextComment";
+PostComment_ascx_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+PostComment_ascx_RequiredFieldValidator1.initialvalue = "";
+var PostComment_ascx_RequiredFieldValidator2 = document.all ? document.all["PostComment_ascx_RequiredFieldValidator2"] : document.getElementById("PostComment_ascx_RequiredFieldValidator2");
+PostComment_ascx_RequiredFieldValidator2.controltovalidate = "PostComment_ascx_tbName";
+PostComment_ascx_RequiredFieldValidator2.errormessage = "Please enter your name";
+PostComment_ascx_RequiredFieldValidator2.validationGroup = "SubtextComment";
+PostComment_ascx_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+PostComment_ascx_RequiredFieldValidator2.initialvalue = "";
+var PostComment_ascx_vldEmail = document.all ? document.all["PostComment_ascx_vldEmail"] : document.getElementById("PostComment_ascx_vldEmail");
+PostComment_ascx_vldEmail.controltovalidate = "PostComment_ascx_tbEmail";
+PostComment_ascx_vldEmail.errormessage = "Email is not required, but it must be valid if specified.";
+PostComment_ascx_vldEmail.display = "Dynamic";
+PostComment_ascx_vldEmail.validationGroup = "SubtextComment";
+PostComment_ascx_vldEmail.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+PostComment_ascx_vldEmail.validationexpression = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+var PostComment_ascx_vldUrl = document.all ? document.all["PostComment_ascx_vldUrl"] : document.getElementById("PostComment_ascx_vldUrl");
+PostComment_ascx_vldUrl.controltovalidate = "PostComment_ascx_tbUrl";
+PostComment_ascx_vldUrl.errormessage = "Url is not required, but it must be valid if specified.";
+PostComment_ascx_vldUrl.display = "Dynamic";
+PostComment_ascx_vldUrl.validationGroup = "SubtextComment";
+PostComment_ascx_vldUrl.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+PostComment_ascx_vldUrl.validationexpression = "^(https?://)?([\\w-]+\\.)+[\\w-]+([\\w-./?%&=:]*)?$";
+var PostComment_ascx_RequiredFieldValidator3 = document.all ? document.all["PostComment_ascx_RequiredFieldValidator3"] : document.getElementById("PostComment_ascx_RequiredFieldValidator3");
+PostComment_ascx_RequiredFieldValidator3.controltovalidate = "PostComment_ascx_tbComment";
+PostComment_ascx_RequiredFieldValidator3.errormessage = "Please enter a comment";
+PostComment_ascx_RequiredFieldValidator3.validationGroup = "SubtextComment";
+PostComment_ascx_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+PostComment_ascx_RequiredFieldValidator3.initialvalue = "";
+var PostComment_ascx_ctl00 = document.all ? document.all["PostComment_ascx_ctl00"] : document.getElementById("PostComment_ascx_ctl00");
+PostComment_ascx_ctl00.errormessage = "Please enter the answer to the supplied question.";
+PostComment_ascx_ctl00.display = "Dynamic";
+PostComment_ascx_ctl00.validationGroup = "SubtextComment";
+var PostComment_ascx_captcha = document.all ? document.all["PostComment_ascx_captcha"] : document.getElementById("PostComment_ascx_captcha");
+PostComment_ascx_captcha.errormessage = "Please enter the correct word";
+PostComment_ascx_captcha.display = "Dynamic";
+PostComment_ascx_captcha.validationGroup = "SubtextComment";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+<script type="text/javascript">
+subtext_invisible_captcha_hideFromJavascriptEnabledBrowsers('PostComment_ascx_ctl00_subtext_captcha');
+</script><script type="text/javascript">
+subtext_invisible_captcha_setAnswer(5, 3, 'PostComment_ascx_ctl00_answer');
+</script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":500,"dynamicLayout":true}, null, null, $get("search_searchProgress"));
+});
+
+document.getElementById('PostComment_ascx_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PostComment_ascx_RequiredFieldValidator1'));
+}
+
+document.getElementById('PostComment_ascx_RequiredFieldValidator2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PostComment_ascx_RequiredFieldValidator2'));
+}
+
+document.getElementById('PostComment_ascx_vldEmail').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PostComment_ascx_vldEmail'));
+}
+
+document.getElementById('PostComment_ascx_vldUrl').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PostComment_ascx_vldUrl'));
+}
+
+document.getElementById('PostComment_ascx_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PostComment_ascx_RequiredFieldValidator3'));
+}
+
+document.getElementById('PostComment_ascx_ctl00').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PostComment_ascx_ctl00'));
+}
+
+document.getElementById('PostComment_ascx_captcha').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PostComment_ascx_captcha'));
+}
+//]]>
+</script>
+</form>
+	
+
+<div style="display: none; " id="hiddenlpsubmitdiv"></div><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); form.lpsubmitorig2(); } } }}catch(e){}</script></body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1"></span><object id="skype_plugin_object" location.href="http://www.charlesrcook.com/archive/2010/09/05/creating-a-bejeweled-blitz-bot-in-c.aspx" location.hostname="www.charlesrcook.com" style="position: absolute; visibility: hidden; left: -100px; top: -100px; " width="0" height="0" type="application/x-vnd.skype.toolbars.npplugin.4.2.0"></object></html>

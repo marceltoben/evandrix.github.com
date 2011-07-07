@@ -1,0 +1,23 @@
+#!/bin/bash
+let LINECOUNTER=0
+let S=0
+let U=0
+let N=0
+for LINE in `egrep "dead" $1` ; do
+    if [ $LINE == "1" -o $LINE == "2" ] ; then
+        let LINECOUNTER=$LINECOUNTER+1
+        let RESULT=$LINECOUNTER%2
+        if [ $RESULT -eq 1 ] ; then
+            let LOOSER=$LINE
+        else
+            if [ $LOOSER == $LINE -a $LOOSER == "1" ] ; then
+                let N=$N+1
+            elif [ $LOOSER == $LINE -a $LOOSER == "2" ] ; then
+                let S=$S+1
+            else
+                let U=$U+1
+            fi
+        fi
+    fi
+done
+echo $S " : " $U " : " $N

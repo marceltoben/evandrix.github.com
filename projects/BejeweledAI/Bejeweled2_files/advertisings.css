@@ -1,0 +1,99 @@
+#app_advertising_leaderboard_ph{
+	width: 728px;
+	height: 90px;
+}
+
+#app_advertising_leaderboard2_ph{
+	width: 728px;
+	height: 90px;
+}
+
+#app_advertising_skyscraper_ph{
+	width: 160px;
+	height: 600px;
+}
+
+#app_advertising_rectangle_ph{
+	width: 300px;
+	height: 250px;
+}
+
+#app_advertising_pregame_ph{
+	height: 1px;
+	background: none;
+}
+
+#app_advertising_pregame{
+	position: absolute;
+	min-height: 480px;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+}
+
+#app_advertising_leaderboard{
+	position: absolute;
+	width: 728px;
+}
+
+#app_advertising_rectangle{
+	position: absolute;
+	width: 300px;
+	height: 250px;
+}
+
+#app_advertising_skyscraper_left, #app_advertising_skyscraper_right{
+	position: absolute;
+	width: 160px;
+	height: 600px;
+}
+
+#app_advertising_skyscraper{
+	position: absolute;
+	width: 160px;
+	height: 600px;
+}
+
+	#app_advertising_pregame .headline{
+		text-align: left;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	
+	#app_advertising_pregame .singleTopLine{
+		
+	}
+	
+	#app_advertising_pregame .content{
+		margin-bottom: 10px;
+		min-height: 300px;
+	}
+	
+	#app_advertising_pregame .sliderLine{
+		
+	}
+	
+	#pregame_slider_container{
+		height: 15px;
+		width: 300px;
+		background: #fff;
+		text-align: left;
+	}
+	
+	#pregame_slider{
+		background-color: #888;
+		width: 0px;
+		height: 15px;
+	}
+	
+	#app_advertising_pregame .pregameSliderPercentage{
+		width: 300px;
+		text-align: right;
+		margin-bottom: 20px;
+	}
+
+	#app_advertising_pregame_content{
+		text-align: center;
+	}
+

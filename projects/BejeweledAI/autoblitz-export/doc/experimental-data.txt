@@ -1,0 +1,37 @@
+HSV / Block Color
+
+  8 |  54 |  63 = Red
+  8 |  54 |  62 = Red
+  9 |  54 |  67 = Red
+ 10 |  55 |  63 = Red
+
+ 33 |  57 |  44 = Orange
+ 35 |  59 |  49 = Orange
+ 38 |  64 |  51 = Orange
+ 39 |  66 |  54 = Orange
+
+ 60 |  51 |  60 = Yellow
+ 62 |  53 |  50 = Yellow
+ 63 |  50 |  54 = Yellow
+ 63 |  51 |  55 = Yellow
+ 64 |  52 |  52 = Yellow
+ 66 |  56 |  48 = Yellow
+
+110 |  59 |  58 = Green
+114 |  69 |  52 = Green
+114 |  65 |  54 = Green
+104 |  63 |  62 = Green
+
+186 |  31 |  49 = Blue
+196 |  42 |  47 = Blue
+196 |  53 |  44 = Blue
+199 |  46 |  50 = Blue
+
+315 |  36 |  36 = Purple
+315 |  32 |  41 = Purple
+327 |  35 |  45 = Purple
+334 |  33 |  47 = Purple
+337 |  34 |  45 = Purple
+
+ 60 |  10 |  61 = White
+ 60 |  13 |  59 = White

@@ -1,0 +1,15 @@
+﻿Build started 12-Jan-11 21:06:05.
+     1>Project "C:\Users\evandrix\Desktop\autoblitz-export\project\vs2005\autoblitz.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "..\..\bin\cygwin-vs60\debug-static\autoblitz.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\import\regplat\all\all\include /I"..\..\import\directx\cygwin-vs60\debug-static\include" /I..\..\include /I..\..\src\autoblitz\win32 /ZI /nologo /W3 /WX- /Od /Oy- /D RP_DEBUG_TRACE=2 /D WIN32 /D _CRT_SECURE_NO_DEPRECATE /D WINVER=0x0400 /D UNICODE /D _UNICODE /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"..\..\src\autoblitz\common\main.cygwin-vs60.debug-static.obj" /Fd"..\..\bin\cygwin-vs60\debug-static\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\autoblitz\common\main.cpp
+         main.cpp
+     1>c:\program files (x86)\microsoft sdks\windows\v7.0a\include\objidl.h(11280): error C2061: syntax error : identifier '__RPC__out_xcount_part'
+     1>c:\program files (x86)\microsoft sdks\windows\v7.0a\include\objidl.h(11281): error C2059: syntax error : ')'
+     1>c:\program files (x86)\microsoft sdks\windows\v7.0a\include\objidl.h(11281): fatal error C1903: unable to recover from previous error(s); stopping compilation
+     1>Done Building Project "C:\Users\evandrix\Desktop\autoblitz-export\project\vs2005\autoblitz.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.04

@@ -1,0 +1,291 @@
+###############################################################################
+#
+# Regular Platform Project
+#
+# Copyright (c) 2007, Aaron "Caustik" Robinson
+# All rights reserved.
+# 
+# File := Makefile
+# Desc := regplat common Makefile
+# 
+# Redistribution and use in source and binary forms, with or without 
+# modification, are permitted provided that the following conditions are met:
+#
+# * Redistributions of source code must retain the above copyright notice, 
+#   this list of conditions and the following disclaimer.
+#
+# * Redistributions in binary form must reproduce the above copyright notice, 
+#   this list of conditions and the following disclaimer in the documentation 
+#   and/or other materials provided with the distribution.
+#
+# * Neither the name of Aaron "Caustik" Robinson nor the names of its 
+#   contributors may be used to endorse or promote products derived from this 
+#   software without specific prior written permission.
+# 
+#   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+#   "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+#   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+#   A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+#   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+#   EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#   PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+#   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+#   LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+#   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+#   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# 
+##############################################################################
+
+#
+# Make command
+#
+
+MAKECMD = $(MAKE) $(MAKEOPTS) --no-print-directory
+MAKEOUT = /dev/null
+
+#
+# Debug command
+# 
+
+DBGCMD = gdb
+
+#
+# Edit command
+# 
+
+ifeq ($(TARGET), cygwin-vs60)
+EDITCMD = "$(PROGRAMFILES)\\Vim\\vim71\\"/gvim.exe --cmd "set tabpagemax=99" -p
+else
+EDITCMD = vim --cmd "set tabpagemax=99" -p
+endif
+
+#
+# Platforms
+# 
+
+PLATFORMS = common win32 linux
+
+#
+# Working directory revision
+#
+
+REVISION = `svn info | grep '^Revision' | sed -e 's/Revision: *//'`
+
+#
+# Supported targets
+# 
+
+SUBTAR_LIST = debug-static release-static
+TARGET_LIST = arm-linux i386-linux i386-64-linux cygwin-linux cygwin-vs60
+
+#
+# Target: 'all' - build all for all targets
+# 
+
+all:
+	@echo "                              __         __   "
+	@echo "  .----..-----..-----..-----.|  |.---.-.|  |_ "
+	@echo "  |   _||  -__||  _  ||  _  ||  ||  _  ||   _|"
+	@echo "  |__|  |_____||___  ||   __||__||___._||____|"
+	@echo "               |_____||__|                    "
+	@echo ""
+	@echo "  clean                : clean all binaries"
+	@echo "  clean-[platform]     : clean platform binaries"
+	@echo ""
+	@echo "  all-[platform]       : build platform binaries"
+	@echo "  test-[platform]      : test platform binaries"
+	@echo "  debug-[platform]     : debug specified platform binaries"
+	@echo "  edit-[platform]      : edit specified platform source"
+	@echo "  linecount-[platform] : line count of specified platform source"
+	@echo ""
+	@echo "  project-vs2005       : generate visual studio 2005 project files"
+	@echo "  project-kdevelop     : generate kdevelop project files"
+	@echo ""
+	@echo "  export-common        : export common files"
+	@echo "  export-[platform]    : export platform binaries"
+	@echo ""
+	@echo "  Supported Platforms  : $(TARGET_LIST)"
+
+#
+# Target: all-<target> - Build for an individual target
+#
+
+$(foreach tar, $(TARGET_LIST), all-$(tar)):
+	@TARGET=$(subst all-,,$@) $(MAKECMD) $(foreach sub, $(SUBTAR_LIST), all-target-$(sub))
+
+#
+# Target: all-target - Build for the current target ("$(TARGET)")
+# 
+
+$(foreach sub, $(SUBTAR_LIST), all-target-$(sub)): 
+	@SUBTAR=$(subst all-target-,,$@) $(MAKECMD) $(foreach prj, $(PROJECT_NAME), all-subtar-$(prj))
+
+#
+# Target: all-subtar - Build for the current sub-target ("$(SUBTAR)")
+#
+
+$(foreach prj, $(PROJECT_NAME), all-subtar-$(prj)):
+	@CURPRJ=$(subst all-subtar-,,$@) $(MAKECMD) all-project
+
+#
+# Target: test-<target> - Test for an individual target
+#
+
+$(foreach tar, $(TARGET_LIST), test-$(tar)):
+	@TARGET=$(subst test-,,$@) $(MAKECMD) $(foreach sub, $(SUBTAR_LIST), test-target-$(sub))
+
+#
+# Target: test-target - Test for the current target ("$(TARGET)")
+# 
+
+$(foreach sub, $(SUBTAR_LIST), test-target-$(sub)): 
+	@SUBTAR=$(subst test-target-,,$@) $(MAKECMD) $(foreach prj, $(PROJECT_NAME), test-subtar-$(prj))
+
+#
+# Target: test-subtar - Test for the current sub-target ("$(SUBTAR)")
+#
+
+$(foreach prj, $(PROJECT_NAME), test-subtar-$(prj)):
+	@CURPRJ=$(subst test-subtar-,,$@) $(MAKECMD) test-project
+
+#
+# Target: debug-<target> - Debug for an individual target
+#
+
+$(foreach tar, $(TARGET_LIST), debug-$(tar)):
+	@TARGET=$(subst debug-,,$@) $(MAKECMD) $(foreach sub, $(SUBTAR_LIST), debug-target-$(sub))
+
+#
+# Target: debug-target - Debug for the current target ("$(TARGET)")
+# 
+
+$(foreach sub, $(SUBTAR_LIST), debug-target-$(sub)): 
+	@SUBTAR=$(subst debug-target-,,$@) $(MAKECMD) $(foreach prj, $(PROJECT_NAME), debug-subtar-$(prj))
+
+#
+# Target: debug-subtar - Debug for the current sub-target ("$(SUBTAR)")
+#
+
+$(foreach prj, $(PROJECT_NAME), debug-subtar-$(prj)):
+	@CURPRJ=$(subst debug-subtar-,,$@) EXT_TOOL=$(DBGCMD) $(MAKECMD) test-project
+
+#
+# Target: edit-<target> - Edit for an individual target
+#
+
+$(foreach tar, $(TARGET_LIST), edit-$(tar)):
+	@TARGET=$(subst edit-,,$@) $(MAKECMD) $(foreach prj, $(PROJECT_NAME), edit-target-$(prj))
+
+#
+# Target: edit-subtar - Edit for the current sub-target ("$(SUBTAR)")
+#
+
+$(foreach prj, $(PROJECT_NAME), edit-target-$(prj)):
+	@CURPRJ=$(subst edit-target-,,$@) EXT_TOOL='$(EDITCMD)' $(MAKECMD) edit-project
+
+#
+# Target: linecount-<target> - Line count for an individual target
+#
+
+$(foreach tar, $(TARGET_LIST), linecount-$(tar)):
+	@TARGET=$(subst linecount-,,$@) $(MAKECMD) $(foreach prj, $(PROJECT_NAME), linecount-target-$(prj))
+
+#
+# Target: linecount-subtar - Line count for the current sub-target ("$(SUBTAR)")
+#
+
+$(foreach prj, $(PROJECT_NAME), linecount-target-$(prj)):
+	@CURPRJ=$(subst linecount-target-,,$@) $(MAKECMD) linecount-project
+
+#
+# Target: project-vs2005 - Generate visual studio 2005 project files
+#
+
+project-vs2005:
+	@TARGET=cygwin-vs60 PRJOUTDIR=../project/vs2005/ $(MAKECMD) project-target
+
+#
+# Target: project-kdevelop - Generate kdevelop project files
+#
+
+project-kdevelop:
+	@TARGET=i386-linux PRJOUTDIR=../project/kdevelop/ $(MAKECMD) project-target
+
+#
+# Target: project-target-<target> - Generate project files for the specified target
+# 
+
+project-target: SUBTAR=$$\(ConfigurationName\)
+project-target: 
+	@mkdir -p $(PRJOUTDIR)
+	@$(REGPLAT_TOOLS_BASE)/$(TARGET)/release-static/bin/rp_genprj.exe -t $(REGPLAT_TOOLS_BASE)/all/all/ -o $(PRJOUTDIR) $(PRJ_ARG)
+ifeq ($(TARGET), cygwin-vs60)
+	@$(EXT_DEP) cygstart ../project/vs2005/$(CURPRJ).sln
+endif
+
+#
+# Target: export-common - Export common for all projects
+# 
+
+export-common:
+	@$(MAKECMD) $(foreach prj, $(PROJECT_NAME), export-common-$(prj))
+
+#
+# Target: export-common-<project> - Export common for the current project
+# 
+
+$(foreach prj, $(PROJECT_NAME), export-common-$(prj)):
+	@CURPRJ=$(subst export-common-,,$@) $(MAKECMD) export-comprj
+
+#
+# Target: export-<target> - Export for an individual target
+#
+
+$(foreach tar, $(TARGET_LIST), export-$(tar)):
+	@TARGET=$(subst export-,,$@) $(MAKECMD) $(foreach sub, $(SUBTAR_LIST), export-target-$(sub))
+
+#
+# Target: export-target - Export for the current target ("$(TARGET)")
+# 
+
+$(foreach sub, $(SUBTAR_LIST), export-target-$(sub)): 
+	@SUBTAR=$(subst export-target-,,$@) $(MAKECMD) $(foreach prj, $(PROJECT_NAME), export-subtar-$(prj))
+
+#
+# Target: export-subtar - Export for the current sub-target ("$(SUBTAR)")
+#
+
+$(foreach prj, $(PROJECT_NAME), export-subtar-$(prj)):
+	@CURPRJ=$(subst export-subtar-,,$@) $(MAKECMD) export-project
+
+#
+# Target: clean - Clean for all targets
+#
+
+clean: $(foreach tar, $(TARGET_LIST), clean-$(tar))
+
+#
+# Target: clean-<target> - Clean for an individual target
+#
+
+$(foreach tar, $(TARGET_LIST), clean-$(tar)):
+	@TARGET=$(subst clean-,,$@) $(MAKECMD) $(foreach sub, $(SUBTAR_LIST), clean-target-$(sub))
+
+#
+# Target: clean-target - Clean for the current target ("$(TARGET)")
+# 
+
+$(foreach sub, $(SUBTAR_LIST), clean-target-$(sub)): 
+	@SUBTAR=$(subst clean-target-,,$@) $(MAKECMD) $(foreach prj, $(PROJECT_NAME), clean-subtar-$(prj))
+
+#
+# Target: clean-subtar - Clean for the current sub-target ("$(SUBTAR)")
+#
+
+$(foreach prj, $(PROJECT_NAME), clean-subtar-$(prj)):
+	@CURPRJ=$(subst clean-subtar-,,$@) $(MAKECMD) clean-project
+
+.PHONY : all all-$(TARGET) all-target all-subtar
+.PHONY : export-$(TARGET) export-target export-subtar
+.PHONY : clean clean-$(TARGET) clean-target clean-subtar
+

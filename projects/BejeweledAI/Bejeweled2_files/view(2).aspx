@@ -1,0 +1,11 @@
+var cpmstar_str;
+cpmstar_str = '';
+cpmstar_str += '%3c!--%20BEGIN%20STANDARD%20TAG%20-%20160%20x%20600%20-%20ROS%3a%20UK%20Vena';
+cpmstar_str += 'tus%20Netowrk%20Buy%20-%20DO%20NOT%20MODIFY%20--%3e%0d%0a%3cSCRIPT%20TYPE%3d';
+cpmstar_str += '%22text%2fjavascr'+'ipt%22%20SRC%3d%22http%3a%2f%2fads.bluelithium.com%2f';
+cpmstar_str += 'st%3fad_type%3dad%26ad_size%3d160x600%26section%3d1546066%26pub_';
+cpmstar_str += 'redirect_unencoded%3d1%26pub_redirect%3dhttp%3a%2f%2fserver.cp';
+cpmstar_str += 'mstar.com%2fclick2.aspx%3fpoolid%3d11553!subpoolid%3d0!cam';
+cpmstar_str += 'paignid%3d15287!creativeid%3d33506!url%3d%22%3e%3c%2fSCRIPT%3e%0d%0a%3c!';
+cpmstar_str += '--%20END%20TAG%20--%3e';
+document.write(unescape(cpmstar_str));

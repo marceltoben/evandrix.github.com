@@ -1,0 +1,69 @@
+= Readme Free Magazine Competition =
+ =========================================
+
+Note: This is just a quick guide to compile and run
+the files under Ubuntu. In other distributions, it is similar.
+
+Full details can be found on the website:
+
+    http://www.freiesmagazin.de/programmierwettbewerb
+
+and in the FAQ:
+
+    http://www.freiesmagazin.de/20090409-programmierwettbewerb-faq
+
+----------------------------------------------
+1. Installation of the package "build-essential"
+----------------------------------------------
+
+sudo apt-get install build-essential
+
+or
+
+sudo aptitude install build-essential
+
+
+----------------------------------------------
+2. Compiling the files
+----------------------------------------------
+
+make
+
+Note: Links ai1.bin fm and fm-ai2.bin show later on
+Programs with the AI of the competitors. Usually occurs
+not the same program against itself to.
+
+
+----------------------------------------------
+3a. Game Manual
+----------------------------------------------
+
+. / Fm-game-bin
+
+run and at each break a file "result.dat" with the content
+the playing fields to be exchanged to create. E.g.
+
+6 8 5 8
+
+emerged the field (6.8) with (5.8).
+
+
+----------------------------------------------
+3b. Playing field for competition to create
+----------------------------------------------
+
+. / Fm-game-bin create FILE NAME
+
+The file name is for example "Game field-contest1.dat.
+
+
+----------------------------------------------
+3c. Competitive start
+----------------------------------------------
+
+. / Fm-game-bin FILE NAME
+
+The file name is for example "Game field-contest1.dat.
+
+First start player 1, then Player 2 with the same starting point.
+The steps may include all traced in the output.

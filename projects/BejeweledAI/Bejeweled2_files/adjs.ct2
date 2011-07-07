@@ -1,0 +1,1 @@
+document.write('<SCRIPT language="Javascript">\r\nvar cpmstar_rnd=Math.round(Math.random()*999999);\r\nvar cpmstar_pid=11556;\r\ndocument.writeln("<SCR"+"IPT language=\'Javascript\' src=\'http://server.cpmstar.com/view.aspx?poolid="+cpmstar_pid+"&script=1&rnd="+cpmstar_rnd+"\'></SCR"+"IPT>");\r\n<\/script>');

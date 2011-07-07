@@ -1,0 +1,1243 @@
+/** DEFAULT AREA **/
+body{
+	font-family: Verdana, Arial, Times;
+	font-size: 11px;
+	padding: 0px;
+	margin: 0px;
+	background-image: url(http://cdn.kaisergames.de/images/layout/bg.gif);
+}
+
+pre{
+	color:white;
+}
+
+div{
+	border: 0px solid red;
+}
+
+.clear{
+	clear: both;
+	height: 0px;
+	font-size: 1px;
+	margin: 0px;
+	padding: 0px;
+}
+
+img{
+	border: 0px;
+}
+img.headAvatar{
+	border: 1px solid #424242;
+	vertical-align: middle;
+	display: inline;
+	margin-right: 3px;
+	margin-bottom: 0px;
+}
+
+a.userlink,
+a.gamelink{
+	color: #CB4D14;
+}
+a.userlink:hover,
+a.gamelink:hover{
+	text-decoration: underline;
+}
+
+.flashMessageImageContainer{
+	height:38px;
+
+}
+.flashMessageImageContainer_left{
+	float:left;
+	width:38px;
+	height:38px;
+}
+
+.flashMessageImageContainer_right{
+	float:right;
+	width:38px;
+	height:38px;
+}
+
+
+.flashMessageText{
+	margin-bottom: 10px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+	.flashMessageTextStatus_error{
+		background-color: #D92400;
+		border: 1px solid #000;
+		color: #fff;
+	}
+
+	.flashMessageTextStatus_success{
+		background-color: #2fbb36;
+		border: 1px solid #000;
+		color: #000;
+	}
+
+#precontent_container{
+	margin: 0px;
+	padding: 0px;
+	border-top: 1px solid #000;
+}
+
+.precontentWide{
+	width: 1155px;
+}
+
+#content_container{
+	width: 980px;
+}
+
+.contentFloated{
+	float: left;
+}
+
+/**************
+* HEADER AREA *
+***************/
+#head_container{
+	text-align: left;
+	margin-top: 0px;
+	padding: 0px;
+	border-top: 1px solid transparent;
+	background: none;
+}
+	/** default Header **/
+	#head_container .defaultPageHeader{
+		height: 110px;
+		background: url(http://cdn.kaisergames.de/portal/core/images/layout/head_logo_new.gif);
+		background-repeat: no-repeat;
+		border-top: 1px solid transparent;
+	}
+		#head_container .defaultPageHeader .headLineArea{
+			height: 32px;
+			text-align: center;
+			font-size: 11px;
+			line-height: 11px;
+			margin: 0px;
+			padding: 0px;
+			margin-top: 0px;
+			overflow: hidden;
+		}
+		#head_container .defaultPageHeader .headLineArea .flagArea{
+			float: right;
+			text-align: right;
+			width: 240px;
+			margin: 0px;
+			padding: 0px;
+			margin-top: 9px;
+			margin-right: 10px;
+		}
+			#head_container .defaultPageHeader .headLineArea .flagArea a{
+				margin: 0px;
+				padding: 0px;
+			}
+			
+		#head_container .defaultPageHeader .headLineArea .sloganArea{
+			float: left;
+			text-align: center;
+			width: 488px;
+			margin-left: 240px;
+			margin-top: 16px;
+			color: #000;
+		}
+
+			h2.pagesloganHead{
+				font-size: 11px;
+				font-weight: normal;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+		#head_container .defaultPageHeader .bottomLineArea{
+			height: 78px;
+			overflow: hidden;
+		}
+
+			#head_container .defaultPageHeader .bottomLineArea .logoArea{
+				float: left;
+				width: 740px;
+			}
+				#head_container .defaultPageHeader .bottomLineArea .logoArea a{
+					border: 0px;
+					display: block;
+					width: 740px;
+					height: 80px;
+				}
+
+			#head_container .defaultPageHeader .bottomLineArea .searchArea{
+				float: left;
+				width: 225px;
+			}
+				#head_container .defaultPageHeader .bottomLineArea .searchArea .subTopSearchArea{
+					text-align: right;
+					height: 15px;
+					color: #fff;
+				}
+					#head_container .defaultPageHeader .bottomLineArea .searchArea .subTopSearchArea a{
+						color: #fff;
+						text-decoration: none;
+					}
+					#head_container .defaultPageHeader .bottomLineArea .searchArea .subTopSearchArea a:hover{
+						color: #fff;
+						text-decoration: underline;
+					}
+					
+				#head_container .defaultPageHeader .bottomLineArea .searchArea .subBottomSearchArea{
+					padding-left: 25px;
+					text-align: left;
+					margin-top: 17px;
+					width: 200px;
+				}			
+					#head_container .defaultPageHeader .bottomLineArea .searchArea .subBottomSearchArea .searchValue{
+						width: 120px;
+						border: 1px dashed #000;
+						font-size: 11px;
+						line-height: 11px;
+						padding: 0px;
+						height: 15px;
+					}
+					#head_container .defaultPageHeader .bottomLineArea .searchArea .subBottomSearchArea .searchSubmit{
+						margin-top: 5px;
+						width: 60px;
+						border: 1px dashed #000;
+					}
+				
+	/** member Header **/
+	#head_container .memberPageHeader{
+		height: 118px;
+		background: url(http://cdn.kaisergames.de/community/core/images/layout/head_logo.gif);
+		background-repeat: no-repeat;
+		border-top: 1px solid transparent;
+	}
+		#head_container .memberPageHeader .headLineArea{
+			height: 30px;
+			text-align: center;
+			font-size: 11px;
+			line-height: 11px;
+			margin: 0px;
+			padding: 0px;
+			margin-top: 8px;
+			overflow: hidden;
+		}
+			#head_container .memberPageHeader .headLineArea .flagArea{
+				float: right;
+				width: 240px;
+				margin-top: 12px;
+				text-align: right;
+				margin-right: 10px;
+			}
+				#head_container .memberPageHeader .headLineArea .flagArea a{
+
+				}
+			#head_container .memberPageHeader .headLineArea .sloganArea{
+				float: left;
+				text-align: center;
+				width: 488px;
+				margin-left: 240px;
+				margin-top: 18px;
+				color: #000;
+			}
+
+		#head_container .memberPageHeader .bottomLineArea{
+			height: 78px;
+			overflow: hidden;
+		}
+
+			#head_container .memberPageHeader .bottomLineArea .logoArea{
+				float: left;
+				width: 160px;
+			}
+				#head_container .memberPageHeader .bottomLineArea .logoArea a{
+					border: 0px;
+					display: block;
+					width: 150px;
+					height: 78px;
+				}
+
+			#head_container .memberPageHeader .bottomLineArea .searchArea{
+				float: left;
+				width: 150px;
+				text-align: right;
+				margin-top: 24px;
+			}
+				#head_container .memberPageHeader .bottomLineArea .searchArea .searchValue{
+					width: 120px;
+					border: 1px solid #000;
+					font-size: 11px;
+					line-height: 11px;
+					padding: 0px;
+					height: 15px;
+				}
+				#head_container .memberPageHeader .bottomLineArea .searchArea .searchSubmit{
+					margin-top: 5px;
+					width: 60px;
+					border: 1px solid #000;
+				}
+
+			#head_container .memberPageHeader .bottomLineArea .infoArea{
+				float: right;
+				width: 640px;
+				margin-top: 20px;
+			}
+				#head_container .memberPageHeader .bottomLineArea .infoArea .fullInfoContainer{
+					float: right;
+					text-align: right;
+					width: 480px;
+					height: 60px;
+					margin-right: 17px;
+				}
+
+				#head_container .memberPageHeader .bottomLineArea .infoArea .firstInfoContainer{
+					float: right;
+					width: 45px;
+					height: 60px;
+					margin-right: 17px;
+					text-align: right;
+				}
+					#head_container .memberPageHeader .bottomLineArea .infoArea .firstInfoContainer img{
+
+					}
+
+				#head_container .memberPageHeader .bottomLineArea .infoArea .secondInfoContainer{
+					float: right;
+					width: 80px;
+					height: 60px;
+				}
+					#head_container .memberPageHeader .bottomLineArea .infoArea .secondInfoContainer .shortLinkContainer{
+						float: right;
+						width: 28px;
+						height: 28px;
+					}
+
+					#head_container .memberPageHeader .bottomLineArea .infoArea .secondInfoContainer .shortLinkContainer a.shortLink{
+						/** empty **/
+					}
+
+				#head_container .memberPageHeader .bottomLineArea .infoArea .thirdInfoContainer{
+					float: right;
+					width: 190px;
+					height: 60px;
+					text-align: right;
+				}
+					#head_container .memberPageHeader .bottomLineArea .infoArea .thirdInfoContainer .topAreaContainer{
+						font-size: 16px;
+						color: #fff;
+						margin-top: 5px;
+					}
+					#head_container .memberPageHeader .bottomLineArea .infoArea .thirdInfoContainer .bottomAreaContainer{
+						margin-top: 5px;
+						float: right;
+					}
+				
+				#head_container .memberPageHeader .bottomLineArea .infoArea .fourthInfoContainer{
+					float: right;
+					width: 270px;
+					height: 60px;
+				}
+					#head_container .memberPageHeader .bottomLineArea .infoArea .fourthInfoContainer .fourthImgArea{
+						float: left;
+						width: 40px;
+					}
+					#head_container .memberPageHeader .bottomLineArea .infoArea .fourthInfoContainer .fourthTextArea{
+						float: left;
+						width: 225px;
+					}
+						#head_container .memberPageHeader .bottomLineArea .infoArea .fourthInfoContainer .fourthTextArea .topAreaContainer{
+							font-size: 16px;
+							color: #000;
+							margin-top: 5px;
+						}
+						#head_container .memberPageHeader .bottomLineArea .infoArea .fourthInfoContainer .fourthTextArea .topAreaContainer a{
+							color: #000;
+							text-decoration: none;
+							font-size: 16px;
+						}
+						
+						#head_container .memberPageHeader .bottomLineArea .infoArea .fourthInfoContainer .fourthTextArea .bottomAreaContainer{
+							margin-top: 3px;
+							color: #424242;
+							font-size: 12px;
+						}
+					
+/*************
+ * NAVI AREA *
+ *************/
+	#navi_container{
+
+	}
+
+		#main_navi_container{
+			height: 40px;
+			text-align: left;
+			background-image: url(http://cdn.kaisergames.de/images/layout/navibg.jpg);
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+		}
+			#main_navi_container a{
+				font-size: 0px;
+				margin: 0px;
+				padding: 0px;
+				float: left;
+			}
+
+				#main_navi_container a img{
+					font-size: 0px;
+					margin: 0px;
+					padding: 0px;
+				}
+
+			#main_navi_container a.mainNavigation{
+				font-size: 0px;
+			}
+
+			#main_navi_container a.mainNavigation.active{
+				font-weight: bold;
+			}
+
+		#sub_navi_container{
+			text-align: center;
+		}
+
+			#sub_navi_container ul.subcategoryContainer{
+				border-bottom: 1px solid #000;
+				margin: 0px;
+				padding: 0px;
+			}
+
+				#sub_navi_container ul.subcategoryContainer li.subNavigation{
+					list-style-type:none;
+					display:inline;
+					margin:0px;
+					line-height:20px;
+					height:20px;
+					padding-left:3px;
+					padding-right:3px;
+				}
+
+					#sub_navi_container ul.subcategoryContainer li.subNavigation a{
+						color: #000;
+						text-decoration: none;
+					}
+
+					#sub_navi_container ul.subcategoryContainer li.subNavigation a:hover{
+						text-decoration: underline;
+					}
+
+				#sub_navi_container ul.subcategoryContainer li.subNavigation.active{
+					list-style-type:none;
+					display:inline;
+					margin:0px;
+					line-height:20px;
+					height:20px;
+					padding-left:3px;
+					padding-right:3px;
+					font-weight: bold;
+				}
+
+				#sub_navi_container ul.subcategoryContainer li.bullet{
+					list-style-type:none;
+					display:inline;
+					margin:0px;
+					line-height:20px;
+					height:20px;
+					padding-left:3px;
+					padding-right:3px;
+				}
+
+
+
+	#content{
+		padding: 10px;
+	}
+
+	#maincontent_container{
+		background: #52AAE7;
+	}
+
+	#footer_container{
+		border-top: 2px solid #000;
+	}
+
+	/** FOOTER AREA **/
+
+		.footerline{
+			height: 12px;
+		}
+
+			.footerline .footerlineLeft{
+				height: 12px;
+				width: 14px;
+				float: left;
+				background-image: url(http://cdn.kaisergames.de/images/layout/corner_left.gif);
+				background-repeat: no-repeat;
+			}
+
+			.footerline .footerlineMiddle{
+				height: 12px;
+				width: 952px;
+				float: left;
+				background: #FFBE00;
+				text-align: left;
+				font-size: 9px;
+				color: #666;
+			}
+
+			.footerline .footerlineRight{
+				height: 12px;
+				width: 14px;
+				float: right;
+				background-image: url(http://cdn.kaisergames.de/images/layout/corner_right.gif);
+				background-repeat: no-repeat;
+			}
+
+		.footerinfo{
+			margin-top: 10px;
+			height: 284px;
+			background-image: url(http://cdn.kaisergames.de/images/layout/footerbg.gif);
+			border-top: 1px solid #1e1e1e;
+		}
+
+			.footerinfo .infoTable{
+				height: 30px;
+				margin-top: 10px;
+				margin-bottom:20px;
+				line-height: 1.8;
+			}
+
+				.footerinfo .infoTable a{
+					color: #666;
+					text-decoration: none;
+				}
+
+				.footerinfo .infoTable a:hover{
+					color: #fff;
+				}
+
+				.footerinfo .infoTable .inforow1{
+					float: left;
+					width: 183px;
+					border-right: 1px dotted #666;
+					text-align: left;
+					margin-left: 60px;
+				}
+
+				.footerinfo .infoTable .inforow2{
+					float: left;
+					width: 243px;
+					border-right: 1px dotted #666;
+					text-align: center;
+				}
+
+				.footerinfo .infoTable .inforow3{
+					float: left;
+					width: 243px;
+					border-right: 1px dotted #666;
+					text-align: center;
+				}
+
+				.footerinfo .infoTable .inforow4{
+					float: right;
+					text-align: right;
+					width: 183px;
+					margin-right: 60px;
+				}
+
+			.footerinfo .infoLine{
+				margin-top: 20px;
+				color: #666;
+			}
+
+				.footerinfo .infoLine a{
+					color: #666;
+					text-decoration: none;
+				}
+
+				.footerinfo .infoLine a:hover{
+					color: #fff;
+				}
+
+/** GAME_CONTAINER AREA **/
+
+.nonFloatedContainer{
+	/** insert nothing here ... IE fix */
+}
+
+.gameContainer{
+	border: 1px solid #000;
+	float: left;
+}
+
+	/** ATTITUDES ON GAMES_CONTAINER **/
+	.attitudeOnDefault{
+		width: 118px;
+		margin: 0px;
+		padding: 0px;
+		margin: 10px;
+		margin-left:0px;
+		margin-right:20px;
+	}
+
+
+	.gameContainer .gameImageContainer{
+		height: 89px;
+		border-bottom: 1px solid #000;
+	}
+
+		.gameContainer .gameImageContainer .lineContainer{
+			float: left;
+			width: 118px;
+			height: 89px;
+			position:relative;
+			left:0px;
+			top:0px;
+			z-index: 10;
+		}
+
+		.gameContainer .gameImageContainer .altImageContainer{
+			overflow: hidden;
+			float: left;
+			width: 118px;
+			height: 89px;
+			position: absolute;
+			z-index: 1;
+		}
+
+		.gameContainer .gameImageContainer a.gameLink{
+			display: block;
+			position: relative;
+			left:0px;
+			top:0px;
+			z-index: 10;
+		}
+
+		.gameContainer .gameImageContainer .gameShortInfo{
+			font-weight: bold;
+			height: 13px;
+			border-left: 1px solid #000;
+			border-bottom: 1px solid #000;
+			padding: 1px;
+			background: #FFB934;
+			float: right;
+			font-size: 9px;
+		}
+
+			.gameContainer .gameImageContainer .topLine{
+				height: 36px;
+			}
+
+			.gameContainer .gameImageContainer .middleLine{
+				height: 26px;
+			}
+
+			.gameContainer .gameImageContainer .bottomLine{
+				height: 26px;
+			}
+
+
+		.gameContainer .gameImageContainer .gameAwardIcon{
+			height: 26px;
+			width: 26px;
+			border-left: 1px solid #000;
+			border-top: 1px solid #000;
+			float: right;
+		}
+
+
+			/** SIZES ON GAMELINK **/
+
+			a.sizeOnDefault{
+				width: 118px;
+				height: 89px;
+			}
+
+			a.sizeOnSmall{
+				width: 72px;
+				height: 54px;
+			}
+
+		.gameContainer .gameInfoContainer{
+
+		}
+
+			.gameContainer .gameInfoContainer .gameNameContainer{
+				float: left;
+				width: 88px;
+				border-right: 1px solid #000;
+				background: #fff;
+			}
+
+				.gameContainer .gameInfoContainer .gameNameContainer a{
+					text-decoration: none;
+					line-height: 1.2;
+					background: #fff;
+					height: 26px;
+					text-align: center;
+					display: block;
+					color: #000;
+					overflow: hidden;
+				}
+
+				.gameContainer .gameInfoContainer .gameNameContainer a:hover{
+					color: #fff;
+					background: #000;
+				}
+
+			.gameContainer .gameInfoContainer .gameEstimateIcon{
+				float: left;
+				width: 29px;
+				height: 23px;
+				padding-top: 3px;
+			}
+
+			.gameContainer .gameInfoContainer .gameCategoryContainer{
+				border-top: 1px solid #000;
+				float: left;
+				width: 88px;
+				height: 17px;
+				overflow: hidden;
+				border-right: 1px solid #000;
+			}
+
+				.gameContainer .gameInfoContainer .gameCategoryContainer a{
+					text-decoration: none;
+					line-height: 1.3;
+					background: none;
+					height: 17px;
+					text-align: center;
+					display: block;
+					color: #000;
+				}
+
+				.gameContainer .gameInfoContainer .gameCategoryContainer a:hover{
+					color: #fff;
+					background: #000;
+				}
+
+			.gameContainer .gameInfoContainer .gameEstimateNumber{
+				float: left;
+				width: 29px;
+				height: 17px;
+				font-size: 10px;
+				line-height: 18px;
+				border-top: 1px solid #000;
+			}
+
+			.gameContainer .gameInfoContainer .gameEstimateNumberInactive{
+				float: left;
+				width: 29px;
+				height: 17px;
+				font-size: 7px;
+				line-height: 2.5;
+				border-top: 1px solid #000;
+			}
+
+			.gameContainer .gameHitsContainer{
+				text-decoration: none;
+				font-size: 9px;
+				line-height: 1.8;
+				background: #fff;
+				height: 17px;
+				border-top: 1px solid #000;
+			}
+
+			.gameContainer .gameHtmlCode{
+				height: 0px;
+				font-size: 0px;
+				line-height: 0px;
+			}
+
+	.adv_info_text{
+		font-size: 10px;
+		color: #fff;
+		text-align: left;
+		padding-left: 6px;
+	}
+	
+	.adv_info_text_black{
+		font-size: 10px;
+		color: #000;
+		text-align: left;
+		padding-left: 6px;
+	}
+
+/* Game Container for Category */
+
+
+.gameContainerWithBackground__outer_container{
+	width:138px;
+	margin-right:10px;
+	margin-bottom:10px;
+	background:#ececb6 url(http://cdn.kaisergames.de/images/layout/gameContainerWithBackgroundss_bg.jpg) repeat-x ;
+	float:left;
+}
+
+.gameContainerWithBackground__outer_container .gameHtmlCode{
+	height: 0px;
+	line-height: 0px;
+	font-size: 0px;
+}
+
+.gameContainerWithBackground__outer_container_stats{
+	border-top:1px solid black;
+	font-size:10px;
+}
+
+.gameContainerWithBackground__outer_container_category{
+	border-top:1px solid black;
+	font-size:10px;
+	overflow: hidden;
+	height: 14px;
+	width: 138px;
+}
+
+.gameContainerWithBackground__outer_container_category a{
+	display:block;
+	color:#000;
+	text-decoration:none;
+}
+
+.gameContainerWithBackground__outer_container_category a:hover{
+	background-color:#000;
+	color:#fff;
+}
+
+.gameContainerWithBackground__container{
+	height:122px;
+}
+
+.gameContainerWithBackground__image{
+	height:89px;
+	width:118px;
+	margin-top:10px;
+	border:1px solid black;
+	overflow:hidden;
+}
+
+.gameContainerWithBackground__image_gameShortInfo{
+			font-weight: bold;
+			height: 13px;
+			border-left: 1px solid #000;
+			border-bottom: 1px solid #000;
+			padding: 1px;
+			background: #FFB934;
+			float: right;
+			font-size: 9px;
+			position:relative;
+			top:-89px;
+}
+
+.gameContainerWithBackground__image_lineContainer{
+			float: left;
+			width: 118px;
+			height: 89px;
+			position:relative;
+			left:0px;
+			top:0px;
+			z-index: 10;
+}
+
+
+.gameContainerWithBackground__textcontainer{
+
+}
+
+.gameContainerWithBackground__textcontainer:hover{
+	background-color:#000;
+	color:#fff;
+	border-bottom:1px solid #000;
+}
+
+.gameContainerWithBackground__textcontainer:hover a{
+	color:#fff;
+}
+
+.gameContainerWithBackground__textcontainer_left{
+	height:30px;
+	width:88px;
+	float:left;
+	margin-left:10px;
+	color:#000;
+	text-decoration:none;
+	overflow:hidden;
+	line-height: 15px;
+}
+
+
+.gameContainerWithBackground__textcontainer_left:hover{
+
+}
+
+
+.gameContainerWithBackground__textcontainer_right{
+	margin-top: 1px;
+	height:30px;
+	width:30px;
+	float:right;
+	margin-right:10px;
+	line-height:10px;
+	font-size: 9px;
+}
+
+
+.gameContainerWithBackground__textcontainer_left a{
+	color:black;
+	text-decoration:none;
+}
+
+.gameContainerWithBackground__marginright_0{
+	margin-right:0px;
+}
+
+/* Small Game Container */
+
+.smallGameContainer{
+	border-bottom:1px solid #c9b89c;
+}
+
+
+
+
+.smallGameContainerContent{
+	margin-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.smallGameContainerImageContainer{
+	float:left;
+	width:74px;
+	margin-right:5px;
+
+}
+.smallGameContainerImageContainerImage{
+	height:54px;
+	border:1px solid black;
+	border-bottom:0px solid black;
+}
+.smallGameContainerImageContainerCategory{
+	height:15px;
+	border:1px solid black;
+	background-color:#84aa43;
+	border:1px solid black;
+}
+.smallGameContainerImageContainerCategory a{
+	color:white;
+	text-decoration:none;
+	line-height:15px;
+}
+
+.smallGameContainerBody{
+	float:left;
+	width:110px;
+}
+
+.smallGameContainerBodyTop{
+	height:62px;
+
+	text-align:left;
+}
+
+.smallGameContainerBodyTop a{
+	color:black;
+	text-decoration:none;
+	font-weight:bold;
+
+}
+
+.smallGameContainerBodyBottom{
+	height:15px;
+
+	text-align:left;
+}
+
+.tabBoxContainer{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* single game Container */
+.singleGameContainer{
+	margin-top: 5px;
+	border-bottom: 1px solid #666;
+}
+	.singleGameContainer .imageRow{
+		float: left;
+		width: 72px;
+		height: 54px;
+		margin-left: 5px;
+		margin-top: 3px;
+		margin-right: 5px;
+		border: 1px solid #000;
+		overflow: hidden;
+	}
+		.singleGameContainer .imageRow img{
+			width: 72px;
+			height: 54px;
+		}
+
+	.singleGameContainer .textRow{
+		float: left;
+		font-size: 9px;
+		width: 110px;
+		text-align: left;
+		margin-bottom: 5px;
+		margin-top: 2px;
+	}
+		.singleGameContainer .textRow .titleLine{
+			height: 28px;
+			font-weight: bold;
+		}
+			.singleGameContainer .textRow .titleLine a{
+				color: #000;
+				text-decoration: none;
+			}
+
+		.singleGameContainer .textRow .rateLine{
+			height: 20px;
+		}
+			.singleGameContainer .textRow .rateLine .iconRow{
+				float: left;
+				width: 25px;
+			}
+				.singleGameContainer .textRow .rateLine .iconRow img{
+
+				}
+
+			.singleGameContainer .textRow .rateLine .rateRow{
+				float: left;
+				margin-top: 2px;
+				width: 50px;
+			}
+
+		.singleGameContainer .textRow .hitsLine{
+
+		}
+
+		.singleGameContainer .textRow .gameHtmlCode{
+			height: 0px;
+			font-size: 0px;
+			line-height: 0px;
+		}
+
+/* gameset game Container */
+.gamesetContainer{
+	float: left;
+	border-right: 0px solid #666;
+	margin-left: 15px;
+	margin-top: 15px;
+	font-size: 9px;
+}
+	.gamesetContainer .gameHtmlCode{
+		line-height: 0px;
+		font-size: 0px;
+		height: 0px;
+	}
+
+	.gamesetContainer .topLine{
+
+	}
+		.gamesetContainer .topLine .imageRow{
+			float: left;
+			width: 72px;
+			height: 54px;
+			margin-right: 3px;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+			.gamesetContainer .topLine .imageRow img{
+				width: 72px;
+				height: 54px;
+			}
+		.gamesetContainer .topLine .ratingRow{
+			float: right;
+			width: 45px;
+		}
+			.gamesetContainer .topLine .ratingRow .ratingImg{
+
+			}
+			.gamesetContainer .topLine .ratingRow .ratingPercent{
+
+			}
+	.gamesetContainer .bottomLine{
+
+	}
+		.gamesetContainer .bottomLine .title{
+			margin-left: 3px;
+			height: 28px;
+			font-weight: bold;
+		}
+			.gamesetContainer .bottomLine .title a{
+				color: #000;
+				text-decoration: none;
+			}
+		.gamesetContainer .bottomLine .hits{
+			margin-left: 3px;
+		}
+
+	/* STYLE FOR STATICS */
+
+	.loginContainer_head{
+		border: 1px solid #000;
+		text-align: left;
+		font-weight: bold;
+		font-size: 12px;
+		padding-left: 3px;
+		height: 20px;
+	}
+
+	.loginContainer{
+		border: 1px solid #000;
+		border-top: 0px;
+		padding: 10px;
+		text-align: left;
+
+	}
+
+	.loginContainer_posContainer{
+		margin-bottom: 20px;
+	}
+
+	.loginContainer_posContainer a{
+		color:#000;
+		text-decoration:none;
+	}
+
+	.loginContainer_leftArea{
+		float: left;
+		width: 150px;
+	}
+
+	.loginContainer_rightArea{
+		float: left;
+		width: 200px;
+	}
+
+	.loginContainer input.textField{
+		width: 250px;
+		border: 1px solid #666;
+	}
+
+
+
+	.singleheadlineContainer{
+		border: 1px solid #000;
+		text-align: left;
+		font-weight: bold;
+		font-size: 12px;
+		padding-left: 3px;
+		height: 20px;
+	}
+	.singleContentContainer{
+		border: 1px solid #000;
+		border-top: 0px;
+		padding: 10px;
+		text-align: left;
+	}
+		.singleContentContainer .leftFloatContainer{
+			float: left;
+			width: 450px;
+		}
+		.singleContentContainer .rightFloatContainer{
+			float: left;
+			margin-left: 10px;
+			width: 475px;
+		}
+			.singleContentContainer .posContainer{
+				margin-bottom: 20px;
+			}
+
+				.singleContentContainer .posContainer .leftArea{
+					float: left;
+					width: 150px;
+				}
+
+				.singleContentContainer .posContainer .rightArea{
+					float: left;
+					width: 200px;
+				}
+
+			.singleContentContainer .posContainer a{
+				font-weight: bold;
+				color: #000;
+				text-decoration: none;
+			}
+
+			.singleContentContainer .posContainer a:hover{
+				text-decoration: underline;
+			}
+
+
+				.singleContentContainer .subline{
+					font-size: 9px;
+					padding-left: 10px;
+				}
+
+				.singleContentContainer .rightFloatContainer .posContainer input.textField{
+					width: 250px;
+					border: 1px solid #666;
+				}
+
+.general_margin_right_0{
+	margin-right:0px;
+}
+
+/** EXPERIENCE BAR **/
+.experienceBar{
+
+}
+	.experienceBar .barLine{
+		position: absolute;
+		float: left;
+		height: 14px;
+		border: 1px solid #000;
+		background: url(http://cdn.kaisergames.de/community/core/images/layout/experiencebar_pattern.jpg) repeat-y;
+	}
+	.experienceBar .realBarLine{
+		margin-left: 1px;
+		position: absolute;
+		float: left;
+		height: 14px;
+		border-right: 2px solid #A33C01;
+	}
+		.experienceBar .realBarLine .innerLine{
+			background: url(http://cdn.kaisergames.de/community/core/images/layout/experiencebar.jpg) repeat-y;
+		}
+
+	.experienceBar .barTextLeft{
+		float: left;
+		position: absolute;
+		color: #fff;
+		margin-left: 5px;
+		font-size: 10px;
+	}
+	.experienceBar .barTextRight{
+		float: right;
+		position: relative;
+		color: #333;
+		margin-right: 5px;
+		font-size: 10px;
+	}
+	
+	.experienceBarBig .barLine{
+		background: url(http://cdn.kaisergames.de/community/core/images/layout/experiencebar_pattern_big.jpg) repeat-y;
+	}
+		.experienceBarBig .realBarLine .innerLine{
+			background: url(http://cdn.kaisergames.de/community/core/images/layout/experiencebar_big.jpg) repeat-y;
+		}
+
+#head_container .defaultPageHeader{
+	background: url(http://cdn.kaisergames.de/www.spielaffe.de/images/layout/head_logo_new.gif);
+	border-top: 1px solid #292929;
+}
+
+#head_container .memberPageHeader{
+	background: url(http://cdn.kaisergames.de/community.spielaffe.de/images/layout/head_logo.gif);
+	border-top: 1px solid #292929;
+}
+
