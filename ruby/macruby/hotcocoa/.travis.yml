@@ -1,5 +1,0 @@
-rvm:
-  - macruby
-  - macruby-nightly
-
-script: "rake test"

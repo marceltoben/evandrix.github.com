@@ -1,7 +1,0 @@
-*.app
-*.gem
-.yardoc
-Gemfile.lock
-.rvmrc
-*.rbo
-
