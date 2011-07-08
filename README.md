@@ -7,8 +7,10 @@
 </pre>
 
 ## default sample README for my GitHub page: [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
-## [My Wiki Site](http://evandrix.wikia.com) - understands [Wikipedia](http://www.wikipedia.org) syntax
+## [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
 ---
+### Coding challenges
+ * [Code Golf](http://codegolf.com)
 
 ### Undo last commit/push: `git push -f origin HEAD^:master`
 ### Online Java compiler: [ideone.com](https://ideone.com)
