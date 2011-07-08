@@ -39,5 +39,8 @@
  * Genshi
  * Mako
 
+### Textmate > Bundles repo
+ * @ http://ebundles.googlecode.com/svn/trunk/Bundles
+
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
