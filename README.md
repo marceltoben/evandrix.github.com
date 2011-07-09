@@ -34,6 +34,9 @@
  * [How To Node](http://howtonode.org)
  * [DailyJS](http://dailyjs.com)
 
+### Javascript > Presentation Tools
+ * [Highcharts](http://www.highcharts.com)
+
 ### Python > Scraping
  * [Scrapy](http://scrapy.org)
 
