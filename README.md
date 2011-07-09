@@ -6,9 +6,11 @@
     \___| \_/ \__,_|_| |_|\__,_|_|  |_/_/\_\
 </pre>
 
-## README in [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+## README in [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax
 ## [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
+
 ---
+
 ### Coding challenges
  * [Code Golf](http://codegolf.com)
 ### Undo last commit/push: `git push -f origin HEAD^:master`
@@ -45,5 +47,7 @@
 
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
+
 ---
+
 ### Keychain(s) stored in `/System/Library/Keychains/*.keychain`
