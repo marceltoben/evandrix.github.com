@@ -37,6 +37,9 @@
 ### Javascript > Presentation Tools
  * [Highcharts](http://www.highcharts.com)
 
+### Python > Fuzzy String Matching
+ * [Fuzzywuzzy](http://seatgeek.com/blog/dev/fuzzywuzzy-fuzzy-string-matching-in-python)
+
 ### Python > Scraping
  * [Scrapy](http://scrapy.org)
 
