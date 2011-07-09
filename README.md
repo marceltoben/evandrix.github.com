@@ -6,7 +6,7 @@
     \___| \_/ \__,_|_| |_|\__,_|_|  |_/_/\_\
 </pre>
 
-## default sample README for my GitHub page: [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+## README in [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
 ## [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
 ---
 ### Coding challenges
@@ -45,3 +45,5 @@
 
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
+---
+### Keychain(s) stored in `/System/Library/Keychains/*.keychain`
