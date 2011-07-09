@@ -6,11 +6,14 @@
     \___| \_/ \__,_|_| |_|\__,_|_|  |_/_/\_\
 </pre>
 
-## default sample README for my GitHub page: [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
-## [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
+ * README in [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax
+ * [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
+
 ---
+
 ### Coding challenges
  * [Code Golf](http://codegolf.com)
+
 ### Undo last commit/push: `git push -f origin HEAD^:master`
 ### Online Java compiler: [ideone.com](https://ideone.com)
 ### Online HTML formatter: [HTML Tidy](http://infohound.net/tidy)
@@ -31,6 +34,9 @@
  * [How To Node](http://howtonode.org)
  * [DailyJS](http://dailyjs.com)
 
+### Javascript > Presentation Tools
+ * [Highcharts](http://www.highcharts.com)
+
 ### Python > Scraping
  * [Scrapy](http://scrapy.org)
 
@@ -45,3 +51,7 @@
 
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
+
+---
+
+ * Keychain(s) stored in `/System/Library/Keychains/*.keychain`
