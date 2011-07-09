@@ -6,8 +6,8 @@
     \___| \_/ \__,_|_| |_|\__,_|_|  |_/_/\_\
 </pre>
 
-## README in [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax
-## [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
+ * README in [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax
+ * [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
 
 ---
 
@@ -50,4 +50,4 @@
 
 ---
 
-### Keychain(s) stored in `/System/Library/Keychains/*.keychain`
+ * Keychain(s) stored in `/System/Library/Keychains/*.keychain`
