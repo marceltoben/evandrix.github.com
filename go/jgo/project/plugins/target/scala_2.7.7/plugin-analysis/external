@@ -1,0 +1,5 @@
+#External Dependencies
+#Sun Jul 10 00:30:07 BST 2011
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar=src_managed/sbt-scct-for-2.8-0.1-SNAPSHOT/reaktor/scct/ScctProject.scala
+/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/boot/scala-2.7.7/lib/scala-library.jar=src_managed/sbt-scct-for-2.8-0.1-SNAPSHOT/reaktor/scct/ScctProject.scala
+/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/boot/scala-2.7.7/org.scala-tools.sbt/sbt/0.7.7/sbt_2.7.7-0.7.7.jar=src_managed/sbt-scct-for-2.8-0.1-SNAPSHOT/reaktor/scct/ScctProject.scala

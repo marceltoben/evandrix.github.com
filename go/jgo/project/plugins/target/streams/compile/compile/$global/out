@@ -1,0 +1,85 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set(/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala)[0m
+[0m[[0mdebug[0m] [0m	modified: Set()[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
+[0m[[0mdebug[0m] [0mModified external sources: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mInitially invalidated: Set(/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/target/scala-2.8.1.final/classes...[0m
+[0m[[0mdebug[0m] [0mInterfacing (CompilerInterface) with Scala compiler version 2.8.1.final[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/target/scala-2.8.1.final/classes[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar:/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/boot/scala-2.8.1/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-cp[0m
+[0m[[0mdebug[0m] [0m	/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/target/scala-2.8.1.final/classes[0m
+[0m[[0mdebug[0m] [0m	/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala[0m
+[0m[[31merror[0m] [0m/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala:1: not found: value sbt[0m
+[0m[[31merror[0m] [0mimport sbt._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala:3: too many arguments for constructor Object: ()java.lang.Object[0m
+[0m[[31merror[0m] [0mclass Plugins(info: ProjectInfo) extends PluginDefinition(info) {[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala:4: value at is not a member of java.lang.String[0m
+[0m[[31merror[0m] [0m  val scctRepo = "scct-repo" at "http://mtkopone.github.com/scct/maven-repo/"[0m
+[0m[[31merror[0m] [0m                 ^[0m
+[0m[[31merror[0m] [0m/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/Plugins.scala:5: value % is not a member of java.lang.String[0m
+[0m[[31merror[0m] [0m  lazy val scctPlugin = "reaktor" % "sbt-scct-for-2.8" % "0.1-SNAPSHOT"[0m
+[0m[[31merror[0m] [0m                        ^[0m
+[0m[[31merror[0m] [0mfour errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+Compilation failed
+	at xsbt.CompilerInterface.run(CompilerInterface.scala:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at sbt.compiler.AnalyzingCompiler.call(AnalyzingCompiler.scala:57)
+	at sbt.compiler.AnalyzingCompiler.compile(AnalyzingCompiler.scala:29)
+	at sbt.compiler.AnalyzingCompiler.compile(AnalyzingCompiler.scala:25)
+	at sbt.AggressiveCompile$$anonfun$5.compileScala$1(AggressiveCompile.scala:66)
+	at sbt.AggressiveCompile$$anonfun$5.apply(AggressiveCompile.scala:78)
+	at sbt.AggressiveCompile$$anonfun$5.apply(AggressiveCompile.scala:56)
+	at sbt.inc.IncrementalCompile$$anonfun$doCompile$1.apply(Compile.scala:21)
+	at sbt.inc.IncrementalCompile$$anonfun$doCompile$1.apply(Compile.scala:19)
+	at sbt.inc.Incremental$.cycle(Incremental.scala:33)
+	at sbt.inc.Incremental$.compile(Incremental.scala:20)
+	at sbt.inc.IncrementalCompile$.apply(Compile.scala:17)
+	at sbt.AggressiveCompile.compile2(AggressiveCompile.scala:86)
+	at sbt.AggressiveCompile.compile1(AggressiveCompile.scala:37)
+	at sbt.AggressiveCompile.apply(AggressiveCompile.scala:27)
+	at sbt.Compiler$.apply(Compiler.scala:98)
+	at sbt.Defaults$$anonfun$compileTask$1.apply(Defaults.scala:408)
+	at sbt.Defaults$$anonfun$compileTask$1.apply(Defaults.scala:408)
+	at sbt.Scoped$$anonfun$hf2$1.apply(Structure.scala:507)
+	at sbt.Scoped$$anonfun$hf2$1.apply(Structure.scala:507)
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:44)
+	at sbt.Scoped$Reduced$$anonfun$combine$1$$anonfun$apply$9.apply(Structure.scala:305)
+	at sbt.Scoped$Reduced$$anonfun$combine$1$$anonfun$apply$9.apply(Structure.scala:305)
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:39)
+	at sbt.std.Transform$$anon$5.work(System.scala:66)
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:220)
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:220)
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:13)
+	at sbt.Execute.work(Execute.scala:226)
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:220)
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:220)
+	at sbt.CompletionService$$anon$1$$anon$2.call(CompletionService.scala:26)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+[0m[[31merror[0m] [0m  {file:/Users/lwy08/Documents/evandrix.github.com/go/jgo/project/plugins/}default/[31mcompile[0m: Compilation failed[0m

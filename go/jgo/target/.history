@@ -1,0 +1,3 @@
+run hello.go package.class
+run qsort.go package.class
+exit
