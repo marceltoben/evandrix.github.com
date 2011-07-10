@@ -1,0 +1,137 @@
+Django Development Tools
+========================
+Django Debug Toolbar
+https://github.com/dcramer/django-debug-toolbar
+The Django Debug Toolbar is a configurable set of panels that display various debug information about the current request/response and when clicked, display more details about the panel’s content.
+
+South
+http://south.aeracode.org
+South brings migrations to Django applications. Its main objectives are to provide a simple, stable and database-independent migration layer to prevent all the hassle schema changes over time bring to your Django applications.
+
+Django Paypal
+https://github.com/johnboxall/django-paypal
+Django PayPal is a pluggable application that implements with PayPal Payments Standard and Payments Pro.
+
+Django Avatar
+https://github.com/ericflo/django-avatar
+A reusable django application for handling Avatars.
+
+Fabulous
+https://github.com/gcollazo/Fabulous
+Shameless plug. I made this. It deploys django apps to Amazon EC2 with ONE command.
+
+Django Exceptional
+https://github.com/zacharyvoase/django-exceptional
+A Django client for Exceptional (www.getexceptional.com)
+
+Django Easy Maps
+https://bitbucket.org/kmike/django-easy-maps
+This app makes it easy to display a map for given address in django templates. No API keys, manual geocoding, html/js copy-pasting or django model changes is needed.
+
+Django Extensions
+https://github.com/django-extensions/django-extensions
+It provides a plethora of useful manage.py commands, and a couple other little goodies as well.
+
+Pinax
+https://github.com/pinax/pinax
+Django-based platform for rapidly developing websites
+
+Django CMS
+https://github.com/divio/django-cms
+A Django application for managing hierarchical pages of content, possibly in multiple languages and/or on multiple sites.
+
+Django Sentry
+https://github.com/dcramer/django-sentry
+Sentry provides you with a generic interface to view and interact with your error logs. By default, it will catch any exception thrown by Django and store it in a database.
+
+Django Haystack
+https://github.com/toastdriven/django-haystack
+Haystack provides modular search for Django. It features a unified, familiar API that allows you to plug in different search backends (such as Solr, Whoosh, Xapian, etc.) without having to modify your code.
+
+Django Celery
+https://github.com/ask/django-celery
+Provides Celery integration for Django; Using the Django ORM and cache backend for storing results, autodiscovery of task modules for applications listed in INSTALLED_APPS, and more.
+
+Piston
+https://bitbucket.org/jespern/django-piston
+Piston is a relatively small Django application that lets you create application programming interfaces (API) for your sites.
+
+Django-tastypie
+https://github.com/toastdriven/django-tastypie
+Creating delicious APIs for Django apps since 2010.
+
+django-social-auth 
+https://github.com/omab/django-social-auth
+Django social authentication made simple.
+
+Django Social Registration
+https://github.com/flashingpumpkin/django-socialregistration
+Django Social Registration enables developers to add alternative registration methods based on third party sites. Supported methods currently are: OpenID, OAuth, Facebook Connect.
+
+Django Basic Apps
+https://github.com/nathanborror/django-basic-apps
+Simple prebuilt applications for Django projects.
+
+django-uni-form
+https://github.com/pydanny/django-uni-form
+Django forms are easily rendered as tables, paragraphs, and unordered lists. However, elegantly rendered div based forms is something you have to do by hand. The purpose of this application is to provide a simple tag and/or filter that lets you quickly render forms in a div format.
+
+django-filter
+https://github.com/alex/django-filter
+Django-filter is a reusable Django application for allowing users to filter queryset dynamically.
+
+django-taggit
+https://github.com/alex/django-taggit
+Simple tagging for django
+
+django-mingus
+https://github.com/montylounge/django-mingus
+A Django blog engine leveraging reusable apps for all its features.
+
+django-devserver
+https://github.com/dcramer/django-devserver
+A drop in replacement for Django’s built-in runserver command. Features include: An extendable interface for handling things such as real-time logging. Integration with the werkzeug interactive debugger. An improved runserver allowing you to process requests simultaneously.
+
+FeinCMS
+https://github.com/matthiask/feincms
+FeinCMS is an extremely stupid content management system. It knows nothing about content — just enough to create an admin interface for your own page content types. It lets you reorder page content blocks using a drag-drop interface, and you can add as many content blocks to a region (f.e. the sidebar, the main content region or something else which I haven’t thought of yet). It provides helper functions, which provide ordered lists of page content blocks. That’s all.
+
+django-schedule
+https://github.com/thauber/django-schedule
+A calendaring/scheduling application, featuring: one-time and recurring events, calendar exceptions (occurrences changed or cancelled), occurrences accessible through Event API and Period API, relations of events to generic objects, ready to use, nice user interface, view day, week, month, three months and year and project sample which can be launched immediately and reused in your project.
+
+django-revision
+https://github.com/etianen/django-reversion
+An extension to the Django web framework that provides comprehensive version control facilities.
+
+django-mailer
+https://github.com/jtauber/django-mailer
+A reusable Django app for queuing the sending of email
+
+django-notification
+https://github.com/jtauber/django-notification
+Many sites need to notify users when certain events have occurred and to allow
+configurable options as to how those notifications are to be received. The project aims to provide a Django app for this sort of functionality. This
+includes: submission of notification messages by other apps, notification messages on signing in, notification messages via email (configurable by user) and notification messages via feed.
+
+django-pagination
+https://github.com/ericflo/django-pagination
+A set of utilities for creating robust pagination tools throughout a django application.
+
+Other not django specific projects that help me with web development
+
+Flask
+http://flask.pocoo.org/
+Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions.
+
+Supervisor
+http://supervisord.org/
+Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
+
+Gunicorn
+http://gunicorn.org/
+Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project.
+
+Fabric
+http://docs.fabfile.org/en/1.1.1/index.html
+Fabric is a Python (2.5 or higher) library and command-line tool for streamlining the use of SSH for application deployment or systems administration tasks.

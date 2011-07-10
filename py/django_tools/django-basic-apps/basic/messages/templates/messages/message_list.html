@@ -1,0 +1,33 @@
+{% extends "messages/base_messages.html" %}
+
+
+{% block title %}{{ mailbox|title }} messages{% endblock %}
+{% block body_class %}{{ block.super }} message_list{% endblock %}
+
+
+{% block content_title %}
+  <h2>{{ mailbox|title }} messages</h2>
+{% endblock %}
+
+
+{% block content %}
+  {% load messages %}
+
+  <table>
+    {% for message in message_list %}
+    <tr{% if message.is_new and message.from_user != user %} class="new_message"{% endif %}>
+      {% if message.to_user == user %}
+        <td>{{ message.from_user }}</td>
+      {% else %}
+        <td>To: {{ message.to_user }}</td>
+        <td>{{ message.get_from_status_display }}</td>
+      {% endif %}
+      <td><a href="{{ message.get_absolute_url }}">{{ message.subject|default:"No subject" }}</a></td>
+      <td>{{ message.created|date }}</td>
+      <td><a href="{% url messages:reply message.pk %}">reply</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p><a href="{% url messages:create %}" class="button">Compose message</a></p>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "blog/base_blog.html" %}
+{% load honeypot i18n %}
+
+{% block title %}{% trans "Contact" %} | {{ block.super }}{% endblock %}
+
+{% block body_id %}contact{% endblock %}
+
+{% block content %}
+
+<h2>{% trans "Contact me" %}</h2>
+
+<p>{% trans "Get in touch." %}</p>
+
+<form method="POST" action=".">
+
+  {% if form.errors %}
+  <div id="form-error">
+    <p>{% trans "Woops, looks like you forgot some information." %}</p>
+    <ul>
+    {% for field in form %}
+    {% if field.errors %}<li>{{ field.label }} - {{ field.errors|striptags }}</li>{% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+<p>
+<label for="form.name.label">{% trans "Your name" %}</label>
+{{ form.name }}
+</p>
+
+<p>
+<label for="form.email.label">{% trans "Your email" %}</label>
+{{ form.email }}
+</p>
+
+<p>
+<label for="form.body.label">{% trans "Your message" %}</label>
+{{ form.body }}
+</p>
+
+{% render_honeypot_field %}
+
+<input type="submit" name="submit" value="{% trans "Submit" %}">
+</form>
+
+{% endblock %}

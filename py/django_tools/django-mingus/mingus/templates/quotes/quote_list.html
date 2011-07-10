@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load cache i18n %}
+
+{% block title %}{% trans "Quotes" %} | {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<h2>{% trans "Quotes" %}</h2>
+
+{% cache 180 "quote.quote_list" %}
+{% for object in object_list %}
+
+{% include "quotes/includes/quote.html" %}
+
+{% endfor %}
+{% endcache %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+
+h2. Quick Start
+
+The quick start assumes basic familiarity with "vitualenv":http://virtualenv.openplans.org/, "virtualenv wrapper":http://www.doughellmann.com/projects/virtualenvwrapper/.
+
+Tested with pip version 0.8.3.
+
+It also assumes you have both subversion, mecurial, and git clients locally.
+
+* mkvirtualenv myblog --no-site-packages
+* workon myblog
+* cd myblog
+* git clone git://github.com/montylounge/django-mingus.git
+* cd django-mingus/mingus
+* pip install -r stable-requirements.txt
+* ... wait a bit
+* mv local_settings.py.template local_settings.py
+* ./manage.py syncdb
+* ./manage.py loaddata test_data.json
+* ./manage.py runserver
+
+By default the theme is set to the Basic theme.
+
+Django-Mingus also comes with 4 additional themes: Django(green), Minimal (black/white), Dark (black), Basic
+(beige/red), JeffCroft (brown/pink). You can view them "here":http://www.flickr.com/photos/37875916@N07/tags/mingustheme/.
+
+To switch "themes" just change this line in templates/base.html:
+
+<link rel="stylesheet" href="{{ STATIC_URL }}mingus/css/themes/basic.css" type="text/css" media="all" charset="utf-8">
+
+You'll notice the themes/basic.css text - change that to one of the existing themes ('django', 'minimal', 'jeffcroft', 'dark'), or edit away on your own!

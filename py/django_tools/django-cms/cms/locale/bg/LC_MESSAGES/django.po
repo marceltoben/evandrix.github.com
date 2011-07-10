@@ -1,0 +1,1838 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: https://github.com/divio/django-cms/issues\n"
+"POT-Creation-Date: 2011-02-07 07:20-0600\n"
+"PO-Revision-Date: 2011-03-22 15:24+0000\n"
+"Last-Translator: ojii <me@ojii.ch>\n"
+"Language-Team: divio.ch <developers@divio.ch>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Poedit-Country: SWITZERLAND\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: plugin_base.py:100
+msgid "Advanced options"
+msgstr "Разширени опции"
+
+#: admin/forms.py:52
+msgid "Title"
+msgstr "Заглавие"
+
+#: admin/forms.py:53
+msgid "The default title"
+msgstr "Заглавие по подразбиране"
+
+#: admin/forms.py:54
+msgid "Slug"
+msgstr "Слъг"
+
+#: admin/forms.py:55
+msgid "The part of the title that is used in the URL"
+msgstr "Часта от заглавието, показваща се в адреса"
+
+#: admin/forms.py:56
+msgid "Language"
+msgstr "Език"
+
+#: admin/forms.py:57
+msgid "The current language of the content fields."
+msgstr "Настоящия език на полетата със съдържанието."
+
+#: admin/forms.py:110
+msgid "Another page with this slug already exists"
+msgstr "Друга страница със този слъг вече съществува"
+
+#: admin/forms.py:128
+msgid "Menu Title"
+msgstr "Заглавие на менюто"
+
+#: admin/forms.py:129
+msgid "Overwrite what is displayed in the menu"
+msgstr "Напишете показаното в менюто"
+
+#: admin/forms.py:130
+msgid "Page Title"
+msgstr "Заглавие на страницата"
+
+#: admin/forms.py:131
+msgid ""
+"Overwrites what is displayed at the top of your browser or in bookmarks"
+msgstr "Напишете показаното отгоре във Вашия браузър или бележки"
+
+#: admin/forms.py:132
+msgid "Application"
+msgstr "Приложение"
+
+#: admin/forms.py:134
+msgid "Hook application to this page."
+msgstr "Прикачи приложение на тази страница."
+
+#: admin/forms.py:135
+msgid "Overwrite URL"
+msgstr "Напиши адрес"
+
+#: admin/forms.py:136
+msgid "Keep this field empty if standard path should be used."
+msgstr ""
+"Оставете това поле празно, ако трябва да бъде използван стандартен път."
+
+#: admin/forms.py:142
+msgid "Redirect"
+msgstr "Пренасочване"
+
+#: admin/forms.py:143
+msgid "Redirects to this URL."
+msgstr "Пренасочи до тази страница."
+
+#: admin/forms.py:145
+msgid "A description of the page sometimes used by search engines."
+msgstr "Описание на страницата, използвано от търсещите машини."
+
+#: admin/forms.py:147
+msgid "A list of comma seperated keywords sometimes used by search engines."
+msgstr "A list of comma separated keywords sometimes used by search engines."
+
+#: admin/forms.py:163
+msgid "A page with this reverse URL id exists already."
+msgstr "Страница със обратен адрес вече съществува."
+
+#: admin/forms.py:171
+msgid "Invalid URL, use /my/url format."
+msgstr "Невалиден адрес, използвайте формат от типа на /моя/адрес"
+
+#: admin/forms.py:182 admin/forms.py:183 migrations/0001_initial.py:41
+#: models/permissionmodels.py:17
+msgid "user"
+msgstr "потребител"
+
+#: admin/forms.py:215
+msgid ""
+"Add page permission requires also access to children, or descendants, "
+"otherwise added page can't be changed by its creator."
+msgstr ""
+"Add page permission requires also access to children, or descendants, "
+"otherwise added page can't be changed by its creator."
+
+#: admin/forms.py:218
+msgid "Add page permission also requires edit page permission."
+msgstr "Правата за добавяне изискват и права за редактиране."
+
+#: admin/forms.py:245
+msgid "Please select user or group first."
+msgstr "Първо изберете потребител или група."
+
+#: admin/forms.py:252 admin/forms.py:259 admin/forms.py:263
+#: templates/admin/cms/page/change_form.html:65
+#: templates/admin/cms/page/plugin_change_form.html:70
+msgid "Add"
+msgstr "Добави"
+
+#: admin/forms.py:253 admin/forms.py:260 admin/forms.py:264
+msgid "Change"
+msgstr "Промени"
+
+#: admin/forms.py:254 admin/forms.py:261 admin/forms.py:265
+#: templates/admin/page_submit_line.html:5
+#: templates/admin/cms/page/menu_item.html:44
+msgid "Delete"
+msgstr "Изтрий"
+
+#: admin/forms.py:255
+msgid "Recover (any) pages"
+msgstr "Възстанови (които и да е) страници"
+
+#: admin/forms.py:295
+msgid "Notify user"
+msgstr "Предопреди потребителя"
+
+#: admin/forms.py:296
+msgid ""
+"Send email notification to user about username or password change. Requires "
+"user email."
+msgstr ""
+"Изпращането на имейл предупреждение на потребителя изисква неговото "
+"добавяне."
+
+#: admin/forms.py:316
+msgid "New password"
+msgstr "Нова парола"
+
+#: admin/forms.py:318
+msgid "New password confirmation"
+msgstr "Потвърждение на новата парола"
+
+#: admin/forms.py:337
+msgid "Email notification requires valid email address."
+msgstr "И-мейл потвърждението изисква валиден имейл адрес."
+
+#: admin/forms.py:339
+msgid ""
+"The permission to add new pages requires the permission to change pages!"
+msgstr "Правото за добавяне изисква и право за редактиране."
+
+#: admin/forms.py:341
+msgid ""
+"The permission to add new users requires the permission to change users!"
+msgstr ""
+"Правото за добавяне на потребители изисква и правото за тяхното редактиране."
+
+#: admin/forms.py:343
+msgid "To add permissions you also need to edit them!"
+msgstr "За да можете да добавяте права трябва да можете и да ги редактирате."
+
+#: admin/pageadmin.py:123 admin/pageadmin.py:139
+msgid "Hidden"
+msgstr "Скрито"
+
+#: admin/pageadmin.py:134
+msgid "Basic Settings"
+msgstr "Основни настройки"
+
+#: admin/pageadmin.py:137
+msgid "Note: This page reloads if you change the selection. Save it first."
+msgstr ""
+"Забележка: страницата презарежда ако промените значението. Запазете "
+"промените първо."
+
+#: admin/pageadmin.py:143
+msgid "Advanced Settings"
+msgstr "Разширени настройки"
+
+#: admin/pageadmin.py:152
+msgid "SEO Settings"
+msgstr "SEO Настройки"
+
+#: admin/pageadmin.py:504
+msgid "higher"
+msgstr "по-високо"
+
+#: admin/pageadmin.py:676
+msgid "Database error"
+msgstr "Грешка в БД"
+
+#: admin/pageadmin.py:768 migrations/0001_initial.py:13
+#: migrations/0001_initial.py:26 migrations/0001_initial.py:40
+#: migrations/0001_initial.py:78 migrations/0003_remove_placeholder.py:21
+#: models/pagemodel.py:99 models/permissionmodels.py:69
+#: models/titlemodels.py:21 plugins/inherit/forms.py:9 plugins/link/forms.py:9
+#: plugins/link/models.py:12 plugins/link/migrations/0001_initial.py:19
+#: plugins/picture/models.py:20 plugins/teaser/models.py:13
+msgid "page"
+msgstr "страница"
+
+#: admin/pageadmin.py:896
+msgid "Page was successfully approved."
+msgstr "Страницата беше успешно удобрена."
+
+#: admin/pageadmin.py:966
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s обект с основен ключ %(key)r не съществува."
+
+#: admin/pageadmin.py:969
+msgid "There only exists one translation for this page"
+msgstr "Съществува само един превод за тази страница."
+
+#: admin/pageadmin.py:991
+#, python-format
+msgid "Title and plugins with language %(language)s was deleted"
+msgstr "Заглавието и плъгините на %(language)s език бяха изтрити"
+
+#: admin/pageadmin.py:1012
+msgid "Are you sure?"
+msgstr "Сигурен ли сте?"
+
+#: admin/pageadmin.py:1072
+msgid "You do not have permission to publish this page"
+msgstr "Нямате права да публикувате тази страница"
+
+#: admin/pageadmin.py:1088
+msgid "You do not have permission to change this page's in_navigation status"
+msgstr "Нямате право да променяте статуса на навигацията на тази страница."
+
+#: admin/pageadmin.py:1133 admin/pageadmin.py:1167
+msgid "You do not have permission to change this page"
+msgstr "Нямате право да променяте тази страница"
+
+#: admin/pageadmin.py:1137 admin/pageadmin.py:1169
+msgid "Language must be set to a supported language!"
+msgstr "Езика трябва да бъде поддържан!"
+
+#: admin/pageadmin.py:1149
+#, python-format
+msgid "%(plugin_name)s plugin added to %(placeholder)s"
+msgstr "%(plugin_name)s плъгин добавен в %(placeholder)s"
+
+#: admin/pageadmin.py:1171
+msgid "Language must be different than the copied language!"
+msgstr "Езикът трябва да е различен от копирания език!"
+
+#: admin/pageadmin.py:1179
+#, python-format
+msgid "Copied %(language)s plugins to %(placeholder)s"
+msgstr ""
+
+#: admin/pageadmin.py:1260
+#, python-format
+msgid ""
+"%(plugin_name)s plugin edited at position %(position)s in %(placeholder)s"
+msgstr ""
+"%(plugin_name)s плъгин беше редактиран в позиция %(position)s на "
+"%(placeholder)s"
+
+#: admin/pageadmin.py:1318
+msgid "Plugins where moved"
+msgstr "Плъгините бяха преместени"
+
+#: admin/pageadmin.py:1345 admin/placeholderadmin.py:216
+#, python-format
+msgid ""
+"%(plugin_name)s plugin at position %(position)s in %(placeholder)s was "
+"deleted."
+msgstr ""
+"%(plugin_name)s плъгин в позиция %(position)s на %(placeholder)s беше "
+"изтрит."
+
+#: admin/permissionadmin.py:114 models/permissionmodels.py:75
+msgid "Page permissions"
+msgstr "Права на страницата"
+
+#: admin/permissionadmin.py:115
+msgid "User & Group permissions"
+msgstr "Права на Потребител и Група"
+
+#: admin/permissionadmin.py:116
+msgid "Page permissions management"
+msgstr "Управление на правата на страницата"
+
+#: admin/useradmin.py:23
+msgid "User details"
+msgstr "Потребителска информация"
+
+#: admin/useradmin.py:24
+msgid "Groups"
+msgstr "Групи"
+
+#: admin/useradmin.py:34 templates/cms/toolbar/toolbar.html:155
+msgid "Password"
+msgstr "Парола"
+
+#: admin/dialog/forms.py:9
+msgid "Copy permissions"
+msgstr "Копирай правата"
+
+#: admin/dialog/forms.py:16
+msgid "Copy moderation"
+msgstr "Копирай модерирането"
+
+#: conf/patch.py:27
+msgid "Inherit the template of the nearest ancestor"
+msgstr "Наследи темплейта от най-близкия родител"
+
+#: forms/fields.py:19
+msgid "Select a valid site"
+msgstr ""
+
+#: forms/fields.py:20
+msgid "Select a valid page"
+msgstr ""
+
+#: forms/widgets.py:173
+msgid "Add Another"
+msgstr "Добави друг"
+
+#: migrations/0001_initial.py:12 migrations/0001_initial.py:24
+#: migrations/0001_initial.py:75 migrations/0003_remove_placeholder.py:18
+#: migrations/0010_5char_language.py:12 migrations/0010_5char_language.py:15
+#: migrations/0010_5char_language.py:22 migrations/0010_5char_language.py:25
+#: models/pluginmodel.py:61 models/titlemodels.py:10
+#: plugins/inherit/models.py:11
+msgid "language"
+msgstr "език"
+
+#: migrations/0001_initial.py:14 migrations/0004_textobjects.py:12
+#: migrations/0004_textobjects.py:22 models/pluginmodel.py:60
+msgid "position"
+msgstr "позиция"
+
+#: migrations/0001_initial.py:15 migrations/0001_initial.py:29
+#: models/pluginmodel.py:63 models/titlemodels.py:22
+msgid "creation date"
+msgstr "дата на създаване"
+
+#: migrations/0001_initial.py:16 migrations/0001_initial.py:77
+#: migrations/0003_remove_placeholder.py:20 models/placeholdermodel.py:11
+msgid "slot"
+msgstr "слот"
+
+#: migrations/0001_initial.py:18 models/pluginmodel.py:62
+msgid "plugin_name"
+msgstr "plugin name"
+
+#: migrations/0001_initial.py:25 migrations/0011_title_overwrites.py:12
+#: migrations/0011_title_overwrites.py:15 models/titlemodels.py:11
+#: models/titlemodels.py:12 models/titlemodels.py:20 plugins/file/models.py:25
+#: plugins/file/migrations/0001_initial.py:18 plugins/teaser/models.py:9
+#: plugins/twitter/models.py:6 plugins/twitter/models.py:15
+#: templates/admin/cms/page/change_list_tree.html:6
+msgid "title"
+msgstr "заглавие"
+
+#: migrations/0001_initial.py:28
+msgid "path"
+msgstr "път"
+
+#: migrations/0001_initial.py:30 models/titlemodels.py:13
+msgid "slug"
+msgstr "слъг"
+
+#: migrations/0001_initial.py:36
+msgid "everybody"
+msgstr "всеки"
+
+#: migrations/0001_initial.py:37 models/permissionmodels.py:21
+msgid "can edit"
+msgstr "може да се редактира"
+
+#: migrations/0001_initial.py:38 models/permissionmodels.py:18
+msgid "group"
+msgstr "група"
+
+#: migrations/0001_initial.py:39 models/permissionmodels.py:25
+msgid "can publish"
+msgstr "може да публикува"
+
+#: migrations/0001_initial.py:42
+msgid "type"
+msgstr "тип"
+
+#: migrations/0001_initial.py:44
+msgid "can change soft-root"
+msgstr "може да променя мека-основа"
+
+#: migrations/0001_initial.py:50 migrations/0006_apphook.py:34
+#: migrations/0006_apphook.py:62
+msgid "status"
+msgstr "статус"
+
+#: migrations/0001_initial.py:53
+msgid "navigation extenders"
+msgstr "разширители на навигацията"
+
+#: migrations/0001_initial.py:54 migrations/0006_apphook.py:12
+#: migrations/0006_apphook.py:46 models/titlemodels.py:15
+msgid "has url overwrite"
+msgstr "has URL overwrite"
+
+#: migrations/0001_initial.py:55 migrations/0006_apphook.py:49
+msgid "url overwrite"
+msgstr "URL overwrite"
+
+#: migrations/0001_initial.py:57
+msgid "author"
+msgstr "автор"
+
+#: migrations/0001_initial.py:58 migrations/0006_apphook.py:37
+msgid "reverse url id"
+msgstr "обръщане на url по id"
+
+#: migrations/0001_initial.py:59 models/pagemodel.py:82
+msgid "login required"
+msgstr "необходима е оторизация"
+
+#: migrations/0001_initial.py:60 models/pagemodel.py:67
+msgid "soft root"
+msgstr "мека-основа"
+
+#: migrations/0001_initial.py:63 models/pagemodel.py:65
+msgid "publication end date"
+msgstr "крайна дата на публикацията"
+
+#: migrations/0001_initial.py:64 models/pagemodel.py:72
+#: plugins/snippet/models.py:14
+msgid "template"
+msgstr "темплейт"
+
+#: migrations/0001_initial.py:66 models/pagemodel.py:64
+msgid "publication date"
+msgstr "дата на публикуване"
+
+#: migrations/0001_initial.py:67 models/pagemodel.py:66
+#: templates/admin/cms/page/change_list_tree.html:9
+msgid "in navigation"
+msgstr "в навигацията"
+
+#: migrations/0006_apphook.py:15 migrations/0007_apphook_longer.py:11
+#: migrations/0007_apphook_longer.py:17 models/titlemodels.py:16
+msgid "application"
+msgstr "приложение"
+
+#: migrations/0006_apphook.py:65 models/pagemodel.py:68
+msgid "id"
+msgstr "id"
+
+#: migrations/0008_redirects.py:11 models/titlemodels.py:17
+msgid "redirect"
+msgstr "пренасочване"
+
+#: migrations/0009_added_meta_fields.py:12 models/titlemodels.py:19
+msgid "keywords"
+msgstr "ключови думи"
+
+#: migrations/0009_added_meta_fields.py:15 models/titlemodels.py:18
+#: plugins/teaser/models.py:20
+msgid "description"
+msgstr "описание"
+
+#: models/moderatormodels.py:25
+msgid "Current page"
+msgstr "Текуща страница"
+
+#: models/moderatormodels.py:26
+msgid "Page children (immediate)"
+msgstr "Деца на страницата (непосредствени)"
+
+#: models/moderatormodels.py:27
+msgid "Page and children (immediate)"
+msgstr "Страница и деца (непосредствени)"
+
+#: models/moderatormodels.py:28
+msgid "Page descendants"
+msgstr "Потомци на страницата"
+
+#: models/moderatormodels.py:29
+msgid "Page and descendants"
+msgstr "Страница и потомци"
+
+#: models/moderatormodels.py:45 templates/admin/cms/page/permissions.html:5
+#: templates/cms/toolbar/toolbar.html:193
+msgid "Page"
+msgstr "Страница"
+
+#: models/moderatormodels.py:46
+#: templates/admin/cms/page/moderation_messages.html:6
+#: templates/admin/cms/page/permissions.html:6
+msgid "User"
+msgstr "Потребител"
+
+#: models/moderatormodels.py:50 templatetags/cms_admin.py:85
+msgid "Moderate page"
+msgstr "Модерирай страницата"
+
+#: models/moderatormodels.py:51 templatetags/cms_admin.py:86
+msgid "Moderate children"
+msgstr "Модерирай децата"
+
+#: models/moderatormodels.py:52 templatetags/cms_admin.py:87
+msgid "Moderate descendants"
+msgstr "Модерирай потомците"
+
+#: models/moderatormodels.py:55 models/moderatormodels.py:56
+msgid "PageModerator"
+msgstr ""
+
+#: models/moderatormodels.py:98
+msgid "created"
+msgstr "създадена"
+
+#: models/moderatormodels.py:99 models/pagemodel.py:42
+msgid "changed"
+msgstr "променена"
+
+#: models/moderatormodels.py:100
+msgid "delete req."
+msgstr "deletion request"
+
+#: models/moderatormodels.py:101
+msgid "move req."
+msgstr "move request"
+
+#: models/moderatormodels.py:102
+msgid "publish req."
+msgstr "publish request"
+
+#: models/moderatormodels.py:103
+msgid "unpublish req."
+msgstr "unpublish request"
+
+#: models/moderatormodels.py:104 models/pagemodel.py:45
+msgid "approved"
+msgstr "одобрена"
+
+#: models/moderatormodels.py:116
+msgid "Page moderator state"
+msgstr "Статус на модератор на страницата"
+
+#: models/moderatormodels.py:117
+msgid "Page moderator states"
+msgstr "Статуси на модератори"
+
+#: models/pagemodel.py:43
+msgid "req. app."
+msgstr "approval required"
+
+#: models/pagemodel.py:44 templates/admin/cms/page/menu_item.html:44
+#: templates/cms/toolbar/toolbar.html:200
+#: templates/cms/toolbar/toolbar.html:239 utils/moderator.py:90
+msgid "delete"
+msgstr "изтрий"
+
+#: models/pagemodel.py:46
+msgid "app. par."
+msgstr ""
+
+#: models/pagemodel.py:50
+msgid "for logged in users only"
+msgstr ""
+
+#: models/pagemodel.py:51
+msgid "for anonymous users only"
+msgstr ""
+
+#: models/pagemodel.py:59
+msgid "created by"
+msgstr "създадена от"
+
+#: models/pagemodel.py:60 templates/admin/cms/page/change_list_tree.html:19
+msgid "changed by"
+msgstr "променена от"
+
+#: models/pagemodel.py:64
+msgid ""
+"When the page should go live. Status must be \"Published\" for page to go "
+"live."
+msgstr "За да се вижда страницата статуса трябва да е \"Публикувана\""
+
+#: models/pagemodel.py:65
+msgid "When to expire the page. Leave empty to never expire."
+msgstr "Кога да изтече страницата? Остави празно за да не изтича."
+
+#: models/pagemodel.py:67
+msgid "All ancestors will not be displayed in the navigation"
+msgstr "Всички прародители няма да бъдат показвани в навигацията"
+
+#: models/pagemodel.py:68
+msgid ""
+"An unique identifier that is used with the page_url templatetag for linking "
+"to this page"
+msgstr ""
+"Уникален идентификатор, използван с page_url темплейт тага за създаване на "
+"връзка до тази страница."
+
+#: models/pagemodel.py:69
+msgid "attached menu"
+msgstr ""
+
+#: models/pagemodel.py:70
+msgid "is published"
+msgstr "публикувано"
+
+#: models/pagemodel.py:72
+msgid "The template used to render the content."
+msgstr "Шаблон използван за показването на съдържанието."
+
+#: models/pagemodel.py:73
+msgid "The site the page is accessible at."
+msgstr "Тази страница от сайта е достъпна на."
+
+#: models/pagemodel.py:73
+msgid "site"
+msgstr "сайт"
+
+#: models/pagemodel.py:75
+msgid "moderator state"
+msgstr "статус на модератор"
+
+#: models/pagemodel.py:83
+msgid "menu visibility"
+msgstr ""
+
+#: models/pagemodel.py:83
+msgid "limit when this page is visible in the menu"
+msgstr ""
+
+#: models/pagemodel.py:100
+msgid "pages"
+msgstr "страници"
+
+#: models/pagemodel.py:243
+msgid "Page was copied."
+msgstr "Страницата беше копирана."
+
+#: models/pagemodel.py:712
+msgid "default"
+msgstr "по подразбиране"
+
+#: models/permissionmodels.py:22
+msgid "can add"
+msgstr "може да добавя"
+
+#: models/permissionmodels.py:23
+msgid "can delete"
+msgstr "може да трие"
+
+#: models/permissionmodels.py:24
+msgid "can change advanced settings"
+msgstr "може да променя разширени настройки"
+
+#: models/permissionmodels.py:26
+msgid "can change permissions"
+msgstr "може да променя разрешения"
+
+#: models/permissionmodels.py:26
+msgid "on page level"
+msgstr "на ниво на страницата"
+
+#: models/permissionmodels.py:27
+msgid "can move"
+msgstr "може да се движи"
+
+#: models/permissionmodels.py:28
+msgid "can moderate"
+msgstr "може да модерира"
+
+#: models/permissionmodels.py:52
+msgid "can recover pages"
+msgstr "може да възтановява страници"
+
+#: models/permissionmodels.py:52
+msgid "can recover any deleted page"
+msgstr "може да възтановява всякаква изтрита страница"
+
+#: models/permissionmodels.py:53
+msgid "If none selected, user haves granted permissions to all sites."
+msgstr ""
+
+#: models/permissionmodels.py:53
+msgid "sites"
+msgstr "сайтове"
+
+#: models/permissionmodels.py:58
+msgid "Page global permission"
+msgstr "Глобални права на страницата"
+
+#: models/permissionmodels.py:59
+msgid "Pages global permissions"
+msgstr "Глобални права на страниците"
+
+#: models/permissionmodels.py:68 templates/admin/cms/page/permissions.html:14
+msgid "Grant on"
+msgstr ""
+
+#: models/permissionmodels.py:74
+msgid "Page permission"
+msgstr "Права на страницата"
+
+#: models/permissionmodels.py:88
+msgid "User (page)"
+msgstr "Потребител (страница)"
+
+#: models/permissionmodels.py:89
+msgid "Users (page)"
+msgstr "Потребители (страница)"
+
+#: models/permissionmodels.py:101
+msgid "User group (page)"
+msgstr "Потребителска група (страница)"
+
+#: models/permissionmodels.py:102
+msgid "User groups (page)"
+msgstr "Потребителски групи (страница)"
+
+#: models/placeholdermodel.py:12 plugins/flash/models.py:9
+#: plugins/flash/migrations/0001_initial.py:16 plugins/video/models.py:13
+msgid "width"
+msgstr "широчина"
+
+#: models/pluginmodel.py:122
+msgid "<Empty>"
+msgstr ""
+
+#: models/titlemodels.py:12
+msgid "overwrite the title in the menu"
+msgstr "презаписвай заглавието в менюто"
+
+#: models/titlemodels.py:14
+msgid "Path"
+msgstr "Път"
+
+#: models/titlemodels.py:20
+msgid "overwrite the title (html title tag)"
+msgstr "презаписвай заглавието (HTML Title)"
+
+#: plugins/file/cms_plugins.py:9
+msgid "File"
+msgstr "Файл"
+
+#: plugins/file/models.py:24 plugins/file/migrations/0001_initial.py:17
+#: plugins/flash/models.py:8 plugins/flash/migrations/0001_initial.py:18
+msgid "file"
+msgstr "файл"
+
+#: plugins/flash/cms_plugins.py:9
+msgid "Flash"
+msgstr "Флаш"
+
+#: plugins/flash/models.py:8
+msgid "use swf file"
+msgstr "използвай swf файл"
+
+#: plugins/flash/models.py:10 plugins/flash/migrations/0001_initial.py:19
+#: plugins/video/models.py:14
+msgid "height"
+msgstr "височина"
+
+#: plugins/flash/templates/cms/plugins/flash.html:2
+msgid "Missing flash plugin."
+msgstr "Липсващ flash Плъгин"
+
+#: plugins/googlemap/cms_plugins.py:10
+msgid "Google Map"
+msgstr "Google Карта"
+
+#: plugins/googlemap/models.py:9
+msgid "map title"
+msgstr "заглавие на картата"
+
+#: plugins/googlemap/models.py:11
+msgid "address"
+msgstr "адрес"
+
+#: plugins/googlemap/models.py:12
+msgid "zip code"
+msgstr "пощенски код"
+
+#: plugins/googlemap/models.py:13
+msgid "city"
+msgstr "град"
+
+#: plugins/googlemap/models.py:15
+msgid "additional content"
+msgstr "допълнително съдържание"
+
+#: plugins/googlemap/models.py:16
+msgid "zoom level"
+msgstr "ниво на увеличаване"
+
+#: plugins/googlemap/models.py:18
+msgid "latitude"
+msgstr "ширина"
+
+#: plugins/googlemap/models.py:19
+msgid "Use latitude & longitude to fine tune the map possiton."
+msgstr ""
+"Използвайте latitude & longitude за да определите позицията на картата."
+
+#: plugins/googlemap/models.py:20
+msgid "longitude"
+msgstr "дължина"
+
+#: plugins/googlemap/models.py:22
+msgid "route planer title"
+msgstr ""
+
+#: plugins/googlemap/models.py:22
+msgid "Calculate your fastest way to here"
+msgstr "Изчисли най-бързия път до тук"
+
+#: plugins/googlemap/models.py:23
+msgid "route planer"
+msgstr ""
+
+#: plugins/googlemap/models.py:30
+msgid "Map"
+msgstr "Карта"
+
+#: plugins/googlemap/templates/cms/plugins/googlemap.html:11
+msgid "Your address: "
+msgstr ""
+
+#: plugins/googlemap/templates/cms/plugins/googlemap.html:13
+msgid "Calculate route"
+msgstr "Изчисли маршрута"
+
+#: plugins/inherit/cms_plugins.py:18
+msgid "Inherit Plugins from Page"
+msgstr "Наследяване на плъгини от страница"
+
+#: plugins/inherit/forms.py:19
+msgid "Language or Page must be filled out"
+msgstr ""
+
+#: plugins/inherit/models.py:10
+msgid ""
+"Choose a page to include its plugins into this placeholder, empty will "
+"choose current page"
+msgstr ""
+
+#: plugins/inherit/models.py:11
+msgid "Optional: the language of the plugins you want"
+msgstr ""
+
+#: plugins/link/cms_plugins.py:12
+msgid "Link"
+msgstr "Линк"
+
+#: plugins/link/models.py:10 plugins/link/migrations/0001_initial.py:18
+#: plugins/link/migrations/0004_larger_link_names.py:11
+#: plugins/link/migrations/0004_larger_link_names.py:17
+#: plugins/snippet/models.py:12 plugins/snippet/migrations/0001_initial.py:17
+msgid "name"
+msgstr "име"
+
+#: plugins/link/models.py:11 plugins/link/migrations/0001_initial.py:16
+#: plugins/picture/models.py:19 plugins/picture/migrations/0001_initial.py:16
+#: plugins/teaser/models.py:19
+msgid "link"
+msgstr "връзка"
+
+#: plugins/link/models.py:12
+msgid "A link to a page has priority over a text link."
+msgstr "Линк до страницата има приоритет над текстов линк."
+
+#: plugins/link/models.py:13
+msgid "mailto"
+msgstr "email address"
+
+#: plugins/link/models.py:13
+msgid "An email adress has priority over a text link."
+msgstr "Имейл адрес има приоритет над текстов линк."
+
+#: plugins/picture/cms_plugins.py:9
+msgid "Picture"
+msgstr "Картинка"
+
+#: plugins/picture/models.py:13
+msgid "left"
+msgstr "ляво"
+
+#: plugins/picture/models.py:14
+msgid "right"
+msgstr "дясно"
+
+#: plugins/picture/models.py:18 plugins/picture/migrations/0001_initial.py:17
+#: plugins/teaser/models.py:10 plugins/video/models.py:11
+msgid "image"
+msgstr "картинка"
+
+#: plugins/picture/models.py:19 plugins/picture/models.py:20
+msgid "if present image will be clickable"
+msgstr "ако може да се натиска настоящата снимка"
+
+#: plugins/picture/models.py:21 plugins/picture/migrations/0001_initial.py:19
+msgid "alternate text"
+msgstr "алтернативен текст"
+
+#: plugins/picture/models.py:21
+msgid "textual description of the image"
+msgstr "текстово описание на снимката"
+
+#: plugins/picture/models.py:22
+msgid "long description"
+msgstr "дълго описание"
+
+#: plugins/picture/models.py:22
+msgid "additional description of the image"
+msgstr "допълнително описание на снимката"
+
+#: plugins/picture/models.py:23
+msgid "side"
+msgstr "страна"
+
+#: plugins/snippet/cms_plugins.py:12 plugins/snippet/models.py:24
+#: plugins/snippet/models.py:32
+msgid "Snippet"
+msgstr "Снипет"
+
+#: plugins/snippet/cms_plugins.py:30
+#, python-format
+msgid "Template %(template)s does not exist."
+msgstr "Шаблона %(template)s не съществува."
+
+#: plugins/snippet/models.py:13 plugins/snippet/migrations/0001_initial.py:18
+msgid "HTML"
+msgstr "HTML"
+
+#: plugins/snippet/models.py:15
+msgid ""
+"Enter a template (i.e. \"snippets/plugin_xy.html\") which will be rendered. "
+msgstr ""
+
+#: plugins/snippet/models.py:25
+msgid "Snippets"
+msgstr ""
+
+#: plugins/teaser/cms_plugins.py:8
+msgid "Teaser"
+msgstr ""
+
+#: plugins/teaser/models.py:14
+msgid "If present image will be clickable"
+msgstr "Ако настоящата снимка се натиска"
+
+#: plugins/teaser/models.py:19
+msgid "If present image will be clickable."
+msgstr "Ако снимката ще се натиска"
+
+#: plugins/teaser/templates/cms/plugins/teaser.html:11
+msgid "more"
+msgstr "повече"
+
+#: plugins/text/cms_plugins.py:15
+msgid "Text"
+msgstr "Текст"
+
+#: plugins/text/models.py:14 plugins/text/migrations/0001_initial.py:16
+msgid "body"
+msgstr "тяло"
+
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:30
+msgid "Plugins"
+msgstr "Добавки"
+
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:38
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:106
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:69
+msgid "Please select a plugin type."
+msgstr "Моля, изберете тип на добавката."
+
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:54
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:114
+msgid "Edit selected plugin"
+msgstr "Промени избраната добавка"
+
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:58
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:124
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:87
+msgid "Text editor does not support editing objects."
+msgstr "Текстовия редактор не поддържа редактиране на обекти."
+
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:63
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:129
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:92
+msgid "No object selected."
+msgstr "Няма избран обект."
+
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:112
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:75
+msgid "Text editor does not support inserting objects."
+msgstr "Текстовия редактор не поддържа вкарване на обекти."
+
+#: plugins/text/templates/cms/plugins/widgets/tinymce.html:133
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:96
+msgid "Not a plugin object"
+msgstr "Не е плъгин обект"
+
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:110
+#: templates/admin/cms/page/widgets/installed_plugins_inc.html:4
+msgid "Available Plugins"
+msgstr "Достъпни плъгини"
+
+#: plugins/text/templates/cms/plugins/widgets/wymeditor.html:113
+msgid "Insert plugin"
+msgstr "Вмъкни добавка"
+
+#: plugins/twitter/cms_plugins.py:10
+msgid "Twitter"
+msgstr "Twitter"
+
+#: plugins/twitter/cms_plugins.py:31
+msgid "Twitter Search"
+msgstr ""
+
+#: plugins/twitter/models.py:7
+msgid "twitter user"
+msgstr "twitter потребител"
+
+#: plugins/twitter/models.py:8 plugins/twitter/models.py:17
+msgid "count"
+msgstr "количество"
+
+#: plugins/twitter/models.py:8 plugins/twitter/models.py:17
+msgid "Number of entries to display"
+msgstr "Количество елементи за показване"
+
+#: plugins/twitter/models.py:9
+msgid "link hint"
+msgstr "подсказка на връзката"
+
+#: plugins/twitter/models.py:9
+msgid "If given, the hint is displayed as link to your Twitter profile."
+msgstr ""
+"Ако бъде предоставено, подсказката ще бъде показана като линк до Вашия "
+"Twitter профил."
+
+#: plugins/twitter/models.py:16
+msgid "query"
+msgstr ""
+
+#: plugins/twitter/models.py:16
+msgid ""
+"Example: \"brains AND zombies AND from:umbrella AND to:nemesis\": tweets "
+"from the user \"umbrella\" to the user \"nemesis\" that contain the words "
+"\"brains\" and \"zombies\""
+msgstr ""
+
+#: plugins/video/cms_plugins.py:10
+msgid "Video"
+msgstr "Видео"
+
+#: plugins/video/cms_plugins.py:42
+msgid "Color Settings"
+msgstr ""
+
+#: plugins/video/models.py:9
+msgid "movie file"
+msgstr ""
+
+#: plugins/video/models.py:9
+msgid "use .flv file or h264 encoded video file"
+msgstr ""
+
+#: plugins/video/models.py:10
+msgid "movie url"
+msgstr ""
+
+#: plugins/video/models.py:10
+msgid ""
+"vimeo or youtube video url. Example: http://www.youtube.com/watch?v=YFa59lK-"
+"kpo"
+msgstr ""
+
+#: plugins/video/models.py:11
+msgid "preview image file"
+msgstr ""
+
+#: plugins/video/models.py:16
+msgid "auto play"
+msgstr "автоматично започване"
+
+#: plugins/video/models.py:17
+msgid "auto hide"
+msgstr ""
+
+#: plugins/video/models.py:18
+msgid "fullscreen"
+msgstr "на цял екран"
+
+#: plugins/video/models.py:19
+msgid "loop"
+msgstr "циклично"
+
+#: plugins/video/models.py:22
+msgid "background color"
+msgstr ""
+
+#: plugins/video/models.py:22 plugins/video/models.py:23
+#: plugins/video/models.py:24 plugins/video/models.py:25
+#: plugins/video/models.py:26 plugins/video/models.py:27
+#: plugins/video/models.py:28 plugins/video/models.py:29
+msgid "Hexadecimal, eg ff00cc"
+msgstr ""
+
+#: plugins/video/models.py:23
+msgid "text color"
+msgstr ""
+
+#: plugins/video/models.py:24
+msgid "seekbar color"
+msgstr ""
+
+#: plugins/video/models.py:25
+msgid "seekbar bg color"
+msgstr ""
+
+#: plugins/video/models.py:26
+msgid "loadingbar color"
+msgstr ""
+
+#: plugins/video/models.py:27
+msgid "button out color"
+msgstr ""
+
+#: plugins/video/models.py:28
+msgid "button over color"
+msgstr ""
+
+#: plugins/video/models.py:29
+msgid "button highlight color"
+msgstr ""
+
+#: plugins/video/templates/cms/plugins/video.html:3
+msgid ""
+"Missing flash plugin. Download <a "
+"href=\"http://adobe.com/flashplayer\">here</a>"
+msgstr ""
+
+#: templates/admin/page_submit_line.html:3
+#: templates/admin/cms/page/change_form.html:273
+#: templates/admin/cms/page/plugin_change_form.html:112
+msgid "Save"
+msgstr "Запази"
+
+#: templates/admin/page_submit_line.html:7
+#, python-format
+msgid "Delete %(language)s translation"
+msgstr "Изтрий %(language)s превода"
+
+#: templates/admin/page_submit_line.html:11
+msgid "Save as new"
+msgstr "Запази като нов"
+
+#: templates/admin/page_submit_line.html:12
+msgid "Save and add another"
+msgstr "Запази и добави нов"
+
+#: templates/admin/page_submit_line.html:13
+#: templates/admin/cms/page/change_form.html:274
+msgid "Save and continue editing"
+msgstr "Запази и продължи да редактираш"
+
+#: templates/admin/cms/mail/approvement_required.html:5
+#: templates/admin/cms/mail/approvement_required.txt:5
+#, python-format
+msgid ""
+"Page <a href=\"%(admin_url)s\">%(page)s</a> may require approvement by you."
+msgstr ""
+"Страницата <a href=\"%(admin_url)s\">%(page)s</a> може да изисква "
+"потвърждение от Вас."
+
+#: templates/admin/cms/mail/approvement_required.html:8
+#: templates/admin/cms/mail/approvement_required.txt:7
+msgid "Last changes"
+msgstr "Последни промени"
+
+#: templates/admin/cms/mail/base.html:55
+#, python-format
+msgid "Log in to administration <a href=\"%(login_url)s\">here</a>."
+msgstr "Влезте в администрацията <a href=\"%(login_url)s\">тук</a>."
+
+#: templates/admin/cms/mail/base.txt:8
+#, python-format
+msgid "Login url: %(login_url)s"
+msgstr ""
+
+#: templates/admin/cms/mail/page_user_change.html:7
+#: templates/admin/cms/mail/page_user_change.txt:5
+msgid "Username:"
+msgstr "Потребител:"
+
+#: templates/admin/cms/mail/page_user_change.html:11
+#: templates/admin/cms/mail/page_user_change.txt:6
+msgid "Password:"
+msgstr "Парола:"
+
+#: templates/admin/cms/page/change_form.html:3
+#: templates/admin/cms/page/plugin_forms_history.html:3
+#: templates/admin/cms/page/plugin_forms_ok.html:3
+msgid "Change a page"
+msgstr "Редактиране на страница"
+
+#: templates/admin/cms/page/change_form.html:62
+#: templates/admin/cms/page/change_list.html:8
+#: templates/admin/cms/page/plugin_change_form.html:67
+#: templates/admin/cms/page/recover_form.html:14
+#: templates/admin/cms/page/revision_form.html:6
+msgid "Home"
+msgstr "Начало"
+
+#: templates/admin/cms/page/change_form.html:71
+msgid "Approve page deletion"
+msgstr "Потвърди изтриването на страницата"
+
+#: templates/admin/cms/page/change_form.html:77
+#, python-format
+msgid "(requires approvement at %(moderation_level)s level)"
+msgstr "(изисква потвърждение на %(moderation_level)s модераторско ниво)"
+
+#: templates/admin/cms/page/change_form.html:78
+msgid "(you can perform actions on this page directly)"
+msgstr "(можете да извършвате действия директно на тази страница)"
+
+#: templates/admin/cms/page/change_form.html:91
+msgid "Remove delete request"
+msgstr "Изтрий заявката за изтриване"
+
+#: templates/admin/cms/page/change_form.html:93
+msgid "Approve delete"
+msgstr "Потвърди изтриването"
+
+#: templates/admin/cms/page/change_form.html:93
+msgid "Approve"
+msgstr "Потвърди"
+
+#: templates/admin/cms/page/change_form.html:93
+#: templates/admin/cms/page/change_form.html:94
+#: templates/admin/cms/page/change_list_tree.html:12
+msgid "draft"
+msgstr "чернова"
+
+#: templates/admin/cms/page/change_form.html:94
+msgid "Preview"
+msgstr "Преглед"
+
+#: templates/admin/cms/page/change_form.html:97
+#: templates/admin/cms/page/revision_form.html:10
+msgid "History"
+msgstr "История"
+
+#: templates/admin/cms/page/change_form.html:98
+msgid "View on site"
+msgstr "Виж на сайта"
+
+#: templates/admin/cms/page/change_form.html:128
+#: templates/admin/cms/page/plugin_change_form.html:84
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/cms/page/change_form.html:148
+msgid "All permissions"
+msgstr "Всички права"
+
+#: templates/admin/cms/page/change_form.html:149
+#: templates/admin/cms/page/change_form.html:161
+#: templates/admin/cms/page/loading.html:2
+msgid "Loading..."
+msgstr "Зареждане..."
+
+#: templates/admin/cms/page/change_form.html:160
+msgid "Page states"
+msgstr "Статуси на страниците"
+
+#: templates/admin/cms/page/change_form.html:183
+#, python-format
+msgid ""
+"This page must be moderated at level %(moderation_level)s, post a message "
+"for moderator."
+msgstr ""
+
+#: templates/admin/cms/page/change_form.html:185
+msgid "Request approvemet"
+msgstr "Поискайте одобряване"
+
+#: templates/admin/cms/page/change_list.html:3
+msgid "List of pages"
+msgstr "Списък със страниците"
+
+#: templates/admin/cms/page/change_list.html:56
+msgid "Successfully moved"
+msgstr "Успешно преместено"
+
+#: templates/admin/cms/page/change_list.html:61
+msgid "An error occured. Please reload the page"
+msgstr "Станала е грешка, презаредете страницата."
+
+#: templates/admin/cms/page/change_list.html:82
+#, python-format
+msgid "Recover deleted %(name)s"
+msgstr "Възстановете изтритото %(name)s"
+
+#: templates/admin/cms/page/change_list.html:85
+#, python-format
+msgid "Add %(name)s"
+msgstr "Добави %(name)s"
+
+#: templates/admin/cms/page/change_list.html:97
+msgid "Pages on:"
+msgstr "Страници на:"
+
+#: templates/admin/cms/page/change_list.html:114
+msgid "Filter:"
+msgstr "Филтър:"
+
+#: templates/admin/cms/page/change_list.html:114
+msgid "on"
+msgstr "включено"
+
+#: templates/admin/cms/page/change_list.html:114
+msgid "off"
+msgstr "изключено"
+
+#: templates/admin/cms/page/change_list.html:116
+msgid "Filter"
+msgstr "Филтър"
+
+#: templates/admin/cms/page/change_list_tree.html:8
+msgid "actions"
+msgstr "действия"
+
+#: templates/admin/cms/page/change_list_tree.html:10
+msgid "moderate"
+msgstr "модериране"
+
+#: templates/admin/cms/page/change_list_tree.html:13
+msgid "published"
+msgstr "публикувано"
+
+#: templates/admin/cms/page/change_list_tree.html:15
+msgid "start"
+msgstr "начало"
+
+#: templates/admin/cms/page/change_list_tree.html:16
+msgid "end"
+msgstr "край"
+
+#: templates/admin/cms/page/change_list_tree.html:18
+msgid "last changes"
+msgstr "последни промени"
+
+#: templates/admin/cms/page/menu_item.html:5
+msgid "select this page"
+msgstr "избери тази страница"
+
+#: templates/admin/cms/page/menu_item.html:5
+#: templates/admin/cms/page/menu_item.html:6
+msgid "edit this page"
+msgstr "редактирай тази страница"
+
+#: templates/admin/cms/page/menu_item.html:6
+#: templates/cms/toolbar/toolbar.html:206
+#: templates/cms/toolbar/toolbar.html:232
+msgid "edit"
+msgstr "редактирай"
+
+#: templates/admin/cms/page/menu_item.html:16
+msgid "insert above"
+msgstr "вмъкни по-нагоре"
+
+#: templates/admin/cms/page/menu_item.html:17
+msgid "insert below"
+msgstr "вмъкни по-надолу"
+
+#: templates/admin/cms/page/menu_item.html:19
+msgid "insert inside"
+msgstr "вмъкни вътре"
+
+#: templates/admin/cms/page/menu_item.html:23
+msgid "softroot"
+msgstr "мека основа"
+
+#: templates/admin/cms/page/menu_item.html:23
+msgid "home"
+msgstr "начало"
+
+#: templates/admin/cms/page/menu_item.html:26
+#, python-format
+msgid "Edit this page in %(language)s "
+msgstr "Редактирай тази страница на %(language)s"
+
+#: templates/admin/cms/page/menu_item.html:33
+msgid "Cut"
+msgstr "Отрежи"
+
+#: templates/admin/cms/page/menu_item.html:33
+msgid "cut"
+msgstr "отрежи"
+
+#: templates/admin/cms/page/menu_item.html:34
+msgid "Copy"
+msgstr "Копирай"
+
+#: templates/admin/cms/page/menu_item.html:34
+msgid "copy"
+msgstr "копирай"
+
+#: templates/admin/cms/page/menu_item.html:37
+#: templates/admin/cms/page/menu_item.html:41
+msgid "Add Child"
+msgstr "Добави дете"
+
+#: templates/admin/cms/page/menu_item.html:37
+#: templates/admin/cms/page/menu_item.html:41
+msgid "add"
+msgstr "добави"
+
+#: templates/admin/cms/page/menu_item.html:65
+#: templates/cms/toolbar/toolbar.html:166
+msgid "Approve directly"
+msgstr "Директно одобри"
+
+#: templates/admin/cms/page/menu_item.html:67
+#: templates/admin/cms/page/menu_item.html:79
+#: templates/admin/cms/page/menu_item.html:81
+msgid "view"
+msgstr "виж"
+
+#: templates/admin/cms/page/menu_item.html:72
+msgid "Unpublish"
+msgstr "Не публикувай"
+
+#: templates/admin/cms/page/menu_item.html:73
+#: templates/cms/toolbar/toolbar.html:171
+msgid "Publish"
+msgstr "Публикувай"
+
+#: templates/admin/cms/page/menu_item.html:79
+msgid "View on page"
+msgstr "Виж на страницата"
+
+#: templates/admin/cms/page/moderation_messages.html:4
+msgid "Action"
+msgstr "Действие"
+
+#: templates/admin/cms/page/moderation_messages.html:5
+msgid "Created"
+msgstr "Създадено"
+
+#: templates/admin/cms/page/moderation_messages.html:7
+msgid "Message"
+msgstr "Съобщение"
+
+#: templates/admin/cms/page/permissions.html:7
+msgid "Group"
+msgstr "Група"
+
+#: templates/admin/cms/page/permissions.html:8
+msgid "Can edit"
+msgstr "Може да редактира"
+
+#: templates/admin/cms/page/permissions.html:9
+msgid "Can add"
+msgstr "Може да добавя"
+
+#: templates/admin/cms/page/permissions.html:10
+msgid "Can delete"
+msgstr "Може да трие"
+
+#: templates/admin/cms/page/permissions.html:11
+msgid "Can publish"
+msgstr "Може да публикува"
+
+#: templates/admin/cms/page/permissions.html:12
+msgid "Can change permissions"
+msgstr "Може да сменя правата"
+
+#: templates/admin/cms/page/permissions.html:13
+msgid "Can move"
+msgstr "Може да мести"
+
+#: templates/admin/cms/page/permissions.html:20
+#: templates/admin/cms/page/permissions.html:21
+msgid "(global)"
+msgstr "(глобално)"
+
+#: templates/admin/cms/page/permissions.html:25
+msgid "(current)"
+msgstr "(текущо)"
+
+#: templates/admin/cms/page/permissions.html:41
+msgid "All"
+msgstr "Всички"
+
+#: templates/admin/cms/page/permissions.html:49
+msgid "Page doesn't inherit any permissions."
+msgstr "Страницата не наследява права."
+
+#: templates/admin/cms/page/plugin_forms_history.html:9
+msgid "An old revision of a plugin can not be saved!"
+msgstr "Стара версия на плъгина не може да бъде запазена!"
+
+#: templates/admin/cms/page/plugin_forms_ok.html:17
+msgid "Plugin saved successfully."
+msgstr "Плъгина е преместен успешно."
+
+#: templates/admin/cms/page/recover_form.html:17
+#, python-format
+msgid "Recover deleted %(verbose_name)s"
+msgstr "Възстанови изтритата %(verbose_name)s"
+
+#: templates/admin/cms/page/recover_form.html:24
+msgid "Press the save button below to recover this version of the object."
+msgstr "Натиснете бутона за запазване за да възстановите версията на обекта."
+
+#: templates/admin/cms/page/revision_form.html:11
+#, python-format
+msgid "Revert %(verbose_name)s"
+msgstr "Възстанови %(verbose_name)s"
+
+#: templates/admin/cms/page/revision_form.html:24
+msgid "Press the save button below to revert to this version of the object."
+msgstr "Натиснете бутона за запазване за да върнете до тази версия на обекта."
+
+#: templates/admin/cms/page/dialog/copy.html:4
+msgid "Copy options"
+msgstr "Опции за копиране"
+
+#: templates/admin/cms/page/dialog/copy.html:6
+msgid "Choose copy options"
+msgstr "Изберете опции за копиране"
+
+#: templates/admin/cms/page/widgets/installed_plugins_inc.html:7
+msgid "Generic"
+msgstr ""
+
+#: templates/admin/cms/page/widgets/installed_plugins_inc.html:15
+#: templates/cms/toolbar/add_plugins.html:6
+msgid "Add Plugin"
+msgstr "Добави плъгин"
+
+#: templates/admin/cms/page/widgets/installed_plugins_inc.html:18
+msgid "From Language"
+msgstr "От език"
+
+#: templates/admin/cms/page/widgets/installed_plugins_inc.html:25
+msgid "Copy Plugins"
+msgstr "Копирай Плъгини"
+
+#: templates/admin/cms/page/widgets/plugin_editor.html:12
+msgid "You must save the page first to add plugins."
+msgstr "Първо трябва да запазите страницата за да добавяте плъгини."
+
+#: templates/admin/cms/page/widgets/plugin_editor.html:15
+msgid "No Plugin selected. Selected one on the left side"
+msgstr "Няма избрани плъгини. Изберете един отляво."
+
+#: templates/admin/cms/page/widgets/plugin_editor.html:17
+msgid "No Plugins present. Add a plugin to this placeholder-slot."
+msgstr "В момента няма плъгини. Добавете за съответния placeholder."
+
+#: templates/cms/toolbar/add_plugins.html:10
+msgid "Available plugins"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:33
+#, python-format
+msgid "Move to %(name)s"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:34
+msgid "Are you sure you want to delete this plugin?"
+msgstr "Наистина ли искате да изтриете този плъгин?"
+
+#: templates/cms/toolbar/toolbar.html:136
+msgid "Edit mode"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:142
+msgid "Status"
+msgstr "Статус"
+
+#: templates/cms/toolbar/toolbar.html:153
+msgid "Username"
+msgstr "Потребителско име"
+
+#: templates/cms/toolbar/toolbar.html:157
+#: templates/cms/toolbar/toolbar.html:158
+msgid "login"
+msgstr "влез"
+
+#: templates/cms/toolbar/toolbar.html:175
+msgid "Request Approval"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:184
+msgid "Template"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:195
+msgid "move"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:195
+msgid "Move/add Pages"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:197
+msgid "add child"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:197
+msgid "Add child page"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:198
+msgid "add sibling"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:198
+msgid "Add sibling page"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:200
+msgid "Delete Page"
+msgstr "Изтрий страницата"
+
+#: templates/cms/toolbar/toolbar.html:206
+msgid "Site Administration"
+msgstr "Администрация на сайта"
+
+#: templates/cms/toolbar/toolbar.html:208
+msgid "Page Settings"
+msgstr "Настройки на страницата"
+
+#: templates/cms/toolbar/toolbar.html:210
+msgid "history"
+msgstr "история"
+
+#: templates/cms/toolbar/toolbar.html:210
+msgid "View History"
+msgstr "Преглед на историята"
+
+#: templates/cms/toolbar/toolbar.html:218
+#: templates/cms/toolbar/toolbar.html:219
+msgid "Logout"
+msgstr "Изход"
+
+#: templates/cms/toolbar/toolbar.html:219
+msgid "Lock"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:223
+msgid "Close"
+msgstr "Затвори"
+
+#: templates/cms/toolbar/toolbar.html:234
+msgid "up"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:235
+msgid "down"
+msgstr ""
+
+#: templates/cms/toolbar/toolbar.html:237
+msgid "Settings"
+msgstr "Настройки"
+
+#: templates/cms/toolbar/toolbar.html:239
+msgid "Delete Plugin"
+msgstr ""
+
+#: templatetags/cms_admin.py:85
+msgid "Unbind page moderation"
+msgstr "Развържи страницата за модериране"
+
+#: templatetags/cms_admin.py:86
+msgid "Unbind children moderation"
+msgstr "Развържи модерирането на децата"
+
+#: templatetags/cms_admin.py:87
+msgid "Unbind descendants moderation"
+msgstr "Развържи модерирането на потомците"
+
+#: templatetags/cms_tags.py:78
+#, python-format
+msgid "Page not found on %(domain)s"
+msgstr ""
+
+#: templatetags/cms_tags.py:79
+#, python-format
+msgid ""
+"A template tag couldn't find the page with lookup arguments `%(page_lookup)s\n"
+"`. The URL of the request was: http://%(host)s%(path)s"
+msgstr ""
+
+#: test/run_tests.py:137 test/project/settings.py:116
+msgid "English"
+msgstr ""
+
+#: test/run_tests.py:138 test/project/settings.py:117
+msgid "French"
+msgstr ""
+
+#: test/run_tests.py:139 test/project/settings.py:118
+msgid "German"
+msgstr ""
+
+#: test/run_tests.py:140 test/project/settings.py:119
+msgid "Brazil"
+msgstr ""
+
+#: test/run_tests.py:141 test/project/settings.py:120
+msgid "Dutch"
+msgstr ""
+
+#: test/run_tests.py:158 test/project/settings.py:137
+msgid "two columns"
+msgstr ""
+
+#: test/run_tests.py:159 test/project/settings.py:138
+msgid "three columns"
+msgstr ""
+
+#: test/run_tests.py:160 test/project/settings.py:139
+msgid "navigation examples"
+msgstr ""
+
+#: test/run_tests.py:167 test/project/settings.py:148
+msgid "sidebar column"
+msgstr ""
+
+#: test/run_tests.py:173 test/project/settings.py:154
+msgid "left column"
+msgstr ""
+
+#: test/run_tests.py:179 test/project/settings.py:160
+msgid "right column"
+msgstr ""
+
+#: test/apps/pluginapp/plugins/manytomany_rel/cms_plugins.py:13
+msgid "Articles"
+msgstr ""
+
+#: test/apps/sampleapp/cms_app.py:7
+msgid "Sample App"
+msgstr ""
+
+#: test/apps/sampleapp/menu.py:17
+msgid "sample root page"
+msgstr ""
+
+#: test/apps/sampleapp/menu.py:18
+msgid "sample settings page"
+msgstr ""
+
+#: test/apps/sampleapp/menu.py:19
+msgid "sample account page"
+msgstr ""
+
+#: test/apps/sampleapp/menu.py:20
+msgid "sample my profile page"
+msgstr ""
+
+#: test/apps/sampleapp/menu.py:32
+msgid "Static Menu"
+msgstr ""
+
+#: test/apps/sampleapp/menu.py:48
+msgid "Static Menu2"
+msgstr ""
+
+#: utils/moderator.py:83
+msgid "parent first"
+msgstr "първо родителите"
+
+#: utils/moderator.py:90
+msgid "approve"
+msgstr "потвърди"
+
+#: utils/moderator.py:251
+#, python-format
+msgid "CMS - Page %s requires approvement."
+msgstr "CMS - Страницата %s изисква одобряване."
+
+#: utils/permissions.py:206
+msgid "CMS - your user account was created."
+msgstr "CMS — Вашия потребителски профил беше създаден."
+
+#: utils/permissions.py:208
+msgid "CMS - your user account was changed."
+msgstr "CMS — Вашия потребителски профил беше променен."
+
+#~ msgid "fgcolor"
+#~ msgstr "foreground color"
+
+#~ msgid "Wanted language has not been translated yet."
+#~ msgstr "Желания език все още не е преведен.."
+
+

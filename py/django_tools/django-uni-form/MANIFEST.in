@@ -1,0 +1,8 @@
+include CONTRIBUTORS.txt
+include LICENSE.txt
+include MANIFEST.in
+include README.rst
+recursive-include docs *
+recursive-include uni_form/static *
+recursive-include uni_form/templates *
+recursive-include test_project/test_app/templates/test_app *

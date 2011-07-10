@@ -1,0 +1,70 @@
+from setuptools import setup, find_packages
+import os, fnmatch
+import cms
+
+media_files = []
+
+for dirpath, dirnames, filenames in os.walk(os.path.join('cms', 'media')):
+    for filename in filenames:
+        filepath = os.path.join(dirpath, filename)
+        failed = False
+        for pattern in ('*.py', '*.pyc', '*~', '.*', '*.bak', '*.swp*'):
+            if fnmatch.fnmatchcase(filename, pattern):
+                failed = True
+        if failed:
+            continue
+        media_files.append(os.path.join(*filepath.split(os.sep)[1:]))
+        
+CLASSIFIERS = [
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Web Environment',
+    'Framework :: Django',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: BSD License',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+    'Topic :: Software Development',
+    'Topic :: Software Development :: Libraries :: Application Frameworks',
+]
+
+setup(
+    author="Patrick Lauber",
+    author_email="digi@treepy.com",
+    name='django-cms',
+    version=cms.__version__,
+    description='An Advanced Django CMS',
+    long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
+    url='https://www.django-cms.org/',
+    license='BSD License',
+    platforms=['OS Independent'],
+    classifiers=CLASSIFIERS,
+    install_requires=[
+        'Django>=1.2.5',
+        'django-classy-tags>=0.3.3',
+        'south>=0.7.2',
+        'django-mptt>=0.4.2',
+        'django-sekizai>=0.4.2',
+    ],
+    packages=find_packages(exclude=["testdata","testdata.*"]),
+    include_package_data=True,
+#    package_data={
+#        'cms': [
+#            'templates/admin/*.html',
+#            'templates/admin/cms/mail/*.html',
+#            'templates/admin/cms/mail/*.txt',
+#            'templates/admin/cms/page/*.html',
+#            'templates/admin/cms/page/*/*.html',
+#            'templates/cms/*.html',
+#            'templates/cms/*/*.html',
+#            'plugins/*/templates/cms/plugins/*.html',
+#            'plugins/*/templates/cms/plugins/*/*.html',
+#            'plugins/*/templates/cms/plugins/*/*.js',
+#            'locale/*/LC_MESSAGES/*',
+#        ] + media_files,
+#        'menus': [
+#            'templates/menu/*.html',
+#        ],
+#    },
+    zip_safe = False
+)

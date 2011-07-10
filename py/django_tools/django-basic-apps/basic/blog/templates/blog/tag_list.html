@@ -1,0 +1,20 @@
+{% extends "blog/base_blog.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Post tags" %}{% endblock %}
+{% block body_class %}{{ block.super }} tag_list{% endblock %}
+
+
+{% block content_title %}
+  <h2>{% trans "Post tags" %}</h2>
+{% endblock %}
+
+
+{% block content %}
+  <ul class="link_list">
+    {% for tag in object_list %}
+    <li><a href="{{ tag.get_absolute_url }}" title="{% trans "View posts tagged" %} {{ tag }}">{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

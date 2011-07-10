@@ -1,0 +1,12 @@
+{% extends "people/base_people.html" %}
+
+
+{% block title %}{{ object.title }}{% endblock %}
+
+
+{% block content %}
+  <blockquote>
+    {{ object.quote|safe }}
+    <p class="source">&mdash; {{ object.source }}<p>
+  </blockquote>
+{% endblock %}

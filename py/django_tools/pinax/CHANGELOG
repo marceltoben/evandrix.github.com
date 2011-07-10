@@ -1,0 +1,167 @@
+# this is for keeping track of what we're adding to 0.9 as we go to make it
+# easier to write "What's New" documentation and presentations later. Please
+# update it whenever a substantial change is made.
+
+# the format of this document is subject to change; I'm just wanting to get
+# things started
+
+
+Removed PINAX_ROOT sys.path hack in projects
+--------------------------------------------
+
+ * Pinax no longer uses PINAX_ROOT in the sys.path to add the apps/ directory
+   directly. Apps are now reference with their full path.
+   
+   Before::
+   
+       from account.views import login
+   
+   After::
+   
+       from pinax.apps.account.views import login
+   
+   We recommend you update your projects to use the new import path. If you
+   leave the sys.path addition in your project that behavior may actually
+   work, but is untested and not supported.
+
+Upgraded Django from 1.0.X to Django 1.2.X
+------------------------------------------
+
+ * Projects have been updated to use Django 1.2.X features.
+ * Pinax core has been modified to work with CSRF (by default) and new
+   messages contrib app.
+
+Improvements to account app
+---------------------------
+
+ * Moved User instance creation to a new method ``SignupForm.create_user``
+   This gives an extension point to modify how User instances are created
+   via the ``SignupForm``.
+ * ``SignupForm.save`` now returns a dictionary of user credentials to be
+   used in the call to ``authenticate``. This makes it easier to do e-mail
+   based authentication.
+ * OpenIDSignupForm now subclasses SignupForm giving it full signup
+   capabilities like normal user/password signup.
+ * {% openid_icon %} has been removed in favor of {% ifopenid %}.
+ * removed pinax.apps.account.context_processors.openid in favor of just using
+   request.openid instead.
+
+Improved waitinglist app
+------------------------
+
+ * Added {% waitinglist_entry_form as varname %} templatetag to give slightly
+   more flexibility to where the form is displayed. Used to be coupled in
+   the homepage.html template.
+ * Fixed the spelling of waitinglist_sucess URLpattern name.
+ * Removed nasty homepage view from private_beta_project/urls.py that dealt
+   with WaitingListEntryForm. This added a new view list_signup in waitinglist
+   app where POSTs are sent. GETs render waitinglist/list_signup.html where
+   a user can add themselves as well.
+
+Improved password reset
+-----------------------
+
+ * Password reset has been slightly modified to address many issues that were
+   discovered in 0.7. It was brought in line with the same password reset
+   spec that Django contrib auth implements.
+
+Improved support for non-username sites
+---------------------------------------
+
+ * Introduced new templatetag {% user_display %} which takes a single User
+   instance and maps it to a display value defined by ACCOUNT_USER_DISPLAY.
+   Default value of ACCOUNT_USER_DISPLAY is lambda user: user.username.
+
+Added nested group support
+--------------------------
+
+**This feature is in-development**
+
+ * The internal groups app was externalized as django-groups.
+ 
+ * Group base model was given two new fields: content_type and object_id for
+   nesting groups (these field names are subject to change).
+ 
+ * group_slug has been replaced with group-level specific naming. For example
+   in the previous groups support group apps would hook up a content object
+   apps such as::
+   
+       bridge = ContentBridge(Project, "projects")
+       ...
+       urlpatterns += bridge.include_urls("pinax.apps.topics.urls", r"^project/(?P<group_slug>[-\w]+)/topics/")
+   
+   We can no longer rely on group_slug as shown above since content object
+   apps can now be group apps. The new and correct way is to use the lower
+   case form of the model name::
+   
+       bridge = ContentBridge(Project)
+       ...
+       urlpatterns += bridge.include_urls("pinax.apps.topics.urls", r"^project/(?P<project_slug>[-\w]+)/topics/")
+   
+   Notice the second argument to ContentBridge is no longer needed. It now
+   uses the app_label for the model by default.
+ 
+ * The new signature of ContentBridge.get_group has changed from::
+   
+       bridge.get_group(group_slug)
+   
+   to::
+   
+        bridge.get_group(**kwargs)
+   
+   where kwargs comes from the new required view signature::
+   
+       def project_detail(request, pk, **kwargs):
+           ...
+   
+   The reason for this change is because the data you get from the URL has
+   slightly changed as well.
+ 
+ * TODO
+
+
+Added a new starter project for serving up static media and templates
+---------------------------------------------------------------------
+
+ * Allows HTML mockups to have a ready Pinax layout and take advantage of the 
+   Django templating language.
+
+Updated django-staticfiles from 0.1.2 to 0.2.0
+----------------------------------------------
+
+ * The build_media and resolve_media management commands have been renamed to
+   build_static and resolve_static to be slightly less confusing.
+
+ * Remove the unneeded prefix in the STATICFILES_MEDIA_DIRS setting unless you
+   specifically want to use that prefix in your templates as well.
+
+   Before:
+   
+        STATICFILES_DIRS = [
+            ("my_project", os.path.join(PROJECT_ROOT, "media")),
+            ("pinax", os.path.join(PINAX_ROOT, "media", PINAX_THEME)),
+        ]
+
+   After:
+
+        STATICFILES_DIRS = [
+            os.path.join(PROJECT_ROOT, "media"),
+            os.path.join(PINAX_ROOT, "media", PINAX_THEME),
+        ]
+
+ * Update your urls.py to use the latest version of the media and static file
+   serving view:
+
+   Before:
+
+        if settings.SERVE_MEDIA:
+            urlpatterns += patterns("",
+                (r"^site_media/", include("staticfiles.urls")),
+            )
+
+   After:
+
+        if settings.SERVE_MEDIA:
+            urlpatterns += patterns("",
+                (r"", include("staticfiles.urls")),
+            )

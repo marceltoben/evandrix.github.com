@@ -1,0 +1,31 @@
+{% extends "messages/base_messages.html" %}
+
+
+{% block title %}Compose message{% endblock %}
+{% block body_class %}{{ block.super }} message_form{% endblock %}
+
+
+{% block content_title %}
+  <h2>{% if message %}Reply{% else %}Message composer{% endif %}</h2>
+{% endblock %}
+
+
+{% block content %}
+  <form action="{% if message %}{% url messages:reply message.id %}{% else %}.{% endif %}{% if next %}?next={{ next }}{% endif %}" method="post">{% csrf_token %}
+    {% if message %}
+      {{ message.message|linebreaks }}
+      <span style="display:none;">{{ form.to_user }}</span>
+    {% else %}
+      <p><label for="id_to_user">To</label> {{ form.to_user }}
+        {% if form.to_user.errors %}<span class="errors">{{ form.to_user.errors|join:", " }}</span>{% endif %}</p>
+    {% endif %}
+    <p><label for="id_subject">Subject</label> {{ form.subject }}
+      {% if form.subject.errors %}<span class="errors">{{ form.subject.errors|join:", " }}</span>{% endif %}</p>
+    <p><label for="id_message">Message</label> {{ form.message }}
+      {% if form.message.errors %}<span class="errors">{{ form.message.errors|join:", " }}</span>{% endif %}</p>
+    <p class="submit">
+      <button type="submit" name="submit" value="Send">Send</button>
+      <a href="{% url messages:messages %}" class="cancel">Cancel</a>
+    </p>
+  </form>
+{% endblock %}

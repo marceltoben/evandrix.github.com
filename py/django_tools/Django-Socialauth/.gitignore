@@ -1,0 +1,10 @@
+*.log
+*.pyc
+*~
+build/
+localsettings.py
+.svn/
+.svn/*
+data.db
+*.wpr
+facebook.py
