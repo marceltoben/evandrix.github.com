@@ -1,0 +1,63 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="formly.js"></script>
+<link rel="stylesheet" href="formly.css" type="text/css" />
+
+<form id="MyForm" width="400px">
+Your name: <input type="text" name="Name" />
+Email address: <input type="text" name="Email" validate="email" />
+Username: <input type="text" name="Username" place="No spaces" label="Username" require="true" />
+Password: <input type="password" name="Password" label="Password" require="true" />
+<input type="submit" value="Sign up" /><input type="reset" value="Clear" />
+</form>
+
+<script>
+$(document).ready(function()
+  { $('#MyForm').formly(); });
+</script>
+
+<form id="BetaSignup" width="200px" title="Sign up" subtitle="for exclusive beta access">
+<input type="text" name="Name" place="Your name" />
+<input type="text" name="Email" validate="email" place="Email address" />
+<input type="text" name="Username" place="Choose a username" require="true" label="Username" pre-fix="@" />
+<input type="password" name="Password" require="true" label="Password" place="Password" />
+<input type="password" name="PasswordMatch" match="Password" label="Password" place="Re-type password" />
+<input type="submit" value="Sign up" /><input type="reset" value="Clear" />
+</form>
+
+<script>
+$(document).ready(function()
+  { $('#BetaSignup').formly({'onBlur':false, 'theme':'Light'}); });
+</script>
+
+<form id="ContactInfo" width="600px" title="Member sign up">
+<input type="text" name="first_name" place="Your first name" size="30" />
+<input type="text" name="last_name" place="Your last name" size="30" style="margin-left:10px;" />
+<input type="text" name="email" validate="email" place="Email address" size="30" />
+<input type="text" name="website" place="Your website" size="30" pre-fix="http://" validate="http" style="margin-left:10px;" />
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+<input type="radio" name="membership" value="new" style="margin-left:10px;" /> New member
+<input type="radio" name="membership" value="existing" /> Existing member
+<input type="password" name="pword" require="true" label="Password" place="Password" />
+<input type="password" name="pwordm" match="pword" label="Password" place="Re-type password" />
+<input type="checkbox" name="agree" require="true" label="Terms" value="agree" /> I agree to the terms
+<input type="submit" value="Sign up" /><input type="reset" value="Clear" /> </form>
+
+<script>
+$(document).ready(function()
+  {
+  $('#ContactInfo').formly({'theme':'Dark'}, function(e)
+      { $('.callback').html(e); });
+  });
+</script>
+
+<!--
+	label : (string) useful for notifications
+	place : (string) place holder
+	pre-fix : (string) pretty self-explanatory
+	require : (true or false) force user input
+	match : (string) name of input that it must match
+	validate : (string) 'email' or 'http'
+-->
