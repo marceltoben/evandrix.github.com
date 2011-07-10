@@ -1,0 +1,3 @@
+--- libffi notes ---
+All JNA customizations to date have been merged to upstream libffi.  This
+source tree has been synched to http://github.com/atgreen/libffi.
