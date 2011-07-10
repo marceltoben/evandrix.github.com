@@ -1,0 +1,447 @@
+* 1.3.0
+
+	*** Backwards compatibility breakages ***
+	
+	- you cannot create Endpoints/Connectors/Overlays directly anymore.  You must supply jsPlumb with a definition of what you want and it creates
+	  the actual object.  For example:
+	  	  
+	  	OLD: 	jsPlumb.Defaults.Endpoint = new jsPlumb.Endpoints.Dot(45);
+	  	NEW:	jsPlumb.Defaults.Endpoint = [ "Dot", { radius:45 } ];
+	  	
+	
+	- Bezier connection requires a js object as argument now, instead of a single int:
+	
+		OLD:  	connector: [ "Bezier", 150 ]
+		NEW: 	connector: [ "Bezier", { curviness:150 } ]
+	
+	- Dot Endpoint requires a js object as argument now, instead of a single int:
+	
+		OLD:	endpoint: [ "Dot", 10 ]
+		NEW:	endpoint: [ "Dot", { radius:10 } ] 
+		
+	- setDefaultNewCanvasSize method has been removed.  jsPlumb no longer uses excanvas to render
+	  VML; this method was there to support edge cases of VML usage.
+	  
+	- the 'container' concept, as an argument to addEndpoint or connect, and in the jsPlumb
+	  defaults, has been removed.  created elements are now appended to the parent of the source
+	  element of a connection.
+	  
+	- backgroundPaintStyle has been replaced with 'outlineColor' and 'outlineWidth' members in
+	   paint definitions. 
+	   
+  	- drag entire connection, introduced for some browsers in 1.2.6, has been removed.
+	  
+	General Changes
+	-------------- 
+
+	- jsPlumb can now use SVG where supported
+	- mouse events in all browsers
+	- ability to register a mouse listener on jsPlumb, rather than on each Connection individually.  surely much more convenient.
+	  this is "click" and "dblclick" events for Connections, and "endpointClick" and "endpointDblClick" for Endpoints.	
+	- ability to specify class names for endpoints/overlays/connections, using 'cssClass' param.
+	- added "Blank" endpoint type: paints nothing and adds no element to the DOM.
+	- reinstated the 'drawEndpoints' parameter on jsPlumb.connect. 
+	- added makeTarget/makeTargets method; allow you to specify an entire element as drop target for a connection
+	- added jsPlumb.Defaults.Overlays
+	- all Label overlays are painted with a styled div now (they used to be drawn on the canvases), and each renderer type uses this.
+	- added removeAllOverlays, removeOverlay and removeOverlays methods to Connection.
+	- addEndpoint and addEndpoints methods now take a selector or array for the first argument, so
+	you can do things like  jsPlumb.addEndpoint($(".someClass"), { endpoint options });
+	
+	Bugfixes/Enhancements
+	--------		
+
+	- issue 90
+	- issue 95
+
+
+* 1.2.6
+
+	General Changes
+	
+	- added Flowchart connector type.
+
+	- removed jquery plugin methods.  support for them had fallen behind anyway, and then jquery 1.5 introduced 'detach', which clashed with jsPlumb. so, they got the chop.	
+
+	- the jsPlumb.bind method does not support array as first argument anymore. it's now bind(event, listener) only.
+
+	- added the ability to supply a subclass of Connection or Endpoint for your own app (jsPlumb.Defaults.ConnectorType and jsPlumb.Defaults.EndpointType)   	
+
+	- added a version of two-arg method from jsPlumb.addEndpoint to jsPlumb.addEndpoints. takes an array of arrays as the second argument. 
+
+	- added optional referenceParams argument to jsPlumb.connect; use this to supply shared info between many connections:
+
+		var commonValues = { paintStyle:{ strokeStyle:"red", lineWidth:5 } };
+		jsPlumb.connect({ source:someDiv, target:someOtherDiv }, commonValues);
+		jsPlumb.connect({ source:aThirdDiv, target:yetAnotherDiv }, commonValues);
+
+	- added optional referenceParams argument to jsPlumb.addEndpoint; use this to supply shared info between many endpoint additions:
+
+		var commonValues = { paintStyle:{ fillStyle:"red" } };
+		jsPlumb.addEndpoint(someDiv, { anchor:[ 1.0, 0, 0, -1 ] }, commonValues);
+		jsPlumb.addEndpoint(someOtherDiv { anchor:[ 0, 1.0, -1, 0 ] }, commonValues);
+
+
+	Paint Styles
+	
+	- added setPaintStyle method to Connection and Endpoint. 
+	- deprecated 'style' argument to Endpoint options in favour of 'paintStyle', to make it the same as Connection.		
+	- added setBackgroundPaintStyle method to Connection (note: not Endpoint)	 
+	- arrow overlays derive their paint style from the associated connection if one is not supplied for the overlay (using Connection's strokeStyle as their fillStyle).
+
+
+	Mouse Support
+
+	note: this only works when using a Canvas, ie. not in IE using excanvas.  Full mouse support is slated for the next release - 2.0.
+
+	- added single click mouse support to Connection/Endpoint
+	- added double click mouse support to Connection/Endpoint
+	- added mouseenter mouse support to Connection/Endpoint
+	- added mouseleave mouse support to Connection/Endpoint
+
+	- added hoverPaintStyle concept to Connection and Endpoint: paint style when mouse is hovering over the connection.
+	- added endpointHoverStyle, endpointHoverStyles options to Connection
+	- added support for jsPlumb.Defaults.HoverPaintStyle	
+	- added connectorHoverStyle to Endpoint: the hoverPaintStyle for Connections from this Endpoint.
+	- added jsPlumb.Defaults.EndpointHoverStyle, jsPlumb.Defaults.EndpointHoverStyles	
+
+			
+	Overlays
+
+	- added 'direction' parameter for arrow overlay to support arrows that point in the opposite direction to the connection.
+	
+	- added overlay definitions:
+
+		prior to 1.2.6 you would write something like this:
+
+			jsPlumb.connect({
+					source:d1, 
+					target:d2, 
+					overlays:[ new jsPlumb.Overlays.Arrow({foldback:0.7, fillStyle:'gray', location:0.5, width:14}) ]
+			});
+
+		you can now do this:
+
+			jsPlumb.connect({
+					source:d1, 
+					target:d2, 
+					overlays:[ [ "Arrow", { foldback:0.7, fillStyle:'gray', location:0.5, width:14} ] ]
+			});
+
+		this becomes more useful when you want to add one or more similar overlays to multiple connections, using a three arg array to hold common options:
+				
+			var arrowCommon = { foldback:0.7, fillStyle:fillColor, width:14 };
+			var overlays = [
+						[ "Arrow", { location:0.7 }, arrowCommon ],
+						[ "Arrow", { location:0.3, direction:-1 }, arrowCommon ]
+			];
+			
+			jsPlumb.connect({
+					source:d1, 
+					target:d2, 
+					overlays:overlays
+			});
+
+	Endpoints
+
+	- added setVisible(boolean) method.
+	- added new endpoint definition syntax.  
+
+		prior to 1.2.6:
+
+			jsPlumb.Defaults.Endpoint = new jsPlumb.Endpoints.Rectangle({width:50,height:50});
+
+		1.2.6:
+
+			jsPlumb.Defaults.Endpoint = [ "Rectangle", { width:50,height:50 } ];
+
+		as with the overlay definitions discussed above, you can specify a three arg array to reuse common values:
+
+			var common = { width:50, height:50 };
+			var endpoint1 = jsPlumb.addEndpoint(someDiv, { anchor:[ 0, 1.0, 0,-1 ] }, common); 
+			var endpoint2 = jsPlumb.addEndpoint(someOtherDiv, { anchor:[ 1.0, 0, 0, 1 ] }, common); 
+
+	Issues
+
+	- issue 54: crash on vertical straight connectors
+	- issue 57: wrong scope chosen for detached draggable connection
+	- issue 58: changing one connector's style changes others.
+	- issue 63: add access to the Connector in event API
+	- issue 65: expose Connection so it can be extended
+	- issue 70: right click on Connections
+	- issue 72: toggle visibility of endpoints
+	- issue 74: mootools drag error
+	- issue 76: arrow overlays flip and disappear with vertical straight connectors
+	- issue 80: support for setting an arrow overlay's direction
+	- issue 81: detach event fired twice
+
+
+* 1.2.5
+
+	- added support for YUI3
+	- removed 'html', 'css' directories and moved everything demo-related into "demo".
+	- now using jsBezier-0.2
+	- removed jsPlumb.autoConnect method.  use the 'dynamicAnchors' parameter on a jsPlumb.connect call.
+	- added support for specifying an Endpoint's anchor as a dynamic anchor defined as an array of arrays or array of strings.  like this:
+	
+	    var endpointSpec = { 
+	   		endpoint:new jsPlumb.Endpoints.Rectangle(),
+	   		anchor:[ [0, 0, -1, -1], [1, 1, 1, 1] ]
+	   	};
+	   	
+	   	or
+	   	
+	   	var endpointSpec = {
+	   		endpoint:new jsPlumb.Endpoints.Rectangle(),
+	   		anchor:["TopLeft", "BottomRight"]
+	   	};
+	   	
+	   	jsPlumb will create a DynamicAnchor for each usage of these endpoint specs.
+	   	
+	   	"anchors" works too; i just used "anchor" to keep it consistent with the notion that a dynamic anchor should be treated like
+	   	a 'normal' anchor. it just happens to move around.  but then, "anchors" makes more sense.  hence the fact you can use both.
+
+* 1.2.4
+	
+	- added 'connection' to getConnection method's output.
+	- fix for issue 35 (detach event contained wrong source endpoint)
+	- fix for issue 42 (jsPlumb_dragged class not removed from element after drag) 
+	- fix for issue 43 (performance problems causing connections and endpoints to detach when dragging)
+	- fix for issue 44 (use a proper way of detecting Canvas support)
+	- added connectorOverlays option on Endpoint: specify overlays for Connectors dragged from the Endpoint.
+	- added support for multi line labels (issue 36)
+	- added Image overlay type.
+	
+	- removed the caching in __getElementObject since the performance enhancements have obviated the need for it.
+	
+	- anchors are no longer static. 	  
+	  
+	- makeAnchor now takes anchor names (you can register your own anchors on jsplumb and then refer to them by name), anchor coord lists, other anchors.
+	- connect method and endpoints both support anchors specified by name ("TopCenter") or array ([0.5, 0, 0, -1]); you dont need to do jsPlumb.makeAnchor(...) any longer.
+	  
+	- jsPlumb.Defaults.DynamicAnchors is now a function, not static. 
+
+* 1.2.3
+
+	** DYNAMIC ANCHOR PAINT ENDPOINT AFTER MOVE
+	** GRADIENT TO BEZIER
+	** OVERLAY DOCS
+	** DRAG PROBLEM DRAGGABLE CONNECTORS DEMO MOOTOOLS - DRag from dynamic anchor to some other anchor.  then, drag off the anchor...bee-bow.
+
+
+	
+	- added BackgroundPaintStyle to jsPlumb.Defaults; this, if set, will be the background for connectors (you can do shadows etc)
+	- added BackgroundPaintStyle support to Connector
+	                                                              
+	- several bugfixes for draggable connectors in containers.
+	
+	- added the ability to label connections in an addConnection call
+	- added Connection.setLabel method
+	
+	- added dynamic anchors
+	- added autoConnect method
+	- added jsPlumb.Defaults.DynamicAnchors
+	- added pointOnPath(location) method to Connectors.  needed to support overlays.
+	- added perpendicularToPath(location, length) to Connectors.  needed to support overlays.
+
+	- added jsPlumb.Overlays, a new feature that lets you overlay stuff onto Connectors.
+	- added jsPlumb.Overlays.Arrow, jsPlumb.Overlays.PlainArrow, jsPlumb.Overlays.Diamond.
+	
+	- issue 24 - jsPlumb reference instead of "_currentInstance" (thanks Sylvain Gizard)
+	- issue 25 - removeAllEndpoints and removeEndpoint fail when a parent container is given (thanks Sylvain Gizard) 
+
+* 1.2.2
+
+	- fixed bug where max connections on a target endpoint was ignored
+	- sourceEndpoint/targetEndpoint are used for source/target if they are provided to a connect/plumb call.
+	- added getElement method to Endpoint - it returns the element the Endpoint is connected to
+	- added addListener method (only supports jsPlumbConnection events right now)
+	- now fires "jsPlumbConnection" event from connect call.
+	- added detachAll method to Endpoint : detaches every connection
+	- added detachFrom(Endpoint) method to Endpoint : detaches all connections to the given target endpoint
+	- added the concept of uuid for Endpoints (contributed by qecko) 
+	- added getUuid method on Endpoint
+	- added getEndpoint method on jsPlumb - retrieves Endpoint by UUID.
+	- added ability to connect two endpoints by their UUID
+	- improved the jsPlumb.detach method to support the same sorts of arguments as jsPlumb.connect
+	- added 'dragAllowedWhenFull' to options of Endpoint, and also as setDragAllowedWhenFull method.
+	- issue 13 - maxConnections doesnt check target connections
+	- issue 11 - add getter function for EndpointsByElement				
+	- issue 15 - maxConnections value of -1 doesnt support infinite connections
+	- issue 16 - pipe from endpoint to endpoint
+
+* 1.2.1
+
+	- supports multiple instances of jsPlumb per page ( jsPlumb.newInstance(defaults) )  
+	- performance enhancements on connection registration
+	- jsPlumb.Defaults.Anchor added to defaults
+	- equals method added to Anchor class.
+	- fix for issue 8: detach method blows up if no target specified.
+	- added 'complete' event to event lists in mootools and jquery
+	- animate runs oncomplete event at anim end automatically, to clean up
+	- added setDefaultScope and getDefaultScope  
+	- moved scope from drag/drop options into Endpoint options
+	- todo: add scope to the connect method too.   
+	- added getConnections method  
+	- added 'container' concept    
+	- added 'clearCache' method
+	- added 'removeEveryEndpoint' method
+	- added 'reset' method
+
+* 1.2
+
+	- adding support for libraries other than jQuery. Starting with MooTools.
+	- added 'wrap' function in to jsPlumb public API.
+	- added 'extend' function in to jsPlumb public API.
+
+* 1.1.1
+
+	- added jsPlumb.removeAllEndpoints method
+	- added isConnectedTo(anEndpoint) method to Endpoint class
+	- added Triangle Endpoint type
+    - bugfix for removeEndpoint method (it was not removing endpoints...)
+    - introduced NaturalDocs for API documentation
+
+* 1.1.0
+	  
+	- added _jsPlumbContextNode element into which all canvases are drawn.  makes for faster lookup and 
+	  easier cleanup.
+	  
+	- Anchors must now implement 'getOrientation' rather than just having an 'orientation' member.
+	  This is used to support anchors whose orientation is calculated dynamically (such as when dragging)
+	  
+    - internally jsPlumb is now "endpoint-centric" rather than "connection-centric" as it used to be.
+      this allows us to add Endpoints that have no connections at creation time, and that can act as
+      sources and targets for Connections.
+    
+	- added setDraggable method to jsPlumb.  overrides what any given plumb command may request.
+	- added setDraggableByDefault method.
+	- added toggleDraggable method to jsPlumb.
+	
+	- renamed toggle to toggleVisible (but kept the old one for backwards compatibility)
+	
+	- added jsPlumb.Endpoints.Blank Endpoint type.
+      
+    - renamed '_removeCanvas' to '_removeElement' to more properly reflect what it does.
+    - added '_removeElements' method.
+    
+    - introduced jsPlumb.Defaults, which replaces all the old, capitalised, things like
+      DEFAULT_ENDPOINTS, DEFAULT_CONNECTOR, etc. so you'd say
+      
+      jsPlumb.Defaults.DefaultEndpoints
+      
+      instead of
+      
+      jsPlumb.DEFAULT_ENDPOINTS
+      
+    - added support for draggable connectors.
+    
+    - added animate function.
+    
+    - added removeEndpoint function
+    
+    - introduced qunit testing.
+    
+    - now writes a 'jsPlumb_dragged' class to an element at the end of a drag.
+      this can be used to test for a recent drag in a click handler, because drag fires click.
+      and you dont always want that.
+      
+
+* 1.0.4
+
+	- fix for issue 5 (zIndex error causing 'invalid argument' in IE) :
+	
+	http://code.google.com/p/jsplumb/issues/detail?id=5&can=1
+		
+	- added 'setDraggable' method.  this allows you to override whether or not a given element can be dragged,
+	  regardless of what any plumb call might request.
+	  
+	- added setDraggableByDefault method.  Use this to tell jsPlumb whether or not elements should be draggable
+	  by default.  jsPlumb assumes they should be if you do nothing.
+	  
+	- private 'drag' method renamed to '_draw'
+	- private 'setVisible' method renamed to '_setVisible'
+	- private 'newCanvas' method renamed to '_newCanvas'
+	- private 'removeCanvas' method renamed to '_removeCanvas'
+	
+	  
+
+* 1.0.3
+
+	- fix for issue 2:
+	
+		http://code.google.com/p/jsplumb/issues/detail?id=2&can=1
+		
+		jsPlumb threw an error if jquery UI was not included in the page.
+		
+	- fix for issue 4:
+	
+		http://code.google.com/p/jsplumb/issues/detail?id=4&can=1
+		
+		wrong control points for bezier curve when anchor orientations were perpendicular
+		to each other.
+		
+
+* 1.0.2
+
+	- added fix for dragging in 1.8 (absolutePosition was renamed to 'offset' in the drag object)
+	- bugfix for the case that detachAll has been called and the user subsequently tries to drag something.
+	- bugfix for hide/show being called with an id for an element that is not plumbed.
+	- applyPaintStyle method now returns the object that was extended; can be chained.
+
+* 1.0.1
+
+	- added detachEverything() method : detaches everything. and then cleans up the storage.
+	- added repaintEverything() method : refreshes everything.
+	- added window resize listener; this is hooked up to the repaint everything method.
+	- added unload() method, used to cleanup jsPlumb when the page unloads 
+
+
+* 1.0.0
+
+  This is 0.0.4-RC5.
+
+ * 0.0.4-RC5
+ 
+ 	- improved makeAnchor method
+ 	- added gradients for endpoints
+ 	- better documentation
+ 	
+ * 0.0.4-RC4 (03/26/10)
+ 
+ 	- added Image endpoint type.
+
+ * 0.0.4-RC3 (03/26/10)
+ 
+ 	- refactored Anchors somewhat.  it's now easier to create a custom anchor location, and
+ 	  anchors can take offsets too.
+ 	  
+ 	- added anchors demonstration.
+ 	
+ 	- added facility to specify different endpoints and endpoint styles for each end of a connector.
+ 
+ * 0.0.4-RC2 (03/24/10)
+ 		
+ 	-	the Connectors and Endpoints are no longer static - they must now be instantiated, for example:
+ 	
+ 				new jsPlumb.Connectors.BEZIER();
+ 			
+ 	- you can supply a 'curviness' argument to the BEZIER constructor now:
+ 			
+ 			new jsPlumb.Connectors.BEZIER(75)
+ 			
+ 			it defines the distance in pixels that each control point is situated from the connector.
+ 	
+ 	- added support for gradients in Connectors  
+ 			
+ 	 
+ * 0.0.4-RC1   (3/23/10)
+ 
+   - fixed issue 1: when straight_line connector is used and elements directly underneath/next to
+     each other, the connector is not drawn.     
+ 
+ * 0.0.3	(3/15/10)
+ 
+   - initial release  
+   		 -- no support for gradients/patterns.  
+   		 -- single endpoint style per connector (can't have diff. endpoints at each end)

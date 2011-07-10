@@ -1,0 +1,343 @@
+
+<html> 
+<head> 
+<title>CS101 Code In The Browser</title> 
+<link rel=stylesheet href=style.css type="text/css"> 
+<script language=javascript>cs101nobrowsercheck = 1;</script> 
+ 
+</head> 
+<body> 
+<script type="text/javascript" src="runner.js"></script> 
+<script type="text/javascript" src="simple-image.js"></script> 
+<script type="text/javascript" src="simple-table.js"></script> 
+ 
+<script type="text/javascript"> 
+// CR handling code from codingbat.com
+ 
+function insertNewline(ta) {
+  if (ta.selectionStart != undefined) {  // firefox etc.
+    var before = ta.value.substring(0, ta.selectionStart);
+    var indent = figureIndent(before);
+    var selSave = ta.selectionEnd;
+    var after = ta.value.substring(ta.selectionEnd, ta.value.length)       
+ 
+    // update the text field
+    var tmp = ta.scrollTop;  // inhibit annoying auto-scroll
+    ta.value = before + "\n" + indent + after;
+    var pos = selSave + 1 + indent.length;
+    ta.selectionStart = pos;
+    ta.selectionEnd = pos;
+    ta.scrollTop = tmp;
+    
+    // we did it, so return false
+    return false;
+  } else if (document.selection && document.selection.createRange) { // IE
+     var r = document.selection.createRange()
+     var dr = r.duplicate()
+     dr.moveToElementText(ta)
+     dr.setEndPoint("EndToEnd", r)
+     var c = dr.text.length - r.text.length
+     var b = ta.value.substring(0, c);
+     var i = figureIndent(b);
+     if (i == "") return true;  // let natural event happen
+     r.text = "\n" + i;
+     return false;
+  }
+     
+  return true;
+}
+ 
+// given text running up to cursor, return spaces to put at
+// start of next line.
+function figureIndent(str) {
+  var eol = str.lastIndexOf("\n");
+  // eol==-1 works ok
+  var line = str.substring(eol + 1);  // take from eol to end
+  var indent="";
+  for (i=0; i<line.length && line.charAt(i)==' '; i++) {
+    indent = indent + " ";
+  }
+  return indent;
+}
+ 
+function handleCR(ta, event) {
+  if (event.keyCode==13) return insertNewline(ta)
+  else {
+    return true;
+  }
+}
+ 
+</script> 
+ 
+<div id=warning-output></div> 
+ 
+<h1>CS101 Code In The Browser</h1> 
+ 
+<p><a href=./>CS101</a> 
+ 
+<p> 
+ 
+ 
+ 
+<p> 
+This page shows the CS101 code-in-browser infrastructure that makes it easy to play with short snippets of code, as you might want for a CS0, CS Principles, or Computational Thinking course. I'm using this now for a course at Stanford. This is an early demo, but ultimately this work will be polished up and opened to make it easy to use or adapt for any course. I wanted to put this out now to help spark conversations at SIGCSE. This work is supported by Google.
+ 
+<p> 
+Clicking the Run button on the demos below will give you, I think, an immediate sense of the strengths and weaknesses of this approach, so I'll start with demos and put the explanations last. Keep in mind that this is not CS1 or a full programming course.  Instead, I'm pursuing a CS Principles/Computational Thinking strategy based on small, planned snippets of code to show the students the essential qualities of code and data. I stick to the minimal set of code features needed for the specific problems I want to play with.
+ 
+<p> 
+Note: this demo makes very aggressive use of HTML5 features, so it only works in very modern browsers. It should work in the latest Firefox, Safari, and Chrome, and I'm working on other browsers.
+ 
+<h2>Media Computation</h2> 
+<p> 
+Here's a flowers.jpg image we'll use
+<br><img src=flowers.jpg> 
+ 
+<p> 
+Media computation is a great area -- mixing interesting data, algorithms, and visual output. Here's a code snippet to manipulate the pixels.
+ 
+<h4></h4> 
+<table> 
+<tr><td valign=top width=550> <!-- CODE --> 
+<textarea id="x-1" rows=14 cols=70 style="font-family:courier;font-size:14" spellcheck=false 
+onKeyPress='return handleCR(this ,event)'> 
+var im = new SimpleImage("flowers.jpg");
+for (var x = 0; x < im.getWidth(); x++) {
+  for (var y = 0; y < im.getHeight(); y++) {
+    // interesting code here -- work on each x,y pixel
+    im.setRed(x, y, 0);
+  }
+}
+print(im);
+print("flowers!");
+ 
+ 
+ 
+ 
+</textarea> 
+<br><input type=button style='width:220;height:40;background-color:lightgray'
+value="Run/Save" onClick='evaluateClear("x-1")'> 
+</td> 
+<td valign=top> <!-- OUTPUT --> 
+<div id='x-1-output' style="font-family:courier;font-size:14"></div> 
+</td></tr> 
+</table> 
+ 
+ 
+<p> 
+In class, I explain that the for-x/for-y loops implementing a "for every pixel" idiom, but without getting into much detail at this stage. The loops are the same every time, and we concentrate instead on pixel operations expressed inside. Many interesting and engaging problems fit in the pattern of "do &lt;something&gt; to every pixel in this image".
+ 
+<p>Try these: compute the average value of the red/green/blue values of a pixel and then set red/green/blue to that value. Try swapping the green and blue values of the original image.. what color are the flowers now? (Note that yellow = red + green for this sort of color mixing.)
+ 
+<p> 
+The SimpleImage class supports getRed(x, y), getGreen(x, y), getBlue(x, y) to get each channel value 0..255, and there's setRed(x, y, val), etc. to set the values. So you can talk about the grid x,y structure of an image of pixels, and pretty quickly get to code to try out manipulations. The print() function works with images as well as regular data types. Standard Javascript does not have a print() function like that of course, showing how this environment is heavily customized for the classroom-code case.
+ 
+ 
+<h3>If To Bluescreen</h3> 
+ 
+<p> 
+A couple lectures later, the students have more experience with images and have worked with the if-statement. We talk about detecting that a pixel is blueish by comparing its blue value to the average of all the values, maybe multiplying by a factor like 1.2 or 0.9 to adjust the sensitivity. That's all you need to do a bluescreen. Students just <b>love</b> this project (thanks Mark Guzdial et al!). It's the perfect mix of short but non-trivial code paired with interesting output. Put the monkey on the moon!
+ 
+<p> 
+<img src=monkey.jpg width=300> <img src=moon.jpg width=300> 
+<p> 
+<h4></h4> 
+<table> 
+<tr><td valign=top width=550> <!-- CODE --> 
+<textarea id="x-2" rows=22 cols=70 style="font-family:courier;font-size:14" spellcheck=false 
+onKeyPress='return handleCR(this ,event)'> 
+im = new SimpleImage("monkey.jpg");
+back = new SimpleImage("moon.jpg");
+ 
+for (x = 0; x < im.getWidth(); x++) {
+  for (y = 0; y < im.getHeight(); y++) {
+    sum = im.getRed(x, y) + im.getGreen(x, y) +
+        im.getBlue(x, y);
+    avg = sum / 3;
+ 
+    if (im.getBlue(x, y) > avg * 0.9) {    // detect blue background
+      im.setRed(x, y, back.getRed(x, y));  // copy over pixel
+      im.setGreen(x, y, back.getGreen(x, y));
+      im.setBlue(x, y, back.getBlue(x, y));
+    }
+ 
+  }
+}
+print(im);
+ 
+ 
+ 
+</textarea> 
+<br><input type=button style='width:220;height:40;background-color:lightgray'
+value="Run/Save" onClick='evaluateClear("x-2")'> 
+</td> 
+<td valign=top> <!-- OUTPUT --> 
+<div id='x-2-output' style="font-family:courier;font-size:14"></div> 
+</td></tr> 
+</table> 
+ 
+ 
+<p> 
+I love how this beautiful effect is built out of tiny, mechanical little operations. I think that shows an essential quality of computers right there.
+ 
+<p> 
+You could use a more complex algorithm here, but you just want something complex enough that the code and output are interesting.
+ 
+<h3>Structured Data</h3> 
+ 
+<p> 
+In the second half of the course, I switched to "structured" table data problems using the Baby Names data set of 2000 names. Here's code to print all the boy names ending in "ie" for babies born in 2009 (the field names in this data if you want to try your own queries are: name, rank, gender, year).
+ 
+<h4></h4> 
+<table> 
+<tr><td valign=top width=550> <!-- CODE --> 
+<textarea id="x-3" rows=12 cols=70 style="font-family:courier;font-size:14" spellcheck=false 
+onKeyPress='return handleCR(this ,event)'> 
+var table = new SimpleTable("baby-2009.csv");
+for (var i = 0; i < table.getRowCount(); i++) {
+  var row = table.getRow(i);
+  if (row.getField("name").endsWith("ie") &&
+      row.getField("gender") == "boy") {
+    print(row);
+  }
+}
+ 
+ 
+ 
+</textarea> 
+<br><input type=button style='width:220;height:40;background-color:lightgray'
+value="Run/Save" onClick='evaluateClear("x-3")'> 
+</td> 
+<td valign=top> <!-- OUTPUT --> 
+<div id='x-3-output' style="font-family:courier;font-size:14"></div> 
+</td></tr> 
+</table> 
+ 
+ 
+<p> 
+It's easy to formulate questions and experiments about data to motivate playing with boolean logic here. I also showed the students how to use counting variables to print a summary at the end, like counting to see if more boy or girl names end in "y". At a higher level, I like that it's the same basic loop/logic code patterns from the media computation, but now applied to data that looks nothing like image data.
+ 
+<p> 
+I also ran a survey of the students -- favorite color, favorite TV show, ... and made a .csv of the results, so then we could use the same getRow(i), getField("color") ... code patterns to play with queries about the students own answers: do older students like Glee, is there a gender split in who likes blue vs. red and so on. Obviously the "table" data type is quite versatile for holding interesting data sets to play with in class. Note that Javascript does not actually have a startsWith()/endsWith() methods so I added them; you really need them for the baby name data.
+ 
+<h2>Observations</h2> 
+ 
+<p> 
+The above technology is something I'm working on now, with an eye towards improving it and ultimately making it available on the web in a way which is easy for anyone to use or adapt. It is certainly not in final form yet, but I wanted to get it out there as an interesting demo now, figuring I could talk to people at SIGCSE about it.
+ 
+<p> 
+Here are some other observations:
+ 
+<ul> 
+ 
+<li> 
+It's obviously very handy that the code snippets are embedded in web pages and just work. I'm going to try this with some local high school and middle school students this summer, and I love that I can just show  up in class, give out the url and we're ready to go.
+ 
+<li> 
+I've also tried breaking out just the image-bluescreen part of the course and doing that as a little 6-hour unit that stands on its own as a short courses last summer. It's a neat use of the material, since it's so small, it can fit in a lot of places. I'm going to try it that again with some local high school and middle school students in the next few months to test and refine the materials. Because the "install" is so trivial, you can use this material in small pieces, for a lecture demo or whatever.
+ 
+<li> 
+The Javascript language and syntax here is less than ideal and I do not love it. However, in practice syntax was not a barrier for these projects where the code snippets are so small. The students focussed on the interesting ideas inside the loops, and the loops themselves were taken as idiomatic, which of course is what they are. Other than the loops, we just have a few method calls and if statements; it's all so limited, the language details are not controlling. Of course I would like to have a language with better features here, but my conclusion is that Javascript is good enough, and the simplicity and power of having everything just work in the browser is big advantage.
+ 
+<li> 
+For my most recent course, I just made up a web page for each lecture, containing my outline mixed in with the 3 or 4 examples I wanted to do that day, and for lecture I would just scroll through it, running and talking through the examples. The students could play along with the examples as we went (I had everyone bring a laptop every day, mixing lab and lecture styles), and of course it's pretty turnkey for someone else to give the same lecture.
+ 
+<li> 
+For this 10 week course, I did images first and structure data second. In reality, you don't need to do those two or in that order. I led with the Media Computation stuff since it is so engaging. However, the table-baby data was actually also quite popular with the students, and the ramp-up to playing with the table data is easier, so one could start with that instead. As mentioned above, I'm going to try breaking out just the images and just the baby-names as a one-off 6 hour units with high school and middle school students.
+ 
+<li> 
+It would not have been possible to build something like this using HTML a few years ago. I am aggressively using some advanced and obscure HTML5 features that have only recently been implemented by most browsers.
+ 
+<li> 
+Note that this material looks nothing like standard Javascript programming material, which would talk about the DOM, handlers, CSS, etc. Instead, this material heavily geared for this CS Principles/Computational Thinking niche, and happens to use Javascript syntax because that's what I could make in the browser.
+ 
+<li> 
+I looked at using Javascript properties or square brackets [ ] to access some of this data. However, in the end the simplest thing seemed to be to use getXXX setXXX accessors for absolutely everything. This provided a basic, unchanging pattern for the students. It's good to keep the set of needed constructs as small as possible, even if you are not showing them the full breadth of how you would do it in "real" Javascript. It's not a programming course.
+ 
+<li> 
+It's natural to worry about the syntax, probably because it's evidently kind of ugly. In practice, the syntax was not a big problem.
+ 
+</ul> 
+ 
+<h2>To Do Items</h2> 
+ 
+<p> 
+The CS101 infrastructure is built basically with a lot of Javascript in the web page to give the illusion of this simple Run button. Here's a few things that need to be fixed:
+ 
+<ul> 
+ 
+<li> I need to add the ability to use any image you want, not just the canned ones I have. This is not some feature I just left out. It turns out that the browser/javascript system deliberately screens out access to images coming from other domains. Anyway, I need to make that work. Similarly, you want to be able to feed in any old .csv data.
+ 
+<li> I need to test and make sure it works on more browsers.
+ 
+<li> The error messages need to be better for various student errors. In fact, it would be nice if it heuristically detected some common student error patterns.
+ 
+<li> It would be nice to have better store/retrieve/turn-in support for storing and getting the student's work. I have something really simple in there now, but I need something that scales up better.
+ 
+<li> Maybe support syntax coloring and and resizing of the code text area.
+ 
+<li> Maybe add support for sound. I don't know HTML5 provides granular access to sound data the way it does for images.
+ 
+</ul> 
+ 
+<p> 
+So there it is -- just wanted to get this out there before SIGCSE. Feel free to email me any comments or suggestions
+<a href="mailto:nick.parlante@cs.stanford.edu?subject=cs101">Nick Parlante @ Stanford</a>, and of course I'll make proper announcements when this technology is ready for wider testing and adoption.
+ 
+<p> 
+Other links:
+<ul> 
+<li><a href=http://www.stanford.edu/class/cs101>C101 course using this material</a> 
+<li><a href=http://www-cs-faculty.stanford.edu/~nick/dragon-puzzle-geocache/>World's Greatest and Most-Pointless Geocache!</a> 
+<li><a href=http://www-cs-faculty.stanford.edu/~nick/>Nick's Home</a> 
+<li><a href=http://codingbat.com>Codingbat online practice (Java and Python)</a> 
+</ul> 
+ 
+<!--
+Outreach notes
+ 
+-CS101 CS0/CS Principles in the browser
+ 
+-niche:
+-little snippets of code to show how computers work
+-but it's not CS1, get at the essential ideas
+-media computation is obviously one great way to go
+ 
+what you get
+-short bits of code, work right in the browser
+-can write it as a web page, so explanation and code-bits
+are mixed together. This makes it pretty turnkey to have
+a lecture set up for someone
+ 
+-I have made what you would have to call
+aggressive use of Javascript to make this work.
+ 
+-Just taught a CS Principles course at Stanford along these lines
+-My plan is to open up this material so anyone can use them,
+in particular in high schools.
+ 
+-This is not Javascript/DOM/web form etc. coverage.
+It is much more basic, "what is an algorithm" type stuff
+you could use in CS Principles or CS0 course, using little
+snippets of code with the students.
+ 
+-The Stanford CS101 course, which was an experiment, I think
+pushed a little too far into, where I got to examples of
+one sort of loop nested inside another... it was a little
+too far. Simple code made the essential points of how computers
+work.
+ 
+Rather than a whole course, these sections can work nicely
+as little modules.
+ 
+example 1:
+ -print
+ -2-d image manip
+ -"table data" -- baby names
+ 
+-remove browser warning
+--> 
+ 
+</body> 
+</html> 
+ 

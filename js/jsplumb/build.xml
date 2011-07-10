@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<project default="build">
+	
+	<path id="yuicompressor.classpath">
+        <fileset dir="./lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+	
+	<target name="js.minify">
+	    <java jar="./lib/yuicompressor-2.4.2.jar" fork="true" output="${output}">
+	    	<arg value="${input}"/>
+	    	<classpath>
+	            <path refid="yuicompressor.classpath"/>
+	        </classpath>
+	    </java>
+	</target>
+	
+	<!-- ant-contrib taskdefs -->
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+	  <classpath>
+	    <pathelement location="./lib/ant-contrib-0.6.jar"/>
+	  </classpath>
+	</taskdef>		
+		
+	<!-- 
+		create final version number
+	-->
+	<propertyregex property="final.version"
+	              input="${version}"
+	              regexp="[0-9]+\.[0-9]+\.[0-9]+"
+	              select="\0"
+	              casesensitive="false" />
+	
+	<property name="dir" value="./js/${final.version}/"/>
+
+	<echo>building from version ${version}</echo>
+	<echo>building final version ${final.version} in directory ${dir}</echo>
+	
+	<!--
+		fails the build if no "version" parameter supplied.
+	-->
+	<target name="check" unless="version">
+		<fail message="You must supply the version to bundle, eg. ant -Dversion=x.y.c-RCn"/>
+	</target>
+	
+	<!-- 
+		concats a single library.
+		
+		expects "library" parameter to be set.
+	-->
+	<target name="concatLibrary" depends="check">
+		<concat destfile="${dir}/${library}.jsPlumb-${final.version}-all.js">
+			<filelist dir="${dir}" files="jsPlumb-${version}.js,jsPlumb-defaults-${version}.js,jsPlumb-renderers-vml-${version}.js, jsPlumb-renderers-svg-${version}.js, jsPlumb-renderers-canvas-${version}.js, ${library}.jsPlumb-${version}.js, ../lib/jsBezier-0.2-min.js"/>
+		</concat>		
+	</target>
+	
+	<target name="minLibrary" depends="concatLibrary">
+		<antcall target="js.minify">
+			<param name="input" value="${dir}/${library}.jsPlumb-${final.version}-all.js"/>
+			<param name="output" value="${dir}/${library}.jsPlumb-${final.version}-all-min.js"/>
+		</antcall>
+	</target>
+	
+	<!-- 
+		concats the three main files together to write final versions for
+		all supported libraries.
+		
+		expects a "-Dversion=x.y.z-RCn" parameter on the Ant call.  strips "-RCn"
+		from the end to derive a final name.
+	-->	
+	<target name="concat" depends="check">		
+		<antcall target="concatLibrary">
+			<param name="library" value="jquery"/>
+		</antcall>
+		<antcall target="concatLibrary">
+			<param name="library" value="mootools"/>
+		</antcall>
+	</target>
+	
+	<!-- 
+		generates minified and concatenated scripts for supported libraries.
+	--> 
+	<target name="min" depends="check">		
+		<antcall target="minLibrary">
+			<param name="library" value="jquery"/>
+		</antcall>
+		<antcall target="minLibrary">
+			<param name="library" value="mootools"/>
+		</antcall>
+		<antcall target="minLibrary">
+			<param name="library" value="yui"/>
+		</antcall>
+	</target>
+	
+	<target name="docs" depends="min">
+		<mkdir dir="js/TEMP"/>
+		<copy todir="js/TEMP">
+			<fileset dir="js/${final.version}">
+				<include name="jquery.jsPlumb-${final.version}-all.js"/>
+			</fileset>
+		</copy>
+		<mkdir dir="apidocs"/>
+	    <exec executable="naturaldocs">
+	        <arg line="-i"/>
+	        <arg path="js/TEMP"/>
+	        <arg line="-o"/>
+	    	<arg line="HTML"/>
+	    	<arg line="apidocs"/>
+	    	<arg line="-p"/>
+	    	<arg line="."/>
+	    </exec>
+		<delete dir="js/TEMP"/>
+	</target>
+	
+	<target name="build">
+		<antcall target="min"/>
+	</target>
+	
+</project>
