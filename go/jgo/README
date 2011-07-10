@@ -1,3 +1,4 @@
+(options for SBT version is read from project/build.properties; so run these commands from toplevel 'jgo')
 1. first download the "Simple Build Tool" (SBT) runtime 0.7.7 - 'sbt-launch-0.7.7.jar'
    @ http://code.google.com/p/simple-build-tool/downloads/detail?name=sbt-launch-0.7.7.jar&can=2&q=
 
