@@ -1,0 +1,55 @@
+Getting Started
+===============
+Software Requirements
+
+You will need the following tools:
+GIT
+
+The labs are on GitHub, so you will need Git to get to them. You can download Git here.
+An excellent tutorial for git can be found here.
+To clone the scala-labs repo, use the following command:
+git clone --recursive git://github.com/scala-labs/scala-labs.git
+
+BUILD
+
+The Scala-labs projects can be built using Maven or Simple Build Tool (SBT). The preferable way is Maven.
+
+Maven
+
+The labs (and Scala projects in general) are built exactly the same way as traditional java projects. mvn compile, mvn test etc. will just do fine.
+
+SBT
+
+Download SBT here.
+The build has been verified with SBT 0.7.4. Older versions might also work but have not ben tested. Follow these instructions to install it.
+On this page you can find the most common build options.
+
+Noteworthy: SBT uses for its dependency management the maven dependencies in the pom.xml. In case you use a custom location for your maven repository instead of the default one (~/.m2/repository), adjust the path in the SBT project config file: scala-labs/(solutions|labs)/project/build/ScalaLabsProject.scala accordingly. However, we advice to use maven.
+
+A JAVA VM
+
+Scala compiles to JVM bytecode, so you will need a JVM to run any of the labs. Download it here.
+or use the one that comes built into your OS. We have tested on Java 5 and Java 6 without problems. Older versions are unlikely to work.
+SCALA
+
+Since this is a Scala lab, you will need a basic Scala installation. To get one, go to the scala download page and follow the directions for your platform.
+N.B.The labs use the final version of 2.9.0.
+IDE SUPPORT
+
+There are scala plugins available for Eclipse, IntelliJ and Netbeans, but be warned: the maturity of these plugins is not exactly on par with the Java support that you might be accustomed to.
+At our live Scala Labs sessions	we use the latest betas of the IntelliJ Idea Community Edition (IdeaIC) and nightly builds of the Scala plugin since they are the most feature complete at the moment.
+The latest versions that we have tested and which work together well is the Intellij Community Edition version. Intellij's community versions can be downloaded here. You need to install the Scala plugin. This can be done using Intellij's plugin manager, go to File -> Settings -> Plugins -> , and check 'Scala'. After installing the plugin, Intellij has to be restarted.
+
+Of course, you can always use your favorite text editor and build with Maven. Some of us even switched back to emacs.
+
+The labs
+
+After getting the code with Git (see above), you will have three maven/sbt projects called
+
+"labs"
+The "labs" project has a lot of failing unit tests and your job is to fix them, starting with the super-simple first test in the first basic lab, which features our old friend "hello world".
+"solutions".
+The "solutions" project contains our solutions in case you get stuck.
+"playground".
+In the "playground/akka" directory you will find the akka lab, which contains a "start" and "finish" folder. "start" contains the labs, "finish" the solutions. This project needs to be built with sbt. Read the readme for further instructions.
+In order to import the project in your IDE use the maven import feature of your IDE. Import the maven project under "labs" and "solutions". You might have to define a JDK in the project settings before the project will compile.
