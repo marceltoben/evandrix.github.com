@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>git.js Repo Viewer</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="/git.min.js"></script>
+    <script src="repo-viewer.js"></script>
+    <script src="/vendor/diff.js"></script>
+    <script src="/vendor/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="/vendor/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/vendor/syntaxhighlighter_3.0.83/styles/shCore.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/vendor/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div class="outer">
+      <div class="top">
+        <div class="header">
+          <div class="main-title">
+            <h3>git.js</h3>
+          </div>
+          <div class="repo-controls">
+            <form id="arbitrary-repo">
+              <div class="field-description">HTTP clone url</div>
+              <input type="text" class="arbitrary-uri" value="http://localhost:9292/git.js" size="50">
+              <input type="submit" value="Clone" id="">
+            </form>
+            <form id="refs">
+              <div class="field-description">Branch</div>
+              <select name="refs" id="refs-list">
+                <option value=""></option>
+              </select>
+            </form>
+          </div>
+          <div class="detail-view-controls">
+            <div id="jsgit-errors"></div>
+            <div>
+              <a id="tree-view-select">Tree</a>
+              /
+              <a id="diff-view-select">Diff</a>
+            </div>
+          </div>
+        </div>
+        <div id="commits">
+          <table>
+            
+          </table>
+        </div>
+      </div>
+      <div class="bottom">
+        <div id="tree-view" style="display:none;">
+          <div id="top-directory">
+            <ul>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </ul>
+          </div>
+          <div id="file-main">
+            <pre id="file-view">
+            </pre>
+          </div>
+        </div>
+        <div id="diff-view">
+          <div id="diff-view-window">
+            <div id="diff">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //SyntaxHighlighter.all()
+        $("form#arbitrary-repo").submit(function(e) {
+          e.preventDefault()
+          var uri = $("input.arbitrary-uri").attr("value")
+          RepoViewer.demo(uri)
+        })
+        
+        $("select#refs-list").change(function(e) {
+          e.preventDefault()
+          var refName = $("select#refs-list").val()
+          RepoViewer.showRef(refName)
+        })
+        
+        $("#diff-view-select").click(function(e) {
+          e.preventDefault()
+          $("#diff-view").show()
+          $("#tree-view").hide()
+        })
+        
+        $("#tree-view-select").click(function(e) {
+          e.preventDefault()
+          $("#tree-view").show()
+          $("#diff-view").hide()
+        })
+        
+      })
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+

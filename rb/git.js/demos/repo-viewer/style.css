@@ -1,0 +1,236 @@
+
+body {
+  font-family: "Helvetica", "Verdana", "Arial";
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.outer {
+  width: 100%;
+  height: 100%;
+}
+
+.top {
+  height: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom {
+  position:absolute;
+  top: 300px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.header {
+  width: 100%;
+  background-color: #556;
+  height: 60px;
+  margin: 0;
+  box-shadow: 0px 3px 4px #555;
+  -moz-box-shadow: 0px 3px 4px #555;
+  -webkit-box-shadow: 0px 3px 4px #555;
+}
+
+.header h3{
+  margin: 0;
+  padding: 0;
+}
+
+.header div {
+  float: left;
+}
+
+.main-title {
+  color: #EEE;
+  margin-top: 10px;
+  font-size: 26px;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.repo-controls {
+  padding-top: 10px;
+  color: #EEE;
+  font-size: 0.7em;
+}
+
+.repo-controls .field-description {
+  width: 100px;
+  text-align: right;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+.header div.detail-view-controls {
+  float: right;
+  font-size: 0.9em;
+  color: white;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+
+table#main td {
+  vertical-align: top;
+}
+
+#tree-view {
+  width: 100%;
+  height: 100%;
+}
+
+#top-directory {
+  overflow: scroll;
+  width: 25%;
+  height: 100%;
+  float:left;
+}
+
+#top-directory ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+#top-directory li {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+#file-main {
+  width: 75%;
+  height: 100%;
+  float:left;
+}
+
+#file-view {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  font-size: 0.8em;
+}
+
+#file-view .syntaxhighlighter {
+}
+
+#view-select a {
+  text-decoration: underline;
+}
+
+#view-select ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#view-select ul li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+#jsgit-errors { 
+  color: red;
+}
+
+#commits {
+  overflow: scroll;
+  width: 100%;
+  height: 240px;
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+}
+
+#commits table {
+  width: 99%;
+  margin: 5px;
+}
+
+#commits table .commit {
+  width: 70%;
+}
+
+#commits .displayed {
+  color: #779;
+}
+
+#diff-view {
+  height: 100%;
+}
+
+#diff-view-window {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  font-size: 0.8em;
+}
+
+#diff-view-window #diff {
+  padding: 10px;
+}
+
+#diff-view-window .gravatar {
+  padding: 3px;
+  padding-bottom: 0px;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+}
+
+
+#diff-view-window .message {
+  font-size: 1.2em;
+}
+
+#diff-view-window .commit-summary {
+  margin-left: 20px;
+}
+
+#diff-view-window .modification {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#diff-view-window .modification.new {
+  background-color: #CFC;
+}
+
+#diff-view-window .modification.changed {
+  background-color: #FFC;
+}
+
+#diff-view-window .modification.removed {
+  background-color: #FCC;
+}
+
+.diff pre {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.changed-file {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.changed-file .filename{
+  margin-bottom: 5px;
+}
+
+.diff .removed {
+  background-color: #FCC;
+}
+
+.diff .added {
+  background-color: #CFC;
+}
