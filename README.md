@@ -18,6 +18,7 @@
 ### Online Java compiler: [ideone.com](https://ideone.com)
 ### Online HTML formatter: [HTML Tidy](http://infohound.net/tidy)
 ### MicroJS frameoworks: [microjs.com](http://microjs.com)
+### Escape French accented characters: [FrAccent2HTML](http://www.kidquick.com/JoomlaTools/frenchAccents.htm)
 
 ---
 
