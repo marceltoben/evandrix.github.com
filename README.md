@@ -18,8 +18,12 @@
 ### Online Java compiler: [ideone.com](https://ideone.com)
 ### Online HTML formatter: [HTML Tidy Online](http://infohound.net/tidy)
 ### Online PHP/JS/urlencode: [WriteCodeOnline](http://writecodeonline.com/javascript)
-### MicroJS frameoworks: [microjs.com](http://microjs.com)
-### Escape French accented characters: [FrAccent2HTML](http://www.kidquick.com/JoomlaTools/frenchAccents.htm)
+### MicroJS frameworks: [microjs.com](http://microjs.com)
+### Escape French accented characters: [From Accented to EscapeHTML](http://www.kidquick.com/JoomlaTools/frenchAccents.htm)
+
+### Text based web browsers (besides [Lynx](http://www.macports.org/ports.php?by=library&substr=lynx)):
+ * [Links](http://www.jikos.cz/~mikulas/links)
+ * [ELinks](http://elinks.or.cz)
 
 ---
 
