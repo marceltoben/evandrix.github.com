@@ -1,0 +1,175 @@
+/* this is a CSS answer to fix the hover/focus '~' and hover/focus '+' problem in safari and chrome */
+/* tabindex="1" in the link code to fix the 'focus persist' problem in safari and chrome */
+html { -webkit-animation: safariSelectorFix infinite 1s;}
+@-webkit-keyframes safariSelectorFix {
+0% {zoom:1;} 
+100% {zoom:1;}
+}
+body {padding:0; margin:0; background:#eee url(background.jpg); text-align:center; font-family:georgia, serif;}
+p {font-size:13px; line-height:18px; color:#234;}
+#lightbox {display:inline-block; margin:200px auto; height:100%; vertical-align:middle;}
+div.holder {position:fixed; width:100%; height:100%; display:table; text-align:center; left:-9999px; top:0; z-index:100;}
+div.holder p.instructions {font:bold 10px/15px verdana, arial, sans-serif; color:#ddd; margin:0; opacity:0; filter: alpha(opacity=0); filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+-moz-transition: opacity 0.25s linear 0s;
+-ms-transition: opacity 0.25s linear 0s;
+-o-transition: opacity 0.25s linear 0s;
+-webkit-transition: opacity 0.25s linear 0s;
+transition:  opacity 0.25s linear 0s;
+}
+div.backdrop {position:fixed; left:-9999px; top:0; width:100%; height:100%; background:#000; opacity:0.7; filter: alpha(opacity=70); filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70); z-index:-1;}
+div.frame {display:table-cell; vertical-align:middle;}
+div.y1 {display:inline-block; background:#fff; padding:10px;
+-webkit-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+-moz-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+-moz-transform: scaleY(0.1);
+-ms-transform: scaleY(0.1);
+-o-transform: scaleY(0.1);
+-webkit-transform: scaleY(0.1);
+transform: scaleY(0.1);
+-moz-transition: -moz-transform 0.5s linear 0s;
+-ms-transition: -ms-transform 0.5s linear 0s;
+-o-transition: -o-transform 0.5s linear 0s;
+-webkit-transition: -webkit-transform 0.5s linear 0s;
+transition: transform 0.5s linear 0s;
+}
+div.y1 {*display:inline; *margin-top:50px;}
+div.x1 {display:inline-block; overflow:hidden; position:relative;
+-moz-transform: scaleX(0.1);
+-ms-transform: scaleX(0.1);
+-o-transform: scaleX(0.1);
+-webkit-transform: scaleX(0.1);
+transform: scaleX(0.1);
+-moz-transition: -moz-transform 0.5s linear 0.5s;
+-ms-transition: -ms-transform 0.5s linear 0.5s;
+-o-transition: -o-transform 0.5s linear 0.5s;
+-webkit-transition: -webkit-transform 0.5s linear 0.5s;
+transition: transform 0.5s linear 0.5s;
+}
+div.x1 {*display:inline;}
+
+div.x1 img.pic {opacity:0; display:block; position:relative; z-index:10;
+-moz-transition: opacity 0.25s linear 0s;
+-ms-transition: opacity 0.25s linear 0s;
+-o-transition: opacity 0.25s linear 0s;
+-webkit-transition: opacity 0.25s linear 0s;
+transition:  opacity 0.25s linear 0s;
+}
+
+div.x1 p {font:bold 12px/18px verdana, arial, sans-serif; color:#444; margin:0; height:40px; padding:10px 0 0 0; margin-top:-50px; z-index:5; opacity:0; text-align:left; clear:left; float:left; width:100%;
+-moz-transition: 0.25s linear 0s;
+-ms-transition: 0.25s linear 0s;
+-o-transition: 0.25s linear 0s;
+-webkit-transition: 0.25s linear 0s;
+transition: 0.25s linear 0s;
+}
+div.x1 p.close {text-align:right; font-size:14px; position:absolute; right:10px; bottom:-10px; cursor:pointer; color:#888;}
+
+.thumb {outline:0;}
+.thumb img {height:96px; border:0;}
+
+/* non IE browsers */
+
+.b1:focus ~ div.p1 {left:0;}
+.b2:focus ~ div.p2 {left:0;}
+.b3:focus ~ div.p3 {left:0;}
+.b4:focus ~ div.p4 {left:0;}
+.b5:focus ~ div.p5 {left:0;}
+
+.b1:focus ~ div.p1 div.backdrop {left:0;}
+.b2:focus ~ div.p2 div.backdrop {left:0;}
+.b3:focus ~ div.p3 div.backdrop {left:0;}
+.b4:focus ~ div.p4 div.backdrop {left:0;}
+.b5:focus ~ div.p5 div.backdrop {left:0;}
+
+
+.b1:focus ~ div.p1 div.frame p.instructions,
+.b2:focus ~ div.p2 div.frame p.instructions,
+.b3:focus ~ div.p3 div.frame p.instructions,
+.b4:focus ~ div.p4 div.frame p.instructions,
+.b5:focus ~ div.p5 div.frame p.instructions {opacity:1; filter: alpha(opacity=100); filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+-moz-transition: opacity 0.5s linear 2s;
+-ms-transition: opacity 0.5s linear 2s;
+-o-transition: opacity 0.5s linear 2s;
+-webkit-transition: opacity 0.5s linear 2s;
+transition: opacity 0.5s linear 2s;
+}
+.b1:focus ~ div.p1 div.frame div.x1,
+.b2:focus ~ div.p2 div.frame div.x1,
+.b3:focus ~ div.p3 div.frame div.x1,
+.b4:focus ~ div.p4 div.frame div.x1,
+.b5:focus ~ div.p5 div.frame div.x1 {
+-moz-transform: scale(1, 1);
+-ms-transform: scale(1, 1);
+-o-transform: scale(1, 1);
+-webkit-transform: scale(1, 1);
+transform: scale(1, 1);
+}
+.b1:focus ~ div.p1 div.frame div.x1 > div.y1,
+.b2:focus ~ div.p2 div.frame div.x1 > div.y1,
+.b3:focus ~ div.p3 div.frame div.x1 > div.y1,
+.b4:focus ~ div.p4 div.frame div.x1 > div.y1,
+.b5:focus ~ div.p5 div.frame div.x1 > div.y1 {
+-moz-transform: scale(1, 1);
+-ms-transform: scale(1, 1);
+-o-transform: scale(1, 1);
+-webkit-transform: scale(1, 1);
+transform: scale(1, 1);
+}
+.b1:focus ~ div.p1 div.frame div.x1 img.pic,
+.b2:focus ~ div.p2 div.frame div.x1 img.pic,
+.b3:focus ~ div.p3 div.frame div.x1 img.pic,
+.b4:focus ~ div.p4 div.frame div.x1 img.pic,
+.b5:focus ~ div.p5 div.frame div.x1 img.pic {opacity:1;
+-moz-transition: opacity 0.5s linear 1s;
+-ms-transition: opacity 0.5s linear 1s;
+-o-transition: opacity 0.5s linear 1s;
+-webkit-transition: opacity 0.5s linear 1s;
+transition: opacity 0.5s linear 1s;
+}
+.b1:focus ~ div.p1 div.frame div.x1 p,
+.b2:focus ~ div.p2 div.frame div.x1 p,
+.b3:focus ~ div.p3 div.frame div.x1 p,
+.b4:focus ~ div.p4 div.frame div.x1 p,
+.b5:focus ~ div.p5 div.frame div.x1 p {margin-top:0; opacity:1;
+-moz-transition: 0.25s linear 2.5s;
+-ms-transition: 0.25s linear 2.5s;
+-o-transition: 0.25s linear 2.5s;
+-webkit-transition: 0.25s linear 2.5s;
+transition: 0.25s linear 2.5s;
+}
+
+/* for Internet Explorer */
+/* trigger for IE */
+#lightbox a.thumb, body {behavior:url(trigger.htc)}
+
+.b1:active ~ div.p1 {left:0;}
+.b2:active ~ div.p2 {left:0;}
+.b3:active ~ div.p3 {left:0;}
+.b4:active ~ div.p4 {left:0;}
+.b5:active ~ div.p5 {left:0;}
+
+.b1:active ~ div.p1 div.backdrop {left:0;}
+.b2:active ~ div.p2 div.backdrop {left:0;}
+.b3:active ~ div.p3 div.backdrop {left:0;}
+.b4:active ~ div.p4 div.backdrop {left:0;}
+.b5:active ~ div.p5 div.backdrop {left:0;}
+
+.thumb:active ~ div.holder div.frame div.x1 {
+-ms-transform: scale(1, 1);
+transform: scale(1, 1);
+}
+.thumb:active ~ div.holder div.frame div.x1 > div.y1 {
+-ms-transform: scale(1, 1);
+transform: scale(1, 1);
+}
+.thumb:active ~ div.holder div.frame div.x1 img.pic {opacity:1;
+-ms-transition: opacity 0.5s linear 1s;
+transition: opacity 0.5s linear 1s;
+}
+.thumb:active ~ div.holder div.frame div.x1 p {margin-top:0; opacity:1;
+-ms-transition: 0.25s linear 2.5s;
+transition: 0.25s linear 2.5s;
+}
+
+h1, h4 {text-shadow: 0px 1px 1px #fff;}
