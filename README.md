@@ -26,7 +26,7 @@
  * [ELinks](http://elinks.or.cz)
 
 ### TCP/HTTP Load Balancer: [HAProxy](http://www.macports.org/ports.php?by=name&substr=haproxy)
-
+### Sequence Diagrams: [WebSequenceDiagrams](http://www.websequencediagrams.com)
 ---
 
 ### Java > Mocking framework
