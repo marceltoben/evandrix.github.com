@@ -1,0 +1,1115 @@
+TTermKit
+v7
+r0
+t332093647.380342
+cCheck dependencies
+cProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist TermKit-Info.plist
+cCopyStringsFile /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib
+cCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Window.xib
+cCpResource build/Debug/TermKit.app/Contents/Resources/HTML ../../HTML
+cCpResource build/Debug/TermKit.app/Contents/Resources/TermKit.icns TermKit.icns
+cCpResource build/Debug/TermKit.app/Contents/Resources/Shared ../../Shared
+cPhaseScriptExecution "Run Script" /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit normal x86_64
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/main.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.m
+cAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.m
+cTouch /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004E0C1E2F00000000000000EE
+t1309417007
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC401D100000000000013E6
+t1287913937
+s5094
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h
+c000000004CC401D10000000000001E48
+t1287913937
+s7752
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtocol.h
+c000000004CC401D3000000000000385F
+t1287913939
+s14431
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLRequest.h
+c000000004CC401D30000000000004C9C
+t1287913939
+s19612
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/QuickLook.framework/Headers/QuickLook.h
+c000000004B73BFAC0000000000000165
+t1265876908
+s357
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.h
+c000000004CC4316B0000000000000957
+t1287926123
+s2391
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/System/Library/Frameworks/QuickLook.framework/QuickLook
+c000000004C917E25000000000012F0D0
+t1284603429
+s1241296
+
+N/System/Library/Frameworks/WebKit.framework/WebKit
+c000000004DC9EAB800000000005C2FC0
+t1305078456
+s6041536
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/../../HTML
+c000000004E1A502E0000000000000286
+t1310347310
+s646
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/../../Shared
+c000000004E1A4B190000000000000066
+t1310346009
+s102
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/InfoPlist.strings
+c000000004E1A4B16000000000000002D
+t1310346006
+s45
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib
+c000000004E1A4B16000000000001B976
+t1310346006
+s113014
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib
+c000000004E1A4B16000000000000BE07
+t1310346006
+s48647
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib
+c000000004E1A4B160000000000008782
+t1310346006
+s34690
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Window.xib
+c000000004E1A4B1600000000000079EE
+t1310346006
+s31214
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.h
+c000000004E1A4B16000000000000012E
+t1310346006
+s302
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
+c000000004E1A4B1600000000000007FC
+t1310346006
+s2044
+i"NSImage+QuickLook.h"
+i<QuickLook/QuickLook.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKit.icns
+c000000004E1A4B160000000000021305
+t1310346006
+s135941
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.h
+c000000004E1A4B160000000000000177
+t1310346006
+s375
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
+c000000004E1A4B1600000000000004E9
+t1310346006
+s1257
+i"TermKitAppDelegate.h"
+i"TermKitWindowController.h"
+i"TermKitPrefsController.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.h
+c000000004E1A4B1600000000000001DE
+t1310346006
+s478
+i<Cocoa/Cocoa.h>
+i<WebKit/WebKit.h>
+i"TermKitIconProtocol.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
+c000000004E1A4B160000000000000A21
+t1310346006
+s2593
+i"TermKitIconLoadDelegate.h"
+i"TermKitIconProtocol.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.h
+c000000004E1A4B160000000000000451
+t1310346006
+s1105
+i<Cocoa/Cocoa.h>
+i<Foundation/Foundation.h>
+i<Foundation/NSURLRequest.h>
+i<Foundation/NSURLProtocol.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
+c000000004E1A4B160000000000001C90
+t1310346006
+s7312
+i<Foundation/NSError.h>
+i"TermKitIconProtocol.h"
+i"TermKitIconLoadDelegate.h"
+i"NSImage+QuickLook.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.h
+c000000004E1A4B160000000000000102
+t1310346006
+s258
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.m
+c000000004E1A4B160000000000000177
+t1310346006
+s375
+i"TermKitPrefsController.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.h
+c000000004E1A4B160000000000000191
+t1310346006
+s401
+i<Cocoa/Cocoa.h>
+i<WebKit/WebKit.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.m
+c000000004E1A4B1600000000000005ED
+t1310346006
+s1517
+i"TermKitTerminalController.h"
+i"WebInspector.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.h
+c000000004E1A4B16000000000000024C
+t1310346006
+s588
+i<Cocoa/Cocoa.h>
+i<WebKit/WebKit.h>
+i"TermKitIconLoadDelegate.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.m
+c000000004E1A4B1600000000000006C5
+t1310346006
+s1733
+i"TermKitWebView.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.h
+c000000004E1A4B160000000000000163
+t1310346006
+s355
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.m
+c000000004E1A4B160000000000000499
+t1310346006
+s1177
+i"TermKitWindowController.h"
+i"TermKitTerminalController.h"
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKit_Prefix.pch
+c000000004E1A4B160000000000000091
+t1310346006
+s145
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/WebInspector.h
+c000000004E1A4B160000000000000169
+t1310346006
+s361
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
+t1310400813
+s102
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist
+t1310346091
+s1349
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit
+t1310397945
+s40672
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/PkgInfo
+t1310346091
+s8
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1310346091
+s92
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/MainMenu.nib
+t1310346091
+s24175
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Preferences.nib
+t1310346092
+s7493
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Terminal.nib
+t1310346092
+s3147
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Window.nib
+t1310346092
+s2028
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/HTML
+t1310400813
+s646
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/Shared
+t1310346092
+s102
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/TermKit.icns
+t1310346092
+s135941
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o
+t1310346099
+s14144
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKit.LinkFileList
+c000000004E1B15F70000000000000588
+t1310397943
+s1416
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o
+t1310346097
+s20044
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o
+t1310346100
+s17988
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o
+t1310346099
+s38444
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o
+t1310346102
+s15348
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o
+t1310346098
+s21352
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o
+t1310346097
+s20768
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o
+t1310346100
+s21024
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o
+t1310346097
+s16052
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
+c000000004E1A4B6B00000000000000BF
+t1310346091
+s191
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/NSImage+QuickLook.plist
+t1310346102
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitAppDelegate.plist
+t1310346101
+s13652
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconLoadDelegate.plist
+t1310346103
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconProtocol.plist
+t1310346103
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitPrefsController.plist
+t1310346103
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitTerminalController.plist
+t1310346102
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWebView.plist
+t1310346101
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWindowController.plist
+t1310346103
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/main.plist
+t1310346101
+s276
+
+N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/main.m
+c000000004E1A4B160000000000000141
+t1310346006
+s321
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/../../HTML
+c000000004E1A4B180000000000000286
+t1310346008
+s646
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/../../Shared
+c000000004E1A4B190000000000000066
+t1310346009
+s102
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/InfoPlist.strings
+c000000004E1A4B16000000000000002D
+t1310346006
+s45
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib
+c000000004E1A4B16000000000001B976
+t1310346006
+s113014
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib
+c000000004E1A4B16000000000000BE07
+t1310346006
+s48647
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib
+c000000004E1A4B160000000000008782
+t1310346006
+s34690
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Window.xib
+c000000004E1A4B1600000000000079EE
+t1310346006
+s31214
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.h
+c000000004E1A4B16000000000000012E
+t1310346006
+s302
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
+c000000004E1A4B1600000000000007FC
+t1310346006
+s2044
+i"NSImage+QuickLook.h"
+i<QuickLook/QuickLook.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit.icns
+c000000004E1A4B160000000000021305
+t1310346006
+s135941
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.h
+c000000004E1A4B160000000000000177
+t1310346006
+s375
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
+c000000004E1A4B1600000000000004E9
+t1310346006
+s1257
+i"TermKitAppDelegate.h"
+i"TermKitWindowController.h"
+i"TermKitPrefsController.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.h
+c000000004E1A4B1600000000000001DE
+t1310346006
+s478
+i<Cocoa/Cocoa.h>
+i<WebKit/WebKit.h>
+i"TermKitIconProtocol.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
+c000000004E1A4B160000000000000A21
+t1310346006
+s2593
+i"TermKitIconLoadDelegate.h"
+i"TermKitIconProtocol.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.h
+c000000004E1A4B160000000000000451
+t1310346006
+s1105
+i<Cocoa/Cocoa.h>
+i<Foundation/Foundation.h>
+i<Foundation/NSURLRequest.h>
+i<Foundation/NSURLProtocol.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
+c000000004E1A4B160000000000001C90
+t1310346006
+s7312
+i<Foundation/NSError.h>
+i"TermKitIconProtocol.h"
+i"TermKitIconLoadDelegate.h"
+i"NSImage+QuickLook.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.h
+c000000004E1A4B160000000000000102
+t1310346006
+s258
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m
+c000000004E1A4B160000000000000177
+t1310346006
+s375
+i"TermKitPrefsController.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.h
+c000000004E1A4B160000000000000191
+t1310346006
+s401
+i<Cocoa/Cocoa.h>
+i<WebKit/WebKit.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m
+c000000004E1A4B1600000000000005ED
+t1310346006
+s1517
+i"TermKitTerminalController.h"
+i"WebInspector.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.h
+c000000004E1A4B16000000000000024C
+t1310346006
+s588
+i<Cocoa/Cocoa.h>
+i<WebKit/WebKit.h>
+i"TermKitIconLoadDelegate.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m
+c000000004E1A4B1600000000000006C5
+t1310346006
+s1733
+i"TermKitWebView.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.h
+c000000004E1A4B160000000000000163
+t1310346006
+s355
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m
+c000000004E1A4B160000000000000499
+t1310346006
+s1177
+i"TermKitWindowController.h"
+i"TermKitTerminalController.h"
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch
+c000000004E1A4B160000000000000091
+t1310346006
+s145
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/WebInspector.h
+c000000004E1A4B160000000000000169
+t1310346006
+s361
+i<Cocoa/Cocoa.h>
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
+t1310346904
+s102
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist
+t1310346091
+s1349
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit
+t1310346102
+s40416
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/PkgInfo
+t1310346091
+s8
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1310346091
+s92
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/MainMenu.nib
+t1310346091
+s24175
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Preferences.nib
+t1310346092
+s7493
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Terminal.nib
+t1310346092
+s3147
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Window.nib
+t1310346092
+s2028
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/HTML
+t1310346903
+s646
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/Shared
+t1310346092
+s102
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/TermKit.icns
+t1310346092
+s135941
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o
+t1310346099
+s14144
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKit.LinkFileList
+c000000004E1A4B6B0000000000000483
+t1310346091
+s1155
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o
+t1310346097
+s20044
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o
+t1310346100
+s17988
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o
+t1310346099
+s38444
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o
+t1310346102
+s15348
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o
+t1310346098
+s21352
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o
+t1310346097
+s20768
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o
+t1310346100
+s21024
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o
+t1310346097
+s16052
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
+c000000004E1A4B6B00000000000000BF
+t1310346091
+s191
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/NSImage+QuickLook.plist
+t1310346102
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitAppDelegate.plist
+t1310346101
+s13652
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconLoadDelegate.plist
+t1310346103
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconProtocol.plist
+t1310346103
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitPrefsController.plist
+t1310346103
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitTerminalController.plist
+t1310346102
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWebView.plist
+t1310346101
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWindowController.plist
+t1310346103
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/main.plist
+t1310346101
+s276
+
+N/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m
+c000000004E1A4B160000000000000141
+t1310346006
+s321
+i<Cocoa/Cocoa.h>
+
+NTermKit-Info.plist
+c000000004E1A4B1600000000000003FB
+t1310346006
+s1019
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.m
+r0
+
+CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/main.m
+r0
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
+s332038901.262785
+e332038902.426578
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@89"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m332038901#332038902#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#81"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m8603561888#1727"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/NSImage+QuickLook.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
+s332038900.118048
+e332038901.230454
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
+oclang: warning: the clang compiler does not support '-pg'
+o/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m:30:26: warning: Potential leak of an object allocated on line 30 and stored into 'prefsController'
+o     id prefsController = [[TermKitPrefsController alloc] init]; 
+o                          ^
+o/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m:36:27: warning: Potential leak of an object allocated on line 36 and stored into 'windowController'
+o     id windowController = [[TermKitWindowController alloc] init]; 
+o                           ^
+o2 warnings generated.
+lSLF07#2@73"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038900#332038901#0(602"clang: warning: the clang compiler does not support '-pg'/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m:30:26: warning: Potential leak of an object allocated on line 30 and stored into 'prefsController'     id prefsController = [[TermKitPrefsController alloc] init];                           ^/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m:36:27: warning: Potential leak of an object allocated on line 36 and stored into 'windowController'     id windowController = [[TermKitWindowController alloc] init];                            ^2 warnings generated.2(0@82"Potential leak of an object allocated on line 30 and stored into 'prefsController'332038901#18446744073709551615#0#6(17@0"332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#0"0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#1(3@6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#30#5#30#5#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#30#26#30#62#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#30#26#0#0#0"1(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#30#26#30#62#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#0"0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#1(3@6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#30#26#30#62#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#32#5#32#28#21@65"Reference count incremented. The object now has a +2 retain count332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#32#5#0#0#0"2(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#32#5#32#28#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#32#6#32#20#65"Reference count incremented. The object now has a +2 retain count17@0"332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#0"0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#1(3@6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#32#5#32#28#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#33#1#33#1#21@153"Object allocated on line 30 and stored into 'prefsController' is not referenced later in this execution path and has a retain count of +2 (object leaked)332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#33#1#0#0#0"1(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#33#1#33#1#153"Object allocated on line 30 and stored into 'prefsController' is not referenced later in this execution path and has a retain count of +2 (object leaked)6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#33#1#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0@83"Potential leak of an object allocated on line 36 and stored into 'windowController'332038901#18446744073709551615#0#6(17@0"332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#0"0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#1(3@6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#36#5#36#5#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#36#27#36#64#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#36#27#0#0#0"1(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#36#27#36#64#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#0"0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#1(3@6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#36#27#36#64#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#38#5#38#29#21@65"Reference count incremented. The object now has a +2 retain count332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#38#5#0#0#0"2(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#38#5#38#29#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#38#6#38#21#65"Reference count incremented. The object now has a +2 retain count17@0"332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#0"0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#0#0#0#0#1(3@6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#38#5#38#29#6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#39#1#39#1#21@154"Object allocated on line 36 and stored into 'windowController' is not referenced later in this execution path and has a retain count of +2 (object leaked)332038901#18446744073709551615#0#0(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#39#1#0#0#0"1(6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#39#1#39#1#154"Object allocated on line 36 and stored into 'windowController' is not referenced later in this execution path and has a retain count of +2 (object leaked)6@65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038806#39#1#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0#0#65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m8603988160#1712"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitAppDelegate.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
+s332038902.426713
+e332038903.429857
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@78"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m332038902#332038903#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#70"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m8604309184#1722"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconLoadDelegate.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
+s332038901.674397
+e332038903.031713
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@74"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m332038901#332038903#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#66"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m8602882176#1714"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconProtocol.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m
+s332038902.559766
+e332038903.474894
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@77"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m332038902#332038903#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#69"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m8604322464#1720"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitPrefsController.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m
+s332038901.230696
+e332038902.474882
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@80"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m332038901#332038902#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#72"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m8604657120#1726"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitTerminalController.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m
+s332038900.511374
+e332038901.674273
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@69"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m332038900#332038901#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#61"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m8604470656#1704"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWebView.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m
+s332038902.475040
+e332038903.528849
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@78"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m332038902#332038903#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#70"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m8602898976#1722"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWindowController.plist0#
+
+CAnalyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m
+s332038899.990172
+e332038901.262634
+r1
+xAnalyze
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m
+oclang: warning: the clang compiler does not support '-pg'
+lSLF07#2@59"Analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m332038899#332038901#0(58"clang: warning: the clang compiler does not support '-pg'0(0#0#51"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m8604659264#1684"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "Apple clang version 1.7 (tags/Apple/clang-77) (based on LLVM 2.9svn)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch --analyze /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/main.plist0#
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies332093647#332093647#0(0"0(0#1#0"8606416736#0"0#
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib
+r0
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib
+r0
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib
+r0
+
+CCompileXIB /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Window.xib
+r0
+
+CCompileXIB /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib
+s332038891.273940
+e332038892.033372
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib332038891#332038892#0(0"0(0#0#71"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib8604397152#382"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/MainMenu.nib /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCompileXIB /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib
+s332038891.275097
+e332038892.160186
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib
+lSLF07#2@40"CompileXIB English.lproj/Preferences.xib332038891#332038892#0(0"0(0#0#74"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib8604199168#388"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Preferences.nib /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCompileXIB /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib
+s332038891.279388
+e332038892.138058
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib
+lSLF07#2@37"CompileXIB English.lproj/Terminal.xib332038891#332038892#0(0"0(0#0#71"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib8603983200#382"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Terminal.nib /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCompileXIB /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Window.xib
+s332038891.353500
+e332038892.040902
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Window.xib
+lSLF07#2@35"CompileXIB English.lproj/Window.xib332038891#332038892#0(0"0(0#0#69"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Window.xib8603862624#378"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Window.nib /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/Window.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCopyStringsFile /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+r0
+
+CCopyStringsFile /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s332038891.271492
+e332038891.353372
+r1
+xCopyStringsFile
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings332038891#332038891#0(0"0(0#0#76"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/English.lproj/InfoPlist.strings8604505248#377"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj0#
+
+CCpResource build/Debug/TermKit.app/Contents/Resources/HTML ../../HTML
+s332093552.211253
+e332093553.098999
+r1
+xCpResource
+xbuild/Debug/TermKit.app/Contents/Resources/HTML
+x../../HTML
+lSLF07#2@15"Copy ../../HTML332093552#332093553#0(0"0(0#0#84"/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/../../HTML12948347151777868#445"    cd /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/../../HTML /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources0#
+
+CCpResource build/Debug/TermKit.app/Contents/Resources/Shared ../../Shared
+s332038892.038061
+e332038892.052791
+r1
+xCpResource
+xbuild/Debug/TermKit.app/Contents/Resources/Shared
+x../../Shared
+lSLF07#2@17"Copy ../../Shared332038892#332038892#0(0"0(0#0#57"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/../../Shared8604874080#360"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/../../Shared /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources0#
+
+CCpResource build/Debug/TermKit.app/Contents/Resources/TermKit.icns TermKit.icns
+s332038892.035750
+e332038892.056336
+r1
+xCpResource
+xbuild/Debug/TermKit.app/Contents/Resources/TermKit.icns
+xTermKit.icns
+lSLF07#2@17"Copy TermKit.icns332038892#332038892#0(0"0(0#0#57"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit.icns8598939040#360"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit.icns /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038897.087368
+e332038899.716988
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@107"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m332038897#332038899#0(0"0(0#0#81"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m8603306880#1680"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038894.453495
+e332038897.087124
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@91"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m332038894#332038897#0(0"0(0#0#65"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m8604655232#1665"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitAppDelegate.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038897.549845
+e332038900.117915
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@96"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m332038897#332038900#0(0"0(0#0#70"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m8603975360#1675"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038897.270625
+e332038899.990036
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m: In function '-[NSImage(TIFFConversionUtils) TIFFData]':
+o/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: 'NSImageRep' may not respond to '-TIFFRepresentation'
+o/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: (Messages without a matching method signature
+o/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: will be assumed to return 'id' and accept
+o/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: '...' as arguments.)
+lSLF07#2@92"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m332038897#332038899#0(611"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m: In function '-[NSImage(TIFFConversionUtils) TIFFData]':/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: 'NSImageRep' may not respond to '-TIFFRepresentation'/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: (Messages without a matching method signature/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: will be assumed to return 'id' and accept/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m:239: warning: '...' as arguments.)2(22@53"'NSImageRep' may not respond to '-TIFFRepresentation'332038899#124#135#0(6@66"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m332038806#239#0#239#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)332038899#259#127#0(6@66"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m332038806#239#0#239#0#0"0(0#0#66"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m8605368672#1667"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitIconProtocol.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038899.717262
+e332038902.380023
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@95"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m332038899#332038902#0(0"0(0#0#69"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m8604947072#1673"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitPrefsController.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038894.458495
+e332038898.139643
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@98"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m332038894#332038898#0(0"0(0#0#72"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m8604163456#1679"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitTerminalController.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038894.456873
+e332038897.549615
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m332038894#332038897#0(0"0(0#0#61"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m8604287392#1657"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWebView.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038898.139775
+e332038900.511225
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@96"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m332038898#332038900#0(0"0(0#0#70"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m8604754464#1675"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKitWindowController.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o0#
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CDistributed-CompileC build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s332038894.446075
+e332038897.270279
+r1
+xDistributed-CompileC
+xbuild/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Distribute compilation of /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m332038894#332038897#0(0"0(0#0#51"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m8029405159545332736#1637"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv DISTCC_COMPILER "gcc version 4.2.1 (Apple Inc. build 5666) (dot 3)"    setenv DISTCC_HOSTS "localhost:3632/4"    setenv DISTCC_SYSTEM "10.6.8 (10K540, i386)"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/distcc /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -pg -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-generated-files.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-own-target-headers.hmap -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-all-target-headers.hmap -iquote /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-project-headers.hmap -fpch-preprocess -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources/x86_64 -I/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources -include /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit_Prefix.pch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/main.m -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o0#
+
+CLd /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit normal x86_64
+s332090744.952056
+e332090745.041543
+r1
+xLd
+x/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit
+xnormal
+xx86_64
+lSLF07#2@125"Link /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit332090744#332090745#0(0"0(0#0#0"8613073248#756"    cd /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug -F/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug -filelist /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKit.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework WebKit -framework QuickLook -o /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit0#
+
+CLd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit normal x86_64
+s332038902.380206
+e332038902.559630
+r1
+xLd
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit
+xnormal
+xx86_64
+lSLF07#2@96"Link /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit332038902#332038902#0(0"0(0#0#0"8604386240#611"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -F/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug -filelist /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKit.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework WebKit -framework QuickLook -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit0#
+
+CPhaseScriptExecution "Run Script" /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
+s332093647.149785
+e332093647.379132
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
+lSLF07#2@36"Run custom shell script 'Run Script'332093647#332093647#0(0"0(0#0#0"8600942144#17809"    cd /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER lwy08    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build    setenv BUILD_ROOT /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug    setenv CACHE_ROOT /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503    setenv CCHROOT /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug    setenv CONTENTS_FOLDER_PATH TermKit.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH TermKit.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/TermKit.dst    setenv DWARF_DSYM_FILE_NAME TermKit.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH TermKit.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH TermKit.app/Contents/MacOS    setenv EXECUTABLE_NAME TermKit    setenv EXECUTABLE_PATH TermKit.app/Contents/MacOS/TermKit    setenv FILE_LIST /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH TermKit.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME TermKit.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD gnu99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_ENABLE_FIX_AND_CONTINUE YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_MODEL_TUNING G5    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER TermKit_Prefix.pch    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE YES    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/include\" "    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE TermKit-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH TermKit.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/TermKit.dst/Users/lwy08/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER lwy08    setenv INSTALL_PATH /Users/lwy08/Applications    setenv INSTALL_ROOT /tmp/TermKit.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH TermKit.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug\" "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKit.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH TermKit.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 10K540    setenv MAC_OS_X_VERSION_ACTUAL 1068    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0608    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal    setenv OBJROOT /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH TermKit.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/PkgInfo    setenv PKGINFO_PATH TermKit.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2518    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH TermKit.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH TermKit.app/Contents/PrivateHeaders    setenv PRODUCT_NAME TermKit    setenv PRODUCT_SETTINGS_PATH /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKit-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT TermKit    setenv PROJECT_DERIVED_FILE_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/DerivedSources    setenv PROJECT_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit    setenv PROJECT_FILE_PATH /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKit.xcodeproj    setenv PROJECT_NAME TermKit    setenv PROJECT_TEMP_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build    setenv PUBLIC_HEADERS_FOLDER_PATH TermKit.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER YES    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH TermKit.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SDK_PRODUCT_BUILD_VERSION 10M2518    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH TermKit.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH TermKit.app/Contents/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit    setenv SPARROW_SRC /Users/lwy08/Documents/Sparrow-Framework/sparrow/src/build/Debug-iphonesimulator/usr/local/include/    setenv SRCROOT /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/SymbolRepositories    setenv SYMROOT /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME TermKit    setenv TARGET_BUILD_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug    setenv TARGET_NAME TermKit    setenv TARGET_TEMP_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_FILES_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_FILE_DIR /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_ROOT /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build    setenv UID 503    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH TermKit.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER lwy08    setenv USER_APPS_DIR /Users/lwy08/Applications    setenv USER_LIBRARY_DIR /Users/lwy08/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH TermKit.app/Contents/version.plist    setenv VERSION_INFO_BUILDER lwy08    setenv VERSION_INFO_FILE TermKit_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:TermKit  PROJECT:TermKit-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME TermKit.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2518    setenv XCODE_VERSION_ACTUAL 0400    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0400    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT macosx10.6    /bin/sh -c /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh0#
+
+CPhaseScriptExecution "Run Script" /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
+s332039949.079110
+e332039949.326076
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
+lSLF07#2@36"Run custom shell script 'Run Script'332039949#332039949#0(0"0(0#0#0"8607010784#16486"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER lwy08    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build    setenv BUILD_ROOT /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug    setenv CACHE_ROOT /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503    setenv CCHROOT /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug    setenv CONTENTS_FOLDER_PATH TermKit.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH TermKit.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/TermKit.dst    setenv DWARF_DSYM_FILE_NAME TermKit.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH TermKit.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH TermKit.app/Contents/MacOS    setenv EXECUTABLE_NAME TermKit    setenv EXECUTABLE_PATH TermKit.app/Contents/MacOS/TermKit    setenv FILE_LIST /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH TermKit.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME TermKit.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD gnu99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_ENABLE_FIX_AND_CONTINUE YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_MODEL_TUNING G5    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER TermKit_Prefix.pch    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE YES    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/include\" "    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE TermKit-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH TermKit.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/TermKit.dst/Users/lwy08/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER lwy08    setenv INSTALL_PATH /Users/lwy08/Applications    setenv INSTALL_ROOT /tmp/TermKit.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH TermKit.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/TermKit-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug\" "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKit.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH TermKit.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 10K540    setenv MAC_OS_X_VERSION_ACTUAL 1068    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0608    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal    setenv OBJROOT /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH TermKit.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/PkgInfo    setenv PKGINFO_PATH TermKit.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2518    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH TermKit.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH TermKit.app/Contents/PrivateHeaders    setenv PRODUCT_NAME TermKit    setenv PRODUCT_SETTINGS_PATH /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT TermKit    setenv PROJECT_DERIVED_FILE_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/DerivedSources    setenv PROJECT_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv PROJECT_FILE_PATH /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit.xcodeproj    setenv PROJECT_NAME TermKit    setenv PROJECT_TEMP_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build    setenv PUBLIC_HEADERS_FOLDER_PATH TermKit.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER YES    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH TermKit.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SDK_PRODUCT_BUILD_VERSION 10M2518    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH TermKit.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH TermKit.app/Contents/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv SPARROW_SRC /Users/lwy08/Downloads/Sparrow-Framework/sparrow/src    setenv SRCROOT /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/SymbolRepositories    setenv SYMROOT /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME TermKit    setenv TARGET_BUILD_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug    setenv TARGET_NAME TermKit    setenv TARGET_TEMP_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_FILES_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_FILE_DIR /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build    setenv TEMP_ROOT /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build    setenv UID 503    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH TermKit.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER lwy08    setenv USER_APPS_DIR /Users/lwy08/Applications    setenv USER_LIBRARY_DIR /Users/lwy08/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH TermKit.app/Contents/version.plist    setenv VERSION_INFO_BUILDER lwy08    setenv VERSION_INFO_FILE TermKit_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:TermKit  PROJECT:TermKit-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME TermKit.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2518    setenv XCODE_VERSION_ACTUAL 0400    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0400    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT macosx10.6    /bin/sh -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh0#
+
+CProcessInfoPlistFile /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist TermKit-Info.plist
+r0
+
+CProcessInfoPlistFile /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist TermKit-Info.plist
+s332038891.254876
+e332038891.271324
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist
+xTermKit-Info.plist
+lSLF07#2@26"Process TermKit-Info.plist332038891#332038891#0(0"0(0#0#63"/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/TermKit-Info.plist29555194684309616#328"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    builtin-infoPlistUtility TermKit-Info.plist -genpkginfo /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist0#
+
+CTouch /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
+s332093613.326388
+e332093613.329121
+r1
+xTouch
+x/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
+lSLF07#2@103"Touch /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app332093613#332093613#0(0"0(0#0#0"8607292800#201"    cd /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit    /usr/bin/touch -c /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app0#
+
+CTouch /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
+s332039704.121093
+e332039704.124357
+r1
+xTouch
+x/Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
+lSLF07#2@74"Touch /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app332039704#332039704#0(0"0(0#0#0"8603500512#143"    cd /Users/lwy08/Downloads/TermKit/Cocoa/TermKit    /usr/bin/touch -c /Users/lwy08/Downloads/TermKit/Cocoa/TermKit/build/Debug/TermKit.app0#
+
