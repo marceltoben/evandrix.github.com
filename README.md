@@ -19,8 +19,12 @@
 ### Online HTML formatter: [HTML Tidy](http://infohound.net/tidy)
 ### MicroJS frameoworks: [microjs.com](http://microjs.com)
 
+---
+
 ### Java > Mocking framework
  * [Mockito](http://mockito.org)
+
+---
 
 ### Javascript > Beautifying & Deobfuscation
  * [JSBeautifier](http://jsbeautifier.org/)
@@ -37,6 +41,11 @@
 ### Javascript > Presentation Tools
  * [Highcharts](http://www.highcharts.com)
 
+---
+
+### Python > Code syntax highlighting
+ * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org/)
+
 ### Python > Fuzzy String Matching
  * [Fuzzywuzzy](http://seatgeek.com/blog/dev/fuzzywuzzy-fuzzy-string-matching-in-python)
 
@@ -49,8 +58,12 @@
  * Genshi
  * Mako
 
+---
+
 ### Textmate > Bundles repo
  * @ http://ebundles.googlecode.com/svn/trunk/Bundles
+
+---
 
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
