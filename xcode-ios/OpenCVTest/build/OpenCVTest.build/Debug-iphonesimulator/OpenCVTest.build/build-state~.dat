@@ -1,0 +1,379 @@
+TOpenCVTest
+v7
+r0
+t315159040.337903
+cCheck dependencies
+cProcessInfoPlistFile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Info.plist Info.plist
+cCompileXIB /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/MainWindow.xib
+cCpResource build/Debug-iphonesimulator/OpenCVTest.app/lena.jpg lena.jpg
+cCpResource build/Debug-iphonesimulator/OpenCVTest.app/haarcascade_frontalface_default.xml opencv_device/share/opencv/haarcascades/haarcascade_frontalface_default.xml
+cCpResource build/Debug-iphonesimulator/OpenCVTest.app/Icon.png Icon.png
+cCpResource build/Debug-iphonesimulator/OpenCVTest.app/Default.png Default.png
+cCpResource build/Debug-iphonesimulator/OpenCVTest.app/laughing_man.png laughing_man.png
+cCpResource build/Debug-iphonesimulator/OpenCVTest.app/Tink.aiff Tink.aiff
+cProcessPCH /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch.gch OpenCVTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/main.o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestAppDelegate.o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestViewController.o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest normal i386
+cGenerateDSYMFile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app.dSYM /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest
+cTouch /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004C6C30170000000000000110
+t1282158615
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Accelerate.framework/Accelerate
+c000000004AD4F4D80000000000006500
+t1255470296
+s25856
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000004C5A4D1600000000001E06E0
+t1280986390
+s1967840
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.h
+c000000004C5A4D020000000000000A23
+t1280986370
+s2595
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A4DB60000000000295900
+t1280986550
+s2709760
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A4DB0000000000029D580
+t1280986544
+s2741632
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A4DA10000000000001466
+t1280986529
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C6241ED00000000000009CD
+t1281507821
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C6242840000000001E228C0
+t1281507972
+s31598784
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.h
+c000000004CCCA8020000000000000150
+t1288480770
+s336
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.m
+c000000004CCCA802000000000000018D
+t1288480770
+s397
+i"OpenCVTestAppDelegate.h"
+i"OpenCVTestViewController.h"
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.h
+c000000004CCCA802000000000000064A
+t1288480770
+s1610
+i<UIKit/UIKit.h>
+i<AudioToolbox/AudioToolbox.h>
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.m
+c000000004CCCA8020000000000003685
+t1288480770
+s13957
+i"OpenCVTestViewController.h"
+i<opencv/cv.h>
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Default.png
+c000000004CCCA8020000000000001B51
+t1288480770
+s6993
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Icon.png
+c000000004CCCA8020000000000000E32
+t1288480770
+s3634
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/MainWindow.xib
+c000000004CCCA8020000000000004CF1
+t1288480770
+s19697
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/OpenCVTest_Prefix.pch
+c000000004CCCA80200000000000000B5
+t1288480770
+s181
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Tink.aiff
+c000000004CCCA8020000000000001778
+t1288480770
+s6008
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app
+t1293466240
+s408
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app.dSYM
+t1293466240
+s102
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Default.png
+t1293466238
+s6993
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Icon.png
+t1293466238
+s3634
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Info.plist
+t1293466238
+s659
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/MainWindow.nib
+t1293466239
+s3966
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest
+t1293466240
+s4250760
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/PkgInfo
+t1293466238
+s8
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Tink.aiff
+t1293466238
+s6008
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/haarcascade_frontalface_default.xml
+t1293466238
+s1254733
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/laughing_man.png
+t1293466238
+s20211
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/lena.jpg
+t1293466238
+s69214
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTest.LinkFileList
+c000000004D18BA7E00000000000001D2
+t1293466238
+s466
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestAppDelegate.o
+t1293466239
+s46768
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestViewController.o
+t1293466240
+s157916
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/main.o
+t1293466239
+s6332
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/laughing_man.png
+c000000004CCCA8020000000000004EF3
+t1288480770
+s20211
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/lena.jpg
+c000000004CCCA8020000000000010E5E
+t1288480770
+s69214
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/main.m
+c000000004CCCA80200000000000000D3
+t1288480770
+s211
+i<UIKit/UIKit.h>
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_device/lib/libcv.a
+c000000004CCCA80200000000003FC168
+t1288480770
+s4178280
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_device/lib/libcxcore.a
+c000000004CCCA80200000000002E3118
+t1288480770
+s3027224
+
+N/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_device/share/opencv/haarcascades/haarcascade_frontalface_default.xml
+c000000004CCCA802000000000013254D
+t1288480770
+s1254733
+
+N/var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch.gch
+t1293466239
+s15240208
+
+NInfo.plist
+c000000004CCCA80200000000000003B0
+t1288480770
+s944
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies315159038#315159038#0(0"0(0#1#0"8247620834010738688#0"0#
+
+CCompileC build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestAppDelegate.o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s315159039.692151
+e315159039.791766
+r1
+xCompileC
+xbuild/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestAppDelegate.o
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.m315159039#315159039#0(0"0(0#0#85"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.m8603488544#2262"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-generated-files.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-own-target-headers.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-all-target-headers.hmap -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-project-headers.hmap -F/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_simulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources/i386 -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources -include /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch -c /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestAppDelegate.m -o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestAppDelegate.o0#
+
+CCompileC build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestViewController.o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s315159039.693116
+e315159040.014297
+r1
+xCompileC
+xbuild/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestViewController.o
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@96"Compile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.m315159039#315159040#0(0"0(0#0#88"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.m8603387872#2268"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-generated-files.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-own-target-headers.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-all-target-headers.hmap -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-project-headers.hmap -F/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_simulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources/i386 -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources -include /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch -c /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Classes/OpenCVTestViewController.m -o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTestViewController.o0#
+
+CCompileC build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/main.o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s315159039.691011
+e315159039.748575
+r1
+xCompileC
+xbuild/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/main.o
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/main.m315159039#315159039#0(0"0(0#0#60"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/main.m8605047360#2220"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-generated-files.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-own-target-headers.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-all-target-headers.hmap -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-project-headers.hmap -F/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_simulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources/i386 -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources -include /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch -c /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/main.m -o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/MainWindow.xib
+s315159038.658806
+e315159039.070970
+r1
+xCompileXIB
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib315159038#315159039#0(0"0(0#0#68"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/MainWindow.xib8601379872#618"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/MainWindow.nib /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCpResource build/Debug-iphonesimulator/OpenCVTest.app/Default.png Default.png
+s315159038.667032
+e315159038.676184
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/OpenCVTest.app/Default.png
+xDefault.png
+lSLF07#2@16"Copy Default.png315159038#315159038#0(0"0(0#0#65"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Default.png8604935296#503"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Default.png /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app0#
+
+CCpResource build/Debug-iphonesimulator/OpenCVTest.app/Icon.png Icon.png
+s315159038.665868
+e315159038.674292
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/OpenCVTest.app/Icon.png
+xIcon.png
+lSLF07#2@13"Copy Icon.png315159038#315159038#0(0"0(0#0#62"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Icon.png8605132864#500"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Icon.png /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app0#
+
+CCpResource build/Debug-iphonesimulator/OpenCVTest.app/Tink.aiff Tink.aiff
+s315159038.668739
+e315159038.680967
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/OpenCVTest.app/Tink.aiff
+xTink.aiff
+lSLF07#2@14"Copy Tink.aiff315159038#315159038#0(0"0(0#0#63"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Tink.aiff8598834432#501"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Tink.aiff /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app0#
+
+CCpResource build/Debug-iphonesimulator/OpenCVTest.app/haarcascade_frontalface_default.xml opencv_device/share/opencv/haarcascades/haarcascade_frontalface_default.xml
+s315159038.660423
+e315159038.696627
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/OpenCVTest.app/haarcascade_frontalface_default.xml
+xopencv_device/share/opencv/haarcascades/haarcascade_frontalface_default.xml
+lSLF07#2@80"Copy opencv_device/share/opencv/haarcascades/haarcascade_frontalface_default.xml315159038#315159038#0(0"0(0#0#129"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_device/share/opencv/haarcascades/haarcascade_frontalface_default.xml8605287168#567"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_device/share/opencv/haarcascades/haarcascade_frontalface_default.xml /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app0#
+
+CCpResource build/Debug-iphonesimulator/OpenCVTest.app/laughing_man.png laughing_man.png
+s315159038.667899
+e315159038.678983
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/OpenCVTest.app/laughing_man.png
+xlaughing_man.png
+lSLF07#2@21"Copy laughing_man.png315159038#315159038#0(0"0(0#0#70"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/laughing_man.png8604794144#508"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/laughing_man.png /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app0#
+
+CCpResource build/Debug-iphonesimulator/OpenCVTest.app/lena.jpg lena.jpg
+s315159038.659752
+e315159038.670787
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/OpenCVTest.app/lena.jpg
+xlena.jpg
+lSLF07#2@13"Copy lena.jpg315159038#315159038#0(0"0(0#0#62"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/lena.jpg8600173184#500"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/lena.jpg /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app0#
+
+CGenerateDSYMFile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app.dSYM /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest
+s315159040.301249
+e315159040.334945
+r1
+xGenerateDSYMFile
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app.dSYM
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest
+lSLF07#2@118"GenerateDSYMFile build/Debug-iphonesimulator/OpenCVTest.app.dSYM build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest315159040#315159040#0(0"0(0#0#107"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest8600940640#437"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest -o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app.dSYM0#
+
+CLd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest normal i386
+s315159040.014385
+e315159040.301011
+r1
+xLd
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest
+xnormal
+xi386
+lSLF07#2@112"Link /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest315159040#315159040#0(0"0(0#0#0"8601399040#1140"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -L/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator -L/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_simulator/lib -F/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator -filelist /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/Objects-normal/i386/OpenCVTest.LinkFileList -mmacosx-version-min=10.6 -lstdc++ -lz -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework AudioToolbox -lcv -lcxcore -framework Accelerate -o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/OpenCVTest0#
+
+CProcessInfoPlistFile /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Info.plist Info.plist
+s315159038.651014
+e315159038.658663
+r1
+xProcessInfoPlistFile
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist315159038#315159038#0(0"0(0#0#64"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/Info.plist31525614006435956#522"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Info.plist -genpkginfo /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app/Info.plist0#
+
+CProcessPCH /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch.gch OpenCVTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s315159039.071164
+e315159039.690879
+r1
+xProcessPCH
+x/var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch.gch
+xOpenCVTest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@32"Precompile OpenCVTest_Prefix.pch315159039#315159039#0(0"0(0#0#75"/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/OpenCVTest_Prefix.pch8602715520#2094"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-generated-files.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-own-target-headers.hmap -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-all-target-headers.hmap -iquote /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/OpenCVTest-project-headers.hmap -F/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/opencv_simulator/include -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources/i386 -I/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/OpenCVTest.build/Debug-iphonesimulator/OpenCVTest.build/DerivedSources -c /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/OpenCVTest_Prefix.pch -o /var/folders/BY/BYmI13LMHYaONvQX-pUyT++++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/OpenCVTest_Prefix-fqkhnjdwlefynvebkgrlakdgayds/OpenCVTest_Prefix.pch.gch0#
+
+CTouch /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app
+s315159040.335076
+e315159040.337851
+r1
+xTouch
+x/Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app
+lSLF07#2@102"Touch /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app315159040#315159040#0(0"0(0#0#0"8605307232#311"    cd /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/lwy08/Downloads/niw-iphone_opencv_test-4ab0572/build/Debug-iphonesimulator/OpenCVTest.app0#
+
