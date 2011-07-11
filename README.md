@@ -17,6 +17,7 @@
 ### Undo last commit/push: `git push -f origin HEAD^:master`
 ### Online Java compiler: [ideone.com](https://ideone.com)
 ### Online HTML formatter: [HTML Tidy Online](http://infohound.net/tidy)
+### Online PHP/JS/urlencode: [WriteCodeOnline](http://writecodeonline.com/javascript)
 ### MicroJS frameoworks: [microjs.com](http://microjs.com)
 ### Escape French accented characters: [FrAccent2HTML](http://www.kidquick.com/JoomlaTools/frenchAccents.htm)
 
