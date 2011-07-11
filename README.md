@@ -16,11 +16,16 @@
 
 ### Undo last commit/push: `git push -f origin HEAD^:master`
 ### Online Java compiler: [ideone.com](https://ideone.com)
-### Online HTML formatter: [HTML Tidy](http://infohound.net/tidy)
+### Online HTML formatter: [HTML Tidy Online](http://infohound.net/tidy)
 ### MicroJS frameoworks: [microjs.com](http://microjs.com)
+### Escape French accented characters: [FrAccent2HTML](http://www.kidquick.com/JoomlaTools/frenchAccents.htm)
+
+---
 
 ### Java > Mocking framework
  * [Mockito](http://mockito.org)
+
+---
 
 ### Javascript > Beautifying & Deobfuscation
  * [JSBeautifier](http://jsbeautifier.org/)
@@ -37,6 +42,11 @@
 ### Javascript > Presentation Tools
  * [Highcharts](http://www.highcharts.com)
 
+---
+
+### Python > Code syntax highlighting
+ * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org/)
+
 ### Python > Fuzzy String Matching
  * [Fuzzywuzzy](http://seatgeek.com/blog/dev/fuzzywuzzy-fuzzy-string-matching-in-python)
 
@@ -49,8 +59,12 @@
  * Genshi
  * Mako
 
+---
+
 ### Textmate > Bundles repo
  * @ http://ebundles.googlecode.com/svn/trunk/Bundles
+
+---
 
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
