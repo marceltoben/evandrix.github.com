@@ -1,0 +1,32 @@
+application: livecount
+version: 1
+runtime: python
+api_version: 1
+
+builtins:
+- datastore_admin: on
+- remote_api: on
+- appstats: on
+
+admin_console:
+  pages:
+
+inbound_services:
+- warmup
+
+handlers:
+- url: /livecount/counter_admin
+  script: livecount/counter_admin.py
+  login: admin
+
+- url: /livecount/.*
+  script: livecount/counter.py
+  login: admin
+  
+- url: /examples
+  script: examples.py
+
+# For convenience / demo only
+# redirects to counter admin page
+- url: .*
+  script: livecount/counter.py
