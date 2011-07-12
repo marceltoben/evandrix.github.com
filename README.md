@@ -29,6 +29,11 @@
 ### Sequence Diagrams: [WebSequenceDiagrams](http://www.websequencediagrams.com)
 ---
 
+### PDF > Unlock secured PDFs
+ * [PDFUnlock Online (limit 5MB)](http://www.pdfunlock.com)
+
+---
+
 ### Java > Mocking framework
  * [Mockito](http://mockito.org)
 
