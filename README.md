@@ -8,7 +8,7 @@
 
  * README in [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax
  * [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
-
+ * Access US via OpenVPN Proxy Server: [Hotspot Shield](http://hotspotshield.com)
 ---
 
 ### Coding challenges
