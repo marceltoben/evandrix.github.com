@@ -35,7 +35,7 @@
  * [Web2PDF](http://www.web2pdfconvert.com)
 
 ### PDF > Unlock secured PDFs
- * [PDFUnlock Online (limit 5MB)](http://www.pdfunlock.com)
+ * [PDFUnlock Online](http://www.pdfunlock.com) (limit 5MB)
 
 ---
 
