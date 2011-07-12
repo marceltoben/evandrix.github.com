@@ -15,9 +15,11 @@
  * [Code Golf](http://codegolf.com)
 
 ### Undo last commit/push: `git push -f origin HEAD^:master`
+
 ### Online Java compiler: [ideone.com](https://ideone.com)
 ### Online HTML formatter: [HTML Tidy Online](http://infohound.net/tidy)
 ### Online PHP/JS/urlencode: [WriteCodeOnline](http://writecodeonline.com/javascript)
+
 ### MicroJS frameworks: [microjs.com](http://microjs.com)
 ### Escape French accented characters: [From Accented to EscapeHTML](http://www.kidquick.com/JoomlaTools/frenchAccents.htm)
 
@@ -28,6 +30,9 @@
 ### TCP/HTTP Load Balancer: [HAProxy](http://www.macports.org/ports.php?by=name&substr=haproxy)
 ### Sequence Diagrams: [WebSequenceDiagrams](http://www.websequencediagrams.com)
 ---
+
+### PDF > Convert webpage to PDF online, eg. blogs (also available as Chrome Extension)
+ * [Web2PDF](http://www.web2pdfconvert.com)
 
 ### PDF > Unlock secured PDFs
  * [PDFUnlock Online (limit 5MB)](http://www.pdfunlock.com)
