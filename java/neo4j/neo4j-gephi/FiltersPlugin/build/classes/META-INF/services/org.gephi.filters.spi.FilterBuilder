@@ -1,0 +1,8 @@
+org.gephi.filters.plugin.edge.EdgeWeightBuilder
+org.gephi.filters.plugin.graph.DegreeRangeBuilder
+org.gephi.filters.plugin.graph.EgoBuilder
+org.gephi.filters.plugin.graph.InDegreeRangeBuilder
+org.gephi.filters.plugin.graph.MutualDegreeRangeBuilder
+org.gephi.filters.plugin.graph.OutDegreeRangeBuilder
+org.gephi.filters.plugin.operator.INTERSECTIONBuilder
+org.gephi.filters.plugin.operator.UNIONBuilder

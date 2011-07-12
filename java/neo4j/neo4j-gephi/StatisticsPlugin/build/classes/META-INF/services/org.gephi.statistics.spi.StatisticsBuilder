@@ -1,0 +1,10 @@
+org.gephi.statistics.plugin.builder.ClusteringCoefficientBuilder
+org.gephi.statistics.plugin.builder.ConnectedComponentsBuilder
+org.gephi.statistics.plugin.builder.DegreeDistributionBuilder
+org.gephi.statistics.plugin.builder.DensityBuilder
+org.gephi.statistics.plugin.builder.EigenvectorCentralityBuilder
+org.gephi.statistics.plugin.builder.GraphDistanceBuilder
+org.gephi.statistics.plugin.builder.HitsBuilder
+org.gephi.statistics.plugin.builder.InOutDegreeBuilder
+org.gephi.statistics.plugin.builder.ModularityBuilder
+org.gephi.statistics.plugin.builder.PageRankBuilder

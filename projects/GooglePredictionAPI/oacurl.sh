@@ -1,0 +1,1 @@
+java -cp oacurl-1.2.0.jar com.google.oacurl.Login --scope https://www.googleapis.com/auth/prediction

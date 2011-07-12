@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+    <body>
+        This documents provides Gephi APIs documentation and gives details about
+        current status of each API. Each API is categorized by it's stability:
+        stable, <span class="unstable">under development</span>, <span class="deprecated">deprecated</span> or
+    <span class="friend">friend</span>.
+    <hr>
+    <p>
+    <h2>API Changes</h2>
+    <ul>
+        <li>(June 18 2010) Graph API event management improvements. The <code>GraphEvent</code> has now precise events, including
+            <code>ADD_NODES</code>, <code>REMOVE_NODES</code>, <code>ADD_EDGES</code>, <code>REMOVE_EDGES</code> and
+            <code>VISIBLE_VIEW</code>. A new <code>GraphEventData</code> interface has been created to retrieve elements related to
+            the events.
+        <li>(June 14 2010) Export API refactoring, inspired from ImportAPI. Create an <code>ExporterBuilder</code> interface for
+            exporter creation and different exporters: <code>GraphExporter</code>, <code>VectorExporter</code>, <code>ByteExporter</code>
+            and <code>CharacterExporter</code> that covers common cases. The way exporters write data has been rationalized by using either
+            <code>java.io.Writer</code> (text) or <code>java.io.OutputStream</code> (byte). The <code>ExportController</code> has been improved
+            to support all use-cases, including file, writer and stream export.
+        <li>(June 11 2010) Add Spigot support to the ImportAPI and SPI. Like <code>DatabaseImporter</code>, the
+            <code>SpigotImporter</code> interface is a new type of Importers. Modifications have also be made to the
+            <code>ImportController</code> to support spigot import.
+        <li>(June 08 2010) Refactoring and improvements in the Import API and SPI. The refactoring aim is to solve the singleton
+            issue with importers and let users implement builders interface that create importers instance. Therefore an
+            <code>ImporterBuilder</code> interface has been created and should be registered with the <code>@ServiceProvider</code>
+            annotation. The various importers types have been simplified and leave more choice to the implementations about how the
+            input is managed. XML and Text file importers has been merged in a <code>FileImporter</code> interface, working with the
+            <code>java.io.Reader</code>. Utility static methods, for instance <em>get Document from Reader</em> can now be found in a new
+            <code>ImportUtils</code> class. The <code>ImportController</code> has been simplified for File import and now accepts
+            <code>java.io.Reader</code> also. The main improvement on these modules in the support of UI components for importers.
+            The aim is to let importers define an <code>ImporterUI</code> implementation to manage settings of these importers.
+        <li>(June 04 2010) Improvements in the GraphAPI identifiers management. The system is now storing String
+        identifiers coming from users. New getters and setters methods have been created in <code>Graph</code>:
+        <ul><li><code>Graph.setId(Node, String)</code></li>
+            <li><code>Graph.setId(Edge, String)</code></li>
+            <li><code>Graph.getNode(String)</code></li>
+            <li><code>Graph.getEdge(String)</code></li></ul>
+        The <code>NodeData.setId()</code> and <code>EdgeData.setId()</code> methods have been removed, compatibility can't be kept.
+        Factory has also be changed to allow to create elements with String ID directly, as it's not possible anymore to
+        do it from <code>NodeData</code>.
+        <li>(June 02 2010) Changes in AttributesAPI with event management. The lookup system in <code>AttributeTable</code>
+        has been replaced by a more traditional event management system, with new <code>AttributeEvent</code> and
+        <code>AttributeListener</code> interfaces. The dispatch implementation is also now on a separate thread.</li>
+        <li>(May 08 2010) Changes in Import modules to separate core and user interfaces. The <code>ImportController</code> is now
+        doing import task only and a new <code>ImportControllerUI</code> is displaying the user interface (Report Panel). The
+        <code>ImportControllerUI</code> interface is located in the DesktopProject module and should be user to properly
+        import file from Plugins. The <code>ImportController</code> methods could be used from the toolkit.</li>
+        <li>(April 30 2010) Change FilterController.filter() to FilterController.filterVisible()  and FilterController.select()
+            to FilterController.selectVisible(). The controller is managing this process in a separate thread, with progress,
+            and takes care of properties change. A more simple direct way to filter is required for headless access.
+            The FilterController.filter()  has been created and return the GraphView builded by the filter process.</li>
+        <li>(April 24 2010) Expose basic visualization features in a newly created Visualization API. No proper visualization
+            API exists but its creation is necessary to avoid implementation module dependencies. </li>       
+        <li>(April 17 2010) In PreviewAPI, the background color has been put in the PreviewModel. The PreviewController has
+            been updated as well. </li>
+        <li>(March 28 2010) Add a <code>doImport()</code> method in <code>ImportController</code> that accepts
+            <code>InputStream</code>. In ImportAPI also, add <code>getWeight()</code> in EdgeDraft to let importers
+            increment weight. New <code> AttributeUtils</code>  methods. Progress in GraphAPI and ImportAPI documentation.</li>
+        <li>(Feb 17 2010) Change in ImportAPI to support bounded time intervals. Add methods
+				that manage <code>TimeIntervalMin</code> and <code>TimeIntervalMax</code>. Changes in
+				GraphAPI about elements counting. Henceforth only enabled elements are counted, in node
+				and edge counting, but also in degree methods. This counting is more logical, as it match
+				with the number of elements returned by <code>getNodes()</code> and <code>getEdges()</code>.</li>
+        <li>(Feb 7 2010) Initial import, for 0.7alpha milestone. Half of
+            APIs are fully documented and the rest needs to be soon. Expose
+            only Core APIs, that plugins could need by now. Friend
+            packages exists, in particular between Plugin and PluginUI
+            modules but they are not shown here. Netbeans APIs documentation
+            dependencies are missing, thus see
+            <a href="http://bits.netbeans.org/dev/javadoc/index.html">Netbeans API Index</a>.
+            Due to early development status, most of APIs are still marked as
+            under development. Moreover APIs marked as stable are also suspected to
+            change, but with much less impact than ones marked as under development.</li></ul>
+</p>
+<hr>
+<p>
+<h2>API List</h2>
+<ul><li><b>Attributes API</b> - Provides access to attributes values through an efficient column/row system.</li>
+    <li><span class="unstable"><b>Clustering API</b></span> - API/SPI for clustering algorithms (experimental).</li>
+<li><b>Export API</b>  - Export API/SPI provides the infrastructure for exporting data to any support and define new exporters.</li>
+<li><span class="unstable"><b>Filters API</b></span>  - API/SPI for filters, define and control current filtering.</li>
+<li><b>Generator API</b> -  Generator API/SPI provides the way to create and execute graph generators.</li>
+<li><b>Graph API</b> - API for accessing the graph.</li>
+<li><b>Import API</b> - Import API/SPI provides the import workflow to import data form any support.</li>
+<li><b>Layout API</b> - Layout API/SPI provides real-time layout algorithms execution.</li>
+<li><b>LongTask API</b> - LongTask API provides utility features for long and asynchronous task execution.</li>
+<li><span class="unstable"><b>Partition API</b></span>  - API for manipulating partition within data.</li>
+<li><span class="unstable"><b>Preview API</b></span>  - API for building the graph preview structure.</li>
+<li><b>Project API</b> - Project API/SPI for project and worskpaces manipulation.</li>
+<li><span class="unstable"><b>Ranking API</b></span>  - API/SPI for ranking data values and create transformers.</li>
+<li><b>Statistics API</b> - Statistics and Metrics API/SPI provides asynchronous algorithms execution and UI infrastructure.</li>
+<li><span class="unstable"><b>Timeline API</b></span>  - Timeline API provides access to the timeline component.</li>
+<li><b>Tools API</b> - Tool API/SPI defines interactive actions users can make with the visualization.</li>
+</ul>
+</p>
+</body>
+</html>

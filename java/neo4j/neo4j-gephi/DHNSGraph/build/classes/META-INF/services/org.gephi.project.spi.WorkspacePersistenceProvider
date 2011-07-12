@@ -1,0 +1,4 @@
+org.gephi.graph.dhns.DhnsPersistenceProvider
+#position=10000
+org.gephi.graph.dhns.DataPersistenceProvider
+#position=12000

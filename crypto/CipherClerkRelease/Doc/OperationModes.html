@@ -1,0 +1,215 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. Plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Operatioj Modes For Polyalphabetic Ciphers</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Operation Modes For Polyalphabetic Ciphers</H1></CENTER>
+Examples are given for the encryption of the text <TT>MESSAGE </TT>using
+the key word <TT>KEY</TT>.
+<H4>
+Repetitive Key</H4>
+As it's name implies, the key is simply repeated:
+<UL>&nbsp;
+<CENTER><TABLE BORDER CELLPADDING=5 >
+<TR>
+<TH><TT>Plain text</TT></TH>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>E</TT></TD>
+</TR>
+
+<TR>
+<TH><TT>Key</TT></TH>
+
+<TD><TT>K</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>K</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>K</TT></TD>
+</TR>
+
+<TR>
+<TH><TT>Cipher Text</TT></TH>
+
+<TD><TT>W</TT></TD>
+
+<TD><TT>I</TT></TD>
+
+<TD><TT>Q</TT></TD>
+
+<TD><TT>C</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>O</TT></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;</UL>
+
+<H4>
+Key Progression</H4>
+The key is repeated, but at each iteration the letters of the key are replaced
+with there successors:
+<UL>&nbsp;
+<CENTER><TABLE BORDER CELLPADDING=5 >
+<TR>
+<TH><TT>Plain text</TT></TH>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>E</TT></TD>
+</TR>
+
+<TR>
+<TH><TT>Key</TT></TH>
+
+<TD><TT>K</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>L</TT></TD>
+
+<TD><TT>F</TT></TD>
+
+<TD><TT>Z</TT></TD>
+
+<TD><TT>M</TT></TD>
+</TR>
+
+<TR>
+<TH><TT>Cipher Text</TT></TH>
+
+<TD><TT>W</TT></TD>
+
+<TD><TT>I</TT></TD>
+
+<TD><TT>Q</TT></TD>
+
+<TD><TT>D</TT></TD>
+
+<TD><TT>F</TT></TD>
+
+<TD><TT>F</TT></TD>
+
+<TD><TT>Q</TT></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;</UL>
+
+<H4>
+Autoclave</H4>
+The key is not repeated. Instead the letters of the plain text are appended
+to obtain a key that is long enough to encipher the plain text:
+<UL>&nbsp;
+<CENTER><TABLE BORDER CELLPADDING=5 >
+<TR>
+<TH><TT>Plain text</TT></TH>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>E</TT></TD>
+</TR>
+
+<TR>
+<TH><TT>Key</TT></TH>
+
+<TD><TT>K</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>S</TT></TD>
+</TR>
+
+<TR>
+<TH><TT>Cipher Text</TT></TH>
+
+<TD><TT>W</TT></TD>
+
+<TD><TT>I</TT></TD>
+
+<TD><TT>Q</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>W</TT></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;</UL>
+
+<H4>
+PT Interrupted</H4>
+This is basically the same as the repetitive key mode. If a plain text
+letter is found in a given group of letters, the repeated use of the key
+word is interrupted, e.g. encryption will continue at the begin of the
+key word. This scheme is only available for the generic Polyalphabetic
+substitution cipher.
+<H4>
+CT Interrupted</H4>
+This is basically the same as the repetitive key mode. If a cipher text
+letter is found in a given group of letters, the repeated use of the key
+word is interrupted, e.g. encryption will continue at the begin of the
+key word. This scheme is only available for the generic Polyalphabetic
+substitution cipher.
+</BODY>
+</HTML>

@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/nanocrunch.dir/nanocrunch.o  -o nanocrunch  /opt/local/lib/libMagick++.dylib /opt/local/lib/libgmp.dylib /opt/local/lib/libgmpxx.dylib 

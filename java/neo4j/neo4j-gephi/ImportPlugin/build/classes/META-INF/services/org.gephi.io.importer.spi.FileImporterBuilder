@@ -1,0 +1,9 @@
+org.gephi.io.importer.plugin.file.ImporterBuilderCSV
+org.gephi.io.importer.plugin.file.ImporterBuilderDL
+org.gephi.io.importer.plugin.file.ImporterBuilderDOT
+org.gephi.io.importer.plugin.file.ImporterBuilderGDF
+org.gephi.io.importer.plugin.file.ImporterBuilderGEXF
+org.gephi.io.importer.plugin.file.ImporterBuilderGML
+org.gephi.io.importer.plugin.file.ImporterBuilderGraphML
+org.gephi.io.importer.plugin.file.ImporterBuilderPajek
+org.gephi.io.importer.plugin.file.ImporterBuilderTLP

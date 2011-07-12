@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="org_gephi_branding_desktop">
+                <file name="Banner" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--org.gephi.branding.desktop.BannerTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//org.gephi.branding.desktop//Banner//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="org">
+                <folder name="gephi">
+                    <folder name="branding">
+                        <folder name="desktop">
+                            <file name="BannerTopComponent">
+                                <!--org.gephi.branding.desktop.BannerTopComponent-->
+                                <attr name="settings.providerPath" stringvalue="xml/lookups//org_gephi_branding_desktop/Banner.instance"/>
+                            </file>
+                        </folder>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="org_gephi_branding_desktop">
+                <file name="Banner.instance">
+                    <!--org.gephi.branding.desktop.BannerTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="org.gephi.branding.desktop.BannerTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="org.gephi.branding.desktop.BannerTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

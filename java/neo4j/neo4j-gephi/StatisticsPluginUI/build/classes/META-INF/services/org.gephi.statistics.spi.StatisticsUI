@@ -1,0 +1,11 @@
+org.gephi.ui.statistics.plugin.ClusteringCoefficientUI
+org.gephi.ui.statistics.plugin.ConnectedComponentUI
+org.gephi.ui.statistics.plugin.DegreeDistributionUI
+org.gephi.ui.statistics.plugin.DiameterUI
+org.gephi.ui.statistics.plugin.EigenvectorCenralityUI
+org.gephi.ui.statistics.plugin.GraphDensityUI
+org.gephi.ui.statistics.plugin.HitsUI
+org.gephi.ui.statistics.plugin.InOutDegreeUI
+org.gephi.ui.statistics.plugin.ModularityUI
+org.gephi.ui.statistics.plugin.PageRankUI
+org.gephi.ui.statistics.plugin.PathLengthUI

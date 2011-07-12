@@ -1,0 +1,224 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. Plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Delastelle's Fractional Substitution</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+<A NAME="Bifid"></A>Delastelle's Fractional Substitution</H1></CENTER>
+
+<H2>
+Bifid Cipher</H2>
+
+<H3>
+Description</H3>
+At first, the text is encoded using a <A HREF="Checkerboard.html">checkerboard
+</A>cipher. For example, using the key <TT>KEY</TT> we may obtain::
+<CENTER><TABLE BORDER CELLSPACING=2 CELLPADDING=5 >
+<TR>
+<TD></TD>
+
+<TD><B><TT>1</TT></B></TD>
+
+<TD><B><TT>2</TT></B></TD>
+
+<TD><B><TT>3</TT></B></TD>
+
+<TD><B><TT>4</TT></B></TD>
+
+<TD><B><TT>5</TT></B></TD>
+</TR>
+
+<TR>
+<TD><B><TT>1</TT></B></TD>
+
+<TD><TT>K</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD><TT>B</TT></TD>
+</TR>
+
+<TR>
+<TD><B><TT>2</TT></B></TD>
+
+<TD><TT>C</TT></TD>
+
+<TD><TT>D</TT></TD>
+
+<TD><TT>F</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>H</TT></TD>
+</TR>
+
+<TR>
+<TD><B><TT>3</TT></B></TD>
+
+<TD><TT>I</TT></TD>
+
+<TD><TT>L</TT></TD>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>N</TT></TD>
+
+<TD><TT>O</TT></TD>
+</TR>
+
+<TR>
+<TD><B><TT>4</TT></B></TD>
+
+<TD><TT>P</TT></TD>
+
+<TD><TT>Q</TT></TD>
+
+<TD><TT>R</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>T</TT></TD>
+</TR>
+
+<TR>
+<TD><B><TT>5</TT></B></TD>
+
+<TD><TT>U</TT></TD>
+
+<TD><TT>V</TT></TD>
+
+<TD><TT>W</TT></TD>
+
+<TD><TT>X</TT></TD>
+
+<TD><TT>Z</TT></TD>
+</TR>
+</TABLE></CENTER>
+The text <TT>MESSAGE</TT> is represented by
+<CENTER><TABLE BORDER CELLPADDING=5 >
+<TR>
+<TD><TT>Text:</TT></TD>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>E</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>Column:</TT></TD>
+
+<TD><TT>3</TT></TD>
+
+<TD><TT>2</TT></TD>
+
+<TD><TT>4</TT></TD>
+
+<TD><TT>4</TT></TD>
+
+<TD><TT>4</TT></TD>
+
+<TD><TT>4</TT></TD>
+
+<TD><TT>2</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>Row:</TT></TD>
+
+<TD><TT>3</TT></TD>
+
+<TD><TT>1</TT></TD>
+
+<TD><TT>4</TT></TD>
+
+<TD><TT>4</TT></TD>
+
+<TD><TT>1</TT></TD>
+
+<TD><TT>2</TT></TD>
+
+<TD><TT>1</TT></TD>
+</TR>
+</TABLE></CENTER>
+The column/row coordinates are now used to obtain letters again. The numbers
+may be read in one of the following orders:
+<OL>
+<LI>
+<I>horizontal</I>: <TT>32 44 ... 41 31</TT> to obtain the result <TT>FSSLP
+AE</TT></LI>
+
+<LI>
+<I>upwards</I>: <TT>32 14 ... 22 13</TT> to obtain the result <TT>FPSSP
+DI</TT>.</LI>
+
+<LI>
+<I>downwards</I>: <TT>31 24 ... 41 23</TT> to obtain the result <TT>YQSAG
+AL</TT>.</LI>
+</OL>
+Instead of applying this procedure to the whole text, you may decide to
+split the text into short blocks. Finally, you may use a <I>second</I>,
+different key word for converting numbers back into letters.
+<CENTER></CENTER>
+
+<CENTER><IMG SRC="Bifid.GIF" HEIGHT=350 WIDTH=600></CENTER>
+
+
+<P>
+<HR WIDTH="100%">
+<H2>
+<A NAME="Trifid"></A>Trifid Cipher</H2>
+
+<H3>
+Description</H3>
+This cipher is quite similar to the <A HREF="#Bifid">Bifid cipher</A> described
+above. It uses the same principle and differs only in the use of <I>three
+</I>coordinates. To imagine, think of <I>three </I>checkerboards holding
+3 x 3 letters. A letter is is then characterized by three numbers: one
+for the table, one for the column and one for the row.
+<CENTER></CENTER>
+
+<CENTER><IMG SRC="Trifid.GIF" HEIGHT=377 WIDTH=608></CENTER>
+
+
+<P>
+<HR WIDTH="100%">
+
+<P>To proceed, you may
+<UL>
+<LI>
+read about <A HREF="Introduction.html">Cryptography</A>, if you have no
+or little knowledge about this.</LI>
+
+<LI>
+read how to use <A HREF="UsingCipherClerk.html">CipherClerk's Applet</A>, if you
+don't know about it.</LI>
+
+<LI>
+see <A HREF="CipherList.html">which ciphers are available</A> within CipherClerk's Applet.</LI>
+
+<LI>
+start the <A HREF="../Bin/CipherClerk.html">CipherClerk's Applet</A>.</LI>
+</UL>
+
+<HR WIDTH="100%">
+</BODY>
+</HTML>

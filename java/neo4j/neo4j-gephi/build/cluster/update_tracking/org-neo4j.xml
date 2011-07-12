@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.neo4j">
+    <module_version install_time="1309366637558" last="true" origin="installer" specification_version="1.0">
+        <file crc="956553706" name="config/Modules/org-neo4j.xml"/>
+        <file crc="2011765453" name="modules/ext/geronimo-jta_1.1_spec-1.1.1.jar"/>
+        <file crc="2228258744" name="modules/ext/lucene-core-2.9.2.jar"/>
+        <file crc="1185867399" name="modules/ext/neo4j-index-1.1.jar"/>
+        <file crc="484708071" name="modules/ext/neo4j-kernel-1.1.jar"/>
+        <file crc="935944828" name="modules/ext/neo4j-remote-graphdb-0.7.jar"/>
+        <file crc="2548812828" name="modules/org-neo4j.jar"/>
+    </module_version>
+</module>

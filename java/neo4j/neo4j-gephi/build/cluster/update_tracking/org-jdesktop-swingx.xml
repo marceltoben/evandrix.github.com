@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.jdesktop.swingx">
+    <module_version install_time="1309366618054" last="true" origin="installer" specification_version="1.6">
+        <file crc="1217937111" name="config/Modules/org-jdesktop-swingx.xml"/>
+        <file crc="4238818309" name="modules/ext/MultipleGradientPaint.jar"/>
+        <file crc="2542928304" name="modules/ext/swingx-1.6.jar"/>
+        <file crc="58367950" name="modules/ext/swingx-beaninfo-1.6.jar"/>
+        <file crc="446671789" name="modules/org-jdesktop-swingx.jar"/>
+    </module_version>
+</module>

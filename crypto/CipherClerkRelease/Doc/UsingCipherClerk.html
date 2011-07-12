@@ -1,0 +1,214 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Wilhelm M. Plotz">
+   <meta name="GENERATOR" content="Mozilla/4.72 [en]C-CCK-MCD QXW0323l  (WinNT; U) [Netscape]">
+   <title>Using CipherClerk</title>
+</head>
+<body text="#000000" bgcolor="#C0C0C0" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<center>
+<h1>
+Using CipherClerk's Applet</h1></center>
+
+<h3>
+
+<hr WIDTH="100%"></h3>
+This document contains images of the applet/application. Clicking on the
+buttons does therefore have no effect. Note that on your system the applet/application
+may look different, while the functionality should be the same.
+<h3>
+
+<hr WIDTH="100%"></h3>
+
+<h3>
+Step 1: Entering the text</h3>
+When the applet (or the application) starts, it presents the following
+dialog:
+<center><img SRC="startup.GIF" height=350 width=600></center>
+
+<p>You should read the text and press the <tt>Next</tt> button. You will
+find a dialog like the one given below:
+<center><img SRC="textentry.GIF" height=377 width=608></center>
+
+<p>Please replace the given text by the text you would like to process.
+Whether operations like copy and paste are available or not depends on
+your system. When you've entered the text, press the <tt>Next</tt> button
+to continue.
+<h3>
+
+<hr WIDTH="100%"></h3>
+
+<h3>
+Step 2: Choose what to do</h3>
+Now you should choose either to encipher or decipher the text entered before.
+<center><img SRC="operationselect.GIF" height=350 width=600></center>
+
+<h3>
+
+<hr WIDTH="100%"></h3>
+
+<h3>
+Step 3: Choose a cipher</h3>
+Simply choose one cipher from the list. Simply? Well, there may be some
+pitfalls. In the depicted case there is one more cipher at the and of the
+list. Moving the pointing device doesn't help. To select the hidden cipher
+I have to select the last visible one and press the arrow-down. Then the
+list scrolls upwards hiding the first cipher...
+<center><img SRC="cipherselect.GIF" height=377 width=608></center>
+
+<p>After selecting a cipher setup it's parameters. To do so, press the
+<tt>Next
+</tt>button. The result depends on the cipher you've chosen. For example,
+it might look like:
+<center><img SRC="simplesubst.GIF" height=377 width=608></center>
+
+<p>Most ciphers require a key word which may be a phrase or any other text,
+too. Not all ciphers will accept all keys. If the key is not acceptable,
+the buttons <tt>Next </tt>and <tt>Finish</tt> will be dimmed. You may use
+the <tt>Clear </tt>button to erase the key word field.
+<p>Not all ciphers may use all letters. Normally the use of non-standard
+alphabets arises from the way a cipher works. CipherClerk's Applet allows
+you to choose any alphabet the cipher can use to operate and doesn't offer
+illegal choices. At present, the following alphabets are available:
+<ul>
+<li>
+26 letters: A-Z</li>
+
+<li>
+27 letters: A-Z &amp;</li>
+
+<li>
+25 letters: A-Z, J replaced by I</li>
+
+<li>
+25 letters: A-Z, U replaced by V</li>
+
+<li>
+25 letters: A-Z, W replaced by V V</li>
+
+<li>
+36 letters: A1-J0 -Z</li>
+
+<li>
+36 letters: A-Z 0-9</li>
+</ul>
+Remember that CipherClerk's Applet implements classical ciphers. The ciphers
+have been invented long before ACSII became popular. The two 36 letter
+alphabets differ in the way <a href="MixedAlphabet.html">mixed versions</a>
+of them are generated: For the first one, the letters A-Z are mixed and
+then the numbers 1..9,0 are inserted after the letters A..I,J. For the
+second, the numbers 0...9 are appended after the letters A...Z and the
+resulting string is mixed.
+<p>Various ciphers will offer additional parameters. These parameters will
+be described along with the ciphers. Note that the setup of parameters
+always refers to the enciphering process - even if you actually want to
+decipher, setup the cipher exactly in the same way as if you'd like to
+encipher!
+<p>When finished, press the <tt>Next</tt> button to continue. You may press
+the <tt>Finish</tt> button too. This would skip the next step where you
+may set up the output.
+<h3>
+
+<hr WIDTH="100%"></h3>
+
+<h3>
+AN IMPORTANT NOTE</h3>
+Obviously, the processes of enciphering and deciphering may be different.
+Nevertheless you do not need to worry about this - even if some specific
+setup of a cipher might suggest to do so. CipherClerk's Applet will handle
+all this stuff. However you should be aware the all the options are considered
+from the point of view of the <i>enciphering </i>process.
+<p>
+<hr WIDTH="100%">
+<h3>
+Step 4: Choose the output format</h3>
+Usually cipher text is rearranged into groups of five letters. By default,
+CipherClerk's Applet does this and placed eight such groups in a line.
+You may change the number of groups in each line as well as the number
+of letters in a group.
+<center><img SRC="outputoptions2.GIF" height=377 width=608></center>
+
+<p>If you regroup the result, you may have CipherClerk's Applet placing
+a single blank separating the characters by checking <tt>Separate Characters
+Within A Grou</tt>p. Besides regrouping, you may configure CipherClerk's
+Applet to conserve the text structure:
+<center><img SRC="outputoptions.GIF" height=377 width=608></center>
+
+<p>If you want to conserve the structure of the text while removing punctuation,
+select <tt>Keep Textstructure</tt> or select <tt>Keep Structure And Other
+Characters</tt> if you want to keep punctuation. By default, all letters
+are capitalized. By selecting <tt>Keep Capitalization</tt> you may conserve
+the capitalization of the text.
+<p>You may want to check <tt>Emit Cipher Info</tt> and /or <tt>Emit Input
+Text</tt> so that CipherClerk's Applet will append a description how the
+text was processed and/or the input text. Finally,
+<p>As you might already have guessed, press the <tt>Next</tt> or <tt>Finish</tt>
+button to continue.
+<p>
+<hr WIDTH="100%">
+<h3>
+Step 5: Have fun with the result</h3>
+The <tt>Finish</tt> button, whenever enabled, will directly move to the
+result. Now you may select and copy the result into another document.
+<center><img SRC="result.GIF" height=377 width=608></center>
+
+<p>The <tt>Restart </tt>button brings you back to the begin so that you
+can modify the text to process or process another text.
+<center>
+<hr WIDTH="100%"></center>
+
+<h3>
+How CipherClerk's Applet processes a text</h3>
+CipherClerk's Applet processes a text in the following manner:
+<ol>
+<li>
+A copy of the text to process is made. This copy contains only those characters
+of the plain text that are present in the chosen alphabet. If the alphabet
+requires to replace some letters by others, this is done too. If a ciphers
+requires that all words are separated by a single space, this is handled
+by CipherClerk as well.</li>
+
+<li>
+A copy of the key word prepared in the same way.</li>
+
+<li>
+The copy of the text is processed by the selected cipher using the copy
+of the key word.</li>
+
+<li>
+Depending on the chosen output options, the resulting text is either reformatted
+into groups or the text structure is reconstructed: CipherClerk iterates
+over the original input text. If a space or line separator is found, it
+is emitted. If a letter of the chosen alphabet is found, the next letter
+of the result text is emitted. If capitalization is to be conserved, the
+emitted letter is capital if the plain text letter is capital to. All other
+characters are emitted only if <tt>Keep Structure And Other Characters
+</tt>was
+chosen.</li>
+</ol>
+Please note that the alphabet for plain text and cipher text may be different.
+Provided that you've setup the parameters for the selected cipher correctly,
+CipherClerk's Applet will handle this for you.
+<p>
+<hr WIDTH="100%">
+<p>To proceed, you may
+<ul>
+<li>
+read about <a href="Introduction.html">Cryptography</a>, if you have no
+or little knowledge about this.</li>
+
+<li>
+see <a href="CipherList.html">which ciphers are available</a> within CipherClerk's
+Applet.</li>
+
+<li>
+start the <a href="../Bin/CipherClerk.htm">CipherClerk's Applet</a>.</li>
+</ul>
+
+<center>
+<hr WIDTH="100%"></center>
+
+</body>
+</html>

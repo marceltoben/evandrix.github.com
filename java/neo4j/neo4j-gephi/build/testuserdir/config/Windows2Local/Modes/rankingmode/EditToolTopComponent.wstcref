@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tc-ref version="2.2">
+    <module name="org.gephi.tools.plugin" spec="0.7" />
+    <tc-id id="EditToolTopComponent" />
+    <state opened="false" />
+</tc-ref>

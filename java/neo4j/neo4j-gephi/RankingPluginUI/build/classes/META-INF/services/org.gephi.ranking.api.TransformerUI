@@ -1,0 +1,8 @@
+org.gephi.ui.ranking.plugin.ColorTransformerUI
+#position=100
+org.gephi.ui.ranking.plugin.SizeTransformerUI
+#position=200
+org.gephi.ui.ranking.plugin.LabelColorTransformerUI
+#position=300
+org.gephi.ui.ranking.plugin.LabelSizeTransformerUI
+#position=400

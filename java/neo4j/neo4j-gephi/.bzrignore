@@ -1,0 +1,7 @@
+**/build
+**/nbproject/private
+**/nbproject/platform.properties
+nbproject/project.properties
+**/dist
+nbproject/private/platform-private.properties
+.DS_Store

@@ -1,0 +1,4 @@
+org.gephi.data.attributes.serialization.AttributeModelPersistenceProvider
+#position=10
+org.gephi.data.attributes.serialization.AttributeRowPersistenceProvider
+#position=15000

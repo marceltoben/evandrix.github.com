@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.gephi.ui.components">
+    <module_version install_time="1309366623240" last="true" origin="installer" specification_version="0.7.0.1">
+        <file crc="27255901" name="config/Modules/org-gephi-ui-components.xml"/>
+        <file crc="579398578" name="modules/ext/FontChooser.jar"/>
+        <file crc="4002413840" name="modules/ext/MigLayout-3.7.1.jar"/>
+        <file crc="4054151421" name="modules/ext/colorchooser.jar"/>
+        <file crc="1680205012" name="modules/ext/flamingo.jar"/>
+        <file crc="2844175778" name="modules/org-gephi-ui-components.jar"/>
+    </module_version>
+</module>

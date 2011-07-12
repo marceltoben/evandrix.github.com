@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. Plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Whetstone Cipher</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Whetstone Cipher Machine</H1></CENTER>
+
+<H3>
+Description</H3>
+This is not really a paper and pencil cipher, it is one of the simplest
+cipher machines. It uses a watch-like setup: A long hand pointing towards
+the plain text alphabet and a short hand pointing towards the cipher text
+alphabet. The plaintext alphabet consists of the 26 letters A-Z in the
+normal alphabetic order preceded by a word separator. The cipher text alphabet
+consists of the 26 letters A-Z, unordered and without additional word separator.
+The long and the short hand are connected by a 27/26 gear, so that moving
+one pointer by one character moves the other by one character as well.
+
+<P>To encipher, the long hand is moved clockwise until it points to the
+character to be enciphered and it's cipher text substitution is obtained
+from the position of the short hand. At the end of a word, the long hand
+is moved clockwise to the word separator and the character at the position
+of the short hand is written down, too. Thus this cipher conserves the
+word spacing.
+
+<P>Note that the cipher can't encrypt double letters: They must either
+be omitted, separated a null or the second must replace by a null.
+
+<P>When using this cipher, you need to know the (mixed) cipher text alphabet
+and the initial positions of the pointers. Within CipherClerk's Applet's implementation,
+you specify the the cipher text alphabet by a key word and an algorithm
+how to generate the mixed alphabet (see how a <A HREF="MixedAlphabet.html">substitution
+is generated</A>), while the two hands point to the first letters of the
+alphabet.
+<CENTER></CENTER>
+
+<CENTER><IMG SRC="Whetstone.GIF" HEIGHT=350 WIDTH=600></CENTER>
+
+
+<P>
+<HR WIDTH="100%">
+
+<P>To proceed, you may
+<UL>
+<LI>
+read about <A HREF="Introduction.html">Cryptography</A>,
+if you have no or little knowledge about this.</LI>
+
+<LI>
+read how to use <A HREF="UsingCipherClerk.html">CipherClerk's Applet</A>,
+if you don't know about it.</LI>
+
+<LI>
+see <A HREF="CipherList.html">which
+ciphers are available</A> within CipherClerk's Applet.</LI>
+
+<LI>
+start the <A HREF="../Bin/CipherClerk.html">CipherClerk's Applet
+applet</A>.</LI>
+</UL>
+
+<HR WIDTH="100%">
+</BODY>
+</HTML>

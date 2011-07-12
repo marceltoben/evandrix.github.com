@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.gephi.branding.desktop">
+    <module_version install_time="1309366622622" last="true" origin="installer" specification_version="0.7.0.13">
+        <file crc="2773959810" name="config/Modules/org-gephi-branding-desktop.xml"/>
+        <file crc="2088319401" name="modules/org-gephi-branding-desktop.jar"/>
+    </module_version>
+</module>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.gephi.visualization">
+    <module_version install_time="1309366625859" last="true" origin="installer" specification_version="0.7.0.12">
+        <file crc="3681226920" name="config/Modules/org-gephi-visualization.xml"/>
+        <file crc="3281589991" name="modules/org-gephi-visualization.jar"/>
+    </module_version>
+</module>

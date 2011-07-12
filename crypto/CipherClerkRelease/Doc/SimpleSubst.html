@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. Plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Simple Substitution Cipher</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Simple Substitution Cipher</H1></CENTER>
+
+<H3>
+Description</H3>
+This cipher replaces any plain text letter always by the same cipher text
+letter. It' just like having a bad keyboard driver: Whenever you hit the
+key labeled 'E', you obtain, say, 'K'. CipherClerk's Applet derives the substitution
+from the two key words: one for the plain text alphabet, one for the ciphertext
+alphabet. The <TT>Alphabet</TT> choices lets you select a scheme how this
+<A HREF="MixedAlphabet.html">substitution is generated</A>. For both alphabets
+you may specify an indicator. The alphabets are shifted so that the two
+indicators match. Default indicators are placed at the first letters of
+the mixed alphabets. Using the mixed alphabets
+<CENTER></CENTER>
+
+<CENTER><TT>F I R S T K E Y A B C D G H J L M N O P Q U V W <B>X</B> Z</TT></CENTER>
+
+<CENTER></CENTER>
+
+<CENTER><TT>S E C O N D K <B>Y</B> A B F G H I J L M P Q R T U V W X Z</TT></CENTER>
+
+
+<P>having indicators at x and y will be converted into:
+<CENTER></CENTER>
+
+<CENTER><TT><B>X</B> Z F I R S T K E Y A B C D G H J L M N O P Q U V W</TT></CENTER>
+
+<CENTER></CENTER>
+
+<CENTER><TT><B>Y</B> A B F G H I J L M P Q R T U V W X Z S E C O N D K</TT></CENTER>
+
+<CENTER></CENTER>
+
+<CENTER><IMG SRC="simplesubst.GIF" HEIGHT=377 WIDTH=608></CENTER>
+
+
+<P>
+<HR WIDTH="100%">
+
+<P>To proceed, you may
+<UL>
+<LI>
+read about <A HREF="Introduction.html">Cryptography</A>, if you have no
+or little knowledge about this.</LI>
+
+<LI>
+read how to use <A HREF="UsingCipherClerk.html">CipherClerk's Applet</A>, if you
+don't know about it.</LI>
+
+<LI>
+see <A HREF="CipherList.html">which ciphers are available</A> within CipherClerk's Applet.</LI>
+
+<LI>
+start the <A HREF="../Bin/CipherClerk.html">CipherClerk's Applet</A>.</LI>
+</UL>
+
+<HR WIDTH="100%">
+</BODY>
+</HTML>

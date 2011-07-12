@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Cryptography Introduction</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+<FONT SIZE=+2>The Art Of Secret Writing:</FONT></H1></CENTER>
+
+<CENTER>
+<H1>
+Cryptography</H1></CENTER>
+
+<HR WIDTH="100%">
+<H3>
+Introduction</H3>
+Often there is a need to ensure that a message can only be read by those
+it is intended for. Putting a letter into an envelope is the simplest way,
+but does it really ensure this? Off course not! If intercepted, the envelope
+may be opened. There are more sophisticated ways achieve the desired security
+of a message: by hiding it so that it will only be recognized by the addressee
+or by writing it in a way that it can only be understood by the addressee.
+The first process is called <I>steganography</I>, the second <I>cryptography</I>.
+
+<P>This pages will deal with cryptography and only as far as required for
+the use of CipherClerk's Applet. For more information I recommend the book <I>The
+Codebreakers - The Story Of Secret Writing</I> by David Kahn.
+
+<P>
+<HR WIDTH="100%">
+<H3>
+The Virtual Envelope</H3>
+Cryptographers take <I>plain text</I> and <I>encipher </I>it by using a
+<I>cipher </I>into <I>cipher text</I>. A cipher is a general scheme for
+converting one text into another one. Most ciphers use a <I>key </I>(a
+word, a phrase or numbers) to specify how a general scheme is used. A plain
+text is a text with the obvious meaning so that everyone can read and understand
+it, while cipher text is not understandable unless you know - or find out
+- which cipher and key was used. Cipher text is also called a <I>cryptogram</I>.
+The reverse process, obtaining plain text from cipher text, is called to
+<I>decipher</I>.
+
+<P><I>Cryptanalysis</I> attempts to obtain<I> </I>plain text without knowing
+which cipher and key was used by <I>decrypting</I> the cipher text.
+
+<P>
+<HR WIDTH="100%">
+<H3>
+How Cryptograph Works</H3>
+There are only two basic cryptographic algorithms for processing a text.
+They are given along with a cryptogram of the phrase <TT>have fun</TT>:
+<UL>
+<LI>
+Transpositions rearrange it's letters: <TT>hfaeu vn</TT></LI>
+
+<LI>
+Substitutions replace it's letters: <TT>ibwf gvo</TT></LI>
+</UL>
+Off course, transpositions and substitutions may both be used within a
+single cipher. A <I>code </I>is a substitution, too. However, a substitution
+<I>cipher </I>operates on single letters or on groups of - say 3 - letters,
+while a <I>code </I>operates on words and / or phrases.
+
+<P>Usually only letters are processed by a cipher. In such a case numbers,
+punctuation and other symbols in the plain text must either be spelled
+out, encoded by letters or are removed from the plain text before enciphering
+it. The cipher text is usually reformatted into groups of five letters.
+
+<P>
+<HR WIDTH="100%">
+<H3>
+How Cryptanalysis Works</H3>
+Well, if you would like to learn more about this topic I recommend <I>Cryptanalysis
+</I>by Helene F. Gaines. There is information on cryptanalysis on the web,
+too.
+
+<P>
+<HR WIDTH="100%">
+<H3>
+Cryptography on the web</H3>
+Since there are a vast number of crypo-related sites on the web, I restrict
+myself to the a single reference: <A HREF="http://www.und.nodak.edu/org/crypto/crypto/">The
+Crypto Drop Box</A>. Off course, all members of the <A HREF="http://www.ftech.net/~monark/crypto/ring/index.hts">CryptRing</A>.
+have exciting crypto related sites, too!
+
+<P>
+<HR WIDTH="100%">
+
+<P>To proceed, you may
+<UL>
+<LI>
+read how to use <A HREF="UsingCipherClerk.html">CipherClerk's Applet</A>, if you
+don't know about it.</LI>
+
+<LI>
+see <A HREF="CipherList.html">which ciphers are available</A> within CipherClerk's Applet.</LI>
+
+<LI>
+start the <A HREF="../Bin/CipherClerk.html">CipherClerk's Applet</A>.</LI>
+</UL>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<assembly>
+  <id></id>
+  <formats>
+    <format>tar.gz</format>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <!-- SRC -->
+    <fileSet>
+      <directory>src</directory>
+      <outputDirectory>src</outputDirectory>
+    </fileSet>
+    <!-- BUILD + INFO -->
+    <fileSet>
+      <directory>.</directory>
+      <lineEnding>crlf</lineEnding>
+      <includes>
+        <include>README*</include>
+        <include>LICENSE*</include>
+        <include>NOTICE*</include>
+        <include>readme*</include>
+        <include>license*</include>
+        <include>notice*</include>
+        <include>pom.xml</include>
+        <include>build.xml</include>
+      </includes>
+      <useDefaultExcludes>true</useDefaultExcludes>
+    </fileSet>
+    <!-- LIB -->
+    <fileSet>
+      <directory>lib</directory>
+      <outputDirectory>lib</outputDirectory>
+    </fileSet>
+    <!-- SHELL -->
+    <fileSet>
+      <directory>scripts</directory>
+      <outputDirectory>scripts</outputDirectory>
+      <fileMode>0755</fileMode>
+      <excludes>
+        <exclude>*.bat</exclude>
+      </excludes>
+    </fileSet>
+    <!-- BAT -->
+    <fileSet>
+      <directory>scripts</directory>
+      <outputDirectory>scripts</outputDirectory>
+      <fileMode>0644</fileMode>
+      <includes>
+        <include>*.bat</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

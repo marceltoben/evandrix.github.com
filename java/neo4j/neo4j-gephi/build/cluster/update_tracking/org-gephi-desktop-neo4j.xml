@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.gephi.desktop.neo4j">
+    <module_version install_time="1309366639318" last="true" origin="installer" specification_version="1.0">
+        <file crc="1922997703" name="config/Modules/org-gephi-desktop-neo4j.xml"/>
+        <file crc="450239898" name="modules/org-gephi-desktop-neo4j.jar"/>
+    </module_version>
+</module>

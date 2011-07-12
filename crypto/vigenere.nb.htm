@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html class="Notebook" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<!-- This HTML document was created by converting a Mathematica notebook using Export. -->
+
+
+
+
+
+<title>
+  vigenere.nb
+</title>
+
+<link href="vigenere.nb_files/Report.css" rel="stylesheet" type="text/css">
+<script charset="utf-8" id="injection_graph_func" src="vigenere.nb_files/injection_graph_func.js"></script></head><body>
+
+<p class="Title">
+ Cryptanalysis of the Vigenere cipher
+</p>
+
+
+
+<p class="Text"> The Vigenere cipher is probably the most commonly
+known example of a polyalphabetic cipher, attributed (incorrectly) to
+Blaise de Vigenere in the 16th century.&nbsp;&nbsp;It has been used and
+regarded as being "practically unbreakable" as late as World War I, in
+spite of knowledge of a general solution since at least the mid 1850s.
+</p>
+
+
+
+<p class="Text"> The Vigenere cipher is interesting not because it has
+been broken, but because its solution involved, or at least stimulated,
+the first systematic application of statistical methods to
+cryptanalysis.&nbsp;&nbsp;A brief description of these methods is
+presented, including a <a href="#applet">Java applet</a> (with <span><a title="/erfarmer201/downloads/Vigenere.zip" href="http://home.comcast.net/erfarmer201/downloads/Vigenere.zip"><span class="HyperlinkInline">source code</span></a></span>) which automates the solution of a Vigenere cipher.
+</p>
+
+
+
+<p class="Section 1">
+ Frequency analysis
+</p>
+
+
+
+<p class="Text">
+ A <span style="font-style: italic;">monoalphabetic</span>
+cipher is a simple substitution, as in the cryptograms in a daily
+newspaper.&nbsp;&nbsp;Each occurrence of a particular letter is
+replaced by another throughout the message, so that, for example,
+plaintext 'a' becomes ciphertext 'K', 'b' becomes 'S',
+etc.&nbsp;&nbsp;(The convention of using lowercase for plaintext and
+uppercase for ciphertext will be used throughout.)&nbsp;&nbsp;Solution
+of a monoalphabetic cipher typically begins by guessing the assignments
+of some ciphertext letters based on their frequency of occurrence in
+the message.&nbsp;&nbsp;This is possible due to the non-uniform
+distribution of letters in language, specifically English (used in the
+examples throughout).&nbsp;&nbsp;Since the letter 'e' is by far the
+most frequently occurring letter in English text (see the chart below),
+it is reasonable to guess that the most frequently occurring <span style="font-style: italic;">ciphertext</span> letter is assigned to plaintext 'e'.
+</p>
+
+
+
+<p class="Graphics">
+ <img src="vigenere.nb_files/index_1.gif" alt="[Graphics:HTMLFiles/index_1.gif]" align="absmiddle" border="0" height="343" width="555">
+</p>
+
+<p class="Text">
+ A <span style="font-style: italic;">polyalphabetic</span>
+cipher is more complex in that a particular plaintext letter is not
+always replaced by the same ciphertext letter.&nbsp;&nbsp;The Vigenere
+cipher is a special case of a periodic polyalphabetic cipher, and works
+as follows.&nbsp;&nbsp;A message is encrypted using a keyword; imagine
+writing the keyword repeatedly underneath and alongside the message,
+and "shifting" each plaintext letter in the alphabet according to the
+corresponding key letter.&nbsp;&nbsp;If letters are represented by
+integers modulo 26, then this encryption scheme is given by <span style="font-style: italic;">c</span> = <span style="font-style: italic;">p</span> + <span style="font-style: italic;">k</span> (mod 26), where <span style="font-style: italic;">c</span>, <span style="font-style: italic;">p</span> and <span style="font-style: italic;">k</span> are letters of the ciphertext, plaintext and key, respectively.&nbsp;&nbsp;For example:
+</p>
+
+
+
+<p class="Program">
+ <br>plaintext&nbsp;&nbsp;&nbsp;thatwasthecuriousincident<br>&nbsp;&nbsp;&nbsp;key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blazeblazeblazeblazeblaze<br>-------------------------------------<br>ciphertext&nbsp;&nbsp;USASABDTGIDFRHSVDIMGJOEMX<br>
+</p>
+
+
+
+<p class="Text"> Note that plaintext 't' is assigned to several
+different ciphertext letters ('U', 'S', 'T' and 'X').&nbsp;&nbsp;The
+effect is to "flatten" the distribution of ciphertext letter
+frequencies, making them appear more random; the longer the keyword,
+the more uniform the resulting distribution tends to be, providing less
+information for the cryptanalyst.
+</p>
+
+
+
+<p class="Section">
+ Index of coincidence
+</p>
+
+
+
+<p class="Text"> Recall the 5-letter keyword from the previous
+example.&nbsp;&nbsp;Each of the 1st, 6th, 11th, etc., letters of the
+message is encrypted using the same key letter 'b'.&nbsp;&nbsp;That is,
+they are encrypted using a simple monoalphabetic substitution, and so
+the corresponding frequency distribution for those letters should
+resemble that shown above.&nbsp;&nbsp;The same applies to the subset of
+message letters encrypted by each of the other 4 key letters.
+</p>
+
+
+
+<p class="Text">
+ More generally, if <span style="font-style: italic;">m</span> is the keyword length, then each of the <span style="font-style: italic;">m</span>
+blocks of equally-spaced ciphertext letters should have a frequency
+distribution that is not random, but resembling that for English
+text.&nbsp;&nbsp;This suggests that the cryptanalyst may try all
+possible keyword lengths, selecting the value for which each of the
+resulting ciphertext blocks is sufficiently non-random.
+</p>
+
+
+
+<p class="Text">
+ The key observation is that "sufficiently non-random" is a measurable quality, using a metric called the <span style="font-style: italic;">index of coincidence</span>.&nbsp;&nbsp;It
+is defined to be the probability that two randomly selected letters
+will be identical, but it is effectively a measure of "distance" from
+the uniform distribution.&nbsp;&nbsp;For completely random text, this
+probability is about 0.038.&nbsp;&nbsp;For English text (or
+monoalphabetically encrypted English text), it is about 0.065.
+</p>
+
+
+
+<p class="Text">
+ In addition to finding the <span style="font-style: italic;">length</span>
+of the keyword, a variant of the index of coincidence may also be used
+to determine the actual letters of the keyword.&nbsp;&nbsp;The <span style="font-style: italic;">mutual index of coincidence</span>
+for two blocks of text is the probability that two randomly selected
+letters, one from each block, will be identical.&nbsp;&nbsp;The utility
+of this metric is based on the following claim: if two blocks of
+ciphertext are encrypted with the same key letter, the mutual index of
+coincidence of the blocks will be significantly greater than if they
+are encrypted with two different key letters.&nbsp;&nbsp;By
+successively "shifting" the letters in one of the blocks (or
+equivalently, repeatedly encrypting with key 'b'), and noting the shift
+which results in the greatest mutual index of coincidence, the
+relationship between the two corresponding key letters may be
+determined.&nbsp;&nbsp;By examining all pairs of ciphertext blocks, the
+key letters may almost be derived directly.
+</p>
+
+
+
+<p class="Text">
+ "Almost," because only the relationships <span style="font-style: italic;">between</span>
+key letters may be derived this way.&nbsp;&nbsp;Without a known
+particular key letter, there are still 26 possible cyclic shifts of the
+actual keyword.&nbsp;&nbsp;However, simple monoalphabetic frequency
+analysis on each ciphertext block may "lock" the keyword into one of
+those possibilities.&nbsp;&nbsp;For example, if 'F' is by far the most
+frequently occurring ciphertext letter in a particular block, this
+suggests that 'F' is assigned to plaintext 'e', or equivalently, that
+the corresponding key letter is 'b' ('F' "minus" 'e').
+</p>
+
+
+
+<p class="Section">
+ <a name="applet">Automatic cryptanalysis</a>
+</p>
+
+
+
+<p class="Text"> Use the Java applet below to experiment with the
+Vigenere encryption and decryption process.&nbsp;&nbsp;Paste a
+selection of plaintext or ciphertext into the text area, enter a
+keyword in the indicated field, and press the "Encrypt" or "Decrypt"
+button as appropriate.&nbsp;&nbsp;Note that spaces, punctuation, etc.,
+will be automatically stripped off.
+</p>
+
+
+
+<p class="Text"> More interesting is the "Guess key"
+button.&nbsp;&nbsp;Paste a selection of Vigenere-encrypted ciphertext
+into the text area (for convenience, a sample is included below), and
+press "Guess key."&nbsp;&nbsp;An estimate of the keyword is given based
+on the combination of index of coincidence tests and frequency analysis
+described above.&nbsp;&nbsp;Press "Decrypt" to see the resulting
+plaintext.&nbsp;&nbsp;Note that the program is not perfect, but its
+accuracy improves with longer ciphertext (see the performance analysis
+in the next section).&nbsp;&nbsp;As a guide, a selection of text that
+fills the entire text area is usually enough.
+</p>
+
+<p align="center">
+<applet code="VigenereApplet.class" archive="vigenere.nb_files/VigenereApplet.txt" height="300" width="400">
+<b>Error! You must use a Java-enabled browser.</b>
+</applet><a style="left: 792px ! important; top: 1449.2px ! important;" title="Click here to block this object with Adblock Plus" class="mngqbygumsrykmgngnmf tdjmyjdtaoqqvwvukwtw" href="http://home.comcast.net/%7Eerfarmer201/vigenere/VigenereApplet.class"></a>
+</p>
+
+
+<p class="Subsection">
+ Sample ciphertext
+</p>
+
+
+
+<p class="Program">
+ DZLNRFWRNWTDTHPMHOQIBYEWTSPSRMPYWGMDSSGSXPDSLFAONVPAIMMPYWGMDSHDLBOFNV<br>NPDNJNJCNQQLNHSODAAMMTTXFVEIREXMYSLFTNRTFNTNVTQABIUSASLJDASXFYTHSOSACF<br>FPNJIFYLXESZURIEJOTGPYSHHFCTGEUEOAIJXPNVULNSLFLSJIEPXBIFOIMKMJSNMTEHDV<br>FLNXTPTNSXPHHHGIJOTAPFLCAJDHSSECAVQZLTSIOEINRUZTGIDFRHSVDIMGJOEMXPQTGI<br>EZGHRUSEMMHSTSMNPTGIEZGCMEYOSLJYGHRUSEMMHSTSMNPTGEUHARXIPCTVJZURMONICI<br>OERDQBCKDHTSEQPPNKGSMXER
+</p>
+
+
+
+<p class="Section">
+ Algorithm performance
+</p>
+
+
+
+<p class="Text"> For a given ciphertext, the algorithm implemented in
+the Java applet involves several computational steps.&nbsp;&nbsp;First,
+the length of the keyword is estimated based on the index of
+coincidence test.&nbsp;&nbsp;Then the relationships between keyletters
+are computed using mutual indices of coincidence.&nbsp;&nbsp;Finally, a
+particular cyclic shift of the keyword is selected based on frequency
+analysis.&nbsp;&nbsp;At each step, a <span style="font-style: italic;">single</span>
+choice is made on the path of decisions that leads to a single estimate
+of the keyword.&nbsp;&nbsp;This single guess is not always accurate, as
+the following chart shows.&nbsp;&nbsp;The probability of successful
+decryption was estimated by bootstrapping 1000 random keywords and
+random plaintext selections of the appropriate length from "The Hound
+of the Baskervilles" (a total of about 250,000
+characters).&nbsp;&nbsp;As should be expected, the cryptanalysis is
+made more difficult by shorter ciphertext and/or a longer keyword.
+</p>
+
+
+
+<p class="Graphics">
+ <img src="vigenere.nb_files/index_2.gif" alt="[Graphics:HTMLFiles/index_2.gif]" align="absmiddle" border="0" height="344" width="556">
+</p>
+
+<p class="Section">
+ References
+</p>
+
+
+
+<p class="Reference">
+ Kahn, David.&nbsp;&nbsp;<span style="font-style: italic;">The Codebreakers</span>.&nbsp;&nbsp;New York: Scribner, 1996.
+</p>
+
+
+
+<p class="Reference">
+ Stinson, Douglas.&nbsp;&nbsp;<span style="font-style: italic;">Cryptography: Theory and Practice</span>.&nbsp;&nbsp;Boca Raton: CRC Press, 1995.
+</p>
+
+
+
+<p class="Subsection">
+ <span><a title="/erfarmer201/downloads/Vigenere.zip" href="http://home.comcast.net/erfarmer201/downloads/Vigenere.zip"><span class="HyperlinkInline">Download Java source</span></a></span>
+</p>
+
+
+
+<p class="Author">
+ <span><a title="/erfarmer201/index.html" href="http://home.comcast.net/erfarmer201/index.html"><span class="HyperlinkInline">Eric Farmer</span></a></span><br><span><a href="mailto:erfarmer201@comcast.net"><span class="HyperlinkInline">erfarmer201@comcast.net</span></a></span>
+</p>
+
+
+
+
+<hr>
+<p style="font-family: Helvetica; font-size: 8pt;">Created by
+<a href="http://www.wolfram.com/"><span style="font-style: italic;">Mathematica</span></a>
+&nbsp;(July 8, 2003) </p>
+
+</body></html>

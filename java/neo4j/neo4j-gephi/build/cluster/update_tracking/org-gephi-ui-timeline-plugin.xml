@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.gephi.ui.timeline.plugin">
+    <module_version install_time="1309366636722" last="true" origin="installer" specification_version="0.7.0.1">
+        <file crc="2576201244" name="config/Modules/org-gephi-ui-timeline-plugin.xml"/>
+        <file crc="1922755336" name="modules/org-gephi-ui-timeline-plugin.jar"/>
+    </module_version>
+</module>

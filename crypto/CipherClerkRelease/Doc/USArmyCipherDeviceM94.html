@@ -1,0 +1,75 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Wilhelm M. Plotz">
+   <meta name="GENERATOR" content="Mozilla/4.72 [en]C-CCK-MCD QXW0323l  (WinNT; U) [Netscape]">
+   <title>US Army Cipher Device M-94</title>
+</head>
+<body text="#000000" bgcolor="#C0C0C0" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<center>
+<h1>
+Wheel Ciphers</h1></center>
+
+<h2>
+U.S. Army Cipher Device M-94</h2>
+This device consists of 25 alphabet discs, on the rim of each there is
+a stamped a different, completely disarranged alphabet. These discs are
+mounted on a shaft. The order in which the discs are put on the shaft forms
+a key for this cipher. The discs are rotated so that the first 25 letters
+of the plain text are found in a line. Then one other line is chosen at
+random and the letters of this row form the cipher text. The rest of the
+message is processed the same way. For deciphering, the position of the
+plain text must be located by the cipher clerk: Examing all 25 possibilities,
+he should find exactly one containing intelligible text.
+<center><img SRC="USArmyCipherDeviceM94.GIF" height=377 width=608></center>
+
+<p>CipherClerk's Applet derives the arrangement of the cipher discs from
+the given key word: This is repeated until it's length is 25 letters. This
+alphabetic key is converted into a numerical key by using the "standard"
+procedure. The position where the cipher text is read is obtained from
+a random number generator initialized using the date and time of the encryption.
+<p>When deciphering, CipherClerk's Applet must determine where to read
+the plain text. It assumes that the plain text is english, exactly speaking:
+it's letter frequencies are those of an english text. Since this analysis
+can only be done on groups of 25 letter, it is far from being perfect.
+CipherClerk's Applet would most likely not be able to decipher a final
+block of just a few letters. For this reason, it assumes for decrypting
+- and assures when encrypting - that such groups will use the offset of
+the group before.
+<p><a href="../VirtualM94.html">I've written another simulation of this
+device, offering a look &amp; feel close to the original. Definitely worth
+a try!</a>
+<p>
+<hr WIDTH="100%">
+<br>&nbsp;
+<h2>
+<a NAME="Major Bazeries Cipher"></a>Major Bazeries Cipher Device</h2>
+This device is quite similar to the M-94, but it's a bit older. It uses
+only 20 disks and a 25 letter alphabet where the letter <tt>W</tt> is missing.
+Again, a simulator with much of the look and feel of the <a href="../Bazeries.html">original
+device</a> is avaliabel.
+<p>
+<hr WIDTH="100%">
+<br>To proceed, you may
+<ul>
+<li>
+read about <a href="Introduction.html">Cryptography</a>, if you have no
+or little knowledge about this.</li>
+
+<li>
+read how to use <a href="UsingCipherClerk.html">CipherClerk's Applet</a>,
+if you don't know about it.</li>
+
+<li>
+see <a href="CipherList.html">which ciphers are available</a> within CipherClerk's
+Applet.</li>
+
+<li>
+start the <a href="../Bin/CipherClerk.html">CipherClerk's Applet applet</a>.</li>
+</ul>
+
+<hr WIDTH="100%">
+</body>
+</html>

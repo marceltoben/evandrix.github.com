@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LIB_FILES=`find lib/ -follow -iname "*.jar"`
+LIB_FILES=`echo $LIB_FILES | sed -e 's/ /:/g'`
+APP_CLASSPATH=$LIB_FILES:build/classes:target/classes
+
+java -Xmx256M -cp $APP_CLASSPATH $*

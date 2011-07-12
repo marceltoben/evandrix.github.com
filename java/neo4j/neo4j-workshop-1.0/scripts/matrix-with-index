@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sh scripts/template-script org.neo4j.examples.workshop.tutor.matrix.MatrixWithIndex $*

@@ -1,0 +1,18 @@
+<textarea rows=10 cols=70 onkeyup="solve(this.value);" /></textarea><br />
+<textarea id=atbash rows=10 cols=70></textarea>
+
+<script language="Javascript">
+	
+	function atbash(str) {
+		var ret = '';
+		for (i=0;i<str.length;i++) {
+			ret += String.fromCharCode(155 -  str[i].toUpperCase().charCodeAt(0));
+		}
+		return ret;
+	}
+	
+        function solve(str) {
+document.getElementById('atbash').innerHTML = atbash(str);
+
+}
+</script>

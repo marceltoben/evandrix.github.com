@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.gephi.ui.datatable">
+    <module_version install_time="1309366627848" last="true" origin="installer" specification_version="0.7.0.2">
+        <file crc="367122611" name="config/Modules/org-gephi-ui-datatable.xml"/>
+        <file crc="3837810164" name="modules/org-gephi-ui-datatable.jar"/>
+    </module_version>
+</module>

@@ -1,0 +1,34 @@
+#surefire
+#Wed Jun 29 18:06:44 BST 2011
+testClassesDirectory=/Users/lwy08/Downloads/neo4j-workshop-1.0/target/test-classes
+classPathUrl.4=/Users/lwy08/.m2/repository/org/neo4j/neo4j-shell/1.0/neo4j-shell-1.0.jar
+classPathUrl.3=/Users/lwy08/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar
+classPathUrl.2=/Users/lwy08/.m2/repository/org/neo4j/neo4j-kernel/1.0/neo4j-kernel-1.0.jar
+useManifestOnlyJar=true
+classPathUrl.1=/Users/lwy08/Downloads/neo4j-workshop-1.0/target/classes
+reportsDirectory=/Users/lwy08/Downloads/neo4j-workshop-1.0/target/surefire-reports
+classPathUrl.0=/Users/lwy08/Downloads/neo4j-workshop-1.0/target/test-classes
+dirscanner.0=directoryScannerOptions
+providerConfiguration=org.apache.maven.surefire.junit4.JUnit4Provider
+testSuiteDefinitionTestSourceDirectory=/Users/lwy08/Downloads/neo4j-workshop-1.0/src/test/java
+surefireClassPathUrl.1=/Users/lwy08/.m2/repository/org/apache/maven/surefire/surefire-api/2.7.1/surefire-api-2.7.1.jar
+surefireClassPathUrl.0=/Users/lwy08/.m2/repository/org/apache/maven/surefire/surefire-junit4/2.7.1/surefire-junit4-2.7.1.jar
+report.2=org.apache.maven.surefire.report.XMLReporter
+useSystemClassLoader=true
+report.1=org.apache.maven.surefire.report.BriefFileReporter
+report.0=org.apache.maven.surefire.report.ForkingConsoleReporter
+excludes0=**/*$*
+isTrimStackTrace=true
+dirscanner.0.params=/Users/lwy08/Downloads/neo4j-workshop-1.0/target/test-classes|[**/Test*.java, **/*Test.java, **/*TestCase.java]|[**/*$*]
+includes2=**/*TestCase.java
+enableAssertions=true
+includes1=**/*Test.java
+failIfNoTests=false
+includes0=**/Test*.java
+dirscanner.0.types=java.io.File|java.util.ArrayList|java.util.ArrayList
+classPathUrl.9=/Users/lwy08/.m2/repository/junit/junit/4.7/junit-4.7.jar
+classPathUrl.8=/Users/lwy08/.m2/repository/org/apache/lucene/lucene-core/2.9.1/lucene-core-2.9.1.jar
+classPathUrl.7=/Users/lwy08/.m2/repository/org/neo4j/neo4j-commons/1.0/neo4j-commons-1.0.jar
+childDelegation=false
+classPathUrl.6=/Users/lwy08/.m2/repository/org/neo4j/neo4j-index/1.0/neo4j-index-1.0.jar
+classPathUrl.5=/Users/lwy08/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar

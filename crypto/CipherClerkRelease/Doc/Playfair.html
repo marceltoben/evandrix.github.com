@@ -1,0 +1,419 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Wilhelm M. Plotz">
+   <meta name="GENERATOR" content="Mozilla/4.72 [en]C-CCK-MCD QXW0323l  (WinNT; U) [Netscape]">
+   <title>Playfair Cipher</title>
+</head>
+<body text="#000000" bgcolor="#C0C0C0" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<center>
+<h1>
+Playfair Cipher &amp; Variants</h1></center>
+
+<h2>
+Playfair Cipher</h2>
+A <a href="MixedAlphabet.html">mixed alphabet</a> is generated and used
+to fill a table. The table may be filled <i>line by line</i> or
+<i>column
+by column</i>:
+<center><img SRC="Playfair.GIF" height=350 width=600></center>
+
+<p>If the alphabet doesn't permit square tables - like the 27 letter alphabet
+- you may chose to <i>transpose</i> the table, e.g. use 9 x 3 instead 3
+x 9.
+<p>For example, the key word <tt>KEY</tt> applied to the 27 letter alphabet
+gives the following table:
+<center><table CELLPADDING=5 >
+<tr>
+<td><tt>K</tt></td>
+
+<td><tt>E</tt></td>
+
+<td><tt>Y</tt></td>
+
+<td><tt>A</tt></td>
+
+<td><tt>B</tt></td>
+
+<td><tt>C</tt></td>
+
+<td><tt>D</tt></td>
+
+<td><tt>F</tt></td>
+
+<td><tt>G</tt></td>
+</tr>
+
+<tr>
+<td><tt>H</tt></td>
+
+<td><tt>I</tt></td>
+
+<td><tt>J</tt></td>
+
+<td><tt>L</tt></td>
+
+<td><tt>M</tt></td>
+
+<td><tt>N</tt></td>
+
+<td><tt>O</tt></td>
+
+<td><tt>P</tt></td>
+
+<td><tt>Q</tt></td>
+</tr>
+
+<tr>
+<td><tt>R</tt></td>
+
+<td><tt>S</tt></td>
+
+<td><tt>T</tt></td>
+
+<td><tt>U</tt></td>
+
+<td><tt>V</tt></td>
+
+<td><tt>W</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>Z</tt></td>
+
+<td><tt>&amp;</tt></td>
+</tr>
+</table></center>
+To encipher the text, is is split into groups of tow letter. If the number
+of the letters in the text is odd, a random letter must be appended (CipherClerk's
+Applet appends the first letter of the message): <tt>MESSAGE</tt> becomes
+<tt>ME
+SX SA GE</tt>
+<ol>
+<li>
+If the two letters found in the in the same row of the table, they are
+replace by the letters found right of them.</li>
+
+<li>
+If the two letters are found in the column, they are replaced by the letters
+found below of them.</li>
+
+<li>
+If the two letters are neither in the same row nor in the same column each
+letter is replaced by the letter found in the same row in the column of
+the other letter: <tt>ME</tt> becomes <tt>IB</tt> (not <tt>BI</tt>!)</li>
+</ol>
+Double letters (like the <tt>SS</tt> from <tt>MESSAGE</tt>) must be separated
+by <i>nulls</i>. CipherClerk's Applet does this automatically, it needs
+at least two different letters, the first and second must be different.
+<p>
+<hr WIDTH="100%">
+<h2>
+<a NAME="SeriatedPlayfair"></a>Seriated Playfair Cipher</h2>
+The Playfair cipher may improved by <i>seriating </i>its input text: The
+text is written in groups of <i>N</i> letters in two lines. For example,
+the text <tt>THIS IS A TOP SECRET MESSAGE</tt> becomes, when seriated in
+groups of 5 letters:
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T H I S I&nbsp;&nbsp;
+S E C R E&nbsp;&nbsp; A G</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S A T O P&nbsp;&nbsp;
+T M E S S&nbsp;&nbsp; E X</tt>
+<p>Now, vertical pairs of letters are enciphered as described above. When
+seriating, nulls are inserted to suppress pairs of equal letters. In addition
+to the parameters for the Playfair cipher, you must specify the number
+of letters per group:
+<center>
+<p><img SRC="SeriatedPlayfair.GIF" height=377 width=608></center>
+
+<p>
+<hr WIDTH="100%">
+<br>&nbsp;
+<h2>
+<a NAME="Doppelkastenschlüssel"></a>Doppelkastenschl&uuml;ssel</h2>
+This cipher is a german field cipher used in WWII.
+<center><img SRC="DoppelKasten.GIF" height=377 width=608></center>
+
+<p>Originally, two 5 x 5 tables with a randomly mixed alphabet where used.
+CipherClerk's Applet derives the mixed alphabet from two key words.
+<center><table>
+<tr ALIGN=CENTER VALIGN=CENTER>
+<td>
+<center><tt>F</tt></center>
+</td>
+
+<td>
+<center><tt>I</tt></center>
+</td>
+
+<td>
+<center><tt>R</tt></center>
+</td>
+
+<td>
+<center><tt>S</tt></center>
+</td>
+
+<td>
+<center><tt>T</tt></center>
+</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+<center><tt>S</tt></center>
+</td>
+
+<td>
+<center><tt>E</tt></center>
+</td>
+
+<td>
+<center><tt>C</tt></center>
+</td>
+
+<td>
+<center><tt>O</tt></center>
+</td>
+
+<td>
+<center><tt>N</tt></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center><tt>K</tt></center>
+</td>
+
+<td>
+<center><tt>E</tt></center>
+</td>
+
+<td>
+<center><tt>Y</tt></center>
+</td>
+
+<td>
+<center><tt>A</tt></center>
+</td>
+
+<td>
+<center><tt>B</tt></center>
+</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+<center><tt>D</tt></center>
+</td>
+
+<td>
+<center><tt>K</tt></center>
+</td>
+
+<td>
+<center><tt>Y</tt></center>
+</td>
+
+<td>
+<center><tt>A</tt></center>
+</td>
+
+<td>
+<center><tt>B</tt></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center><tt>C</tt></center>
+</td>
+
+<td>
+<center><tt>D</tt></center>
+</td>
+
+<td>
+<center><tt>G</tt></center>
+</td>
+
+<td>
+<center><tt>H</tt></center>
+</td>
+
+<td>
+<center><tt>L</tt></center>
+</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+<center><tt>F</tt></center>
+</td>
+
+<td>
+<center><tt>G</tt></center>
+</td>
+
+<td>
+<center><tt>H</tt></center>
+</td>
+
+<td>
+<center><tt>I</tt></center>
+</td>
+
+<td>
+<center><tt>L</tt></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center><tt>M</tt></center>
+</td>
+
+<td>
+<center><tt>N</tt></center>
+</td>
+
+<td>
+<center><tt>O</tt></center>
+</td>
+
+<td>
+<center><tt>P</tt></center>
+</td>
+
+<td>
+<center><tt>Q</tt></center>
+</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+<center><tt>M</tt></center>
+</td>
+
+<td>
+<center><tt>P</tt></center>
+</td>
+
+<td>
+<center><tt>Q</tt></center>
+</td>
+
+<td>
+<center><tt>R</tt></center>
+</td>
+
+<td>
+<center><tt>T</tt></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center><tt>U</tt></center>
+</td>
+
+<td>
+<center><tt>V</tt></center>
+</td>
+
+<td>
+<center><tt>W</tt></center>
+</td>
+
+<td>
+<center><tt>X</tt></center>
+</td>
+
+<td>
+<center><tt>Z</tt></center>
+</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+<center><tt>U</tt></center>
+</td>
+
+<td>
+<center><tt>V</tt></center>
+</td>
+
+<td>
+<center><tt>W</tt></center>
+</td>
+
+<td>
+<center><tt>X</tt></center>
+</td>
+
+<td>
+<center><tt>Z</tt></center>
+</td>
+</tr>
+</table></center>
+At first, the text was seriated in groups of 21 letters (see above). A
+pair of letters is enciphered in the following way:
+<ul>
+<li>
+If the letters are on the diagonals of a rectangle, each letter is replaced
+by the one found in the same row in the other table above or below the
+other letter: <tt>FZ</tt> would be replaced by <tt>NU</tt>.</li>
+</ul>
+
+<ul>
+<li>
+If the letters are found in the same row, they are replaced on the left
+side: <tt>IO</tt> would be replaced by <tt>FC</tt>.</li>
+</ul>
+Originally, this procedure was done twice with each pair. Later in the
+war, it was done only once.
+<p>
+<hr WIDTH="100%">
+<p>To proceed, you may
+<ul>
+<li>
+read about <a href="Introduction.html">Cryptography</a>, if you have no
+or little knowledge about this.</li>
+
+<li>
+read how to use <a href="UsingCipherClerk.html">CipherClerk's Applet</a>,
+if you don't know about it.</li>
+
+<li>
+see <a href="CipherList.html">which ciphers are available</a> within CipherClerk's
+Applet.</li>
+
+<li>
+start the <a href="../Bin/CipherClerk.html">CipherClerk's Applet</a>.</li>
+</ul>
+
+<hr WIDTH="100%">
+</body>
+</html>

@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. Plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Railfence Cipher</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Railfence and Redfence Cipher</H1></CENTER>
+
+<H3>
+Railfence Cipher</H3>
+The text is written along a W or M style route and then read line by line.
+For example, MESSAGE may be written as
+<CENTER><TABLE CELLSPACING=10 CELLPADDING=0 >
+<TR>
+<TD><TT>M</TT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD><TT>E</TT></TD>
+</TR>
+</TABLE></CENTER>
+and therefore enciphered as <TT>MAESG SE</TT>.
+
+<P>This cipher doesn't use a key <I>word</I>. Instead the key consists
+of two numbers separated by W or M. The first number denotes the number
+of lines to use, the second denotes how many places in the route shall
+be omitted before the first letter of the message. The letters W and M
+depict the start of the route. Thus the example given above used the key
+3W0.
+<CENTER></CENTER>
+
+<CENTER><IMG SRC="Railfence.GIF" HEIGHT=350 WIDTH=600></CENTER>
+
+<CENTER></CENTER>
+
+<CENTER>
+<HR WIDTH="100%"></CENTER>
+
+<H3>
+Redfence Cipher</H3>
+This cipher prepares the plain text in the same way as the rail fence cipher,
+but the lines are not read top-down. Instead a numeric key is derived from
+a key word and the lines are read according to this numeric key: The key
+word <TT>AND </TT>yields the numeric key <TT>1-3-2</TT>, so that the example
+given above results in <TT>MASEE SG</TT>. The number of lines equals the
+length of the key, the other parameters are fixed to <TT>W0</TT>.
+
+<P>
+<HR WIDTH="100%">
+
+<P>To proceed, you may
+<UL>
+<LI>
+read about <A HREF="Introduction.html">Cryptography</A>, if you have no
+or little knowledge about this.</LI>
+
+<LI>
+read how to use <A HREF="UsingCipherClerk.html">CipherClerk's Applet</A>, if you
+don't know about it.</LI>
+
+<LI>
+see <A HREF="CipherList.html">which ciphers are available</A> within CipherClerk's Applet.</LI>
+
+<LI>
+start the <A HREF="../Bin/CipherClerk.html">CipherClerk's Applet</A>.</LI>
+</UL>
+
+<HR WIDTH="100%">
+</BODY>
+</HTML>

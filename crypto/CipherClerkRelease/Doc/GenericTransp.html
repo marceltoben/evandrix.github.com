@@ -1,0 +1,285 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Wilhelm M. Plotz">
+   <meta name="GENERATOR" content="Mozilla/4.72 [en]C-CCK-MCD QXW0323l  (WinNT; U) [Netscape]">
+   <title>Generic Transposition Cipher</title>
+</head>
+<body text="#000000" bgcolor="#C0C0C0" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<center>
+<h1>
+Generic Transposition Cipher</h1></center>
+
+<h3>
+Description</h3>
+The text to be processed is filled into a table, the cipher text is obtained
+by reading the letters in a <i>different </i>way. For example, you might
+fill the table line by line and read the cryptogram column by column.
+<p>For longer messages, its more convenient - for paper and pencil application
+- to split the message into smaller blocks. So you may choose a <i>square
+block</i>, a <i>user defined block</i>, or <i>use a single block</i>. CipherClerk's
+Applet only requires to enter the number of lines of a block if you want
+to choose a <i>user defined block</i>. In the other cases, the block size
+is derived from the key word: If not mentioned, the number of rows matches
+the number of letters in the key word.
+<p>By default CipherClerk's Applet will fill the table completely, appending
+a <i>pad
+</i>string to the plain text. By checking <i>use irregular transposition</i>,
+you may suppress this. In such a case the empty fields of the table are
+determined by writing the text left to right and line by line into the
+table. If there remain some empty fields, they are marked. When the plain
+or cipher text is filled into the table, these fields will remain empty.
+<p>CipherClerk's Applet offers several choices how to <i>fill in</i> the
+table and to <i>take of</i> the result. Obviously, for deciphering one
+must fill the table in the order it was read when it was enciphered. Note
+that you must <i>always </i>set up CipherClerk's Applet as if you would
+encipher the message. CipherClerk's Applet takes care to use you setup
+correctly when deciphering.
+<p>The choices available for <i>fill in</i> / <i>take of</i> are:
+<h4>
+by columns</h4>
+The text is read/written column by column. You may specify where you want
+to start: top-left, top-right, bottom-left, or bottom-right. You may permutate
+the columns using a permutation based on the key word. Finally, you may
+choose to trace columns in alternating directions.
+<h4>
+by lines</h4>
+The text is read/written column by column. The options are the same as
+before.
+<h4>
+by diagonals</h4>
+The text is read/written along diagonals. You may choose where to start,
+whether the diagonals should be traced <i>upwards </i>or <i>downwards</i>,
+and whether this tracing direction should be <i>alternated </i>or not.
+A square block is required.
+<h4>
+spirally</h4>
+The text is read/written along a spiral line. You may choose where to start,
+whether the spiral is <i>clockwise </i>or not. If <i>expanding </i>is checked,
+reading/writing starts at the center and processed to the specified corner.
+While a square block is required, an even block size is not.
+<h4>
+nihilist</h4>
+The text is read column by column and line by line where both - columns
+and lines - are permutated. If <i>lines first</i> is checked, the text
+is read line by line and column by column, both permutated. A square block
+is required.
+<h4>
+rot. grille</h4>
+A square grille is prepared: The key is truncated to a length of <i>n^2</i>,
+e.g. to <i>4</i>, <i>9</i>, <i>16</i>, <i>25</i>, or <i>36</i> characters.
+The size of the grille is chosen <i>2n </i>and n^2 openings are cut into
+the 4 n^2 fields of the grid. The grille is laid on the table and the text
+is read/written through the holes left to right, line by line. Then the
+grille is rotated by 90&deg; <i>clockwise </i>(or <i>counter-clockwise</i>)
+and text is continued to by read/written.
+<p>Ofcourse the holes are set up in a way that each field of the table
+is exactly visible once: The table is divided into 4 squares filed, each
+of the size n x n. The fields in the top left square are numbered (left
+to right, top to bottom) 1 to n^2. The fields in the other squares are
+numbered so that when rotating the grill the numbers in a field remain
+unchanged. For example, if the key length is 9, we obtain:
+<center><table BORDER CELLPADDING=5 >
+<tr>
+<td><tt>1</tt></td>
+
+<td><tt>2</tt></td>
+
+<td><tt>3</tt></td>
+
+<td><tt>7</tt></td>
+
+<td><tt>4</tt></td>
+
+<td><tt>1</tt></td>
+</tr>
+
+<tr>
+<td><tt>4</tt></td>
+
+<td><tt>5</tt></td>
+
+<td><tt>6</tt></td>
+
+<td><tt>8</tt></td>
+
+<td><tt>5</tt></td>
+
+<td><tt>2</tt></td>
+</tr>
+
+<tr>
+<td><tt>7</tt></td>
+
+<td><tt>8</tt></td>
+
+<td><tt>9</tt></td>
+
+<td><tt>9</tt></td>
+
+<td><tt>6</tt></td>
+
+<td><tt>3</tt></td>
+</tr>
+
+<tr>
+<td><tt>3</tt></td>
+
+<td><tt>6</tt></td>
+
+<td><tt>9</tt></td>
+
+<td><tt>9</tt></td>
+
+<td><tt>8</tt></td>
+
+<td><tt>7</tt></td>
+</tr>
+
+<tr>
+<td><tt>2</tt></td>
+
+<td><tt>5</tt></td>
+
+<td><tt>8</tt></td>
+
+<td><tt>6</tt></td>
+
+<td><tt>5</tt></td>
+
+<td><tt>4</tt></td>
+</tr>
+
+<tr>
+<td><tt>1</tt></td>
+
+<td><tt>4</tt></td>
+
+<td><tt>7</tt></td>
+
+<td><tt>3</tt></td>
+
+<td><tt>2</tt></td>
+
+<td><tt>1</tt></td>
+</tr>
+</table></center>
+Now the key word is converted into a numerical key the normal way. For
+example, the key <tt>DAVID KAHN</tt> yields <i>3-1-9-6-4-7-2-5-8</i>. The
+first/second/third/forth quarter of these numbers, <i>3-1</i> / <i>9-6</i>
+/ <i>4-7</i> / <i>2-5-8</i>, denotes the position of the holes in the first
+sub-square. Thus the resulting grille, with holes denoted by underscores,
+is
+<center><table BORDER CELLPADDING=4 >
+<tr>
+<td><tt>_</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>X</tt></td>
+
+<td></td>
+
+<td><tt>X</tt></td>
+</tr>
+
+<tr>
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+</tr>
+
+<tr>
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>X</tt></td>
+</tr>
+
+<tr>
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>X</tt></td>
+</tr>
+
+<tr>
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>X</tt></td>
+</tr>
+
+<tr>
+<td><tt>X</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>X</tt></td>
+
+<td><tt>_</tt></td>
+
+<td><tt>X</tt></td>
+</tr>
+</table></center>
+
+<center><img SRC="GenericTransp.GIF" height=377 width=608></center>
+
+<p>
+<hr WIDTH="100%">
+<p>To proceed, you may
+<ul>
+<li>
+read about <a href="Introduction.html">Cryptography</a>, if you have no
+or little knowledge about this.</li>
+
+<li>
+read how to use <a href="UsingCipherClerk.html">CipherClerk's Applet</a>,
+if you don't know about it.</li>
+
+<li>
+see <a href="CipherList.html">which ciphers are available</a> within CipherClerk's
+Applet.</li>
+
+<li>
+start the <a href="../Bin/CipherClerk.html">CipherClerk's Applet</a>.</li>
+</ul>
+
+<hr WIDTH="100%">
+</body>
+</html>

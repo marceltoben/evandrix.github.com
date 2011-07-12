@@ -1,0 +1,193 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. Plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Two Square Cipher</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Two Square Cipher</H1></CENTER>
+
+<H3>
+Description</H3>
+A two square tables are prepared. The squares are filled with the letters
+of the alphabet, at least one of them with a <A HREF="MixedAlphabet.html">mixed
+alphabet</A>. For example, the key word <TT>KEY</TT> applied to a 25 letter
+alphabet gives the following table:
+<CENTER><TABLE BORDER CELLPADDING=5 >
+<TR>
+<TD COLSPAN="5"><TT>1st plain text</TT>&nbsp;
+
+<P><TT>2nd cipher text</TT></TD>
+
+<TD></TD>
+
+<TD COLSPAN="5"><TT>2nd plain text</TT>&nbsp;
+
+<P><TT>1st cipher text</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>A</TT></TD>
+
+<TD><TT>B</TT></TD>
+
+<TD><TT>C</TT></TD>
+
+<TD><TT>D</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD></TD>
+
+<TD><TT>K</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD><TT>B</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>F</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>H</TT></TD>
+
+<TD><TT>I</TT></TD>
+
+<TD><TT>K</TT></TD>
+
+<TD></TD>
+
+<TD><TT>C</TT></TD>
+
+<TD><TT>D</TT></TD>
+
+<TD><TT>F</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>H</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>L</TT></TD>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>N</TT></TD>
+
+<TD><TT>O</TT></TD>
+
+<TD><TT>P</TT></TD>
+
+<TD></TD>
+
+<TD><TT>I</TT></TD>
+
+<TD><TT>L</TT></TD>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>N</TT></TD>
+
+<TD><TT>O</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>Q</TT></TD>
+
+<TD><TT>R</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>T</TT></TD>
+
+<TD><TT>U</TT></TD>
+
+<TD></TD>
+
+<TD><TT>P</TT></TD>
+
+<TD><TT>Q</TT></TD>
+
+<TD><TT>R</TT></TD>
+
+<TD><TT>S</TT></TD>
+
+<TD><TT>T</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>V</TT></TD>
+
+<TD><TT>W</TT></TD>
+
+<TD><TT>X</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>Z</TT></TD>
+
+<TD></TD>
+
+<TD><TT>U</TT></TD>
+
+<TD><TT>V</TT></TD>
+
+<TD><TT>W</TT></TD>
+
+<TD><TT>X</TT></TD>
+
+<TD><TT>Y</TT></TD>
+</TR>
+</TABLE></CENTER>
+To encipher the text, is is split into groups of two letters. If the number
+of the letters in the text is odd, a random letter must be appended (CipherClerk's Applet
+appends the first letter of the message): <TT>MESSAGE </TT>becomes <TT>ME
+SS AG EM. The</TT> two letters are located in the <TT>plain text</TT> squares
+and replaced by the letters found in the same row of the <TT>cipher text
+</TT>squares above or below the other letter: <TT>ME</TT> is thus replaced
+by <TT>OO</TT>, <TT>AG</TT> by <TT>EB</TT>.
+
+<P>CipherClerk's Applet's implementation requires two keyword unless you choose
+<TT>No Second Key</TT>. You may choose from alphabets with 25 and 36 letters.
+Finally, you may choose either to have <I>horizontal orientation</I> (the
+two squares side by side as shown above) or <I>vertical orientation</I>
+(one square below the other).
+<CENTER></CENTER>
+
+<CENTER><IMG SRC="TwoSquare.GIF" HEIGHT=350 WIDTH=600></CENTER>
+
+
+<P>
+<HR WIDTH="100%">
+
+<P>To proceed, you may
+<UL>
+<LI>
+read about <A HREF="Introduction.html">Cryptography</A>, if you have no
+or little knowledge about this.</LI>
+
+<LI>
+read how to use <A HREF="UsingCipherClerk.html">CipherClerk's Applet</A>, if you
+don't know about it.</LI>
+
+<LI>
+see <A HREF="CipherList.html">which ciphers are available</A> within CipherClerk's Applet.</LI>
+
+<LI>
+start the <A HREF="../Bin/CipherClerk.html">CipherClerk's Applet</A>.</LI>
+</UL>
+
+<HR WIDTH="100%">
+</BODY>
+</HTML>

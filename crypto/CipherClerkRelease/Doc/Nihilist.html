@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Wilhelm M. Plotz">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (WinNT; I) [Netscape]">
+   <TITLE>Checkerboard Cipher</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Checkerboard Cipher</H1></CENTER>
+
+<H3>
+Description</H3>
+A <A HREF="MixedAlphabet.html">mixed alphabet</A> is is generated and used
+to fill a table. The first column and the first line contain the symbols
+that will be used to represent the plain text letters:
+<CENTER><TABLE BORDER=2 CELLPADDING=3 >
+<TR>
+<TD></TD>
+
+<TD><TT>0</TT></TD>
+
+<TD><TT>1</TT></TD>
+
+<TD><TT>2</TT></TD>
+
+<TD><TT>3</TT></TD>
+
+<TD><TT>4</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>0</TT></TD>
+
+<TD><TT>E</TT></TD>
+
+<TD><TT>N</TT></TD>
+
+<TD><TT>T</TT></TD>
+
+<TD><TT>R</TT></TD>
+
+<TD><TT>H</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>1</TT></TD>
+
+<TD><TT>K</TT></TD>
+
+<TD><TT>Y</TT></TD>
+
+<TD><TT>A</TT></TD>
+
+<TD><TT>B</TT></TD>
+
+<TD><TT>C</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>2</TT></TD>
+
+<TD><TT>D</TT></TD>
+
+<TD><TT>F</TT></TD>
+
+<TD><TT>G</TT></TD>
+
+<TD><TT>I</TT></TD>
+
+<TD><TT>L</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>3</TT></TD>
+
+<TD><TT>M</TT></TD>
+
+<TD><TT>O</TT></TD>
+
+<TD><TT>P</TT></TD>
+
+<TD><TT>Q</TT></TD>
+
+<TD><TT>S</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>4</TT></TD>
+
+<TD><TT>U</TT></TD>
+
+<TD><TT>V</TT></TD>
+
+<TD><TT>W</TT></TD>
+
+<TD><TT>X</TT></TD>
+
+<TD><TT>Z</TT></TD>
+</TR>
+</TABLE></CENTER>
+To encipher, a letter of the plain text is represented by the labels in
+the first column and first row, e. g. <TT>N</TT> is enciphered as <TT>01</TT>
+and <TT>O </TT>is enciphered as <TT>31</TT>. Beside a key word and alphabet
+you may choose how the mixed alphabet is generated:
+<CENTER></CENTER>
+
+<CENTER><IMG SRC="CheckerBoard.GIF" HEIGHT=350 WIDTH=600></CENTER>
+
+
+<P>The cipher can't conserve the capitalization or text structure. So far,
+only numbers 0 to 4(5) are used for the output. It does only accept alphabets
+with 25 (=5 x 5) or 36 (=6 x 6) letters. Future versions of CipherClerk's Applet
+may offer more possibilities for this.
+
+<P>
+<HR WIDTH="100%">
+
+<P>To proceed, you may
+<UL>
+<LI>
+read about <A HREF="Introduction.html">Cryptography</A>, if you have no
+or little knowledge about this.</LI>
+
+<LI>
+read how to use <A HREF="UsingCipherClerk.html">CipherClerk's Applet</A>, if you
+don't know about it.</LI>
+
+<LI>
+see <A HREF="CipherList.html">which ciphers are available</A> within CipherClerk's Applet.</LI>
+
+<LI>
+start the <A HREF="../Bin/CipherClerk.html">CipherClerk's Applet</A>.</LI>
+</UL>
+
+<HR WIDTH="100%">
+</BODY>
+</HTML>

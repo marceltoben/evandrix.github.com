@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background: #FFFFD9 url(Boardgame/thedavinciboardga.jpg);
+	margin: 8px;
+	color: #660000;
+	font-family: Arial, Helvetica, sans-serif;
+	max-width: 900px;
+}
+
+td,th,p,h1,h2,h3 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {font-size:22px;}
+h2 {font-size:18px;}
+
+a:link, a:active, a:visited {
+	color: #936828;
+	text-decoration: none;
+	font-weight: bolder;
+}
+	
+a:hover {
+	color: #000000;
+	text-decoration: none;
+	font-weight: bolder;
+}
+
+img {border: none}
+
+#links {
+	padding: 3px 0;
+	margin: 0px;
+}
+	
+
+.footer {font-size: 90%}
+
+.sense {}
+
+ul {
+	height: auto;
+	font-size: 14px;
+	text-align: left;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+#links {
+	text-align: left;
+	padding: 0;
+	margin: 0;
+}
+
+#links a {
+	text-align: center;
+	padding: 3px 0 0 0;
+	display: block;
+	width: 0px;
+}
+
+#links li {
+	text-align: center;
+	padding: 0px;
+	display: block;
+	margin-left: -30px;
+}
+
+#ulleftlist a, #ulleftlist a:link {
+	border: 0px;
+	padding: 0px;
+	width: 144px;
+}
+
+#ulleftlist a:hover {
+	padding: 0px;
+	border: 0px;
+	background-image: url(the_da_vinci_code_game/riddle_anagram_game.jpg);
+	background-position: center;
+	margin: 0px;
+	width: 144px;
+}
+
+li.share {
+	list-style-image: none;
+	list-style-type: none;
+	line-height: 26px;
+	width: 144px;
+	margin: 2px 0 0 0;
+	background-image: url(the_da_vinci_code_game/code_boardgame.jpg);
+	background-position: left;
+	background-repeat: no-repeat;
+}
+
+li.share a:hover{
+	list-style-image: none;
+	list-style-type: none;
+	line-height: 26px;
+	width: 144px;
+	margin: 2px 0 0 0;
+	background-image: none;
+}
+
+li.washington {
+	list-style-image: none;
+	list-style-type: none;
+	line-height: 26px;
+	width: 144px;
+	margin: 2px 0 0 0;
+}
+
+li.washington a:hover{
+	list-style-image: none;
+	list-style-type: none;
+	line-height: 26px;
+	width: 144px;
+	margin: 2px 0 0 0;
+	background-image: none;
+}

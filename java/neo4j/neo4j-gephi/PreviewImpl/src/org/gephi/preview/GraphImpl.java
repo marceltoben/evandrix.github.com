@@ -1,0 +1,130 @@
+package org.gephi.preview;
+
+import java.util.ArrayList;
+import org.gephi.preview.api.BidirectionalEdge;
+import org.gephi.preview.api.Graph;
+import org.gephi.preview.api.Node;
+import org.gephi.preview.api.PreviewModel;
+import org.gephi.preview.api.SelfLoop;
+import org.gephi.preview.api.UndirectedEdge;
+import org.gephi.preview.api.UnidirectionalEdge;
+
+/**
+ * Implementation of a preview graph.
+ *
+ * @author Jérémy Subtil <jeremy.subtil@gephi.org>
+ */
+public class GraphImpl implements Graph {
+
+    private final PreviewModel model;
+    private final ArrayList<Node> nodes = new ArrayList<Node>();
+    private final ArrayList<SelfLoop> selfLoops = new ArrayList<SelfLoop>();
+    private final ArrayList<UnidirectionalEdge> uniEdges = new ArrayList<UnidirectionalEdge>();
+    private final ArrayList<BidirectionalEdge> biEdges = new ArrayList<BidirectionalEdge>();
+    private final ArrayList<UndirectedEdge> undirectedEdges = new ArrayList<UndirectedEdge>();
+
+    public GraphImpl(PreviewModel model) {
+        this.model = model;
+    }
+
+    public Iterable<Node> getNodes() {
+        return nodes;
+    }
+
+    public Iterable<SelfLoop> getSelfLoops() {
+        return selfLoops;
+    }
+
+    public Iterable<UnidirectionalEdge> getUnidirectionalEdges() {
+        return uniEdges;
+    }
+
+    public Iterable<BidirectionalEdge> getBidirectionalEdges() {
+        return biEdges;
+    }
+
+    public Iterable<UndirectedEdge> getUndirectedEdges() {
+        return undirectedEdges;
+    }
+
+    public int countNodes() {
+        return nodes.size();
+    }
+
+    public int countSelfLoops() {
+        return selfLoops.size();
+    }
+
+    public int countUnidirectionalEdges() {
+        return uniEdges.size();
+    }
+
+    public int countBidirectionalEdges() {
+        return biEdges.size();
+    }
+
+    public int countUndirectedEdges() {
+        return undirectedEdges.size();
+    }
+
+    /**
+     * Adds the given node to the graph.
+     *
+     * @param node  the node to add to the graph
+     */
+    public void addNode(NodeImpl node) {
+        nodes.add(node);
+    }
+
+    /**
+     * Adds the given self-loop to the graph.
+     *
+     * @param selfLoop  the self-loop to add to the graph
+     */
+    public void addSelfLoop(SelfLoop selfLoop) {
+        selfLoops.add(selfLoop);
+    }
+
+    /**
+     * Adds the given unidirectional edge to the graph.
+     *
+     * @param edge  the unidirectional edge to add to the graph
+     */
+    public void addUnidirectionalEdge(UnidirectionalEdge edge) {
+        uniEdges.add(edge);
+    }
+
+    /**
+     * Adds the given bidirectional edge to the graph.
+     *
+     * @param edge  the bidirectional edge to add to the graph
+     */
+    public void addBidirectionalEdge(BidirectionalEdge edge) {
+        biEdges.add(edge);
+    }
+
+    /**
+     * Adds the given undirected edge to the graph.
+     *
+     * @param edge  the undirected edge to add to the graph
+     */
+    public void addUndirectedEdge(UndirectedEdge edge) {
+        undirectedEdges.add(edge);
+    }
+
+    public Boolean showNodes() {
+        return model.getNodeSupervisor().getShowNodes();
+    }
+
+    public Boolean showEdges() {
+        return model.getGlobalEdgeSupervisor().getShowFlag();
+    }
+
+    public Boolean showSelfLoops() {
+        return model.getSelfLoopSupervisor().getShowFlag();
+    }
+
+    public PreviewModel getModel() {
+        return model;
+    }
+}

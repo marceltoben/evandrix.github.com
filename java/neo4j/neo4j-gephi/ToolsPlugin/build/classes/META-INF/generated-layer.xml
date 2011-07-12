@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="org_gephi_ui_tools_plugin_edit">
+                <file name="EditTool" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--org.gephi.ui.tools.plugin.edit.EditToolTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//org.gephi.ui.tools.plugin.edit//EditTool//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="org">
+                <folder name="gephi">
+                    <folder name="ui">
+                        <folder name="tools">
+                            <folder name="plugin">
+                                <folder name="edit">
+                                    <file name="EditToolTopComponent">
+                                    <!--org.gephi.ui.tools.plugin.edit.EditToolTopComponent-->
+                                    <attr
+                                    name="settings.providerPath" stringvalue="xml/lookups//org_gephi_ui_tools_plugin_edit/EditTool.instance"/>
+                                    </file>
+                                </folder>
+                            </folder>
+                        </folder>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="org_gephi_ui_tools_plugin_edit">
+                <file name="EditTool.instance">
+                    <!--org.gephi.ui.tools.plugin.edit.EditToolTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="org.gephi.ui.tools.plugin.edit.EditToolTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="org.gephi.ui.tools.plugin.edit.EditToolTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>
