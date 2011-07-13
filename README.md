@@ -30,6 +30,12 @@
 
 ### TCP/HTTP Load Balancer: [HAProxy](http://www.macports.org/ports.php?by=name&substr=haproxy)
 ### Sequence Diagrams: [WebSequenceDiagrams](http://www.websequencediagrams.com)
+
+---
+
+### CouchDB
+ * [IrisCouch](http://evandrix.iriscouch.com/_utils/index.html)
+
 ---
 
 ### PDF > Convert webpage to PDF online, eg. blogs (also available as Chrome Extension)
