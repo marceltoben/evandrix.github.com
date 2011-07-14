@@ -95,4 +95,9 @@
 
 ---
 
+### XML > Beautifying
+ * [XML Beautifier](http://xmlbeautifier.com/default.aspx)
+
+---
+
  * Keychain(s) stored in `/System/Library/Keychains/*.keychain`
