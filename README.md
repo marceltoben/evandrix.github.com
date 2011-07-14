@@ -38,6 +38,12 @@
 
 ---
 
+### CSS > Minifying (Online options)
+ * [YUI Compressor](http://www.refresh-sf.com/yui)
+ * [Minify CSS](http://www.ventio.se/tools/minify-css)
+
+---
+
 ### PDF > Convert webpage to PDF online, eg. blogs (also available as Chrome Extension)
  * ?
 
