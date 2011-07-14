@@ -44,6 +44,11 @@
 
 ---
 
+### HTML5 > Playground
+ * [HTML5 Rocks](http://www.html5rocks.com/en)
+
+---
+
 ### PDF > Convert webpage to PDF online, eg. blogs (also available as Chrome Extension)
  * ?
 
