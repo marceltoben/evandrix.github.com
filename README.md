@@ -33,6 +33,12 @@
 
 ---
 
+### Android > Publish Apps
+ * Smartphones: [App.net](https://manage.app.net/dashboard/developer/apps)
+ * Tablets:     [AppsLib](http://appslib.com/developers/personal_info.html)
+
+---
+
 ### CouchDB
  * [IrisCouch](http://evandrix.iriscouch.com/_utils/index.html)
 
