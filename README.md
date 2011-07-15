@@ -17,6 +17,7 @@
 
 ### Undo last commit/push: `git push -f origin HEAD^:master`
 
+### Online Text utilities: [Text utilities](http://streetpc.instanceof.me/text-utilities)
 ### Online Java compiler: [ideone.com](https://ideone.com)
 ### Online HTML formatter: [HTML Tidy Online](http://infohound.net/tidy)
 ### Online PHP/JS/urlencode: [WriteCodeOnline](http://writecodeonline.com/javascript)
