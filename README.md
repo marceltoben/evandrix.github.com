@@ -18,7 +18,7 @@
 ### Undo last commit/push: `git push -f origin HEAD^:master`
 
 ### Online Text utilities: [Text utilities](http://streetpc.instanceof.me/text-utilities)
-### Online Java compiler: [ideone.com](https://ideone.com)
+### Online Java compiler:  [ideone.com](https://ideone.com)
 ### Online HTML formatter: [HTML Tidy Online](http://infohound.net/tidy)
 ### Online PHP/JS/urlencode: [WriteCodeOnline](http://writecodeonline.com/javascript)
 
@@ -87,7 +87,7 @@
 ---
 
 ### Python > Code syntax highlighting
- * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org/)
+ * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org)
 
 ### Python > Fuzzy String Matching
  * [Fuzzywuzzy](http://seatgeek.com/blog/dev/fuzzywuzzy-fuzzy-string-matching-in-python)
@@ -96,10 +96,10 @@
  * [Scrapy](http://scrapy.org)
 
 ### Python > Templating Engines
- * Cheetah
- * Jinja
- * Genshi
- * Mako
+ * [![Cheetah](http://www.cheetahtemplate.org/images/banner_text.gif "Cheetah")](http://www.cheetahtemplate.org)
+ * [![Jinja](http://jinja.pocoo.org/static/jinja.png "Jinja")](http://jinja.pocoo.org)
+ * [![Genshi](http://www.edgewall.org/gfx/genshi_logo.png "Genshi")](http://genshi.edgewall.org)
+ * [![Mako](http://www.makotemplates.org/images/makoLogo.png "Mako")](http://www.makotemplates.org)
 
 ---
 
