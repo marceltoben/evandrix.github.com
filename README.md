@@ -112,6 +112,12 @@
 ### Web > Color Scheme Generator & Picker
  * [Color Scheme Generator](http://www.colorschemer.com/online.html)
 
+### Web > Compatibility tables for features (HTML5/CSS3/SVG in desktop/mobile web browsers)
+ * [When can I use...](http://caniuse.com)
+
+### Web > SWF Converter (to HTML5)
+ * [Google Swiffy](http://swiffy.googlelabs.com)
+
 ---
 
 ### XML > Beautifying
