@@ -87,6 +87,11 @@
 
 ---
 
+### Network Analysis Tools
+ * File Header Scraping: [foremost](http://www.macports.org/ports.php?by=name&substr=foremost)
+
+---
+
 ### Python > Code syntax highlighting
  * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org)
 
