@@ -120,6 +120,11 @@
 
 ---
 
+### Windows > Network > Packet Analyzer
+ * [Network Miner](http://sourceforge.net/projects/networkminer/files)
+
+---
+
 ### XML > Beautifying
  * [XML Beautifier](http://xmlbeautifier.com/default.aspx)
 
