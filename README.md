@@ -52,6 +52,11 @@
 
 ---
 
+### Games
+ * 3rd party server hosting - L4D2 [srcds (for Mac OS X)](http://forums.alliedmods.net/showthread.php?t=158240)
+
+---
+
 ### HTML5 > Playground
  * [HTML5 Rocks](http://www.html5rocks.com/en)
 
