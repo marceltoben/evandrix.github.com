@@ -52,6 +52,13 @@
 
 ---
 
+### Games
+ * 3rd party server hosting - L4D2 [srcds (for Mac OS X)](http://forums.alliedmods.net/showthread.php?t=158240)
+ * [Steam ID Finder](http://steamidfinder.com)
+      @ profile: http://steamcommunity.com/profiles/76561197998118935
+ 
+---
+
 ### HTML5 > Playground
  * [HTML5 Rocks](http://www.html5rocks.com/en)
 
@@ -87,6 +94,11 @@
 
 ---
 
+### Network Analysis Tools
+ * File Header Scraping: [foremost](http://www.macports.org/ports.php?by=name&substr=foremost)
+
+---
+
 ### Python > Code syntax highlighting
  * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org)
 
@@ -117,6 +129,11 @@
 
 ### Web > SWF Converter (to HTML5)
  * [Google Swiffy](http://swiffy.googlelabs.com)
+
+---
+
+### Windows > Network > Packet Analyzer
+ * [Network Miner](http://sourceforge.net/projects/networkminer/files)
 
 ---
 
