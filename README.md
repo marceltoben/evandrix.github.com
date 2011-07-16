@@ -54,7 +54,9 @@
 
 ### Games
  * 3rd party server hosting - L4D2 [srcds (for Mac OS X)](http://forums.alliedmods.net/showthread.php?t=158240)
-
+ * [Steam ID Finder](http://steamidfinder.com)
+      @ profile: http://steamcommunity.com/profiles/76561197998118935
+ 
 ---
 
 ### HTML5 > Playground
