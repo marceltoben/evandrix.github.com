@@ -1,0 +1,238 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ddmem            0xbf800000         0x00008000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD iointerface.o
+LOAD dldi_header.o
+LOAD /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a
+
+.init           0xbf800000       0x80
+                0xbf800000                __text_start = .
+ *(.init)
+ .init          0xbf800000       0x80 dldi_header.o
+                0xbf800080                _start
+                0xbf800080                . = ALIGN (0x4)
+
+.text           0xbf800080       0x30
+ *(.text.*)
+ *(.stub)
+ *(.gnu.warning)
+ *(.gnu.linkonce.t*)
+                0xbf800080                __glue_start = ABSOLUTE (.)
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+                0xbf800080                __glue_end = ABSOLUTE (.)
+                0xbf800080                . = ALIGN (0x4)
+ .text          0xbf800080       0x30 iointerface.o
+                0xbf800080                startup
+                0xbf800088                isInserted
+                0xbf800090                clearStatus
+                0xbf800098                readSectors
+                0xbf8000a0                writeSectors
+                0xbf8000a8                shutdown
+ .text          0xbf8000b0        0x0 dldi_header.o
+
+.vfp11_veneer   0xbf8000b0        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0xbf8000b0        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.fini           0xbf8000b0        0x0
+ *(.fini)
+                0xbf8000b0                . = ALIGN (0x4)
+                0xbf8000b0                __text_end = .
+
+.rodata         0xbf8000b0        0x0
+ *(.rodata)
+ *all.rodata*(*)
+ *(.roda)
+ *(.rodata.*)
+ *(.gnu.linkonce.r*)
+                0xbf8000b0                . = ALIGN (0x4)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0xbf8000b0                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0xbf8000b0                __exidx_end = .
+                0xbf8000b0                . = ALIGN (0x4)
+                0xbf8000b0                PROVIDE (__preinit_array_start, .)
+
+.preinit_array
+ *(.preinit_array)
+                0xbf8000b0                PROVIDE (__preinit_array_end, .)
+                0xbf8000b0                PROVIDE (__init_array_start, .)
+
+.init_array
+ *(.init_array)
+                0xbf8000b0                PROVIDE (__init_array_end, .)
+                0xbf8000b0                PROVIDE (__fini_array_start, .)
+
+.fini_array
+ *(.fini_array)
+                0xbf8000b0                PROVIDE (__fini_array_end, .)
+
+.ctors          0xbf8000b0        0x0
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0xbf8000b0                . = ALIGN (0x4)
+
+.dtors          0xbf8000b0        0x0
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0xbf8000b0                . = ALIGN (0x4)
+
+.eh_frame       0xbf8000b0        0x0
+ *(.eh_frame)
+                0xbf8000b0                . = ALIGN (0x4)
+
+.gcc_except_table
+                0xbf8000b0        0x0
+ *(.gcc_except_table)
+                0xbf8000b0                . = ALIGN (0x4)
+
+.jcr
+ *(.jcr)
+                0xbf8000b0                __got_start = .
+
+.got
+ *(.got.plt)
+ *(.got)
+ *(.rel.got)
+                0xbf8000b0                __got_end = .
+
+.data           0xbf8000b0        0x0
+                0xbf8000b0                __data_start = ABSOLUTE (.)
+ *(.data)
+ .data          0xbf8000b0        0x0 iointerface.o
+ .data          0xbf8000b0        0x0 dldi_header.o
+ *(.data.*)
+ *(.gnu.linkonce.d*)
+                0xbf8000b0                . = ALIGN (0x4)
+                0xbf8000b0                __data_end = ABSOLUTE (.)
+                0xbf8000b0                __data_end = .
+
+.bss            0xbf8000b0        0x0
+                0xbf8000b0                __bss_start = ABSOLUTE (.)
+                0xbf8000b0                __bss_start__ = ABSOLUTE (.)
+ *(.dynbss)
+ *(.gnu.linkonce.b*)
+ *(.bss*)
+ .bss           0xbf8000b0        0x0 iointerface.o
+ .bss           0xbf8000b0        0x0 dldi_header.o
+ *(COMMON)
+                0xbf8000b0                . = ALIGN (0x4)
+                0xbf8000b0                __bss_end = .
+                0xbf8000b0                __bss_end__ = .
+                0xbf8000b0                _end = .
+                0xbf8000b0                __end__ = .
+                0xbf8000b0                PROVIDE (end, _end)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.ARM.attributes
+                0x00000000       0x2c
+ .ARM.attributes
+                0x00000000       0x2e iointerface.o
+ .ARM.attributes
+                0x0000002e       0x16 dldi_header.o
+
+.comment        0x00000000       0x22
+ *(.comment)
+ .comment       0x00000000       0x22 iointerface.o
+                                 0x23 (size before relaxing)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x20
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 iointerface.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000      0x173
+ *(.debug_info)
+ .debug_info    0x00000000      0x173 iointerface.o
+
+.debug_abbrev   0x00000000       0x97
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x97 iointerface.o
+
+.debug_line     0x00000000      0x142
+ *(.debug_line)
+ .debug_line    0x00000000      0x142 iointerface.o
+
+.debug_frame    0x00000000       0x70
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x70 iointerface.o
+
+.debug_str      0x00000000      0x120
+ *(.debug_str)
+ .debug_str     0x00000000      0x120 iointerface.o
+                                0x139 (size before relaxing)
+
+.debug_loc      0x00000000       0x26
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x26 iointerface.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.stack          0x00080000        0x0
+                0x00080000                _stack = .
+ *(.stack)
+OUTPUT(/Users/lwy08/Downloads/devkitpro/examples/templates/dldi/dldi.elf elf32-littlearm)

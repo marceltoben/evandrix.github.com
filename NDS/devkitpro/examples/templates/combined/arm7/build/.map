@@ -1,0 +1,1118 @@
+Archive member included because of file (symbol)
+
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+                              template.o (Wifi_Update)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o) (SLasm_Acquire)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o)
+                              template.o (mmInstall)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o) (mm_achannels)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas_arm.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas.o) (mmAllocChannel)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o) (mmSetupComms)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mixer_super.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o) (mm_mix_channels)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_reverb.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o) (mmReverbEnable)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_stream.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o) (mmStreamBegin)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_effect.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o) (mm_sfx_clearmask)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+                              template.o (installSoundFIFO)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+                              template.o (initClockIRQ)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+                              template.o (inputGetAndSend)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o) (micStartRecording)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o) (writePowerManagement)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o) (systemSleep)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o) (touchPenDown)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+                              template.o (readUserSettings)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o) (fifoSendValue32)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+                              template.o (setPowerButtonCB)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+                              /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o (__libnds_exit)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+                              template.o (swiWaitForVBlank)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o) (swiDelay)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o) (IntrMain)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o) (swiSoftReset)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o) (i2cWriteRegister)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o) (sdmmc_cardinserted)
+/Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o) (systemShutDown)
+/Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_divsi3.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o) (__aeabi_idiv)
+/Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_dvmd_tls.o)
+                              /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_divsi3.o) (__aeabi_idiv0)
+/Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_call_via_rX.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o) (_call_via_r1)
+/Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_bswapsi2.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o) (__bswapsi2)
+/Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-init.o)
+                              /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o (__libc_init_array)
+/Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memcpy.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o) (memcpy)
+/Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memset.o)
+                              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o) (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+fifo_datamsg_data   0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+arm7q               0x800             /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+fifo_buffer         0x800             /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+irqTableAUX         0xc8              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+fifo_value32_func   0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+fifo_address_func   0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+fifo_value32_data   0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+fifo_value32_queue  0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+FlashData           0x200             /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+fifo_data_queue     0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+Keys                0x1               /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+irqTable            0xc8              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+fifo_address_data   0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+sdmmc_cid           0x10              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+fifo_datamsg_func   0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+fifo_address_queue  0x40              /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x08000000         0x02000000
+iwram            0x037f8000         0x00018000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x037f8000                __iwram_start = ORIGIN (iwram)
+                0x03810000                __iwram_top = (ORIGIN (iwram) + 0x18000)
+                0x0380ff00                __sp_irq = (__iwram_top - 0x100)
+                0x0380fe00                __sp_svc = (__sp_irq - 0x100)
+                0x0380fd00                __sp_usr = (__sp_svc - 0x100)
+                0x03fffff8                __irq_flags = 0x3fffff8
+                0x03ffffc0                __irq_flagsaux = 0x3ffffc0
+                0x03fffffc                __irq_vector = 0x3fffffc
+
+.init           0x037f8000       0xe8
+                0x037f8000                __text_start = .
+ *(.init)
+ .init          0x037f8000       0xd0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o
+                0x037f8000                _start
+ .init          0x037f80d0        0xc /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crti.o
+                0x037f80d0                _init
+ .init          0x037f80dc        0xc /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtn.o
+                0x037f80e8                . = ALIGN (0x4)
+
+.plt
+ *(.plt)
+
+.text           0x037f80f0     0xb070
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x037f80f0        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o
+ .text          0x037f80f0        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crti.o
+ .text          0x037f80f0       0x94 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+ .text          0x037f8184       0x34 template.o
+                0x037f8184                powerButtonCB
+                0x037f8198                VcountHandler
+                0x037f81a8                VblankHandler
+ .text.startup  0x037f81b8       0xb4 template.o
+                0x037f81b8                main
+ .text          0x037f826c     0x3130 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+                0x037f8284                InitFlashData
+                0x037f82a4                ReadFlashByte
+                0x037f82bc                ReadFlashBytes
+                0x037f830c                ReadFlashHWord
+                0x037f832c                crc16_slow
+                0x037f8374                GetWfcSettings
+                0x037f8510                Wifi_BBRead
+                0x037f8550                Wifi_BBWrite
+                0x037f85d8                Wifi_RFWrite
+                0x037f8614                PowerChip_ReadWrite
+                0x037f8698                SetLedState
+                0x037f86e8                ProxySetLedState
+                0x037f8704                Wifi_RFInit
+                0x037f883c                Wifi_BBInit
+                0x037f887c                Wifi_MacInit
+                0x037f88ac                Wifi_TxSetup
+                0x037f88c0                Wifi_RxSetup
+                0x037f8918                Wifi_WakeUp
+                0x037f897c                Wifi_Shutdown
+                0x037f89d8                Wifi_CopyMacAddr
+                0x037f89f4                Wifi_CmpMacAddr
+                0x037f8a38                Wifi_MACRead
+                0x037f8a88                Wifi_MACCopy
+                0x037f8b14                Wifi_MACWrite
+                0x037f8ba4                Wifi_QueueRxMacData
+                0x037f8cb8                Wifi_CheckTxBuf
+                0x037f8cf0                Wifi_CopyFirstTxData
+                0x037f8e04                Wifi_TxRaw
+                0x037f8e74                Wifi_TxCheck
+                0x037f8e8c                Wifi_Intr_CntOverflow
+                0x037f8efc                Wifi_Intr_StartTx
+                0x037f8f10                Wifi_Intr_TxEnd
+                0x037f9038                Wifi_Intr_TBTT
+                0x037f9050                Wifi_Intr_DoNothing
+                0x037f9054                erasemem
+                0x037f9074                Wifi_Stop
+                0x037f90cc                Wifi_Deinit
+                0x037f90f8                Wifi_SetChannel
+                0x037f9298                Wifi_SetWepKey
+                0x037f92d8                Wifi_SetWepMode
+                0x037f931c                Wifi_SetBeaconPeriod
+                0x037f9338                Wifi_SetMode
+                0x037f9360                Wifi_Init
+                0x037f951c                Wifi_SetPreambleType
+                0x037f9548                Wifi_DisableTempPowerSave
+                0x037f9570                Wifi_Start
+                0x037f9698                Wifi_TxQueue
+                0x037f9784                Wifi_GenMgtHeader
+                0x037f9844                Wifi_SendOpenSystemAuthPacket
+                0x037f98a0                Wifi_SendSharedKeyAuthPacket
+                0x037f98fc                Wifi_SendSharedKeyAuthPacket2
+                0x037f99a8                Wifi_SendAssocPacket
+                0x037f9b90                Wifi_SendNullFrame
+                0x037f9c0c                Wifi_SendPSPollFrame
+                0x037f9c98                Wifi_ProcessReceivedFrame
+                0x037faa38                Wifi_Intr_RxEnd
+                0x037fab78                Wifi_Update
+                0x037fb1f8                Wifi_Interrupt
+                0x037fb328                Wifi_CreateTxFrame
+                0x037fb330                Wifi_Sync
+                0x037fb334                Wifi_SetSyncHandler
+                0x037fb344                installWifiFIFO
+ .text          0x037fb39c       0x5c /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+                0x037fb39c                SLasm_Acquire
+                0x037fb3d0                SLasm_Release
+ .text          0x037fb3f8      0x1f8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o)
+                0x037fb3f8                mpp_call_r7
+                0x037fb3fa                mpp_call_r1
+                0x037fb3fc                mpp_call_r2
+                0x037fb3fe                mpp_call_r3
+                0x037fb400                mmSetEventHandler
+                0x037fb406                mmLockChannels
+                0x037fb490                mmUnlockChannels
+                0x037fb4a4                mmSuspendIRQ_t
+                0x037fb4c0                mmRestoreIRQ_t
+                0x037fb4e0                mmIsInitialized
+                0x037fb4e6                mmInit7
+                0x037fb548                mmInstall
+                0x037fb568                mmGetSoundBank
+                0x037fb574                mmFrame
+ .text          0x037fb5f0     0x1b54 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas.o)
+                0x037fb640                mm_reset_channels
+                0x037fb696                mmStart
+                0x037fb6aa                mmJingle
+                0x037fb6b0                mmPlayModule
+                0x037fb774                mmPause
+                0x037fb790                mmResume
+                0x037fb7a0                mmActive
+                0x037fb7a6                mmActiveSub
+                0x037fb7ac                mmSetModuleVolume
+                0x037fb7bc                mmSetJingleVolume
+                0x037fb7f8                mmPosition
+                0x037fb812                mmSetModuleTempo
+                0x037fb844                mmSetModulePitch
+                0x037fb884                mmSetResolution
+                0x037fb8b4                mmStop
+                0x037fb99c                mmPulse
+                0x037fb9fc                mppProcessTick
+                0x037fbb78                mpp_Channel_NewNote
+                0x037fbc80                mpp_Update_ACHN_notest
+                0x037fc07e                mpp_Process_VolumeCommand
+                0x037fc2b6                mpp_Process_Effect
+                0x037fca04                ST3_FREQTABLE
+                0x037fce24                IT_PitchTable
+ .text          0x037fd144      0x648 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas_arm.o)
+                0x037fd144                mmAllocChannel
+                0x037fd1b8                mmReadPattern
+                0x037fd2a4                mmUpdateChannel_T0
+                0x037fd4e4                mmUpdateChannel_TN
+                0x037fd684                mmGetPeriod
+                0x037fd6c8                note_table_oct
+                0x037fd6e6                note_table_mod
+ .text          0x037fd78c      0x7ec /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o)
+                0x037fd78c                mmSetupComms
+                0x037fd8ac                mmSendUpdateToARM9
+                0x037fd8e0                mmARM9msg
+                0x037fd920                mmProcessComms
+ .text          0x037fdf78     0x1688 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mixer_super.o)
+                0x037fdff8                mmMixerPre
+                0x037fe0cc                mmMixerMix
+                0x037fec18                mmVolumeTable
+                0x037ff38e                mmMixerSetSource
+                0x037ff3a4                mmMixerSetFreq
+                0x037ff3c4                mmMixerMulFreq
+                0x037ff3de                mmMixerStopChannel
+                0x037ff3e8                mmMixerChannelActive
+                0x037ff3f2                mmMixerSetVolume
+                0x037ff3fa                mmMixerSetPan
+                0x037ff40c                mmMixerInit
+                0x037ff40e                mmSelectMode
+ .text          0x037ff600      0x280 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_reverb.o)
+                0x037ff600                mmReverbEnable
+                0x037ff61e                mmReverbDisable
+                0x037ff662                mmReverbConfigure
+                0x037ff7c4                mmReverbStart
+                0x037ff80c                mmReverbStop
+ .text          0x037ff880      0x428 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_stream.o)
+                0x037ff880                mmStreamOpen
+                0x037ff960                mmStreamGetPosition
+                0x037ff99a                mmStreamUpdate
+                0x037ffb7c                mmStreamClose
+                0x037ffbb2                mmStreamBegin
+                0x037ffc48                mmStreamEnd
+ .text          0x037ffca8      0x314 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_effect.o)
+                0x037ffca8                mmResetEffects
+                0x037ffcd4                mmEffect
+                0x037ffcea                mmEffectEx
+                0x037ffe1a                mmEffectVolume
+                0x037ffe36                mmEffectPanning
+                0x037ffe4a                mmEffectRate
+                0x037ffe5e                mmEffectCancel
+                0x037ffe98                mmEffectRelease
+                0x037ffebe                mmEffectScaleRate
+                0x037ffed2                mmSetEffectsVolume
+                0x037ffee0                mmEffectCancelAll
+                0x037fff20                mmUpdateEffects
+ .text          0x037fffbc      0x36c /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+                0x037fffbc                micSwapHandler
+                0x037fffdc                getFreeChannel
+                0x03800000                getFreePSGChannel
+                0x03800024                getFreeNoiseChannel
+                0x03800048                soundDataHandler
+                0x03800184                enableSound
+                0x038001c4                disableSound
+                0x03800200                soundCommandHandler
+                0x03800304                installSoundFIFO
+ .text          0x03800328      0x3a8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+                0x03800328                syncRTC
+                0x03800338                BCDToInteger
+                0x0380035a                integerToBCD
+                0x03800386                rtcTransaction
+                0x03800470                rtcReset
+                0x038004ac                rtcGetTimeAndDate
+                0x038004f4                rtcSetTimeAndDate
+                0x0380051a                rtcGetTime
+                0x03800562                rtcSetTime
+                0x03800588                resyncClock
+                0x03800650                initClockIRQ
+ .text          0x038006d0       0xb4 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+                0x038006d0                inputGetAndSend
+ .text          0x03800784      0x264 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+                0x03800798                micSetAmp
+                0x038007e8                micReadData8
+                0x03800844                micReadData12
+                0x038008a4                micTimerHandler
+                0x03800914                micStartRecording
+                0x03800994                micStopRecording
+ .text          0x038009e8       0xf4 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+                0x038009e8                writePowerManagement
+                0x03800a4c                readFirmware
+ .text          0x03800adc      0x22c /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+                0x03800aee                powerValueHandler
+                0x03800c24                systemValueHandler
+                0x03800c64                systemMsgHandler
+                0x03800ca8                systemSleep
+                0x03800cc8                sleepEnabled
+                0x03800cd4                installSystemFIFO
+ .text          0x03800d08      0x720 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+                0x03800d1c                readTSCReg
+                0x03800d5c                readTSCRegArray
+                0x03800dac                writeTSCReg
+                0x03800df0                CheckStylus
+                0x03800e7c                touchRead
+                0x03800ee0                touchReadTemperature
+                0x03800f10                readTouchValue
+                0x03801078                UpdateRange
+                0x038010e0                touchReadDSMode
+                0x038011f4                touchPenDown
+                0x03801250                touchReadDSiMode
+                0x038012cc                touchReadXY
+ .text          0x03801428       0xd8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+                0x03801428                readUserSettings
+ .text          0x03801500      0xa84 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+                0x03801770                fifoSendAddress
+                0x0380179c                fifoSendValue32
+                0x038017d6                fifoSendDatamsg
+                0x03801840                fifoGetAddress
+                0x0380188c                fifoGetValue32
+                0x038018d8                fifoGetDatamsg
+                0x03801c60                fifoCheckAddress
+                0x03801c84                fifoSetAddressHandler
+                0x03801cdc                fifoCheckDatamsg
+                0x03801d00                fifoSetDatamsgHandler
+                0x03801d84                fifoCheckValue32
+                0x03801da8                fifoSetValue32Handler
+                0x03801e00                fifoInit
+ .text          0x03801f84      0x33c /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+                0x03801f84                irqDummy
+                0x03801fca                i2cIRQHandler
+                0x03802024                setPowerButtonCB
+                0x03802034                irqSet
+                0x03802090                irqInitHandler
+                0x038020d4                irqEnable
+                0x03802138                irqDisable
+                0x038021a0                irqClear
+                0x038021c8                irqSetAUX
+                0x038021ec                irqClearAUX
+                0x03802214                irqDisableAUX
+                0x03802238                irqEnableAUX
+                0x0380225c                irqInit
+ .text          0x038022c0       0x40 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+                0x038022c0                systemErrorExit
+                0x038022c2                __libnds_exit
+ .text          0x03802300       0x54 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+                0x03802300                swiWaitForVBlank
+                0x03802310                swiIntrWait
+ *fill*         0x03802354        0xc ff
+ .text          0x03802360       0x70 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+                0x03802360                swiDelay
+                0x03802364                swiSleep
+                0x03802368                swiChangeSoundBias
+                0x0380236c                swiDivide
+                0x03802370                swiRemainder
+                0x03802376                swiDivMod
+                0x03802382                swiCopy
+                0x03802386                swiFastCopy
+                0x0380238a                swiSqrt
+                0x0380238e                swiCRC16
+                0x03802392                swiIsDebugger
+                0x03802396                swiUnpackBits
+                0x0380239a                swiDecompressLZSSWram
+                0x0380239e                swiDecompressLZSSVramNTR
+                0x038023a2                swiDecompressLZSSVramTWL
+                0x038023a6                swiDecompressHuffman
+                0x038023aa                swiDecompressRLEWram
+                0x038023ae                swiDecompressRLEVram
+                0x038023b2                swiHalt
+                0x038023b6                swiGetSineTable
+                0x038023ba                swiGetPitchTable
+                0x038023be                swiGetVolumeTable
+                0x038023c2                swiSwitchToGBAMode
+                0x038023c6                swiSetHaltCR
+ .text          0x038023d0       0xec /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+                0x038023d0                IntrMain
+ *fill*         0x038024bc        0x4 ff
+ .text          0x038024c0       0x10 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+                0x038024c0                swiSoftReset
+ .text          0x038024d0      0x1b4 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+                0x038024e4                i2cDelay
+                0x038024fc                i2cStop
+                0x0380253c                i2cGetResult
+                0x03802554                i2cGetData
+                0x03802568                i2cSetDelay
+                0x03802580                i2cSelectDevice
+                0x038025a4                i2cSelectRegister
+                0x038025c8                i2cWriteRegister
+                0x03802620                i2cReadRegister
+ .text          0x03802684      0x514 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+                0x03802698                sdmmc_send_command
+                0x03802744                sdmmc_cardinserted
+                0x03802750                sdmmc_controller_init
+                0x038027c4                sdmmc_send_acmd41
+                0x03802820                sdmmc_sdcard_init
+                0x03802a00                sdmmc_clkdelay0
+                0x03802a14                sdmmc_clkdelay1
+                0x03802a24                sdmmc_clkdelay
+                0x03802a38                sdmmc_sdcard_readsector
+                0x03802adc                sdmmc_sdcard_readsectors
+ .text          0x03802b98       0x30 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+                0x03802b98                systemShutDown
+ .text          0x03802bc8      0x148 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_divsi3.o)
+                0x03802bc8                __aeabi_idiv
+                0x03802bc8                __divsi3
+                0x03802cf0                __aeabi_idivmod
+ .text          0x03802d10        0x4 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_dvmd_tls.o)
+                0x03802d10                __aeabi_ldiv0
+                0x03802d10                __aeabi_idiv0
+ .text          0x03802d14       0x3c /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_call_via_rX.o)
+                0x03802d14                _call_via_r0
+                0x03802d18                _call_via_r1
+                0x03802d1c                _call_via_r2
+                0x03802d20                _call_via_r3
+                0x03802d24                _call_via_r4
+                0x03802d28                _call_via_r5
+                0x03802d2c                _call_via_r6
+                0x03802d30                _call_via_r7
+                0x03802d34                _call_via_r8
+                0x03802d38                _call_via_r9
+                0x03802d3c                _call_via_sl
+                0x03802d40                _call_via_fp
+                0x03802d44                _call_via_ip
+                0x03802d48                _call_via_sp
+                0x03802d4c                _call_via_lr
+ .text          0x03802d50       0x14 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_bswapsi2.o)
+                0x03802d50                __bswapsi2
+ .text          0x03802d64       0x80 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-init.o)
+                0x03802d64                __libc_init_array
+ .text          0x03802de4       0xd8 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memcpy.o)
+                0x03802de4                memcpy
+ .text          0x03802ebc       0xf0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memset.o)
+                0x03802ebc                memset
+ .text          0x03802fac        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+ .text          0x03802fac        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtn.o
+ *fill*         0x03802fac        0x4 ff
+ .text.stub     0x03802fb0      0x15c linker stubs
+ *(.text.*personality*)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+                0x0380310c                . = ALIGN (0x4)
+
+.v4_bx          0x03803160        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.fini           0x03803160       0x18
+ *(.fini)
+ .fini          0x03803160        0xc /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crti.o
+                0x03803160                _fini
+ .fini          0x0380316c        0xc /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtn.o
+                0x03803178                __text_end = .
+
+.rodata         0x03803178       0x1c
+ *(.rodata)
+ .rodata        0x03803178       0x1a /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ *all.rodata*(*)
+ *(.roda)
+ *(.rodata.*)
+ *(.gnu.linkonce.r*)
+                0x03803194                . = ALIGN (0x4)
+ *fill*         0x03803192        0x2 ff
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x03803194                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x03803194                __exidx_end = .
+                0x03803194                . = ALIGN (0x4)
+                0x03803194                PROVIDE (__preinit_array_start, .)
+
+.preinit_array
+ *(.preinit_array)
+                0x03803194                PROVIDE (__preinit_array_end, .)
+                0x03803194                PROVIDE (__init_array_start, .)
+
+.init_array     0x03803194        0x4
+ *(.init_array)
+ .init_array    0x03803194        0x4 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+                0x03803198                PROVIDE (__init_array_end, .)
+                0x03803198                PROVIDE (__fini_array_start, .)
+
+.fini_array     0x03803198        0x4
+ *(.fini_array)
+ .fini_array    0x03803198        0x4 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+                0x0380319c                PROVIDE (__fini_array_end, .)
+
+.ctors          0x0380319c        0x0
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0x0380319c                . = ALIGN (0x4)
+
+.dtors          0x0380319c        0x0
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0x0380319c                . = ALIGN (0x4)
+
+.eh_frame       0x0380319c        0x4
+ *(.eh_frame)
+ .eh_frame      0x0380319c        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+ .eh_frame      0x0380319c        0x4 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+                0x038031a0                . = ALIGN (0x4)
+
+.gcc_except_table
+                0x038031a0        0x0
+ *(.gcc_except_table)
+                0x038031a0                . = ALIGN (0x4)
+
+.jcr            0x038031a0        0x4
+ *(.jcr)
+ .jcr           0x038031a0        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+ .jcr           0x038031a0        0x4 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+
+.got
+ *(.got.plt)
+ *(.got)
+
+.data           0x038031a4      0x130
+                0x038031a4                __data_start = ABSOLUTE (.)
+ *(.data)
+ .data          0x038031a4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o
+ .data          0x038031a4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crti.o
+ .data          0x038031a4        0x4 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+                0x038031a4                __dso_handle
+ .data          0x038031a8        0x0 template.o
+ .data          0x038031a8      0x114 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+                0x038031a8                RF_Reglist
+                0x038031e8                MAC_Reglist
+                0x03803240                MAC_Vallist
+                0x03803298                count_ofs_list
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas_arm.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mixer_super.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_reverb.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_stream.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_effect.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .data          0x038032bc        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .data          0x038032bc        0x1 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .data          0x038032bd        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .data          0x038032bd        0x1 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+                0x038032bd                sleepIsEnabled
+ .data          0x038032be        0x1 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .data          0x038032bf        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ *fill*         0x038032bf        0x1 ff
+ .data          0x038032c0       0x10 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+                0x038032c0                fifo_buffer_free
+                0x038032c4                fifo_freewords
+                0x038032c8                fifo_send_queue
+                0x038032cc                fifo_receive_queue
+ .data          0x038032d0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .data          0x038032d0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .data          0x038032d0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+ .data          0x038032d0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+ .data          0x038032d0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+ .data          0x038032d0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+ .data          0x038032d0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .data          0x038032d0        0x4 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+                0x038032d0                sdmmc_curdevice
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_divsi3.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_dvmd_tls.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_call_via_rX.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_bswapsi2.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-init.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memcpy.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memset.o)
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+ .data          0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtn.o
+ *(.data.*)
+ *(.gnu.linkonce.d*)
+                0x038032d4                . = ALIGN (0x4)
+                0x038032d4                __data_end = ABSOLUTE (.)
+
+.bss            0x038032d4     0x4534
+                0x038032d4                __bss_start = ABSOLUTE (.)
+                0x038032d4                __bss_start__ = ABSOLUTE (.)
+ *(.dynbss)
+ *(.gnu.linkonce.b*)
+ *(.bss*)
+ .bss           0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o
+ .bss           0x038032d4        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crti.o
+ .bss           0x038032d4       0x1c /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+ .bss           0x038032f0        0x1 template.o
+                0x038032f0                exitflag
+ *fill*         0x038032f1        0x3 00
+ .bss           0x038032f4       0x18 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+                0x038032f4                WifiData
+                0x038032f8                led_state
+                0x038032fc                chdata_save5
+                0x03803300                synchandler
+                0x03803304                arm7qlen
+                0x03803308                keepalive_time
+ .bss           0x0380330c        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+ .bss           0x0380330c      0x89c /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o)
+                0x0380330c                mmCallback
+                0x03803310                mmModuleCount
+                0x03803314                mmModuleBank
+                0x03803318                mmSampleBank
+                0x0380331c                mm_ch_mask
+                0x03803320                mm_vblank_function
+                0x03803ba4                mmInitialized
+ .bss           0x03803ba8      0x148 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas.o)
+                0x03803ba8                mmLayerMain
+                0x03803be0                mmLayerSub
+                0x03803c18                mpp_vars
+                0x03803c28                mpp_layerp
+                0x03803c2c                mpp_channels
+                0x03803c3c                mpp_nchannels
+                0x03803c3d                mpp_clayer
+                0x03803c40                mm_achannels
+                0x03803c44                mm_pchannels
+                0x03803c48                mm_num_mch
+                0x03803c4c                mm_num_ach
+                0x03803c50                mm_schannels
+ .bss           0x03803cf0        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas_arm.o)
+ .bss           0x03803cf0      0x10c /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o)
+ .bss           0x03803dfc     0x2364 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mixer_super.o)
+                0x03803dfc                mm_mix_channels
+                0x0380615d                mm_mixing_mode
+ .bss           0x03806160        0x8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_reverb.o)
+ .bss           0x03806168       0x2c /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_stream.o)
+ .bss           0x03806194       0x30 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_effect.o)
+                0x038061b8                mm_sfx_bitmask
+                0x038061bc                mm_sfx_clearmask
+ .bss           0x038061c4        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .bss           0x038061c4        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .bss           0x038061c4        0x8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .bss           0x038061cc       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .bss           0x038061ec        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .bss           0x038061ec        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .bss           0x038061ec       0x18 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+                0x038061ef                __dsimode
+ .bss           0x03806204        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .bss           0x03806204        0x8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+                0x03806208                processing
+ .bss           0x0380620c        0x4 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .bss           0x03806210        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .bss           0x03806210        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+ .bss           0x03806210        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+ .bss           0x03806210        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+ .bss           0x03806210        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+ .bss           0x03806210        0x4 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .bss           0x03806214       0x10 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+                0x03806218                sdmmc_cardready
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_divsi3.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_dvmd_tls.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_call_via_rX.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_bswapsi2.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-init.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memcpy.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memset.o)
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+ .bss           0x03806224        0x0 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtn.o
+ *(COMMON)
+ COMMON         0x03806224      0xa00 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+                0x03806224                arm7q
+                0x03806a24                FlashData
+ COMMON         0x03806c24        0x1 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+                0x03806c24                Keys
+ *fill*         0x03806c25        0x3 00
+ COMMON         0x03806c28      0xa40 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+                0x03806c28                fifo_datamsg_data
+                0x03806c68                fifo_buffer
+                0x03807468                fifo_value32_func
+                0x038074a8                fifo_address_func
+                0x038074e8                fifo_value32_data
+                0x03807528                fifo_value32_queue
+                0x03807568                fifo_data_queue
+                0x038075a8                fifo_address_data
+                0x038075e8                fifo_datamsg_func
+                0x03807628                fifo_address_queue
+ COMMON         0x03807668      0x190 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+                0x03807668                irqTableAUX
+                0x03807730                irqTable
+ COMMON         0x038077f8       0x10 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+                0x038077f8                sdmmc_cid
+                0x03807808                . = ALIGN (0x4)
+                0x03807808                __bss_end__ = ABSOLUTE (.)
+                0x03807808                __end__ = ABSOLUTE (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.ARM.attributes
+                0x00000000       0x2b
+ .ARM.attributes
+                0x00000000       0x18 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o
+ .ARM.attributes
+                0x00000018       0x18 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crti.o
+ .ARM.attributes
+                0x00000030       0x32 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+ .ARM.attributes
+                0x00000062       0x2e template.o
+ .ARM.attributes
+                0x00000090       0x2c /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .ARM.attributes
+                0x000000bc       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+ .ARM.attributes
+                0x000000dc       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_main.o)
+ .ARM.attributes
+                0x000000fc       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas.o)
+ .ARM.attributes
+                0x0000011c       0x1e /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mas_arm.o)
+ .ARM.attributes
+                0x0000013a       0x1e /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_comms7.o)
+ .ARM.attributes
+                0x00000158       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_mixer_super.o)
+ .ARM.attributes
+                0x00000178       0x1e /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_reverb.o)
+ .ARM.attributes
+                0x00000196       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_stream.o)
+ .ARM.attributes
+                0x000001b6       0x1e /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a(mm_effect.o)
+ .ARM.attributes
+                0x000001d4       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .ARM.attributes
+                0x00000202       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .ARM.attributes
+                0x00000230       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .ARM.attributes
+                0x0000025e       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .ARM.attributes
+                0x0000028c       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .ARM.attributes
+                0x000002ba       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .ARM.attributes
+                0x000002e8       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .ARM.attributes
+                0x00000316       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .ARM.attributes
+                0x00000344       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .ARM.attributes
+                0x00000372       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .ARM.attributes
+                0x000003a0       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .ARM.attributes
+                0x000003ce       0x22 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+ .ARM.attributes
+                0x000003f0       0x22 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+ .ARM.attributes
+                0x00000412       0x22 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+ .ARM.attributes
+                0x00000434       0x22 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+ .ARM.attributes
+                0x00000456       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .ARM.attributes
+                0x00000484       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .ARM.attributes
+                0x000004b2       0x2e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+ .ARM.attributes
+                0x000004e0       0x1a /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000004fa       0x18 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000512       0x18 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_call_via_rX.o)
+ .ARM.attributes
+                0x0000052a       0x32 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_bswapsi2.o)
+ .ARM.attributes
+                0x0000055c       0x32 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000058e       0x32 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x000005c0       0x32 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000005f2       0x32 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+ .ARM.attributes
+                0x00000624       0x1a /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtn.o
+
+.comment        0x00000000       0x44
+ *(.comment)
+ .comment       0x00000000       0x22 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+                                 0x23 (size before relaxing)
+ .comment       0x00000000       0x23 template.o
+ .comment       0x00000022       0x22 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+                                 0x23 (size before relaxing)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a(_bswapsi2.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-init.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memcpy.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a(lib_a-memset.o)
+ .comment       0x00000000       0x23 /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x2a8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 template.o
+ .debug_aranges
+                0x00000028       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .debug_aranges
+                0x00000048       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+ .debug_aranges
+                0x00000068       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .debug_aranges
+                0x00000088       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .debug_aranges
+                0x000000a8       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .debug_aranges
+                0x000000c8       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .debug_aranges
+                0x000000e8       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .debug_aranges
+                0x00000108       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .debug_aranges
+                0x00000128       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .debug_aranges
+                0x00000148       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .debug_aranges
+                0x00000168       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .debug_aranges
+                0x00000188       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .debug_aranges
+                0x000001a8       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .debug_aranges
+                0x000001c8       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+ .debug_aranges
+                0x000001e8       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+ .debug_aranges
+                0x00000208       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+ .debug_aranges
+                0x00000228       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+ .debug_aranges
+                0x00000248       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .debug_aranges
+                0x00000268       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .debug_aranges
+                0x00000288       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+
+.debug_pubnames
+                0x00000000      0x5a8
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x5a8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+
+.debug_info     0x00000000     0x82dc
+ *(.debug_info)
+ .debug_info    0x00000000      0x2ec template.o
+ .debug_info    0x000002ec     0x1e85 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .debug_info    0x00002171       0xc0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+ .debug_info    0x00002231      0x7c6 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .debug_info    0x000029f7      0x754 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .debug_info    0x0000314b      0x47f /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .debug_info    0x000035ca      0x3af /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .debug_info    0x00003979      0x230 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .debug_info    0x00003ba9      0x86c /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .debug_info    0x00004415      0xa4a /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .debug_info    0x00004e5f      0x3fc /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .debug_info    0x0000525b     0x1089 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .debug_info    0x000062e4      0x9bb /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .debug_info    0x00006c9f      0x226 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .debug_info    0x00006ec5       0xbc /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+ .debug_info    0x00006f81       0xbf /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+ .debug_info    0x00007040       0xc9 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+ .debug_info    0x00007109       0xc2 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+ .debug_info    0x000071cb      0x2cd /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .debug_info    0x00007498      0xc9c /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .debug_info    0x00008134      0x1a8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+
+.debug_abbrev   0x00000000     0x209b
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x11a template.o
+ .debug_abbrev  0x0000011a      0x503 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .debug_abbrev  0x0000061d       0x14 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+ .debug_abbrev  0x00000631      0x1ce /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .debug_abbrev  0x000007ff      0x1f5 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .debug_abbrev  0x000009f4      0x126 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .debug_abbrev  0x00000b1a      0x184 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .debug_abbrev  0x00000c9e      0x17b /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .debug_abbrev  0x00000e19      0x244 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .debug_abbrev  0x0000105d      0x319 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .debug_abbrev  0x00001376       0xe2 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .debug_abbrev  0x00001458      0x39f /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .debug_abbrev  0x000017f7      0x282 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .debug_abbrev  0x00001a79       0xfd /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .debug_abbrev  0x00001b76       0x14 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+ .debug_abbrev  0x00001b8a       0x14 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+ .debug_abbrev  0x00001b9e       0x14 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+ .debug_abbrev  0x00001bb2       0x14 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+ .debug_abbrev  0x00001bc6      0x18e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .debug_abbrev  0x00001d54      0x2d6 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .debug_abbrev  0x0000202a       0x71 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+
+.debug_line     0x00000000     0x34a5
+ *(.debug_line)
+ .debug_line    0x00000000      0x1b0 template.o
+ .debug_line    0x000001b0      0xb6a /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .debug_line    0x00000d1a       0x9b /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(spinlock.o)
+ .debug_line    0x00000db5      0x1fc /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .debug_line    0x00000fb1      0x37e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .debug_line    0x0000132f      0x180 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .debug_line    0x000014af      0x25e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .debug_line    0x0000170d      0x1e7 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .debug_line    0x000018f4      0x251 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .debug_line    0x00001b45      0x437 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .debug_line    0x00001f7c      0x16e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .debug_line    0x000020ea      0x4b7 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .debug_line    0x000025a1      0x30b /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .debug_line    0x000028ac      0x1bb /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .debug_line    0x00002a67       0x95 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(intrwait.o)
+ .debug_line    0x00002afc       0xc5 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(biosCalls.o)
+ .debug_line    0x00002bc1       0xc6 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interruptDispatcher.o)
+ .debug_line    0x00002c87       0x8d /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(swiSoftReset.o)
+ .debug_line    0x00002d14      0x1fa /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .debug_line    0x00002f0e      0x45d /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .debug_line    0x0000336b      0x13a /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+
+.debug_frame    0x00000000     0x1344
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x70 template.o
+ .debug_frame   0x00000070      0x600 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .debug_frame   0x00000670       0xfc /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .debug_frame   0x0000076c      0x150 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .debug_frame   0x000008bc       0x30 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .debug_frame   0x000008ec       0xdc /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .debug_frame   0x000009c8       0x54 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .debug_frame   0x00000a1c       0xc0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .debug_frame   0x00000adc      0x190 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .debug_frame   0x00000c6c       0x34 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .debug_frame   0x00000ca0      0x288 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .debug_frame   0x00000f28      0x180 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .debug_frame   0x000010a8       0x38 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .debug_frame   0x000010e0      0x110 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .debug_frame   0x000011f0      0x12c /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .debug_frame   0x0000131c       0x28 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+
+.debug_str      0x00000000     0x2b62
+ *(.debug_str)
+ .debug_str     0x00000000      0x376 template.o
+                                0x394 (size before relaxing)
+ .debug_str     0x00000376      0xde8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+                               0x10ea (size before relaxing)
+ .debug_str     0x0000115e      0x4a1 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+                                0x64f (size before relaxing)
+ .debug_str     0x000015ff      0x21b /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+                                0x413 (size before relaxing)
+ .debug_str     0x0000181a       0x83 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+                                0x38e (size before relaxing)
+ .debug_str     0x0000189d      0x18a /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+                                0x30a (size before relaxing)
+ .debug_str     0x00001a27       0xae /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+                                0x173 (size before relaxing)
+ .debug_str     0x00001ad5      0x21f /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+                                0x726 (size before relaxing)
+ .debug_str     0x00001cf4      0x310 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+                                0x4c8 (size before relaxing)
+ .debug_str     0x00002004       0xea /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+                                0x2e5 (size before relaxing)
+ .debug_str     0x000020ee      0x4f7 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+                                0x740 (size before relaxing)
+ .debug_str     0x000025e5      0x1ad /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+                                0x5b6 (size before relaxing)
+ .debug_str     0x00002792       0x77 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+                                0x1d7 (size before relaxing)
+ .debug_str     0x00002809       0xe8 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+                                0x1cf (size before relaxing)
+ .debug_str     0x000028f1      0x208 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+                                0x2c3 (size before relaxing)
+ .debug_str     0x00002af9       0x69 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+                                0x2b6 (size before relaxing)
+
+.debug_loc      0x00000000     0x4bcd
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x60 template.o
+ .debug_loc     0x00000060     0x1adf /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .debug_loc     0x00001b3f      0x312 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(audio.o)
+ .debug_loc     0x00001e51      0x54e /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .debug_loc     0x0000239f       0x40 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(input.o)
+ .debug_loc     0x000023df      0x1ad /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .debug_loc     0x0000258c       0xfa /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .debug_loc     0x00002686      0x2fd /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(system.o)
+ .debug_loc     0x00002983      0x7c9 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .debug_loc     0x0000314c      0x1ae /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(userSettings.o)
+ .debug_loc     0x000032fa      0xcdd /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .debug_loc     0x00003fd7      0x45a /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .debug_loc     0x00004431       0x51 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(libnds_exit.o)
+ .debug_loc     0x00004482      0x200 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(i2c.o)
+ .debug_loc     0x00004682      0x52b /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+ .debug_loc     0x00004bad       0x20 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(systemShutDown.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.stack          0x00080000        0x0
+                0x00080000                _stack = .
+ *(.stack)
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/ds_arm7_crt0.o
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crti.o
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtbegin.o
+LOAD template.o
+LOAD /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a
+LOAD /Users/lwy08/Downloads/devkitpro/libnds/lib/libmm7.a
+LOAD /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a
+START GROUP
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/libgcc.a
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libg.a
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libc.a
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/../../../../arm-eabi/lib/libsysbase.a
+END GROUP
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtend.o
+LOAD /Users/lwy08/Downloads/devkitpro/devkitARM/bin/../lib/gcc/arm-eabi/4.6.1/crtn.o
+OUTPUT(/Users/lwy08/Downloads/devkitpro/examples/templates/combined/arm7/combined.elf elf32-littlearm)
+
+.debug_ranges   0x00000000      0x6d0
+ .debug_ranges  0x00000000       0x30 template.o
+ .debug_ranges  0x00000030       0xf0 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
+ .debug_ranges  0x00000120       0x30 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(clock.o)
+ .debug_ranges  0x00000150       0x30 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(microphone.o)
+ .debug_ranges  0x00000180       0x48 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(spi.o)
+ .debug_ranges  0x000001c8       0x70 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(touch.o)
+ .debug_ranges  0x00000238      0x190 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(fifosystem.o)
+ .debug_ranges  0x000003c8       0x90 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(interrupts.o)
+ .debug_ranges  0x00000458      0x278 /Users/lwy08/Downloads/devkitpro/libnds/lib/libnds7.a(sdmmc.o)
+
+.debug_pubtypes
+                0x00000000      0x144
+ .debug_pubtypes
+                0x00000000      0x144 /Users/lwy08/Downloads/devkitpro/libnds/lib/libdswifi7.a(wifi_arm7.o)
