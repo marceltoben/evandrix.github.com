@@ -102,6 +102,10 @@
 ### Python > Code syntax highlighting
  * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org)
 
+### Python > IDE
+ * Python 2.7: [Eric4](http://sourceforge.net/projects/eric-ide/files/eric4/stable)
+ * Python 3.1: [Eric5](http://sourceforge.net/projects/eric-ide/files/eric5/stable)
+
 ### Python > Fuzzy String Matching
  * [Fuzzywuzzy](http://seatgeek.com/blog/dev/fuzzywuzzy-fuzzy-string-matching-in-python)
 
