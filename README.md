@@ -78,6 +78,19 @@
 
 ---
 
+### Open source Graphic Design vs. Adobe
+ * Replace Photoshop for [Gimp](http://www.gimp.org)
+ * Replace Illustrator for [Inkscape](http://inkscape.org)+[MyPaint](http://mypaint.intilinux.com)
+ * Replace Indesign for [Scribus](http://www.scribus.net/canvas/Scribus)
+ * Others:
+   - color picker:    [gpick](http://code.google.com/p/gpick/downloads/list)/[agave](http://home.gna.org/colorscheme)
+   - font management: [font-manager](http://code.google.com/p/font-manager)/[fontforge](http://fontforge.sourceforge.net)
+   - image batch processor: [phatch](http://photobatch.stani.be)
+   - measure onscreen: [screen ruler](http://gnomecoder.wordpress.com/screenruler)
+   - writing tool: [PyRoom](http://pyroom.org)
+
+---
+
 ### PDF > Convert webpage to PDF online, eg. blogs (also available as Chrome Extension)
  * ?
 
