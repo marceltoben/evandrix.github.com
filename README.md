@@ -59,6 +59,20 @@
  
 ---
 
+### Graphs visualisation
+ * [googleVis](http://code.google.com/p/google-motion-charts-with-r)
+ * Instructions
+   - Install:
+     - install.packages('googleVis')
+     - install.packages('RJSONIO')
+   - Usage example:
+     - library(googleVis)
+     - Fruits ## Example data
+     - M <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year")
+     - plot(M)
+
+---
+
 ### HTML5 > Playground
  * [HTML5 Rocks](http://www.html5rocks.com/en)
 
