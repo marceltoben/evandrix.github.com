@@ -62,6 +62,7 @@
 ### Graphs visualisation
  * [googleVis](http://code.google.com/p/google-motion-charts-with-r)
  * Instructions
+{{{
    > Install:
      - install.packages('googleVis')
      - install.packages('RJSONIO')
@@ -70,7 +71,7 @@
      - Fruits ## Example data
      - M <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year")
      - plot(M)
-
+}}}
 ---
 
 ### HTML5 > Playground
