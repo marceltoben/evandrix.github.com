@@ -96,6 +96,7 @@
 
 ### Network Analysis Tools
  * File Header Scraping: [foremost](http://www.macports.org/ports.php?by=name&substr=foremost)
+ * Windows: [fgdump](http://www.foofus.net/~fizzgig/fgdump/downloads.htm)
 
 ---
 
