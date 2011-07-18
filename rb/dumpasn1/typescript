@@ -1,0 +1,367 @@
+Script started on Wed Sep  3 17:49:55 2008
+bash-3.2$ exitruby asn1.rb 
+
+ASN.1 Main Menu
+
+1. Load File
+2. Encode
+3. Decode
+
+0. Quit
+
+1< Load_File
+04 41 88 34 21 11 4C 81 48 08 04 C4 30 82 03 9C 30 82 03 05 A0 03 02 01 02 02 0C 10 71 99 90 21 71 10 10 00 00 00 00 30 0D 06 09 2A 86 48 86 F7 0D 01 01 04 05 00 30 77 31 25 30 23 06 03 55 04 03 13 1C 49 6E 74 65 72 20 43 6C 65 61 72 20 53 65 72 76 69 63 65 20 4C 74 64 20 52 6F 6F 74 31 20 30 1E 06 03 55 04 0A 13 17 49 6E 74 65 72 20 43 6C 65 61 72 20 53 65 72 76 69 63 65 20 4C 74 64 31 0E 30 0C 06 03 55 04 07 13 05 45 67 68 61 6D 31 0F 30 0D 06 03 55 04 08 13 06 53 75 72 72 65 79 31 0B 30 09 06 03 55 04 06 13 02 55 4B 30 1E 17 0D 39 39 30 32 31 37 31 37 31 34 34 31 5A 17 0D 30 32 30 32 31 37 31 37 31 34 34 31 5A 30 77 31 25 30 23 06 03 55 04 03 13 1C 49 6E 74 65 72 20 43 6C 65 61 72 20 53 65 72 76 69 63 65 20 4C 74 64 20 52 6F 6F 74 31 20 30 1E 06 03 55 04 0A 13 17 49 6E 74 65 72 20 43 6C 65 61 72 20 53 65 72 76 69 63 65 20 4C 74 64 31 0E 30 0C 06 03 55 04 07 13 05 45 67 68 61 6D 31 0F 30 0D 06 03 55 04 08 13 06 53 75 72 72 65 79 31 0B 30 09 06 03 55 04 06 13 02 55 4B 30 81 9F 30 0D 06 09 2A 86 48 86 F7 0D 01 01 01 05 00 03 81 8D 00 30 81 89 02 81 81 00 A1 9B 62 C6 1B 6C 87 BF BF 20 79 11 79 CB 43 8F 40 6B E5 A9 0D CB 3E 35 D5 F1 3C 21 C6 43 B0 3D BC 00 45 F3 A0 78 6F B6 2A 31 E8 B0 51 01 87 E8 7C 50 1C 42 BB 2F 5A 42 DC A8 F4 19 33 0D F7 63 87 E9 E3 44 98 9C 86 7F 7C B4 C7 6B FF 0C 98 14 74 3A 29 83 0E E6 7A 8F 34 46 FB 11 55 4D 7B C3 57 A5 E1 E5 48 E3 CC B2 1E 6A 86 87 33 AF 58 53 65 AA 58 8F 84 A5 37 5D 76 4B 1F 95 2C E0 23 BB 02 03 01 00 01 A3 82 01 2B 30 82 01 27 30 27 06 03 55 1D 11 04 20 30 1E A6 1C 16 1A 68 74 74 70 3A 2F 2F 77 77 77 2E 69 6E 74 65 72 63 6C 65 61 72 2E 6E 65 74 2F 30 0C 06 03 55 1D 13 04 05 30 03 01 01 FF 30 55 06 03 55 1D 20 04 4E 30 4C 30 4A 06 07 2B 06 01 04 01 93 3E 30 3F 30 3D 06 08 2B 06 01 05 05 07 02 01 16 31 68 74 74 70 3A 2F 2F 77 77 77 2E 69 6E 74 65 72 63 6C 65 61 72 2E 6E 65 74 2F 63 70 73 2F 73 65 63 75 72 65 30 31 6D 61 79 31 39 39 38 2E 64 6F 63 30 40 06 09 60 86 48 01 86 F8 42 01 08 04 33 16 31 68 74 74 70 3A 2F 2F 77 77 77 2E 69 6E 74 65 72 63 6C 65 61 72 2E 6E 65 74 2F 63 70 73 2F 73 65 63 75 72 65 30 31 6D 61 79 31 39 39 38 2E 64 6F 63 30 55 06 09 60 86 48 01 86 F8 42 01 0D 04 48 16 46 53 74 61 74 65 6D 65 6E 74 20 6F 66 20 6C 69 61 62 69 6C 69 74 79 20 69 73 20 6C 6F 63 61 74 65 64 20 61 74 20 74 68 65 20 49 6E 74 65 72 20 43 6C 65 61 72 20 53 65 72 76 69 63 65 20 4C 74 64 20 73 69 74 65 2E 30 0D 06 09 2A 86 48 86 F7 0D 01 01 04 05 00 03 81 81 00 9B 28 76 B5 20 8A 95 8A F4 40 8B 6C 9D 2F DD 8A 74 64 E6 25 3B 03 6C EE 7D 13 EA CE 37 B1 05 63 86 65 71 CE D6 F4 69 93 F8 4D 97 08 EE 69 13 1C 9F ED 3A 98 29 FF 65 6B 43 5F AF 1D 88 6A A1 FF 5B BC EB C4 42 BC 44 AC 25 77 B1 75 6F 8D 6F 5B 99 88 52 73 23 BD 5C 24 A2 83 28 B6 EC 58 88 AC CE 94 75 29 C7 F1 B6 4B 5E 2A C2 5D A4 87 D6 9E E0 9A A0 3B E8 4C 44 A3 3D 8C A6 01 4C 16 01 B9 
+
+ASN.1 Main Menu
+
+1. Load File
+2. Encode
+3. Decode
+
+0. Quit
+
+3<< Input Length: 936
+Index Value: 0
+OCTET_STRING Primitive Universal
+Tag: 04 << OCTETSTRING!
+Length: 65
+Value: 88 34 21 11 4C 81 48 08 04 C4 30 82 03 9C 30 82 03 05 A0 03 02 01 02 02 0C 10 71 99 90 21 71 10 10 00 00 00 00 30 0D 06 09 2A 86 48 86 F7 0D 01 01 04 05 00 30 77 31 25 30 23 06 03 55 04 03 13 1C 
+<< End of OCTETSTRING
+Index Value: 67
+REAL Primitive Application
+Index Value: 68
+UNUSED Constructed Application
+Index Value: 69
+TeletexString Constructed Application
+Index Value: 70
+NULL Constructed Application
+Tag: 05 << NULL!
+<< End of NULL
+Index Value: 72
+BER Constructed Universal
+<< BER!
+Tag: 00 
+BER Constructed Universal
+Length: 67
+<< End of BER
+Index Value: 74
+UTF8String Constructed Application
+Index Value: 75
+NULL Constructed Application
+Tag: 05 << NULL!
+<< End of NULL
+Index Value: 77
+NumericString Constructed Application
+Index Value: 78
+BER Constructed Universal
+<< BER!
+Tag: 00 
+BER Constructed Universal
+Length: 83
+<< End of BER
+Index Value: 80
+NULL Constructed Application
+Tag: 05 << NULL!
+<< End of NULL
+Index Value: 82
+IA5String Constructed Application
+Index Value: 83
+REAL Constructed Application
+Index Value: 84
+BIT_STRING Constructed Application
+Tag: 03 << BITSTRING!
+Length: 101
+<< End of BITSTRING
+Value: 20 4C 74 64 20 52 6F 6F 74 31 20 30 1E 06 03 55 04 0A 13 17 49 6E 74 65 72 20 43 6C 65 61 72 20 53 65 72 76 69 63 65 20 4C 74 64 31 0E 30 0C 06 03 55 04 07 13 05 45 67 68 61 6D 31 0F 30 0D 06 03 55 04 08 13 06 53 75 72 72 65 79 31 0B 30 09 06 03 55 04 06 13 02 55 4B 30 1E 17 0D 39 39 30 32 31 37 31 37 
+Index Value: 187
+SET Constructed Universal
+<< Constructed
+Tag: 11 
+Length: 49
+Index Value: 189
+TeletexString Constructed Universal
+Index Value: 190
+SET Constructed Universal
+<< Constructed
+Tag: 11 
+Length: 49
+Index Value: 192
+UTCTime Primitive Universal
+Tag: 17 << UTCTime!
+<< UTCTime Length 13
+30 32 30 32 31 37 31 37 31 34 34 31 5A 
+String: "020217171441Z"
+<< End of UTCTime
+Index Value: 207
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 209
+SET Constructed Universal
+<< Constructed
+Tag: 11 
+Length: 48
+Index Value: 211
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 213
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 04 03 
+<< End of OID
+Index Value: 218
+PrintableString Primitive Universal
+Tag: 13 << PrintableString!
+<< OID Length 28
+
+String: "Inter Clear Service Ltd Root"
+<< End of PrintableString
+Index Value: 248
+SET Constructed Universal
+<< Constructed
+Tag: 11 
+Length: 49
+Index Value: 250
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 49
+Index Value: 252
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 04 0A 
+<< End of OID
+Index Value: 257
+PrintableString Primitive Universal
+Tag: 13 << PrintableString!
+<< OID Length 23
+
+String: "Inter Clear Service Ltd"
+<< End of PrintableString
+Index Value: 282
+SET Constructed Universal
+<< Constructed
+Tag: 11 
+Length: 49
+Index Value: 284
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 49
+Index Value: 286
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 04 07 
+<< End of OID
+Index Value: 291
+PrintableString Primitive Universal
+Tag: 13 << PrintableString!
+<< OID Length 5
+
+String: "Egham"
+<< End of PrintableString
+Index Value: 298
+SET Constructed Universal
+<< Constructed
+Tag: 11 
+Length: 49
+Index Value: 300
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 49
+Index Value: 302
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 04 08 
+<< End of OID
+Index Value: 307
+PrintableString Primitive Universal
+Tag: 13 << PrintableString!
+<< OID Length 6
+
+String: "Surrey"
+<< End of PrintableString
+Index Value: 315
+SET Constructed Universal
+<< Constructed
+Tag: 11 
+Length: 49
+Index Value: 317
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 49
+Index Value: 319
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 04 06 
+<< End of OID
+Index Value: 324
+PrintableString Primitive Universal
+Tag: 13 << PrintableString!
+<< OID Length 2
+
+String: "UK"
+<< End of PrintableString
+Index Value: 328
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+<< Large Length!
+Length: 48
+Index Value: 331
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 333
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 9
+string: 2A 86 48 86 F7 0D 01 01 01 
+<< End of OID
+Index Value: 344
+NULL Primitive Universal
+Tag: 05 << NULL!
+<< End of NULL
+Index Value: 346
+BIT_STRING Primitive Universal
+Tag: 03 << BITSTRING!
+<< Large Length!
+Length: 141
+<< encapsulated
+<< End of BITSTRING
+Value: 30 81 89 02 81 81 00 A1 9B 62 C6 1B 6C 87 BF BF 20 79 11 79 CB 43 8F 40 6B E5 A9 0D CB 3E 35 D5 F1 3C 21 C6 43 B0 3D BC 00 45 F3 A0 78 6F B6 2A 31 E8 B0 51 01 87 E8 7C 50 1C 42 BB 2F 5A 42 DC A8 F4 19 33 0D F7 63 87 E9 E3 44 98 9C 86 7F 7C B4 C7 6B FF 0C 98 14 74 3A 29 83 0E E6 7A 8F 34 46 FB 11 55 4D 7B C3 57 A5 E1 E5 48 E3 CC B2 1E 6A 86 87 33 AF 58 53 65 AA 58 8F 84 A5 37 5D 76 4B 1F 95 2C E0 23 BB 02 03 01 00 01 A3 
+Index Value: 491
+INTEGER Primitive Context Specific
+Tag: 02 << Integer
+Length: 1
+Value: 43
+<< End of INTEGER
+Index Value: 494
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+<< Large Length!
+Length: 295
+Index Value: 498
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 295
+Index Value: 500
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 1D 11 
+<< End of OID
+Index Value: 505
+OCTET_STRING Primitive Universal
+Tag: 04 << OCTETSTRING!
+Length: 32
+Value: 30 1E A6 1C 16 1A 68 74 74 70 3A 2F 2F 77 77 77 2E 69 6E 74 65 72 63 6C 65 61 72 2E 6E 65 74 2F 
+<< End of OCTETSTRING
+Index Value: 539
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 541
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 1D 13 
+<< End of OID
+Index Value: 546
+OCTET_STRING Primitive Universal
+Tag: 04 << OCTETSTRING!
+Length: 5
+Value: 30 03 01 01 FF 
+<< End of OCTETSTRING
+Index Value: 553
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 555
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 3
+string: 55 1D 20 
+<< End of OID
+Index Value: 560
+OCTET_STRING Primitive Universal
+Tag: 04 << OCTETSTRING!
+Length: 78
+Value: 30 4C 30 4A 06 07 2B 06 01 04 01 93 3E 30 3F 30 3D 06 08 2B 06 01 05 05 07 02 01 16 31 68 74 74 70 3A 2F 2F 77 77 77 2E 69 6E 74 65 72 63 6C 65 61 72 2E 6E 65 74 2F 63 70 73 2F 73 65 63 75 72 65 30 31 6D 61 79 31 39 39 38 2E 64 6F 63 
+<< End of OCTETSTRING
+Index Value: 640
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 642
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 9
+string: 60 86 48 01 86 F8 42 01 08 
+<< End of OID
+Index Value: 653
+OCTET_STRING Primitive Universal
+Tag: 04 << OCTETSTRING!
+Length: 51
+Value: 16 31 68 74 74 70 3A 2F 2F 77 77 77 2E 69 6E 74 65 72 63 6C 65 61 72 2E 6E 65 74 2F 63 70 73 2F 73 65 63 75 72 65 30 31 6D 61 79 31 39 39 38 2E 64 6F 63 
+<< End of OCTETSTRING
+Index Value: 706
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 708
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 9
+string: 60 86 48 01 86 F8 42 01 0D 
+<< End of OID
+Index Value: 719
+OCTET_STRING Primitive Universal
+Tag: 04 << OCTETSTRING!
+Length: 72
+Value: 16 46 53 74 61 74 65 6D 65 6E 74 20 6F 66 20 6C 69 61 62 69 6C 69 74 79 20 69 73 20 6C 6F 63 61 74 65 64 20 61 74 20 74 68 65 20 49 6E 74 65 72 20 43 6C 65 61 72 20 53 65 72 76 69 63 65 20 4C 74 64 20 73 69 74 65 2E 
+<< End of OCTETSTRING
+Index Value: 793
+SEQUENCE Constructed Universal
+<< Constructed
+Tag: 10 
+Length: 48
+Index Value: 795
+OBJECT_IDENTIFIER Primitive Universal
+Tag: 06 << OID!
+<< OID Length 9
+string: 2A 86 48 86 F7 0D 01 01 04 
+<< End of OID
+Index Value: 806
+NULL Primitive Universal
+Tag: 05 << NULL!
+<< End of NULL
+Index Value: 808
+BIT_STRING Primitive Universal
+Tag: 03 << BITSTRING!
+<< Large Length!
+Length: 129
+<< End of BITSTRING
+Value: 00 9B 28 76 B5 20 8A 95 8A F4 40 8B 6C 9D 2F DD 8A 74 64 E6 25 3B 03 6C EE 7D 13 EA CE 37 B1 05 63 86 65 71 CE D6 F4 69 93 F8 4D 97 08 EE 69 13 1C 9F ED 3A 98 29 FF 65 6B 43 5F AF 1D 88 6A A1 FF 5B BC EB C4 42 BC 44 AC 25 77 B1 75 6F 8D 6F 5B 99 88 52 73 23 BD 5C 24 A2 83 28 B6 EC 58 88 AC CE 94 75 29 C7 F1 B6 4B 5E 2A C2 5D A4 87 D6 9E E0 9A A0 3B E8 4C 44 A3 3D 8C A6 01 4C 16 01 B9 
+< Decode
+bash-3.2$ exit
+exit
+
+Script done on Wed Sep  3 17:50:01 2008

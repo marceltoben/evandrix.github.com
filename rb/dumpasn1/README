@@ -1,0 +1,17 @@
+Version 0.1 03-09-2008
+
+This basic version takes input of cert.pem.
+
+Just copy your PEM encoded base64 certificate to here and run:
+
+ruby asn1.rb
+
+Requires ruby-termios-0.9.5 to run.
+
+TODO:
+1. Tidy up code so that results look more like Dumpasn1 output
+2. More work on encapsulation - its still flaky!
+3. More testing!!!
+
+Romek
+romek@spikyblackcat.co.uk
