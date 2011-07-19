@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0" xmlns="http://ns.adobe.com/air/application/1.5">
+  <dict>
+    <key>CFBundleAllowMixedLocalizations</key>
+    <true/>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.4</string>
+    <key>LSRequiresCarbon</key>
+    <true/>
+    <key>CFBundleIdentifier</key>
+    <string>com.dansl.QRreader.49F9C73396E2B5C8FD7A794D4AA84ADE24BBC9FB.1</string>
+    <key>CFBundleGetInfoString</key>
+    <string>1.3, Dansl.net 2010</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.3</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Dansl.net 2010</string>
+    <key>CFBundleExecutable</key>
+    <string>QRreader</string>
+    <key>CFBundleIconFile</key>
+    <string>Icon.icns</string>
+    <key>CFBundleDocumentTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeExtensions</key>
+        <array>
+          <string>airapplication</string>
+        </array>
+        <key>CFBundleTypeRole</key>
+        <string>None</string>
+      </dict>
+    </array>
+  </dict>
+</plist>
