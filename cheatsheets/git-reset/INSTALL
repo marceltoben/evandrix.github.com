@@ -1,0 +1,6 @@
+Grab images & save to file
+	curl http://progit.org/2011/07/11/reset.html | grep -o -E 'src=".*"\s*/>' | grep -v "http" | awk -F '"' '{print $2}' | xargs -I % curl -L -O http://progit.org/%
+	curl http://progit.org/2011/07/11/reset.html | grep -o -E "src='.*'\s*/>" | grep -v "http" | awk -F '"' '{print $2}' | xargs -I % curl -L -O http://progit.org/%
+
+Grab CSS, then extract image urls
+	curl http://progit.org/2011/07/11/reset.html | grep -o -E 'href="([^"]*.css)"' | cut -f2 -d'=' | sed -e 's/"//g' | xargs -I % curl http://progit.org/% | grep url
