@@ -48,6 +48,20 @@
 
 ---
 
+### Database [Sharding](http://en.wikipedia.org/wiki/Shard_(database_architecture))
+ * [dbShards](http://www.dbshards.com)
+ * [Hibernate ORM](http://www.hibernate.org)
+ * [MongoDB](http://www.mongodb.org)
+ * [![MySQL/Percona](http://www.percona.com/static/images/ui-logo.png)](http://www.percona.com)
+ * [Grails](http://grails.org)
+ * [Redis](http://redis.io)
+ * [Ruby AR/Octopus](http://rubygems.org/gems/ar-octopus)
+ * [![Solr Search Server](http://lucene.apache.org/solr/images/solr.jpg)](http://lucene.apache.org/solr)
+ * [SQLAlchemy ORM](http://www.sqlalchemy.org)
+ * [SQL Azure (pending) - sharding = "federations"](http://www.microsoft.com/windowsazure/sqlazure)
+
+---
+
 ### CSS > Minifying (Online options)
  * [YUI Compressor](http://www.refresh-sf.com/yui)
  * [Minify CSS](http://www.ventio.se/tools/minify-css)
