@@ -48,7 +48,7 @@
 
 ---
 
-### Database [Sharding](http://en.wikipedia.org/wiki/Shard_(database_architecture))
+### Database [Sharding](http://en.wikipedia.org/wiki/Shard_\(database_architecture\))
  * [dbShards](http://www.dbshards.com)
  * [Hibernate ORM](http://www.hibernate.org)
  * [MongoDB](http://www.mongodb.org)
