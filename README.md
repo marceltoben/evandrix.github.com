@@ -8,6 +8,8 @@
 
  * README in [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax
  * [My Wiki Site](http://evandrix.wikia.com) understands [Wikipedia](http://www.wikipedia.org) syntax
+ * [My Pastebin](http://pastebin.com/u/evandrix)
+ * Code snippets: [Snipplr](http://snipplr.com)
  * Keychain(s) stored in `/System/Library/Keychains/*.keychain`
  * Access US via OpenVPN Proxy Server: [Hotspot Shield](http://hotspotshield.com)
 
