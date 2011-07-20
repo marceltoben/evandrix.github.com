@@ -1,9 +1,12 @@
+[submodule "js/NodeBeginnerBook"]
+	path = js/NodeBeginnerBook
+	url  = git://github.com/ManuelKiessling/NodeBeginnerBook.git
 [submodule "xcode-ios/PagePeel"]
 	path = xcode-ios/PagePeel
-	url = git://github.com/markrickert/iOS-PagePeel-Example.git
+	url  = git://github.com/markrickert/iOS-PagePeel-Example.git
 [submodule "macruby/HelloApp"]
 	path = macruby/HelloApp
-	url = git://github.com/jamesotron/HelloApp.git
+	url  = git://github.com/jamesotron/HelloApp.git
 [submodule "js/beautify"]
 	path = js/beautify
-	url = git://github.com/einars/js-beautify.git
+	url  = git://github.com/einars/js-beautify.git
