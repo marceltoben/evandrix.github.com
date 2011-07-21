@@ -75,105 +75,105 @@ t1287926123
 s2391
 
 N/System/Library/Frameworks/Cocoa.framework/Cocoa
-c000000004A1F2D63000000000000A5E0
-t1243557219
-s42464
+c000000004E27465F0000000000006560
+t1311196767
+s25952
 
 N/System/Library/Frameworks/QuickLook.framework/QuickLook
-c000000004C917E25000000000012F0D0
-t1284603429
-s1241296
+c000000004E27466B00000000001127A0
+t1311196779
+s1124256
 
 N/System/Library/Frameworks/WebKit.framework/WebKit
-c000000004DC9EAB800000000005C2FC0
-t1305078456
-s6041536
+c000000004E27466F0000000000433440
+t1311196783
+s4404288
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/../../HTML
-c000000004E1A502E0000000000000286
-t1310347310
+c000000004E243C940000000000000286
+t1310997652
 s646
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/../../Shared
-c000000004E1A4B190000000000000066
-t1310346009
+c000000004E243C970000000000000066
+t1310997655
 s102
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/InfoPlist.strings
-c000000004E1A4B16000000000000002D
-t1310346006
+c000000004E243C8E000000000000002D
+t1310997646
 s45
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/MainMenu.xib
-c000000004E1A4B16000000000001B976
-t1310346006
+c000000004E243C8E000000000001B976
+t1310997646
 s113014
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Preferences.xib
-c000000004E1A4B16000000000000BE07
-t1310346006
+c000000004E243C8E000000000000BE07
+t1310997646
 s48647
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Terminal.xib
-c000000004E1A4B160000000000008782
-t1310346006
+c000000004E243C8E0000000000008782
+t1310997646
 s34690
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/English.lproj/Window.xib
-c000000004E1A4B1600000000000079EE
-t1310346006
+c000000004E243C8F00000000000079EE
+t1310997647
 s31214
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.h
-c000000004E1A4B16000000000000012E
-t1310346006
+c000000004E243C8F000000000000012E
+t1310997647
 s302
 i<Cocoa/Cocoa.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m
-c000000004E1A4B1600000000000007FC
-t1310346006
+c000000004E243C8F00000000000007FC
+t1310997647
 s2044
 i"NSImage+QuickLook.h"
 i<QuickLook/QuickLook.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKit.icns
-c000000004E1A4B160000000000021305
-t1310346006
+c000000004E243C8F0000000000021305
+t1310997647
 s135941
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.h
-c000000004E1A4B160000000000000177
-t1310346006
+c000000004E243C8F0000000000000177
+t1310997647
 s375
 i<Cocoa/Cocoa.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitAppDelegate.m
-c000000004E1A4B1600000000000004E9
-t1310346006
+c000000004E243C8F00000000000004E9
+t1310997647
 s1257
 i"TermKitAppDelegate.h"
 i"TermKitWindowController.h"
 i"TermKitPrefsController.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.h
-c000000004E1A4B1600000000000001DE
-t1310346006
+c000000004E243C8F00000000000001DE
+t1310997647
 s478
 i<Cocoa/Cocoa.h>
 i<WebKit/WebKit.h>
 i"TermKitIconProtocol.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconLoadDelegate.m
-c000000004E1A4B160000000000000A21
-t1310346006
+c000000004E243C8F0000000000000A21
+t1310997647
 s2593
 i"TermKitIconLoadDelegate.h"
 i"TermKitIconProtocol.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.h
-c000000004E1A4B160000000000000451
-t1310346006
+c000000004E243C8F0000000000000451
+t1310997647
 s1105
 i<Cocoa/Cocoa.h>
 i<Foundation/Foundation.h>
@@ -181,8 +181,8 @@ i<Foundation/NSURLRequest.h>
 i<Foundation/NSURLProtocol.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitIconProtocol.m
-c000000004E1A4B160000000000001C90
-t1310346006
+c000000004E243C8F0000000000001C90
+t1310997647
 s7312
 i<Foundation/NSError.h>
 i"TermKitIconProtocol.h"
@@ -190,203 +190,203 @@ i"TermKitIconLoadDelegate.h"
 i"NSImage+QuickLook.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.h
-c000000004E1A4B160000000000000102
-t1310346006
+c000000004E243C8F0000000000000102
+t1310997647
 s258
 i<Cocoa/Cocoa.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitPrefsController.m
-c000000004E1A4B160000000000000177
-t1310346006
+c000000004E243C8F0000000000000177
+t1310997647
 s375
 i"TermKitPrefsController.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.h
-c000000004E1A4B160000000000000191
-t1310346006
+c000000004E243C8F0000000000000191
+t1310997647
 s401
 i<Cocoa/Cocoa.h>
 i<WebKit/WebKit.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitTerminalController.m
-c000000004E1A4B1600000000000005ED
-t1310346006
+c000000004E243C8F00000000000005ED
+t1310997647
 s1517
 i"TermKitTerminalController.h"
 i"WebInspector.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.h
-c000000004E1A4B16000000000000024C
-t1310346006
+c000000004E243C8F000000000000024C
+t1310997647
 s588
 i<Cocoa/Cocoa.h>
 i<WebKit/WebKit.h>
 i"TermKitIconLoadDelegate.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWebView.m
-c000000004E1A4B1600000000000006C5
-t1310346006
+c000000004E243C8F00000000000006C5
+t1310997647
 s1733
 i"TermKitWebView.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.h
-c000000004E1A4B160000000000000163
-t1310346006
+c000000004E243C8F0000000000000163
+t1310997647
 s355
 i<Cocoa/Cocoa.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKitWindowController.m
-c000000004E1A4B160000000000000499
-t1310346006
+c000000004E243C8F0000000000000499
+t1310997647
 s1177
 i"TermKitWindowController.h"
 i"TermKitTerminalController.h"
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/TermKit_Prefix.pch
-c000000004E1A4B160000000000000091
-t1310346006
+c000000004E243C8F0000000000000091
+t1310997647
 s145
 i<Cocoa/Cocoa.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/WebInspector.h
-c000000004E1A4B160000000000000169
-t1310346006
+c000000004E243C8F0000000000000169
+t1310997647
 s361
 i<Cocoa/Cocoa.h>
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app
-t1310400813
+t1310997647
 s102
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Info.plist
-t1310346091
+t1310997647
 s1349
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/MacOS/TermKit
-t1310397945
+t1310997647
 s40672
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/PkgInfo
-t1310346091
+t1310997647
 s8
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/InfoPlist.strings
-t1310346091
+t1310997647
 s92
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/MainMenu.nib
-t1310346091
+t1310997647
 s24175
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Preferences.nib
-t1310346092
+t1310997647
 s7493
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Terminal.nib
-t1310346092
+t1310997647
 s3147
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/English.lproj/Window.nib
-t1310346092
+t1310997647
 s2028
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/HTML
-t1310400813
+t1310997650
 s646
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/Shared
-t1310346092
+t1310997650
 s102
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/Debug/TermKit.app/Contents/Resources/TermKit.icns
-t1310346092
+t1310997650
 s135941
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/NSImage+QuickLook.o
-t1310346099
+t1310997650
 s14144
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKit.LinkFileList
-c000000004E1B15F70000000000000588
-t1310397943
+c000000004E243C920000000000000588
+t1310997650
 s1416
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitAppDelegate.o
-t1310346097
+t1310997650
 s20044
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconLoadDelegate.o
-t1310346100
+t1310997650
 s17988
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitIconProtocol.o
-t1310346099
+t1310997650
 s38444
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitPrefsController.o
-t1310346102
+t1310997650
 s15348
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitTerminalController.o
-t1310346098
+t1310997650
 s21352
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWebView.o
-t1310346097
+t1310997650
 s20768
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/TermKitWindowController.o
-t1310346100
+t1310997650
 s21024
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Objects-normal/x86_64/main.o
-t1310346097
+t1310997650
 s16052
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/Script-B0494B22124369A600867892.sh
-c000000004E1A4B6B00000000000000BF
-t1310346091
+c000000004E243C9200000000000000BF
+t1310997650
 s191
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/NSImage+QuickLook.plist
-t1310346102
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitAppDelegate.plist
-t1310346101
+t1310997650
 s13652
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconLoadDelegate.plist
-t1310346103
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitIconProtocol.plist
-t1310346103
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitPrefsController.plist
-t1310346103
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitTerminalController.plist
-t1310346102
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWebView.plist
-t1310346101
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/TermKitWindowController.plist
-t1310346103
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/build/TermKit.build/Debug/TermKit.build/StaticAnalyzer/normal/x86_64/main.plist
-t1310346101
+t1310997650
 s276
 
 N/Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/main.m
-c000000004E1A4B160000000000000141
-t1310346006
+c000000004E243C920000000000000141
+t1310997650
 s321
 i<Cocoa/Cocoa.h>
 
@@ -692,8 +692,8 @@ s321
 i<Cocoa/Cocoa.h>
 
 NTermKit-Info.plist
-c000000004E1A4B1600000000000003FB
-t1310346006
+c000000004E243C8F00000000000003FB
+t1310997647
 s1019
 
 CAnalyze /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/Cocoa/TermKit/NSImageQuickLook/NSImage+QuickLook.m

@@ -21,7 +21,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					1233,
+					1248,
 					20,
 					48,
 					43,
@@ -50,16 +50,16 @@
 					PBXFindDataSource_LocationID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 332093530;
-			PBXWorkspaceStateSaveDate = 332093530;
+			PBXPerProjectTemplateStateSaveDate = 332902798;
+			PBXWorkspaceStateSaveDate = 332902798;
 		};
 		perUserProjectItems = {
+			751DB1F213D7B194000D9952 /* PBXTextBookmark */ = 751DB1F213D7B194000D9952 /* PBXTextBookmark */;
+			751DB1F413D7B194000D9952 /* PBXTextBookmark */ = 751DB1F413D7B194000D9952 /* PBXTextBookmark */;
 			7534F61313CB52150090AD35 /* PBXTextBookmark */ = 7534F61313CB52150090AD35 /* PBXTextBookmark */;
 			7534F61413CB52150090AD35 /* PBXTextBookmark */ = 7534F61413CB52150090AD35 /* PBXTextBookmark */;
-			7534F61B13CB58350090AD35 /* PBXTextBookmark */ = 7534F61B13CB58350090AD35 /* PBXTextBookmark */;
 			7595BF1113CB586C006F77F7 /* PBXTextBookmark */ = 7595BF1113CB586C006F77F7 /* PBXTextBookmark */;
 			7595BF1213CB586C006F77F7 /* PBXTextBookmark */ = 7595BF1213CB586C006F77F7 /* PBXTextBookmark */;
-			7595BF1413CB586C006F77F7 /* PBXBookmark */ = 7595BF1413CB586C006F77F7 /* PBXBookmark */;
 			7595BF2213CB58F4006F77F7 /* PBXTextBookmark */ = 7595BF2213CB58F4006F77F7 /* PBXTextBookmark */;
 			7595BF2413CB58F4006F77F7 /* PBXTextBookmark */ = 7595BF2413CB58F4006F77F7 /* PBXTextBookmark */;
 		};
@@ -73,6 +73,38 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 321}";
 		};
+	};
+	751DB1F213D7B194000D9952 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 751DB1F313D7B194000D9952 /* client.js */;
+		name = "client.js: 17";
+		rLen = 0;
+		rLoc = 350;
+		rType = 0;
+		vrLen = 749;
+		vrLoc = 40;
+	};
+	751DB1F313D7B194000D9952 /* client.js */ = {
+		isa = PBXFileReference;
+		name = client.js;
+		path = /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/HTML/client/client.js;
+		sourceTree = "<absolute>";
+	};
+	751DB1F413D7B194000D9952 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 751DB1F513D7B194000D9952 /* client.js */;
+		name = "client.js: 13";
+		rLen = 0;
+		rLoc = 220;
+		rType = 0;
+		vrLen = 992;
+		vrLoc = 0;
+	};
+	751DB1F513D7B194000D9952 /* client.js */ = {
+		isa = PBXFileReference;
+		name = client.js;
+		path = /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/HTML/client/client.js;
+		sourceTree = "<absolute>";
 	};
 	7534F61313CB52150090AD35 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -93,29 +125,6 @@
 		rType = 0;
 		vrLen = 145;
 		vrLoc = 0;
-	};
-	7534F61B13CB58350090AD35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 7534F61C13CB58350090AD35 /* client.js */;
-		name = "client.js: 13";
-		rLen = 0;
-		rLoc = 220;
-		rType = 0;
-		vrLen = 1043;
-		vrLoc = 0;
-	};
-	7534F61C13CB58350090AD35 /* client.js */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.javascript;
-		name = client.js;
-		path = /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/HTML/client/client.js;
-		sourceTree = "<absolute>";
-	};
-	7595BB7013CB585A006F77F7 /* client.js */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.javascript;
-		path = client.js;
-		sourceTree = "<group>";
 	};
 	7595BF1113CB586C006F77F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -139,13 +148,10 @@
 	};
 	7595BF1313CB586C006F77F7 /* termkit.css */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = text.css;
 		name = termkit.css;
 		path = /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/HTML/termkit.css;
 		sourceTree = "<absolute>";
-	};
-	7595BF1413CB586C006F77F7 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 7595BB7013CB585A006F77F7 /* client.js */;
 	};
 	7595BF2213CB58F4006F77F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -159,9 +165,15 @@
 	};
 	7595BF2313CB58F4006F77F7 /* client.js */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.javascript;
 		name = client.js;
 		path = /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/HTML/client/client.js;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {691, 1207}}";
+			sepNavSelRange = "{220, 0}";
+			sepNavVisRange = "{0, 992}";
+		};
 	};
 	7595BF2413CB58F4006F77F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -179,12 +191,6 @@
 		name = client.js;
 		path = /Users/lwy08/Documents/evandrix.github.com/projects/TermKit/HTML/client/client.js;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1411, 1207}}";
-			sepNavSelRange = "{350, 0}";
-			sepNavVisRange = "{44, 707}";
-			sepNavWindowFrame = "{{15, 105}, {750, 923}}";
-		};
 	};
 	759C3FF113CA82E900D9DF3F /* TermKit */ = {
 		isa = PBXExecutable;
