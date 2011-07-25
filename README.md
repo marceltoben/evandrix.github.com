@@ -13,6 +13,9 @@
  * Keychain(s) stored in `/System/Library/Keychains/*.keychain`
  * Access US via OpenVPN Proxy Server: [Hotspot Shield](http://hotspotshield.com)
 
+ * [UpsideDownText](http://www.upsidedowntext.com)
+ * [Epoch Converter](http://www.epochconverter.com)
+
 ---
 
 ### Coding challenges
