@@ -1,0 +1,71 @@
+INSTALL-RUBY   2007/06/20
+
+The way of installing into Ruby(1.6.8/1.8.2 - 1.8.6) is shown.
+First, prepare for the source of Ruby.
+(http://www.ruby-lang.org/)
+
+(A) Unix or Cygwin platform
+(B) Win32 platform (VC++)
+
+
+(A) Unix or Cygwin platform
+
+  (in oniguruma directory)
+     1. ./configure --with-rubydir=<ruby-source-dir>
+     2. make 16     # for Ruby 1.6.8
+        or
+        make 182    # for Ruby 1.8.2
+        or
+        make 183    # for Ruby 1.8.3
+        or
+        make 184    # for Ruby 1.8.4
+        or
+        make 185    # for Ruby 1.8.5
+        or
+        make 186    # for Ruby 1.8.6
+
+        Or you can specify ruby source directory.
+        (ex. make 185 RUBYDIR=../ruby)
+
+  (in ruby source directory)
+     3. ./configure  (** If it doesn't go yet. **)
+     4. make clean
+     5. make
+
+
+  * test (ASCII and EUC-JP)
+
+  (in oniguruma directory)
+     6. make rtest
+        Or you can specify ruby program directory.
+        (ex. make rtest RUBYDIR=/usr/local/bin)
+
+
+(B) Win32 platform (VC++)
+
+   * Requirement: Visual C++, patch.exe
+
+  (in oniguruma directory)
+     1. copy win32\Makefile Makefile
+
+     2. nmake 16  RUBYDIR=<ruby-source-dir>  # for Ruby 1.6.8
+        or
+        nmake 182 RUBYDIR=<ruby-source-dir>  # for Ruby 1.8.2
+        or
+        nmake 183 RUBYDIR=<ruby-source-dir>  # for Ruby 1.8.3
+        or
+        nmake 184 RUBYDIR=<ruby-source-dir>  # for Ruby 1.8.4
+        or
+        nmake 185 RUBYDIR=<ruby-source-dir>  # for Ruby 1.8.5
+        or
+        nmake 186 RUBYDIR=<ruby-source-dir>  # for Ruby 1.8.6
+
+     3. Follow <ruby-source-dir>\win32\README.win32 description...
+
+--
+You can confirm Ruby's regexp engine is replaced or not
+by the constant Regexp::ENGINE on Ruby 1.8.
+
+(defined?(Regexp::ENGINE) && /^Oniguruma/ =~ Regexp::ENGINE)
+
+// END

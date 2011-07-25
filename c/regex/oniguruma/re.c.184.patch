@@ -1,0 +1,108 @@
+--- re.c.ruby_orig	2005-12-13 12:27:51.000000000 +0900
++++ re.c	2006-01-10 13:13:04.000000000 +0900
+@@ -483,11 +483,13 @@ rb_reg_to_s(re)
+ 	    goto again;
+ 	}
+ 	if (*ptr == ':' && ptr[len-1] == ')') {
++            int r;
+ 	    Regexp *rp;
+ 	    kcode_set_option(re);
+-	    rp = ALLOC(Regexp);
+-	    MEMZERO((char *)rp, Regexp, 1);
+-	    err = re_compile_pattern(++ptr, len -= 2, rp) != 0;
++	    r = re_alloc_pattern(&rp);
++	    if (r == 0) {
++	      err = (re_compile_pattern(++ptr, len -= 2, rp, NULL) != 0);
++	    }
+ 	    kcode_reset_option();
+ 	    re_free_pattern(rp);
+ 	}
+@@ -621,7 +623,9 @@ make_regexp(s, len, flags)
+     int flags;
+ {
+     Regexp *rp;
+-    char *err;
++    char err[ONIG_MAX_ERROR_MESSAGE_LEN];
++    int r;
++
+ 
+     /* Handle escaped characters first. */
+ 
+@@ -630,17 +634,18 @@ make_regexp(s, len, flags)
+        from that.
+     */
+ 
+-    rp = ALLOC(Regexp);
+-    MEMZERO((char *)rp, Regexp, 1);
+-    rp->buffer = ALLOC_N(char, 16);
+-    rp->allocated = 16;
+-    rp->fastmap = ALLOC_N(char, 256);
++    r = re_alloc_pattern(&rp);
++    if (r) {
++      re_error_code_to_str((UChar* )err, r);
++      rb_reg_raise(s, len, err, 0);
++    }
++
+     if (flags) {
+ 	rp->options = flags;
+     }
+-    err = re_compile_pattern(s, len, rp);
++    r = re_compile_pattern(s, len, rp, err);
+ 
+-    if (err != NULL) {
++    if (r != 0) {
+ 	re_free_pattern(rp);
+ 	rb_reg_raise(s, len, err, 0);
+ 	return 0;
+@@ -844,14 +849,15 @@ rb_reg_prepare_re(re)
+     }
+ 
+     if (need_recompile) {
+-	char *err;
++	char err[ONIG_MAX_ERROR_MESSAGE_LEN];
++	int r;
++
+ 
+ 	if (FL_TEST(re, KCODE_FIXED))
+ 	    kcode_set_option(re);
+ 	rb_reg_check(re);
+-	RREGEXP(re)->ptr->fastmap_accurate = 0;
+-	err = re_compile_pattern(RREGEXP(re)->str, RREGEXP(re)->len, RREGEXP(re)->ptr);
+-	if (err != NULL) {
++	r = re_recompile_pattern(RREGEXP(re)->str, RREGEXP(re)->len, RREGEXP(re)->ptr, err);
++	if (r != 0) {
+ 	    rb_reg_raise(RREGEXP(re)->str, RREGEXP(re)->len, err, re);
+ 	}
+     }
+@@ -918,14 +924,16 @@ rb_reg_search(re, str, pos, reverse)
+     if (FL_TEST(re, KCODE_FIXED))
+ 	kcode_reset_option();
+ 
+-    if (result == -2) {
+-	rb_reg_raise(RREGEXP(re)->str, RREGEXP(re)->len,
+-		     "Stack overflow in regexp matcher", re);
+-    }
+-
+     if (result < 0) {
+-	rb_backref_set(Qnil);
+-	return result;
++      if (result == ONIG_MISMATCH) {
++        rb_backref_set(Qnil);
++        return result;
++      }
++      else {
++        char err[ONIG_MAX_ERROR_MESSAGE_LEN];
++        re_error_code_to_str((UChar* )err, result);
++        rb_reg_raise(RREGEXP(re)->str, RREGEXP(re)->len, err, 0);
++      }
+     }
+ 
+     match = rb_backref_get();
+@@ -2275,6 +2283,7 @@ Init_Regexp()
+     rb_define_const(rb_cRegexp, "IGNORECASE", INT2FIX(RE_OPTION_IGNORECASE));
+     rb_define_const(rb_cRegexp, "EXTENDED", INT2FIX(RE_OPTION_EXTENDED));
+     rb_define_const(rb_cRegexp, "MULTILINE", INT2FIX(RE_OPTION_MULTILINE));
++    rb_define_const(rb_cRegexp, "ENGINE",    rb_obj_freeze(rb_str_new2("Oniguruma")));
+ 
+     rb_global_variable(&reg_cache);
+ 
