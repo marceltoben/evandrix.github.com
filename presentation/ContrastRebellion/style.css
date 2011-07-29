@@ -1,0 +1,147 @@
+html { width: 100%; height:100%;  }
+body {font-family: helvetica, arial,sans-serif; line-height:1.5em; background-color:#1b1b1b; background-image: url('page7-bg.png'); background-repeat:no-repeat; background-attachment: fixed; background-position: center -40px}
+.wrapper {  width: 960px;  margin: 0px auto; position:relative}
+.page {position:relative; width:100%; height:640px}
+
+.avatar {position: absolute; display:none}
+
+.button {font-size: 0.9em; text-transform:uppercase; cursor:pointer; border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius:20px; -moz-transition-property : color, background-color; -moz-transition-duration : .4s; -moz-transition-timing-function : ease-out; -o-transition-property : color, background-color; -o-transition-duration : .4s; -o-transition-timing-function : ease-out; -webkit-transition-property : color, background-color; -webkit-transition-duration : .4s; -webkit-timing-function : ease-out;  transition-property: color, background-color; transition-duration : .4s; transition-timing-function : ease-in-out; white-space: nowrap; line-height:40px}
+button:hover {-moz-transition-property : color, background-color; -moz-transition-duration : .4s; -moz-transition-timing-function : ease-out; -o-transition-property : color, background-color; -o-transition-duration : .4s; -o-transition-timing-function : ease-out; -webkit-transition-property : color, background-color; -webkit-transition-duration : .4s; -webkit-timing-function : ease-out;  transition-property: color, background-color; transition-duration : .4s; transition-timing-function : ease-in-out;}
+.button span {font-weight:bold;}
+
+.page.page1 {background-color: #f0efd1;}
+.page.page1 .pane {position:absolute; width: 800px; height:580px; left:50%; margin-left:-400px; top:50%; margin-top:-290px}
+.page.page1 .logo {height:300px; width:400px; margin:0px auto; overflow: hidden; position: relative}
+.page.page1 .logo .bg {position:absolute; left:50%; top:50%; margin-left:-145px; margin-top:-145px; }
+.page.page1 .logo .fist {position:absolute; left:50%; top:70px; margin-left:-58px; -webkit-transition: top 0.5s ease-in-out; -moz-transition: top 0.5s ease-in-out; -o-transition: top 0.5s ease-in-out; -ms-transition: top 0.5s ease-in-out; transition: top 0.5s ease-in-out}
+.page.page1 .logo .div {position: absolute; bottom:0px}
+.page.page1 h1 {font-family: restore-n4,restore-1,restore-2,sans-serif; font-size:3.6em; font-weight: 300; text-align: center; line-height:1.08em; color:#1b1b1b; text-transform: uppercase}
+.page.page1 h1 span {display: block; font-family: restore-n8,restore-1,restore-2,sans-serif; font-weight: 800; font-size:1.7em; text-transform: uppercase}
+.page.page1 h2 {font-size: 1.2em; color:#1b1b1b; text-align: center; line-height: 1.1em; margin-top:45px}
+.page.page1 .button {position:absolute; background-color: #bf3211;  color:#f0efd1; bottom:20px; width:310px; left:50%; margin-left:-165px; background-image: url('arrow.png');  background-repeat:no-repeat; background-position: 297px -105px; padding-left:20px}
+.page.page1 .button:hover {color: #f0efd1; background-color: #191919;  }
+.page.page1 .call {width:300px; background:url(../images/page1-arrow.png) no-repeat; margin-left:-150px; margin-bottom:-10px; padding-top:5px; position:absolute; bottom:0px; left:50%; font-family:ff-market-web-n4, ff-market-web-1, ff-market-web-2; font-weight: 400; color:#191919; font-size:1em; line-height:1em; text-align: center}
+.page.page1 .counters {position:absolute; width:60px; text-align: center; left:20px; top:50%; margin-top:-116px; overflow:hidden}
+.page.page1 #fb-counter {padding-left:7px; padding-top:10px; border-top:1px dotted #c6c397; margin-top:4px}
+.page.page1 #gplus-counter {margin-top:8px; padding-top:10px; border-top:1px dotted #c6c397;  }
+
+.page.page2 {background: #191919; }
+.page.page2 .pane {position:absolute; width:800px; left:50%; margin-left:-400px; top:50%; height:580px; margin-top:-290px}
+.page.page2 h2 {font-size: 2.8em; color:#f0efd1; text-align: center;  line-height: 1em; text-shadow: 0px 2px #000}
+.page.page2 h2 span { font-weight: bold; color:#cfba58}
+.page.page2 .text {font-size: 1.2em; color:#f0efd1; text-align: center; margin:20px;}
+.page.page2 .images {width:720px; height:240px; background-color: black; margin:0px auto; position: relative; -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.3); -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.3); box-shadow: 0px 0px 20px rgba(0,0,0,0.3);}
+.page.page2 .images img {position: absolute; left:0px; top:0px; visibility: hidden}
+.page.page2 .images .bubble {position: absolute; width:364px; height:62px; margin-top:-17px; margin-left:-182px; background: url(page2-bubble.png); font-family: restore-n8,restore-1,restore-2,sans-serif; font-weight:800; font-size:2.4em; color:white; text-align: center; padding-top:50px; opacity: 0.95; text-transform: uppercase}
+.page.page2 .next {position:absolute; right:-70px; top:50%; margin-top:-25px; background: url('arrow.png') no-repeat -96px 0; width: 50px; height: 50px;}
+.page.page2 .next div {position:absolute; background: url('arrow.png') no-repeat -96px -60px; width: 50px; height: 50px; opacity:0; visibility: hidden; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out; cursor:pointer}
+.page.page2 .prev {position:absolute; left:-70px; top:50%; margin-top:-25px; background: url('arrow.png') no-repeat -156px 0; width: 50px; height: 50px;}
+.page.page2 .prev div {position:absolute; background: url('arrow.png') no-repeat -156px -60px; width: 50px; height: 50px; opacity:0; visibility: hidden; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out; cursor:pointer}
+.page.page2 .next:hover div, .page.page2 .prev:hover div {visibility:visible; opacity:1; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+.page.page2 .links {position: relative; padding-top:10px; height:15px}
+.page.page2 .link {font-size:0.75em; color:#cfba58; text-align: center; position:absolute; width:100%; visibility: hidden; text-decoration: none}
+.page.page2 .link:hover {text-decoration: underline}
+.page.page2 .nav {text-align: center; }
+.page.page2 .selector {color:#f0efd1; font-size: 1.8em; cursor: pointer; line-height: 1em}
+.page.page2 .selector.selected, .page.page2 .selector:hover  {color:#cfba58; }
+.page.page2 .button {position:absolute; background-color: #bf3211;  color:#f0efd1; bottom:20px; width:300px; left:50%; margin-left:-160px; background-image: url('arrow.png');  background-repeat:no-repeat; background-position: 288px -105px; padding-left:20px}
+.page.page2 .button:hover {background-color: #d6c057; color:black; background-position: 288px 7px;}
+
+
+.page.page3 {background: #cfba58; overflow: hidden }
+.page.page3 .bg {position: absolute; bottom:-540px; left:50%; margin-left:-400px; }
+.page.page3 .pane {position:absolute; width:800px; left:50%; margin-left:-400px; top:50%; height:580px; margin-top:-290px}
+.page.page3 h2 {font-size: 2.8em; color:#191919; text-align: center;  line-height: 1em; }
+.page.page3 .text {font-size: 1.2em; color:#191919; text-align: center; margin:20px; }
+.page.page3 .important {position:relative; font-family: restore-n8,restore-1,restore-2,sans-serif; font-size:5em; font-weight: 800; text-align: center; line-height:0.9em; color:black; }
+.page.page3 .important .row2 {margin-top:-12px}
+.page.page3 .important .shadow {color:white; position: absolute; text-align:center; left:-3px; top:-4px;width:100%}
+.page.page3 .not-important {font-size:0.9em; font-weight: 800; text-align:center; text-transform: uppercase; padding:20px 0px;  line-height: 1.1em; color:#6f6537}
+.page.page3 .button {position:absolute; background-color: #bf3211;  color:#f0efd1; bottom:20px; width:440px; left:50%; margin-left:-230px; background-image: url('arrow.png');  background-repeat:no-repeat; background-position: 428px -105px; padding-left:20px }
+.page.page3 .button:hover {background-color: #372710;}
+
+.page.page4 {background: #21180d; overflow: hidden}
+.page.page4 .bg {position: absolute; top:-260px; left:50%; margin-left:-400px; }
+.page.page4 .pane {position:absolute; width:800px; left:50%; margin-left:-400px; top:50%; height:580px; margin-top:-290px}
+.page.page4 h2 {font-size: 2.8em; color:#cfba58; text-align: center; line-height: 1em; text-shadow: 0px 2px #000 }
+.page.page4 h2 span {display:block; font-weight: bold}
+.page.page4 .text {font-size: 1.2em; color:#f9f8cc; text-align: center; margin:20px;}
+.page.page4 .text a {color:#cfba58; font-weight: 700; text-decoration: none;  -webkit-transition: all 0.6s ease-out; -moz-transition: all 0.6s ease-out; -o-transition: all 0.6s ease-out; -ms-transition: all 0.6s ease-out; transition: all 0.6s ease-out; }
+.page.page4 .text a:hover {color:#f0efd1; background-color: #bf3211; -webkit-transition: all .2s ease-out; -moz-transition: all .2s ease-out; -o-transition: all .2s ease-out; -ms-transition: all .2s ease-out; transition: all .2s ease-out;}
+.page.page4 .examples {margin-top:50px}
+.page.page4 .examples .lead {float:left; width:160px; text-align: right; color:#f9f8cc; font-size: 1em; line-height: 1.1em }
+.page.page4 .examples .lead .row2 {opacity:0.8}
+.page.page4 .examples .lead .row3 {opacity:0.6}
+.page.page4 .examples .lead .row4 {opacity:0.4}
+.page.page4 .examples .lead .row5 {color:#cfba58; font-weight: 700}
+.page.page4 .examples .icon {float:left; margin-left:10px}
+.page.page4 .examples .icon .image {border:8px solid #f9f8cc; width:130px; height:130px; border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px}
+.page.page4 .examples .icon.icon1 .image {background: url(icon-vision.png) center center no-repeat}
+.page.page4 .examples .icon.icon2 .image {background: url(icon-badmonitor.png) center center no-repeat}
+.page.page4 .examples .icon.icon3 .image {background: url(icon-light.png) center center no-repeat}
+.page.page4 .examples .icon.icon4 .image {background: url(icon-tinyscreen.png) center center no-repeat}
+.page.page4 .examples .icon .label {color:#cfba58; text-align: center; padding-top:10px; font-size: 0.9em; line-height: 1.2em;}
+.page.page4 .button {position:absolute; background-color: #bf3211;  color:#f0efd1; bottom:20px; width:318px; left:50%; margin-left:-169px; background-image: url('arrow.png');  background-repeat:no-repeat; background-position: 306px -105px; padding-left:20px }
+.page.page4 .button:hover {background-color: #323310}
+
+.page.page5 {background: #323310; }
+.page.page5 .pane {position:absolute; width:800px; left:50%; margin-left:-400px; top:50%; height:580px; margin-top:-290px}
+.page.page5 h2 {font-size: 2.8em; color:#f9f8cc; text-align: center; line-height: 1em; text-shadow: 0px 2px black}
+.page.page5 h2 span {display:block; font-weight: bold}
+.page.page5 .text {font-size: 1.2em; color:#cfba58; text-align: center; margin:20px; }
+.page.page5 .images {width:720px; height:240px; background-color: black; margin:0px auto; position: relative; -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.3); -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.3); box-shadow: 0px 0px 20px rgba(0,0,0,0.3);}
+.page.page5 .images img {position: absolute; left:0px; top:0px; visibility: hidden}
+.page.page5 .images .bubble {position: absolute; width:286px; height:73px; margin-top:-17px; margin-left:-182px; background: url(page2-bubble.png); font-family: restore-n8,restore-1,restore-2,sans-serif; font-weight:800; font-size:1.8em; color:white; text-align: left; padding-left:78px; padding-top:50px; opacity: 0.95; text-transform: uppercase}
+.page.page5 .images .bubble span {position: absolute; width:32px; height:28px;  background: url(love.png); left:40px; top:50px} 
+.page.page5 .next {position:absolute; right:-70px; top:50%; margin-top:-25px; background: url('arrow.png') no-repeat -96px 0; width: 50px; height: 50px;}
+.page.page5 .next div {position:absolute; background: url('arrow.png') no-repeat -96px -60px; width: 50px; height: 50px; opacity:0; visibility: hidden; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out; cursor:pointer}
+.page.page5 .prev {position:absolute; left:-70px; top:50%; margin-top:-25px; background: url('arrow.png') no-repeat -156px 0; width: 50px; height: 50px;}
+.page.page5 .prev div {position:absolute; background: url('arrow.png') no-repeat -156px -60px; width: 50px; height: 50px; opacity:0; visibility: hidden; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out; cursor:pointer}
+.page.page5 .next:hover div, .page.page5 .prev:hover div {visibility:visible; opacity:1; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+.page.page5 .links {position: relative; padding-top:10px; height:15px}
+.page.page5 .link {font-size:0.75em; color:#cfba58; text-align: center; position:absolute; width:100%; visibility: hidden; text-decoration: none}
+.page.page5 .link:hover {text-decoration: underline}
+.page.page5 .nav {text-align: center; }
+.page.page5 .selector {color:#f9f8cc; font-size: 1.8em; cursor: pointer; line-height: 1em}
+.page.page5 .selector.selected, .page.page2 .selector:hover  {color:#cfba58; }
+.page.page5 .button {position:absolute; background-color: #bf3211;  color:#f0efd1; bottom:20px; width:360px; left:50%; margin-left:-190px; background-image: url('arrow.png');  background-repeat:no-repeat; background-position: 348px -105px; padding-left:20px}
+.page.page5 .button:hover {background-color: #f0efd1; color:black; background-position: 348px 7px;}
+
+.page.page6 {background: #f0efd1; }
+.page.page6 .pane {position:absolute; width:800px; left:50%; margin-left:-400px; top:50%; height:580px; margin-top:-290px}
+.page.page6 h2 {font-size: 2.8em; color:#191919; text-align: center; line-height: 1em; }
+.page.page6 h2 span {display:block; font-weight: bold}
+.page.page6 .text {font-size: 1.2em; color:#191919; text-align: left; margin:20px 0px;}
+.page.page6 .text ul {float:left; width:385px; padding-right:30px}
+.page.page6 .text ul.last {float:left; width:385px; padding:0px}
+.page.page6 .text li {padding-top:15px}
+.page.page6 .text a {color:#bf3211; font-weight: 700; text-decoration: none;  -webkit-transition: all 0.6s ease-out; -moz-transition: all 0.6s ease-out; -o-transition: all 0.6s ease-out; -ms-transition: all 0.6s ease-out; transition: all 0.6s ease-out; }
+.page.page6 .text a:hover {color:#191919; background-color: #cfba58; -webkit-transition: all .2s ease-out; -moz-transition: all .2s ease-out; -o-transition: all .2s ease-out; -ms-transition: all .2s ease-out; transition: all .2s ease-out; }
+.page.page6 .text i {font-style: italic}
+.page.page6 .button {position:absolute; background-color: #bf3211;  color:#f0efd1; bottom:20px; width:316px; left:50%; margin-left:-168px; background-image: url('arrow.png');  background-repeat:no-repeat; background-position: 304px -105px; padding-left:20px}
+.page.page6 .button:hover {background-color: #1b1b1b;}
+
+.page.page7 {background-color: transparent; }
+.page.page7 .pane {position:absolute; width:800px; left:50%; margin-left:-400px; top:50%; height:580px; margin-top:-290px}
+.page.page7 h2 {font-size: 2.4em; color:#cfba58; text-align: center; line-height: 1em; text-shadow: 0px 2px black; padding-bottom:40px}
+.page.page7 h2 span {display:block; font-weight: bold}
+.page.page7 .important {margin:0px auto; border:15px solid white; padding:30px; font-family: restore-n8,restore-1,restore-2,sans-serif; font-size:3.5em; font-weight: 800; text-align: center; line-height:1em; color:white; width:70%;  text-transform: uppercase}
+.page.page7 .button {position:absolute; background-color: #cfba58;  color:#000; bottom:20px; width:400px; left:50%; margin-left:-210px; background-image: url('arrow.png');  background-repeat:no-repeat; background-position: 388px 7px; padding-left:20px}
+.page.page7 .button:hover {background-color: white}
+.page.page7 .text {position:absolute; bottom:117px; font-size: 0.75em; color:#f0efd1; font-weight: 400; text-align: center; width:100%}
+
+.page.page8 {background-color: #080808; background-color: rgba(20,20,20,0.7); }
+.page.page8 .pane {position:absolute; width:800px; left:50%; margin-left:-400px; top:50%; height:580px; margin-top:-290px}
+.page.page8 h2 {padding:10px 0px; border-bottom:13px solid #cfba58; font-family: restore-n8,restore-1,restore-2,sans-serif; font-size:4.7em; font-weight: 800; text-align: center; line-height:1em; color:#cfba58; text-transform: uppercase; margin-bottom:50px}
+.page.page8 #fb-fans {float:left; width:600px}
+.page.page8 .spread {float:right; width:180px; text-align:center; border:1px dashed #383838; height:172px; margin-top:13px; color:#f0efd1; font-family: restore-n3,restore-1,restore-2,sans-serif; font-weight: 300; line-height: 1em; font-size:1.4em }
+.page.page8 .spread .lead {padding:20px 0px}
+.page.page8 .footer {position: absolute; bottom:0px; width:100%; padding-top:20px}
+.page.page8 .col {float:left;  border-right:1px dashed #383838; color:#f0efd1; font-size: 0.7em; width:220px; height:90px;  line-height:1.6em; margin-right:14px; padding-right:15px}
+.page.page8 .col span {font-weight: bold; font-family: helvetica,arial,sans-serif; display: block; color:#cfba58;}
+.page.page8 .col a {font-style: italic; text-decoration: none; color:#f0efd1;}
+.page.page8 .copyright {color:#cfba58; font-size:0.7em; line-height: 1.4em; border:none; padding-top:17px; width:300px; text-align: right; margin-right:0px; padding-right:0px}
+.page.page8 .copyright a {font-style: italic; text-decoration: none; color:#cfba58;}
+.page.page8 a:hover {color:#f0efd1; background-color: #bf3211; -webkit-transition: all .2s ease-out; -moz-transition: all .2s ease-out; -o-transition: all .2s ease-out; -ms-transition: all .2s ease-out; transition: all .2s ease-out; }
+
+.clear {clear:both}

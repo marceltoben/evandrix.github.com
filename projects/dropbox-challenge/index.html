@@ -1,0 +1,174 @@
+
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html> 
+ 
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+    <title>Packing your Dropbox</title> 
+    
+    <!--
+      This file and all included resources are
+      copyright Jordan Kasper 2010 unless noted otherwise.
+     --> 
+    
+    <style type='text/css'> 
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.1em; }
+      h3 { font-size: 1em; }
+      h2, h3 { margin: 0.2em 0; }
+      #drawing {
+        font-family: monospace;
+        border: 1px solid #666;
+        display: inline-block;
+        padding: 0.8em 0 0.8em 0.8em;
+        letter-spacing: 0.8em;
+      }
+      #log {
+        font-family: monospace;
+        border: 1px solid #666;
+      }
+      #explanation { display: none; border: 1px solid #ccc; }
+    </style> 
+    
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script> 
+    <script type='text/javascript' src='dropbox.js'></script> 
+    <script type='text/javascript'> 
+      $(document).ready(function() {
+        $('#clear').click(function() { $('#input').val(""); });
+        
+        // Box generator
+        $('#gen').click(function() {
+          var d1 = Math.floor(Math.random() * 8) + 2;
+          var d2 = Math.floor(Math.random() * 8) + 2;
+          var i = $('#input');
+          var v = i.val();
+          var n = (v.length > 0)?'\n':'';
+          v += n + d1 + ' ' + d2;
+          i.val(v);
+        });
+        
+        // Solve it
+        $('#solve').click(function() {
+          $('#solution').html('');
+          
+          var s = db.solve({
+            input: $('#input').val(),
+            biggestFirst: $('#biggestFirst').is(':checked'),
+            minArea: $('#minArea').is(':checked'),
+            drawBox: $('#drawing').get(0),
+            logBox: $('#log').get(0),
+          });
+          $('#solution').text(s);
+          if (s === null) { $('#solution').text("N/A"); }
+        })
+        .click(); // run demo solution
+        
+        // Explain it
+        $('#explain').click(function(e) {
+          e.preventDefault();
+          $('#explanation').slideToggle();
+        });
+      });
+    </script> 
+  </head> 
+  
+  <body> 
+    <h1>Dropbox Packing Demonstration</h1> 
+    <p> 
+      This is a potential solution to the 
+      "<a href='http://www.dropbox.com/jobs/challenges#packing-your-dropbox' title='View challenge description'>Packing your Dropbox</a>"
+      challenge that the <a href='http://dropbox.com' title='go to Dropbox'>Dropbox</a> 
+      folks have come up with the test potential new engineers.
+      <strong>I do not want a job at Dropbox.</strong> I just thought 
+      the problem looked interesting and wanted to give it a whirl.
+    </p> 
+    <p> 
+      My solution (which is not perfect) is written in JavaScript and 
+      uses a couple different methods (see the checkboxes below). To use 
+      it, type in a few box dimensions (in "W H" format) and click 
+      "Solve". If you just want to see it work, try clicking on 
+      "Generate Box" a few times, then click "Solve".
+    </p> 
+    <p><a id='explain' href='#' title='View explanation'>Want to see an explanation of the method(s)</a>?</p> 
+    <div id='explanation'> 
+      <h2>The Explanation</h2> 
+      <p> 
+        First of all, you can <a href='dropbox.js' title='See the code'>view all of the code</a> 
+        as it is written in JavaScript and running on this page.
+      </p> 
+      <p> 
+        The main routine is the db.solve method which takes in as input 
+        a multi-line string. It pulls box dimensions (in the format 
+        "W H") from each line and audits other data. It then goes into a 
+        cycle during which the available boxes are matched up with 
+        openings in the overall "grid" (the containing box, the area 
+        of which is our solution).
+      </p> 
+      <p> 
+        If there are no openings big enough for one of our boxes, then 
+        one of three paths is taken. Based on the inputs ("biggest first" 
+        and "minimum area added" methods) the program decides how to 
+        expand the grid in order to accomodate one of the remaining 
+        boxes to be placed.
+      </p> 
+      <p> 
+        In the "minimum area added" method the program will always choose 
+        the next box to place by the amount of area it will add to the 
+        overall grid - opting for least amount of space necessary. In 
+        other words, if box A will add 24 to the necessary grid area and 
+        box B will only add 12, box B will be placed - regardless of the 
+        actual sizes of boxes A and B.
+      </p> 
+      <p> 
+        In the "biggest first" method, the next largest box will always 
+        be placed next - but where it is placed is dependant on where 
+        it best "fits". The "fitting" is determined by finding the 
+        location that will add the least amount of space to the grid.
+      </p> 
+      <p> 
+        You may be asking why not just use the best method, but the 
+        question of the "best" method is not so easily answered. A given  
+        method may be better on one set of inputs, but not another. An 
+        ideal solution (which this is not), may need to take all possible 
+        paths into account and determine the best method for the current 
+        set of inputs.
+      </p> 
+      <p> 
+        Take a look at the log to see the options that the program is 
+        considering for any box on a potential solution. This may 
+        help in understanding why the program chose a particular path.
+      </p> 
+    </div> 
+    <p> 
+      Let me know if you have any <a href='mailt&#111;:me&#064;j&#111;rdankasper.c&#111;m' title='Send me an email'>questions or comments</a>.
+      (As I said, this is not at all a perfect solution.)
+    </p> 
+    
+    <div style='float: left; width: 38%;'> 
+      <h2>Boxes to Place:</h2> 
+      <textarea id='input' style='width: 3.5em; height: 12em; float: left; margin-right: 1em;'>8 8
+4 3
+3 4</textarea> 
+      <input type='button' id='gen' value='Generate Box' /><br /> 
+      <input type='button' id='clear' value='Clear Input' /><br /> 
+      <input type='button' id='solve' value='Solve' /><br /> 
+      
+      <input type='checkbox' id='biggestFirst' checked='checked' /> 
+      <label for='biggestFirst'>Use biggest first method</label> 
+      <br /> 
+      <input type='checkbox' id='minArea' checked='checked' /> 
+      <label for='minArea'>Use minimum area added method</label> 
+    </div> 
+    
+    <div style='float: right; width: 60%;'> 
+      <h2>Solution: <span id='solution'>&nbsp;</span></h2> 
+	    <h3>Visual Representation:</h3> 
+	    <div id='drawing'></div> 
+	  </div> 
+	  <div style='clear: both;'> 
+		  <h3>Log</h3> 
+		  <div id='log'></div> 
+		</div> 
+  </body> 
+ 
+</html>
