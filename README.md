@@ -41,6 +41,12 @@
 
 ---
 
+### Code Search
+ * [Google Code Search](http://www.google.com/codesearch)
+ * Python > [Nullege](http://nullege.com)
+
+---
+
 ### Android > Publish Apps
  * Smartphones: [App.net](https://manage.app.net/dashboard/developer/apps)
  * Tablets:     [AppsLib](http://appslib.com/developers/personal_info.html)
