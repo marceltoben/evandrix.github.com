@@ -86,6 +86,9 @@
 ---
 
 ### Graphs visualisation
+ * [graph.tk](http://graph.tk)
+ * [Graphr](http://www.graphr.org)
+ * [Function Plotter](http://www.snappymaria.com/canvas/FunctionPlotter.html)
  * [googleVis](http://code.google.com/p/google-motion-charts-with-r)
  * Instructions
    - Install:
