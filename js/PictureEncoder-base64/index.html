@@ -1,0 +1,83 @@
+<!doctype html> 
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]--> 
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]--> 
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]--> 
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]--> 
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+
+        <title>Picture Encoder</title> 
+        <meta name="description" content="Base64 picture encoder online."> 
+        <meta name="author" content="Paweł Psztyć">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="shortcut icon" href="/favicon.ico"> 
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"> 
+
+        <link rel="stylesheet" href="app.css"> 
+        <script src="js/libs/modernizr-1.7.min.js"></script>
+    </head>
+    <body> 
+        <div id="container">
+            <header> 
+                <h1 class="main">Picture Encoder<span class="beta">beta</span></h1>
+            </header> 
+            <div id="main" role="main"> 
+                <section class="app-desc">
+                    Picture encoder helps You replace static image files to base64 string representation.
+                </section>
+                <section id="file-upload">
+                    <form id="file-process" method="post" action="#" enctype="multipart/form-data" onsubmit="return false;">
+                        <div>Process files</div>
+                        <div>
+                            <input autofocus="true" type="file" accept="image/*" multiple name="files" id="filesUploaderField"/><br/>
+                            or you can drop here some files.
+                        </div>
+                        <div class="drop-zone hidden fade">
+                            Drop files here
+                        </div>
+                        <div>
+                            <output class="file-list"><ul></ul></output>
+                        </div>
+                        <div>
+                            <input type="submit" value="encode"/>
+                        </div>
+                    </form>
+                    <output class="parsed-files">
+                        <ul></ul>
+                    </output>
+                </section>
+
+                <!--        <section id="parse-url">
+                            <form id="url-process" method="post" action="#" enctype="multipart/form-data" onsubmit="return false;">
+                                <div>Process html/css file</div>
+                                <div>
+                                    <input type="url" name="url" id="web-url" value="" required/>
+                                </div>
+                                <div>
+                                    <input type="submit" value="process"/>
+                                </div>
+                            </form>
+                        </section>-->
+
+            </div> 
+            <footer> 
+                <div class="credits">Copyright &copy; 2011 Paweł Psztyć</div>
+                <div class="source">
+			Source code at <a href="http://code.google.com/p/picture-encoder/">Google Code Hosting</a> under Apache License.
+                </div>
+                <div class="icons">
+			Icons from <a href="http://openiconlibrary.sourceforge.net/">Open Icon Library</a>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <!--[if lt IE 7 ]>
+          <script src="js/libs/dd_belatedpng.js"></script>
+          <script>DD_belatedPNG.fix("img, .png_bg");</script>
+        <![endif]-->
+        <script type="text/javascript" src="js/analytics.js"></script>
+    </body> 
+</html>

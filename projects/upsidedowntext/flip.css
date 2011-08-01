@@ -1,0 +1,417 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	background-color:#E0F1F3;
+	margin-bottom:30px;
+	text-align:center;
+}
+
+#cteheader {
+	background-color:#E1E1E1;
+	text-align:left;
+	border-bottom:1px solid #AAAAAA;
+	font-family:Arial;
+	font-size:0.8em;
+	height:25px;
+	padding-left:1px;
+}
+#cteheader a {
+	padding:5px 9px 4px 7px;
+	border-right:1px solid #AAAAAA;
+	display:block;
+	text-decoration:none;
+	color:#666666;
+	font-weight:bold;
+	float:left;
+}
+#cteheader a.curr {
+	background-color:#EEEEEE;
+	border-bottom:1px solid #EEEEEE;
+}
+#cteheader a:hover {
+	background-color:#EEEEEE;
+}
+
+
+#header {
+	margin:0 0 15px 0;
+	text-align:center;
+	padding:10px 0 1px 0;
+	background-color:white;
+}
+a img {
+border:0;
+}
+
+div#topad {
+	width:700px;
+	margin:0 auto 10px auto;
+}
+
+div#sentTweet {
+	width:500px;
+	margin:0 auto;
+	margin-bottom:10px;
+	background-color:white;
+	padding:10px;
+	font-family:"Lucida Grande";
+	border:lightblue 1px solid;
+	font-size:0.9em;
+}
+div#sentTweet #twitterSN {
+	text-align:right;
+	margin-bottom:4px;
+}
+div#sentTweet #twitterSN a {
+	color:black;
+	text-decoration:black;
+	position:relative;
+	top:-20px;
+	left:-10px;
+}
+div#sentTweet #twitterSN img {
+
+}
+div#sentTweet #updateMsg {
+	color:grey;
+	text-align:left;
+	font-size:0.8em;
+	margin-top:5px;
+}
+
+div#main {
+	width:700px;
+	margin:0 auto 10px auto;
+}
+
+form {
+	margin:0 auto;
+	text-align:left;
+	width:500px;
+	position:relative;
+}
+#charCount {
+	position:absolute;
+	top:-5px;
+	right:-12px;
+	color:grey;
+	font-size:0.9em;
+	font-family:Verdana, sans-serif;
+	background:white;
+}
+label.optLabels {
+	margin-left:10px;
+}
+label.optLabels input {
+	margin-right:3px;
+}
+
+#options {
+	margin:3px 0 10px 0;
+	padding:10px;
+}
+#options p.optCont{
+	margin-top:4px;
+}
+textarea {
+	margin:1px 0 0 0;
+	display:block;
+	width:500px;
+	height:150px;
+	padding:5px;
+	font-size:1.1em;
+	font-family:"Lucida Grande", Verdana, sans-serif;
+	border: 1px solid grey;	
+	overflow:auto;
+}
+textarea#convertedText,textarea#convertedHTML {
+	background-color:#E0F1F3;
+}
+label#lOriginalText, label#lConvertedText, label#lConvertedHTML {
+	font-size:0.9em;
+	display:block;
+	width:511px;
+	margin:0;
+}
+
+#optPost {
+	float:right;
+	padding:1px 5px 1px 5px;
+}
+#postFacebook, #postTwitter {
+cursor:pointer;
+}
+div#cConvertedHTML {
+	margin-top:17px;
+	display:none;
+}
+.show {
+	display:block!important;
+}
+.dontshow {
+	display:none!important;
+}
+form span {
+	display:block;
+	width:514px;
+	margin-top:1px;
+	text-align:right;
+	font-size:0.9em;
+}
+form span a {
+	color:blue;
+}
+input#viewHTML {
+	background-color:white;
+	border:0;
+	color:blue;
+	text-decoration:underline;
+	font-size:1em;
+	font-family:inherit;
+	cursor:pointer;
+	float:right;
+	padding:3px;
+}
+#announce {
+	margin-top:15px;
+	margin-bottom:15px;
+	background-color:white;
+	padding:8px;
+	font-size:1em;
+}
+#announce a {
+font-weight:bold;
+}
+div#footer {
+margin:15px 30px 0 0;
+text-align:right;
+font-size:0.8em;
+}
+div#footer div#copyr {
+margin-bottom:6px;
+font-size:0.9em;
+}
+div#footer a#cteLink {
+color:black;
+text-decoration:none;
+}
+div#footer a {
+color:blue;
+}
+div#footer a.curr {
+color:black;
+text-decoration:none;
+}
+
+/* stuff for rounding */
+.rounded{
+	display:block;
+}
+.rounded *{
+	display:block;
+	height:1px;
+	overflow:hidden;
+	font-size:.01em;
+	background:#FFFFFF;
+}
+.rounded1{
+	margin-left:3px;
+	margin-right:3px;
+	padding-left:1px;
+	padding-right:1px;
+	border-left:1px solid #edf7f8;
+	border-right:1px solid #edf7f8;
+	background:#f7fbfc;
+}
+.rounded2{
+	margin-left:1px;
+	margin-right:1px;
+	padding-right:1px;
+	padding-left:1px;
+	border-left:1px solid #e3f2f4;
+	border-right:1px solid #e3f2f4;
+	background:#f9fcfc;
+}
+.rounded3{
+	margin-left:1px;
+	margin-right:1px;
+	border-left:1px solid #f9fcfc;
+	border-right:1px solid #f9fcfc;
+}
+.rounded4{
+	border-left:1px solid #edf7f8;
+	border-right:1px solid #edf7f8;
+}
+.rounded5{
+	border-left:1px solid #f7fbfc;
+	border-right:1px solid #f7fbfc;
+}
+.roundedfg{
+	background:#FFFFFF;
+	padding:20px 0 30px 0;
+}
+
+/* for pyramid page */
+h1#pyramidTitle {
+	background-color:white;
+	font-size:0.9em;
+	margin:0 auto;
+	padding:7px 0 0 0;
+	width:600px;
+}
+input#originalText, input#convertedText {
+	margin:1px 0 0 0;
+	display:block;
+	width:150px;
+	height:1.4em;
+	padding:5px;
+	font-size:1.1em;
+	font-family:"Lucida Grande", Verdana, sans-serif;
+	border: 1px solid grey;	
+	overflow:auto;
+	/* input#convertedText is actually for the domain page but input#originalText is for both the pyramid page
+	and domain page */
+}
+#options.forPyramid {
+padding:0;
+width:510px;
+height:70px;
+position:relative;
+margin:14px 0 41px 0;
+
+}
+#options .optionsSub {
+margin-top:5px;
+}
+#options #optionsSubOne {
+	position:absolute;
+	top:23px;
+	left:0;
+}
+#options #optionsSubTwo {
+	position:absolute;
+	top:23px;
+	right:0;
+}
+#options .optionsSub strong {
+	font-size:0.8em;
+	font-family:Tahoma, Verdana, sans-serif;
+	margin-left:8px;
+}
+
+form#pyramidText textarea#convertedText {
+	height:275px;
+}
+/* for domain page */
+
+/* for other (not index) pages */
+
+h1 {
+font-size:1.1em;
+font-family:Tahoma, Verdana, sans-serif;
+}
+div#backHome {
+margin-bottom:15px;
+background-color:white;
+padding:10px;
+font-size:1.2em;
+}
+div#backHome a {
+color:blue;
+}
+div#about {
+	text-align:left;
+	margin:15px 30px 0 30px;
+}
+div#about p {
+	margin-top:10px;
+	font-family:"Times New Roman", serif;
+}
+div#unicode {
+	width:600px;
+	margin: 10px auto 0 auto;
+}
+div#unicode p { 
+	text-align:left;
+	padding-top:10px;
+}
+div#unicode table {
+	width:100%;
+	margin-top:20px;
+	text-align:center;
+}
+div#unicode table tr.even {
+	background-color:#E3EDED;
+}
+div#unicode table td {
+	padding-top:7px;
+	width:300px;
+	padding-bottom:7px;
+}
+div#unicode table tbody td.txtoriginal {
+	font-size:1.4em;
+}
+div#unicode table tbody td.txtupsidedown {
+	font-size:1.1em;
+}
+
+div#widget {
+	margin:0 auto;
+	text-align:left;
+	width:390px;
+	position:relative;
+}
+div#widget label#lWidgetCode {
+	font-size:1em;
+	display:block;
+	width:391px;
+	margin:0 0 2px 0;
+}	
+div#widget textarea {
+	font-size:0.8em;
+	width:380px;
+	height:50px;
+	margin:0 0 30px 0;
+	padding:5px;
+}
+div#widget iframe {
+	border:1px dashed #6AD4E0!important;
+}
+
+/* share button */
+div#share {
+	float:right;
+	margin-top:-15px;
+	background-color:white;
+	padding:5px 5px 4px 5px;
+	display:none;
+	text-align:left;
+}
+div#share #bookmark img {
+	margin-left:-3px;
+	margin-right:6px;
+}
+div#share #bookmark span {
+text-decoration:underline;
+position:relative;
+top:-2px;
+}
+div#share #bookmark {
+	margin-bottom:5px;
+	padding:0;
+	display:block;
+	text-decoration:none;
+}
+div#share a#bookmark {
+	font-size: 0.9em;
+	color:#0000EE;
+	margin-left:3px;
+}
+.stbuttontext {
+color:#0000EE;
+font-size:0.9em;
+position:relative;
+top:-1px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BG</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <script type="text/javascript">
+            var prevNotyfication = null;
+            //context menus
+            var contextProperties = {
+                title: 'Encode image',
+                contexts: ['image'],
+                onclick: function(info, tab){
+                    if( info.mediaType != "image" ){
+                        return;
+                    }
+                    
+                    closeLatestNotyfication();
+                    
+                    var url = info.srcUrl;
+                    
+                    prevNotyfication = webkitNotifications.createNotification(
+                        url, 'Processing image', 'please wait....'
+                    );
+                    prevNotyfication.onclose = function(){
+                        prevNotyfication = null;
+                    }
+                    prevNotyfication.show();
+                    
+                    processImage(url);
+                }
+            }
+            chrome.contextMenus.create(contextProperties);
+            
+            function closeLatestNotyfication(){
+                if( prevNotyfication != null ){
+                    prevNotyfication.cancel();
+                    prevNotyfication = null;
+                }
+            }
+            
+            function processImage(url){
+                
+                var _period = url.lastIndexOf('.');
+                var ext = url.substr(_period+1);
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                
+                xhr.overrideMimeType('image/'+ext+'; charset=x-user-defined');
+                xhr.responseType = 'arraybuffer';
+                
+                xhr.asBlob = true;
+                xhr.addEventListener('load', function(){
+                    
+                    var blob = new WebKitBlobBuilder();
+                    blob.append(xhr.response);
+                    var file = blob.getBlob('image/'+ext);
+                    
+                    var worker = new Worker('js/pictureencoder.js');
+                    worker.onmessage = function (event) {
+                        var data = event.data;
+                        if( data.result ){//finished
+                            closeLatestNotyfication();
+                            var hash = createUUID();
+                            var viewTabUrl = chrome.extension.getURL('index.html#'+hash);
+                            chrome.tabs.create({
+                                url: viewTabUrl
+                            }, function(tab){
+                                var views = chrome.extension.getViews();
+                                for (var i = 0; i < views.length; i++) {
+                                    var view = views[i];
+                                    if(view.location.hash == '#'+hash){
+                                        view.appendExternalResult(data.result);
+                                    }
+                                }
+                            });
+                            
+                        } else if( data.error ){    
+                            closeLatestNotyfication();
+                            prevNotyfication = webkitNotifications.createNotification(
+                                url, 'Error processing image', 'Can not process this image :(' 
+                            );
+                            prevNotyfication.onclose = function(){
+                                prevNotyfication = null;
+                            }
+                            prevNotyfication.show();
+                        } else {
+                            ///
+                        }
+                    };
+                    worker.postMessage(file);
+                    
+                    
+                    
+//                    var reader = new FileReader();
+//                    reader.onload = (function(theFile) {
+//                        return function(e) {
+//                            // Render thumbnail.
+//                            var span = document.createElement('span');
+//                            span.innerHTML = ['<img class="thumb" src="', e.target.result,
+//                                '" title="', theFile.name, '"/>'].join('');
+//                            closeLatestNotyfication();
+//                            
+//                            
+//                        };
+//                    })(f);
+//                    
+//                    reader.onerror =  function(e) {
+//                        closeLatestNotyfication();
+//                        prevNotyfication = webkitNotifications.createNotification(
+//                            url, 'Error processing image', 'Can not process this image :(' 
+//                        );
+//                        prevNotyfication.onclose = function(){
+//                            prevNotyfication = null;
+//                        }
+//                        prevNotyfication.show();
+//                    };
+//                    reader.readAsDataURL(f);
+                }, false);
+                xhr.send();
+            }
+            
+            function createUUID(){
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                    return v.toString(16);
+                });
+            }
+            
+        </script>
+    </head>
+    <body></body>
+</html>

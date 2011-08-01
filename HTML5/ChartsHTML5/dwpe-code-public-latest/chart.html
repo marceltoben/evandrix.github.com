@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Charts!</title>       
+	
+	<base href="./charting/" />
+	
+	<link href="css/basic.css" type="text/css" rel="stylesheet" />
+	<link href="css/visualize.css" type="text/css" rel="stylesheet" />
+	<link href="css/visualize-dark.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/visualize.jQuery.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+		/* Parameters:
+			type: string. Accepts ‘bar’, ‘area’, ‘pie’, ‘line’. Default: ‘bar’.
+			width: number. Width of chart. Defaults to table width
+			height: number. Height of chart. Defaults to table height
+			appendTitle: boolean. Add title to chart. Default: true.
+			title: string. Title for chart. Defaults to text of table’s Caption element.
+			appendKey: boolean. Adds the color key to the chart. Default: true.
+			colors: array. Array items are hex values, used in order of appearance. Default: ['#be1e2d','#666699','#92d5ea','#ee8310','#8d10ee','#5a3b16','#26a4ed','#f45a90','#e9e744']
+			textColors: array. Array items are hex values. Each item corresponds with colors array. null/undefined items will fall back to CSS text color. Default: [].
+			parseDirection: string. Direction to parse the table data. Accepts ‘x’ and ‘y’. Default: ‘x’.
+			pieMargin: number. Space around outer circle of Pie chart. Default: 20.
+			pieLabelPos: string. Position of text labels in Pie chart. Accepts ‘inside’ and ‘outside’. Default: ‘inside’.
+			lineWeight: number. Stroke weight for lines in line and area charts. Default: 4.
+			barGroupMargin: number. Space around each group of bars in a bar chart. Default: 10.
+			barMargin: number. Creates space around bars in bar chart (added to both sides of each bar). Default: 1
+		*/
+			$('table').visualize({type: 'line'});
+		});
+	</script>
+</head>
+
+<body>
+
+	<table>
+		<caption>Visits from August 16 to August 21</caption>
+		<thead>
+			<tr>
+				<td></td>
+				<th scope="col">Monday</th>
+				<th scope="col">Tuesday</th>
+				<th scope="col">Wednesday</th>
+				<th scope="col">Thursday</th>
+				<th scope="col">Friday</th>
+				<th scope="col">Saturday</th>
+				<th scope="col">Sunday</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<th scope="row">CatsWhoCode.com</th>
+				<td>12541</td>
+				<td>11204</td>
+				<td>11354</td>
+				<td>10058</td>
+				<td>9871</td>
+				<td>8254</td>
+				<td>5477</td>
+			</tr>
+			<tr>
+				<th scope="row">WpRecipes.com</th>
+				<td>9855</td>
+				<td>8870</td>
+				<td>8731</td>
+				<td>7488</td>
+				<td>8159</td>
+				<td>6547</td>
+				<td>4512</td>
+			</tr>
+			<tr>
+				<th scope="row">CatsWhoBlog.com</th>
+				<td>3241</td>
+				<td>2544</td>
+				<td>2597</td>
+				<td>3108</td>
+				<td>2114</td>
+				<td>2045</td>
+				<td>950</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

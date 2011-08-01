@@ -1,0 +1,24 @@
+{
+    "name": "Picture Encoder",
+    "version": "0.1.1",
+    "description": "Encode images to base64 string and replace static filest on your website.",
+    "app": {
+        "launch": {
+            "local_path": "index.html"
+        }
+    },
+    "minimum_chrome_version": "10.0.0",
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "contextMenus",
+        "notifications"
+    ],
+    "icons": {
+        "16": "img/webexport16.png",
+        "32": "img/webexport32.png",
+        "48": "img/webexport48.png",
+        "128": "img/webexport128.png"
+    },
+    "background_page": "background.html"
+}
