@@ -1,0 +1,8 @@
+--- #YAML:1.0
+name: Text-ASCIITable
+version: 0.18
+author:
+  - Håkon Nessjøen, <lunatic@cpan.org>
+abstract: Create a nice formatted table using ASCII characters.
+license: perl
+generated_by: Module::Build version 0.2611, without YAML.pm
