@@ -15,6 +15,7 @@
 
  * [UpsideDownText](http://www.upsidedowntext.com)
  * [Epoch Converter](http://www.epochconverter.com)
+ * [Pandoc: Universal document converter](http://johnmacfarlane.net/pandoc/try)
 
 ---
 
