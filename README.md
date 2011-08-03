@@ -160,6 +160,10 @@
 ### Python > Code syntax highlighting
  * [![pygments](http://pygments.org/media/logo.png "Pygments")](http://pygments.org)
 
+### Python > Debuggers (standalone) - `easy_install`
+ * [pudb](http://pypi.python.org/pypi/pudb)
+ * [pydbgr](http://code.google.com/p/pydbgr)
+
 ### Python > IDE
  * Python 2.7: [Eric4](http://sourceforge.net/projects/eric-ide/files/eric4/stable)
  * Python 3.1: [Eric5](http://sourceforge.net/projects/eric-ide/files/eric5/stable)
