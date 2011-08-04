@@ -108,6 +108,11 @@
 
 ---
 
+### Javascript > CommonJS API
+ * [CommonJS](http://www.commonjs.org/impl)
+
+---
+
 ### Open source Graphic Design vs. Adobe
  * Replace Photoshop for [Gimp](http://www.gimp.org)
  * Replace Illustrator for [Inkscape](http://inkscape.org)+[MyPaint](http://mypaint.intilinux.com)
