@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>ED9396CE-321D-4CEA-B5B8-7002C9BE928A</UUID>
-        <nextObjectID>259</nextObjectID>
+        <nextObjectID>269</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -52,7 +52,7 @@
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z133"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z122 z125 z105 z104 z109 z124 z106"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z125 z105 z109 z124 z104 z106 z122"></relationship>
     </object>
     <object type="TAG" id="z103">
         <attribute name="name" type="string">ophcrack</attribute>
@@ -259,7 +259,7 @@ bmZpZ3VyYXRpb24gRWRpdG9yCgpJZiB5b3UgZG9u4oCZdCBoYXZlIHRoZSBDb25maWd1cmF0aW9uIEVk
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z133"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z193 z169 z140 z213"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z193 z213 z140 z169"></relationship>
     </object>
     <object type="ASSET" id="z132">
         <attribute name="sort" type="int32">-1</attribute>
@@ -274,7 +274,7 @@ IHppcCBhcmNoaXZlIgoKRml4OiBDaGVjayB0aGF0IHRoZSBzb3VyY2UvZGVzdGluYXRpb24gcGF0aHMg
         <attribute name="name" type="string">Default</attribute>
         <attribute name="expanded" type="bool">1</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER"></relationship>
-        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z229 z102 z232 z183 z221 z163 z131 z249 z108"></relationship>
+        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z232 z221 z229 z163 z183 z249 z102 z131 z108"></relationship>
     </object>
     <object type="ASSET" id="z135">
         <attribute name="sort" type="int32">-1</attribute>
@@ -468,9 +468,9 @@ CiQgc3VkbyBnZW0gaW5zdGFsbCBybWFnaWNrCg==
     </object>
     <object type="ASSET" id="z164">
         <attribute name="sort" type="int32">-1</attribute>
-        <attribute name="path" type="string">README.mdown</attribute>
-        <attribute name="content" type="binary">RmlsZSBkaWFsb2cgaW4gZm9jdXM6CglDbWQrU2hpZnQrcGVyaW9kKC4pIGtleXMgc2ltdWx0YW5l
-b3VzbHkK
+        <attribute name="path" type="string">README.sh</attribute>
+        <attribute name="content" type="binary">ZGVmYXVsdHMgd3JpdGUgY29tLmFwcGxlLkZpbmRlciBBcHBsZVNob3dBbGxGaWxlcyBUUlVFCgpG
+aWxlIGRpYWxvZyBpbiBmb2N1czoKCUNtZCtTaGlmdCtwZXJpb2QoLikga2V5cyBzaW11bHRhbmVvdXNseQo=
 </attribute>
         <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z162"></relationship>
     </object>
@@ -603,7 +603,7 @@ bnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0wLjUsIHVzZXItc2NhbGFibGU9bm8i
     </object>
     <object type="TAG" id="z184">
         <attribute name="name" type="string">osx</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z162"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z162 z269"></relationship>
     </object>
     <object type="SNIPPET" id="z185">
         <attribute name="name" type="string">XCode3: copystrings error</attribute>
@@ -715,7 +715,7 @@ OyBwcmludCBnZXRfcHl0aG9uX2xpYigpIgo=
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z229"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z154 z205 z149 z196 z146 z172 z242 z177 z179 z139 z204 z142 z212 z185 z201"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z196 z242 z149 z212 z205 z139 z185 z146 z204 z201 z154 z177 z179 z142 z172"></relationship>
     </object>
     <object type="ASSET" id="z203">
         <attribute name="sort" type="int32">-1</attribute>
@@ -815,7 +815,7 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z221"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z219 z215 z237 z225"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z215 z219 z225 z237"></relationship>
     </object>
     <object type="ASSET" id="z218">
         <attribute name="sort" type="int32">-1</attribute>
@@ -838,14 +838,14 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z221"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z162"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z162 z269"></relationship>
     </object>
     <object type="FOLDER" id="z221">
         <attribute name="sort" type="int16">4</attribute>
         <attribute name="name" type="string">OSX</attribute>
         <attribute name="expanded" type="bool">1</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z133"></relationship>
-        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z220 z217"></relationship>
+        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z217 z220"></relationship>
     </object>
     <object type="TAG" id="z222">
         <attribute name="name" type="string">MacPorts</attribute>
@@ -896,7 +896,7 @@ Zm9sbG93aW5nIGJsb2NrIEAgbGluZSA2MzoKCWNvbmZpZ3VyZS5jYyAgICBnY2MtNC4yCgljb25maWd1
         <attribute name="name" type="string">Programming</attribute>
         <attribute name="expanded" type="bool">1</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z133"></relationship>
-        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z258 z226 z202"></relationship>
+        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z265 z226 z202 z258"></relationship>
     </object>
     <object type="ASSET" id="z230">
         <attribute name="sort" type="int32">-1</attribute>
@@ -920,7 +920,7 @@ eHByZXNzaW9uIGlzIHdyaXR0ZW4gaW4gdGhlIGZvcm0gb2Y6CgkvcGF0dGVybi9tb2RpZmllcnMK4oCm
         <attribute name="name" type="string">Programs</attribute>
         <attribute name="expanded" type="bool">1</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z133"></relationship>
-        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z233 z210"></relationship>
+        <relationship name="children" type="0/0" destination="FOLDER" idrefs="z233 z210 z261"></relationship>
     </object>
     <object type="LIST" id="z233">
         <attribute name="sort" type="int16">1</attribute>
@@ -928,7 +928,7 @@ eHByZXNzaW9uIGlzIHdyaXR0ZW4gaW4gdGhlIGZvcm0gb2Y6CgkvcGF0dGVybi9tb2RpZmllcnMK4oCm
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z232"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z161 z158 z231"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z231 z161 z158"></relationship>
     </object>
     <object type="ASSET" id="z234">
         <attribute name="sort" type="int32">-1</attribute>
@@ -1103,5 +1103,80 @@ aWVzICh1c2luZyBgb3MucGF0aGApLCB5b3UgY2FuCiAgICBtYWtlIHlvdXIgbGl2ZSBtdWNoIGVhc2ll
         <relationship name="list" type="1/1" destination="LIST" idrefs="z258"></relationship>
         <relationship name="assets" type="0/0" destination="ASSET" idrefs="z257"></relationship>
         <relationship name="tags" type="0/0" destination="TAG" idrefs="z195"></relationship>
+    </object>
+    <object type="ASSET" id="z260">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.mdown</attribute>
+        <attribute name="notes" type="string">http://derwiki.tumblr.com/post/841579929/how-i-learned-to-stop-worrying-and-love-ssh</attribute>
+        <attribute name="content" type="binary">SG93IEkgTGVhcm5lZCB0byBTdG9wIFdvcnJ5aW5nIGFuZCBMb3ZlIFNTSAoKQmVmb3JlIHRoZXJl
+IHdlcmUgVlBOcywgdGhlcmUgd2FzIHNzaC4gQW5kIHdoZW4geW91IGRvbuKAmXQgaGF2ZSBhY2Nlc3MgdG8geW91ciBWUE4gb3IgY2Fu4oCZdCBzZXQgb25lIHVwLCB5b3UgY2FuIHN0aWxsIGdldCBtb3N0IG9mIHRoZSBmdW5jdGlvbmFsaXR5IG92ZXIgc3NoLgoKUXVpY2sgYW5kIGRpcnR5IEhUVFAgdHVubmVsaW5nCgpUaGlzIGlzIHVzZWZ1bCBpZiB5b3UgbmVlZCB0byBoaXQgYW4gaW50ZXJuYWwgc2VydmVyIHRocm91Z2ggYSBwcm94eSBzZXJ2ZXI6Cgpzc2ggLWYgLU4gLUwgMzE2MDk6aG9zdGlyZWFsbHl3YW50dG9nZXR0by5jb206ODAgcHJveHlob3N0LmNvbQoKYW5kIHRoZW4gbG9hZCBodHRwOi8vbG9jYWxob3N0OjMxNjA5IGluIHlvdXIgYnJvd3NlciBhbmQgaXQgd2lsbCBsb29rIGxpa2UgaHR0cDovL2hvc3RpcmVhbGx5d2FudHRvZ2V0dG8uY29tIGZyb20gcHJveHlob3N0LmNvbeKAmXMgcG9pbnQgb2Ygdmlldy4gU2ltaWxhcmx5OgoKc3NoIC1mIC1OIC1MIDMxNjEwOnNlY3VyZWhvc3QuY29tOjQ0MyBwcm94eWhvc3QuY29tCgp3aWxsIGZvcndhcmQgU1NMIHRyYWZmaWMgdG8gaHR0cHM6Ly9sb2NhbGhvc3Q6MzE2MTAvLiBOb3QgZ29ubmEgd29yayBjb21wbGV0ZWx5LCBidXQgaXTigJlzIGEgcXVpY2sgYW5kIGRpcnR5IHNvbHV0aW9uIEnigJl2ZSB1c2VkIHRvIGdldCB0byBpbnRlcm5hbCB3aWtpIHNlcnZlcnMgYmVmb3JlLgoKClF1aWNrZXIgYW5kIERpcnRpZXIgU1NIIHR1bm5lbGluZwoKVGhpcyBpc27igJl0IHZlcnkgZGlmZmVyZW50IGZyb20gc3No4oCZaW5nIGludG8gb25lIGJveCBhbmQgaW1tZWRpYXRlbHkgc3No4oCZaW5nIHRvIGFub3RoZXIuIEl0IGF2b2lkcyBhbiBleHRyYSBiYXNoIHByb2Nlc3MgYW5kIGl04oCZcyBxdWlja2VyLCBidXQgdGhhdOKAmXMgcmVhbGx5IGl0IOKAlCBleGNlcHQgZm9yIHRoZSBCQU1GIGZhY3RvcjoKCnNzaCAtdCBnYXRld2F5bWFjaGluZS5jb20gc3NoIGhvc3RpcmVhbGx5d2FudHRvZ2V0dG8KCgpSZXZlcnNlIFNTSCB0dW5uZWxpbmcgYSBzaGVsbAoKR290IGEgY29tcHV0ZXIgYmVoaW5kIGEgZmlyZXdhbGwgd2hvc2UgY29uZmlndXJhdGlvbiB5b3UgZG9u4oCZdCBoYXZlIGFjY2VzcyB0bz8gSXTigJlzIHByZXR0eSBlYXN5IHRvIGdldCB0aGUgY29tcHV0ZXIgYmVoaW5kIHRoZSBmaXJld2FsbCB0byBwb2tlIG91dCB0byBhbm90aGVyIHNlcnZlci4KCihzdGVwIDEsIGZyb20gdGhlIGNvbXB1dGVyIHlvdSB3aXNoIHRvIGFjY2VzcykKZGVyd2lraUBmaXJld2FsbGVkY29tcHV0ZXI6fiQgc3NoIC1SIGxvY2FsaG9zdDoyMDAyOmxvY2FsaG9zdDoyMiBteXB1YmxpY3NlcnZlci5jb20KCihzdGVwIDIsIGZyb20gYW55IGNvbXB1dGVyIHRoYW4gY2FuIGFjY2VzcyBteXB1YmxpY3NlcnZlci5jb20pCmRlcndpa2lAbXlsYXB0b3BvbnRoZWludGVybmV0On4kIHNzaCBteXB1YmxpY3NlcnZlci5jb20gLXAgMjAwMgooYXV0aGVudGljYXRlKQpkZXJ3aWtpQGZpcmV3YWxsZWRjb21wdXRlcjp+JAoKSeKAmXZlIGZvdW5kIHRoaXMgZXNwZWNpYWxseSB1c2VmdWwgdG8gZ2V0IGludG8gbXkgZGFk4oCZcyBjb21wdXRlciBhbmQgZml4IHRoaW5ncy4gSSBwdXQgdGhlIOKAnHNzaCAtUuKAnSBjb21tYW5kIGludG8gYSBzaGVsbCBzY3JpcHQgY2FsbGVkIOKAnGxldGFkYW1pbuKAnSwgbWFkZSBpdCBleGVjdXRhYmxlLCBhbmQgcHV0IGl0IG9uIGhpcyBkZXNrdG9wLiBOb3cgaXTigJlzIHN1cGVyIGVhc3kgZm9yIGhpbSB0byBncmFudCBtZSBhY2Nlc3MgaW4uCgoKVHVubmVsaW5nIFNDUCB0aHJvdWdoIGEgZ2F0ZXdheQoKU29tZXRpbWVzIHlvdSB3YW50IHRvIGZpbGUgdHJhbnNmZXIgdGhyb3VnaCBhIGdhdGV3YXkgbWFjaGluZToKCnNzaCAtTiAtTCAxMjM0OnRhcmdldG1hY2hpbmU6MjIgbXlwdWJsaWNzZXJ2ZXIuY29tCnNjcCAtUCAxMjM0IGxvY2FsaG9zdDp+L3JlbW90ZWZpbGUgbG9jYWxmaWxlCgoKUXVpY2tseSBzZXR0aW5nIHVwIHBhc3N3b3JkbGVzcyBTU0gKCkZpcnN0IG1ha2Ugc3VyZSB5b3XigJl2ZSBnZW5lcmF0ZWQgYSBrZXkgZmlsZTogc3NoLWtleWdlbgpVYnVudHUgKGFuZCBvdGhlciBMaW51eCBkaXN0cm9zKSBtYWtlIGl0IHJlYWxseSBlYXN5OiBzc2gtY29weS1pZCB1c2VyQHJlbW90ZWhvc3QKT1MgWCBzZWVtcyB0byBsYWNrIHRoaXMsIHNvIHRoZSBxdWljayBvbmUgbGluZXIgSSBoYXZlIGlzOgpjYXQgfi8uc3NoL2lkX2RzYS5wdWIgfCBzc2ggdXNlcm5hbWVAbXlzbGljZWhvc3RzZXJ2ZXIuY29tIOKAnGNhdCAtIMK7IH4vLnNzaC9hdXRob3JpemVkX2tleXPigJ0=
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z263"></relationship>
+    </object>
+    <object type="LIST" id="z261">
+        <attribute name="sort" type="int16">2</attribute>
+        <attribute name="name" type="string">ssh</attribute>
+        <attribute name="expanded" type="bool">0</attribute>
+        <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z232"></relationship>
+        <relationship name="children" type="0/0" destination="FOLDER"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z263"></relationship>
+    </object>
+    <object type="TAG" id="z262">
+        <attribute name="name" type="string">ssh</attribute>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z263"></relationship>
+    </object>
+    <object type="SNIPPET" id="z263">
+        <attribute name="name" type="string">SSH</attribute>
+        <attribute name="modified" type="date">333935265.55062299966812133789</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z261"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z260"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z262"></relationship>
+    </object>
+    <object type="TAG" id="z264">
+        <attribute name="name" type="string">c</attribute>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z267"></relationship>
+    </object>
+    <object type="LIST" id="z265">
+        <attribute name="sort" type="int16">3</attribute>
+        <attribute name="name" type="string">C</attribute>
+        <attribute name="expanded" type="bool">0</attribute>
+        <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z229"></relationship>
+        <relationship name="children" type="0/0" destination="FOLDER"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z267"></relationship>
+    </object>
+    <object type="ASSET" id="z266">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.c</attribute>
+        <attribute name="notes" type="string">http://www.fefe.de/intof.html</attribute>
+        <attribute name="content" type="binary">Q2F0Y2hpbmcgSW50ZWdlciBPdmVyZmxvd3MgaW4gQwoKTm90ZTogVGhpcyBkb2N1bWVudCBhbmQg
+dGhlIG1hY3JvcyBtYWtlIHR3byBpbXBvcnRhbnQgYXNzdW1wdGlvbnM6CgpUaGVyZSBhcmUgOCBiaXRzIGluIGEgY2hhci4gVGhpcyBpcyBub3QgZ3VhcmFudGVlZCBieSB0aGUgQyBzdGFuZGFyZCwgYW5kIGlzIGluIGZhY3Qgbm90IHRydWUgb24gYWxsIHBsYXRmb3JtcywgbW9zdCBub3RhYmx5IHNvbWUgYW5jaWVudCBtYWluZnJhbWVzLiBZb3UgY291bGQgd29yayBhcm91bmQgdGhpcyB3aXRoIENIQVJfQklUIGZyb20gbGltaXRzLmgsIGlmIHlvdSByZWFsbHkgY2FyZWQuClRoZSBpbnRlZ2VycyB1c2UgdHdvJ3MgY29tcGxlbWVudC4gVGhpcyBpcyBhbHNvIG5vdCBndWFyYW50ZWVkIGJ5IHRoZSBDIHN0YW5kYXJkLCBidXQgeW91IHdpbGwgYmUgaGFyZCBwcmVzc2VkIHRvIGZpbmQgYSBwbGF0Zm9ybSB3aGVyZSBpdCBpcyBub3QgdHJ1ZS4KSW50ZWdlciBPdmVyZmxvd3MgYXJlIGFyaXRobWV0aWMgZXJyb3JzLiBJbnRlZ2VycyBoYXZlIGZpbml0ZSByYW5nZXMgaW4gY29tcHV0ZXJzLCBmb3IgZXhhbXBsZSBhIDMyLWJpdCB1bnNpZ25lZCBpbnRlZ2VyIGdvZXMgZnJvbSAwIHRvIDB4ZmZmZmZmZmYuIElmIHlvdSBhZGQgb25lIHRvIDB4ZmZmZmZmZmYsIHlvdSBnZXQgMCBhZ2Fpbi4KClNpbmNlIHRoZSBhZGRpdGlvbiBvcGVyYXRpb24gaW4gdGhlIENQVSBpcyBhZ25vc3RpYyB0byB3aGV0aGVyIHRoZSBpbnRlZ2VyIGlzIHNpZ25lZCBvciB1bnNpZ25lZCwgdGhlIHNhbWUgZ29lcyBmb3Igc2lnbmVkIGludGVnZXJzLiBGb3IgMzItYml0IHNpZ25lZCBpbnRlZ2VycywgdGhlIG1pbmltdW0gdmFsdWUgaXMgMHg4MDAwMDAwMCAoLTIxNDc0ODM2NDgpIGFuZCB0aGUgbWF4aW11bSB2YWx1ZSBpcyAweDdmZmZmZmZmICgyMTQ3NDgzNjQ3KS4gTm90ZSB0aGF0IHRoZXJlIGlzIG5vIHZhbHVlIHRoYW4gY2FuIGhvbGQgMjE0NzQ4MzY0OCwgc28gaWYgeW91IG5lZ2F0ZSAoaW50KTB4ODAwMDAwMDAsIHlvdSBnZXQgKGludCkweDgwMDAwMDAwIGFnYWluLiBUaGF0IGlzIHNvbWV0aGluZyB0byBsb29rIG91dCBmb3IsIGJlY2F1c2UgaXQgbWVhbnMgYWJzKCkgcmV0dXJucyBhIG5lZ2F0aXZlIHZhbHVlIHdoZW4gZmVkIC0yMTQ3NDgzNjQ4LgoKU28sIGlmIHlvdSB3YW50IHRvIGFkZCB0d28gaW50ZWdlcnMgYSBhbmQgYiAoYiA+PSAwKSwgdGhlIGVhc2llc3Qgd2F5IHRvIGZpbmQgb3V0IGlmIHRoYXQgb3ZlcmZsb3dzIGlzIHRvIGNoZWNrIHdoZXRoZXIgYStiPGEgKG9yIGI7IHNvbWUgcGVvcGxlIHRoaW5rIHlvdSBoYXZlIHRvIGNoZWNrIGFnYWluc3QgbWluKGEsYiksIGJ1dCB0aGF0IGlzIHVubmVjZXNzYXJ5KS4KCklzc3VlIDE6IGFicygtMjE0NzQ4MzY0OCkgPCAwCgpUaGUgYWJzIGZ1bmN0aW9uIHJldHVybnMgdGhlIGFyZ3VtZW50IGlmIGl0IGlzIHBvc2l0aXZlLCBvciB0aGUgbmVnYXRlZCBhcmd1bWVudCBpZiBpdCBpcyBuZWdhdGl2ZS4gVW5mb3J0dW5hdGVseSwgLSgtMjE0NzQ4MzY0OCkgaXMgc3RpbGwgLTIxNDc0ODM2NDggKG9uIGEgMzItYml0IHBsYXRmb3JtKS4gU28gZG9uJ3QgcmVseSBvbiBhYnMoKSBvbiB1bnRydXN0ZWQgZGF0YSB0byByZXR1cm4gYSBub24tbmVnYXRpdmUgbnVtYmVyIQoKVGhlIHNhbWUgaXMgb2J2aW91c2x5IGFsc28gdHJ1ZSBmb3IgbGFicyBhbmQgbGxhYnMsIGJ1dCBmb3IgZGlmZmVyZW50IG51bWJlcnMuCgpUaGlzIGNhbiBiZWNvbWUgYSBzZWN1cml0eSBpc3N1ZS4gSSBoYXZlIHNlZW4gb25lIGluc3RhbmNlIGluIHRoZSB2YXNwcmludGYgaW1wbGVtZW50YXRpb24gb2YgbGliaWJlcnR5LCB3aGljaCBpcyBwYXJ0IG9mIGdjYywgYmludXRpbHMgYW5kIHNvbWUgb3RoZXIgR05VIHNvZnR3YXJlLiB2YXNwcmludGYgd2Fsa3Mgb3ZlciB0aGUgZm9ybWF0IHN0cmluZyBhbmQgdHJpZXMgdG8gZXN0aW1hdGUgaG93IG11Y2ggc3BhY2UgaXQgd2lsbCBuZWVkIHRvIGhvbGQgdGhlIGZvcm1hdHRlZCByZXN1bHQgc3RyaW5nLiBJbiBmb3JtYXQgc3RyaW5ncywgdGhlcmUgaXMgYSBjb25zdHJ1Y3QgJS4qcyBvciAlKnMsIHdoaWNoIG1lYW5zIHRoYXQgdGhlIGFjdHVhbCB2YWx1ZSBzaG91bGQgYmUgdGFrZW4gZnJvbSB0aGUgc3RhY2suIFRoZSBsaWJpYmVydHkgY29kZSBkaWQgaXQgbGlrZSB0aGlzOgoKICAgICAgICAgIGlmICgqcCA9PSAnKicpCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICArK3A7CiAgICAgICAgICAgICAgdG90YWxfd2lkdGggKz0gYWJzICh2YV9hcmcgKGFwLCBpbnQpKTsKICAgICAgICAgICAgfQpUaGlzIGlzIGFjdHVhbGx5IHR3byBpc3N1ZXMgaW4gb25lLiBUaGUgZmlyc3QgaXNzdWUgaXMgdGhhdCB0b3RhbF93aWR0aCBjYW4gb3ZlcmZsb3cuIFRoZSBzZWNvbmQgaXNzdWUgaXMgdGhlIG9uZSB0aGF0IGlzIGludGVyZXN0aW5nIGluIHRoaXMgY29udGV4dDogYWJzIGNhbiByZXR1cm4gYSBuZWdhdGl2ZSBudW1iZXIsIGNhdXNpbmcgdGhlIGNvZGUgdG8gYWxsb2NhdGUgbm90IGVub3VnaCBzcGFjZSBhbmQgdGh1cyBjYXVzZSBhIGJ1ZmZlciBvdmVyZmxvdy4KCklzc3VlIDI6IGFkZGluZyBhIHBvc2l0aXZlIG51bWJlciB0byBhbiBpbnRlZ2VyIG1pZ2h0IG1ha2UgaXQgc21hbGxlcgoKSWYgeW91IGFkZCBhIHBvc2l0aXZlIGludGVnZXIgdG8gYW5vdGhlciBwb3NpdGl2ZSBpbnRlZ2VyLCB0aGUgcmVzdWx0IGlzIHRydW5jYXRlZC4gVGVjaG5pY2FsbHksIGlmIHlvdSBhZGQgdHdvIDMyLWJpdCBudW1iZXJzLCB0aGUgcmVzdWx0IGhhcyAzMyBiaXRzLgoKT24gdGhlIENQVSBsZXZlbCwgaWYgeW91IGFkZCB0d28gMzItYml0IGludGVnZXJzLCB0aGUgbG93ZXIgMzIgYml0cyBvZiB0aGUgcmVzdWx0IGFyZSB3cml0dGVuIHRvIHRoZSBkZXN0aW5hdGlvbiwgYW5kIHRoZSAzM3JkIGJpdCBpcyBzaWduYWxsZWQgb3V0IGluIHNvbWUgb3RoZXIgd2F5LCB1c3VhbGx5IGluIHRoZSBmb3JtIG9mIGEgImNhcnJ5IGZsYWciLgoKVW5mb3J0dW5hdGVseSwgdGhlcmUgaXMgbm8gd2F5IHRvIGFjY2VzcyB0aGlzIGNhcnJ5IGJpdCBmcm9tIEMgZGlyZWN0bHkuCgpUaGVyZSBhcmUgdHdvIHdheXMgdG8gZ2V0IGFyb3VuZCB0aGlzOgoKQ2FzdCB0aGUgbnVtYmVycyB0byBhIGJpZ2dlciBpbnRlZ2VyIHR5cGUsIHRoZW4gZG8gdGhlIGFkZGl0aW9uIHRoZXJlLCBhbmQgY2hlY2sgaWYgdGhlIHJlc3VsdCBpcyBpbiB0aGUgcmlnaHQgcmFuZ2UuCkRvIHRoZSBhZGRpdGlvbiBub3JtYWxseSwgdGhlbiBjaGVjayB0aGUgcmVzdWx0IChlLmcuIGlmIChhKzIzPDIzKSBvdmVyZmxvdykuCkNoZWNrIGJlZm9yZSBhZGRpbmcgd2hldGhlciB0aGUgbnVtYmVyIHlvdSBhZGQgY2FuIGZpdCAocmVxdWlyZXMga25vd2xlZGdlIG9mIHRoZSBtYXhpbXVtIHZhbHVlIGZvciB0aGF0IGRhdGEgdHlwZSkKU29sdXRpb24gMSBkb2VzIG5vdCB3b3JrIGluIGdlbmVyYWwsIGJlY2F1c2UgdGhlcmUgbWlnaHQgbm90IGJlIGEgYmlnZ2VyIGludGVnZXIgdHlwZSwgYW5kIHNvbHV0aW9uIDIgZG9lcyBub3Qgd29yaywgYmVjYXVzZSBpbiB0aGUgQyBsYW5ndWFnZSwgd2hlbiBhZGRpbmcgYSBudW1iZXIgdG8gYSBwb2ludGVyIG9yIHRvIGEgc2lnbmVkIGludGVnZXIsIG92ZXJmbG93IGlzIHVuZGVmaW5lZC4gVW5mb3J0dW5hdGVseSwgZ2NjIGFzIG9mIHZlcnNpb24gNC4xIGFidXNlcyB0aGlzIGFuZCBvcHRpbWl6ZXMgYXdheSBjaGVja3MgdGhhdCB3b3VsZCBvbmx5IGJlIHRydWUgaWYgdGhlcmUgd2FzIGFuIG92ZXJmbG93LCBpbiBwYXJ0aWN1bGFyIGNoZWNrcyB0aGF0IGNoZWNrIGZvciBhbiBvdmVyZmxvdy4gSGVyZSBpcyBhbiBleGFtcGxlIHByb2dyYW0gdGhhdCBkZW1vbnN0cmF0ZXMgdGhlIHByb2JsZW0uCgpUaGF0IGxlYXZlcyB1cyB3aXRoIGFwcHJvYWNoIDMuIFRoZSBnZW5lcmFsIGlkZWEgaXMgZ2l2ZW4gaW4gdGhlIGFuc3dlciB0byBxdWVzdGlvbiAyMC42YiBvZiB0aGUgQyBmYXEuIFVuZm9ydHVuYXRlbHksIHRoZSBleGFtcGxlIGNvZGUgaGFzIHNldmVyYWwgaXNzdWVzOgoKSXQgb25seSB3b3JrcyBmb3IgaW50cy4KV2UgY2Fubm90IGVhc2lseSBnZW5lcmFsaXplIGl0LCBiZWNhdXNlIHdlIHdvdWxkIG5lZWQgYSBmdW5jdGlvbiB0aGF0IHJldHVybnMgSU5UX01BWCBmb3IgYSBnaXZlbiB0eXBlLgpJdCBkb2VzIG5vdCBjYXRjaCBhZGRpbmcgLTUgdG8gSU5UX01JTi4KRmluZGluZyB0aGUgbWluaW11bSBhbmQgbWF4aW11bSB2YWx1ZXMgZm9yIGEgZ2l2ZW4gaW50ZWdlciB0eXBlCgpGb3IgdW5zaWduZWQgZGF0YSB0eXBlcywgdGhpcyBpcyBlYXN5LiBUaGUgbWluaW11bSB2YWx1ZSBpcyAwLCBhbmQgdGhlIG1heGltdW0gdmFsdWUgaXMgKHR5cGUpLTEgKC0xIGNhc3QgdG8gdGhlIHR5cGUgd2Ugd2FudCkuCgpGb3Igc2lnbmVkIGRhdGEgdHlwZXMsIHRoaXMgaXMgbm90IHNvIGVhc3kuIEZvciBhIDMyLWJpdCBpbnQsIHRoZSBtaW5pbXVtIHZhbHVlIGlzIDB4ODAwMDAwMDAsIGFuZCB0aGUgbWF4aW11bSB2YWx1ZSBpcyAweDdmZmZmZmZmLiBJdCBtaWdodCBiZSB0ZW1wdGluZyB0byBjYWxjdWxhdGUgb25lIGZyb20gdGhlIG90aGVyLCBidXQgd2UgY2Fubm90IGp1c3QgYWRkIG9yIHN1YnRyYWN0IG9uZSwgYmVjYXVzZSB0aGF0IHdvdWxkIGJlIHRoZSB2ZXJ5IGludGVnZXIgb3ZlcmZsb3cgdGhhdCBjYXVzZWQgdGhlIHVuZGVmaW5lZCBiZWhhdmlvciBpbiB0aGUgZmlyc3QgcGxhY2UuIEZvcnR1bmF0ZWx5LCBmb3IgYm90aCBzaWduZWQgYW5kIHVuc2lnbmVkIGFyaXRobWV0aWMsIHRoZSBtaW5pbXVtIHZhbHVlIGlzIHRoZSBiaXR3aXNlIE5PVCBvZiB0aGUgbWF4aW11bSB2YWx1ZSAodGhlIH4gb3BlcmF0b3IgaW4gQykuCgpXZSBjYW4gY29uc3RydWN0IDB4ODAwMDAwMDAgYXMgMSA8PCAoc2l6ZW9mKHR5cGUpKjgtMSkuIEZyb20gdGhhdCB3ZSBjYW4gY29uc3RydWN0IDB4N2ZmZmZmZmYgYXMgfjB4ODAwMDAwMDAuIFRoYXQgZ2l2ZXMgdXMgbWluIGFuZCBtYXggdmFsdWVzIGZvciBzaWduZWQgYW5kIHVuc2lnbmVkIGludGVnZXJzLgoKSGVyZSBhcmUgdGhlIG1hY3JvcyB0byBnZXQgdGhlIG1pbmltdW0gYW5kIG1heGltdW0gdmFsdWVzIGZvciBhIGdpdmVuIGludGVnZXIgdHlwZToKCiNkZWZpbmUgX19IQUxGX01BWF9TSUdORUQodHlwZSkgKCh0eXBlKTEgPDwgKHNpemVvZih0eXBlKSo4LTIpKQojZGVmaW5lIF9fTUFYX1NJR05FRCh0eXBlKSAoX19IQUxGX01BWF9TSUdORUQodHlwZSkgLSAxICsgX19IQUxGX01BWF9TSUdORUQodHlwZSkpCiNkZWZpbmUgX19NSU5fU0lHTkVEKHR5cGUpICgtMSAtIF9fTUFYX1NJR05FRCh0eXBlKSkKCiNkZWZpbmUgX19NSU4odHlwZSkgKCh0eXBlKS0xIDwgMT9fX01JTl9TSUdORUQodHlwZSk6KHR5cGUpMCkKI2RlZmluZSBfX01BWCh0eXBlKSAoKHR5cGUpfl9fTUlOKHR5cGUpKQpFYXJsaWVyIHZlcnNpb25zIG9mIHRoaXMgZG9jdW1lbnQgdXNlZCBhIGxlZnQgc2hpZnQgb2YgLTEgdG8gY29uc3RydWN0IHRoZSByZXR1cm4gdmFsdWUgb2YgX19NSU5fU0lHTkVELCBidXQgQ2hyaXN0aWFuIENvcm5lbHNzZW4gcG9pbnRlZCBvdXQgdG8gbWUgdGhhdCBzaGlmdGluZyBhIG5lZ2F0aXZlIHZhbHVlIGlzIHVuZGVmaW5lZCwgdG9vLiBUaGVyZWZvcmUgdGhlIG5ldyBzb2x1dGlvbiBqdW1wcyB0aHJvdWdoIGEgZmV3IG1vcmUgaG9vcHMuIFNpbmNlIHRoZXNlIGNhbGN1bGF0aW9ucyBhcmUgcGVyZm9ybWVkIHNvbGVseSBvbiBjb25zdGFudHMsIG1vc3QgY29tcGlsZXJzIChpbmNsdWRpbmcgZ2NjKSB3aWxsIGNhbGN1bGF0ZSB0aGVtIGNvbXBsZXRlbHkgYXQgY29tcGlsZSB0aW1lLCBzbyBkbyBub3Qgd29ycnkgdGhhdCB0aGUgbmV3IHN0YXRlbWVudHMgd2lsbCBiZSBzbG93ZXIuCgpGaW5kaW5nIG91dCB3aGV0aGVyIHdlIGNhbiBhc3NpZ24gYSB2YWx1ZSB0byBhIHZhcmlhYmxlIHdpdGhvdXQgdHJ1bmNhdGlvbgoKVGhlIG5leHQgcXVlc3Rpb24gaXMgd2hldGhlciB3ZSBjYW4gYXNzaWduIGEgY2VydGFpbiB2YWx1ZSB0byBhIHZhcmlhYmxlIHdpdGhvdXQgbG9zaW5nIHByZWNpc2lvbi4gSXQgaXMgbm90IHN1ZmZpY2llbnQgaWYgd2UganVzdCBjaGVjayBmb3Igb3ZlcmZsb3cgZHVyaW5nIHRoZSBhZGRpdGlvbiBvciBzdWJ0cmFjdGlvbiwgYmVjYXVzZSBzb21lb25lIG1pZ2h0IGFkZCAxIHRvIC01IGFuZCBhc3NpZ24gdGhlIHJlc3VsdCB0byBhbiB1bnNpZ25lZCBpbnQuIFRoZW4gdGhlIGFjdHVhbCBhZGRpdGlvbiBkb2VzIG5vdCBvdmVyZmxvdywgYnV0IHRoZSByZXN1bHQgc3RpbGwgZG9lcyBub3QgZml0LgoKVGhlIGZpcnN0IGFwcHJvYWNoIHdvdWxkIGJlIHRvIGRvIHRoZSBhc3NpZ25tZW50LCBhbmQgdGhlbiBjaGVjayB3aGV0aGVyIHRoZSBjb250ZW50cyBvZiB0aGUgZGVzdGluYXRpb24gdmFyaWFibGUgaXMgZXF1YWwgdG8gdGhlIHZhbHVlIHdlIHRyaWVkIHRvIGFzc2lnbiB0byBpdC4gVW5mb3J0dW5hdGVseSwgdGhhdCBpcyBub3Qgc3VmZmljaWVudC4KCkxldCdzIHNheSwgZm9yIGV4YW1wbGUsIHRoYXQgeW91IHRyeSB0byBhc3NpZ24gYW4gaW50IG9mIC0yMyB0byBhbiB1bnNpZ25lZCBpbnQgdmFyaWFibGUuIFlvdSBkbyB0aGUgYXNzaWdubWVudCwgdGhlIHZhcmlhYmxlIGlzIG5vdyAweGZmZmZmZmU5LCBhbmQgdGhlbiB5b3UgY29tcGFyZSAweGZmZmZmZmU5ID09IC0yMywgYW5kIHRoZSBDIGludGVnZXIgcHJvbW90aW9uIHJ1bGVzIHdpbGwgY29udmVydCAtMjMgdG8gdW5zaWduZWQgaW50LCBhbmQgc2F5IGJvdGggbnVtYmVycyBhcmUgdGhlIHNhbWUuIFNvIHdlIGFsc28gaGF2ZSB0byBjb21wYXJlIHRoZSBzaWducy4gSW4gdGhlIGVuZCwgbXkgbWFjcm8gbG9va3MgbGlrZSB0aGlzOgoKI2RlZmluZSBhc3NpZ24oZGVzdCxzcmMpICh7IFwKICB0eXBlb2Yoc3JjKSBfX3g9KHNyYyk7IFwKICB0eXBlb2YoZGVzdCkgX195PV9feDsgXAogIChfX3g9PV9feSAmJiAoKF9feDwxKSA9PSAoX195PDEpKT8odm9pZCkoKGRlc3QpPV9feSksMDoxKTsgXAp9KQp0eXBlb2YgaXMgYSBnY2MgZXh0ZW5zaW9uLiBJdCBpcyBoZXJlIHNvIHRoYXQgeW91IGNhbiBnaXZlIHRoZSBtYWNybyBhcmd1bWVudHMgd2l0aCBzaWRlIGVmZmVjdHMsIGxpa2UgKnB0cisrLiBUaGUgY29kZSB0aGVuIGRvZXMgdGhlIGFzc2lnbm1lbnQsIGNoZWNrcyB3aGV0aGVyIHRoZSB2YWx1ZSBkaWRuJ3QgY2hhbmdlLCBhbmQgdGhlbiBjaGVja3Mgd2hldGhlciB0aGUgc2lnbiBpcyB0aGUgc2FtZSwgdG9vLiBJbiB0aGUgc2lnbiBjb21wYXJpc29uLCBJIHVzZSA8IDEgaW5zdGVhZCBvZiA8IDAgYmVjYXVzZSB0aGUgMCBjYXNlIGRvZXNuJ3QgbWF0dGVyLCBhbmQgY29tcGFyaW5nIGFuIHVuc2lnbmVkIGludCB3aXRoIDwgMCBnZW5lcmF0ZXMgYSBnY2Mgd2FybmluZyBhYm91dCBhIGNvbXBhcmlzb24gYWx3YXlzIGJlaW5nIHRydWUuCgpOb3cgd2UgaGF2ZSBhbGwgd2UgbmVlZCB0byBkbyB0aGUgc2ltcGxlIG1hY3JvLCBhdCBsZWFzdCBhIHZlcnNpb24gdGhhdCBjYW4gYWRkIHBvc2l0aXZlIG51bWJlcnM6CgojZGVmaW5lIF9fYWRkX29mKGMsYSxiKSAoeyBcCiAgdHlwZW9mKGEpIF9fYT1hOyBcCiAgdHlwZW9mKGIpIF9fYj1iOyBcCiAgKChfX01BWCh0eXBlb2YoYykpLShfX2IpID49IChfX2EpKT9hc3NpZ24oYyxfX2ErX19iKToxKTsgXAp9KQpBZGRpbmcgYW5kIHN1YnRyYWN0aW5nIGFyYml0cmFyeSBpbnRlZ2VycwoKTm93IHRoYXQgd2UgaGF2ZSBhIG1hY3JvIHRoYXQgd2lsbCB3b3JrIGZvciBhZGRpbmcgcG9zaXRpdmUgaW50ZWdlcnMsIGl0J3MgZWFzeSB0byBnZW5lcmFsaXplIHRoaXMgaW50byBhIG1hY3JvIHRoYXQgd2lsbCB3b3JrIGZvciBuZWdhdGl2ZSBpbnRlZ2VycywgdG9vOgoKI2RlZmluZSBhZGRfb2YoYyxhLGIpICh7IFwKICB0eXBlb2YoYSkgX19hPWE7IFwKICB0eXBlb2YoYikgX19iPWI7IFwKICAoX19iKTwxID8gXAogICAgKChfX01JTih0eXBlb2YoYykpLShfX2IpPD0oX19hKSk/YXNzaWduKGMsX19hK19fYik6MSkgOiBcCiAgICAoKF9fTUFYKHR5cGVvZihjKSktKF9fYik+PShfX2EpKT9hc3NpZ24oYyxfX2ErX19iKToxKTsgXAp9KQpBbmQgdGhlIHN1YnRyYWN0aW9uIG1hY3JvIHdvcmtzIGp1c3QgdGhlIHNhbWU6CgojZGVmaW5lIHN1Yl9vZihjLGEsYikgKHsgXAogIHR5cGVvZihhKSBfX2E9YTsgXAogIHR5cGVvZihiKSBfX2I9YjsgXAogIChfX2IpPDEgPyBcCiAgICAoKF9fTUFYKHR5cGVvZihjKSkrKF9fYik+PShfX2EpKT9hc3NpZ24oYyxfX2EtX19iKToxKSA6IFwKICAgICgoX19NSU4odHlwZW9mKGMpKSsoX19iKTw9KF9fYSkpP2Fzc2lnbihjLF9fYS1fX2IpOjEpOyBcCn0pCklzc3VlIDM6IE11bHRpcGxpY2F0aW9uIGNhbiBvdmVyZmxvdywgdG9vCgpUaGUgbmV4dCBxdWVzdGlvbiBpcyBob3cgdG8gbXVsdGlwbHkgaW50ZWdlcnMuIE9uIG1vc3QgcGxhdGZvcm1zLCB0aGUgQ1BVIGhhcyBhIG11bHRpcGx5IGluc3RydWN0aW9uIHRoYXQgcmV0dXJucyBhIGRvdWJsZSB3aWR0aCBpbnRlZ2VyLiBPbiBBTUQ2NCwgZm9yIGV4YW1wbGUsIHRoZXJlIGlzIGEgbXVsIGluc3RydWN0aW9uIHRoYXQgd2lsbCBtdWx0aXBseSB0d28gMzItYml0IGludGVnZXJzIGludG8gYSA2NC1iaXQgaW50ZWdlciwgb3IgaXQgY2FuIG11bHRpcGx5IHRvIDY0LWJpdCBpbnRlZ2VycyBpbnRvIGEgMTI4LWJpdCBudW1iZXIgKHNwbGl0IG92ZXIgdHdvIHJlZ2lzdGVycykuCgpJbiBDLCBvbiB0aGUgb3RoZXIgaGFuZCwgaWYgeW91IG11bHRpcGx5IHR3byAzMi1iaXQgaW50ZWdlcnMsIHlvdSBnZXQgYSAzMi1iaXQgaW50ZWdlciBhZ2FpbiwgbG9zaW5nIHRoZSB1cHBlciAzMiBiaXRzIG9mIHRoZSByZXN1bHQuIEZvcnR1bmF0ZWx5LCBpZiB5b3UgY2FzdCB0aGUgZmlyc3QgaW50ZWdlciB0byBhIDY0LWJpdCBudW1iZXIsIGFuZCB0aGVuIG11bHRpcGx5IGl0IGJ5IHRoZSBvdGhlciAzMi1iaXQgaW50ZWdlciwgZ2NjIGlzIHNtYXJ0IGVub3VnaCBnZW5lcmF0ZSBleGFjdGx5IHRoZSAzMngzMi0+NjQgaW5zdHJ1Y3Rpb24gd2Ugd2FudCBpbiB0aGUgZmlyc3QgcGxhY2UuCgpNdWx0aXBseWluZyB0d28gMzItYml0IGludGVnZXJzCgpTbywgaGVyZSBpcyBhIHJvdXRpbmUgdGhhdCBjYW4gbXVsdGlwbHkgdHdvIDMyLWJpdCBudW1iZXJzLCByZXR1cm5pbmcgYSAzMi1iaXQgbnVtYmVyLCBhbmQgY2hlY2tpbmcgZm9yIG92ZXJmbG93OgoKaW50IHVtdWx0MzIodWludDMyIGEsdWludDMyIGIsdWludDMyKiBjKSB7CiAgdW5zaWduZWQgbG9uZyBsb25nIHg9KHVuc2lnbmVkIGxvbmcgbG9uZylhKmI7CiAgaWYgKHg+MHhmZmZmZmZmZikgcmV0dXJuIDA7CiAgKmM9eCYweGZmZmZmZmZmOwogIHJldHVybiAxOwp9Ck11bHRpcGx5aW5nIDE2LWJpdCB2YWx1ZXMgd2l0aCBvdmVyZmxvdyBjaGVjayB3b3JrcyB0aGUgc2FtZSB3YXkuIE5vdGUgdGhhdCBpdCBpcwoKICAodW5zaWduZWQgbG9uZyBsb25nKWEqYgphbmQgbm90CgogICh1bnNpZ25lZCBsb25nIGxvbmcpKGEqYikKd2hpY2ggaXMgYSB0eXBpY2FsIG1pc3Rha2Ugb2YgaW5leHBlcmllbmNlZCBDIGhhY2tlcnMuIEluIHRoZSBzZWNvbmQgY2FzZSwgdGhlIHJlc3VsdCBpcyBmaXJzdCB0cnVuY2F0ZWQsIGFuZCB0aGVuIGNhc3QgdG8gNjQtYml0LCB6ZXJvaW5nIHRoZSB1cHBlciBiaXRzLCBhbmQgdGhlIGNvZGUgd2lsbCBuZXZlciBkZXRlY3QgYW4gb3ZlcmZsb3cuCgpNdWx0aXBseWluZyB0d28gNjQtYml0IGludGVnZXJzCgpCdXQgd2hhdCBpZiB3ZSB3YW50IHRvIG11bHRpcGx5IHR3byA2NC1iaXQgbnVtYmVycyBhbmQgdGhlcmUgaXMgbm8gMTI4LWJpdCB0eXBlPyBUaGVuIHdlIG5lZWQgdG8gZG8gdGhlIG11bHRpcGxpY2F0aW9uIGJ5IGhhbmQuIFRvIGRvIHRoYXQsIHdlIHNwbGl0IGJvdGggbnVtYmVyIGluIHR3byAzMi1iaXQgcGFydHMuIExldCdzIHdyaXRlICI8PCAzMiIgYXMgIiogc2hpZnQiIHRvIG1ha2UgdGhpcyBlYXNpZXIgdG8gcmVhZC4gQmFzaWNhbGx5IGlmIHdlIHdyaXRlIHRoZSBmaXJzdCBudW1iZXIgYXMgYTEgc2hpZnQgKyBhMCBhbmQgdGhlIHNlY29uZCBudW1iZXIgYXMgYjEgc2hpZnQgKyBiMCwgdGhlbiB0aGUgcHJvZHVjdCBpcwoKICAoYTEgc2hpZnQgKyBhMCkgKiAoYjEgc2hpZnQgKyBiMCkgPT0KICBhMSBiMSBzaGlmdCBzaGlmdCArIGExIGIwIHNoaWZ0ICsgYTAgYjEgc2hpZnQgKyBhMCBiMApUaGUgZmlyc3QgdGVybSBpcyBzaGlmdGVkIGJ5IDY0IGJpdHMsIHNvIGlmIGJvdGggYTEgYW5kIGIxIGFyZSBub256ZXJvLCB3ZSBoYXZlIGFuIG92ZXJmbG93IHJpZ2h0IHRoZXJlIGFuZCBjYW4gYWJvcnQuCgpGb3IgdGhlIHNlY29uZCBhbmQgdGhpcmQgcGFydCB3ZSBkbyB0aGUgMzJ4MzItPjY0IG11bHRpcGxpY2F0aW9uIHdlIGp1c3QgdXNlZCB0byBjaGVjayBmb3Igb3ZlcmZsb3cgZm9yIDMyLWJpdCBudW1iZXJzLiBUaGlzIGlzIHNoaWZ0ZWQgYnkgMzIgYml0cywgc28gd2UgaGF2ZSBhbiBvdmVyZmxvdyBpZiB0aGUgdXBwZXIgaGFsZiBvZiBpdCBpcyBub256ZXJvLiBTaW5jZSB3ZSBhbHJlYWR5IGtub3cgdGhhdCBlaXRoZXIgYTEgb3IgYjEgaXMgemVybywgd2UgY2FuIHNpbXBseSBjYWxjdWxhdGUKCiAgYT0odWludDY0X3QpKGExKSpiMCsodWludDY0X3QpKGEwKSpiMTsKQXQgbGVhc3Qgb25lIGhhbGYgb2YgdGhpcyB0ZXJtIHdpbGwgYmUgemVybywgc28gd2UgY2FuJ3QgaGF2ZSBhbiBvdmVyZmxvdyBpbiB0aGUgYWRkaXRpb24uIFRoZW4sIGlmIGEgPiAweGZmZmZmZmZmLCB3ZSBoYXZlIGFuIG92ZXJmbG93IGluIHRoZSBtdWx0aXBsaWNhdGlvbiBhbmQgY2FuIGFib3J0LgoKSWYgd2UgZ290IHRoaXMgZmFyLCB0aGUgcmVzdWx0IGlzCgogIChhIDw8IDMyKSArICh1aW50NjRfdCkoYTApKmIwOwpXZSBzdGlsbCBuZWVkIHRvIGNoZWNrIGZvciBvdmVyZmxvdyBpbiB0aGlzIGFkZGl0aW9uICh0aGFua3MgdG8gVG9taSBKeWxo77+9LU9sbGlsYSBmb3IgcG9pbnRpbmcgdGhpcyBvdXQpLiBUaGVuIHdlIGNhbiByZXR1cm4gdGhlIHJlc3VsdC4=
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z267"></relationship>
+    </object>
+    <object type="SNIPPET" id="z267">
+        <attribute name="name" type="string">Integer overflows</attribute>
+        <attribute name="modified" type="date">334018559.21353697776794433594</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z265"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z266"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z264"></relationship>
+    </object>
+    <object type="ASSET" id="z268">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.sh</attribute>
+        <attribute name="notes" type="string">http://osxdaily.com/2009/09/23/hide-all-desktop-icons-in-mac-os-x/</attribute>
+        <attribute name="content" type="binary">ZGVmYXVsdHMgd3JpdGUgY29tLmFwcGxlLmZpbmRlciBDcmVhdGVEZXNrdG9wIC1ib29sIGZhbHNl
+CmtpbGxhbGwgRmluZGVyCgpUbyByZXZlcnQ6CglkZWZhdWx0cyB3cml0ZSBjb20uYXBwbGUuZmluZGVyIENyZWF0ZURlc2t0b3AgLWJvb2wgdHJ1ZQ==
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z269"></relationship>
+    </object>
+    <object type="SNIPPET" id="z269">
+        <attribute name="name" type="string">OSX: Hide desktop icons</attribute>
+        <attribute name="modified" type="date">334109486.77672398090362548828</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z220"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z268"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z184"></relationship>
     </object>
 </database>
