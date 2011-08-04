@@ -1,0 +1,232 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>IPython Tip Sheet</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center><h1>IPython Tip Sheet</h1></center>
+
+
+To make better use of ipython, do the following one-time operations:
+<ol>
+<li>Edit your ~/.bashrc file, and add the following lines in some 
+appropriate place:
+<font color="#995555"></font><pre><font color="#995555">export LESS="-R"
+export EDITOR=emacs
+</font></pre>
+This will tell the pager program less to interpret "raw" control sequences
+appropriately, and to use emacs as your default editor in certain 
+situations.  IPython uses raw control sequences 
+to make colored text in its displays.
+</li><li>Start up a new terminal window to get the updated environment variables, or, alternatively, 
+type <font color="#995555"><tt>. ~/.bashrc</tt></font> to update the current shell.
+</li><li>Edit your ~/ipython/ipythonrc file, and search for the set of 
+commands describing xmode.  Comment out (using #) the lines for "xmode Plain"
+and "xmode Context", and uncomment the line for "xmode Verbose", to get more useful information about python errors.
+</li></ol>
+
+IPython "magic" commands are conventionally prefaced by 
+<font color="#3333EE"><tt>%</tt></font>, but if the flag <font color="#3333EE"><tt>%automagic</tt></font> is set to on, then one can call
+magic commands without the preceding <font color="#3333EE"><tt>%</tt></font>.
+(<font color="#3333EE"><tt>%automagic</tt></font> appears to be on by default.)
+<p>
+
+The following ipython commands may be of use to you.
+
+</p><ul>
+<li>~/ipython/.ipythonrc:  Any further tweaks to your configuration that
+you want to make permanent for all ipython sessions should involve 
+editing the appropriate information in your ipythonrc file.
+<p>
+</p></li><li><font color="#3333EE"><tt>%run</tt></font>: You've already been using this, but it's included here 
+for completeness.  <font color="#3333EE"><tt>%run module</tt></font> or <font color="#3333EE"><tt>%run module.py</tt></font>
+will execute the python code in the file <font color="#3333EE"><tt>module.py</tt></font>, and bring 
+everything in that module's namespace into the current interactive 
+namespace, which is different than if you had typed 
+<font color="#3333EE"><tt>import module</tt></font>.  NOTE: If both <font color="#3333EE"><tt>module</tt></font> 
+and <font color="#3333EE"><tt>module.py</tt></font> exist, <font color="#3333EE"><tt>%run module</tt></font> 
+will execute run the former (which may not be a python source file) rather than the latter.
+<p>
+
+</p></li><li>TAB-completion:  At any point while typing an ipython input line, 
+you can hit the TAB key and ipython will expand out all possible completions
+based on what you've already typed.  This is useful both to save you from
+having to type long function names (i.e., type out a few of the first 
+characters and then hit TAB), or to allow you to see what methods or 
+attributes are attached to a particular object.  For example, if 
+(in the SmallWorldNetworks module), you type:
+<font color="#995555"></font><pre><font color="#995555">g = MakeSmallWorldNetwork(100, 4, 0.1)
+g.TAB   # i.e., hit the TAB key after typing "g."
+</font></pre>
+then you will be presented with the possible completions of the command <font color="#3333EE"><tt>g.</tt></font> :
+<font color="#995555"></font><pre><font color="#995555">g.AddEdge      g.GetNeighbors   g.HasNode      g.__doc__      g.__module__   
+g.AddNode      g.GetNodes       g.__class__    g.__init__     g.neighbor_dict  
+</font></pre>
+<p>
+
+</p></li><li><font color="#3333EE"><tt>?</tt></font> and <font color="#3333EE"><tt>??</tt></font>: Typing <font color="#3333EE"><tt>?</tt></font> after a name will 
+give you information about the object attached to that name, e.g.,
+if I type <font color="#3333EE"><tt>g.AddEdge?</tt></font>, where <font color="#3333EE"><tt>g</tt></font> is the graph I constructed 
+above, then I see:
+<font color="#995555"></font><pre><font color="#995555">Type:           instancemethod
+Base Class:     &lt;type 'instancemethod'&gt;
+String Form:    &lt;bound method UndirectedGraph.AddEdge of &lt;Networks.UndirectedGraph instance at 0x369ea30&gt;&gt;
+Namespace:      Interactive
+File:           /Users/myers/teaching/ComputationalMethods/ComputerExercises/PythonSoftware/Networks.py
+Definition:     g.AddEdge(self, node1, node2)
+Docstring:
+    Add node1 and node2 to network first
+    Adds new edge 
+    (appends node2 to neighbor_dict[node1] and vice-versa, since it's
+    an undirected graph)
+    Do so only if old edge does not already exist 
+    (node2 not in neighbor_dict[node1])
+</font></pre>
+Typing two question marks lists the not only the summary information produced above, but also shows the
+source code used to define the object of interest.
+<p>
+
+</p></li><li><font color="#3333EE"><tt>%who</tt></font> and <font color="#3333EE"><tt>%whos</tt></font>: These magic functions list objects, 
+functions, etc. that have been added in the current namespace, as well 
+as modules that have been imported.  <font color="#3333EE"><tt>%who</tt></font> 
+simply lists names of such objects, 
+while <font color="#3333EE"><tt>%whos</tt></font> additionally lists type and data information (you 
+might want to make your terminal window wide enough to capture all the output,
+since it doesn't do a great job with formatting the text), e.g.:
+<font color="#995555"></font><pre><font color="#995555">
+Variable                           Type                        Data/Info
+------------------------------------------------------------------------
+AddRandomEdges                     function                    &lt;function AddRandomEdges at 0x34a8230&gt;
+FindAverageAveragePathLength       function                    &lt;function FindAverageAver&lt;...&gt;ePathLength at 0x34a8130&gt;
+FindAverageClusteringCoefficient   function                    &lt;function FindAverageClus&lt;...&gt;Coefficient at 0x34a8030&gt;
+GetClustering_vs_p                 function                    &lt;function GetClustering_vs_p at 0x34a8570&gt;
+GetPathLength_vs_p                 function                    &lt;function GetPathLength_vs_p at 0x34a80f0&gt;
+MakePathLengthHistograms           function                    &lt;function MakePathLengthHistograms at 0x34a8170&gt;
+MakeRingGraph                      function                    &lt;function MakeRingGraph at 0x34a8270&gt;
+MakeSmallWorldNetwork              function                    &lt;function MakeSmallWorldNetwork at 0x34a81f0&gt;
+MultiPlot                          module                      &lt;module 'MultiPlot' from &lt;...&gt;nSoftware/MultiPlot.pyc'&gt;
+NetGraphics                        module                      &lt;module 'NetGraphics' fro&lt;...&gt;oftware/NetGraphics.pyc'&gt;
+Networks                           module                      &lt;module 'Networks' from 'Networks.pyc'&gt;
+Percolation                        module                      &lt;module 'Percolation' from 'Percolation.py'&gt;
+PlotClustering_vs_p                function                    &lt;function PlotClustering_vs_p at 0x34a8730&gt;
+PlotPathLength_vs_p                function                    &lt;function PlotPathLength_vs_p at 0x34a80b0&gt;
+PlotScaledPathLength_vs_pZL        function                    &lt;function PlotScaledPathL&lt;...&gt;ngth_vs_pZL at 0x34a8070&gt;
+PlotWattsStrogatzFig2              function                    &lt;function PlotWattsStrogatzFig2 at 0x34a8770&gt;
+SmallWorldBetweenness              function                    &lt;function SmallWorldBetweenness at 0x34a87f0&gt;
+SmallWorldSimple                   function                    &lt;function SmallWorldSimple at 0x34a81b0&gt;
+TestBetweennessSimple              function                    &lt;function TestBetweennessSimple at 0x34a87b0&gt;
+g                                  Networks.UndirectedGraph    &lt;Networks.UndirectedGraph instance at 0x369ea30&gt;
+numpy                              module                      &lt;module 'numpy' from '/sw&lt;...&gt;ages/numpy/__init__.pyc'&gt;
+os                                 module                      &lt;module 'os' from '/sw/lib/python2.5/os.pyc'&gt;
+pylab                              module                      &lt;module 'pylab' from '/sw&lt;...&gt;site-packages/pylab.pyc'&gt;
+random                             module                      &lt;module 'random' from '/s&lt;...&gt;ib/python2.5/random.pyc'&gt;
+</font></pre>
+Output from <font color="#3333EE"><tt>%whos</tt></font> can be restricted to objects of a specified type; e.g., typing
+<font color="#3333EE"><tt>%whos function</tt></font> will print out only those objects in the namespace that are functions.
+
+<p>
+</p></li><li><font color="#3333EE"><tt>%hist</tt></font>: This 
+presents a list of the last several input command lines.
+(It presents ipython magic commands not as you typed them but as they 
+were processed through the _ip.magic system; 
+<font color="#3333EE"><tt>%hist -r</tt></font> 
+will show the command lines exactly as you typed them.)
+Previous input commands are stored in the list 
+<font color="#3333EE"><tt>In</tt></font>; 
+e.g., <font color="#3333EE"><tt>In[37]</tt></font> 
+will show the string associated with input line 37, and 
+<font color="#3333EE"><tt>exec In[37]</tt></font> 
+will actually (re)execute that line.  
+Similarly,
+the output of each of the previous commands is stored in the 
+<font color="#3333EE"><tt>Out</tt></font>
+variable, indexed by the line number.  
+Finally, while typing input to a command line,
+hit &lt;CONTROL&gt;-P and 
+ipython will present you with all previous command lines that 
+began with the text you have typed (more efficient 
+than paging through <i>all</i> previous commands with the 
+UP arrow); repeatedly typing &lt;CONTROL&gt;-P cycles through this list.
+<p>
+
+</p></li><li><font color="#3333EE"><tt>%macro</tt></font>: 
+Assign a name to a set of input commands, so that
+they can be executed all together using the assigned name, e.g.,
+if I start a session with the following 5 lines:
+<font color="#995555"></font><pre><font color="#995555">%run SmallWorldNetworks
+g = MakeSmallWorldNetwork(100, 4, 0.1)
+NetGraphics.DisplayCircleGraph(g)
+distances = Networks.FindPathLengthsFromNode(g, 0)
+print distances
+</font></pre>
+then I can make a macro called <font color="#3333EE"><tt>runswn</tt></font> (short for RunSmallWorldNetworks) that executes everything from lines 1 through 5, inclusive:
+<font color="#995555"></font><pre><font color="#995555">%macro runswn 1-5
+</font></pre>
+It is obviously of use to run <font color="#3333EE"><tt>%hist</tt></font> to find which specific line 
+numbers need to be included in the macro.  Line numbers need not be 
+contiguous, e.g., <font color="#995555"><tt> 
+%macro runswn 1-5 7 12-15 </tt></font>
+will assemble a macro from the specified disjoint set of command lines.
+<p>
+
+</p></li><li><font color="#3333ee"><tt>%edit</tt></font>: This will open
+ an editor (whatever the shell variable EDITOR is set to, see above, or 
+vi/vim if no variable
+is set) containing the specified material, based on what arguments are 
+provided, and will execute that code once the editor
+is exited.  Therefore this is better for making small changes and 
+testing things out, rather than keeping a large source file open 
+in an editor as we usually do.  Here are some examples of its use:
+<font color="#995555"></font><pre><font color="#995555">%edit SmallWorldNetworks.py    # opens the file SmallWorldNetworks.py
+%edit MakeSmallWorldNetwork    # opens the source file containing the function MakeSmallWorldNetwork
+%edit runswn                   # opens the runswn macro defined above in a temporary file
+%edit 1-5 7 12-15              # opens a temporary file containing the input lines 1-5, 7, and 12-15
+</font></pre>
+
+<pp>
+
+</pp></li><li><font color="#3333EE"><tt>%lsmagic</tt></font>: This lists all ipython magic commands.  Have a peek and see if there are other 
+functions that may be of use, such as:
+<ul>
+<li><font color="#3333EE"><tt>%store</tt></font> (stores variables, functions, etc. 
+that you've defined in your .ipython/ipythonrc file for use in future sessions)
+</li><li><font color="#3333EE"><tt>%pdb</tt></font> (configures ipython to automatically open the python debugger pdb when an error occurs)
+</li><li><font color="#3333EE"><tt>%time</tt></font> and <font color="#3333EE"><tt>%timeit</tt></font>
+(timing functions to see how long expressions take to execute)
+</li><li><font color="#3333EE"><tt>%logstart</tt></font>, <font color="#3333EE"><tt>%logon</tt></font>, 
+<font color="#3333EE"><tt>%logoff</tt></font>, and <font color="#3333EE"><tt>%logstate</tt></font> (to log ipython input and/or output to files)
+</li><li><font color="#3333EE"><tt>%cd</tt></font>, 
+<font color="#3333EE"><tt>%pushd</tt></font>, <font color="#3333EE"><tt>%popd</tt></font>, and 
+<font color="#3333EE"><tt>%bookmark</tt></font> (to change directories, manipulate directory stacks, and create directory "bookmarks")
+</li></ul>
+<p>
+
+</p></li><li>See also the <a href="http://ipython.scipy.org/doc/manual/node4.html">IPython "Quick Tips"</a> at the IPython web site at 
+http://ipython.scipy.org/doc/manual/node4.html .
+</li></ul>
+<p>
+
+</p><h3>An aside on debugging and profiling</h3>
+
+The python <font color="#3333EE"><tt>pdb</tt></font> module implements a debugger, typically used by calling 
+<font color="#3333EE"><tt>pdb.run</tt></font> on a quoted python expression,
+e.g.:
+<font color="#995555"></font><pre><font color="#995555">import pdb
+pdb.run('Networks.FindPathLengthsFromNode(g, 0)')
+</font></pre>
+This puts you into the debugger, from which you can do the usual sort of things (list source code, set breakpoints, step one
+line at a time, continue until a breakpoint or exception is reached, etc.).  Type 
+<font color="#3333EE"><tt>?</tt></font> at the pdb prompt for a list of available commands.  As noted above, setting 
+<font color="#3333EE"><tt>%pdb on</tt></font> within ipython will make it such that the pdb debugger will automatically 
+be started at the point of an exception, once it is encountered.
+<p>
+Similarly, the python <font color="#3333EE"><tt>profile</tt></font> module is useful for identifying
+how much time is spent in various functions.  The syntax is similar to that 
+for debugging:
+<font color="#995555"></font></p><pre><font color="#995555">import profile
+profile.run('Networks.FindPathLengthsFromNode(g, 0)')
+</font></pre>
+
+
+
+</body></html>
