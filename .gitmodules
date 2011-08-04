@@ -1,12 +1,18 @@
+[submodule "HTML5/gridless-boilerplate"]
+	path = HTML5/gridless-boilerplate
+	url  = git://github.com/thatcoolguy/gridless-boilerplate
 [submodule "js/NodeBeginnerBook"]
 	path = js/NodeBeginnerBook
 	url  = git://github.com/ManuelKiessling/NodeBeginnerBook.git
-[submodule "xcode-ios/PagePeel"]
-	path = xcode-ios/PagePeel
-	url  = git://github.com/markrickert/iOS-PagePeel-Example.git
-[submodule "macruby/HelloApp"]
-	path = macruby/HelloApp
-	url  = git://github.com/jamesotron/HelloApp.git
 [submodule "js/beautify"]
 	path = js/beautify
 	url  = git://github.com/einars/js-beautify.git
+[submodule "projects/TermKit/Node/node_modules/socket.io-client"]
+	path = projects/TermKit/Node/node_modules/socket.io-client
+	url  = git://github.com/LearnBoost/socket.io-client
+[submodule "rb/macruby/HelloApp"]
+	path = rb/macruby/HelloApp
+	url  = git://github.com/jamesotron/HelloApp.git
+[submodule "xcode-ios/PagePeel"]
+	path = xcode-ios/PagePeel
+	url  = git://github.com/markrickert/iOS-PagePeel-Example.git
