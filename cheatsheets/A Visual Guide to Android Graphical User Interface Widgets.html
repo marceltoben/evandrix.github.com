@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>A Visual Guide to Android Graphical User Interface Widgets</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1>A Visual Guide to Android GUI Widgets</h1>
+To make your life as a Java <a href="http://code.google.com/android/">Android</a> cell phone programmer/ui designer easier.
+<p>
+For rapid development of your user interfaces try <a href="http://www.droiddraw.org">DroidDraw</a>
+<p>
+<table>
+  <tr>
+    <td>
+<table width="600">
+  <tr>
+  <td bgcolor="#AAAAAA" colspan="3">AnalogClock</td>
+  </tr>
+  <tr
+  <td valign="top"><img src="analogclock.png"></td>
+  <td><code><pre>&lt;AnalogClock
+id="@+id/clock1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+/&gt;
+</pre>
+</code>
+</td>
+</tr>
+  <tr>
+  <td bgcolor="#AAAAAA" colspan="3">Button</td>
+  </tr>
+  <tr
+  <td valign="top"><img src="button.png"></td>
+  <td><code><pre>
+&lt;Button id ="@+id/button1"
+ android:text="Label"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+/&gt;
+&lt;Button id ="@+id/button2"
+ android:text="Label"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:typeface="serif"
+/&gt;
+&lt;Button id ="@+id/button3"
+ android:text="Label"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:textStyle="bold_italic"
+/&gt;
+</pre>
+</code>
+</td>
+</tr>
+<tr>
+  <td colspan="2" bgcolor="#AAAAAA">CheckBox</td>
+</tr>
+<tr>
+  <td valign="top">
+        <img src="checkbox.png" >
+    </td>
+    <td>
+      <code>
+      <pre>
+&lt;CheckBox id="@+id/plain_cb"
+ android:text="Plain"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+/&gt;
+&lt;CheckBox id="@+id/serif_cb"
+ android:text="Serif"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:typeface="serif"
+/&gt;
+&lt;CheckBox id="@+id/bold_cb"
+ android:text="Bold"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:textStyle="bold"
+/&gt;
+&lt;CheckBox id ="@+id/italic_cb"
+ android:text="Italic"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:textStyle="italic"
+/&gt;
+</pre>
+      </code>
+      </td>
+      </tr>
+
+      <tr>
+  <td bgcolor="#AAAAAA" colspan="2">DatePicker</td>
+</tr>
+<tr>
+<td align="top"><img src="datepicker.png"></td>
+<td>
+<code>
+<pre>
+&lt;DatePicker
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" &gt;
+
+...
+// Required Java init code:
+DatePicker dp = 
+     (DatePicker)this.findViewById(R.id.widget27);
+
+// for example init to 1/27/2008, no callback 
+dp.init(2008, 0, 27, Calendar.SUNDAY, null);  
+...
+</pre>
+</code>
+</td>
+</tr>
+      <tr>
+  <td bgcolor="#AAAAAA" colspan="2">DigitalClock</td>
+</tr>
+<tr>
+  <td valign="top">
+        <img src="digitalclock.png" >
+  </td>
+  <td>
+    <code>
+    <pre>
+&lt;DigitalClock id="@+id/digitalclock"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"/&gt;
+</pre>
+    </code>
+    </td>
+    </tr>
+<tr>
+  <td bgcolor="#AAAAAA" colspan=2>EditText</td>
+</tr>
+<tr>
+  <td valign="top">
+        <img src="edittext.png" >
+    </td>
+    <td>
+      <code>
+      <pre>
+&lt;EditText id ="@+id/edittext1"
+ android:text="EditText 1"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+/&gt;
+&lt;EditText id ="@+id/button2"
+ android:text="(206)555-1212"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:typeface="serif"
+ android:phoneNumber="true"
+/&gt;
+&lt;EditText id ="@+id/password"
+ android:text="SuperSecret"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:textStyle="bold_italic"
+ android:password="true"
+/&gt;
+</pre>
+ </code>
+      </td>
+      </tr>
+<tr>
+  <td bgcolor="#AAAAAA" colspan="2">Gallery</td>
+</tr>
+<tr>
+  <td valign="top">
+    <img src="gallery.png" width="150">
+  </td>
+  <td>
+    <code>
+    <pre>
+&lt;Gallery
+  id="@+id/gallery"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"/&gt;
+</pre>
+</code>
+</tr>
+<tr>
+  <td bgcolor="#AAAAAA" colspan="2">ImageButton</td>
+</tr>
+<tr>
+  <td valign="top">
+    <img src="imagebutton.png" >
+  </td>
+  <td>
+    <code>
+    <pre>
+&lt;ImageButton id="@+id/imagebutton"
+  android:src="@drawable/brush"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"/&gt;
+</pre>
+    </code>
+    </td>
+    </tr>
+<tr>
+  <td bgcolor="#AAAAAA" colspan="2">ImageView</td>
+</tr>
+<tr>
+  <td valign="top">
+    <img src="imageview.png" >
+  </td>
+  <td>
+    <code>
+    <pre>
+&lt;ImageView id="@+id/imagebutton"
+  android:src="@drawable/brush"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"/&gt;
+</pre>
+    </code>
+    </td>
+    </tr>
+    <tr>
+<tr>
+  <td bgcolor="#AAAAAA" colspan="2">ProgressBar</td>
+</tr>
+<tr>
+  <td valign="top">
+    <img src="progress.png" >
+  </td>
+  <td>
+    <code>
+    <pre>
+&lt;ProgressBar id="@+id/progress"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"/&gt;
+</pre>
+    </code>
+    </td>
+    </tr>
+    <tr>
+  <td bgcolor="#AAAAAA" colspan="2">RadioButton</td>
+</tr>
+<td valign="top">
+  <img src="radiobutton.png" >
+</td>
+<td>
+  <code>
+  <pre>
+&lt;RadioGroup
+id="@+id/widget1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+&gt;
+&lt;RadioButton
+id="@+id/widget2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Plain"
+android:checked="false"
+android:layout_gravity="left"
+android:layout_weight="0"
+&gt;
+&lt;/RadioButton&gt;
+&lt;RadioButton
+id="@+id/widget3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Serif"
+android:checked="true"
+android:layout_gravity="left"
+android:layout_weight="0"
+android:typeface="serif"
+&gt;
+&lt;/RadioButton&gt;
+&lt;RadioButton
+id="@+id/widget25"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Bold"
+android:checked="false"
+android:layout_weight="0"
+android:layout_gravity="left"
+android:textStyle="bold"
+&gt;
+&lt;/RadioButton&gt;
+&lt;RadioButton
+id="@+id/widget24"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Bold &amp; Italic"
+android:checked="false"
+android:layout_weight="0"
+android:layout_gravity="left"
+android:textStyle="bold_italic"
+&gt;
+&lt;/RadioButton&gt;
+&lt;/RadioGroup&gt;
+</pre>
+  </code>
+  </td>
+  </tr>
+  <tr>
+  <td bgcolor="#AAAAAA" colspan="2">Spinner</td>
+</tr>
+<tr>
+  <td valign="top">
+    <img src="spinner.png" >
+
+  </td>
+    <td>
+      <code>
+      <pre>
+&lt;Spinner
+ id="@+id/widget1"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:drawSelectorOnTop="false"/&gt;
+</pre>
+</code>
+      </td>
+      </tr>
+<tr>
+  <td bgcolor="#AAAAAA" colspan="2">TextView</td>
+</tr>
+<tr>
+  <td valign="top">
+    <img src="textview.png" >
+
+  </td>
+    <td>
+      <code>
+      <pre>
+&lt;TextView id="@+id/plain"
+ android:text="Plain"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+/&gt;
+&lt;TextView id="@+id/serif"
+ android:text="Serif"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:typeface="serif"
+/&gt;
+&lt;TextView id="@+id/bold"
+ android:text="Bold"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:textStyle="bold"
+/&gt;
+&lt;TextView id ="@+id/italic"
+ android:text="Italic"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:textStyle="italic"
+/&gt;
+</pre>
+      </code>
+      </td>
+      </tr>
+<tr>
+  <td bgcolor="#AAAAAA" colspan="2">TimePicker</td>
+</tr>
+<tr>
+  <td valign="top">
+    <img src="timepicker.png" >
+
+  </td>
+    <td>
+      <code>
+      <pre>
+&lt;TimePicker
+ id="@+id/widget3"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"/&gt;
+</pre>
+      </code>
+      </td>
+      </tr>
+</table>
+</td>
+<td valign="top">
+        <script type="text/javascript"><!--
+google_ad_client = "pub-5004305013045601";
+//appletvert
+google_ad_slot = "1362446677";
+google_ad_width = 120;
+google_ad_height = 600;
+//--></script>
+    <script type="text/javascript"><!--
+google_ad_client = "pub-5004305013045601";
+//tutorial sidebar2
+google_ad_slot = "4866920207";
+google_ad_width = 120;
+google_ad_height = 600;
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+  <script type="text/javascript"><!--
+google_ad_client = "pub-5004305013045601";
+//tutorial sidebar
+google_ad_slot = "8939552251";
+google_ad_width = 120;
+google_ad_height = 600;
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</td>
+</tr>
+</table>
+<hr>
+<address></address>
+<!-- hhmts start --> Last modified: Wed Dec 12 16:26:11 EST 2007 <!-- hhmts end -->
+</body> </html>
