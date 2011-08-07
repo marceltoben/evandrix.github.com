@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>ED9396CE-321D-4CEA-B5B8-7002C9BE928A</UUID>
-        <nextObjectID>271</nextObjectID>
+        <nextObjectID>275</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -679,7 +679,7 @@ ZGVyOiAnamFyIC11ZiA8amFyLWZpbGUtbmFtZT4gcnNyYycsCiAgIGdpdmVuIHNoYXBlIG9mIGBwd2Rg
     </object>
     <object type="TAG" id="z197">
         <attribute name="name" type="string">ruby</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z228 z142 z241 z242"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z242 z275 z241 z228 z142"></relationship>
     </object>
     <object type="ASSET" id="z198">
         <attribute name="sort" type="int32">-1</attribute>
@@ -815,7 +815,7 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z221"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z215 z219 z225 z237"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z272 z219 z237 z215 z225"></relationship>
     </object>
     <object type="ASSET" id="z218">
         <attribute name="sort" type="int32">-1</attribute>
@@ -849,11 +849,11 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
     </object>
     <object type="TAG" id="z222">
         <attribute name="name" type="string">MacPorts</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z225 z215 z237 z219"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z272 z237 z219 z225 z215"></relationship>
     </object>
     <object type="TAG" id="z223">
         <attribute name="name" type="string">port</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z225"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z225 z272"></relationship>
     </object>
     <object type="ASSET" id="z224">
         <attribute name="sort" type="int32">-1</attribute>
@@ -877,7 +877,7 @@ Zm9sbG93aW5nIGJsb2NrIEAgbGluZSA2MzoKCWNvbmZpZ3VyZS5jYyAgICBnY2MtNC4yCgljb25maWd1
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z229"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z228 z241"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z275 z228 z241"></relationship>
     </object>
     <object type="TAG" id="z227">
         <attribute name="name" type="string">regexp</attribute>
@@ -948,7 +948,7 @@ Z29kYgpjZCAkKHBvcnQgd29yayBtb25nb2RiKS9tb25nb2RiKgpzdWRvIGN1cmwgLU8gaHR0cHM6Ly9q
     </object>
     <object type="TAG" id="z236">
         <attribute name="name" type="string">lion</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z272"></relationship>
     </object>
     <object type="SNIPPET" id="z237">
         <attribute name="name" type="string">port.mongodb</attribute>
@@ -1195,5 +1195,39 @@ CmtpbGxhbGwgRmluZGVyCgpUbyByZXZlcnQ6CglkZWZhdWx0cyB3cml0ZSBjb20uYXBwbGUuZmluZGVy
 ZyB3aXRoaW4gY2xhc3MgaWUuIHNxdWFyZSBicmFja2V0cyAoW10pLAplZy4gIlteYS16QS1aMC05XSIgbWF0Y2hlcyBub24tYWxwaGEtbnVtZXJpYyBjaGFyYWN0ZXJzIChvciBcVyBtYXliZT8pCgpDYXNlIGluc2Vuc2l0aXZpdHkgLSAvaQplZy4gZ3JlcDogLWkgb3B0aW9uOyBzZWQscGVybCxweTogIi90ZXh0L2kiLCBub24tZ3JvdXBpbmcgcGFyZW50aGVzaXMgKD9pOnRleHQpCgpBbHRlcm5hdGlvbiA9IChBfEIpCgpcYjogd29yZCBib3VuZGFyeQpcQjogKG5vdCkgd29yZCBib3VuZGFyeQplZy4gdGltZTogWzAtOV0/WzAtOV06WzAtNV1bMC05XSAtIGFsc28gaW5jb3JyZWN0bHkgbWF0Y2hlcyA5OTozMCwgMTEyOjM0NTEgKGdyZWVkeSkKc29sdXRpb246IFxiKDFbMDEyXXxbMS05XSk6WzAtNV1bMC05XVxiCgo9PSBPcHRpbWlzYXRpb24gPT0KLSBHcmVhdCBzcGVlZCBpbXByb3ZlbWVudHMgdXN1YWxseSBjb21lIHdoZW4geW91IHVzZSBiZWdpbm5pbmctb2YtbGluZSBhbmQgZW5kLW9mLWxpbmUgYW5jaG9ycyAoIl4iIGFuZCAiJCIpIGFzIHRoZSBmaXJzdCBvciBsYXN0IHRoaW5nIGluIGEgcmVnZXguIEV4YW1wbGU6ICJeU3ViamVjdDogIgotIENoYXJhY3RlciBjbGFzc2VzIGFyZSBhbHdheXMgZmFzdGVyIHRoYW4gYWx0ZXJuYXRpb24uIEV4YW1wbGU6IHVzZSBbYWJjXSBpbnN0ZWFkIG9mIChhfGJ8YykuCi0gVXNlICsgaW5zdGVhZCBvZiAqLiBJdCBpcyBmcmVxdWVudGx5IHdoYXQgeW91IHdhbnQgYW55d2F5LCBhbmQgaXQgaXMgdXN1YWxseSBmYXN0ZXIuIEtlZXAgaW4gbWluZCB0aGF0IHNvbWUgdXRpbGl0ZXMgZG8gbm90IHN1cHBvcnQgKywgbGlrZSBzb21lIHZlcnNpb25zIG9mIGdyZXAuIFNvbGFyaXMnIGdyZXAgaXMgYnJhaW4gZGFtYWdlZC4gWW91IGNhbiB1c2UgZWdyZXAgaW5zdGVhZC4KLSBVc2Ugbm9uLWNhcHR1cmluZyBwYXJlbnRoZXNpcyB3aGVuIHlvdSBkb24ndCBuZWVkIHRoZW0sIGlmIGFwcGxpY2FibGUgdG8geW91ciByZWdleCBmbGF2b3IuIEluIFBlcmwgYW5kIFB5dGhvbiwgdGhlIHN5bnRheCBpcyAiKD86dGV4dCkiLgotIFVzaW5nIGEgUG9zaXggTkZBIGVuZ2luZSBpcyBhbG1vc3QgYWx3YXlzIHNsb3dlciB0aGFuIHRyYWRpdGlvbmFsIE5GQSwgYW5kIG1hbnkgb2YgdGhlIHJlZ2V4IG9wdGltaXphdGlvbiBydWxlcyBkb24ndCBhcHBseSB0byBhIFBvc2l4IE5GQS4gRm9ydHVuYXRlbHksIG1vc3QgcmVnZXggZmxhdm9ycyBhcmUgdHJhZGl0aW9uYWwgTkZBLgotIE1vc3Qgb3B0aW1pemF0aW9ucyB0aGF0IGFwcGx5IHRvIGFuIE5GQSBkbyBub3QgYXBwbHkgdG8gYSBERkEgcmVnZXggZW5naW5lLiBERkEncyBhcmUgb25seSB1c2VmdWwgZm9yIHRlbGxpbmcgeW91IHdoZXRoZXIgb3Igbm90IGEgbWF0Y2ggb2NjdXJyZWQgb24gYSBsaW5lIG9mIHRleHQuIFRoZXkgZG8gbm90IHRlbGwgeW91IHdoZXJlIHRoZSBtYXRjaCB3YXMuIERGQSByZWdleCBlbmdpbmVzIGFyZSB1c3VhbGx5IGZhc3RlciB0aGFuIE5GQSByZWdleCBlbmdpbmVzLgoKPT0gUGVybCBSRSA9PQotICQrOiByZWZlcnMgdG8gbGFzdCBjYXB0dXJlZCBwb3J0aW9uIG9mIHJlZ2V4Ci0gU3Vycm91bmQgc3RyaW5ncyB3aXRoaW4gcmVnZXhlcyB3aXRoIFEgYW5kIEUgdG8gZ2V0IHRoZSBsaXRlcmFsIGNvbnRlbnRzLCBpbnN0ZWFkIG9mIGhhdmluZyB0aGVtIGludGVycHJldGVkIGFzIGlmIHRoZXkgd2VyZSByZWdleCBtZXRhLWNoYXJhY3RlcnMsIGVnLiBtL1EkbXl2YXJFLywgd2hlcmUgJG15dmFyIGlzICJcd0phcmVkXHciCi0gc3VwcG9ydHMgdmFyaWFibGUgaW50ZXJwb2xhdGlvbiBpbiBzdHJpbmdzLCB1bmxpa2UgUHl0aG9uCi0gL3ggbW9kaWZpZXI6IGFsbG93cyB3aGl0ZXNwYWNlIHRvIGJlIHVzZWQgdG8gY29tbWVudCByZWdleAotIHN1cHBvcnRzIHBvc2l0aXZlIGxvb2thaGVhZCAoPz10ZXh0KSwgKD8hdGV4dCkKLSBtYXRjaCB7XEE6IGJlZ2lubmluZywgXFo6IGVuZH0gb2Ygc3RyaW5nOyBhbmNob3IgXEcgYmVnaW5zIHdoZXJlIHJlZ2V4IGxhc3QgbWF0Y2hlZCwgd2hlbiB1c2VkIHdpdGggL2cgbW9kaWZpZXIKLSBvY3RhbCBlc2NhcGVzIHN1cHBvcnRlZCAtIGFsd2F5cyBwcmVjZWRlIHdpdGggMCwgdG8gZGlmZmVyZW50aWF0ZSBmcm9tIGJhY2tyZWZlcmVuY2VzLCBlZy4gXDAzMwotICRgLCAkJiwgJCcgLSByZXByZXNlbnQgcG9ydGlvbiBvZiBzdHJpbmcgYmVmb3JlIHJlZ2V4IG1hdGNoLCByZWdleCBtYXRjaCBpdHNlbGYsICYgcG9ydGlvbiByZW1haW5pbmcgYWZ0ZXIgdGhlIG1hdGNoLCByZXNwZWN0aXZlbHkgPT4gcGVyZm9ybWFuY2UgcGVuYWx0eSBpbmN1cnJlZCAtIHVzZSBwb3MoKSBpbnN0ZWFkCi0gL2UgbW9kaWZpZXI6IGV4ZWN1dGVzIHRoZSBjb250ZW50cyBvZiByZXBsYWNlbWVudCB0ZXh0IGJlZm9yZSBpdCBpcyBzdWJzdGl0dXRlZCBpbnRvIGFuIGV4cHJlc3Npb24sIGVnLiAicy8oXGJcZCtcYikvJk15RnVuYygkMSkvZSIgd291bGQgcmVwbGFjZSBudW1iZXJzIHdpdGggdGhlIHJldHVybiB2YWx1ZSBvZiBNeUZ1bmMobnVtYmVyKQotIHN0dWR5KCk6IGJlc3QgdXNlZCB3aGVuIHlvdSBoYXZlIGEgbGFyZ2Ugc3RyaW5nIHRoYXQgeW91IHdhbnQgdG8gbWF0Y2ggbWFueSB0aW1lcyBiZWZvcmUgdGhlIHN0cmluZyBpcyBtb2RpZmllZAoKK3NwbGl0KCksIHJlZ2V4IHNpZGUtZWZmZWN0cywgbXVsdGlwbGUgdXNlcyBvZiAvZSBtb2RpZmllciBldGMuCg==
 </attribute>
         <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z270"></relationship>
+    </object>
+    <object type="SNIPPET" id="z272">
+        <attribute name="name" type="string">ports.{swi-prolog, gprolog, yap}</attribute>
+        <attribute name="modified" type="date">334255357.02468097209930419922</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z217"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z273"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z236 z223 z222"></relationship>
+    </object>
+    <object type="ASSET" id="z273">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.mdown</attribute>
+        <attribute name="notes" type="string">https://trac.macports.org/ticket/30423</attribute>
+        <attribute name="content" type="binary">Y2QgJChwb3J0IGRpciA8cG9ydG5hbWU+KQoKQWRkIHRoZSBmb2xsb3dpbmcgbGluZSB0byBQb3J0
+ZmlsZToKCWNvbmZpZ3VyZS5jb21waWxlciBnY2MtNC4yCg==
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z272"></relationship>
+    </object>
+    <object type="ASSET" id="z274">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.mdown</attribute>
+        <attribute name="notes" type="string">http://blog.ubrio.us/nix/osx-rubygems-and-cross-thread-violations-in-rb_gc/</attribute>
+        <attribute name="content" type="binary">RXJyb3I6CglbQlVHXSBjcm9zcy10aHJlYWQgdmlvbGF0aW9uIG9uIHJiX2djKCkKCkZpeDoKCShn
+ZW0gZW52IHRvIGdldCBnZW0gZGlyZWN0b3J5KQoJY2QgL29wdC9sb2NhbC9saWIvcnVieS9nZW1zLzEuOAoJbHMgLTEgKiovKiovKi5idW5kbGV8cnVieSAtcGUgJyRfLmdzdWIhIC9cLS4qLywgIiInIHwgc29ydCB8IHVuaXEgfCBhd2sgLUYvICd7cHJpbnQgJDJ9JyB8IHhhcmdzIHN1ZG8gZ2VtIGluc3RhbGwK
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z275"></relationship>
+    </object>
+    <object type="SNIPPET" id="z275">
+        <attribute name="name" type="string">Upgrading Ruby - Errors</attribute>
+        <attribute name="modified" type="date">334275091.27241200208663940430</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z226"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z274"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z197"></relationship>
     </object>
 </database>
