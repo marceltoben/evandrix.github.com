@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plModuleCombo.Text">
+    <value>Search Results Module:</value>
+  </data>
+  <data name="plModuleCombo.Help">
+    <value>Select the Search Results Module Affiliated with this Module</value>
+  </data>
+  <data name="plGoCheck.Text">
+    <value>Show Go Image:</value>
+  </data>
+  <data name="plGoCheck.Help">
+    <value>Check whether you want to use a "Go" image</value>
+  </data>
+  <data name="plSearchCheck.Text">
+    <value>Show Search Image:</value>
+  </data>
+  <data name="plSearchCheck.Help">
+    <value>Check whether you want to use a "Search" image</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>		&lt;h1&gt;About Search Input Settings &lt;/h1&gt;
+		&lt;p&gt;The Search Input Module enables a user to enter a word or phrase for searching the portal for any relevant match. There are 2 Search Input Settings that control the display and action performed within the module. &lt;/p&gt;
+		&lt;ul&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;strong&gt;Show Search Image –&lt;/strong&gt; Check the option checkbox to enable a graphic image to display a ‘SEARCH’ image to the right of the SEARCH INPUT textbox. &lt;/div&gt;
+				&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;ul&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;strong&gt;Show Go Image -&lt;/strong&gt; Check the option checkbox to enable a graphic image to display a ‘GO’ image to the left of the SEARCH INPUT textbox. &lt;/div&gt;
+				&lt;/li&gt;
+		&lt;/ul&gt;
+</value>
+  </data>
+  <data name="ControlTitle_settings.Text">
+    <value>Search Input Settings</value>
+  </data>
+  <data name="NoSearchModule.Text">
+    <value>Search Results module cannot be found</value>
+  </data>
+</root>

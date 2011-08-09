@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="plResults.Text">
+		<value>Maximum Search Results:</value>
+	</data>
+	<data name="plResults.Help">
+		<value>Enter the maximum number of results to display (leave blank for no maximum)</value>
+	</data>
+	<data name="plTitle.Text">
+		<value>Maximum Title Length:</value>
+	</data>
+	<data name="plTitle.Help">
+		<value>Enter the maximum number of characters to display for the title (leave blank for no maximum)</value>
+	</data>
+	<data name="plDescription.Text">
+		<value>Maximum Description Length:</value>
+	</data>
+	<data name="plDescription.Help">
+		<value>Enter the maximum number of characters to display for the description (leave blank for no maximum)</value>
+	</data>
+	<data name="plShowDescription.Text">
+		<value>Show Description?</value>
+	</data>
+	<data name="plShowDescription.Help">
+		<value>Check if you want to show the Description for a Search Result</value>
+	</data>
+	<data name="plPage.Text">
+		<value>Results per Page:</value>
+	</data>
+	<data name="plPage.Help">
+		<value>Enter the number of results to display on each page (leave blank to use 10 as default)</value>
+	</data>
+	<data name="ControlTitle_settings.Text">
+		<value>Search Results Settings</value>
+	</data>
+	<data name="ModuleHelp.Text">
+		<value>
+		&lt;h1&gt;About Search Results Settings &lt;/h1&gt;
+		&lt;p&gt;The Search Results Module displays the results of a user search. There are 5 Search Results Settings that control the display and action performed within the module. &lt;/p&gt;
+		&lt;ul&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Maximum Search Results&lt;/b&gt; – Enter the maximum number of items the search should return. &lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Results Per Page&lt;/b&gt; - Enter the maximum number of search items to be show on each page. &lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Maximum Title Length&lt;/b&gt; - Enter the number of characters of the module Title where the string was matched.  Leave blank to default to the length of the module Title where the search string was found..&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Maximum Description Length&lt;/b&gt; - Enter the number of characters to display of  the text where the input search string was matched.. Leave blank to default to the length of the input search string.  The resulting string displayed is not the actual search input string, but the start of the where the search string was found.&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Show Description&lt;/b&gt; - Check the option checkbox to display the input search string.  The number of characters displayed is controlled by the Maximum Description Length value above.&lt;/div&gt;
+				&lt;/li&gt;
+		&lt;/ul&gt;
+</value>
+	</data>
+  <data name="Validation.ErrorMessage">
+    <value>&lt;br&gt;Must be an integer greater than zero.</value>
+  </data>
+</root>

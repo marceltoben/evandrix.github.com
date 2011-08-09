@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="2.0">
+  <head>
+    <title>News Explorer</title>
+    <docs>http://www.opml.org/spec2</docs>
+  </head>
+  <body>
+    <outline text="Yahoo" type="none" category="Tab">
+      <outline text="News" type="none" category="Section">
+        <outline text="Front Page" type="rss" category="Category/@@3000px" xmlUrl="http://news.yahoo.com" />
+        <outline text="Top Stories" type="rss" category="Category" xmlUrl="http://rss.news.yahoo.com/rss/topstories" />
+        <outline text="World News" type="rss" category="Category" xmlUrl="http://rss.news.yahoo.com/rss/world" />
+      </outline>
+    </outline>
+    <outline text="Google" type="none" category="Tab">
+      <outline text="News" type="none" category="Section">
+        <outline text="Front Page" type="rss" category="Category/@@3000px" xmlUrl="http://news.google.com" />
+        <outline text="Top Stories" type="rss" category="Category" xmlUrl="http://news.google.com/?output=rss" />
+        <outline text="World News" type="rss" category="Category" xmlUrl="http://news.google.com/?topic=w&amp;output=rss" />
+      </outline>
+    </outline>
+    <outline text="BBC" type="none" category="Tab">
+      <outline text="News" type="none" category="Section">
+        <outline text="Front Page" type="rss" category="Category/@@3000px" xmlUrl="http://www.bbc.co.uk" />
+        <outline text="World" type="rss" category="Category" xmlUrl="http://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml" />
+      </outline>
+    </outline>
+  </body>
+</opml>

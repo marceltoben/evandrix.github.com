@@ -1,0 +1,5 @@
+/* ===========   SQL Module Styling   =========== */
+.dnnSQLModule{width:100%;margin:2em auto;}
+.dnnForm .dnnFormItem label{width:15%;}
+.dnnFormItem.dnnResults{overflow:auto;}
+/* ===========   End SQL Module Styling   =========== */

@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers && schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminUser.Text" xml:space="preserve">
+    <value>مدير البوابة</value>
+  </data>
+  <data name="AdminUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأمستخدم اداري:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Auto.Text" xml:space="preserve">
+    <value>&lt;b&gt;آلي&lt;/b&gt; - طريقة التنصيب الآلي تتجاوز المعالج بصورة كاملة وتستخدم اجراءات التنصيب-الآلي التراثية .</value>
+  </data>
+  <data name="ChooseDatabase.Text" xml:space="preserve">
+    <value>اختار قاعدة البيانات:</value>
+  </data>
+  <data name="ChooseDbError.Text" xml:space="preserve">
+    <value>يجب عليك اختيار نوع قاعدة البيانات</value>
+  </data>
+  <data name="ChooseInstall.Text" xml:space="preserve">
+    <value>&lt;h3&gt;اختار طريقة التنصيب:&lt;/h3&gt;</value>
+  </data>
+  <data name="ChooseLanguage.Text" xml:space="preserve">
+    <value>&lt;h3&gt;اختار اللغة:&lt;/h3&gt;</value>
+  </data>
+  <data name="Complete.Text" xml:space="preserve">
+    <value>تم استكمال تنصيب قاعدة البيانات </value>
+  </data>
+  <data name="CompleteDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;تهانينا , لقد نجحت بتنصيب دوتنت نوك.&lt;/p&gt;</value>
+  </data>
+  <data name="CompleteTitle.Text" xml:space="preserve">
+    <value>تهنأة</value>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>تأكيد الرقم السري:</value>
+  </data>
+  <data name="ConfirmPassword.Text" xml:space="preserve">
+    <value>الرقم السري المدخل للتأكيد ليس كما الرقم السري المدخل .</value>
+  </data>
+  <data name="ConnectError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بالإتصال:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ConnectSuccess.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;الأتصال ناجح&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="Containers.Text" xml:space="preserve">
+    <value>الحاويات</value>
+  </data>
+  <data name="Database.Text" xml:space="preserve">
+    <value>قاعدة البيانات:</value>
+  </data>
+  <data name="DatabaseFile.Text" xml:space="preserve">
+    <value>اسم الملف:</value>
+  </data>
+  <data name="DatabaseFileHelp.Text" xml:space="preserve">
+    <value>ادخل اسم ملف قاعدة البيانات
+&lt;BR&gt;( App_Data موجود في الدليل)</value>
+  </data>
+  <data name="DatabaseHelp.Text" xml:space="preserve">
+    <value>ادخل اسم قاعدة البيانات</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>عنوان البريد الالكتروني:</value>
+  </data>
+  <data name="Failure.Text" xml:space="preserve">
+    <value>فشل</value>
+  </data>
+  <data name="FileCreate.Text" xml:space="preserve">
+    <value>انشاء ملف</value>
+  </data>
+  <data name="FileDelete.Text" xml:space="preserve">
+    <value>حذف الملف</value>
+  </data>
+  <data name="Finished.Text" xml:space="preserve">
+    <value>تم الإنتهاء (الذهاب للموقع)</value>
+  </data>
+  <data name="FirstName.Text" xml:space="preserve">
+    <value>الاسم الاول:</value>
+  </data>
+  <data name="FolderCreate.Text" xml:space="preserve">
+    <value>انشاء مجلد</value>
+  </data>
+  <data name="FolderDelete.Text" xml:space="preserve">
+    <value>حذف المجلد</value>
+  </data>
+  <data name="Full.Text" xml:space="preserve">
+    <value>&lt;b&gt;مخصص&lt;/b&gt; - طريقة التنصيب "المخصص" تزودك بقابلية كاملة لتخصيص تنصيب دوتنت نوك . اختار هذا الخيار اذا رغبت بالتحكم بتنصيب العناصر الإختيارية.</value>
+  </data>
+  <data name="HomePage.Text" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="HostUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ مستخدم مضيف:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Install.Error" xml:space="preserve">
+    <value>هناك مشكلة بتنصيب قاعدة البيانات.</value>
+  </data>
+  <data name="Install.Text" xml:space="preserve">
+    <value>تنصيب سكريبتات قاعدة البيانات</value>
+  </data>
+  <data name="InstallComplete.Text" xml:space="preserve">
+    <value>تم استكمال تنصيب سكريبتات قاعدة البيانات</value>
+  </data>
+  <data name="InstallDatabase.Text" xml:space="preserve">
+    <value>{0} تنصيب قاعدة البيانات - الاصدار</value>
+  </data>
+  <data name="Installed.Text" xml:space="preserve">
+    <value>&lt;p&gt;دوتنت نوك منصب مسبقا في هذا النظام.&lt;/p&gt;</value>
+  </data>
+  <data name="Installing.Text" xml:space="preserve">
+    <value>تنصيب سكريبتات قاعدة البيانات جاري...   </value>
+  </data>
+  <data name="InstallModuleError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بتنصيب الوحدة/الوحدات:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallPortalError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بتنصيب البوابة:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallScript.Text" xml:space="preserve">
+    <value>{0} ترقية قاعدة البيانات الى الإصدار</value>
+  </data>
+  <data name="Integrated.Text" xml:space="preserve">
+    <value>Integrated Security:</value>
+  </data>
+  <data name="IntegratedHelp.Text" xml:space="preserve">
+    <value>اختار هذه الخانة اذا كنت تستخدم اسكيول خوادم أمن متكامل , هذا يعني انك ستستخدم حساب ويندوز للوصول الى خادم اسكيول . اذا كنت تستخدم اسكيول خادم اكسبرس  فغالبا ستحتاج لتفعيل هذه الخانة . اذا تم اعطائك معرف المستخدم/الرقم السري للوصول الى قاعدة البيانات , اترك تفعيل هذه الخانة , وقم بتزويد مزيج معرف المستخدم/الرقم السري .
+&lt;BR&gt;&lt;BR&gt;أمن متكامل : Integrated Security
+&lt;BR&gt;SQL :اسكيول</value>
+  </data>
+  <data name="InValidEmail.Text" xml:space="preserve">
+    <value>عنوان البريد الالكتروني غير صحيح.</value>
+  </data>
+  <data name="Languages.Text" xml:space="preserve">
+    <value>اللغات</value>
+  </data>
+  <data name="LastName.Text" xml:space="preserve">
+    <value>الاسم الاخير:</value>
+  </data>
+  <data name="MachineKey.Error" xml:space="preserve">
+    <value> Machine Key خطأ بتحديث</value>
+  </data>
+  <data name="MinUserNamelength.Text" xml:space="preserve">
+    <value>اقل طول لإسم المستخدم هو 4 احرف </value>
+  </data>
+  <data name="Modules.Text" xml:space="preserve">
+    <value>الوحدات</value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="NoContainers.Text" xml:space="preserve">
+    <value>لا يوجد حاويات اختيارية يراد تنصيبها</value>
+  </data>
+  <data name="NoLanguages.Text" xml:space="preserve">
+    <value>لا يوجد هناك لغات يراد تنصيبها .</value>
+  </data>
+  <data name="NoModules.Text" xml:space="preserve">
+    <value>لا يوجد هناك وحدات يراد تنصيبها</value>
+  </data>
+  <data name="NoPassword.Text" xml:space="preserve">
+    <value>يجب عليك تزويد رقم سري للمستخدم</value>
+  </data>
+  <data name="NoSkins.Text" xml:space="preserve">
+    <value>لا يوجد هناك جلود اختيارية يراد تنصيبها</value>
+  </data>
+  <data name="Oracle.Text" xml:space="preserve">
+    <value>قاعدة بيانات اوراكل</value>
+  </data>
+  <data name="Owner.Text" xml:space="preserve">
+    <value>تشغيل كمالك قاعدة البيانات:</value>
+  </data>
+  <data name="OwnerHelp.Text" xml:space="preserve">
+    <value>اختار هذه الخانة اذا كنت تشغل قواعد البيانات كمالك قاعدة بيانات - اذا لم تقم بالإختيار لهذه الخانة ستشغل كما عين(حدد) معرف المستخدم
+&lt;BR&gt;Run as db Owner</value>
+  </data>
+  <data name="Page0.Title" xml:space="preserve">
+    <value>مرحبا</value>
+  </data>
+  <data name="Page1.Title" xml:space="preserve">
+    <value>أذون الملف</value>
+  </data>
+  <data name="Page2.Title" xml:space="preserve">
+    <value>تكوين قاعدة البيانات</value>
+  </data>
+  <data name="Page3.Title" xml:space="preserve">
+    <value>تنصيب قاعدة البيانات</value>
+  </data>
+  <data name="Page4.Title" xml:space="preserve">
+    <value>مستخدم مضيف</value>
+  </data>
+  <data name="Page5.Title" xml:space="preserve">
+    <value>تنصيب وحدات</value>
+  </data>
+  <data name="Page6.Title" xml:space="preserve">
+    <value>تنصيب الجلود</value>
+  </data>
+  <data name="Page7.Title" xml:space="preserve">
+    <value>تنصيب اللغات</value>
+  </data>
+  <data name="Page8.Title" xml:space="preserve">
+    <value>تنصيب خدمات تصديق</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>الرقم السري:</value>
+  </data>
+  <data name="PasswordHelp.Text" xml:space="preserve">
+    <value>ادخل الرقم السري لقاعدة البيانات</value>
+  </data>
+  <data name="PasswordLength.Text" xml:space="preserve">
+    <value>الرقم السري يجب ان يكون على الأقل {0} احرف/علامات</value>
+  </data>
+  <data name="PasswordUser.Text" xml:space="preserve">
+    <value>لا يمكنك وضع قيمة الرقم السري نفس قيمة اسم المستخدم</value>
+  </data>
+  <data name="Permissions.Text" xml:space="preserve">
+    <value>ملخص اذونات الملف:</value>
+  </data>
+  <data name="PermissionsError.Text" xml:space="preserve">
+    <value>&lt;p&gt;&lt;img alt="صورة تظهر الوضعيات الأمنية لمجلد الجذر لموقعك التي يجب ان توضع للمتحكمات  ." hspace="10" align="right" src="..\403-3.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;font color="#ff0000"&gt;موقعك فشل بفحص الأذونات.&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div dir="rtl"&gt;مستخدما متصفح الوندوز ,ابحث عن مجلد الجذر لموقعك &lt;span dir="ltr"&gt;&amp;nbsp; .( C:\DotNetNuke by default )&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="rtl"&gt;استخدم يمين الفأرة وإختار من القائمة المنبثقة &lt;span dir="ltr"&gt;Sharing and Security&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="rtl"&gt;الرجاء الانتباه اذا كنت تستخدم ويندوز اكس بي انت تحتاج لتفعيل&lt;/div&gt;
+&lt;div dir="rtl"&gt;&lt;a target="_blank" href="http://whoozoo.co.uk/winxpFilePerms.htm"&gt;&lt;span dir="ltr"&gt;Enable Simple File Sharing&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div dir="rtl"&gt;قبل اظهار هذه الخيارات&lt;/div&gt;
+&lt;div dir="rtl"&gt;&lt;span dir="ltr"&gt;.&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;اختار تبويب الأمن&lt;span dir="ltr"&gt;Security&amp;nbsp;&lt;/span&gt; اضف حساب مستخدم مناسب وعين الاذون &lt;span dir="ltr"&gt;Permissions&lt;/span&gt;&amp;nbsp;&amp;nbsp;.&lt;/div&gt;
+&lt;div dir="rtl"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;ul type="disc"&gt;
+    &lt;li dir="rtl"&gt;اذا كنت تستخدم وندوز 2000 &amp;ndash; &lt;span dir="ltr"&gt;IIS5&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div dir="rtl"&gt;حساب المتستخدم &lt;span dir="ltr"&gt;[SERVER]\ASPNET&lt;/span&gt; يجب ان يملك متحكمات &lt;span dir="ltr"&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span dir="ltr"&gt;Read&lt;/span&gt;و&lt;span dir="ltr"&gt;Write &lt;/span&gt;&amp;nbsp;و&lt;span dir="ltr"&gt;Change &lt;/span&gt;&amp;nbsp;للجذر الظاهري لموقعك&lt;/div&gt;
+&lt;ul type="disc"&gt;
+    &lt;li dir="rtl"&gt;اذا كنت تستخدم وندوز 2003 &amp;ndash; &lt;span dir="ltr"&gt;IIS6&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div dir="rtl"&gt;حساب المتستخدم &lt;span dir="ltr"&gt;NT AUTHORITY\NETWORK SERVICE &lt;/span&gt;&amp;nbsp;يجب ان يملك متحكمات &lt;span dir="ltr"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span dir="ltr"&gt;Read&lt;/span&gt; و&lt;span dir="ltr"&gt;Write &lt;/span&gt;&amp;nbsp; و&lt;span dir="ltr"&gt;Change &amp;nbsp;&lt;/span&gt;&amp;nbsp;للجذر الظاهري لموقعك&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>
+  </data>
+  <data name="PermissionsOk.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;موقعك نجح بفحص الأذون .&lt;/font?&lt;/b&gt;</value>
+  </data>
+  <data name="Portal.Text" xml:space="preserve">
+    <value>خصائص البوابة</value>
+  </data>
+  <data name="PortalTemplate.Text" xml:space="preserve">
+    <value>القالب:</value>
+  </data>
+  <data name="PortalTitle.Text" xml:space="preserve">
+    <value>عنوان البوابة:</value>
+  </data>
+  <data name="Previous.Text" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="Qualifier.Text" xml:space="preserve">
+    <value>Object Qualifier:</value>
+  </data>
+  <data name="QualifierHelp.Text" xml:space="preserve">
+    <value>ادخل "البادئة" الاختيارية لتستخدم لجميع كوائن قواعد البيانات - هذا سيساعد لضمان ان لن يكون هناك تصادمات بين إسم الكوائن .
+&lt;BR&gt;&lt;BR&gt;prefix : البادئة
+&lt;BR&gt;object : كائن</value>
+  </data>
+  <data name="ScriptError.Text" xml:space="preserve">
+    <value>لمزيد من المعلومات انظر الى {0}</value>
+  </data>
+  <data name="Server.Text" xml:space="preserve">
+    <value>الخادم:</value>
+  </data>
+  <data name="ServerHelp.Text" xml:space="preserve">
+    <value>ادخل الاسم او عنوان بروتكول الانترنت لكمبيوترك حيث قاعدة البيانات موجودة .
+اذا كنت تستخدم اوراكل ادخل مصدر البيانات 
+&lt;BR&gt;Data Source (SID)</value>
+  </data>
+  <data name="Skins.Text" xml:space="preserve">
+    <value>الجلود</value>
+  </data>
+  <data name="SQLServer.Text" xml:space="preserve">
+    <value>SQL Server 2005/2008 Database</value>
+  </data>
+  <data name="SQLServerXPress.Text" xml:space="preserve">
+    <value>SQL Server 2005/2008 (Express) File</value>
+  </data>
+  <data name="Success.Text" xml:space="preserve">
+    <value>ناجح</value>
+  </data>
+  <data name="TestDB.Text" xml:space="preserve">
+    <value>فحص اتصال قاعدة البيانات</value>
+  </data>
+  <data name="TestPerm.Text" xml:space="preserve">
+    <value>فحص الأذون</value>
+  </data>
+  <data name="Title.Text" xml:space="preserve">
+    <value>معالج تنصيب دوتنت نوك</value>
+  </data>
+  <data name="Typical.Text" xml:space="preserve">
+    <value>&lt;b&gt;نموذجي&lt;/b&gt;  - طريقة التنصيب "النموذجية" تنجز بعض الإنتقاءات "النموذجية" لك.</value>
+  </data>
+  <data name="Upgrade.Text" xml:space="preserve">
+    <value>&lt;p&gt;اصدار دوتنت نوك المنصب حاليا {0}.
+اضغط على زر التالي للترقية الى الاصدار الجديد
+&lt;/p&gt;</value>
+  </data>
+  <data name="UpgradeTitle.Text" xml:space="preserve">
+    <value>معالج ترقية دوتنت نوك - الاصدار {0}</value>
+  </data>
+  <data name="UserHelp.Text" xml:space="preserve">
+    <value>ادخل معرف المستخدم لقاعدة البيانات
+&lt;BR&gt;&lt;BR&gt;UserID :معرف المستخدم</value>
+  </data>
+  <data name="UserId.Text" xml:space="preserve">
+    <value>معرف المستخدم:</value>
+  </data>
+  <data name="UserName.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="WhatsNext.Text" xml:space="preserve">
+    <value>ما التالي</value>
+  </data>
+  <data name="DatabaseConfigDetail.Text">
+    <value>&lt;div dir="rtl"&gt;يمكنك تكوين(تركيب) وضعيات قاعدة البيانات المستخدمة لدوتنت نوك في هذه الصفحة . اذا كنت تنصب دوتنت نوك في &amp;quot;حساب استضافة&amp;quot; فمزود الاستضافة سيزودك بهذه المعلومات .&lt;/div&gt;
+&lt;div dir="rtl"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div dir="rtl"&gt;هناك اختيارين ل&lt;span dir="ltr"&gt;SQL Server 2005 &lt;/span&gt;.&lt;/div&gt;
+&lt;div dir="rtl"&gt;&lt;span dir="ltr"&gt;&amp;nbsp;&lt;/span&gt;&lt;span dir="ltr"&gt;SQLServer 2005&lt;/span&gt; &lt;span&gt;تدعم استخدام ملفات قاعدة البيانات .&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="rtl"&gt;في معظم الحالات يجب عليك اختيار خيار قاعدة البيانات , لكن اذا كنت تستخدم &lt;span dir="ltr"&gt;SQL Server 2005 Express&lt;/span&gt; &lt;span&gt;فوجب عليك استخدام خيار الملف .&lt;/span&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="DatabaseConfigTitle.Text">
+    <value>تكوين اتصال قاعدة البيانات</value>
+  </data>
+  <data name="DatabaseInstallDetail.Text">
+    <value>&lt;p&gt;تنصيب سكريبتات(برنامج نصي) قاعدة البيانات يجب ان يبدأ عند تحميل هذه الصفحة . زر التالي سوف يتم عدم تفعيله حتى استكمال تنصيب   السكريبتات.&lt;/p&gt;</value>
+  </data>
+  <data name="DatabaseInstallTitle.Text">
+    <value>تشغيل سكريبتات(نص برامجي) لتنصيب قاعدة البيانات</value>
+  </data>
+  <data name="HostUserDetail.Text">
+    <value>&lt;p&gt;في هذه الصفحة يجب عليك تزويد معلومات حول حساب المستخدم مضيف او رئيس المستخدمين . هذا المستخدم يملك الوصول لجميع البوابات المنشأة في الموقع , يجب اخذ الحيطة عند تزويد المزيج اسم المستخدم/الرقم السري بحيث تكون قيمة صعبة الاختراق من قبل المستخدمين الهاكر و الماكرين  &lt;/p&gt;</value>
+  </data>
+  <data name="HostUserTitle.Text">
+    <value>تكوين مستخدم مضيف</value>
+  </data>
+  <data name="IntroDetail.Text">
+    <value>&lt;p&gt;مرحبا بك في معالج تنصيب دوتنت نوك . هذا المعالج سيرشدك خلال تنصيبك لتطبيق دوتنت نوك الخاص بك.&lt;/p&gt;
+&lt;p&gt;بمكنك الابحار خلال المعالج مستخدما الزرين التالي و السابق . في بعض الصفحات سترى زر ثالث "فحص...." . هذا الزر سيسمح لك بفحص التكوين(التركيب) قبل الاستمرار , لترى تأثير التغييرات .&lt;/p&gt;
+&lt;p&gt;الخطوة الاولى هي اختيار طريقة التنصيب المراد استخدامها وكذلك اللغة التي ترغب بإستخدامها لعملية التنصيب .&lt;/p&gt;</value>
+  </data>
+  <data name="IntroTitle.Text">
+    <value>{0} معالج تنصيب دوتنت نوك - الاصدار    </value>
+  </data>
+  <data name="LanguagesDetail.Text">
+    <value>&lt;p&gt;دوتنت نوك قالب للتحول للهجة المحلية بصورة كاملة . في هذه الصفحة اختار اللغات التي ترغب بتنصيبها .&lt;/p&gt;
+&lt;p&gt;تنصيب اللغة لا يعني تفعيلها اوتوماتيكيا , لكن يجعل اللغة متوفرة لك .&lt;/p&gt;</value>
+  </data>
+  <data name="LanguagesTitle.Text">
+    <value>تنصيب الرزم اللغوية</value>
+  </data>
+  <data name="ModulesDetail.Text">
+    <value>&lt;p&gt;دوتنت نوك قابل للتمدد بصورة كبيرة . قابيلة التمدد هذه تزود من خلال المفهوم وحدات "تنصيبية" .&lt;/p&gt;
+&lt;p&gt;في هذه الصفحة يمكنك اختيار الوحدات الاختيارية المراد تنصيبها . تنصيب هذه الوحدات يجعلها متوفرة لإداري البوابة .&lt;/p&gt;</value>
+  </data>
+  <data name="ModulesTitle.Text">
+    <value>تنصيب الوحدات الاختيارية</value>
+  </data>
+  <data name="NoPackages.Text">
+    <value>لا يوجد انظمة تصديق يراد تنصيبها</value>
+  </data>
+  <data name="Page9.Title">
+    <value>تنصيب مزودات</value>
+  </data>
+  <data name="PermissionsDetail.Text">
+    <value>&lt;p&gt;دوتنت نوك  تملك قابلية واسعة  لإيداع الملفات وذلك للمحتوى والوحدات والجلود , هذه المميزات تتطلب وضعيات أمنية خاصة وبالتالي التطبيق يملك القابلية لإنشاء وإزالة الملفات في موقعك .&lt;/p&gt;
+&lt;p&gt;هذه الصفحة تفحص اذونات الملف الحالية للتأكد من هذه المميزات ستعمل بصورة صحيحة .&lt;/p&gt;</value>
+  </data>
+  <data name="PermissionsTitle.Text">
+    <value>فحص أذون الملف </value>
+  </data>
+  <data name="PortalDetail.Text">
+    <value>&lt;p&gt; في هذه الصفحة ستقوم بتكوين مضيف (او تفعيل) البوابة (الموقع).&lt;/p&gt;
+&lt;p&gt;ستحتاج لتزويد حساب مستخدم اداري . هذا المستخدم يملك الوصول لجميع وظائف البوابة , كما المستخدم مضيف يجب اخذ الحيطة عند تزويد المزيج اسم المستخدم/الرقم السري بحث تكون قيمة صعبة الاختراق من قبل المستخدمين الهاكر و الماكرين.&lt;/p&gt;</value>
+  </data>
+  <data name="SkinsDetail.Text">
+    <value>&lt;p&gt;دوتنت نوك يملك قابلية تجليد غنية . في هذه الصفحة يمكنك اختيار الجلود والحاويات المراد تنصيبها .&lt;/p&gt;
+&lt;p&gt;تنصيب الجلد و/او الحاوية لا يعني تفعيلها اوتو ماتيكيا , لكن يجعل الجلد متوفر لك .&lt;/p&gt;</value>
+  </data>
+  <data name="SkinsTitle.Text">
+    <value>تنصيب الجلود والحاويات الاختيارية</value>
+  </data>
+  <data name="AuthSystems.Text">
+    <value>انظمة التصديق</value>
+  </data>
+  <data name="AuthSystemsDetail.Text">
+    <value>&lt;p&gt;دوتنت نوك تدعم انظمة تصديق متعددة . في هذه الصفحة يمكنك اختيار الانظمة التي ترغب بتنصيبها.&lt;/p&gt;
+&lt;p&gt;تنصيب نظام التصديق لا يفعل اوتوماتيكيا لكل بوابة , لكنه سيكون متوفر لإداري البوابة .&lt;/p&gt;
+&lt;BR&gt;&lt;BR&gt;Authentication Systems : انظمة التصديق</value>
+  </data>
+  <data name="AuthSystemsTitle.Text">
+    <value>تنصيب انظمة التصديق</value>
+  </data>
+  <data name="EmailErrorMessage.Text">
+    <value>كان هناك خطأ لدي المحاولة ارسال بريدالكتروني للفحص .الخطأ هو:&lt;br /&gt;{0}</value>
+  </data>
+  <data name="EmailSentMessage.Text">
+    <value>البريد الالكتروني ارسل بنجاح</value>
+  </data>
+  <data name="EmailTestMessageSubject.Text">
+    <value> SMTP فحص تكوين</value>
+  </data>
+  <data name="EnableUpdate.Text">
+    <value>هل ترغب لبرنامجك بإظهار مبين مرئي(صوري) يشعرك بأن التحديث متوفر؟</value>
+  </data>
+  <data name="InstallAuthSystemError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بتنصيب انظمة التصديق):&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallContainerError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بتنصيب الحاوية:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallLanguageError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بتنصيب اللغات:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallSkinError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بتصيب الجلد:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="No.Text">
+    <value>لا</value>
+  </data>
+  <data name="Page10.Title">
+    <value>خدمة التحديث</value>
+  </data>
+  <data name="Providers.Text">
+    <value>Providers</value>
+  </data>
+  <data name="ProvidersDetail.Text">
+    <value>&lt;p&gt;دوتنت نوك تستخدم موديل مزود وذلك للإمتداد . في هذه الصفحة يمكنك اختيار المزودات المراد تنصيبها&lt;/p&gt;
+</value>
+  </data>
+  <data name="ProvidersTitle.Text">
+    <value>تنصيب المزودات</value>
+  </data>
+  <data name="SMTPAnonymous.Text">
+    <value>Anonymous</value>
+  </data>
+  <data name="SMTPAuthentication.Text">
+    <value>Authentication:</value>
+  </data>
+  <data name="SMTPBasic.Text">
+    <value>Basic</value>
+  </data>
+  <data name="SMTPEnableSSL.Text">
+    <value>Enable SSL:</value>
+  </data>
+  <data name="SMTPError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;SMTP خطأ ب:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="SMTPNTLM.Text">
+    <value>NTLM</value>
+  </data>
+  <data name="SMTPPassword.Text">
+    <value>الرقم السري:</value>
+  </data>
+  <data name="SMTPServer.Text">
+    <value>الخادم:</value>
+  </data>
+  <data name="SMTPSettings.Text">
+    <value>وضعيات خادم اس.ام.ت.ب</value>
+  </data>
+  <data name="SMTPSettingsHelp.Text">
+    <value>يمكنك تكوين وفحص وضعيات خادم اس.ام.ت.ب
+&lt;BR&gt;&lt;BR&gt;SMTP Server settings.</value>
+  </data>
+  <data name="SMTPSuccess.Text">
+    <value>&lt;b&gt;&lt;font color='green'&gt;SMTP نجاح :&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="SMTPUsername.Text">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="SpecifyHostEmailMessage.Text">
+    <value>يجب عليك تحديد عنوان البريد الالكتروني للمضيف</value>
+  </data>
+  <data name="TestSMTP.Text">
+    <value>فحص وضعيات اس.ام.ت.ب</value>
+  </data>
+  <data name="UpdateDetail.Text">
+    <value>هذا البرنامج يمكنه روتنيا فحص اخر تحديثات مهمة لهذا الموقع . هذه التحديثات يمكن ان تكون تحديثات أمنية  , تحديثات هامة واصلاحات .(لا معلومات يتم تجميعها من الممكن ان تستخدم للتعرف عليك او الاتصال بك بدون موافقة واضحة منك). </value>
+  </data>
+  <data name="UpdateEmail.Text">
+    <value>هل ترغب بإستلام اشعار عبر البريد الالكتروني يتعلق بتحديثات البرنامج؟</value>
+  </data>
+  <data name="UpdateTitle.Text">
+    <value>خدمة التحديث - تساعد بحماية متكاملة لموقعك</value>
+  </data>
+  <data name="Yes.Text">
+    <value>نعم</value>
+  </data>
+  <data name="InstallProviderError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;خطأ بتنصيب المزود:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="HostWarning.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;اسم مستضيفك يحوي علامات(احرف وارقام) غير قانونية . يجب عليك تعديل اسم المضيف المستخدم. المسموح به وممكن استخدامه هو :&lt;Br&gt;(A-Z, 0-9, - and . ).  &lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+</root>

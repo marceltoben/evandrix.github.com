@@ -1,0 +1,36 @@
+.dnnLogViewer, .dnnEditLogTypes{margin:2em auto;}
+.dnnlvOptions, .dnnlvLegend{width:49%;}
+	.dnnlvOptions{border-right:1px #ccc solid}
+.dnnLogViewer .dnnShortFormInfo{background:#edf8ff url(../../../images/help-icn.png) no-repeat 10px center;border:#46a3d3 2px solid;color:#085b8f;text-shadow:0px 1px 1px #fff;width: 350px;;}
+	.dnnLogViewer .dnnFormItem input[type="text"], .dnnLogViewer .dnnFormItem textarea{width:35%;}
+	.dnnlvFilter{}
+		.dnnlvFilter fieldset a{display:block;width:65px;text-align:right;padding-right:25px;font-weight:bold;float:left;}
+		.dnnlvFilter fieldset .dnnLeft{width:320px;margin-left:25px;}
+		.dnnlvFilter fieldset .RadComboBox .RadComboBox_Default .dnnLeft{width:200px !important;}
+		.dnnlvFilter .rcbArrowCell .rcbArrowCellRight a{display:none;}
+	.dnnlvLegend{margin:0 0 10px 0}
+		.dnnlvLegend h3{margin-top:0;padding-top:0;}
+		.dnnlvLegend .dnnLeft{width:125px;padding-right:20px;}
+			.dnnlvLegend .dnnLeft div{padding:3px 8px;margin-bottom:1px; text-shadow:1px 1px 1px #333;}
+			.dnnlvLegend .dnnLeft div.lvlItem{}
+	.dnnlvContent{margin-top:1em;}
+		.dnnlvContent.dnnClear .dnnFormHelpContent{margin:0 0 1em 0;}
+		.dnnlvContent.dnnClear{border-top:1px #ccc dotted;padding-top:1.5em;}
+		.dnnForm .dnnlvGridContent br{display:block !important;}
+	.dnnlvSendExceptions{}
+.dnnLogViewer .Exception{color:#fff;background-color:#ff1414;}
+.dnnLogViewer .ItemCreated{color:#fff;background-color:#009900;}
+.dnnLogViewer .ItemUpdated{color:#fff;background-color:#009999;}
+.dnnLogViewer .ItemDeleted{color:#000;background-color:#14ffff;}
+.dnnLogViewer .OperationSuccess{color:#fff;background-color:#999900;}
+.dnnLogViewer .OperationFailure{color:#fff;background-color:#990000;}
+.dnnLogViewer .GeneralAdminOperation{color:#fff;background-color:#4d0099;}
+.dnnLogViewer .AdminAlert{color:#fff;background-color:#148aff;}
+.dnnLogViewer .HostAlert{color:#fff;background-color:#ff8a14;}
+.dnnLogViewer .SecurityException{color:#fff;background-color:#000;}
+.dnnLogHeader{font-weight: bold;font-size:110%;padding:3px 20px;}
+	.dnnLogHeader div, .dnnLogItemHeader input, .dnnLogItemHeader div, .dnnLogItemHeader p{float:left;}
+.dnnLogItemHeader{border-bottom:1px #fff solid;line-height:2;height:2em;cursor:pointer;width:100%;clear:both;overflow:hidden;color:#fff;}
+	.dnnLogItemHeader div {color:#fff;}
+.dnnLogItemDetail{border: solid 1px #ccc;padding:1em 1.5em;background:#eee;}
+	.dnnLogItemDetail p{margin:0 0 .2em 0;padding:0;}

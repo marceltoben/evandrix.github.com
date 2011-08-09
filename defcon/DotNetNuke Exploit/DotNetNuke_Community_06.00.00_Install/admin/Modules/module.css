@@ -1,0 +1,21 @@
+/* ===========   Module Settings Styling   =========== */
+.dnnModuleSettings{margin:2em auto;}
+    .dnnModuleSettings div.msModuleSettings, .dnnModuleSettings div.msPermissions, .dnnModuleSettings div.msPageSettings, .dnnModuleSettings div.msSpecificSettings{padding:0;}
+	.dnnModuleSettings .dnnFormItem input[type="text"], .dnnModuleSettings .dnnFormItem .dnnFormInput, .dnnModuleSettings .dnnFormItem textarea, 
+	.dnnExport .dnnFormItem input[type="text"], .dnnExport .dnnFormItem .dnnFormInput, .dnnExport .dnnFormItem textarea{width:50%;}
+		.dnnModuleSettings .urlControlLinkType .dnnFormLabel{width:100px;float:left;display:block;margin-top:0;font-weight:normal}
+		.dnnModuleSettings .urlControlLinkType br, .dnnModuleSettings .dnnFormRadioButtons br{display:none}
+		.dnnModuleSettings .urlControlLinkType .ucLinkTypeRadioButtons{float:left;display:block;min-width:350px;}
+			.dnnModuleSettings .dnnFormRadioButtons{min-width:350px;}
+	.dnnModuleSettings .urlControlLinkType label, .urlControlFileRow .dnnFormLabel{margin-top:0;font-weight:normal;}
+		.urlControlFileRow span.dnnFormLabel{width:100px;text-align:right;display:block;float:left;}
+	.dnnModuleSettings div.dnnmsStat{border-top:1px #ccc solid;padding:1em 0 4em;overflow:hidden;}
+	.dnnmsStat p{float:left;padding-right:2em;}
+	    p.dnnFormRequired span{border-left:5px #F00 solid;padding-left:0.5em;}
+	.mspsContent .urlControl{overflow:hidden;}
+	.mspsContent .urlControlLinkType{float:left;width:100%;}
+		.mspsContent .urlControlLinkType .dnnFormLabel{float:left;width:auto;}
+	.mspsContent .urlControlFileRow a.dnnSecondaryAction{margin-left:25%;}
+	.mspsContent .urlControlLinkType input[type="radio"]{width:auto;margin-right:5px;}
+	.dnnModuleSettings .dnnFormItem input[type="text"].msCacheDuration {width:100px; min-width:50px;}
+/* ===========   End Module Settings Styling   =========== */

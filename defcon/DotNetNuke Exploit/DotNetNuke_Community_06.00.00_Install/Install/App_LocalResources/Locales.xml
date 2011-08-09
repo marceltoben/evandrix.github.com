@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<language name="English" key="en-US" fallback="" />
+  <language name="Português (Brasil)" key="pt-BR" fallback="en-US" />
+  <language name="한국어" key="ko-KR" fallback="en-US" />
+	<language name="Italiano (Italia)" key="it-IT" fallback="" />
+	<language name="Français" key="fr-FR" fallback="en-US" />
+	<language name="Deutsch" key="de-DE" fallback="en-US" />
+	<language name="Español" key="es-ES" fallback="en-US" />
+	<language name="Català" key="ca-ES" fallback="en-US" />
+	<language name="Nederlands" key="nl-NL" fallback="en-US" />
+	<language name="Polski" key="pl-PL" fallback="en-US" />
+	<language name="Türkçe" key="tr-TR" fallback="en-US" />
+	<language name="日本語" key="ja-JP" fallback="en-US" />
+	<language name="Русский" key="ru-RU" fallback="en-US" />
+	<language name="العربية (الأردن)" key="ar-JO" fallback="en-US"/>
+</root>

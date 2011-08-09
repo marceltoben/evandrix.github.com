@@ -1,0 +1,4 @@
+﻿.dnnScheduleGrid{}
+	.dnnEditSchedule .dnnFormItem input[type="text"]{width:32%;margin-right:10px;}
+	#dnnScheduleStatus .dnnFormItem{padding:0;}
+	#dnnScheduleStatus .dnnFormLabel{margin:0;}

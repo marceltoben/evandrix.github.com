@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminUser.Text" xml:space="preserve">
+    <value>Portal Yöneticisi</value>
+  </data>
+  <data name="AdminUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Yönetici Kullanıcısı Hatası:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Auto.Text" xml:space="preserve">
+    <value>&lt;b&gt;Otomatik&lt;/b&gt; - "Otomatik" kurulum yöntemi Sihirbazdaki tüm adımları 
+Otomatik-Kurulum prosedürüne göre tamamlar.</value>
+  </data>
+  <data name="ChooseDatabase.Text" xml:space="preserve">
+    <value>Veritabanı Seçin:</value>
+  </data>
+  <data name="ChooseDbError.Text" xml:space="preserve">
+    <value>Bir Veritabanı Türü seçmelisiniz</value>
+  </data>
+  <data name="ChooseInstall.Text" xml:space="preserve">
+    <value>&lt;h3&gt;Kurulum Yöntemini Seçin:&lt;/h3&gt;</value>
+  </data>
+  <data name="ChooseLanguage.Text" xml:space="preserve">
+    <value>&lt;h3&gt;Bir Dil Seçin:&lt;/h3&gt;</value>
+  </data>
+  <data name="Complete.Text" xml:space="preserve">
+    <value>Veritabanı Kurulumu Tamamlandı</value>
+  </data>
+  <data name="CompleteDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;Tebrik ederiz, DotNetNuke yazılımının kurulumunu başarıyla tamamladınız.&lt;/p&gt;</value>
+  </data>
+  <data name="CompleteTitle.Text" xml:space="preserve">
+    <value>Tebrik Ederiz</value>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>Şifreyi Onayla:</value>
+  </data>
+  <data name="ConfirmPassword.Text" xml:space="preserve">
+    <value>Onaylamak için belirttiğiniz şifre, ilk şifrenizle eşleşmiyor.</value>
+  </data>
+  <data name="ConnectError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Bağlantıda Problem(ler):&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ConnectSuccess.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;Bağlantı Başarılı&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="Containers.Text" xml:space="preserve">
+    <value>Modül Kapları</value>
+  </data>
+  <data name="Database.Text" xml:space="preserve">
+    <value>Veritabanı:</value>
+  </data>
+  <data name="DatabaseFile.Text" xml:space="preserve">
+    <value>Dosya adı:</value>
+  </data>
+  <data name="DatabaseFileHelp.Text" xml:space="preserve">
+    <value>Veritabanı dosyasının (App_Data klasöründe bulunur) adını yazın</value>
+  </data>
+  <data name="DatabaseHelp.Text" xml:space="preserve">
+    <value>Veritabanı Adını Yazın</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>Eposta Adresi:</value>
+  </data>
+  <data name="Failure.Text" xml:space="preserve">
+    <value>BAŞARISIZ</value>
+  </data>
+  <data name="FileCreate.Text" xml:space="preserve">
+    <value>Dosya Oluştur</value>
+  </data>
+  <data name="FileDelete.Text" xml:space="preserve">
+    <value>Dosya Sil</value>
+  </data>
+  <data name="Finished.Text" xml:space="preserve">
+    <value>İşlem Tamam (Siteye Git)</value>
+  </data>
+  <data name="FirstName.Text" xml:space="preserve">
+    <value>Adı:</value>
+  </data>
+  <data name="FolderCreate.Text" xml:space="preserve">
+    <value>Klasör Oluştur</value>
+  </data>
+  <data name="FolderDelete.Text" xml:space="preserve">
+    <value>Klasör Sil</value>
+  </data>
+  <data name="Full.Text" xml:space="preserve">
+    <value>&lt;b&gt;Özel&lt;/b&gt; - &amp;quot;Özel&amp;quot; kurulum yöntemi DotNetNuke kurulum işlemini istekleriniz 
+doğrultusunda tamamen kişiselleştirmenizi sağlar. Ekstra bileşenleri kontrol 
+etmek ve yüklenecek bileşenleri seçmek için bu yöntemi kullanabilirsiniz.</value>
+  </data>
+  <data name="HomePage.Text" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="HostUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Host Kullanıcısı Hatası:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Install.Error" xml:space="preserve">
+    <value>Veritabanı kurulumu sırasında bir problem oluştu.</value>
+  </data>
+  <data name="Install.Text" xml:space="preserve">
+    <value>Veritabanı Scriptlerini Kur</value>
+  </data>
+  <data name="InstallComplete.Text" xml:space="preserve">
+    <value>Veritabanı Scriptlerinin Kurulumu tamamlandı</value>
+  </data>
+  <data name="InstallDatabase.Text" xml:space="preserve">
+    <value>Veritabanı Kuruluyor - Sürüm {0}</value>
+  </data>
+  <data name="Installed.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke kurulumu bu sistem üzerinde zaten mevcut.&lt;/p&gt;</value>
+  </data>
+  <data name="Installing.Text" xml:space="preserve">
+    <value>Veritabanı Scriptleri Kuruluyor ...   </value>
+  </data>
+  <data name="InstallModuleError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Modül Kurulumunda Problem:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallPortalError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Portal Kurulumunda Problem:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallScript.Text" xml:space="preserve">
+    <value>Veritabanı {0} sürümüne yükseltiliyor</value>
+  </data>
+  <data name="Integrated.Text" xml:space="preserve">
+    <value>Entegre Güvenlik:</value>
+  </data>
+  <data name="IntegratedHelp.Text" xml:space="preserve">
+    <value>Bu seçeneği SQL Server'da Integrated Security kullanıyorsanız (yani SQL Server 
+için Windows kullanıcı hesabını kullanıyorsanız) seçin. Eğer SQL Server Express 
+sürümünü kullanıyorsanız bu seçeneği işaretlemeniz gerekecektir. Eğer veritabanı 
+erişimi için Hosting firması tarafından bir kullanıcı adı ve şifre sağlandıysa, 
+bu alanı işaretlemeyin ve belirtilen Kullanıcı adı ile şifreyi yazın.</value>
+  </data>
+  <data name="InValidEmail.Text" xml:space="preserve">
+    <value>Eposta adresi geçersiz.</value>
+  </data>
+  <data name="Languages.Text" xml:space="preserve">
+    <value>Dil Paketleri</value>
+  </data>
+  <data name="LastName.Text" xml:space="preserve">
+    <value>Soyadı:</value>
+  </data>
+  <data name="MachineKey.Error" xml:space="preserve">
+    <value>Anahtar (Machine Key) Güncelleme Hatası</value>
+  </data>
+  <data name="MinUserNamelength.Text" xml:space="preserve">
+    <value>Kullanıcı adı için minimum uzunluk 4 karakter</value>
+  </data>
+  <data name="Modules.Text" xml:space="preserve">
+    <value>Modüller</value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>İleri</value>
+  </data>
+  <data name="NoContainers.Text" xml:space="preserve">
+    <value>Kurulum için opsiyonel modül kapları belirtilmemiş.</value>
+  </data>
+  <data name="NoLanguages.Text" xml:space="preserve">
+    <value>Kurulumu yapılacak ekstra dil paketleri belirtilmemiş.</value>
+  </data>
+  <data name="NoModules.Text" xml:space="preserve">
+    <value>Kurulumu yapılacak ekstra modül paketleri belirtilmemiş.</value>
+  </data>
+  <data name="NoPassword.Text" xml:space="preserve">
+    <value>Kullanıcı için bir şifre belirtmelisiniz.</value>
+  </data>
+  <data name="NoSkins.Text" xml:space="preserve">
+    <value>Kurulumu yapılacak ekstra Tema belirtilmemiş.</value>
+  </data>
+  <data name="Oracle.Text" xml:space="preserve">
+    <value>Oracle Veritabanı</value>
+  </data>
+  <data name="Owner.Text" xml:space="preserve">
+    <value>db Owner yetkisi ile Çalıştır:</value>
+  </data>
+  <data name="OwnerHelp.Text" xml:space="preserve">
+    <value>Eğer veritabanı üzerinde veritabanı sahibi (database owner) yetkisine sahipseniz bu seçeneği işaretleyin</value>
+  </data>
+  <data name="Page0.Title" xml:space="preserve">
+    <value>Hoşgeldiniz</value>
+  </data>
+  <data name="Page1.Title" xml:space="preserve">
+    <value>Dosya İzinleri</value>
+  </data>
+  <data name="Page2.Title" xml:space="preserve">
+    <value>Veritabanı Yapılandırması</value>
+  </data>
+  <data name="Page3.Title" xml:space="preserve">
+    <value>Veritabanı Kurulumu</value>
+  </data>
+  <data name="Page4.Title" xml:space="preserve">
+    <value>Host Kullanıcısı</value>
+  </data>
+  <data name="Page5.Title" xml:space="preserve">
+    <value>Modülleri Kur</value>
+  </data>
+  <data name="Page6.Title" xml:space="preserve">
+    <value>Portal Kur</value>
+  </data>
+  <data name="Page7.Title" xml:space="preserve">
+    <value>Temaları Kur</value>
+  </data>
+  <data name="Page8.Title" xml:space="preserve">
+    <value>Dil Paketlerini Kur</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="PasswordHelp.Text" xml:space="preserve">
+    <value>Veritabanı şifresini yazın</value>
+  </data>
+  <data name="PasswordLength.Text" xml:space="preserve">
+    <value>Şifre en az {0} karakterden oluşmalıdır.</value>
+  </data>
+  <data name="PasswordUser.Text" xml:space="preserve">
+    <value>Şifrenizi kullanıcı adınızla aynı olacak şekilde ayarlayamazsınız.</value>
+  </data>
+  <data name="Permissions.Text" xml:space="preserve">
+    <value>Dosya İzinleri Özeti:</value>
+  </data>
+  <data name="PermissionsError.Text" xml:space="preserve">
+    <value>&lt;img alt="Image showing the security settings for the root folder of the website must be set to Read, Write and Change Control for the ASPNET or NT AUTHORITY/NETWORK SERVICE accounts." src="..\403-3.gif" align="right" hspace="10"&gt;
+&lt;p&gt;&lt;font color="#FF0000"&gt;&lt;b&gt;Siteniz yetki kontrollerinde başarısız oldu&lt;/b&gt;&lt;/font&gt;&lt;b&gt;&lt;font color='red'&gt;.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;
+Windows Gezginini kullanarak sitenizin kök dizinini içeren klasöre (örneğin;
+&lt;a href="file:///C:/DotNetNuke"&gt;C:\DotNetNuke&lt;/a&gt;) ters tıklayın ve menüden 
+Paylaşım ve Güvenlik'i seçin. Eğer Windows XP işletim sistemini kullanıyorsanız, 
+Basit Dosya Paylaşımını devredışı bırakmanız gerekebilir. Güvenlik tabını seçin. 
+Gerekli olan kullanıcı hesabını ekleyin ve dosya izinlerini ayarlayın. &lt;br/&gt;
+&lt;h3&gt;Windows 2000 - IIS5 için&lt;/h3&gt;
+&lt;p&gt;{Sunucu}\ASPNET kullanıcı hesabı websiteniz üzerinde oluşturduğunuz sanal 
+dizinde Read, Write, ve Change Control&amp;nbsp; yetkisine sahip olmalıdır.&lt;/p&gt;
+&lt;h3&gt;Windows 2003 - IIS6 için&lt;/h3&gt;
+&lt;p&gt;NT AUTHORITY\NETWORK SERVICE kullanıcı hesabı websiteniz üzerinde 
+oluşturduğunuz sanal dizinde Read, Write, ve Change Control&amp;nbsp; yetkisine 
+sahip olmalıdır.&lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="PermissionsOk.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;Siteniz dosya izinleri testini başarıyla tamamladı.&lt;/font?&lt;/b&gt;</value>
+  </data>
+  <data name="Portal.Text" xml:space="preserve">
+    <value>Portal Özellikleri</value>
+  </data>
+  <data name="PortalTemplate.Text" xml:space="preserve">
+    <value>Şablon:</value>
+  </data>
+  <data name="PortalTitle.Text" xml:space="preserve">
+    <value>Portal Başlığı:</value>
+  </data>
+  <data name="Previous.Text" xml:space="preserve">
+    <value>Geri</value>
+  </data>
+  <data name="Qualifier.Text" xml:space="preserve">
+    <value>Opsiyonel Prefix:</value>
+  </data>
+  <data name="QualifierHelp.Text" xml:space="preserve">
+    <value>Veritabanı nesneleri için opsiyonel olarak bir prefix (ön ek) 
+tanımlayabilirsiniz ve muhtemel nesne çakışmalarını engelleyebilirsiniz.</value>
+  </data>
+  <data name="ScriptError.Text" xml:space="preserve">
+    <value>Daha fazla bilgi için {0} alanını inceleyin.</value>
+  </data>
+  <data name="Server.Text" xml:space="preserve">
+    <value>Sunucu:</value>
+  </data>
+  <data name="ServerHelp.Text" xml:space="preserve">
+    <value>Veritabanının yer aldığı bilgisayarın adını ya da IP adresini yazın. (Oracle 
+kullanılıyorsa Veri Kaynağını (SID) yazın)</value>
+  </data>
+  <data name="Skins.Text" xml:space="preserve">
+    <value>Temalar</value>
+  </data>
+  <data name="SQLServer.Text" xml:space="preserve">
+    <value>SQL Server 2005/2008 Veritabanı</value>
+  </data>
+  <data name="SQLServerXPress.Text" xml:space="preserve">
+    <value>SQL Server 2005/2008 (Express) Dosyası</value>
+  </data>
+  <data name="Success.Text" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="TestDB.Text" xml:space="preserve">
+    <value>Veritabanı Bağlantısını Test Et</value>
+  </data>
+  <data name="TestPerm.Text" xml:space="preserve">
+    <value>İzinleri Test Et</value>
+  </data>
+  <data name="Title.Text" xml:space="preserve">
+    <value>DotNetNuke Kurulum Sihirbazı</value>
+  </data>
+  <data name="Typical.Text" xml:space="preserve">
+    <value>&lt;b&gt;Genel&lt;/b&gt;  - &amp;quot;Genel&amp;quot; kurulum yöntemi, sihirbazdaki bazı seçimleri sizin için 
+yapar veya uygular.</value>
+  </data>
+  <data name="Upgrade.Text" xml:space="preserve">
+    <value>&lt;p&gt;Sistem üzerinde DotNetNuke  {0} sürümü bulundu. İleri butonuna tıklayarak yeni 
+sürüme yükseltme işlemini başlatabilirsiniz.&lt;/p&gt;</value>
+  </data>
+  <data name="UpgradeTitle.Text" xml:space="preserve">
+    <value>DotNetNuke Güncelleme Sihirbazı - Sürüm {0}</value>
+  </data>
+  <data name="UserHelp.Text" xml:space="preserve">
+    <value>Veritabanı için Kullanıcı ID'sini belirtin.</value>
+  </data>
+  <data name="UserId.Text" xml:space="preserve">
+    <value>Kullanıcı ID:</value>
+  </data>
+  <data name="UserName.Text" xml:space="preserve">
+    <value>Kullanıcı Adı:</value>
+  </data>
+  <data name="WhatsNext.Text" xml:space="preserve">
+    <value>Sırada Ne Var</value>
+  </data>
+  <data name="DatabaseConfigDetail.Text">
+    <value>&lt;p&gt;Bu sayfada DotNetNuke tarafından kullanılan veritabanı ayarlarını yapılandırabilirsiniz.   Eğer DotNetNuke yazılımını bir "Hosting Hesabı'na" kurmak istiyorsanız Hosting Sağlayıcınız gerekli bilgileri sağlamış olmalıdır.&lt;/p&gt;
+&lt;p&gt;SQL Server 2005 için iki seçenek mevcuttur. SQL Server 2005 Veritabanı Dosyalarının (Database Files) kullanımını destekler. Çoğunlukla Veritabanı (Database) seçeneğini seçmeniz önerilir, ancak SQL Server 2005 Express sürümünü kullanıyorsanız Dosya seçeneğini seçmelisiniz.&lt;/p&gt;</value>
+  </data>
+  <data name="DatabaseConfigTitle.Text">
+    <value>Veritabanı Bağlantısını Yapılandır</value>
+  </data>
+  <data name="DatabaseInstallDetail.Text">
+    <value>&lt;p&gt;Bu sayfa yüklendiğinde veritabanı scriptlerinin kurulumunun başlamış olması gerekir.  İleri butonu scriptlerin kurulumu tamamlanıncaya kadar devredışı olacaktır.&lt;/p&gt;  </value>
+  </data>
+  <data name="DatabaseInstallTitle.Text">
+    <value>Veritabanı Kurulum Scriptlerini Çalıştır</value>
+  </data>
+  <data name="HostUserDetail.Text">
+    <value>&lt;p&gt;Bu sayfada Host veya SuperUser Kullanıcı Hesapları için hesap bilgilerini belirtmelisiniz.  Host kullanıcısı sitede oluşturulan tüm portallara erişebilecektir, ve kullanıcı adı ve şifre belirlenirken zararlı kullanıcılar tarafından ele geçirilmesi/tahmin edilmesi (hack edilmesi) zor bir kombinasyon seçilmelidir.&lt;/p&gt; </value>
+  </data>
+  <data name="HostUserTitle.Text">
+    <value>Host Kullanıcısı Tanımla</value>
+  </data>
+  <data name="IntroDetail.Text">
+    <value>&lt;p&gt;DotNetNuke Kurulum Sihirbazı'na hoşgeldiniz. Bu sihirbaz DotNetNuke 
+Uygulamasının kurulumundaki aşamalarda size yardımcı olacaktır.&lt;/p&gt;
+&lt;p&gt;Sihirbazdaki adımlar arasında İleri ve Geri butonlarını kullanarak geçiş 
+yapabilirsiniz. Bazı sayfalarda "Test ...". butonunu göreceksiniz. Bu buton devam 
+etmeden önce mevcut yapılandırmayı test etmenizi sağlar. Böylece 
+yapılandırmalarınızın doğru olup-olmadığını anlayabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Kurulumdaki ilk aşama kurulumda kullanılacak yöntem ile dil seçimini 
+yapmaktır.&lt;/p&gt;</value>
+  </data>
+  <data name="IntroTitle.Text">
+    <value>DotNetNuke Kurulum Sihirbazı - Sürüm {0}</value>
+  </data>
+  <data name="LanguagesDetail.Text">
+    <value>&lt;p&gt;DotNetNuke tamamen lokalize edilebilir bir yapıya sahiptir. Bu sayfada 
+eklemek istediğiniz Dil Paketlerini seçebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bir Dil Paketini kurmak, paketi otomatik olarak aktifleştirmez; ancak kurulum 
+tamamlandıktan sonra dil seçimini Host &gt; Languages sayfasından 
+gerçekleştirebilirsiniz.&lt;/p&gt;</value>
+  </data>
+  <data name="LanguagesTitle.Text">
+    <value>Dil Paketi Yükle</value>
+  </data>
+  <data name="ModulesDetail.Text">
+    <value>&lt;p&gt;DotNetNuke güçlü bir yapıya sahiptir. Bu yapının oluşmasına kurulabilir modül 
+paketleri önemli bir katkı sağlamaktadır.&lt;/p&gt;
+&lt;p&gt;Bu sayfada, opsiyonel Modül paketlerini seçerek bu paketlerin kurulmasını 
+sağlayabilirsiniz. Kurulan modüller Sayfa Editörlerinin kullanımına sunulur.&lt;/p&gt;</value>
+  </data>
+  <data name="ModulesTitle.Text">
+    <value>Opsiyonel Modülleri Yükle</value>
+  </data>
+  <data name="NoPackages.Text">
+    <value>Yüklenecek herhangi bir kimlik doğrulama sistemi bulunmuyor.</value>
+  </data>
+  <data name="Page9.Title">
+    <value>Portal Kur</value>
+  </data>
+  <data name="PermissionsDetail.Text">
+    <value>&lt;p&gt;DotNetNuke içerik, modüller ve temalar için zengin bir karşıya yükleme (upload) kapasitesine sahiptir. Bu seçenekler, websitenizde  dosyaları oluşturmak ve silmek için özel güvenlik ayarlarının sistem üzerinde yapılandırılmasını gerektirebilir.&lt;/p&gt;
+&lt;p&gt;Bu sayfa, mevcut dosya izinlerini test ederek DotNetNuke'nin fonksiyonlarının tam olarak çalışacağından emin olmanıza yardımcı olacaktır.&lt;/p&gt;</value>
+  </data>
+  <data name="PermissionsTitle.Text">
+    <value>Dosya İzinleri Kontrol Ediliyor</value>
+  </data>
+  <data name="PortalDetail.Text">
+    <value>&lt;p&gt;Bu sayfada Host (veya ilk) Portal'ı (websitesini) yapılandırabilirsiniz. &lt;/p&gt;
+&lt;p&gt;Bir yönetici hesabı tanımlamanız gerekecektir.  Bu kullanıcı portaldaki tüm fonksiyonlara erişebilecektir, bu nedenle Host kullanıcısında olduğu gibi kullanıcı adı ve şifre belirlenirken zararlı kullanıcılar tarafından ele geçirilmesi/tahmin edilmesi (hack edilmesi) zor bir kombinasyon seçilmelidir.&lt;/p&gt;</value>
+  </data>
+  <data name="SkinsDetail.Text">
+    <value>&lt;p&gt;DotNetNuke zengin bir tema kapasitesine sahiptir.  Bu sayfada isteğe bağlı olarak yüklemek istediğiniz temaları ve modül kaplarını seçebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bir temayı ya da modül kabını yüklemeniz halinde paket hemen etkinleştirilmez, tema/modül kabı seçenekleri arasında yer alır ve daha sonra tema/modül kabı seçimini yapabilirsiniz.&lt;/p&gt;</value>
+  </data>
+  <data name="SkinsTitle.Text">
+    <value>İsteğe Bağlı Tema ve Modül Kaplarını Yükle</value>
+  </data>
+  <data name="AuthSystems.Text">
+    <value>Kimlik Doğrulama Sistemleri</value>
+  </data>
+  <data name="AuthSystemsDetail.Text">
+    <value>&lt;p&gt;DotNetNuke farklı kimlik doğrulama sistemlerini desteklemektedir.  Bu sayfada yüklemek istediğiniz kimlik doğrulama sistemlerini seçebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Yüklediğiniz kimlik doğrulama sistemleri, elle etkinleştirildikten sonra kullanıma açılacaktır.&lt;/p&gt;</value>
+  </data>
+  <data name="AuthSystemsTitle.Text">
+    <value>Kimlik Doğrulama Sistemleri Ekle</value>
+  </data>
+  <data name="EmailErrorMessage.Text">
+    <value>Test iletisi gönderilirken bir hata oluştu. Hata kodu:&lt;br /&gt;{0}</value>
+  </data>
+  <data name="EmailSentMessage.Text">
+    <value>Mesajınız İletildi</value>
+  </data>
+  <data name="EmailTestMessageSubject.Text">
+    <value>SMTP Yapılandırması Test Mesajı</value>
+  </data>
+  <data name="EnableUpdate.Text">
+    <value>Güncelleme paketleri hazır olduğunda görsel bir simge ile uyarılmak ister misiniz?</value>
+  </data>
+  <data name="InstallAuthSystemError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Kimlik doğrulama sistemi yükleme işleminde bir hata oluştu(s):&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallContainerError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Modül kabı yükleme işleminde bir hata oluştu:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallLanguageError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Dil paketi yükleme işleminde bir hata oluştu(s):&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallProviderError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Bileşen (Provider) yükleme işleminde bir hata oluştu:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallSkinError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Tema yükleme işleminde bir hata oluştu:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="No.Text">
+    <value>Hayır</value>
+  </data>
+  <data name="Page10.Title">
+    <value>Portal Kur</value>
+  </data>
+  <data name="Providers.Text">
+    <value>Bileşenler (Providers)</value>
+  </data>
+  <data name="ProvidersDetail.Text">
+    <value>&lt;p&gt;DotNetNuke bileşenler için provider modelini kullanır. Bu sayfada yüklemek istediğiniz bileşenleri seçebilirsiniz.&lt;/p&gt;
+</value>
+  </data>
+  <data name="ProvidersTitle.Text">
+    <value>Bileşen Kur</value>
+  </data>
+  <data name="SMTPAnonymous.Text">
+    <value>Anonim</value>
+  </data>
+  <data name="SMTPAuthentication.Text">
+    <value>Kimlik Doğrulama:</value>
+  </data>
+  <data name="SMTPBasic.Text">
+    <value>Basit</value>
+  </data>
+  <data name="SMTPEnableSSL.Text">
+    <value>SSL Etkin:</value>
+  </data>
+  <data name="SMTPError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;SMTP Hatası:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="SMTPNTLM.Text">
+    <value>NTLM</value>
+  </data>
+  <data name="SMTPPassword.Text">
+    <value>Şifre:</value>
+  </data>
+  <data name="SMTPServer.Text">
+    <value>Sunucu:</value>
+  </data>
+  <data name="SMTPSettings.Text">
+    <value>SMTP Sunucu Ayarları</value>
+  </data>
+  <data name="SMTPSettingsHelp.Text">
+    <value>Eposta Sunucusu ayarlarını bu bölümden yapabilir ve test edebilirsiniz.</value>
+  </data>
+  <data name="SMTPSuccess.Text">
+    <value>&lt;b&gt;&lt;font color='green'&gt;SMTP Başarılı:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="SMTPUsername.Text">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="SpecifyHostEmailMessage.Text">
+    <value>Host Eposta Adresini Belirtmelisiniz</value>
+  </data>
+  <data name="TestSMTP.Text">
+    <value>SMTP Ayarlarını Test Et</value>
+  </data>
+  <data name="UpdateDetail.Text">
+    <value>Bu yazılım, rutin olarak yeni sürüm kontrolleri yapmaktadır. Yeni sürümlerde güvenlik düzeltmeleri, kritik güncellemeler ve yamalar yer alır (Kişisel bilgileriniz isteğiniz dışında saklanmaz)</value>
+  </data>
+  <data name="UpdateEmail.Text">
+    <value>Güncelleme paketi duyurulduğunda size eposta mesajı gönderilmesini ister misiniz?</value>
+  </data>
+  <data name="UpdateTitle.Text">
+    <value>Güncelleme Servisi - Sitenize yeni özellikler kazandırmanızı ve eski sürümlerdeki hataların giderilmesini sağlar.</value>
+  </data>
+  <data name="Yes.Text">
+    <value>Evet</value>
+  </data>
+  <data name="HostWarning.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Host Kullanıcı adınızdaki bazı karakterler geçersiz (yalnızca A-Z, 0-9, - ve. kullanabilirsiniz).  Host kullanıcısı için yeni bir ad belirtmelisiniz.&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+</root>

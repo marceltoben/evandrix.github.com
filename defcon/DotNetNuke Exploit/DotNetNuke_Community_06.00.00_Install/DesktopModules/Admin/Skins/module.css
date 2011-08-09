@@ -1,0 +1,4 @@
+﻿.dnnFormItem .esCheckBoxes label{width:auto;font-weight:normal;margin-top:0;padding-left:5px;}
+.dnnEditSkins table.skinViewer{width:80%;float:left;}
+	.dnnFormItem.legacySkinNotice{margin-left:15%;}
+	.dnnFormItem.legacySkinNotice .dnnFormMessage{margin-top:0;margin-left:1.5em;}

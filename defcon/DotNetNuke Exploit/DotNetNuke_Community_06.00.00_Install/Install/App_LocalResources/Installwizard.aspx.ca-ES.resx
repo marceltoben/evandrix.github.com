@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers && schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminUser.Text" xml:space="preserve">
+    <value>Administrador del portal</value>
+  </data>
+  <data name="AdminUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Error en l'administrador del portal:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Auto.Text" xml:space="preserve">
+    <value>&lt;b&gt;Automàtic&lt;/b&gt; - El mètode d'instal·lació "Automàtic" evita l'assistent completament i utilitza el procediment antic d'auto-instal·lació.</value>
+  </data>
+  <data name="ChooseDatabase.Text" xml:space="preserve">
+    <value>Escolliu la base de dades:</value>
+  </data>
+  <data name="ChooseDbError.Text" xml:space="preserve">
+    <value>Cal que esculliu el tipus de base de dades</value>
+  </data>
+  <data name="ChooseInstall.Text" xml:space="preserve">
+    <value>&lt;h3&gt;Escolliu el mètode d'instal·lació:&lt;/h3&gt;</value>
+  </data>
+  <data name="ChooseLanguage.Text" xml:space="preserve">
+    <value>&lt;h3&gt;Escolliu l'idioma:&lt;/h3&gt;</value>
+  </data>
+  <data name="CompleteDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;Felicitats, heu instal·lat DotNetNuke amb éxit.&lt;/p&gt;</value>
+  </data>
+  <data name="CompleteTitle.Text" xml:space="preserve">
+    <value>Felicitats</value>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>Confirmeu la contrasenya:</value>
+  </data>
+  <data name="ConfirmPassword.Text" xml:space="preserve">
+    <value>La confirmació de la contrasenya no es correspon amb la contrasenya entrada.</value>
+  </data>
+  <data name="ConnectError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Error(s) de connexió:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ConnectSuccess.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;Connexió correcta&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="Containers.Text" xml:space="preserve">
+    <value>Contenidors</value>
+  </data>
+  <data name="Database.Text" xml:space="preserve">
+    <value>Base de dades:</value>
+  </data>
+  <data name="DatabaseFile.Text" xml:space="preserve">
+    <value>Fitxer:</value>
+  </data>
+  <data name="DatabaseFileHelp.Text" xml:space="preserve">
+    <value>Entreu el nom del fitxer de base de dades (es troba a la carpeta App_Data)</value>
+  </data>
+  <data name="DatabaseHelp.Text" xml:space="preserve">
+    <value>Entreu el nom de la base de dades</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>Adreça de correu:</value>
+  </data>
+  <data name="Failure.Text" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="FileCreate.Text" xml:space="preserve">
+    <value>Creació de fitxer</value>
+  </data>
+  <data name="FileDelete.Text" xml:space="preserve">
+    <value>Esborrat de fitxer</value>
+  </data>
+  <data name="Finished.Text" xml:space="preserve">
+    <value>Procés finalitzat (ves a la web)</value>
+  </data>
+  <data name="FirstName.Text" xml:space="preserve">
+    <value>Nom:</value>
+  </data>
+  <data name="FolderCreate.Text" xml:space="preserve">
+    <value>Creació de carpeta</value>
+  </data>
+  <data name="FolderDelete.Text" xml:space="preserve">
+    <value>Esborrat de carpeta</value>
+  </data>
+  <data name="Full.Text" xml:space="preserve">
+    <value>&lt;b&gt;Personalitzat&lt;/b&gt; - El métode d'instal·lació "Personalitzat" us permet configurar completament la vostra instal·lació de DotNetNuke. Seleccioneu aquesta opció si voleu controlar quins components opcionals s'instal·laran.</value>
+  </data>
+  <data name="HomePage.Text" xml:space="preserve">
+    <value>Pàgina d'inici</value>
+  </data>
+  <data name="HostUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Error en l'usuari amfitrió:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Install.Error" xml:space="preserve">
+    <value>S'ha produït un error en la instal·lació de la base de dades.</value>
+  </data>
+  <data name="Install.Text" xml:space="preserve">
+    <value>Instal·la scripts de base de dades</value>
+  </data>
+  <data name="InstallComplete.Text" xml:space="preserve">
+    <value>Scripts de base de dades instal·lats </value>
+  </data>
+  <data name="InstallDatabase.Text" xml:space="preserve">
+    <value>Instal·lant base de dades - Versió {0}</value>
+  </data>
+  <data name="Installed.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke ja està instal·lat en aquest ordinador.&lt;/p&gt;</value>
+  </data>
+  <data name="Installing.Text" xml:space="preserve">
+    <value>Instal·lant scripts de base de dades...   </value>
+  </data>
+  <data name="InstallModuleError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;S'ha produït un error en la instal·lació de mòduls:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallPortalError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Error d'instal·lació de portal:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallScript.Text" xml:space="preserve">
+    <value>Actualitzant a la versió {0}</value>
+  </data>
+  <data name="Integrated.Text" xml:space="preserve">
+    <value>Seguretat integrada:</value>
+  </data>
+  <data name="IntegratedHelp.Text" xml:space="preserve">
+    <value>Marqueu aquesta opció si esteu utilitzant Seguretat Integrada a SQL Server, això significa que utilitzareu el vostre compte de Windows per accedir a SQL Server. Si esteu utilitzant SQL Server Express el més provable és que necessiteu marcar aquesta opció. Si us han proporcionat un Usuari/Contrasenya per accedir a la vostra base de dades, deixeu aquesta opció sense marcar, i entreu la combinació d'Usuari/Contrasenya que tingueu.</value>
+  </data>
+  <data name="InValidEmail.Text" xml:space="preserve">
+    <value>L'adreça de correu és incorrecta.</value>
+  </data>
+  <data name="Languages.Text" xml:space="preserve">
+    <value>Idiomes</value>
+  </data>
+  <data name="LastName.Text" xml:space="preserve">
+    <value>Cognoms:</value>
+  </data>
+  <data name="MachineKey.Error" xml:space="preserve">
+    <value>Error d'actualització de la "Machine Key"</value>
+  </data>
+  <data name="MinUserNamelength.Text" xml:space="preserve">
+    <value>La llargada mínima per el nom d'usuari és de 4 caràcters</value>
+  </data>
+  <data name="Modules.Text" xml:space="preserve">
+    <value>Mòduls</value>
+  </data>
+  <data name="NoContainers.Text" xml:space="preserve">
+    <value>No hi ha contenidors opcionals per instal·lar</value>
+  </data>
+  <data name="NoLanguages.Text" xml:space="preserve">
+    <value>No hi ha idiomes per instal·lar.</value>
+  </data>
+  <data name="NoModules.Text" xml:space="preserve">
+    <value>No hi ha mòduls per instal·lar</value>
+  </data>
+  <data name="NoPassword.Text" xml:space="preserve">
+    <value>Cal que entreu una contrasenya per l'usuari</value>
+  </data>
+  <data name="NoSkins.Text" xml:space="preserve">
+    <value>No hi ha aparences opcionals per instal·lar</value>
+  </data>
+  <data name="Oracle.Text" xml:space="preserve">
+    <value>Base de dades Oracle</value>
+  </data>
+  <data name="Owner.Text" xml:space="preserve">
+    <value>Accés com a "dbOwner":</value>
+  </data>
+  <data name="OwnerHelp.Text" xml:space="preserve">
+    <value>Marqueu aquesta opció si esteu accedint a la base de dades com a propietari (dbowner). Si ho deixeu desmarcat s'utilitzarà la identificació de l'usuari especificat</value>
+  </data>
+  <data name="Page0.Title" xml:space="preserve">
+    <value>Benvinguda</value>
+  </data>
+  <data name="IntroDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;Benvingut a l'assistent d'instal·lació de DotNetNuke. Aquest assistent us guiarà al llarg de tota la instal·lació de l'aplicació DotNetNuke.&lt;/p&gt;
+&lt;p&gt;Podeu navegar en l'assistent utilitzant els botons "Anterior" i "Següent". En algunes pàgines veureu un tercer botó "Prova...". Aquest botó us permetrà provar la configuració abans de continuar, per veure els efectes dels canvis.&lt;/p&gt;
+&lt;p&gt;El primer pas és seleccionar el mètode d'instal·lació que voleu utilitzar i l'idioma que voleu veure durant el procés.&lt;/p&gt;</value>
+  </data>
+  <data name="IntroTitle.Text" xml:space="preserve">
+    <value>Assistent d'instal·lació de DotNetNuke - Versió {0}</value>
+  </data>
+  <data name="Page1.Title" xml:space="preserve">
+    <value>Permisos de fitxers</value>
+  </data>
+  <data name="PermissionsDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke té unes capacitats molt extenses de càrrega de fitxers per continguts, mòduls i aparences. Aquestes funcions requereixen d'uns paràmetres de seguretat especials per tal que l'aplicació pugui crear i eliminar fitxers en la vostra web.&lt;/p&gt;
+&lt;p&gt;Aquesta pàgina verifica els permisos de fitxer actuals per assegurar que aquestes funcions s'executaran correctament.&lt;/p&gt;</value>
+  </data>
+  <data name="PermissionsTitle.Text" xml:space="preserve">
+    <value>Verificació de permisos de fitxers</value>
+  </data>
+  <data name="Page2.Title" xml:space="preserve">
+    <value>Configuració de base de dades</value>
+  </data>
+  <data name="DatabaseConfigDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;En aquesta pàgina podeu configurar els paràmetres de la base de dades que utilitzarà DotNetNuke. Si esteu instal·lant DotNetNuke en un "proveïdor d'allotjament", el vostre proveïdor us hauria d'haver proporcionat aquesta informació.&lt;/p&gt;
+&lt;p&gt;Hi ha dues opcions per SQL Server 2005/2008. SQL Server 2005 i Sql Server 2008 suporten l'ús de bases de dades de fitxer. En la majoria dels casos haurieu d'escollir l'opció Base de dades, peró si esteu utilitzant SQL Server 2005/2008 Express podeu també escollir l'opció de fitxer.&lt;/p&gt;</value>
+  </data>
+  <data name="DatabaseConfigTitle.Text" xml:space="preserve">
+    <value>Configuració de la connexió a la base de dades</value>
+  </data>
+  <data name="Page3.Title" xml:space="preserve">
+    <value>Instal·lació de la base de dades</value>
+  </data>
+  <data name="DatabaseInstallDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;La instal·lació d'scripts de base de dades hauria d'haver començat quan s'ha carregat aquesta pàgina. Els botons Anterior i Següent restaran desactivats fins que tots els scripts s'hagin instal·lat.&lt;/p&gt;</value>
+  </data>
+  <data name="DatabaseInstallTitle.Text" xml:space="preserve">
+    <value>Execució d'scripts d'instal·lació de base de dades</value>
+  </data>
+  <data name="Page4.Title" xml:space="preserve">
+    <value>Usuari amfitrió</value>
+  </data>
+  <data name="HostUserDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;En aquesta pàgina heu de proporcionar la informació per l'usuari amfitrió (host) o Super usuari. Aquest usuari té accés a tots els portals creats en aquesta web, per la qual cosa cal anar en compte de triar un Usuari i Contrasenya que sigui difícil d'endevinar per usuaris malintencionats.&lt;/p&gt;</value>
+  </data>
+  <data name="HostUserTitle.Text" xml:space="preserve">
+    <value>Configuració de l'usuari amfitrió</value>
+  </data>
+  <data name="Page5.Title" xml:space="preserve">
+    <value>Instal·lació de mòduls</value>
+  </data>
+  <data name="ModulesDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke proporciona una extensibilitat molt potent. Aquesta extensibilitat es manifesta mitjançant el concepte de mòduls instal·lables.&lt;/p&gt;
+&lt;p&gt;En aquesta pàgina podeu escollir quins mòduls opcionals voleu instal·lar. Els mòduls que s'instal·lin estaran a disposició dels editors de pàgines de la web.&lt;/p&gt;</value>
+  </data>
+  <data name="ModulesTitle.Text" xml:space="preserve">
+    <value>Instal·lació de mòduls opcionals</value>
+  </data>
+  <data name="Page9.Title" xml:space="preserve">
+    <value>Instal·lació del portal</value>
+  </data>
+  <data name="PortalDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;En aquesta pàgina heu de configurar el portal inicial (o predeterminat).&lt;/p&gt;
+&lt;p&gt;Cal que entreu les dades de l'administrador del portal.
+Aquest usuari té accés a tota la funcionalitat del portal, per la qual cosa cal anar en compte de triar un Usuari i Contrasenya que sigui difícil d'endevinar per usuaris malintencionats.&lt;/p&gt;</value>
+  </data>
+  <data name="PortalTitle.Text" xml:space="preserve">
+    <value>Títol del portal:</value>
+  </data>
+  <data name="Page7.Title" xml:space="preserve">
+    <value>Instal·lació d'aparences</value>
+  </data>
+  <data name="SkinsDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke ofereix unes capacitats de configuració de l'aparença molt riques. En aquesta pàgina podeu escollir quines aparences i contenidors opcionals voleu instal·lar.&lt;/p&gt;
+&lt;p&gt;El fet d'instal·lar una aparença o contenidor no implica que automàticament estigui en ús, però us dóna l'opció d'utilitzar-ho posteriorment.&lt;/p&gt;</value>
+  </data>
+  <data name="SkinsTitle.Text" xml:space="preserve">
+    <value>Instal·lació d'aparences i contenidors opcionals</value>
+  </data>
+  <data name="Page8.Title" xml:space="preserve">
+    <value>Instal·lació d'idiomes</value>
+  </data>
+  <data name="LanguagesDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke es pot traduir completament. En aquesta pàgina podeu escollir quins idiomes voleu instal·lar.&lt;/p&gt;
+&lt;p&gt;El fet d'instal·lar un idioma no implica que automàticament estigui en ús, però us dóna l'opció d'utilitzar-ho posteriorment.&lt;/p&gt;</value>
+  </data>
+  <data name="LanguagesTitle.Text" xml:space="preserve">
+    <value>Instal·lació de paquets d'idiomes</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Contrasenya:</value>
+  </data>
+  <data name="PasswordHelp.Text" xml:space="preserve">
+    <value>Entreu la contrasenya per accedir a la base de dades</value>
+  </data>
+  <data name="PasswordLength.Text" xml:space="preserve">
+    <value>La contrasenya cal que tingui almenys {0} caràcters.</value>
+  </data>
+  <data name="PasswordUser.Text" xml:space="preserve">
+    <value>La contrasenya no pot igual que el nom d'usuari.</value>
+  </data>
+  <data name="Permissions.Text" xml:space="preserve">
+    <value>Resum de permisos de fitxer:</value>
+  </data>
+  <data name="PermissionsError.Text" xml:space="preserve">
+    <value>&lt;img alt="Imatge que mostra que els paràmetres de seguretat per la carpeta arrel de la web han de ser: Lectura, escriptura i Modificació per l'usuari ASPNET o el NT AUTHORITY/NETWORK SERVICE." src="..\403-3.gif" align="right" hspace="10"&gt;
+&lt;p&gt;&lt;b&gt;&lt;font color='red'&gt;El vostre servidor no ha superat la verificació de permisos.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;
+Amb l'Explorador de Windows obriu la carpeta arrel de la web (per defecte C:\DotNetNuke). Feu clic amb el botó dret a la carpeta i seleccioneu l'opció de compartició i seguretat al menú (tingueu en compte que si utilitzeu Windows XP potser haureu d'&lt;a href="http://whoozoo.co.uk/winxpFilePerms.htm" target="_blank"&gt;Activar la compartició simple de fitxers&lt;/a&gt; abans de poder accedir a aquestes opcions). Seleccioneu la pestanya de Seguretat. Afegiu l'usuari corresponent i establiu els permisos necessaris.
+&lt;br/&gt;&lt;br/&gt;
+&lt;h3&gt;Si utilitzeu Windows 2000 - IIS5&lt;/h3&gt;
+&lt;p&gt;L'usuari {Servidor}\ASPNET cal que tingui permisos de Lectura, Escriptura i Modificació al directori virtual de la vostra web.&lt;/p&gt;
+&lt;h3&gt;Si utilitzeu Windows 2003 - IIS6&lt;/h3&gt;
+&lt;p&gt;L'usuari NT AUTHORITY\NETWORK SERVICE cal que tingui permisos de Lectura, Escriptura i Modificació al directori virtual de la vostra web.&lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="PermissionsOk.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;El vostre servidor ha superat la verificació de permisos.&lt;/font?&lt;/b&gt;</value>
+  </data>
+  <data name="Portal.Text" xml:space="preserve">
+    <value>Propietats del portal</value>
+  </data>
+  <data name="PortalTemplate.Text" xml:space="preserve">
+    <value>Plantilla:</value>
+  </data>
+  <data name="Qualifier.Text" xml:space="preserve">
+    <value>Prefix d'objectes:</value>
+  </data>
+  <data name="QualifierHelp.Text" xml:space="preserve">
+    <value>Entreu un prefix opcional per utilitzar per a tots els objectes de base de dades. Això ajuda a garantir que no hi ha col·lisions de noms d'objecte.</value>
+  </data>
+  <data name="ScriptError.Text" xml:space="preserve">
+    <value>Vegeu {0} per més informació</value>
+  </data>
+  <data name="Server.Text" xml:space="preserve">
+    <value>Servidor:</value>
+  </data>
+  <data name="ServerHelp.Text" xml:space="preserve">
+    <value>Entreu el nom o l'adreça IP del servidor que conté la base de dades (si utilitzeu Oracle entreu-hi el SID).</value>
+  </data>
+  <data name="Skins.Text" xml:space="preserve">
+    <value>Aparences</value>
+  </data>
+  <data name="SQLServer.Text" xml:space="preserve">
+    <value>Base de dades SQL Server 2005/2008</value>
+  </data>
+  <data name="SQLServerXPress.Text" xml:space="preserve">
+    <value>Fitxer SQL Server 2005/2008 (Express)</value>
+  </data>
+  <data name="Success.Text" xml:space="preserve">
+    <value>Correcte</value>
+  </data>
+  <data name="TestDB.Text" xml:space="preserve">
+    <value>Prova de connexió a la base de dades</value>
+  </data>
+  <data name="TestPerm.Text" xml:space="preserve">
+    <value>Prova de permisos</value>
+  </data>
+  <data name="Title.Text" xml:space="preserve">
+    <value>Assistent d'instal·lació de DotNetNuke</value>
+  </data>
+  <data name="Typical.Text" xml:space="preserve">
+    <value>&lt;b&gt;Típic&lt;/b&gt; - El mètode d'instal·lació "Típic" utilitza les opcions més freqüents.</value>
+  </data>
+  <data name="Upgrade.Text" xml:space="preserve">
+    <value>&lt;p&gt;La versió de DotNetNuke {0} ja està instal·lada. Cliqueu el botó Següent per actualitzar a la nova versió.&lt;/p&gt;</value>
+  </data>
+  <data name="UpgradeTitle.Text" xml:space="preserve">
+    <value>Assistent d'actualització de DotNetNuke - Versió {0}</value>
+  </data>
+  <data name="UserHelp.Text" xml:space="preserve">
+    <value>Entreu el ID d'usuari per la base de dades</value>
+  </data>
+  <data name="UserId.Text" xml:space="preserve">
+    <value>ID usuari:</value>
+  </data>
+  <data name="UserName.Text" xml:space="preserve">
+    <value>Usuari:</value>
+  </data>
+  <data name="WhatsNext.Text" xml:space="preserve">
+    <value>Què més</value>
+  </data>
+  <data name="Previous.Text" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>Següent</value>
+  </data>
+  <data name="Complete.Text" xml:space="preserve">
+    <value>Instal·lació de la base de dades finalitzada</value>
+  </data>
+  <data name="AuthSystems.Text">
+    <value>Sistemes d'autenticació</value>
+  </data>
+  <data name="AuthSystemsDetail.Text">
+    <value>&lt;p&gt;DotNetNuke suporta múltiples sistemes d'autenticació. En aquesta pàgina podeu escollir quins sistemes voleu que s'instal·lin.&lt;/p&gt;
+&lt;p&gt;La instal·lació d'un sistema d'autenticació no fa que aquest s'activi automàticament per tots els portals, però el fa disponible per a poder-lo configurar.&lt;/p&gt;</value>
+  </data>
+  <data name="AuthSystemsTitle.Text">
+    <value>Instal·lació de sistemes d'autenticació</value>
+  </data>
+  <data name="EmailErrorMessage.Text">
+    <value>S'ha produït un error en l'enviament del correu de prova. L'error és:&lt;br /&gt;{0}</value>
+  </data>
+  <data name="EmailSentMessage.Text">
+    <value>El correu s'ha enviat correctament</value>
+  </data>
+  <data name="EmailTestMessageSubject.Text">
+    <value>Test de configuració de SMTP</value>
+  </data>
+  <data name="EnableUpdate.Text">
+    <value>Voleu que el sistema mostri un avís de notificació quan hi hagi actualitzacions disponibles?</value>
+  </data>
+  <data name="HostWarning.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;El nom de l'usuari amfitrió conté caràcters invàlids (només A-Z, 0-9, - i . són permesos).  Modifiqueu el nom d'usuari per poder continuar amb la instal·lació.&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="InstallAuthSystemError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;S'ha produït un error en la instal·lació dels sistemes d'autenticació:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallContainerError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;S'ha produït un error en la instal·lació dels contenidors:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallLanguageError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;S'ha produït un error en la instal·lació dels idiomes:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallProviderError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;S'ha produït un error en la instal·lació dels Proveïdors:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallSkinError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;S'ha produït un error en la instal·lació de l'aparença:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="No.Text">
+    <value>No</value>
+  </data>
+  <data name="NoPackages.Text">
+    <value>No hi cap sistema d'autenticació per instal·lar.</value>
+  </data>
+  <data name="Page10.Title">
+    <value>Instal·lació del portal</value>
+  </data>
+  <data name="Page6.Title">
+    <value>Instal·lació d'aparences</value>
+  </data>
+  <data name="Providers.Text">
+    <value>Proveïdors</value>
+  </data>
+  <data name="ProvidersDetail.Text">
+    <value>&lt;p&gt;DotNetNuke utilitza el model de proveïdors per determinades extensions. En aquesta pàgina podeu escollir quins proveïdors s'han d'instal·lar.&lt;/p&gt;
+</value>
+  </data>
+  <data name="ProvidersTitle.Text">
+    <value>Instal·lació de proveïdors</value>
+  </data>
+  <data name="SMTPAnonymous.Text">
+    <value>Anònima</value>
+  </data>
+  <data name="SMTPAuthentication.Text">
+    <value>Autenticació:</value>
+  </data>
+  <data name="SMTPBasic.Text">
+    <value>Bàsica</value>
+  </data>
+  <data name="SMTPEnableSSL.Text">
+    <value>Activa SSL:</value>
+  </data>
+  <data name="SMTPError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Errors d'SMTP:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="SMTPNTLM.Text">
+    <value>NTLM</value>
+  </data>
+  <data name="SMTPPassword.Text">
+    <value>Contrasenya:</value>
+  </data>
+  <data name="SMTPServer.Text">
+    <value>Servidor:</value>
+  </data>
+  <data name="SMTPSettings.Text">
+    <value>Configuració del servidor SMTP</value>
+  </data>
+  <data name="SMTPSettingsHelp.Text">
+    <value>Aquí podeu configurar i provar el vostre servidor SMTP</value>
+  </data>
+  <data name="SMTPSuccess.Text">
+    <value>&lt;b&gt;&lt;font color='green'&gt;SMTP correcte:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="SMTPUsername.Text">
+    <value>Usuari:</value>
+  </data>
+  <data name="SpecifyHostEmailMessage.Text">
+    <value>Heu d'indicar el correu de l'usuari amfitrió</value>
+  </data>
+  <data name="TestSMTP.Text">
+    <value>Prova de configuració de SMTP</value>
+  </data>
+  <data name="UpdateDetail.Text">
+    <value>El sistema pot verificar periòdicament si hi actualitzacions importants. Aquí s'inclouen actualitzacions de seguretat, crítiques i menors. En cap cas es guardarà informació que es pugui utilitzar per identificar-vos o per contactar-vos sense el vostre consentiment explícit.</value>
+  </data>
+  <data name="UpdateEmail.Text">
+    <value>Voleu rebre notificacions per correu de les actualitzacions del producte?</value>
+  </data>
+  <data name="UpdateTitle.Text">
+    <value>Servei d'actualitzacions - Ajuda a protegir la integritat del vostre web</value>
+  </data>
+  <data name="Yes.Text">
+    <value>Sí</value>
+  </data>
+  <data name="DatabaseWarning.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;El mètode automàtic s'ha deactivat ja que no s'ha trobat cap connexió vàlida a SQL Server. Podeu continuar amb la instal·lació i seleccionar alguna de les altres opcions, podreu configurar la connexió a la base de dades en un pas posterior.&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="DbNameError.Text">
+    <value>&lt;b&gt;&lt;font color='red'&gt;Heu d'entrar el nom de la base de dades.&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="InstallFailed.Text">
+    <value>Error d'instal·lació d'scripts de base de dades</value>
+  </data>
+  <data name="Page11.Title">
+    <value>Instal·lació finalitzada</value>
+  </data>
+</root>

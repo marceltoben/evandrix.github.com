@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminUser.Text" xml:space="preserve">
+    <value>포털 관리자</value>
+  </data>
+  <data name="AdminUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;관리자 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Auto.Text" xml:space="preserve">
+    <value>&lt;b&gt;자동&lt;/b&gt; - "자동" 설치 방법은 마법사를 완전히 건너뛰고 상속받은 설치방법으로 설치를 진행합니다.</value>
+  </data>
+  <data name="ChooseDatabase.Text" xml:space="preserve">
+    <value>데이터베이스 선택:</value>
+  </data>
+  <data name="ChooseDbError.Text" xml:space="preserve">
+    <value>데이터베이스 종류를 선택해야 합니다.</value>
+  </data>
+  <data name="ChooseInstall.Text" xml:space="preserve">
+    <value>&lt;h3&gt;설치 방법 선택:&lt;/h3&gt;</value>
+  </data>
+  <data name="ChooseLanguage.Text" xml:space="preserve">
+    <value>&lt;h3&gt;언어 선택:&lt;/h3&gt;</value>
+  </data>
+  <data name="Complete.Text" xml:space="preserve">
+    <value>데이터베이스 설치완료</value>
+  </data>
+  <data name="CompleteDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;축하합니다. DotNetNuke가 성공적으로 설치되었습니다.&lt;/p&gt;</value>
+  </data>
+  <data name="CompleteTitle.Text" xml:space="preserve">
+    <value>축하합니다.</value>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>비밀번호 확인:</value>
+  </data>
+  <data name="ConfirmPassword.Text" xml:space="preserve">
+    <value>입력된 비밀번호와 비밀번호 확인값이 일치하지 않습니다.</value>
+  </data>
+  <data name="ConnectError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;연결 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ConnectSuccess.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;연결 성공&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="Containers.Text" xml:space="preserve">
+    <value>컨테이너</value>
+  </data>
+  <data name="Database.Text" xml:space="preserve">
+    <value>데이터베이스:</value>
+  </data>
+  <data name="DatabaseFile.Text" xml:space="preserve">
+    <value>파일 이름:</value>
+  </data>
+  <data name="DatabaseFileHelp.Text" xml:space="preserve">
+    <value>데이터베이스 파일 이름을 입력하세요 (App_Data 디렉토리에 위치)</value>
+  </data>
+  <data name="DatabaseHelp.Text" xml:space="preserve">
+    <value>데이터베이스 이름을 입력하세요</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>이메일 주소:</value>
+  </data>
+  <data name="Failure.Text" xml:space="preserve">
+    <value>실패 </value>
+  </data>
+  <data name="FileCreate.Text" xml:space="preserve">
+    <value>파일 생성</value>
+  </data>
+  <data name="FileDelete.Text" xml:space="preserve">
+    <value>파일 삭제</value>
+  </data>
+  <data name="Finished.Text" xml:space="preserve">
+    <value>새 사이트 제작을 시작합니다!</value>
+  </data>
+  <data name="FirstName.Text" xml:space="preserve">
+    <value>파일 이름:</value>
+  </data>
+  <data name="FolderCreate.Text" xml:space="preserve">
+    <value>폴더 생성</value>
+  </data>
+  <data name="FolderDelete.Text" xml:space="preserve">
+    <value>폴더 삭제</value>
+  </data>
+  <data name="Full.Text" xml:space="preserve">
+    <value>&lt;b&gt;커스텀&lt;/b&gt; - "커스텀" 설치방법은 완전히 커스터마이징 할 수 있게 합니다. 설치진행을 원하시면 선택하세요.</value>
+  </data>
+  <data name="HomePage.Text" xml:space="preserve">
+    <value>홈페이지</value>
+  </data>
+  <data name="HostUserError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;호스트 사용자 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="Install.Error" xml:space="preserve">
+    <value>데이터베이스 설치에 문제가 있습니다.</value>
+  </data>
+  <data name="Install.Text" xml:space="preserve">
+    <value>데이터베이스 스크립트 설치</value>
+  </data>
+  <data name="InstallComplete.Text" xml:space="preserve">
+    <value>데이터베이스 스크립트 설치 완료</value>
+  </data>
+  <data name="InstallDatabase.Text" xml:space="preserve">
+    <value>데이터베이스 설치- 버전 {0}</value>
+  </data>
+  <data name="Installed.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke 는 이 시스템에 이미 설치되었습니다.&lt;/p&gt;</value>
+  </data>
+  <data name="Installing.Text" xml:space="preserve">
+    <value>데이터베이스 스크립트 설치중...</value>
+  </data>
+  <data name="InstallLanguageError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;언어 설치 중 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallModuleError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;모듈 설치 중 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="InstallPortalError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;포털 설치 중 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="InstallScript.Text" xml:space="preserve">
+    <value>버전 {0} 로 데이터베이스 업그레이드</value>
+  </data>
+  <data name="InstallSkinError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;스킨 설치 중 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="Integrated.Text" xml:space="preserve">
+    <value>통합 보안:</value>
+  </data>
+  <data name="IntegratedHelp.Text" xml:space="preserve">
+    <value>SQL 서버에 Window계정을 사용하여 접근하는 SQL 서버 통합인증을 사용하는지 체크하세요.  SQL Server Express을 사용하신다면 대부분 이 옵션에 체크하셔야 합니다. 데이터베이스 접근을 위한 사용자아이디/비밀번호을 기입하지 않으면 UserId/Password 조합으로 설정됩니다.</value>
+  </data>
+  <data name="InValidEmail.Text" xml:space="preserve">
+    <value>이메일 주소가 유효하지 않습니다.</value>
+  </data>
+  <data name="Languages.Text" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="LastName.Text" xml:space="preserve">
+    <value>성:</value>
+  </data>
+  <data name="MachineKey.Error" xml:space="preserve">
+    <value>머신 키 업데이트 에러</value>
+  </data>
+  <data name="MinUserNamelength.Text" xml:space="preserve">
+    <value>사용자 이름은 최소 4자 이상이어야 합니다.</value>
+  </data>
+  <data name="Modules.Text" xml:space="preserve">
+    <value>모듈</value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>다음</value>
+  </data>
+  <data name="NoContainers.Text" xml:space="preserve">
+    <value>설치할 부가 컨테이너가 없습니다.</value>
+  </data>
+  <data name="NoLanguages.Text" xml:space="preserve">
+    <value>설치할 언어가 없습니다.</value>
+  </data>
+  <data name="NoModules.Text" xml:space="preserve">
+    <value>설치할 모듈이 없습니다.</value>
+  </data>
+  <data name="NoPackages.Text" xml:space="preserve">
+    <value>설치할 인증시스템이 없습니다.</value>
+  </data>
+  <data name="NoPassword.Text" xml:space="preserve">
+    <value>사용자를 위한 암호를 입력해야합니다.</value>
+  </data>
+  <data name="NoSkins.Text" xml:space="preserve">
+    <value>설치할 부가 스킨이 없습니다</value>
+  </data>
+  <data name="Oracle.Text" xml:space="preserve">
+    <value>Oracle 데이터베이스</value>
+  </data>
+  <data name="Owner.Text" xml:space="preserve">
+    <value>db 소유자로 실행:</value>
+  </data>
+  <data name="OwnerHelp.Text" xml:space="preserve">
+    <value>데이터베이스 소유자로 실행이 되는지 체크하세요 - 체크하지 않으시면 사용자 아이디로 실행이됩니다.</value>
+  </data>
+  <data name="Page0.Title" xml:space="preserve">
+    <value>환영합니다</value>
+  </data>
+  <data name="IntroDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke 설치마법사에 오신걸 환영합니다. 이 마법사는 DotNetNuke 설치를 안내합니다.&lt;/p&gt;
+&lt;p&gt;이전 다음버튼을 통해 진행하시고 특정페이지에선 유효성 체크를 위한 "테스트..." 가 제공됩니다.&lt;/p&gt;
+&lt;p&gt;첫 단계는 사용하실 설치방법을 선택하시고 설치를 원하시는 언어를 선택하세요.&lt;/p&gt;
+
+</value>
+  </data>
+  <data name="IntroTitle.Text" xml:space="preserve">
+    <value>DotNetNuke 설치 마법사 - 버전 {0}</value>
+  </data>
+  <data name="Page1.Title" xml:space="preserve">
+    <value>파일 권한</value>
+  </data>
+  <data name="PermissionsDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke 컨텐츠, 모듈, 스킨을 위한 확장 파일 업로드를 가지고 있습니다. 이 특성은 웹사이트에 파일을 생성하고 삭제할 수 있는 커스텀 보안설정을 필요로 합니다.&lt;/p&gt;
+&lt;p&gt;이 페이지에서 특성이 정상 동작할 수 있는지 현재 파일권한을 체크하세요.&lt;/p&gt;
+&lt;p&gt; &lt;b&gt;주의:&lt;/b&gt;루트폴더를 체크합니다. 보통 자식폴더는 부모폴더의 권한을 상속받지만 때때로 독립적으로 접근이 제한된 파일이나 폴더가 있을 수 있습니다.&lt;/p&gt;</value>
+  </data>
+  <data name="PermissionsTitle.Text" xml:space="preserve">
+    <value>파일권한 체크</value>
+  </data>
+  <data name="Page2.Title" xml:space="preserve">
+    <value>데이터베이스 설정</value>
+  </data>
+  <data name="DatabaseConfigDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;이 페이지에서 DotNetNuke의 데이터베이스 설정을 할 수 있습니다.  DotNetNuke "호스팅 계정" 설치하시는 중이라면 호스팅 공급자가 정보를 제공할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;SQL Server 2005/2008 두 옵션이 있습니다.  SQLServer 2005 와 SQL Server 2008 데이터베이스 파일 사용을 지원합니다. SQL Server 2005/2008 Express 이용하는 경우 파일 옵션사용을 선택하시고, 그외 대부분은 대부분 데이터베이스 파일 사용옵션을 선택합니다. .&lt;/p&gt;</value>
+  </data>
+  <data name="DatabaseConfigTitle.Text" xml:space="preserve">
+    <value>데이터베이스 연결 설정</value>
+  </data>
+  <data name="Page3.Title" xml:space="preserve">
+    <value>데이터베이스 설치</value>
+  </data>
+  <data name="DatabaseInstallDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;페이지가 로드되면 데이터베이스 스크립트 설치가 시작됩니다. 다음 버튼은 스크립트설치가 완료될때까지 비활성화됩니다.&lt;/p&gt;</value>
+  </data>
+  <data name="DatabaseInstallTitle.Text" xml:space="preserve">
+    <value>데이터베이스 설치 스크립트 실행</value>
+  </data>
+  <data name="Page4.Title" xml:space="preserve">
+    <value>호스트 사용자</value>
+  </data>
+  <data name="HostUserDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;이 페이지에서 호스트나 슈퍼유저계정의 정보를 제공받을 수 있습니다. 이 계정은 모든 포털에 접근이 가능합니다. 사용자/비밀번호 조합을 난해하게 설정하시기 바랍니다.&lt;/p&gt;</value>
+  </data>
+  <data name="HostUserTitle.Text" xml:space="preserve">
+    <value>호스트 계정 설정</value>
+  </data>
+  <data name="Page5.Title" xml:space="preserve">
+    <value>모듈 설치</value>
+  </data>
+  <data name="ModulesDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke 는 강력한 확장을 가지고 있습니다. 이 확장성은 "설치가능한" 모듈 개념으로 제공됩니다.&lt;/p&gt;
+&lt;p&gt;이 페이지에서 원하시는 모듈를 선택하실 수 있습니다. 모듈을 설치하시면 포털관리자가 이용할 수 있습니다.&lt;/p&gt;</value>
+  </data>
+  <data name="ModulesTitle.Text" xml:space="preserve">
+    <value>부가 모듈 설치</value>
+  </data>
+  <data name="Page9.Title" xml:space="preserve">
+    <value>프로바이더 설치</value>
+  </data>
+  <data name="PortalDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;이 페이지에서는 호스트 포털(웹사이트)설정을 합니다.&lt;/p&gt;
+&lt;p&gt;관리자 계정을 제공하셔야합니다. 이 계정은 모든 포털의 기능에 접근할 수있고 호스트 유저를 관리합니다. 사용자이름/비밀번호 조합을 난해하게 설정하세요.&lt;/p&gt;</value>
+  </data>
+  <data name="PortalTitle.Text" xml:space="preserve">
+    <value>포털 제목:</value>
+  </data>
+  <data name="Page6.Title" xml:space="preserve">
+    <value>스킨 설치</value>
+  </data>
+  <data name="SkinsDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke 는 풍부한 스킨을 가지고 있습니다. 이 페이지에서 원하시는 스킨과 컨테이너를 선택하실 수 있습니다.&lt;/p&gt;
+&lt;p&gt;설치된 스킨이나 컨테이너는 자동활성화는 되지 않으며 가용한 상태로 만들어주셔야 합니다.&lt;/p&gt;</value>
+  </data>
+  <data name="SkinsTitle.Text" xml:space="preserve">
+    <value>스킨과 컨테이너 설치</value>
+  </data>
+  <data name="Page7.Title" xml:space="preserve">
+    <value>언어 설치</value>
+  </data>
+  <data name="LanguagesDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke 가 완전히 지역화되었습니다. 이 페이지에서 원하시는 언어를 선택하실 수 있습니다.&lt;/p&gt;
+</value>
+  </data>
+  <data name="LanguagesTitle.Text" xml:space="preserve">
+    <value>언어팩 설치</value>
+  </data>
+  <data name="Page8.Title" xml:space="preserve">
+    <value>인증 서비스 설치</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="PasswordHelp.Text" xml:space="preserve">
+    <value>데이터베이스의 비밀번호를 입력하세요</value>
+  </data>
+  <data name="PasswordLength.Text" xml:space="preserve">
+    <value>비밀번호는 {0} 자 이상이어야 합니다.</value>
+  </data>
+  <data name="PasswordUser.Text" xml:space="preserve">
+    <value>사용자 이름과 동일한 값을 비밀번호로 사용할 수 없습니다.</value>
+  </data>
+  <data name="Permissions.Text" xml:space="preserve">
+    <value>파일 권한 요약:</value>
+  </data>
+  <data name="PermissionsError.Text" xml:space="preserve">
+    <value>&lt;img alt="웹사이트 루트폴더 보안설정 이미지는 ASPNET or NT AUTHORITY/NETWORK SERVICE accounts 이 읽기, 쓰기,수정이 가능해야합니다." src="..\403-3.gif" align="right" hspace="10"/&gt;
+&lt;p&gt;&lt;b&gt;&lt;font color='red'&gt;사이트 권한 체크에 실패했습니다.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;
+웹사이트( {0} ) 루트폴더를 보시고 오른쪽 클릭을 하여 보안 탭에서 적절한 계정권한 설정을 하시기 바랍니다.
+&lt;br/&gt;&lt;br/&gt;
+&lt;h3&gt;Windows 2000 - IIS5 사용의 경우&lt;/h3&gt;
+&lt;p&gt;{Server}\ASPNET 사용자 계정이 사이트 가상디렉토리에 읽기, 쓰기, 수정권한이 있어야 합니다.&lt;/p&gt;
+&lt;h3&gt;Windows 2003, Windows Vista 또는 Windows Server 2008 - IIS6 또는 IIS7&lt;/h3&gt;
+&lt;p&gt;NT AUTHORITY\NETWORK SERVICE 사용자 계정이  사이트 가상디렉토리에 읽기, 쓰기, 수정권한이 있어야 합니다.&lt;/p&gt;
+&lt;h3&gt;Windows 7 또는 Windows Server 2008 R2 - IIS7.5&lt;/h3&gt;
+&lt;p&gt;IIS AppPool\DefaultAppPool 사용자 계정이  사이트 가상디렉토리에 읽기, 쓰기, 수정권한이 있어야 합니다.&lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;	</value>
+  </data>
+  <data name="PermissionsOk.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;권한 체크가 통과되었습니다..&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="Portal.Text" xml:space="preserve">
+    <value>포털 속성</value>
+  </data>
+  <data name="PortalTemplate.Text" xml:space="preserve">
+    <value>템플릿:</value>
+  </data>
+  <data name="Previous.Text" xml:space="preserve">
+    <value>이전</value>
+  </data>
+  <data name="Qualifier.Text" xml:space="preserve">
+    <value>객체 규정:</value>
+  </data>
+  <data name="QualifierHelp.Text" xml:space="preserve">
+    <value>데이터베이스 객체에 부가적으로 "접두어"를 사용하세요 - 객체 충돌을 방지합니다.</value>
+  </data>
+  <data name="ScriptError.Text" xml:space="preserve">
+    <value>더 많은 정보를 보세요 {0} </value>
+  </data>
+  <data name="Server.Text" xml:space="preserve">
+    <value>서버:</value>
+  </data>
+  <data name="ServerHelp.Text" xml:space="preserve">
+    <value>데이터베이스가 위치한 컴퓨터이름이나 IP 주소를 입력하세요 (Oracle 은 데이터소스(SID))
+</value>
+  </data>
+  <data name="Skins.Text" xml:space="preserve">
+    <value>스킨</value>
+  </data>
+  <data name="SQLServer.Text" xml:space="preserve">
+    <value>SQL Server 2005/2008 Database</value>
+  </data>
+  <data name="SQLServerXPress.Text" xml:space="preserve">
+    <value>SQL Server 2005/2008 (Express) File</value>
+  </data>
+  <data name="Success.Text" xml:space="preserve">
+    <value>성공</value>
+  </data>
+  <data name="TestDB.Text" xml:space="preserve">
+    <value>데이터베이스 연결 테스트</value>
+  </data>
+  <data name="TestPerm.Text" xml:space="preserve">
+    <value>권한 재시험</value>
+  </data>
+  <data name="Title.Text" xml:space="preserve">
+    <value>DotNetNuke 설치 마법사</value>
+  </data>
+  <data name="Typical.Text" xml:space="preserve">
+    <value>&lt;b&gt;일반&lt;/b&gt;  - "일반" 설치는 일반적인 설치를 진행합니다.</value>
+  </data>
+  <data name="Upgrade.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke 버전 {0} 가 이미 설치되었습니다. 새 버전으로 업그레이드 하시려면 다음 버튼을 누르세요.&lt;/p&gt;</value>
+  </data>
+  <data name="UpgradeTitle.Text" xml:space="preserve">
+    <value>DotNetNuke 업그레이드 마법사 - 버전 {0}</value>
+  </data>
+  <data name="UserHelp.Text" xml:space="preserve">
+    <value>데이터베이스 사용자 아이디를 입력하세요</value>
+  </data>
+  <data name="UserId.Text" xml:space="preserve">
+    <value>사용자 아이디:</value>
+  </data>
+  <data name="UserName.Text" xml:space="preserve">
+    <value>사용자 이름:</value>
+  </data>
+  <data name="WhatsNext.Text" xml:space="preserve">
+    <value>What's Next</value>
+  </data>
+  <data name="InstallAuthSystemError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;인증 시스템  설치 중 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="AuthSystems.Text" xml:space="preserve">
+    <value>인증 시스템</value>
+  </data>
+  <data name="AuthSystemsDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke는 다양한 인증시스템을 지원합니다.  이 페이지에서 설치를 원하시는 시스템을 선택할 수 있습니다..&lt;/p&gt;
+&lt;p&gt;Installing an Authentication System does not automatically enable it for each portal, but it makes the system available to a Portal Adminstrator.&lt;/p&gt;</value>
+  </data>
+  <data name="AuthSystemsTitle.Text" xml:space="preserve">
+    <value>인증 시스템 설치</value>
+  </data>
+  <data name="InstallContainerError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;컨테이너  설치 중 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt; {0}</value>
+  </data>
+  <data name="Page10.Title" xml:space="preserve">
+    <value>포털 설치</value>
+  </data>
+  <data name="Providers.Text" xml:space="preserve">
+    <value>프로바이더</value>
+  </data>
+  <data name="ProvidersDetail.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke는 확장모델 프로바이더를 사용할 수 있습니다. 이 페이지에서는 설치할 프로바이더를 선택하세요&lt;/p&gt;
+</value>
+  </data>
+  <data name="ProvidersTitle.Text" xml:space="preserve">
+    <value>프로바이더 설치</value>
+  </data>
+  <data name="SMTPAnonymous.Text" xml:space="preserve">
+    <value>익명</value>
+  </data>
+  <data name="SMTPAuthentication.Text" xml:space="preserve">
+    <value>인증:</value>
+  </data>
+  <data name="SMTPBasic.Text" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="SMTPEnableSSL.Text" xml:space="preserve">
+    <value>SSL 사용:</value>
+  </data>
+  <data name="SMTPNTLM.Text" xml:space="preserve">
+    <value>NTLM</value>
+  </data>
+  <data name="SMTPPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="SMTPServer.Text" xml:space="preserve">
+    <value>서버:</value>
+  </data>
+  <data name="SMTPSettings.Text" xml:space="preserve">
+    <value>SMTP 서버 설정</value>
+  </data>
+  <data name="SMTPUsername.Text" xml:space="preserve">
+    <value>사용자이름:</value>
+  </data>
+  <data name="EmailErrorMessage.Text" xml:space="preserve">
+    <value>테스트메일 전송에 에러가 있습니다. 에러:&lt;br /&gt;{0}</value>
+  </data>
+  <data name="EmailSentMessage.Text" xml:space="preserve">
+    <value>이메일이 성공적으로 전송되었습니다.</value>
+  </data>
+  <data name="SMTPSettingsHelp.Text" xml:space="preserve">
+    <value>SMTP 서버를 설정하고 테스트 할 수 있습니다.</value>
+  </data>
+  <data name="SpecifyHostEmailMessage.Text" xml:space="preserve">
+    <value>호스트 이메일 주소를 명시하세요.</value>
+  </data>
+  <data name="TestSMTP.Text" xml:space="preserve">
+    <value>SMTP 설정 테스트</value>
+  </data>
+  <data name="EmailTestMessageSubject.Text" xml:space="preserve">
+    <value>SMTP 설정 테스트</value>
+  </data>
+  <data name="SMTPError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;SMTP 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="SMTPSuccess.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='green'&gt;SMTP 성공:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="EnableUpdate.Text" xml:space="preserve">
+    <value>업데이트가 가능할때 소프트웨어가 시각적으로 알림을 보내시기 원하십니까?</value>
+  </data>
+  <data name="No.Text" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="UpdateDetail.Text" xml:space="preserve">
+    <value>이 소프트웨어는 중요한 최신 업데이트가 있을때마다 정기적으로 체크됩니다. 이 업데이트는 보안 , 중요업데이트 및 패치를 포함합니다.</value>
+  </data>
+  <data name="UpdateEmail.Text" xml:space="preserve">
+    <value>소프트웨어 업데이트 알람메일을 받으시길 원하십니까?</value>
+  </data>
+  <data name="UpdateTitle.Text" xml:space="preserve">
+    <value>업그레이드 서비스 - 웹사이트 통합보호를 도와줍니다.</value>
+  </data>
+  <data name="Yes.Text" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="InstallProviderError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;프로바이더  설치 중 에러:&lt;/font&gt;&lt;/b&gt;&lt;br/&gt;{0}</value>
+  </data>
+  <data name="HostWarning.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;호스트이름에 유효하지 않은 문자가 있습니다.(A-Z, 0-9, - , . 만 허용).  호스트 이름을 변경하셔야 합니다.&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="DatabaseWarning.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;DotNetNuke 가 유효한 SQL 서버 데이터베이스에 연결할 수없어 자동옵션은 비활성화됩니다.  다른 두옵션은 계속사용하실 수 있으며 적절한 단계에서 데이터베이스가 설정됩니다.&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+  <data name="InstallFailed.Text" xml:space="preserve">
+    <value>데이터베이스 스크립트 설치실패</value>
+  </data>
+  <data name="DbNameError.Text" xml:space="preserve">
+    <value>&lt;b&gt;&lt;font color='red'&gt;데이터베이스의 이름을 넣어야합니다.&lt;/font&gt;&lt;/b&gt;</value>
+  </data>
+</root>

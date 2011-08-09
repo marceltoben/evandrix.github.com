@@ -1,0 +1,7 @@
+﻿.dnnDashboardControls, .dnnInstallExtension, .dnnDashboardExport{margin:1em auto;width:96%}
+.dnnDashboardPanel .dnnFormItem {line-height:1.0;}
+.dnnDashboardPanel .dnnFormItem label {width:24%;margin-top:0;}
+.dnnDashboardPanel .dnnFormInput {float:left; width:70%; }
+.dnnDashboardPanel .dnnFormInput span {display:block;}
+.dnnDashboardPanel Head {margin: 10px 5px 10px 0px;}
+.dashboardHeader {height:25px;}

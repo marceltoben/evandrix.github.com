@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<listitems>
+  <feedtypes>
+    <feedtype>
+      <id>New</id>
+      <name>New Products</name>
+    </feedtype>
+    <feedtype>
+      <id>Popular</id>
+      <name>Popular Products</name>
+    </feedtype>
+    <feedtype>
+      <id>Reviews</id>
+      <name>Reviews</name>
+    </feedtype>
+  </feedtypes>
+  <categories>
+    <category>
+      <id>590</id>
+      <name>DotNetNuke 5</name>
+    </category>
+    <category>
+      <id>591</id>
+      <name> - Modules</name>
+    </category>
+    <category>
+      <id>592</id>
+      <name> - Skins</name>
+    </category>
+    <category>
+      <id>4</id>
+      <name>DotNetNuke 4</name>
+    </category>
+    <category>
+      <id>13</id>
+      <name> - Modules</name>
+    </category>
+    <category>
+      <id>19</id>
+      <name> - Skins</name>
+    </category>
+    <category>
+      <id>20</id>
+      <name> - Containers</name>
+    </category>
+    <category>
+      <id>565</id>
+      <name> - Services</name>
+    </category>
+    <category>
+      <id>112</id>
+      <name> - Developer Tools</name>
+    </category>
+    <category>
+      <id>21</id>
+      <name> - Localization</name>
+    </category>
+    <category>
+      <id>64</id>
+      <name> - Data Providers</name>
+    </category>
+    <category>
+      <id>9</id>
+      <name> - User Guides</name>
+    </category>
+    <category>
+      <id>3</id>
+      <name>DotNetNuke 3</name>
+    </category>
+    <category>
+      <id>30</id>
+      <name> - Modules</name>
+    </category>
+    <category>
+      <id>29</id>
+      <name> - Skins</name>
+    </category>
+    <category>
+      <id>28</id>
+      <name> - Containers</name>
+    </category>
+    <category>
+      <id>113</id>
+      <name> - Developer Tools</name>
+    </category>
+    <category>
+      <id>27</id>
+      <name> - Localization</name>
+    </category>
+    <category>
+      <id>66</id>
+      <name> - Data Providers</name>
+    </category>
+    <category>
+      <id>26</id>
+      <name> - User Guides</name>
+    </category>
+  </categories>
+</listitems>

@@ -1,0 +1,11 @@
+﻿.dnnVendors{width:100%;}
+	.dnnVendors .dnnFormItem input[type="text"], .dnnEditVendor .dnnFormItem input[type="text"]{width:30%;}
+	.dnnVendors .dnnFormItem select{width:100px;margin-left:10px;margin-right:10px;}
+	p.dnnFormRequired span {border-left: 5px red solid; padding-left: 0.5em;}
+	.dnnVendors .dnnGrid td{padding-top:10px;padding-bottom:10px;}
+	.dnnEditVendor .urlControl .dnnFormItem{padding:0;}	
+		.dnnEditVendor .urlControl .dnnFormLabel, .dnnEditVendor .urlControl div{float:left;font-weight:normal;}
+		.urlControl br{display:none;}
+		.ucLinkTypeRadioButtons{display:block;overflow:hidden}
+		#dnnVendors .vLetterSearch li{list-style-type:none; display:inline; padding-left: 1em;}
+.vLetterSearch{padding-top:10px;padding-bottom:10px;text-align: center;}

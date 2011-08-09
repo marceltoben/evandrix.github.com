@@ -1,0 +1,110 @@
+SharpZipLib
+http://www.icsharpcode.net/opensource/sharpziplib/
+
+MSDAAB
+http://msdn.microsoft.com/en-us/library/aa480459.aspx
+
+DotNetOpenID
+http://code.google.com/p/dotnetopenid/
+
+SolPart
+http://www.solpart.com
+
+CountryListBox
+http://www.codeproject.com/KB/custom-controls/countrylistbox.aspx
+
+GeoIP
+http://geoplite.maxmind.com/download/geoip/database/LICENSE.txt
+
+Telerik RADControls
+http://www.telerik.com
+
+FCK Editor
+http://ckeditor.com/license
+
+jQuery
+http://jquery.com
+
+jQuery Boxy Plugin
+http://plugins.jquery.com/project/boxy
+
+YUI Library
+http://developer.yahoo.com/yui/
+
+Web Forms MVP
+http://webformsmvp.codeplex.com/license
+
+Ocean Browser Detection
+http://owenbrady.net/browsercaps/
+
+mbUnit
+http://www.mbunit.com/
+
+Moq
+http://code.google.com/p/moq/
+
+WatiN
+http://watin.sourceforge.net
+
+Msbuild Community Tasks
+http://msbuildtasks.tigris.org/
+
+Anthem.net
+Used as the Ajax provider.
+License Type: Public Domain license 
+License Link: http://sourceforge.net/projects/anthem-dot-net/
+
+Brettle NeatUploads
+Used as an optional component to enable file uploads up to 2GB
+License Type: LGPL
+License Link: http://www.brettle.com/neatupload#License
+
+OpenWYSIWYG (javascript)
+Used as the text editor
+License Type: LGPL
+License Link: http://www.openwebware.com  in that page it references the  LGPL Open Source license.
+
+VideoBox (javascript)
+Used to render the lightbox effect that shows media files.
+License Type: MIT 
+License Link(s): link to license on site: http://videobox-lb.sourceforge.net to http://www.opensource.org/licenses/mit-license.php
+
+MooTools (javascript)
+Used as an additional component by VideoBox
+License Type: MIT
+License Link(s): link to license on site: http://mootools.net to http://www.opensource.org/licenses/mit-license.php
+
+SwfObject (javascript)
+Used as an additional component by VideoBox
+License Type: MIT
+License Link: link to license on site: http://code.google.com/p/swfobject/ to http://www.opensource.org/licenses/mit-license.php
+
+FLV-Player (flash)
+Flash player used to play flv files
+License Type: No License Information, freely downloadable.
+Link to Site: http://oos.moxiecode.com/flvplayer/
+
+SearchSpider
+Used as the spider engine for the module.
+License Type: LGPL
+License Link: http://www.jeffheaton.com/source in that page it references the  LGPL Open Source license.
+
+Lucene.net
+Used as the search engine. Lucene.net (http://lucene.apache.org/lucene.net) is a C# port of Lucene and it uses the same license.
+License Type: Apache License
+License Link: there is no specific license link, but all projects under the apache incubator use this license: http://www.apache.org/licenses
+
+Highlighter
+Used to highlight search results http://search.cpan.org/~tbusch/Lucene-Search-Highlight-0.01/lib/Lucene/Search/Highlight.pm
+License Type: Perl
+License Link: http://search.cpan.org/~tbusch/Lucene-Search-Highlight-0.01/lib/Lucene/Search/Highlight.pm#COPYRIGHT_AND_LICENSE
+
+PDFBox
+http://pdfbox.apache.org Used to parse PDF file content 
+License Type: Apache License v2.0
+License Link: http://www.apache.org/licenses/LICENSE-2.0
+
+IKVM
+used to allow bridge between PDFBox and C#: http://www.ikvm.net
+License Type: Public
+License Link: http://sourceforge.net/apps/mediawiki/ikvm/index.php?title=License

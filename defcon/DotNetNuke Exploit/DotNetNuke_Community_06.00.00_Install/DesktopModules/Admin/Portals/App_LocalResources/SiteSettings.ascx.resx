@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BasicSettings.Text" xml:space="preserve">
+    <value>Basic Settings</value>
+  </data>
+  <data name="BasicSettingsHelp.Text" xml:space="preserve">
+    <value>In this section, you can set up the basic settings for your site.</value>
+  </data>
+  <data name="SiteDetails.Text" xml:space="preserve">
+    <value>Site Details</value>
+  </data>
+  <data name="plPortalName.Text" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="plPortalName.Help" xml:space="preserve">
+    <value>This is the Title for your portal.  The text you enter will show up in the Title Bar.</value>
+  </data>
+  <data name="plDescription.Text" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="plDescription.Help" xml:space="preserve">
+    <value>Enter a description about your site here.</value>
+  </data>
+  <data name="plKeyWords.Text" xml:space="preserve">
+    <value>Keywords:</value>
+  </data>
+  <data name="plKeyWords.Help" xml:space="preserve">
+    <value>Enter some keywords for your site (separated by commas).  These keywords are used by search engines to help index your site.</value>
+  </data>
+  <data name="plGUID.Text" xml:space="preserve">
+    <value>GUID:</value>
+  </data>
+  <data name="plGUID.Help" xml:space="preserve">
+    <value>The globally unique identifier which can be used to identify this portal.</value>
+  </data>
+  <data name="Submission.Text" xml:space="preserve">
+    <value>Site Submission</value>
+  </data>
+  <data name="plSearchEngine.Text" xml:space="preserve">
+    <value>Search Engine:</value>
+  </data>
+  <data name="plSearchEngine.Help" xml:space="preserve">
+    <value>Submit your site to the selected search engine for indexing.</value>
+  </data>
+  <data name="Submit.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="plSiteMap.Text" xml:space="preserve">
+    <value>Site Map URL:</value>
+  </data>
+  <data name="plSiteMap.Help" xml:space="preserve">
+    <value>Submit your Site Map to Google for better search optimization. Click Submit to get a Google Webmaster Tools account and verify your site ownership ( using the Verification option below ). Once verified, you can select the Add General Web Sitemap option on the Google Sitemaps tab, and paste the Site Map URL displayed.</value>
+  </data>
+  <data name="cmdSiteMap.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="plVerification.Text" xml:space="preserve">
+    <value>Verification:</value>
+  </data>
+  <data name="plVerification.Help" xml:space="preserve">
+    <value>When signing up with Google Webmaster Tools you will need to Verify your site ownership. Choose the "Upload an HTML file" method from the Google Verification screen. Enter the filename displayed ( ie. google53c0cef435b2b81e.html ) in the Verification textbox and click Create. Return to Google and select the Verify button.</value>
+  </data>
+  <data name="cmdVerification.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="plBanners.Text" xml:space="preserve">
+    <value>Banners:</value>
+  </data>
+  <data name="plBanners.Help" xml:space="preserve">
+    <value>Indicate the type of Banner Advertising you wish to display on your site.</value>
+  </data>
+  <data name="Appearance.Text" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="plLogo.Text" xml:space="preserve">
+    <value>Logo:</value>
+  </data>
+  <data name="plLogo.Help" xml:space="preserve">
+    <value>Depending on the skin chosen, this image will appear in the top left corner of the page.</value>
+  </data>
+  <data name="plPortalSkin.Text" xml:space="preserve">
+    <value>Portal Skin:</value>
+  </data>
+  <data name="plPortalSkin.Help" xml:space="preserve">
+    <value>The selected skin will be applied to all pages on the site, unless overridden at the Page level.</value>
+  </data>
+  <data name="plPortalContainer.Text" xml:space="preserve">
+    <value>Portal Container:</value>
+  </data>
+  <data name="plPortalContainer.Help" xml:space="preserve">
+    <value>The selected container will be applied to all modules on the site, unless overridden at the Page or Module level.</value>
+  </data>
+  <data name="plAdminSkin.Text" xml:space="preserve">
+    <value>Edit Skin:</value>
+  </data>
+  <data name="plAdminSkin.Help" xml:space="preserve">
+    <value>The selected skin will be applied to all edit mode (ctl=) pages on the site.</value>
+  </data>
+  <data name="plAdminContainer.Text" xml:space="preserve">
+    <value>Edit Container:</value>
+  </data>
+  <data name="plAdminContainer.Help" xml:space="preserve">
+    <value>The selected container will be applied to all edit mode (ctl=) modules on the site.</value>
+  </data>
+  <data name="plBackground.Text" xml:space="preserve">
+    <value>Body Background:</value>
+  </data>
+  <data name="plBackground.Help" xml:space="preserve">
+    <value>Depending on the skin, if selected, an image will display in the background of all pages.</value>
+  </data>
+  <data name="plFavIcon.Text" xml:space="preserve">
+    <value>Favicon.ico:</value>
+  </data>
+  <data name="plFavIcon.Help" xml:space="preserve">
+    <value>The selected favicon will be applied to all pages in the site.</value>
+  </data>
+  <data name="AdvancedSettings.Text" xml:space="preserve">
+    <value>Advanced Settings</value>
+  </data>
+  <data name="AdvancedSettingsHelp.Text" xml:space="preserve">
+    <value>In this section, you can set up more advanced settings for your site.</value>
+  </data>
+  <data name="SecuritySettings.Text" xml:space="preserve">
+    <value>Security Settings</value>
+  </data>
+  <data name="plUserRegistration.Text" xml:space="preserve">
+    <value>User Registration:</value>
+  </data>
+  <data name="plUserRegistration.Help" xml:space="preserve">
+    <value>The type of user registration allowed for this site</value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Private.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="Public.Text" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="Verified.Text" xml:space="preserve">
+    <value>Verified</value>
+  </data>
+  <data name="Pages.Text" xml:space="preserve">
+    <value>Page Management</value>
+  </data>
+  <data name="plSplashTabId.Text" xml:space="preserve">
+    <value>Splash Page:</value>
+  </data>
+  <data name="plSplashTabId.Help" xml:space="preserve">
+    <value>The Splash Page for your site.</value>
+  </data>
+  <data name="plHomeTabId.Text" xml:space="preserve">
+    <value>Home Page:</value>
+  </data>
+  <data name="plHomeTabId.Help" xml:space="preserve">
+    <value>The Home Page for your site.</value>
+  </data>
+  <data name="plLoginTabId.Text" xml:space="preserve">
+    <value>Login Page:</value>
+  </data>
+  <data name="plLoginTabId.Help" xml:space="preserve">
+    <value>The Login Page for your site.</value>
+  </data>
+  <data name="plUserTabId.Text" xml:space="preserve">
+    <value>User Profile Page:</value>
+  </data>
+  <data name="plUserTabId.Help" xml:space="preserve">
+    <value>The User Profile Page for your site.</value>
+  </data>
+  <data name="Payment.Text" xml:space="preserve">
+    <value>Payment Settings</value>
+  </data>
+  <data name="plCurrency.Text" xml:space="preserve">
+    <value>Currency:</value>
+  </data>
+  <data name="plCurrency.Help" xml:space="preserve">
+    <value>The Currency used on the site.</value>
+  </data>
+  <data name="plProcessor.Text" xml:space="preserve">
+    <value>Payment Processor:</value>
+  </data>
+  <data name="plProcessor.Help" xml:space="preserve">
+    <value>The Payment Processor used to handle payments on the site.</value>
+  </data>
+  <data name="ProcessorWebSite.Text" xml:space="preserve">
+    <value>Go To Payment Processor WebSite</value>
+  </data>
+  <data name="plUserId.Text" xml:space="preserve">
+    <value>Processor UserId:</value>
+  </data>
+  <data name="plUserId.Help" xml:space="preserve">
+    <value>The UserId for the Payment Processor.</value>
+  </data>
+  <data name="plPassword.Text" xml:space="preserve">
+    <value>Processor Password:</value>
+  </data>
+  <data name="plPassword.Help" xml:space="preserve">
+    <value>User Password for the Payment Processor.</value>
+  </data>
+  <data name="Usability.Text" xml:space="preserve">
+    <value>Usability Settings</value>
+  </data>
+  <data name="plInlineEditor.Text" xml:space="preserve">
+    <value>Inline Editor Enabled?</value>
+  </data>
+  <data name="plInlineEditor.Help" xml:space="preserve">
+    <value>Select this option if you wish for inline editing to be enabled on your site.</value>
+  </data>
+  <data name="plControlPanelMode.Text" xml:space="preserve">
+    <value>Control Panel Mode:</value>
+  </data>
+  <data name="plControlPanelMode.Help" xml:space="preserve">
+    <value>Select the default Control Panel Mode for authorized users of your site.</value>
+  </data>
+  <data name="ControlPanelModeView.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="ControlPanelModeEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="plControlPanelVisibility.Text" xml:space="preserve">
+    <value>Control Panel Visibility:</value>
+  </data>
+  <data name="plControlPanelVisibility.Help" xml:space="preserve">
+    <value>Select the default Control Panel Visibility for authorized users of your site.</value>
+  </data>
+  <data name="ControlPanelVisibilityMinimized.Text" xml:space="preserve">
+    <value>Minimized</value>
+  </data>
+  <data name="ControlPanelVisibilityMaximized.Text" xml:space="preserve">
+    <value>Maximized</value>
+  </data>
+  <data name="plControlPanelSecurity.Text" xml:space="preserve">
+    <value>Control Panel Security:</value>
+  </data>
+  <data name="plControlPanelSecurity.Help" xml:space="preserve">
+    <value>Select whether the Control Panel will be displayed for Page Editors or Module Editors.</value>
+  </data>
+  <data name="ControlPanelSecurityTab.Text" xml:space="preserve">
+    <value>Page Editors</value>
+  </data>
+  <data name="ControlPanelSecurityModule.Text" xml:space="preserve">
+    <value>Module Editors</value>
+  </data>
+  <data name="Other.Text" xml:space="preserve">
+    <value>Other Settings</value>
+  </data>
+  <data name="plFooterText.Text" xml:space="preserve">
+    <value>Copyright:</value>
+  </data>
+  <data name="plFooterText.Help" xml:space="preserve">
+    <value>If supported by the skin this Copyright text is displayed on your site.</value>
+  </data>
+  <data name="Site.Text" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="Host.Text" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="plAdministrator.Text" xml:space="preserve">
+    <value>Administrator:</value>
+  </data>
+  <data name="plAdministrator.Help" xml:space="preserve">
+    <value>The Administrator User for the site.</value>
+  </data>
+  <data name="plDefaultLanguage.Text" xml:space="preserve">
+    <value>Default Language:</value>
+  </data>
+  <data name="plDefaultLanguage.Help" xml:space="preserve">
+    <value>The Default Language for the site.</value>
+  </data>
+  <data name="plTimeZone.Text" xml:space="preserve">
+    <value>Portal TimeZone:</value>
+  </data>
+  <data name="plTimeZone.Help" xml:space="preserve">
+    <value>The TimeZone for the location of the site.</value>
+  </data>
+  <data name="HostSettings.Text" xml:space="preserve">
+    <value>Host Settings</value>
+  </data>
+  <data name="plPortalAlias.Text" xml:space="preserve">
+    <value>Portal Alias:</value>
+  </data>
+  <data name="plPortalAlias.Help" xml:space="preserve">
+    <value>The Portal Alias is the url used to reach the portal.</value>
+  </data>
+  <data name="plExpiryDate.Text" xml:space="preserve">
+    <value>Expiry Date:</value>
+  </data>
+  <data name="plExpiryDate.Help" xml:space="preserve">
+    <value>The Expiry Date is the date that the Hosting Contract for the portal expires.</value>
+  </data>
+  <data name="plHostFee.Text" xml:space="preserve">
+    <value>Hosting Fee:</value>
+  </data>
+  <data name="plHostFee.Help" xml:space="preserve">
+    <value>The Hosting Fee is the monthly charge for hosting this site.</value>
+  </data>
+  <data name="plHostSpace.Text" xml:space="preserve">
+    <value>Disk Space:</value>
+  </data>
+  <data name="plHostSpace.Help" xml:space="preserve">
+    <value>The amount of Disk Space in MB allowed for this site (enter 0 for unlimited space).</value>
+  </data>
+  <data name="plSiteLogHistory.Text" xml:space="preserve">
+    <value>Site Log History (Days):</value>
+  </data>
+  <data name="plSiteLogHistory.Help" xml:space="preserve">
+    <value>The number of days of site activity that is kept for this site.</value>
+  </data>
+  <data name="plDesktopModules.Text" xml:space="preserve">
+    <value>Premium Modules:</value>
+  </data>
+  <data name="plDesktopModules.Help" xml:space="preserve">
+    <value>Premium modules are only available to specific portals</value>
+  </data>
+  <data name="StylesheetEditor.Text" xml:space="preserve">
+    <value>Stylesheet Editor</value>
+  </data>
+  <data name="SaveStyleSheet.Text" xml:space="preserve">
+    <value>Save Style Sheet</value>
+  </data>
+  <data name="RestoreDefaultStyleSheet.Text" xml:space="preserve">
+    <value>Restore Default Style Sheet</value>
+  </data>
+  <data name="LoginInstructions.Text" xml:space="preserve">
+    <value>Login Instructions</value>
+  </data>
+  <data name="RegistrationInstructions.Text" xml:space="preserve">
+    <value>Registration Instructions</value>
+  </data>
+  <data name="NewUserSignupMessage.Text" xml:space="preserve">
+    <value>New User Signup Message</value>
+  </data>
+  <data name="DeleteMessage.Text" xml:space="preserve">
+    <value>Are You Sure You Wish To Delete This Portal ?</value>
+  </data>
+  <data name="SubmitGoogle.Text" xml:space="preserve">
+    <value>Submit Site To Google</value>
+  </data>
+  <data name="plHomeDirectory.Text" xml:space="preserve">
+    <value>Home Directory:</value>
+  </data>
+  <data name="plHomeDirectory.Help" xml:space="preserve">
+    <value>The Home Directory for this site</value>
+  </data>
+  <data name="ControlTitle_.Text" xml:space="preserve">
+    <value>Site Settings</value>
+  </data>
+  <data name="ControlTitle_edit.Text" xml:space="preserve">
+    <value>Edit Portals</value>
+  </data>
+  <data name="SkinUpload.Text" xml:space="preserve">
+    <value>Upload Skin/Container</value>
+  </data>
+  <data name="ContainerUpload.Text" xml:space="preserve">
+    <value>Upload Container</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>&lt;h1&gt;About Site Settings&lt;/h1&gt;&lt;p&gt;The Site Settings module represents the local options for your portal. Local settings allow you to customize your portal to meet your business requirements.&lt;/p&gt;</value>
+  </data>
+  <data name="RestoreCCSMessage.Text" xml:space="preserve">
+    <value>Are You Sure You Want To Restore The Default Stylesheet (All Changes To The Current Stylesheet Will Be Lost) ? </value>
+  </data>
+  <data name="valHostFee.Error" xml:space="preserve">
+    <value>Invalid fee, needs to be a currency value!</value>
+  </data>
+  <data name="plPageQuota.Help" xml:space="preserve">
+    <value>You can specify a maximum number of pages per portal.</value>
+  </data>
+  <data name="plPageQuota.Text" xml:space="preserve">
+    <value>Page Quota:</value>
+  </data>
+  <data name="plUserQuota.Help" xml:space="preserve">
+    <value>You can specify a maximum number of users per portal.</value>
+  </data>
+  <data name="plUserQuota.Text" xml:space="preserve">
+    <value>User Quota:</value>
+  </data>
+  <data name="SSLSettings.Text" xml:space="preserve">
+    <value>SSL Settings</value>
+  </data>
+  <data name="plSSLEnabled.Text" xml:space="preserve">
+    <value>SSL Enabled?</value>
+  </data>
+  <data name="plSSLEnabled.Help" xml:space="preserve">
+    <value>Specify whether an SSL Certificate has been installed for this site</value>
+  </data>
+  <data name="plSSLEnforced.Text" xml:space="preserve">
+    <value>SSL Enforced?</value>
+  </data>
+  <data name="plSSLEnforced.Help" xml:space="preserve">
+    <value>When this option is set, Pages which are not marked as Secure will not be accessible with SSL ( HTTPS )</value>
+  </data>
+  <data name="plSSLURL.Text" xml:space="preserve">
+    <value>SSL URL:</value>
+  </data>
+  <data name="plSSLURL.Help" xml:space="preserve">
+    <value>Optionally specify a URL which will be used for secure connections for this site. This is only necessary if you do not have an SSL Certificate installed for your standard site URL. An example would be a shared hosting account where the hoster provides you with a Shared SSL URL.</value>
+  </data>
+  <data name="plSTDURL.Text" xml:space="preserve">
+    <value>Standard URL:</value>
+  </data>
+  <data name="plSTDURL.Help" xml:space="preserve">
+    <value>If an SSL URL is specified above, you will also need to specify a Standard URL for unsecure connections.</value>
+  </data>
+  <data name="lblBanners.Text" xml:space="preserve">
+    <value>&lt;br&gt;Banner option was set by the hostingprovider, and cannot be changed</value>
+  </data>
+  <data name="AddAllModules.Text" xml:space="preserve">
+    <value>Add All Modules</value>
+  </data>
+  <data name="AddModule.Text" xml:space="preserve">
+    <value>Add Module</value>
+  </data>
+  <data name="ctlDesktopModules_Available.Text" xml:space="preserve">
+    <value>Available Modules</value>
+  </data>
+  <data name="ctlDesktopModules_Selected.Text" xml:space="preserve">
+    <value>Selected Modules</value>
+  </data>
+  <data name="RemoveAllModules.Text" xml:space="preserve">
+    <value>Remove All Modules</value>
+  </data>
+  <data name="RemoveModule.Text" xml:space="preserve">
+    <value>Remove Module</value>
+  </data>
+  <data name="plSkinWidgestEnabled.Help" xml:space="preserve">
+    <value>Check this box to enable Skin Widgets for this site.</value>
+  </data>
+  <data name="plSkinWidgestEnabled.Text" xml:space="preserve">
+    <value>Enable Skin Widgets:</value>
+  </data>
+  <data name="PortalAliases.Text" xml:space="preserve">
+    <value>Portal Aliases</value>
+  </data>
+  <data name="valPortalName.ErrorMessage" xml:space="preserve">
+    <value>You must provide a title for your site</value>
+  </data>
+  <data name="plPayPaylCancelURL.Help" xml:space="preserve">
+    <value>By default a subscriber is redirected to the portal home page on payment canceled. If you use the subscription feature, you can create a page with information to display to the user if the payment has been canceled. Enter the fully qualified URL of this page.</value>
+  </data>
+  <data name="plPayPaylCancelURL.Text" xml:space="preserve">
+    <value>PayPal Cancel URL:</value>
+  </data>
+  <data name="plPayPaylReturnURL.Help" xml:space="preserve">
+    <value>By default a subscriber is redirected to the portal home page when a payment is validated. If you use the subscription feature, you can redirect the subscriber to a specific page. Enter the fully qualified URL of this page.</value>
+  </data>
+  <data name="plPayPaylReturnURL.Text" xml:space="preserve">
+    <value>PayPal Return URL:</value>
+  </data>
+  <data name="plPayPalSandboxEnabled.Help" xml:space="preserve">
+    <value>Check to use the PayPal Sandbox instead the real payment gateway.</value>
+  </data>
+  <data name="plPayPalSandboxEnabled.Text" xml:space="preserve">
+    <value>Use Sandbox:</value>
+  </data>
+  <data name="plHideSystemFolders.Help" xml:space="preserve">
+    <value>Check to prevent adding hidden folders or folders that start with underscore when performing folder synchronization.</value>
+  </data>
+  <data name="plHideSystemFolders.Text" xml:space="preserve">
+    <value>Hide System Folders</value>
+  </data>
+  <data name="plRegisterTabId.Help" xml:space="preserve">
+    <value>The User Registration page for your site.</value>
+  </data>
+  <data name="plRegisterTabId.Text" xml:space="preserve">
+    <value>Registration Page:</value>
+  </data>
+  <data name="EnglishName.Text" xml:space="preserve">
+    <value>English Name</value>
+  </data>
+  <data name="NativeName.Text" xml:space="preserve">
+    <value>Native Name</value>
+  </data>
+  <data name="plLanguageSelector.Help" xml:space="preserve">
+    <value>Select the language you wish to update settings for.  You can select whether the language in the drop-down list is displayed in English or in the Native tongue.</value>
+  </data>
+  <data name="plLanguageSelector.Text" xml:space="preserve">
+    <value>Select Language:</value>
+  </data>
+  <data name="plSearchTabId.Help" xml:space="preserve">
+    <value>The search results page for your site</value>
+  </data>
+  <data name="plSearchTabId.Text" xml:space="preserve">
+    <value>Search Results Page:</value>
+  </data>
+  <data name="portalAliasModeButtonListLabel.Help" xml:space="preserve">
+    <value>This setting determines how the site responds to urls which are defined as alias, but are not the default-alias. None - no additional action is taken,  Canonical - the alias url is handled as a Canaonical url, Redirect - redirected to default alias. </value>
+  </data>
+  <data name="portalAliasModeButtonListLabel.Text" xml:space="preserve">
+    <value>PortalAlias Mapping Mode:</value>
+  </data>
+  <data name="Canonical.Text" xml:space="preserve">
+    <value>Canonical</value>
+  </data>
+  <data name="Redirect.Text" xml:space="preserve">
+    <value>Redirect</value>
+  </data>
+  <data name="plAutoAddPortalAlias.Help" xml:space="preserve">
+    <value>This setting determines how the site responds to urls which are mapped to the site but are not currently in the list of aliases. Setting is effective in single-portal configuration only. Select this option to automatically map new url.</value>
+  </data>
+  <data name="plAutoAddPortalAlias.Text" xml:space="preserve">
+    <value>Auto Add Portal Alias:</value>
+  </data>
+  <data name="defaultAliasDropDownLabel.Help" xml:space="preserve">
+    <value>The default alias is used in conjunction with the Mapping Mode.  If the mode is set to Canonical then the default alias is used as the canonical alias for search engines.  If the mode is redirect then the default alias is used as the permanent redirect.</value>
+  </data>
+  <data name="defaultAliasDropDownLabel.Text" xml:space="preserve">
+    <value>Default Alias:</value>
+  </data>
+  <data name="enablePopUpsLabel.Help" xml:space="preserve">
+    <value>Check this box to enable the new Modal Pop-Up User Interface.</value>
+  </data>
+  <data name="enablePopUpsLabel.Text" xml:space="preserve">
+    <value>Enable Pop-Ups?</value>
+  </data>
+  <data name="Marketing.Text" xml:space="preserve">
+    <value>Site Marketing</value>
+  </data>
+  <data name="EditSkinPreview.Text" xml:space="preserve">
+    <value>Preview Edit Skin and Container</value>
+  </data>
+  <data name="SkinPreview.Text" xml:space="preserve">
+    <value>Preview Portal Skin and Container</value>
+  </data>
+  <data name="ExpandAll.Text" xml:space="preserve">
+    <value>Expand All</value>
+  </data>
+  <data name="PreviewNoSelectionMessage.Text" xml:space="preserve">
+    <value>Please select a skin and/or container to preview.</value>
+  </data>
+  <data name="valExpiryDate.ErrorMessage" xml:space="preserve">
+    <value>Invalid expiry date</value>
+  </data>
+</root>
