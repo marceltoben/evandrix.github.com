@@ -1,0 +1,1618 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ftimes</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+<!--
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#modes_of_operation">MODES OF OPERATION</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+	<li><a href="#configuration_controls">CONFIGURATION CONTROLS</a></li>
+	<ul>
+
+		<li><a href="#control_descriptions">CONTROL DESCRIPTIONS</a></li>
+	</ul>
+
+	<li><a href="#return_values">RETURN VALUES</a></li>
+	<li><a href="#files">FILES</a></li>
+	<li><a href="#notes">NOTES</a></li>
+	<li><a href="#examples">EXAMPLES</a></li>
+	<ul>
+
+		<li><a href="#example_1__using_map_mode_to_baseline_and_upload">Example 1. Using map mode to baseline and upload</a></li>
+		<li><a href="#example_2__using_dig_mode_to_search_for_strings">Example 2. Using dig mode to search for strings</a></li>
+		<li><a href="#example_3__change_analysis">Example 3. Change analysis</a></li>
+		<li><a href="#example_4__using_get_mode_to_download_a_config_file">Example 4. Using get mode to download a config file</a></li>
+	</ul>
+
+	<li><a href="#see_also">SEE ALSO</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#history">HISTORY</a></li>
+</ul>
+
+-->
+
+
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h3><a name="name">NAME</a></h3>
+<p><strong>ftimes</strong> - A system baselining and evidence collection tool.</p>
+<p>
+</p>
+<hr />
+<h3><a name="synopsis">SYNOPSIS</a></h3>
+<p><strong>ftimes</strong> <strong>--cfgtest</strong> <strong>file</strong> <strong>mode</strong> <strong>[-s]</strong></p>
+<p><strong>ftimes</strong> <strong>--compare</strong> <strong>mask</strong> <strong>baseline</strong> <strong>snapshot</strong> <strong>[-l level]</strong></p>
+<p><strong>ftimes</strong> <strong>--decoder</strong> <strong>snapshot</strong> <strong>[-l level]</strong></p>
+<p><strong>ftimes</strong> <strong>--digauto</strong> <strong>file</strong> <strong>[-l level]</strong> <strong>[list]</strong></p>
+<p><strong>ftimes</strong> <strong>--digfull</strong> <strong>file</strong> <strong>[-l level]</strong> <strong>[list]</strong></p>
+<p><strong>ftimes</strong> <strong>--diglean</strong> <strong>file</strong> <strong>[-l level]</strong> <strong>[list]</strong></p>
+<p><strong>ftimes</strong> <strong>--getmode</strong> <strong>file</strong> <strong>[-l level]</strong></p>
+<p><strong>ftimes</strong> <strong>--mapauto</strong> <strong>mask</strong> <strong>[-l level]</strong> <strong>[list]</strong></p>
+<p><strong>ftimes</strong> <strong>--mapfull</strong> <strong>file</strong> <strong>[-l level]</strong> <strong>[list]</strong></p>
+<p><strong>ftimes</strong> <strong>--maplean</strong> <strong>file</strong> <strong>[-l level]</strong> <strong>[list]</strong></p>
+<p><strong>ftimes</strong> <strong>--version</strong></p>
+<p>
+</p>
+<hr />
+<h3><a name="description">DESCRIPTION</a></h3>
+<p><strong>FTimes</strong> is a system baselining and evidence collection tool.
+The primary purpose of <strong>FTimes</strong> is to gather and/or develop
+information about specified directories and files in a manner
+conducive to intrusion analysis.</p>
+<p><strong>FTimes</strong> is a lightweight tool in the sense that it doesn't need
+to be &quot;installed&quot; on a given system to work on that system, it is
+small enough to fit on a single floppy, and it provides only a
+command line interface.</p>
+<p>Preserving records of all activity that occurs during a snapshot
+is important for intrusion analysis and evidence admissibility.
+For this reason, <strong>FTimes</strong> was designed to log four types of
+information: configuration settings, progress indicators, metrics,
+and errors.  Output produced by <strong>FTimes</strong> is delimited text, and
+therefore, is easily assimilated by a wide variety of existing
+tools.</p>
+<p><strong>FTimes</strong> basically implements two general capabilities: file
+topography and string search.  File topography is the process of
+mapping key attributes of directories and files on a given file
+system.  String search is the process of digging through directories
+and files on a given file system while looking for a specific
+sequence of bytes.  Respectively, these capabilities are referred
+to as map mode and dig mode.</p>
+<p><strong>FTimes</strong> supports two operating environments: workbench and
+client-server.  In the workbench environment, the operator uses
+<strong>FTimes</strong> to do things such as examine evidence (e.g., a disk image
+or files from a compromised system), analyze snapshots for change,
+search for files that have specific attributes, verify file integrity,
+and so on.  In the client-server environment, the focus shifts from
+what the operator can do locally to how the operator can efficiently
+monitor, manage, and aggregate snapshot data for many hosts.  In
+the client-server environment, the primary goal is to move collected
+data from the host to a centralized system, known as an Integrity
+Server, in a secure and authenticated fashion.  An Integrity Server
+is a hardened system that has been configured to handle <strong>FTimes</strong>
+GET, PING, and PUT HTTP/S requests.</p>
+<p>The <strong>FTimes</strong> distribution contains a script called nph-ftimes.cgi
+that may be used in conjunction with a Web server to implement a
+public Integrity Server interface.  Deeper topics such as the
+construction and internal mechanics of an Integrity Server are not
+addressed in this document.</p>
+<p><strong>FTimes</strong> provides several modes of operation that either implement
+its basic capabilities or support them in some way.  These modes
+are described in the MODES OF OPERATION section of this document
+and are outlined here:</p>
+<ul>
+<li>
+<p>cfgtest - check config file syntax for a given file and mode</p>
+</li>
+<li>
+<p>compare - compare two map snapshots to detect change</p>
+</li>
+<li>
+<p>decoder - decode a compressed map snapshot</p>
+</li>
+<li>
+<p>digauto - search for strings in files using a default configuration</p>
+</li>
+<li>
+<p>digfull - search for strings in files using a specified configuration</p>
+</li>
+<li>
+<p>diglean - same as digfull except that the range of controls is limited and output can be written directly to std{err,out}</p>
+</li>
+<li>
+<p>getmode - download a config file from an Integrity Server</p>
+</li>
+<li>
+<p>mapauto - collect directory and file attributes using a default configuration</p>
+</li>
+<li>
+<p>mapfull - collect directory and file attributes using a specified configuration</p>
+</li>
+<li>
+<p>maplean - same as mapfull except that the range of controls is limited and output can be written directly to std{err,out}</p>
+</li>
+<li>
+<p>version - display version information and exit</p>
+</li>
+</ul>
+<p><strong>FTimes</strong> also has many controls which dictate how it will execute.
+Some modes support very few controls while others support quite a
+few.  The following table summarizes what controls apply to each
+mode of operation.  An 'X' indicates that the given control applies
+to the selected mode.</p>
+<pre>
+                      ==========   MODES   =======
+                      c  c  d  d  d  g  m  m  m  v
+                      f  o  i  i  i  e  a  a  a  e
+                      g  m  g  g  g  t  p  p  p  r
+                      t  p  a  f  l  m  a  f  l  s
+                      e  a  u  u  e  o  u  u  e  i
+                      s  r  t  l  a  d  t  l  a  o
+                      t  e  o  l  n  e  o  l  n  n
+   ======   CONTROL   ============================
+   AnalyzeBlockSize   .  .  .  X  X  .  .  X  X  .
+   AnalyzeCarrySize   .  .  .  X  X  .  .  .  .  .
+   AnalyzeDeviceFiles .  .  .  X  X  .  .  X  X  .
+   AnalyzeRemoteFiles .  .  .  X  X  .  .  X  X  .
+   AnalyzeStepSize    .  .  .  X  X  .  .  .  .  .
+   BaseName           .  .  .  X  X  X  .  X  X  .
+   BaseNameSuffix     .  .  .  X  X  .  .  X  X  .
+   Compress           .  .  .  .  .  .  .  X  X  .
+   DigString          .  .  X  X  X  .  .  .  .  .
+   DigStringNoCase    .  .  X  X  X  .  .  .  .  .
+   DigStringNormal    .  .  X  X  X  .  .  .  .  .
+   DigStringRegExp    .  .  X  X  X  .  .  .  .  .
+   DigStringXMagic    .  .  X  X  X  .  .  .  .  .
+   EnableRecursion    .  .  .  X  X  .  .  X  X  .
+   Exclude            .  .  .  X  X  .  .  X  X  .
+   ExcludeFilter      .  .  .  X  X  .  .  X  X  .
+   ExcludesMustExist  .  .  .  X  X  .  .  X  X  .
+   FieldMask          .  X  .  .  .  .  X  X  X  .
+   FileSizeLimit      .  .  .  X  X  .  .  X  X  .
+   GetAndExec         .  .  .  .  .  X  .  .  .  .
+   GetFileName        .  .  .  .  .  X  .  .  .  .
+   HashDirectories    .  .  .  .  .  .  .  X  X  .
+   HashSymbolicLinks  .  .  .  .  .  .  .  X  X  .
+   Import             .  .  .  X  X  X  .  X  X  .
+   Include            .  .  .  X  X  .  .  X  X  .
+   IncludeFilter      .  .  .  X  X  .  .  X  X  .
+   IncludesMustExist  .  .  .  X  X  .  .  X  X  .
+   LogDir             .  .  .  X  X  .  .  X  X  .
+   MagicFile          .  .  .  .  .  .  .  X  X  .
+   MapRemoteFiles     .  .  .  X  X  .  .  X  X  .
+   MatchLimit         .  .  .  X  X  .  .  .  .  .
+   NewLine            .  .  .  X  X  .  .  X  X  .
+   OutDir             .  .  .  X  X  .  .  X  X  .
+   RequirePrivilege   .  .  .  X  X  .  .  X  X  .
+   RunType            .  .  .  X  .  .  .  X  .  .
+   SSLBundledCAsFile  .  .  .  X  .  X  .  X  .  .
+   SSLExpectedPeerCN  .  .  .  X  .  X  .  X  .  .
+   SSLMaxChainLength  .  .  .  X  .  X  .  X  .  .
+   SSLPassPhrase      .  .  .  X  .  X  .  X  .  .
+   SSLPrivateKeyFile  .  .  .  X  .  X  .  X  .  .
+   SSLPublicCertFile  .  .  .  X  .  X  .  X  .  .
+   SSLUseCertificate  .  .  .  X  .  X  .  X  .  .
+   SSLVerifyPeerCert  .  .  .  X  .  X  .  X  .  .
+   URLAuthType        .  .  .  X  .  X  .  X  .  .
+   URLGetRequest      .  .  .  .  .  X  .  .  .  .
+   URLGetURL          .  .  .  .  .  X  .  .  .  .
+   URLPassword        .  .  .  X  .  X  .  X  .  .
+   URLPutSnapshot     .  .  .  X  .  .  .  X  .  .
+   URLPutURL          .  .  .  X  .  .  .  X  .  .
+   URLUnlinkOutput    .  .  .  X  .  .  .  X  .  .
+   URLUsername        .  .  .  X  .  X  .  X  .  .</pre>
+<p>
+</p>
+<hr />
+<h3><a name="modes_of_operation">MODES OF OPERATION</a></h3>
+<p>The modes of operation described in this section are mutually
+exclusive.  In other words, only one mode may be specified per
+invocation.  Unless otherwise stated, the value for the <strong>baseline</strong>,
+<strong>snapshot</strong>, and <strong>file</strong> arguments may be the name of a regular file
+or '-'.  If the latter form is given, <strong>FTimes</strong> expects to read the
+equivalent input from stdin.  Note, however, that the <strong>baseline</strong> and
+<strong>snapshot</strong> arguments can not be '-' simultaneously.  The elements and
+syntax rules of for all configuration files are described in the
+CONFIGURATION CONTROLS section of this document.  The <strong>level</strong> option
+is described in the OPTIONS section of this document.  The <strong>list</strong>
+option specifies one or more directories, files, or symbolic links
+that are to be scanned.  Collectively, these items represent an
+<strong>Include</strong> list.  See the <strong>Include</strong> control for more information.</p>
+<dl>
+<dt><strong><a name="cfgtest_file_mode_s" class="item"><strong>--cfgtest</strong> <strong>{file|-}</strong> <strong>mode</strong> <strong>[-s]</strong></a></strong></dt>
+
+<dd>
+<p>Verify the syntax of a given configuration <strong>file</strong> in the context of a
+specified <strong>mode</strong> where <strong>mode</strong> can be one of: <strong>digauto</strong>, <strong>digfull</strong>,
+<strong>diglean</strong>, <strong>getmode</strong>, <strong>mapfull</strong>, or <strong>maplean</strong>.  The given
+configuration <strong>file</strong> is parsed with the same methods that would be
+used if <strong>FTimes</strong> had been invoked in that particular run <strong>mode</strong>.  By
+default, directories and files are not checked for existence.  This
+allows config files to be tested in a separate environment from where
+they will be used.  Strict testing (i.e., directories and files must
+exist) may be enabled with the <strong>-s</strong> option.</p>
+<p>The value 'Syntax Passed' is written to stdout, if all syntax checks
+are satisfied.  Otherwise, the value 'Syntax Failed' and a description
+of the failure will be written to stdout.</p>
+<p>Note: The fact that a given file passes all syntax checks does not
+guarantee that its use will lead to a successful outcome.  It merely
+ensures that specified controls are valid for a given mode, and
+the values for those controls meet basic syntax requirements.</p>
+</dd>
+<dt><strong><a name="compare_mask_baseline_snapshot_l_level" class="item"><strong>--compare</strong> <strong>mask</strong> <strong>{baseline|-}</strong> <strong>{snapshot|-}</strong> <strong>[-l level]</strong></a></strong></dt>
+
+<dd>
+<p>Compare <strong>baseline</strong> and <strong>snapshot</strong> data according to the specified
+<strong>mask</strong> where mask identifies the attributes to be analyzed.  Output
+is written to stdout and has the following format:</p>
+<pre>
+    category|name|changed|unknown</pre>
+<p>The category field indicates what type of change has occurred.  It
+can have one of the following values:</p>
+<pre>
+    C - Changed
+    M - Missing
+    N - New
+    U - Unknown (i.e., one or both fields were NULL)
+    X - Cross (i.e., Changed and Unknown)</pre>
+<p>The changed field contains a comma separated list of fields that
+have changed.  This field will be NULL if the category is New or
+Missing.</p>
+<p>The unknown field contains a comma separated list of fields that
+could not be compared due to lack of information.  This field will
+be NULL if the category is New or Missing.</p>
+<p>The specified <strong>mask</strong> must comply with the syntax rules set forth
+for the <strong>FieldMask</strong> control.</p>
+<p>Note: The <strong>baseline</strong> and <strong>snapshot</strong> arguments can not be '-'
+simultaneously.</p>
+<p>Note: Support for comparing compressed snapshots was added in version
+3.6.0.</p>
+</dd>
+<dt><strong><a name="decoder_snapshot_l_level" class="item"><strong>--decoder</strong> <strong>{snapshot|-}</strong> <strong>[-l level]</strong></a></strong></dt>
+
+<dd>
+<p>Decode a compressed <strong>snapshot</strong>.  A compressed snapshot can be
+created by running <strong>FTimes</strong> in map mode (i.e., <strong>mapfull</strong> or
+<strong>maplean</strong>) with <strong>Compress</strong> enabled.  Output is written to stdout.</p>
+</dd>
+<dt><strong><a name="digauto_file_l_level_list" class="item"><strong>--digauto</strong> <strong>{file|-}</strong> <strong>[-l level]</strong> <strong>[list]</strong></a></strong></dt>
+
+<dd>
+<p>Use default configuration settings to search an <strong>Include</strong> list for
+a set of user defined strings.  These strings are defined in <strong>file</strong>
+according to the syntax for the <strong>DigStringNormal</strong>, <strong>DigStringNoCase</strong>,
+and <strong>DigStringRegExp</strong> controls.  If <strong>list</strong> is not specified,
+<strong>FTimes</strong> will search the entire system including remote shares or
+mount points.  Any device files specifically included in the <strong>list</strong>
+will be searched (i.e., <strong>AnalyzeDeviceFiles</strong> is always enabled in
+this mode of operation).  Output is written to stdout and has the
+following format.</p>
+<pre>
+    name|type|tag|offset|string</pre>
+<p>The offset field, represented as a decimal value, contains the
+location in the file identified by name where the specified string
+was found.</p>
+</dd>
+<dt><strong><a name="digfull_file_l_level_list" class="item"><strong>--digfull</strong> <strong>{file|-}</strong> <strong>[-l level]</strong> <strong>[list]</strong></a></strong></dt>
+
+<dd>
+<p>Use the configuration settings in <strong>file</strong> to search an <strong>Include</strong> list
+for a set of user defined strings.  The <strong>Include</strong> list may be specified
+by a combination of <strong>Include</strong> controls and <strong>list</strong> arguments.  If
+an <strong>Include</strong> list is not specified, <strong>FTimes</strong> will search the entire
+system.  Remote shares or mount points will only be searched if
+<strong>AnalyzeRemoteFiles</strong> is enabled.  Any device files specifically
+included in the <strong>list</strong> will only be searched if <strong>AnalyzeDeviceFiles</strong>
+is enabled.</p>
+</dd>
+<dt><strong><a name="diglean_file_l_level_list" class="item"><strong>--diglean</strong> <strong>{file|-}</strong> <strong>[-l level]</strong> <strong>[list]</strong></a></strong></dt>
+
+<dd>
+<p>Use the configuration settings in <strong>file</strong> to search an <strong>Include</strong> list
+for a set of user defined strings.  The <strong>Include</strong> list may be specified
+by a combination of <strong>Include</strong> controls and <strong>list</strong> arguments.  If
+an <strong>Include</strong> list is not specified, <strong>FTimes</strong> will search the entire
+system.  Remote shares or mount points will only be searched if
+<strong>AnalyzeRemoteFiles</strong> is enabled.  Any device files specifically
+included in the <strong>list</strong> will only be searched if <strong>AnalyzeDeviceFiles</strong>
+is enabled.  The difference between this mode and <strong>--digfull</strong> is
+that fewer controls are defined/available and output can be written
+directly to std{err,out}.</p>
+</dd>
+<dt><strong><a name="getmode_file" class="item"><strong>--getmode</strong> <strong>{file|-}</strong></a></strong></dt>
+
+<dd>
+<p>Use the configuration settings in <strong>file</strong> to download digfull,
+diglean, mapfull, or maplean configuration information.  One of
+three possible actions, depending on how getmode is configured,
+will take place once the download is complete:</p>
+<ul>
+<li>
+<p><strong>FTimes</strong> writes the downloaded information to stdout,</p>
+</li>
+<li>
+<p><strong>FTimes</strong> writes the downloaded information to the file specified by <strong>GetFileName</strong>, or</p>
+</li>
+<li>
+<p><strong>FTimes</strong> restarts in <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, or <strong>maplean</strong> using the downloaded information as its new configuration file</p>
+</li>
+</ul>
+<p>The first action is effected when <strong>GetAndExec</strong> is disabled and
+<strong>GetFileName</strong> is not specified.  The second action is effected
+when <strong>GetAndExec</strong> is disabled and <strong>GetFileName</strong> is specified.
+The third action is effected when <strong>GetAndExec</strong> is enabled and
+<strong>GetFileName</strong> is specified.</p>
+</dd>
+<dt><strong><a name="mapauto_mask_l_level_list" class="item"><strong>--mapauto</strong> <strong>mask</strong> <strong>[-l level]</strong> <strong>[list]</strong></a></strong></dt>
+
+<dd>
+<p>Use default configuration settings to map an <strong>Include</strong> list according
+to the specified <strong>mask</strong> where mask identifies the attributes to
+be collected.  If <strong>list</strong> is not specified, <strong>FTimes</strong> will map the
+entire system including remote shares or mount points.  Any device
+files specifically included in the <strong>list</strong> will be mapped (i.e.,
+<strong>AnalyzeDeviceFiles</strong> is always enabled in this mode of operation).
+Output is written to stdout, and its format depends on the value
+of <strong>mask</strong>.</p>
+<p>The specified <strong>mask</strong> must comply with the syntax rules set forth
+for the <strong>FieldMask</strong> control.</p>
+</dd>
+<dt><strong><a name="mapfull_file_l_level_list" class="item"><strong>--mapfull</strong> <strong>{file|-}</strong> <strong>[-l level]</strong> <strong>[list]</strong></a></strong></dt>
+
+<dd>
+<p>Use configuration settings in <strong>file</strong> to map an <strong>Include</strong> list.  The
+<strong>Include</strong> list may be specified by a combination of <strong>Include</strong> controls
+and <strong>list</strong> arguments.  If an <strong>Include</strong> list is not specified,
+<strong>FTimes</strong> will map the entire system.  Remote shares or mount points
+will only be mapped if <strong>AnalyzeRemoteFiles</strong> is enabled.  Any device
+files specifically included in the <strong>list</strong> will only be mapped
+if <strong>AnalyzeDeviceFiles</strong> is enabled.</p>
+</dd>
+<dt><strong><a name="maplean_file_l_level_list" class="item"><strong>--maplean</strong> <strong>{file|-}</strong> <strong>[-l level]</strong> <strong>[list]</strong></a></strong></dt>
+
+<dd>
+<p>Use configuration settings in <strong>file</strong> to map an <strong>Include</strong> list.  The
+<strong>Include</strong> list may be specified by a combination of <strong>Include</strong> controls
+and <strong>list</strong> arguments.  If an <strong>Include</strong> list is not specified, <strong>FTimes</strong>
+will map the entire system.  Remote shares or mount points will
+only be mapped if <strong>AnalyzeRemoteFiles</strong> is enabled.  Any device
+files specifically included in the <strong>list</strong> will only be mapped
+if <strong>AnalyzeDeviceFiles</strong> is enabled.  The difference between this mode
+and <strong>--mapfull</strong> is that fewer controls are defined/available and
+output can be written directly to std{err,out}.</p>
+</dd>
+<dt><strong><a name="version" class="item"><strong>--version</strong></a></strong></dt>
+
+<dd>
+<p>Display version information and exit.</p>
+</dd>
+</dl>
+<p>
+</p>
+<hr />
+<h3><a name="options">OPTIONS</a></h3>
+<dl>
+<dt><strong><a name="l_level" class="item"><strong>-l level</strong></a></strong></dt>
+
+<dd>
+<p>The <strong>LogLevel</strong> option controls the amount of log output. As <strong>level</strong>
+decreases, the amount of output increases. The range of values that
+may be assigned to <strong>level</strong> is stated below.  In cases where evidence
+collection is of primary concern, <strong>LogLevel</strong> should be no higher
+than Landmark.  The default <strong>LogLevel</strong> is Landmark.</p>
+<pre>
+    6 - Critical
+    5 - Failure
+    4 - Warning
+    3 - Information
+    2 - Landmark
+    1 - Waypoint
+    0 - Debug</pre>
+</dd>
+<dt><strong><a name="s" class="item"><strong>-s</strong></a></strong></dt>
+
+<dd>
+<p>Enforce strict testing.  This requires that specified directories
+and files exist on the system running the test.  Controls affected
+by this option include: <strong>LogDir</strong>, <strong>OutDir</strong>, <strong>SSLPublicCertFile</strong>,
+<strong>SSLPrivateKeyFile</strong>, and <strong>SSLBundledCAsFile</strong>.</p>
+</dd>
+</dl>
+<p>
+</p>
+<hr />
+<h3><a name="configuration_controls">CONFIGURATION CONTROLS</a></h3>
+<p>This section describes the various controls that <strong>FTimes</strong> recognizes.
+In general, controls either shape runtime behavior or provide
+information needed by the application to perform a specific function.
+Controls and their values, one pair/line, are written to a file
+having the following format.</p>
+<pre>
+    &lt;control&gt; = &lt;value&gt;</pre>
+<p>All controls are case insensitive, but, in general, their values
+are not.  Comments may occur anywhere on a given line, and must
+begin with a pound character (i.e., '#').  In any given line, all
+text to the right of the first comment will be ignored.  White
+space surrounding controls and values is ignored.</p>
+<p>
+</p>
+<h4><a name="control_descriptions">CONTROL DESCRIPTIONS</a></h4>
+<p>This section describes each control that may be specified, defines
+what values it may have, and states which modes of operation
+recognize the control.</p>
+<dl>
+<dt><strong><a name="analyzeblocksize_1_1048576" class="item"><strong>AnalyzeBlockSize</strong>: [1-1048576]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>AnalyzeBlockSize</strong> is optional.  It instructs the analysis engine
+to use the specified block size (in bytes) when reading and processing
+file data.  The default value for this control is 16384 (16 KB).</p>
+</dd>
+<dt><strong><a name="analyzecarrysize_1_1048576" class="item"><strong>AnalyzeCarrySize</strong>: [1-1048576]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>.</p>
+<p><strong>AnalyzeCarrySize</strong> is optional.  It instructs the analysis engine
+to use the specified block size (in bytes) when saving (or carrying)
+data from one dig operation to the next.  The default value for
+this control is 1024 (1 KB).</p>
+<p>Note: The value for this control must not exceed <strong>AnalyzeBlockSize</strong>,
+and it must be equal to or larger than the maximum string length
+for normal and case insenstive strings.  If either condition is not
+met, the program will abort.</p>
+</dd>
+<dt><strong><a name="analyzedevicefiles_y_n" class="item"><strong>AnalyzeDeviceFiles</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>AnalyzeDeviceFiles</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs <strong>FTimes</strong> to analyze block/character device files that
+have been specifically included by name on the command line or
+through an <strong>Include</strong> (e.g., Include=/dev/ad0).  Device files that
+reside in an included directory (e.g., Include=/dev) are not analyzed
+simply because their parent was included -- you must specifically
+call them out.  Also, any device files that were specifically
+included will be pruned if their parent or any higher level directory
+was included too.  The default value is 'N'.</p>
+<p>Note: Analyzing block/character device files can take a very long
+time or forever (e.g., /dev/zero).</p>
+</dd>
+<dt><strong><a name="analyzeremotefiles_y_n" class="item"><strong>AnalyzeRemoteFiles</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>AnalyzeRemoteFiles</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs <strong>FTimes</strong> to ignore the fact that a given <strong>Include</strong> does
+not reside on the local system.  The result is that <strong>FTimes</strong> will
+attempt to analyze remote files.  The default value is 'N'.</p>
+<p>Note: Analyzing remote file systems can create large amounts of
+network traffic.  Just remember that you may be mapping an entire
+disk.</p>
+</dd>
+<dt><strong><a name="analyzestepsize_1_1048576" class="item"><strong>AnalyzeStepSize</strong>: [1-1048576]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>.</p>
+<p><strong>AnalyzeStepSize</strong> is optional.  It instructs the analysis engine to
+step through the search buffer in increments of the specified size.
+Currently, this control may only be used in conjunction with the
+DigStringXMagic control.  Internally, <strong>AnalyzeStepSize</strong> is capped to
+prevent its value from exceeding the value for <strong>AnalyzeBlockSize</strong>.
+The default value for this control is 16384 (16 KB).</p>
+<p>Note: This control is only available if XMagic support was compiled
+into the binary.</p>
+</dd>
+<dt><strong><a name="basename_name" class="item"><strong>BaseName</strong>: &lt;name|-&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>getmode</strong>, <strong>mapfull</strong>, and
+<strong>maplean</strong>.</p>
+<p><strong>BaseName</strong> is required.  It specifies the name prefix that will
+be attached to the various output files.  It also serves as the
+CLIENTID parameter in GET/PING/PUT requests.  The recommended name
+format is one that matches the following regular expression:</p>
+<pre>
+    ^[0-9A-Za-z_-]{1,64}$</pre>
+<p>This is because nph-ftimes.cgi uses that expression to validate the
+CLIENTID parameter in GET/PING/PUT requests.  Typically, <strong>BaseName</strong>
+and <strong>URLUsername</strong> will be the same when basic authentication is
+enabled, but this is not a requirement.</p>
+<p>If you're using FTimes in a lean mode, a good naming convention
+would be to use the hostname of the system being baselined.  Also,
+both lean modes allow you to specify a <strong>BaseName</strong> value of '-'.
+This causes FTimes to write its output to stdout/stderr.</p>
+</dd>
+<dt><strong><a name="basenamesuffix_datetime_none_pid" class="item"><strong>BaseNameSuffix</strong>: [datetime|none|pid]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>BaseNameSuffix</strong> is optional.  It specifies the type of suffix
+that will be attached to the <strong>BaseName</strong>.  If <strong>BaseNameSuffix</strong> is
+set to datetime, a suffix of the following format will be appended
+to the <strong>BaseName</strong>: YYYYMMDDHHMMSS.  If it is set to none, no suffix
+will be appended, and if it is set to pid, the value of the current
+process ID will be appended.  The default value is none.</p>
+</dd>
+<dt><strong><a name="compress_y_n" class="item"><strong>Compress</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>mapfull</strong> and <strong>maplean</strong>.</p>
+<p><strong>Compress</strong> is optional.  When enabled ('Y' or 'y'), it activates
+a form of lossless ASCII compression.  This yields a compression
+ratio that can be as good as three to one.  The default value is
+'N'.</p>
+<p>As a side note, compressing compressed snapshots with a program
+like <code>gzip(1)</code> yields better compression than if <code>gzip(1)</code> was used
+alone on the same data in its uncompressed form.</p>
+</dd>
+<dt><strong><a name="digstring_string_tag" class="item"><strong>DigString</strong>: &lt;string&gt; [&lt;tag&gt;]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digauto</strong>, <strong>digfull</strong>, and <strong>diglean</strong>.</p>
+<p><strong>DigString</strong> is an alias for <strong>DigStringNormal</strong>, and it is being
+phased out.  Please use <strong>DigStringNormal</strong> instead.</p>
+</dd>
+<dt><strong><a name="digstringnocase_string_tag" class="item"><strong>DigStringNoCase</strong>: &lt;string&gt; [&lt;tag&gt;]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digauto</strong>, <strong>digfull</strong>, and <strong>diglean</strong>.</p>
+<p><strong>DigStringNoCase</strong> is conditionally required.  It specifies a case
+insensitive search string.  This string must be URL encoded in the
+same manner as a normal dig string -- refer to the <strong>DigStringNormal</strong> control
+description for the details.  Internally, all alpha characters
+(i.e., [A-Za-z]) are converted to lower case.</p>
+<p>An optional tag may specified.  Tags can be used to identify a given
+dig string or set of strings -- the same tag may be assigned to
+multiple strings.  This can make the process of analyzing dig output
+much easier.  However, tags must not contain embedded white space, and
+they must be less than 64 bytes long.</p>
+</dd>
+<dt><strong><a name="digstringnormal_string_tag" class="item"><strong>DigStringNormal</strong>: &lt;string&gt; [&lt;tag&gt;]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digauto</strong>, <strong>digfull</strong>, and <strong>diglean</strong>.</p>
+<p><strong>DigStringNormal</strong> is conditionally required.  It specifies a search
+string.  This string must be URL encoded if it contains '%', '+',
+' ', or any non-printable characters.  When in doubt about whether
+or not a value should be encoded, encode it.  To encode a character,
+convert its hex value according to the format %HH where H is a hex
+digit.  Spaces may alternatively be encoded as '+'.</p>
+<p>An optional tag may specified.  Tags can be used to identify a given
+dig string or set of strings -- the same tag may be assigned to
+multiple strings.  This can make the process of analyzing dig output
+much easier.  However, tags must not contain embedded white space, and
+they must be less than 64 bytes long.</p>
+</dd>
+<dt><strong><a name="digstringregexp_regexp_tag" class="item"><strong>DigStringRegExp</strong>: &lt;regexp&gt; [&lt;tag&gt;]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digauto</strong>, <strong>digfull</strong>, and <strong>diglean</strong>.</p>
+<p><strong>DigStringRegExp</strong> is conditionally required.  It specifies a Perl
+compatible regular expression.  Unlike the strings specified in the
+<strong>DigStringNormal</strong> and <strong>DigStringNoCase</strong> controls, this string must not
+be URL encoded.  With <strong>DigStringRegExp</strong> patterns, you must specify
+no more than one capturing '()' subpattern.  You can use '(?:)' if
+you require additional parentheses for grouping purposes.  If you
+do not specify a capturing subpattern, the entire match will be
+captured.</p>
+<p>An optional tag may specified.  Tags can be used to identify a given
+dig string or set of strings -- the same tag may be assigned to
+multiple strings.  This can make the process of analyzing dig output
+much easier.  However, tags must not contain embedded white space, and
+they must be less than 64 bytes long.</p>
+<p>Note: This control is only available if PCRE support was compiled
+into the binary.  As of version 3.5.0, PCRE support is enabled by
+default.</p>
+</dd>
+<dt><strong><a name="digstringxmagic_file_tag" class="item"><strong>DigStringXMagic</strong>: &lt;file&gt; [&lt;tag&gt;]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digauto</strong>, <strong>digfull</strong>, and <strong>diglean</strong>.</p>
+<p><strong>DigStringXMagic</strong> is conditionally required.  It specifies the name
+of a file that contains one or more XMagic incantations.  The XMagic
+file may be specified as a relative path.</p>
+<p>An optional tag may specified.  Tags can be used to identify a given
+dig string or set of strings -- the same tag may be assigned to
+multiple strings.  This can make the process of analyzing dig output
+much easier.  However, tags must not contain embedded white space, and
+they must be less than 64 bytes long.</p>
+<p>Note: This control is only available if XMagic support was compiled
+into the binary.</p>
+</dd>
+<dt><strong><a name="enablerecursion_y_n" class="item"><strong>EnableRecursion</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>EnableRecursion</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs <strong>FTimes</strong> to recursively process directories.  The default
+value is 'Y'.</p>
+</dd>
+<dt><strong><a name="exclude_directory_file_link" class="item"><strong>Exclude</strong>: [directory|file|link]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>Exclude</strong> controls are optional, and there is no predefined limit
+on the number that may be specified.  However, there can be only
+one <strong>Exclude</strong> control/value pair per line.  It is not necessary
+to explicitly exclude special file systems such as PROCFS
+as <strong>FTimes</strong> will detect their presence and automatically exclude
+them.  <strong>Exclude</strong> values must be specified as a fully qualified
+path (see <strong>Include</strong> control).  If <strong>ExcludesMustExist</strong> is enabled,
+then each <strong>Exclude</strong> must reference an existing file, directory,
+or symbolic link.  Otherwise, <strong>FTimes</strong> will abort.</p>
+<p>Note: Symbolic links are not supported in WIN32-based file systems.</p>
+<p>Note: The exlude mechanism works on an exact match basis, but it
+can be used to produce a recursive effect.  For example, if you
+include '/' and exclude '/etc', then '/etc' and anything below it
+will not be processed.  However, if you include '/etc/hosts' and
+exclude '/etc', then '/etc/hosts' will be processed because the
+recursive effect would not be in play, and there is no <strong>Exclude</strong>
+that exactly matches it.</p>
+</dd>
+<dt><strong><a name="excludefilter_regexp" class="item"><strong>ExcludeFilter</strong>: &lt;regexp&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>ExcludeFilter</strong> controls are optional, and there is no predefined
+limit on the number that may be specified.  However, there can be only
+one <strong>ExcludeFilter</strong> control/value pair per line.</p>
+<p>Each <strong>ExcludeFilter</strong> must be specified as a Perl compatible regular
+expression with the exception that capturing '()' subpatterns and back
+references are not allowed.  You can use '(?:)' if you require
+parentheses for grouping purposes.</p>
+<p>Any path matched by an <strong>ExcludeFilter</strong> will be rejected.  All other
+paths will be mapped subject to include filter processing.  If no
+exclude filters are specified, exclude filter processing is implicitly
+disabled.</p>
+<p>Note: This control is only available if PCRE support was compiled
+into the binary.</p>
+</dd>
+<dt><strong><a name="excludesmustexist_y_n" class="item"><strong>ExcludesMustExist</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>ExcludesMustExist</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs <strong>FTimes</strong> to check that every <strong>Exclude</strong> exists prior to
+mapping or digging.  If this control is enabled and any <strong>Exclude</strong>
+does not exist, <strong>FTimes</strong> will abort.  The default value is 'N'.</p>
+</dd>
+<dt><strong><a name="fieldmask_mask" class="item"><strong>FieldMask</strong>: &lt;mask&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>compare</strong>, <strong>mapauto</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>FieldMask</strong> is required in <strong>compare</strong>.  Its value indicates what
+fields are to be compared for change.</p>
+<p><strong>FieldMask</strong> is required in <strong>mapauto</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.
+Its value dictates what attributes get collected or derived during
+a scan.</p>
+<p>There can be no embedded white space in a given mask specification,
+and it must comply with the following case insensitive syntax:</p>
+<pre>
+    ALL[&lt;+|-&gt;&lt;field&gt;...]</pre>
+<p>or</p>
+<pre>
+    NONE&lt;+|-&gt;&lt;field&gt;[&lt;+|-&gt;&lt;field&gt;...]</pre>
+<p>The following fields may be specified on Windows platforms with two
+caveats:  (1) chtime is only available on Windows NT/2K systems and
+(2) altstreams is only available if the target file system is NTFS.</p>
+<pre>
+    volume     - Volume serial number
+    findex     - File serial number
+    attributes - File attributes
+    atime      - Time of last file access
+    mtime      - Time of last file modification
+    ctime      - Creation time
+    chtime     - Change time (undocumented)
+    size       - File size in bytes
+    altstreams - Number of alternate or named streams
+    md5        - MD5 digest of the file's data stream
+    sha1       - SHA1 digest of the file's data stream
+    sha256     - SHA256 digest of the file's data stream
+    magic      - File type</pre>
+<p>The following fields may be specified on UNIX platforms:</p>
+<pre>
+    dev        - Device identification number
+    inode      - File identification number
+    mode       - File attributes and permissions
+    nlink      - Number of hard links
+    uid        - User identification number
+    gid        - Group identification number
+    rdev       - Device type (contains major/minor numbers)
+    atime      - Time of last file access
+    mtime      - Time of last file modification
+    ctime      - Time of last file status change
+    size       - File size in bytes
+    md5        - MD5 digest of the file's data stream
+    sha1       - SHA1 digest of the file's data stream
+    sha256     - SHA256 digest of the file's data stream
+    magic      - File type</pre>
+<p>In addition to the standard fields, the following group fields may be
+specified:</p>
+<pre>
+    hashes     - Compute all supported hash values
+    times      - Collect all supported time values</pre>
+<p>For example, the &quot;hashes field is equivalent to &quot;md5+sha1+sha256&quot;.
+Similarly, the &quot;times&quot; field is equivalent to &quot;atime+mtime+ctime&quot; and
+&quot;atime+mtime+ctime+chtime&quot; on UNIX and Windows platforms,
+respectively.</p>
+</dd>
+<dt><strong><a name="filesizelimit_integer" class="item"><strong>FileSizeLimit</strong>: &lt;integer&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>FileSizeLimit</strong> is optional.  It instructs the analysis engine to
+skip files that are larger than the specified size limit.  The
+default value is zero, which means do not impose a limit.</p>
+</dd>
+<dt><strong><a name="getandexec_y_n" class="item"><strong>GetAndExec</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>getmode</strong>.</p>
+<p><strong>GetAndExec</strong> is optional.  When enabled ('Y' or 'y'), it causes
+<strong>FTimes</strong> to start a new snapshot once the download is complete.
+This is accomplished through an <code>exec()</code> call.  <strong>GetAndExec</strong> depends
+on <strong>GetFileName</strong>.  The default value is 'N'.</p>
+<p>Note: Take care when specifying <strong>GetFileName</strong>.  If you choose a
+location that is writeable by other processes, <strong>FTimes</strong> may not
+read the config file you intended it to.  That is to say, some other
+process may have modified or replaced the origianl file.</p>
+</dd>
+<dt><strong><a name="getfilename_file" class="item"><strong>GetFileName</strong>: &lt;file&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>getmode</strong>.</p>
+<p><strong>GetFileName</strong> is required if <strong>GetAndExec</strong> is enabled.  Its value
+is the name of the file in which the downloaded configuration
+information is to be stored.  <strong>GetFileName</strong> may be specified as a
+relative path.</p>
+</dd>
+<dt><strong><a name="hashdirectories_y_n" class="item"><strong>HashDirectories</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>mapfull</strong> and <strong>maplean</strong>.</p>
+<p><strong>HashDirectories</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs <strong>FTimes</strong> to compute digests for directories.  This is
+done by hashing the digests of all files and directories contained
+in a given directory in the order they are encountered.  Thus, if
+a directory has the following structure where D{1|2} and F{1|2}
+represent directories and files respectively,</p>
+<pre>
+  D1
+   |
+   - F1
+   + D2
+      |
+      - F2</pre>
+<p>then, assuming that F1 is mapped before D2, D1 and D2 have the
+following hashes:</p>
+<pre>
+  Hash(D2) = H(H(F2))
+  Hash(D1) = H(H(F1), Hash(D2))</pre>
+<p>where H represents the hash algorithm (e.g., MD5, SHA1, etc.).</p>
+<p>If an entry within the directory is a special file (e.g., a device)
+or cannot be opened/hashed, a 16 byte string consisting of all zeros
+is used for the computation.  The default value is 'N'.</p>
+</dd>
+<dt><strong><a name="hashsymboliclinks_y_n" class="item"><strong>HashSymbolicLinks</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>mapfull</strong> and <strong>maplean</strong>.</p>
+<p><strong>HashSymbolicLinks</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs <strong>FTimes</strong> to compute digests for symbolic links.  This
+is done by hashing the data returned by <code>readlink()</code>.  The default
+value is 'Y'.</p>
+</dd>
+<dt><strong><a name="import_file" class="item"><strong>Import</strong>: &lt;file&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, <strong>maplean</strong>, and <strong>getmode</strong>.</p>
+<p><strong>Import</strong> is optional.  When specified, the directives contained
+in the file referenced by this control are included in the current
+configuration.  Multiple instances of this control are allowed per
+file, and recursion is permitted up to three levels deep.  Imports
+may be specified using a relative path.</p>
+</dd>
+<dt><strong><a name="include_directory_file_link" class="item"><strong>Include</strong>: [directory|file|link]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>Include</strong> controls are optional, and there is no predefined limit
+on the number that may be specified.  However, there can be only
+one <strong>Include</strong> control/value pair per line.  If no <strong>Include</strong>
+controls are specified, <strong>FTimes</strong> will attempt to map the entire
+system.  If <strong>IncludesMustExist</strong> is enabled, then each <strong>Include</strong>
+must reference an existing file, directory, or symbolic link.
+Otherwise, <strong>FTimes</strong> will abort.</p>
+<p><strong>Include</strong> values must be a regular file, directory, or symbolic
+link specified as a fully qualified path.  For WIN32 file systems,
+this means that each <strong>Include</strong> must begin with a drive designator
+([A-Za-z]:) and be followed by the target path (e.g., 'c:\temp').
+For UNIX file systems, each <strong>Include</strong> must begin with a forward
+slash (e.g., '/tmp').</p>
+<p>Note: Symbolic links are not supported in WIN32-based file systems.</p>
+<p>Note: Take care when including file systems that reside on remote
+shares because <strong>FTimes</strong> may attempt to map them.  To prevent this
+from happening, you can either exclude the remote file system or
+disable <strong>AnalyzeRemoteFiles</strong>.</p>
+<p>Note: Directory hashing only applies to directories.  This means
+that each file <strong>Include</strong> is treated as an isolated object apart
+from any specific tree.  The exception to this is any <strong>Include</strong>
+that gets automatically pruned because it's part of a larger branch.</p>
+</dd>
+<dt><strong><a name="includefilter_regexp" class="item"><strong>IncludeFilter</strong>: &lt;regexp&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>IncludeFilter</strong> controls are optional, and there is no predefined
+limit on the number that may be specified.  However, there can be only
+one <strong>IncludeFilter</strong> control/value pair per line.</p>
+<p>Each <strong>IncludeFilter</strong> must be specified as a Perl compatible regular
+expression with the exception that capturing '()' subpatterns and back
+references are not allowed.  You can use '(?:)' if you require
+parentheses for grouping purposes.</p>
+<p>Any path matched by an <strong>IncludeFilter</strong> will be mapped.  Any other
+paths will be rejected.  Also note that exclude filter processing
+occurs before include filter processing.  If no include filters are
+specified, include filter processing is implicitly disabled.</p>
+<p>Note: This control is only available if PCRE support was compiled
+into the binary.</p>
+<p>Warning: Due to their nature, include filters require mandatory
+directory traversal.  This, in turn, will potentially alter directory
+access times.  For example, suppose that you want to process all files
+that end with the string: '.pdf'. The <strong>IncludeFilter</strong> would be
+specified as follows:</p>
+<pre>
+    IncludeFilter=\.pdf$</pre>
+<p>Generally speaking, there is no way to know, apriori, where all these
+files are located.  Therefore, it is necessary to traverse all
+directories applying the filter to each path as it's encountered.</p>
+</dd>
+<dt><strong><a name="includesmustexist_y_n" class="item"><strong>IncludesMustExist</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>IncludesMustExist</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs <strong>FTimes</strong> to check that every <strong>Include</strong> exists prior to
+mapping or digging.  If this control is enabled and any <strong>Include</strong>
+does not exist, <strong>FTimes</strong> will abort.  The default value is 'N'.</p>
+</dd>
+<dt><strong><a name="logdir_directory" class="item"><strong>LogDir</strong>: &lt;directory&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>LogDir</strong> is optional.  It tells <strong>FTimes</strong> where to write log data.
+If not specified, the value of <strong>OutDir</strong> will be used as the value
+for <strong>LogDir</strong>.  <strong>LogDir</strong> may be specified as a relative path.</p>
+</dd>
+<dt><strong><a name="magicfile_file" class="item"><strong>MagicFile</strong>: &lt;file&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>mapfull</strong> and <strong>maplean</strong>.</p>
+<p><strong>MagicFile</strong> is optional.  If the magic field in <strong>FieldMask</strong> is
+set and <strong>MagicFile</strong> references a valid XMagic file, <strong>FTimes</strong>
+attempts to determine the type of each file it maps.  If the magic
+field is not set, this control is ignored.  <strong>MagicFile</strong> may be
+specified as a relative path.  Additional information regaring XMagic
+can be found here:</p>
+<pre>
+  <a href="http://ftimes.sourceforge.net/FTimes/XMagic.shtml">http://ftimes.sourceforge.net/FTimes/XMagic.shtml</a></pre>
+<p>Note: XMagic is not built into <strong>FTimes</strong> by default.  If your version
+of <strong>FTimes</strong> does not have this support and the magic field is
+requested, <strong>FTimes</strong> will produce null fields.</p>
+<p>Note: XMagic is automatically disabled if compression is enabled.</p>
+</dd>
+<dt><strong><a name="mapremotefiles_y_n" class="item"><strong>MapRemoteFiles</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>MapRemoteFiles</strong> is an alias for <strong>AnalyzeRemoteFiles</strong>, and it is
+being phased out.  Please use <strong>AnalyzeRemoteFiles</strong> instead.</p>
+</dd>
+<dt><strong><a name="matchlimit_integer" class="item"><strong>MatchLimit</strong>: &lt;integer&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong> and <strong>diglean</strong>.</p>
+<p><strong>MatchLimit</strong> is optional.  It instructs the search engine to stop
+searching for a particular pattern within a file once the specified
+match limit has been reached.  The default value is zero, which
+means do not impose a limit.</p>
+<p>Note: Searching for a string such as 'A' with a MatchLimit of zero
+may produce a tremendous amount of output.</p>
+</dd>
+<dt><strong><a name="newline_lf_crlf" class="item"><strong>NewLine</strong>: [LF|CRLF]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>NewLine</strong> is optional.  When set to the value CRLF, it generates
+Windows style line feeds (i.e., carriage return and linefeed).  When
+<strong>NewLine</strong> is set to the value LF, it generates UNIX style line
+feeds (i.e., linefeed).  This control is useful if you review/analyze
+data sets from different platforms on one particular computer.  The
+default value is the native value for the operating system running
+the program.</p>
+</dd>
+<dt><strong><a name="outdir_directory" class="item"><strong>OutDir</strong>: &lt;directory&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>OutDir</strong> is required.  It tells <strong>FTimes</strong> where to write output
+data.  If not specified, the program will abort.  <strong>OutDir</strong> may be
+specified as a relative path.</p>
+</dd>
+<dt><strong><a name="requireprivilege_y_n" class="item"><strong>RequirePrivilege</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>diglean</strong>, <strong>mapfull</strong>, and <strong>maplean</strong>.</p>
+<p><strong>RequirePrivilege</strong> is optional.  When enabled ('Y' or 'y'), it
+indicates that the operator wants to ensure that the snapshot is
+run from a privileged account.  On UNIX systems this means that
+<strong>FTimes</strong> must be run from an account that has a real user id of
+zero (i.e., root).  On NT/2K systems this means that it must be run
+from an account that has the backup and restore user rights.  The
+default value is 'N'.</p>
+<p>Note: <strong>FTimes</strong> will work without privilege, but it's likely to
+generate more errors due to permission problems.</p>
+</dd>
+<dt><strong><a name="runtype_baseline_linktest_snapshot" class="item"><strong>RunType</strong>: [baseline|linktest|snapshot]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong> and <strong>mapfull</strong>.</p>
+<p><strong>RunType</strong> is optional.  This control sets a corresponding flag in
+the log file that classifies output data as baseline, snapshot, or
+linktest.  The value of this control does not affect the format or
+content of the output.  It simply classifies the data so that
+automated analysis applications can process it accordingly.  The
+default value is baseline.</p>
+</dd>
+<dt><strong><a name="sslbundledcasfile_file" class="item"><strong>SSLBundledCAsFile</strong>: &lt;file&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLBundledCAsFile</strong> is required when <strong>SSLVerifyPeerCert</strong> is
+enabled.  This control specifies the name of a PEM (Privacy Enhanced
+Mail) encoded file that contains a bundled set of Certificate
+Authority (CA) certificates.  Any validated peer certificate that
+is signed by one of these certificate authorities will be accepted
+provided that the <strong>SSLMaxChainLength</strong> and <strong>SSLExpectedPeerCN</strong>
+checks are also satisfied.  <strong>SSLBundledCAsFile</strong> may be specified
+as a relative path.</p>
+</dd>
+<dt><strong><a name="sslexpectedpeercn_name" class="item"><strong>SSLExpectedPeerCN</strong>: &lt;name&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLExpectedPeerCN</strong> is required when <strong>SSLVerifyPeerCert</strong> is
+enabled.  The value of this control represents the peer's expected
+Common Name (CN).  Conventionally, CNs are specified as fully
+qualified domain names.  This control eliminates the need to perform
+a DNS lookup at the time of certificate validation.  This, in turn,
+may help to prevent attacks involving DNS spoofing.</p>
+</dd>
+<dt><strong><a name="sslmaxchainlength_1_10" class="item"><strong>SSLMaxChainLength</strong>: [1-10]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLMaxChainLength</strong> is optional when <strong>SSLVerifyPeerCert</strong> is
+enabled.  The value of this control determines how deep a certificate
+chain may be before it is considered invalid.  The default value
+is one.</p>
+</dd>
+<dt><strong><a name="sslpassphrase_passphrase" class="item"><strong>SSLPassPhrase</strong>: &lt;passphrase&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLPassPhrase</strong> is optional when <strong>SSLUseCertificate</strong> is enabled.
+Its value, if specified, is used to decrypt the contents of the
+client's private key file (see <strong>SSLPrivateKeyFile</strong>).</p>
+</dd>
+<dt><strong><a name="sslprivatekeyfile_file" class="item"><strong>SSLPrivateKeyFile</strong>: &lt;file&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLPrivateKeyFile</strong> is required when <strong>SSLUseCertificate</strong> is
+enabled.  This control specifies the name of a PEM (Privacy Enhanced
+Mail) encoded key file that can be used to sign SSL certificates.
+<strong>SSLPrivateKeyFile</strong> may be specified as a relative path.</p>
+</dd>
+<dt><strong><a name="sslpubliccertfile_file" class="item"><strong>SSLPublicCertFile</strong>: &lt;file&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLPublicCertFile</strong> is required when <strong>SSLUseCertificate</strong> is
+enabled.  This control specifies the name of a PEM (Privacy Enhanced
+Mail) encoded certificate that will be provided during SSL handshakes.
+<strong>SSLPublicCertFile</strong> may be specified as a relative path.</p>
+</dd>
+<dt><strong><a name="sslusecertificate_y_n" class="item"><strong>SSLUseCertificate</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLUseCertificate</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs the application to provide client side certificate
+authentication, if necessary.  The default value is 'N'.</p>
+</dd>
+<dt><strong><a name="sslverifypeercert_y_n" class="item"><strong>SSLVerifyPeerCert</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>SSLVerifyPeerCert</strong> is optional.  When enabled ('Y' or 'y'), it
+instructs the application to verify the credentials of the peer
+server.  The default value is 'N'.</p>
+</dd>
+<dt><strong><a name="urlauthtype_basic_none" class="item"><strong>URLAuthType</strong>: [basic|none]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>URLAuthType</strong> is optional.  It identifies what authentication
+scheme to use when issuing HTTP/HTTPS requests.  The value specified
+by this control applies to any requests involving <strong>URLGetURL</strong> or
+<strong>URLPutURL</strong>.  When <strong>URLAuthType</strong> is set to basic, user credentials
+are base 64 encoded and incorporated into the request header.  User
+credentials specified in the URL take precedence over credentials
+specified in the <strong>URLUsername</strong> and <strong>URLPassword</strong> controls.  The
+default value is none.</p>
+</dd>
+<dt><strong><a name="urlgetrequest_dig_full_lean_config_map_full_lean_config" class="item"><strong>URLGetRequest</strong>: [Dig{Full,Lean}Config|Map{Full,Lean}Config]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>getmode</strong>.</p>
+<p><strong>URLGetRequest</strong> is required.  This control specifies what kind of
+config file the client is requesting when it issues a GET request.
+It also determines the next runmode when <strong>GetAndExec</strong> is enabled.
+Thus, values of Dig{Full,Lean}Config will cause <strong>FTimes</strong> to restart
+in <strong>digfull</strong> or <strong>diglean</strong> mode, and values of Map{Full,Lean}Config
+will cause <strong>FTimes</strong> to restart in <strong>mapfull</strong> or <strong>maplean</strong> mode.</p>
+</dd>
+<dt><strong><a name="urlgeturl_url" class="item"><strong>URLGetURL</strong>: &lt;url&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>getmode</strong>.</p>
+<p><strong>URLGetURL</strong> is required.  It defines the scheme, user credentials,
+host address, port, and CGI application to be used when making
+requests.  If a username/password pair is specified in the URL,
+that pair takes precedence over the values specified by
+<strong>URLUsername</strong>/<strong>URLPassword</strong>, if any.  URLs must use a scheme of
+http or https and satisfy the following regular expression:</p>
+<p>scheme://(user(:pass)?@)?host(:port)?/(path(\?query)?)?</p>
+</dd>
+<dt><strong><a name="urlpassword_password" class="item"><strong>URLPassword</strong>: &lt;password&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>URLPassword</strong> is optional.  It identifies the password to use when
+accessing an Integrity Server.  The value specified by this control
+is used in conjunction with <strong>URLGetURL</strong> and <strong>URLPutURL</strong> unless
+those controls supply their own username/password pair.</p>
+</dd>
+<dt><strong><a name="urlputsnapshot_y_n" class="item"><strong>URLPutSnapshot</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong> and <strong>mapfull</strong>.</p>
+<p><strong>URLPutSnapshot</strong> is optional.  When enabled ('Y' or 'y'), <strong>FTimes</strong>
+attempts to post the snapshot to an Integrity Server.  Prior to
+starting its scan, <strong>FTimes</strong> will transmit an application layer
+PING to the server to verify that it is accessible and functional.
+If the remote CGI application is functioning properly, the extended
+HTTP response code 250 (Ping Received) is returned.  <strong>URLPutSnapshot</strong>
+depends on <strong>URLPutURL</strong>.  If basic authentication is required, the
+controls <strong>URLUsername</strong>, <strong>URLPassword</strong>, and <strong>URLAuthType</strong> may
+need to be specified as well.  The default value is 'N'.</p>
+</dd>
+<dt><strong><a name="urlputurl_url" class="item"><strong>URLPutURL</strong>: &lt;url&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong> and <strong>mapfull</strong>.</p>
+<p><strong>URLPutURL</strong> is optional.  It defines the scheme, user credentials,
+host address, port, and CGI application to be used when making PUT
+requests.  If a username/password pair is specified in the URL,
+that pair takes precedence over the values specified by
+<strong>URLUsername</strong>/<strong>URLPassword</strong>, if any.  In any event, user credentials
+are only sent when basic authentication has been requested (See
+<strong>URLAuthType</strong>).  <strong>URLPutURL</strong> uses the same syntax as <strong>URLGetURL</strong>.</p>
+</dd>
+<dt><strong><a name="urlunlinkoutput_y_n" class="item"><strong>URLUnlinkOutput</strong>: [Y|N]</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong> and <strong>mapfull</strong>.</p>
+<p><strong>URLUnlinkOutput</strong> is optional when <strong>URLPutSnapshot</strong> is enabled.
+When enabled ('Y' or 'y'), any output files are overwritten and
+unlinked before the program exits.  The default value is 'N'.</p>
+</dd>
+<dt><strong><a name="urlusername_username" class="item"><strong>URLUsername</strong>: &lt;username&gt;</a></strong></dt>
+
+<dd>
+<p>Applies to <strong>digfull</strong>, <strong>mapfull</strong>, and <strong>getmode</strong>.</p>
+<p><strong>URLUsername</strong> is optional.  It identifies the username to use when
+accessing an Integrity Server.  The value specified by this control
+is used in conjunction with <strong>URLGetURL</strong> and <strong>URLPutURL</strong> unless
+those controls supply their own username/password pair.</p>
+</dd>
+</dl>
+<p>
+</p>
+<hr />
+<h3><a name="return_values">RETURN VALUES</a></h3>
+<p>Upon successful completion, a value of <strong>XER_OK</strong> (0) is returned.
+If the program encountered a critical error and had to abort
+immediately, the value <strong>XER_Abort</strong> (1) is returned.  If the command
+line does not conform to the required syntax, a value of <strong>XER_Usage</strong>
+(2) is returned.  Otherwise, one of the following error codes is
+returned.  These codes indicate which subsystem encountered the
+fatal error.</p>
+<ul>
+<li>
+<p><strong>XER_BootStrap</strong> (3)</p>
+</li>
+<li>
+<p><strong>XER_ProcessArguments</strong> (4)</p>
+</li>
+<li>
+<p><strong>XER_Initialize</strong> (5)</p>
+</li>
+<li>
+<p><strong>XER_CheckDependencies</strong> (6)</p>
+</li>
+<li>
+<p><strong>XER_Finalize</strong> (7)</p>
+</li>
+<li>
+<p><strong>XER_WorkHorse</strong> (8)</p>
+</li>
+<li>
+<p><strong>XER_FinishUp</strong> (9)</p>
+</li>
+<li>
+<p><strong>XER_FinalStage</strong> (10)</p>
+</li>
+</ul>
+<p>
+</p>
+<hr />
+<h3><a name="files">FILES</a></h3>
+<p>Several different files may be required as input or produced as
+output in the course of running <strong>FTimes</strong>.  These files are
+generically described below.</p>
+<dl>
+<dt><strong><a name="basename" class="item">BaseName(_BaseNameSuffix)?.log</a></strong></dt>
+
+<dd>
+<p>The main log file.  This file contains a record of the activities
+that took place during a dig or map run provided that <strong>LogLevel</strong>
+was set at an appropriate level.</p>
+</dd>
+<dt><strong>BaseName(_BaseNameSuffix)?.{dig,map}</strong></dt>
+
+<dd>
+<p>The main output file.  This file contains possibly compressed map
+or dig data collected during a scan.  The first line in this file
+contains a header that specifies the name of each field collected.</p>
+</dd>
+<dt><strong><a name="bundled_certificate_authorities" class="item">Bundled Certificate Authorities</a></strong></dt>
+
+<dd>
+<p>When <strong>SSLUseCertificate</strong> has been enabled, <strong>FTimes</strong> expects to
+find a bundled certificate authorities file in the location
+specified by <strong>SSLBundledCAs</strong> control.  If this file does not
+exist or have the proper format, <strong>FTimes</strong> will abort.</p>
+</dd>
+<dt><strong><a name="config" class="item">Config</a></strong></dt>
+
+<dd>
+<p>This file contains directives used to configure <strong>FTimes</strong>.  In
+general a particular config file applies to a single mode of
+operation.  This is because different modes support different
+controls.  Refer to the CONFIGURATION CONTROLS section of this
+document to determine what controls apply to each mode.</p>
+</dd>
+<dt><strong><a name="public_certificate_and_private_key" class="item">Public Certificate and Private Key</a></strong></dt>
+
+<dd>
+<p>When <strong>SSLUseCertificate</strong> has been enabled, <strong>FTimes</strong> expects to
+find certificate and key files in the locations specified by
+<strong>SSLPublicCert</strong> and <strong>SSLPrivateKey</strong> controls, respectively.  If
+these files do not exist or have the proper format, <strong>FTimes</strong> will
+abort.</p>
+</dd>
+<dt><strong><a name="snapshot" class="item">Snapshot</a></strong></dt>
+
+<dd>
+<p>This is a previously created and possibly compressed map file that
+is being supplied as input.  In compare mode it represents an
+uncompressed map file and applies to both the <strong>baseline</strong> and
+<strong>snapshot</strong> arguments.  In decoder mode it represents a compressed
+map file.</p>
+</dd>
+<dt><strong><a name="xmagic" class="item">XMagic</a></strong></dt>
+
+<dd>
+<p>This file contains magic tests and descriptions.  The magic format
+used by <strong>FTimes</strong> is XMagic.  <strong>FTimes</strong> searches up to three
+locations for magic: (1) the location specified by the <strong>MagicFile</strong>
+control, (2) /usr/local/ftimes/etc/xmagic or c:\ftimes\etc\xmagic,
+and (3) the current working directory.  <strong>FTimes</strong> will not abort,
+if a suitable file is not found, but magic output will be limited.</p>
+</dd>
+</dl>
+<p>
+</p>
+<hr />
+<h3><a name="notes">NOTES</a></h3>
+<p>The name attribute may be partially encoded if it contains any
+special characters.  Special characters are defined as <code>[`'&quot;|%+]</code>
+or any non-printable character.  If a name contains Unicode
+characters, the high byte is always encoded, and the low byte is
+encoded as described above.  To decode an encoded name, first
+convert all pluses to spaces (i.e., '+' -&gt; ' ').  Then, moving from
+left to right, convert each %HH sequence, to its byte value.  Here
+'H' denotes a hex digit.</p>
+<p>As a matter of security and good configuration control, you should
+create a baseline of your entire system on a periodic basis and
+whenever major events occur such as the addition/removal of software
+packages or the application of system/security patches.</p>
+<p>In critical situations it is best to enable <strong>RequirePrivilege</strong>
+and run <strong>FTimes</strong> from a privileged account.  This will avoid common
+hang-ups associated with having too little privilege.  Backup and
+restore rights are required to satisfy <strong>RequirePrivilege</strong> on NT
+systems, and root privilege is required for UNIX systems.  If you
+are simply scanning your own files, you probably do not need to
+enable <strong>RequirePrivilege</strong>.  On NT systems the operator may need
+the bypass traverse checking privilege in addition to backup and
+restore rights.  Also, make sure that domain policies aren't
+rendering the operator's privileges ineffective.</p>
+<p>In general, use the default LogLevel and review the log data after
+each invocation as it may reveal errors or issues that need to be
+addressed.</p>
+<p>In general, create distinct config files for each profile you intend
+to maintain.  Here, profile refers to the set of files and directories
+within a given host that you intend to scan on a regular basis.
+If you have a large number of profiles that share a common set of
+controls, you may want to move these controls to a single file.
+Then, you may simply refer to this file using the <strong>Import</strong> control.</p>
+<p>Set <strong>OutDir</strong> to a directory that has the capacity to hold all
+resultant data.  If external media such as jaz, zip, or floppy are
+available, consider using them.  However, using a floppy is not
+generally recommended unless you know that it has the capacity to
+hold the data.  You may also want to consider writing output to an
+NFS, Samba, or Windows share.  A third option is to use <strong>FTimes'</strong>
+built-in upload capability, and post your data directly to an
+Integrity Server.</p>
+<p>Setting <strong>LogDir</strong> to a path that represents a floppy device may be
+useful if data integrity is a concern and there is no removable or
+protectible media available to store all of the anticipated output.
+The reason for this is that the log file will contain an MD5 digest
+of the output file upon the completion of the map.  Because the
+log data was written to floppy, it would be possible to remove and
+write protect this information for safe keeping.  This would provide
+additional time to offload the results of the map, which can be
+quite large.  Obviously, both files can still be altered by a
+skilled attacker positioned to take advantage of the situation.</p>
+<p>Manage dig and map config files on your Integrity Server, and
+use <strong>FTimes'</strong> get mode (i.e., <strong>--getmode</strong>) to automatically retrieve
+them at runtime.  This facilitates centralized management and helps
+to protect potentially sensitive configuration information.</p>
+<p>Use the <strong>URLPutSnapshot</strong>, <strong>URLPutURL</strong>, <strong>URLUsername</strong>, <strong>URLPassword</strong>,
+and <strong>URLAuthType</strong> controls when you want to automatically upload
+data to an Integrity Server that is configured to handle
+<strong>FTimes'</strong> PUT requests.</p>
+<p>If you have an SSL enabled version of <strong>FTimes</strong>, you'll need to
+ensure that OpenSSL and/or its libraries are installed and accessible
+to <strong>FTimes</strong> on the target platform.</p>
+<p>When possible, mount target file systems as read only.  This will
+help to ensure minimal time stamp perturbation.  In any event,
+<strong>FTimes</strong> accurately records time stamp information before it is
+modified by any subsequent access.</p>
+<p>
+</p>
+<hr />
+<h3><a name="examples">EXAMPLES</a></h3>
+<p>The following examples are intended to demonstrate different ways
+of configuring and using <strong>FTimes</strong>.  Any text encapsulated between
+'--- XXX ---' delimiters represents a file's content.</p>
+<p>
+</p>
+<h4><a name="example_1__using_map_mode_to_baseline_and_upload">Example 1. Using map mode to baseline and upload</a></h4>
+<p>This example demonstrates how to baseline a system and upload the
+resulting snapshot to an Integrity Server.</p>
+<p>The first thing that needs to be done is to obtain the necessary
+upload information.  Assume that an Integrity Server has already
+been configured to receive snapshots.  Also, assume that the
+following information has been provided:</p>
+<pre>
+    URL = https://192.168.1.50:443/cgi-client/nph-ftimes.cgi
+    Authentication Type = Basic
+    Username/ClientID = client_1
+    Password = password
+    AllowedFieldMask = ALL-magic
+    AllowedDataType = map
+    Server Validates Client Certificates = N</pre>
+<p>Observe that remote server speaks HTTPS.  Therefore, an SSL enabled
+version of <strong>FTimes</strong> is needed.  To determine if <strong>FTimes</strong> has SSL
+support, run the following command:</p>
+<pre>
+    ftimes --version</pre>
+<p>If <strong>FTimes</strong> has SSL support, the output will have the following format:</p>
+<pre>
+    ftimes X.X.X ssl</pre>
+<p>where X.X.X is a version number.</p>
+<p>The next item to tackle is the creation of a suitable config file.
+The following file contains the necessary directives to complete
+this task.</p>
+<pre>
+    --- example1.cfg ---
+    BaseName=client_1
+    OutDir=.
+    RunType=baseline
+    FieldMask=ALL-magic
+    URLPutSnapshot=Y
+    URLPutURL=https://192.168.1.50:443/cgi-client/nph-ftimes.cgi
+    URLAuthType=basic
+    URLUsername=client_1
+    URLPassword=password
+    Compress=Y
+    --- example1.cfg ---</pre>
+<p>Note that there are no <strong>Include</strong> directives.  This omission causes
+<strong>FTimes</strong> to map everything (i.e., the entire system).</p>
+<p>Also, note that <strong>OutDir</strong> has been set to the current directory
+(i.e., '.').  This, while entirely legal, assumes that (1) '.' is
+writeable and (2) there is enough disk space to hold all generated
+output.</p>
+<p>Compression was enabled to expedite data transfer.</p>
+<p>The last step is to run <strong>FTimes</strong> and review the corresponding log
+output to ensure that snapshot was uploaded successfully.</p>
+<pre>
+    ftimes --mapfull example1.cfg</pre>
+<p>
+</p>
+<h4><a name="example_2__using_dig_mode_to_search_for_strings">Example 2. Using dig mode to search for strings</a></h4>
+<p>This example demonstrates how to to search files and directories
+for a set of HEX/ASCII and regular expression strings.</p>
+<p>Given that the target file system is <code>/disk1</code>, and the list of
+strings to to be sought are:</p>
+<pre>
+    String1 = /dev/ptyqa
+    String2 = 0xda 0xbe
+    String3 = 0x00 A 0x00 A 0x00 A 0x00 A
+    String4 = A date of the form &lt;YYYY-MM-DD HH:MM:SS&gt;
+    String5 = Line oriented IP addresses of the form &lt;BOL|tab&gt;&lt;192.168.1.*&gt;&lt;tab|EOL&gt;</pre>
+<p>where</p>
+<pre>
+    BOL = Beginning Of Line
+    EOL = End Of Line</pre>
+<p>Strings 1-3 are expressed as (ignore whitespace) ASCII, HEX, and
+HEX/ASCII, respectively.  Strings 4 and 5, on the other hand, are
+textual descriptions that must be translated into regular expressions.
+Assume that the required <strong>MatchLimit</strong> is three.  That is to say,
+no more than three matches per file of any single string should be
+recorded.</p>
+<p>The following config file contains those directives required to
+search all files in /disk1.</p>
+<pre>
+    --- example2.cfg ---
+    BaseName=digger
+    OutDir=.
+    MatchLimit=3
+    DigStringNormal=/dev/ptyqa
+    DigStringNormal=%da%be
+    DigStringNoCase=%00A%00A%00A%00A
+    DigStringRegExp=\d{4}-\d{2}-\d{2}\x20\d{2}:\d{2}:\d{2}
+    DigStringRegExp=(?m)(?:^|\t)(192\.168\.1\.\d{1,3})(?=\t|$)
+    Include=/disk1
+    --- example2.cfg ---</pre>
+<p>Observe that strings two and three are URL encoded and that string
+three will be processed in a case insensitive manner.  Read the
+<strong>DigStringNormal</strong> control description for more details on URL
+encoding.  Also notice that the fourth and fifth strings correspond
+to Perl compatible regular expressions -- these types of dig strings
+are available if you compiled <strong>FTimes</strong> with PCRE support.  With
+<strong>DigStringRegExp</strong> patterns, however, you must specify no more than
+one capturing '()' subpattern.  You can use '(?:)' if you require
+additional parentheses for grouping purposes.  If you do not specify
+a capturing subpattern, then the entire match will be captured.  In
+this particular case, only the IP address will be captured. Also note
+the use of '\x20' to represent a single space. This translation
+necessary because dig strings may not contain embedded white space.</p>
+<p>At this point <strong>FTimes</strong> may be run as follows:</p>
+<pre>
+    ftimes --diglean example2.cfg</pre>
+<p>If spontaneity is desired over strict configuration, switch to the
+<strong>digauto</strong> mode of operation.  In this mode elaborate config files
+aren't necessary, and output is written to stdout.  Also, no match
+limit is imposed.  The following example shows how to search an
+image file (e.g., example2.image) for a set of specific strings.
+The output, if any, can be piped into other tools that take their
+input on stdin.</p>
+<pre>
+    --- strings.cfg ---
+    DigStringNormal=This+box+is+0wn3d    attack_program
+    DigStringNormal=3l33t                attack_program
+    DigStringNormal=175.20.1.7           attack_ip
+    DigStringNormal=hacklist@foo.bar.com
+    --- strings.cfg ---</pre>
+<pre>
+    ftimes --digauto strings.cfg example2.image | some-other-tool</pre>
+<p>Just remember that dig strings must be URL encoded with no embedded
+white space. That's why the spaces in the first string have been
+replaced with '+'.  Also, note that first three dig strings are
+tagged.  In other words, each string has been assigned a value that
+gives it a special meaning or identity.  Because the tag for first two
+dig strings is the same, it can be used to classify both strings as
+belonging to the same group.</p>
+<p>
+</p>
+<h4><a name="example_3__change_analysis">Example 3. Change analysis</a></h4>
+<p>This example demonstrates how to detect change between two snapshots.</p>
+<p>Given that the following files are valid, uncompressed snapshots:</p>
+<pre>
+    Baseline = daily_20001230203000.map
+    Snapshot = daily_20001231203000.map</pre>
+<p>Compare MD5 digests to determine (C)hanged, (M)issing, and (N)ew files.</p>
+<p>The only critical observation needed here is that daily_20001230203000.map
+is considered to be the baseline.  In other words, a baseline is
+a snapshot taken at an arbitrary point in time to which subsequent
+snapshots are compared.</p>
+<p>This comparison is carried out with the following command:</p>
+<pre>
+    ftimes --compare none+md5 daily_20001230203000.map daily_20001231203000.map</pre>
+<p>To compare multiple attributes at the same time, simply specify the
+additional fields in the <strong>FieldMask</strong>. For example, the following mask
+would compare MD5, SHA1, and size attributes:</p>
+<pre>
+    none+md5+sha1+size</pre>
+<p>To compare all attributes at the same time, use a <strong>FieldMask</strong> of
+'all'.</p>
+<p>
+</p>
+<h4><a name="example_4__using_get_mode_to_download_a_config_file">Example 4. Using get mode to download a config file</a></h4>
+<p>This example demonstrates how to download a config file from an
+Integrity Server.</p>
+<p>The first thing that needs to be done is to obtain the necessary
+download information.  Assume that an Integrity Server has
+already been configured to serve config files.  Also, assume that
+the following information has been provided:</p>
+<pre>
+    URL = https://www.integrity.net:443/cgi-client/nph-ftimes.cgi
+    Authentication Type = Basic
+    Username/ClientID = client_1
+    Password = password
+    Server Validates Client Certificates = Y
+    Server Common Name = www.integrity.net
+    Maximum Certificate Chain Length = 2</pre>
+<p>Observe that remote server requires certificates.  This means that
+you'll need three additional PEM encoded files: Public Certificate,
+Private Key, and Bundled Certificate Authorities.  Assume that
+these files are located on the target system as follows:</p>
+<pre>
+    /usr/local/ftimes/etc/PublicCert.pem
+    /usr/local/ftimes/etc/PrivateKey.pem
+    /usr/local/ftimes/etc/BundledCAs.pem</pre>
+<p>Armed with that information, the following config file may be
+constructed.</p>
+<pre>
+    --- example5.cfg ---
+    BaseName=client_1
+    URLGetURL=https://www.integrity.net:443/cgi-client/nph-ftimes.cgi
+    URLGetRequest=MapFullConfig
+    GetAndExec=N
+    URLAuthType=basic
+    URLUsername=client_1
+    URLPassword=password
+    SSLUseCertificate=Y
+    SSLPublicCertFile=/usr/local/ftimes/etc/PublicCert.pem
+    SSLPrivateKeyFile=/usr/local/ftimes/etc/PrivateKey.pem
+    SSLPassPhrase=passphrase
+    SSLVerifyPeerCert=Y
+    SSLBundledCAsFile=/usr/local/ftimes/etc/BundledCAs.pem
+    SSLExpectedPeerCN=www.integrity.net
+    SSLMaxChainLength=2
+    --- example5.cfg ---</pre>
+<p>The following command will attempt to download a mapfull config
+file from the specified Integrity Server.  If successful, the
+contents of the config file will be written to stdout.</p>
+<pre>
+    ftimes --getmode example5.cfg</pre>
+<p>If you want to download directly to a file, you can redirect the
+output to a file or add the <strong>GetFileName</strong> control to your config
+file.  Then, if you wanted to download a config file and take a
+snapshot in one operation, simply enable <strong>GetAndExec</strong>.  This causes
+<strong>FTimes</strong> to restart in <strong>--mapfull</strong> mode.  If <strong>URLGetRequest</strong> was
+set to DigFullConfig, then <strong>FTimes</strong> would request a digfull config
+file and subsequently restart in <strong>--digfull</strong> mode.</p>
+<p>Another way to achieve the same effect is to use the original config
+file and construct the following pipeline:</p>
+<pre>
+    ftimes --getmode example5.cfg -l 6 | ftimes --mapfull -</pre>
+<p>This has the benefit that potentially sensitive configuration
+information is not specifically written to a file on disk.</p>
+<p>Finally, note that the <strong>LogLevel</strong> for the first command was set
+to its highest value.  This was done simply to reduce log output
+from that process.</p>
+<p>
+</p>
+<hr />
+<h3><a name="see_also">SEE ALSO</a></h3>
+<p><code>gzip(1)</code>, <code>magic(5)</code>, <code>openssl(1)</code></p>
+<p>
+</p>
+<hr />
+<h3><a name="author">AUTHOR</a></h3>
+<p>Klayton Monroe</p>
+<p>
+</p>
+<hr />
+<h3><a name="history">HISTORY</a></h3>
+<p>The official or given name of this utility is <strong>FTimes</strong>, but
+operationally it is referred to as <strong>ftimes</strong>.  In the fledgling
+stages of development, the name <strong>FTimes</strong> was short for <strong>F</strong>ile
+<strong>Times</strong>.  This was because its primary purpose was to collect
+timestamp information from systems suspected of having been
+compromised.</p>
+<p>The first version of <strong>FTimes</strong> was written in the Spring of 1998
+to support a forensic examination of a compromised system.  At that
+time, <strong>FTimes</strong> was primarily a workbench tool for the forensic
+practitioner.  As time passed, its audience expanded to include
+system administrators and computer security professionals who needed
+tools to monitor the integrity of their systems.  Eventually, it
+became a core component in Exodus' Content Integrity Monitoring
+Service (CIMS).</p>
+<p>In the Fall of 2001, Exodus Communications, Inc. approved my request
+to make <strong>FTimes</strong> Open Source.  At that time version two was very
+stable, but I was in the throws of creating version three which
+was a major restructuring of the code base.  Consequently, I decided
+to wait until the new version was complete before releasing it to
+the community.</p>
+<p>On January 29, 2002, the first Open Source version of FTimes was
+released from SourceForge.</p>
+<p><strong>FTimes</strong> continues to support the workbench environment, but has
+evolved into a tool that can be utilized to support Integrity
+Monitoring in large, diverse, and distributed environments.  Today,
+<strong>FTimes</strong> more appropriately equates to <strong>F</strong>ile <strong>T</strong>opography and
+<strong>I</strong>ntegrity <strong>M</strong>onitoring on an <strong>E</strong>nterprise <strong>S</strong>cale.</p>
+<p>The original design objectives for <strong>FTimes</strong> were to build a tool that:</p>
+<ul>
+<li>
+<p>does one thing extremely well (i.e., collect file attributes),</p>
+</li>
+<li>
+<p>utilizes a simple, effective, and well understood algorithm that can be applied equally well to different operating systems,</p>
+</li>
+<li>
+<p>generates output that is easily assimilated by a wide variety of existing tools,</p>
+</li>
+<li>
+<p>has built-in logging that is complete, precise, and useful for analysis purposes,</p>
+</li>
+<li>
+<p>is accurate, efficient, and minimally invasive,</p>
+</li>
+<li>
+<p>doesn't need to be &quot;installed&quot; on a given system to work on that system,</p>
+</li>
+<li>
+<p>is small enough to run from floppy even if statically compiled, and</p>
+</li>
+<li>
+<p>provides only a command line interface.</p>
+</li>
+</ul>
+
+</body>
+
+</html>

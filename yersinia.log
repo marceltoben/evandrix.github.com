@@ -1,0 +1,40 @@
+# yersinia v0.7.1 started in missscatterbrain.local on Tue Aug  9 02:21:55 2011
+
+
+ en0 iflinkname EN10MB
+ en0 iflinkdesc Ethernet
+ en0 MAC = c42c.0309.271f
+
+ fw0 iflinkname APPLE_IP_OVER_IE
+ fw0 iflinkdesc Apple IP-over-IE
+ fw0 MAC = c42c.0309.271f
+
+ en1 iflinkname EN10MB
+ en1 iflinkdesc Ethernet
+ en1 MAC = 58b0.3576.e7f1
+
+ p2p0 iflinkname RAW
+ p2p0 iflinkdesc Raw IP
+ p2p0 MAC = 0ab0.3576.e7f1
+
+ th_uptime thread = 186060800
+
+ ncurses_gui_th = 186597376
+ Notification: Warning: interface en0 selected as the default one
+pcap_lookupnet failed: en0: no IPv4 address assigned
+ en0 libnet_handler 5C000580
+pcap_lookupnet failed: fw0: no IPv4 address assigned
+pcap_compile failed: ethernet addresses supported only on ethernet/FDDI/token ring/802.11/ATM LANE/Fibre Channel
+ ncurses_gui_th_exit start...
+ ncurses_gui_th_exit finish...
+ g00dbye function called from 1919301984
+
+ ints_destroy started...
+ ints_destroy killing pcap_listener(185524224)...
+
+ thread_destroy 1919301984 destroying 185524224...
+ thread_destroy 1919301984 after PTHREAD_JOIN 185524224...
+ ints_destroy finished...
+ Showing MOTD..
+# yersinia finished on Tue Aug  9 02:22:08 2011
+

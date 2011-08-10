@@ -1,0 +1,67 @@
+=item B<FieldMask>: <mask>
+
+Applies to B<compare>, B<mapauto>, B<mapfull>, and B<maplean>.
+
+B<FieldMask> is required in B<compare>.  Its value indicates what
+fields are to be compared for change.
+
+B<FieldMask> is required in B<mapauto>, B<mapfull>, and B<maplean>.
+Its value dictates what attributes get collected or derived during
+a scan.
+
+There can be no embedded white space in a given mask specification,
+and it must comply with the following case insensitive syntax:
+
+    ALL[<+|-><field>...]
+
+or
+
+    NONE<+|-><field>[<+|-><field>...]
+
+The following fields may be specified on Windows platforms with two
+caveats:  (1) chtime is only available on Windows NT/2K systems and
+(2) altstreams is only available if the target file system is NTFS.
+
+    volume     - Volume serial number
+    findex     - File serial number
+    attributes - File attributes
+    atime      - Time of last file access
+    mtime      - Time of last file modification
+    ctime      - Creation time
+    chtime     - Change time (undocumented)
+    size       - File size in bytes
+    altstreams - Number of alternate or named streams
+    md5        - MD5 digest of the file's data stream
+    sha1       - SHA1 digest of the file's data stream
+    sha256     - SHA256 digest of the file's data stream
+    magic      - File type
+
+The following fields may be specified on UNIX platforms:
+
+    dev        - Device identification number
+    inode      - File identification number
+    mode       - File attributes and permissions
+    nlink      - Number of hard links
+    uid        - User identification number
+    gid        - Group identification number
+    rdev       - Device type (contains major/minor numbers)
+    atime      - Time of last file access
+    mtime      - Time of last file modification
+    ctime      - Time of last file status change
+    size       - File size in bytes
+    md5        - MD5 digest of the file's data stream
+    sha1       - SHA1 digest of the file's data stream
+    sha256     - SHA256 digest of the file's data stream
+    magic      - File type
+
+In addition to the standard fields, the following group fields may be
+specified:
+
+    hashes     - Compute all supported hash values
+    times      - Collect all supported time values
+
+For example, the "hashes field is equivalent to "md5+sha1+sha256".
+Similarly, the "times" field is equivalent to "atime+mtime+ctime" and
+"atime+mtime+ctime+chtime" on UNIX and Windows platforms,
+respectively.
+

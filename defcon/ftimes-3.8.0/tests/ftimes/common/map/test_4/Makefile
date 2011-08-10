@@ -1,0 +1,15 @@
+
+PROJECT_ROOT=../../../../..
+
+PROJECT_SRCDIR=.
+
+PROJECT_TOPDIR=../../../../..
+
+TARGET_PROGRAM=${FTIMES}
+
+
+
+INCLUDES_PREFIX=${PROJECT_ROOT}/Mk
+
+include ${INCLUDES_PREFIX}/common-tests.mk
+

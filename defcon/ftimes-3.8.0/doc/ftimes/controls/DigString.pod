@@ -1,0 +1,7 @@
+=item B<DigString>: <string> [<tag>]
+
+Applies to B<digauto>, B<digfull>, and B<diglean>.
+
+B<DigString> is an alias for B<DigStringNormal>, and it is being
+phased out.  Please use B<DigStringNormal> instead.
+

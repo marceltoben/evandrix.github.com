@@ -1,0 +1,16 @@
+
+1 Version
+
+  $Id: README,v 1.3 2007/01/02 23:11:56 mavrik Exp $
+
+2 General
+
+  Building the project's documentation is now done at build time.
+  Because of this, your build process may fail if your system does not
+  have current versions of Perl (e.g., 5.8.7 or higher), pod2man, and
+  pod2html installed.
+
+  If necessary, you can disable document builds by modifying the
+  project's root-level Makefile (i.e., Makefile.in).  Simply remove
+  the "doc" entry from the SUBDIRS variable.
+

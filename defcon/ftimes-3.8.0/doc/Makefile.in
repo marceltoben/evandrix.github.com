@@ -1,0 +1,13 @@
+
+PROJECT_ROOT=..
+
+PREFIX=@prefix@
+
+SRCDIR=@srcdir@
+
+VPATH=${SRCDIR}
+
+SUBDIRS=@doc_subdirs@
+
+include ${PROJECT_ROOT}/Mk/common-subdir.mk
+

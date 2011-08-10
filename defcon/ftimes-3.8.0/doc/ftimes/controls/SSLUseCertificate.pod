@@ -1,0 +1,8 @@
+=item B<SSLUseCertificate>: [Y|N]
+
+Applies to B<digfull>, B<mapfull>, and B<getmode>.
+
+B<SSLUseCertificate> is optional.  When enabled ('Y' or 'y'), it
+instructs the application to provide client side certificate
+authentication, if necessary.  The default value is 'N'.
+

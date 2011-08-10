@@ -1,0 +1,255 @@
+=head1 EXAMPLES
+
+The following examples are intended to demonstrate different ways
+of configuring and using B<FTimes>.  Any text encapsulated between
+'--- XXX ---' delimiters represents a file's content.
+
+=head2 Example 1. Using map mode to baseline and upload
+
+This example demonstrates how to baseline a system and upload the
+resulting snapshot to an Integrity Server.
+
+The first thing that needs to be done is to obtain the necessary
+upload information.  Assume that an Integrity Server has already
+been configured to receive snapshots.  Also, assume that the
+following information has been provided:
+
+    URL = https://192.168.1.50:443/cgi-client/nph-ftimes.cgi
+    Authentication Type = Basic
+    Username/ClientID = client_1
+    Password = password
+    AllowedFieldMask = ALL-magic
+    AllowedDataType = map
+    Server Validates Client Certificates = N
+
+Observe that remote server speaks HTTPS.  Therefore, an SSL enabled
+version of B<FTimes> is needed.  To determine if B<FTimes> has SSL
+support, run the following command:
+
+    ftimes --version
+
+If B<FTimes> has SSL support, the output will have the following format:
+
+    ftimes X.X.X ssl
+
+where X.X.X is a version number.
+
+The next item to tackle is the creation of a suitable config file.
+The following file contains the necessary directives to complete
+this task.
+
+    --- example1.cfg ---
+    BaseName=client_1
+    OutDir=.
+    RunType=baseline
+    FieldMask=ALL-magic
+    URLPutSnapshot=Y
+    URLPutURL=https://192.168.1.50:443/cgi-client/nph-ftimes.cgi
+    URLAuthType=basic
+    URLUsername=client_1
+    URLPassword=password
+    Compress=Y
+    --- example1.cfg ---
+
+Note that there are no B<Include> directives.  This omission causes
+B<FTimes> to map everything (i.e., the entire system).
+
+Also, note that B<OutDir> has been set to the current directory
+(i.e., '.').  This, while entirely legal, assumes that (1) '.' is
+writeable and (2) there is enough disk space to hold all generated
+output.
+
+Compression was enabled to expedite data transfer.
+
+The last step is to run B<FTimes> and review the corresponding log
+output to ensure that snapshot was uploaded successfully.
+
+    ftimes --mapfull example1.cfg
+
+=head2 Example 2. Using dig mode to search for strings
+
+This example demonstrates how to to search files and directories
+for a set of HEX/ASCII and regular expression strings.
+
+Given that the target file system is C</disk1>, and the list of
+strings to to be sought are:
+
+    String1 = /dev/ptyqa
+    String2 = 0xda 0xbe
+    String3 = 0x00 A 0x00 A 0x00 A 0x00 A
+    String4 = A date of the form <YYYY-MM-DD HH:MM:SS>
+    String5 = Line oriented IP addresses of the form <BOL|tab><192.168.1.*><tab|EOL>
+
+where
+
+    BOL = Beginning Of Line
+    EOL = End Of Line
+
+Strings 1-3 are expressed as (ignore whitespace) ASCII, HEX, and
+HEX/ASCII, respectively.  Strings 4 and 5, on the other hand, are
+textual descriptions that must be translated into regular expressions.
+Assume that the required B<MatchLimit> is three.  That is to say,
+no more than three matches per file of any single string should be
+recorded.
+
+The following config file contains those directives required to
+search all files in /disk1.
+
+    --- example2.cfg ---
+    BaseName=digger
+    OutDir=.
+    MatchLimit=3
+    DigStringNormal=/dev/ptyqa
+    DigStringNormal=%da%be
+    DigStringNoCase=%00A%00A%00A%00A
+    DigStringRegExp=\d{4}-\d{2}-\d{2}\x20\d{2}:\d{2}:\d{2}
+    DigStringRegExp=(?m)(?:^|\t)(192\.168\.1\.\d{1,3})(?=\t|$)
+    Include=/disk1
+    --- example2.cfg ---
+
+Observe that strings two and three are URL encoded and that string
+three will be processed in a case insensitive manner.  Read the
+B<DigStringNormal> control description for more details on URL
+encoding.  Also notice that the fourth and fifth strings correspond
+to Perl compatible regular expressions -- these types of dig strings
+are available if you compiled B<FTimes> with PCRE support.  With
+B<DigStringRegExp> patterns, however, you must specify no more than
+one capturing '()' subpattern.  You can use '(?:)' if you require
+additional parentheses for grouping purposes.  If you do not specify
+a capturing subpattern, then the entire match will be captured.  In
+this particular case, only the IP address will be captured. Also note
+the use of '\x20' to represent a single space. This translation
+necessary because dig strings may not contain embedded white space.
+
+At this point B<FTimes> may be run as follows:
+
+    ftimes --diglean example2.cfg
+
+If spontaneity is desired over strict configuration, switch to the
+B<digauto> mode of operation.  In this mode elaborate config files
+aren't necessary, and output is written to stdout.  Also, no match
+limit is imposed.  The following example shows how to search an
+image file (e.g., example2.image) for a set of specific strings.
+The output, if any, can be piped into other tools that take their
+input on stdin.
+
+    --- strings.cfg ---
+    DigStringNormal=This+box+is+0wn3d    attack_program
+    DigStringNormal=3l33t                attack_program
+    DigStringNormal=175.20.1.7           attack_ip
+    DigStringNormal=hacklist@foo.bar.com
+    --- strings.cfg ---
+
+    ftimes --digauto strings.cfg example2.image | some-other-tool
+
+Just remember that dig strings must be URL encoded with no embedded
+white space. That's why the spaces in the first string have been
+replaced with '+'.  Also, note that first three dig strings are
+tagged.  In other words, each string has been assigned a value that
+gives it a special meaning or identity.  Because the tag for first two
+dig strings is the same, it can be used to classify both strings as
+belonging to the same group.
+
+=head2 Example 3. Change analysis
+
+This example demonstrates how to detect change between two snapshots.
+
+Given that the following files are valid, uncompressed snapshots:
+
+    Baseline = daily_20001230203000.map
+    Snapshot = daily_20001231203000.map
+
+Compare MD5 digests to determine (C)hanged, (M)issing, and (N)ew files.
+
+The only critical observation needed here is that daily_20001230203000.map
+is considered to be the baseline.  In other words, a baseline is
+a snapshot taken at an arbitrary point in time to which subsequent
+snapshots are compared.
+
+This comparison is carried out with the following command:
+
+    ftimes --compare none+md5 daily_20001230203000.map daily_20001231203000.map
+
+To compare multiple attributes at the same time, simply specify the
+additional fields in the B<FieldMask>. For example, the following mask
+would compare MD5, SHA1, and size attributes:
+
+    none+md5+sha1+size
+
+To compare all attributes at the same time, use a B<FieldMask> of
+'all'.
+
+=head2 Example 4. Using get mode to download a config file
+
+This example demonstrates how to download a config file from an
+Integrity Server.
+
+The first thing that needs to be done is to obtain the necessary
+download information.  Assume that an Integrity Server has
+already been configured to serve config files.  Also, assume that
+the following information has been provided:
+
+    URL = https://www.integrity.net:443/cgi-client/nph-ftimes.cgi
+    Authentication Type = Basic
+    Username/ClientID = client_1
+    Password = password
+    Server Validates Client Certificates = Y
+    Server Common Name = www.integrity.net
+    Maximum Certificate Chain Length = 2
+
+Observe that remote server requires certificates.  This means that
+you'll need three additional PEM encoded files: Public Certificate,
+Private Key, and Bundled Certificate Authorities.  Assume that
+these files are located on the target system as follows:
+
+    /usr/local/ftimes/etc/PublicCert.pem
+    /usr/local/ftimes/etc/PrivateKey.pem
+    /usr/local/ftimes/etc/BundledCAs.pem
+
+Armed with that information, the following config file may be
+constructed.
+
+    --- example5.cfg ---
+    BaseName=client_1
+    URLGetURL=https://www.integrity.net:443/cgi-client/nph-ftimes.cgi
+    URLGetRequest=MapFullConfig
+    GetAndExec=N
+    URLAuthType=basic
+    URLUsername=client_1
+    URLPassword=password
+    SSLUseCertificate=Y
+    SSLPublicCertFile=/usr/local/ftimes/etc/PublicCert.pem
+    SSLPrivateKeyFile=/usr/local/ftimes/etc/PrivateKey.pem
+    SSLPassPhrase=passphrase
+    SSLVerifyPeerCert=Y
+    SSLBundledCAsFile=/usr/local/ftimes/etc/BundledCAs.pem
+    SSLExpectedPeerCN=www.integrity.net
+    SSLMaxChainLength=2
+    --- example5.cfg ---
+
+The following command will attempt to download a mapfull config
+file from the specified Integrity Server.  If successful, the
+contents of the config file will be written to stdout.
+
+    ftimes --getmode example5.cfg
+
+If you want to download directly to a file, you can redirect the
+output to a file or add the B<GetFileName> control to your config
+file.  Then, if you wanted to download a config file and take a
+snapshot in one operation, simply enable B<GetAndExec>.  This causes
+B<FTimes> to restart in B<--mapfull> mode.  If B<URLGetRequest> was
+set to DigFullConfig, then B<FTimes> would request a digfull config
+file and subsequently restart in B<--digfull> mode.
+
+Another way to achieve the same effect is to use the original config
+file and construct the following pipeline:
+
+    ftimes --getmode example5.cfg -l 6 | ftimes --mapfull -
+
+This has the benefit that potentially sensitive configuration
+information is not specifically written to a file on disk.
+
+Finally, note that the B<LogLevel> for the first command was set
+to its highest value.  This was done simply to reduce log output
+from that process.
+

@@ -1,0 +1,168 @@
+=head1 DESCRIPTION
+
+B<FTimes> is a system baselining and evidence collection tool.
+The primary purpose of B<FTimes> is to gather and/or develop
+information about specified directories and files in a manner
+conducive to intrusion analysis.
+
+B<FTimes> is a lightweight tool in the sense that it doesn't need
+to be "installed" on a given system to work on that system, it is
+small enough to fit on a single floppy, and it provides only a
+command line interface.
+
+Preserving records of all activity that occurs during a snapshot
+is important for intrusion analysis and evidence admissibility.
+For this reason, B<FTimes> was designed to log four types of
+information: configuration settings, progress indicators, metrics,
+and errors.  Output produced by B<FTimes> is delimited text, and
+therefore, is easily assimilated by a wide variety of existing
+tools.
+
+B<FTimes> basically implements two general capabilities: file
+topography and string search.  File topography is the process of
+mapping key attributes of directories and files on a given file
+system.  String search is the process of digging through directories
+and files on a given file system while looking for a specific
+sequence of bytes.  Respectively, these capabilities are referred
+to as map mode and dig mode.
+
+B<FTimes> supports two operating environments: workbench and
+client-server.  In the workbench environment, the operator uses
+B<FTimes> to do things such as examine evidence (e.g., a disk image
+or files from a compromised system), analyze snapshots for change,
+search for files that have specific attributes, verify file integrity,
+and so on.  In the client-server environment, the focus shifts from
+what the operator can do locally to how the operator can efficiently
+monitor, manage, and aggregate snapshot data for many hosts.  In
+the client-server environment, the primary goal is to move collected
+data from the host to a centralized system, known as an Integrity
+Server, in a secure and authenticated fashion.  An Integrity Server
+is a hardened system that has been configured to handle B<FTimes>
+GET, PING, and PUT HTTP/S requests.
+
+The B<FTimes> distribution contains a script called nph-ftimes.cgi
+that may be used in conjunction with a Web server to implement a
+public Integrity Server interface.  Deeper topics such as the
+construction and internal mechanics of an Integrity Server are not
+addressed in this document.
+
+B<FTimes> provides several modes of operation that either implement
+its basic capabilities or support them in some way.  These modes
+are described in the MODES OF OPERATION section of this document
+and are outlined here:
+
+=over 5
+
+=item *
+
+cfgtest - check config file syntax for a given file and mode
+
+=item *
+
+compare - compare two map snapshots to detect change
+
+=item *
+
+decoder - decode a compressed map snapshot
+
+=item *
+
+digauto - search for strings in files using a default configuration
+
+=item *
+
+digfull - search for strings in files using a specified configuration
+
+=item *
+
+diglean - same as digfull except that the range of controls is limited and output can be written directly to std{err,out}
+
+=item *
+
+getmode - download a config file from an Integrity Server
+
+=item *
+
+mapauto - collect directory and file attributes using a default configuration
+
+=item *
+
+mapfull - collect directory and file attributes using a specified configuration
+
+=item *
+
+maplean - same as mapfull except that the range of controls is limited and output can be written directly to std{err,out}
+
+=item *
+
+version - display version information and exit
+
+=back
+
+B<FTimes> also has many controls which dictate how it will execute.
+Some modes support very few controls while others support quite a
+few.  The following table summarizes what controls apply to each
+mode of operation.  An 'X' indicates that the given control applies
+to the selected mode.
+
+                      ==========   MODES   =======
+                      c  c  d  d  d  g  m  m  m  v
+                      f  o  i  i  i  e  a  a  a  e
+                      g  m  g  g  g  t  p  p  p  r
+                      t  p  a  f  l  m  a  f  l  s
+                      e  a  u  u  e  o  u  u  e  i
+                      s  r  t  l  a  d  t  l  a  o
+                      t  e  o  l  n  e  o  l  n  n
+   ======   CONTROL   ============================
+   AnalyzeBlockSize   .  .  .  X  X  .  .  X  X  .
+   AnalyzeCarrySize   .  .  .  X  X  .  .  .  .  .
+   AnalyzeDeviceFiles .  .  .  X  X  .  .  X  X  .
+   AnalyzeRemoteFiles .  .  .  X  X  .  .  X  X  .
+   AnalyzeStepSize    .  .  .  X  X  .  .  .  .  .
+   BaseName           .  .  .  X  X  X  .  X  X  .
+   BaseNameSuffix     .  .  .  X  X  .  .  X  X  .
+   Compress           .  .  .  .  .  .  .  X  X  .
+   DigString          .  .  X  X  X  .  .  .  .  .
+   DigStringNoCase    .  .  X  X  X  .  .  .  .  .
+   DigStringNormal    .  .  X  X  X  .  .  .  .  .
+   DigStringRegExp    .  .  X  X  X  .  .  .  .  .
+   DigStringXMagic    .  .  X  X  X  .  .  .  .  .
+   EnableRecursion    .  .  .  X  X  .  .  X  X  .
+   Exclude            .  .  .  X  X  .  .  X  X  .
+   ExcludeFilter      .  .  .  X  X  .  .  X  X  .
+   ExcludesMustExist  .  .  .  X  X  .  .  X  X  .
+   FieldMask          .  X  .  .  .  .  X  X  X  .
+   FileSizeLimit      .  .  .  X  X  .  .  X  X  .
+   GetAndExec         .  .  .  .  .  X  .  .  .  .
+   GetFileName        .  .  .  .  .  X  .  .  .  .
+   HashDirectories    .  .  .  .  .  .  .  X  X  .
+   HashSymbolicLinks  .  .  .  .  .  .  .  X  X  .
+   Import             .  .  .  X  X  X  .  X  X  .
+   Include            .  .  .  X  X  .  .  X  X  .
+   IncludeFilter      .  .  .  X  X  .  .  X  X  .
+   IncludesMustExist  .  .  .  X  X  .  .  X  X  .
+   LogDir             .  .  .  X  X  .  .  X  X  .
+   MagicFile          .  .  .  .  .  .  .  X  X  .
+   MapRemoteFiles     .  .  .  X  X  .  .  X  X  .
+   MatchLimit         .  .  .  X  X  .  .  .  .  .
+   NewLine            .  .  .  X  X  .  .  X  X  .
+   OutDir             .  .  .  X  X  .  .  X  X  .
+   RequirePrivilege   .  .  .  X  X  .  .  X  X  .
+   RunType            .  .  .  X  .  .  .  X  .  .
+   SSLBundledCAsFile  .  .  .  X  .  X  .  X  .  .
+   SSLExpectedPeerCN  .  .  .  X  .  X  .  X  .  .
+   SSLMaxChainLength  .  .  .  X  .  X  .  X  .  .
+   SSLPassPhrase      .  .  .  X  .  X  .  X  .  .
+   SSLPrivateKeyFile  .  .  .  X  .  X  .  X  .  .
+   SSLPublicCertFile  .  .  .  X  .  X  .  X  .  .
+   SSLUseCertificate  .  .  .  X  .  X  .  X  .  .
+   SSLVerifyPeerCert  .  .  .  X  .  X  .  X  .  .
+   URLAuthType        .  .  .  X  .  X  .  X  .  .
+   URLGetRequest      .  .  .  .  .  X  .  .  .  .
+   URLGetURL          .  .  .  .  .  X  .  .  .  .
+   URLPassword        .  .  .  X  .  X  .  X  .  .
+   URLPutSnapshot     .  .  .  X  .  .  .  X  .  .
+   URLPutURL          .  .  .  X  .  .  .  X  .  .
+   URLUnlinkOutput    .  .  .  X  .  .  .  X  .  .
+   URLUsername        .  .  .  X  .  X  .  X  .  .
+

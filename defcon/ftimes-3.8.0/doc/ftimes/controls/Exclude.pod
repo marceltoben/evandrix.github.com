@@ -1,0 +1,24 @@
+=item B<Exclude>: [directory|file|link]
+
+Applies to B<digfull>, B<diglean>, B<mapfull>, and B<maplean>.
+
+B<Exclude> controls are optional, and there is no predefined limit
+on the number that may be specified.  However, there can be only
+one B<Exclude> control/value pair per line.  It is not necessary
+to explicitly exclude special file systems such as PROCFS
+as B<FTimes> will detect their presence and automatically exclude
+them.  B<Exclude> values must be specified as a fully qualified
+path (see B<Include> control).  If B<ExcludesMustExist> is enabled,
+then each B<Exclude> must reference an existing file, directory,
+or symbolic link.  Otherwise, B<FTimes> will abort.
+
+Note: Symbolic links are not supported in WIN32-based file systems.
+
+Note: The exlude mechanism works on an exact match basis, but it
+can be used to produce a recursive effect.  For example, if you
+include '/' and exclude '/etc', then '/etc' and anything below it
+will not be processed.  However, if you include '/etc/hosts' and
+exclude '/etc', then '/etc/hosts' will be processed because the
+recursive effect would not be in play, and there is no B<Exclude>
+that exactly matches it.
+

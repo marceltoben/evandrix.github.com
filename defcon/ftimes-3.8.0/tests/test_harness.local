@@ -1,0 +1,59 @@
+#!/usr/bin/perl -w
+######################################################################
+#
+# $Id: test_harness.local,v 1.8 2006/07/14 01:09:45 mavrik Exp $
+#
+######################################################################
+
+use strict;
+
+######################################################################
+#
+# FillFile
+#
+######################################################################
+
+sub FillFile
+{
+  my ($sFile, $sPattern, $sCount) = @_;
+
+  if (!open(FH, "> $sFile"))
+  {
+    return undef;
+  }
+  binmode(FH);
+
+  if ($sPattern =~ /^fill_byte_loop$/)
+  {
+    for (my $sValue = 0; $sValue < $sCount; $sValue++)
+    {
+      if (!print(FH pack("C", ($sValue % 256))))
+      {
+        return undef;
+      }
+    }
+  }
+  elsif ($sPattern =~ /^fill_2_byte_loop$/)
+  {
+    for (my $sValue = 0; $sValue < $sCount; $sValue++)
+    {
+      my $sHByte = pack("C", ((($sValue % 65536) >> 8) & 0xff));
+      my $sLByte = pack("C", ((($sValue % 65536) >> 0) & 0xff));
+      if (!print(FH $sHByte, $sLByte))
+      {
+        return undef;
+      }
+    }
+  }
+  else
+  {
+    my $sValue = $sPattern;
+    if (!print(FH $sValue x $sCount))
+    {
+      return undef;
+    }
+  }
+  close(FH);
+}
+
+1;
