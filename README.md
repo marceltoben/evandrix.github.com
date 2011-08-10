@@ -43,6 +43,9 @@
 
 ---
 
+### Bash Shell Scripting Guides
+ * [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html)
+
 ### Code Search
  * [Google Code Search](http://www.google.com/codesearch)
  * Python > [Nullege](http://nullege.com)
