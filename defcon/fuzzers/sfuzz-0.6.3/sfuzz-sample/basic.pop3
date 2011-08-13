@@ -1,0 +1,72 @@
+# minimal POP3 fuzzer for sfuzz
+# - Aaron Conole
+
+# choose 10101 because I've seen people use 10000
+maxseqlen=10101
+
+# step in 1024 byte blocks
+seqstep=1024
+
+# sequence of 'A' is good enough for just finding faults
+sequence=A
+sequence=}
+sequence={
+
+include basic-fuzz-strings.list
+
+!CRLF=0d0a
+
+#lime terminator
+lineterm=CRLF
+
+# 200ms timeout between requests
+reqwait=200
+endcfg
+FUZZ
+--
+USER FUZZ
+--
+PASS FUZZ
+--
+USER MAILUSER
+PASS FUZZ
+--
+USER MAILUSER
+POPPASSWD FUZZ
+--
+USER MAILUSER
+PASS MAILPASS
+LIST FUZZ
+--
+USER MAILUSER
+PASS MAILPASS
+RETR FUZZ
+--
+USER MAILUSER
+PASS MAILPASS
+DELE FUZZ
+--
+USER MAILUSER
+PASS MAILPASS
+APOP FUZZ __SEQUENCE_NUM_ASCII__
+--
+USER MAILUSER
+PASS MAILPASS
+APOP __SEQUENCE_NUM_ASCII__ FUZZ
+--
+APOP MAILUSER FUZZ
+--
+TOP FUZZ __SEQUENCE_NUM_ASCII__
+--
+USER MAILUSER
+PASS MAILPASS
+TOP FUZZ __SEQUENCE_NUM_ASCII__
+--
+USER MAILUSER
+PASS MAILPASS
+TOP __SEQUENCE_NUM_ASCII__ FUZZ
+--
+USER MAILUSER
+PASS MAILPASS
+UIDL FUZZ
+--

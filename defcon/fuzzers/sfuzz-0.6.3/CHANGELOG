@@ -1,0 +1,60 @@
+v 0.6.3
+  Fixed a sniffer error when using optimizing compilers
+  Added a string match support to snoop
+  Fixed the configure script to allow plugin disabling
+  Addressed a buffer overflow in the sfuzz framework (note: it's not exactly "future proof" yet)
+  Addressed an invalid write condition
+  
+v 0.6.2
+  Updated snoop to a point where it will now function as a psuedo-tcpdump under
+          linux
+  Fixed some plugin related bugs
+  Added a config option --force-symbols for forcing the system to load extra
+          symbol information
+  Fixed a logic error regarding mseql and seqsize
+
+v 0.6.1
+  Fixed a UDP Crash
+
+v 0.6
+  Added configure script for unix and DOS.
+  Added line terminator specifier
+  Added begin-at-test specifier
+  Added end-on-fail specifier
+  Added IPv6 support
+  Added hex specifier for literal strings
+  Print test case number
+  Added server-side plugin and sample browser fuzzing script
+  Added response subtitutions (ie: use data from the previous packet)
+       -offset/text based only
+  Fixed copius amounts of bugs (about 60 man-hours went into this effort)
+
+v 0.5
+  Added rudimentary plugin support.
+  Added binary value increment support.
+  Incremental logfile output.
+
+v 0.4
+  Fixed the windows snoop version - sniffing responses under windows - hooray!
+  Added hex output option, and trim newline output option
+  Got initial binary fuzzing working
+  Fixed a bug with pattern matching which occured with nesting
+  Added an emacs major mode for editing config files (load-file sfuzz-mode.el)
+  
+v 0.4 rc1
+  Streamlined some of the code
+  Fixed bugs (duh!) mostly with allocations and formatting
+    - also got a linux snooper working. The windows port is coming.
+  !! Added support for binary string substitution !! BIG NEW FEATURE!
+  Included binary fuzzers!  
+
+v 0.3
+  Added support for variables within test cases
+  Added support for sequence stepping
+
+v 0.2
+  Fixed a bug with seqence lengths > 8192 bytes
+  Added support for connection reuse between fuzz cases
+
+v 0.1
+  Initial release

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Deployment</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Deployment">Deployment</a>
+<ul>
+<li><a href="#sec:Simple_executables">Simple executables</a></li>
+<li><a href="#sec:Self_contained_applications">Self contained applications</a>
+<ul>
+<li><a href="#sec:Platform-specific_notes">Platform-specific notes</a>
+<ul>
+<li><a href="#sec:Linux">Linux</a></li>
+<li><a href="#sec:Windows">Windows</a></li>
+<li><a href="#sec:MacOS_X">MacOS X</a></li>
+<li><a href="#sec:Other_UNIX_flavors">Other UNIX flavors</a></li></ul></li></ul></li>
+<li><a href="#sec:Deploying_source_code">Deploying source code</a></li></ul></li></ul></div><h2 id="sec:Deployment"><a href="#sec:Deployment">Deployment</a></h2><p>CHICKEN generates fully native binaries that can be distributed like normal C/C++ programs. There are various methods of deployment, depending on platform, linkage, external dependencies and whether the application should be built from sources or precompiled and whether the CHICKEN runtime-libraries are expected on the destination system or if the application should be completely self-contained.</p><h3 id="sec:Simple_executables"><a href="#sec:Simple_executables">Simple executables</a></h3><p>The simplest form of deployment is the single executable. The runtime libraries (<tt>libchicken.so</tt> or <tt>libchicken.dll</tt> is required for these programs to run, unless you link your application statically:</p><pre> % csc myprogram.scm
+ % ldd myprogram               # on linux
+           linux-gate.so.1 =&gt;  (0xb805c000)
+           libchicken.so.5 =&gt; /home/felix/chicken/core/lib/libchicken.so.5 (0xb7c22000)
+           libm.so.6 =&gt; /lib/tls/i686/cmov/libm.so.6 (0xb7bec000)
+           libdl.so.2 =&gt; /lib/tls/i686/cmov/libdl.so.2 (0xb7be7000)
+           libc.so.6 =&gt; /lib/tls/i686/cmov/libc.so.6 (0xb7a84000)
+           /lib/ld-linux.so.2 (0xb805d000)
+ % ls -l myprogram
+ -rwxr-xr-x 1 felix felix   34839 2010-02-22 20:19 x</pre><p>Linking your application statically will include the runtime library in the executable, but this will increase its size substantially:</p><pre> % ls myprogram
+ -rwxr-xr-x 1 felix felix 3566656 2010-02-22 20:30 myprogram</pre><p>Programs distributed this way can only use <a href="Extensions.html">Extensions</a> if these extensions get linked in statically, which is basically supported but not available for all extensions.</p><h3 id="sec:Self_contained_applications"><a href="#sec:Self_contained_applications">Self contained applications</a></h3><p>The solution to many of these problems is creating an application directory that contains the executable, the runtime libraries, extensions and additional support files needed by the program. The executable has to be linked specially to make sure the correct included runtime library is used. You do this by using the <tt>-deploy</tt> options provided by the compiler driver, <tt>csc</tt>:</p><pre> % csc -deploy myprogram.scm
+ % ls -l myprogram
+ -rwxr-xr-x 1 felix felix 7972753 2010-02-22 20:19 libchicken.so.5
+ -rwxr-xr-x 1 felix felix   34839 2010-02-22 20:19 myprogram
+ % ldd myprogram
+         linux-gate.so.1 =&gt;  (0xb806a000)
+         libchicken.so.5 =&gt; /home/felix/tmp/myprogram/libchicken.so.5 (0xb7c30000)
+         libm.so.6 =&gt; /lib/tls/i686/cmov/libm.so.6 (0xb7bfa000)
+         libdl.so.2 =&gt; /lib/tls/i686/cmov/libdl.so.2 (0xb7bf5000)
+         libc.so.6 =&gt; /lib/tls/i686/cmov/libc.so.6 (0xb7a92000)
+         /lib/ld-linux.so.2 (0xb806b000)</pre><p>As can be seen here, <tt>myprogram</tt> is prepared to load the contained <tt>libchicken</tt>, not any installed in the system that happens to have the same name.</p><p>You can even install extensions inside the application directory:</p><pre> % chicken-install -deploy -p $PWD/myprogram defstruct
+ ...
+ % ls -l myprogram
+ -rwxr-xr-x 1 felix felix   82842 2010-02-22 20:24 defstruct.import.so
+ -rw-r--r-- 1 felix felix     182 2010-02-22 20:24 defstruct.setup-info
+ -rwxr-xr-x 1 felix felix   11394 2010-02-22 20:24 defstruct.so
+ -rwxr-xr-x 1 felix felix 7972753 2010-02-22 20:19 libchicken.so.5
+ -rwxr-xr-x 1 felix felix   34839 2010-02-22 20:19 myprogram</pre><p>We can check with ldd that those compiled extension libraries are linked with the correct library:</p><pre> % ldd myprogram/*.so
+ /home/felix/tmp/myprogram/defstruct.import.so:
+         linux-gate.so.1 =&gt;  (0xb7f4f000)
+         libchicken.so.5 =&gt; /home/felix/tmp/myprogram/libchicken.so.5 (0xb7b08000)
+         libm.so.6 =&gt; /lib/tls/i686/cmov/libm.so.6 (0xb7ad2000)
+         libdl.so.2 =&gt; /lib/tls/i686/cmov/libdl.so.2 (0xb7acd000)
+         libc.so.6 =&gt; /lib/tls/i686/cmov/libc.so.6 (0xb796a000)
+         /lib/ld-linux.so.2 (0xb7f50000)
+ /home/felix/tmp/myprogram/defstruct.so:
+         linux-gate.so.1 =&gt;  (0xb80c9000)
+         libchicken.so.5 =&gt; /home/felix/tmp/myprogram/libchicken.so.5 (0xb7c8c000)
+         libm.so.6 =&gt; /lib/tls/i686/cmov/libm.so.6 (0xb7c56000)
+         libdl.so.2 =&gt; /lib/tls/i686/cmov/libdl.so.2 (0xb7c51000)
+         libc.so.6 =&gt; /lib/tls/i686/cmov/libc.so.6 (0xb7aee000)
+         /lib/ld-linux.so.2 (0xb80ca000)</pre><p>The <tt>-deploy</tt> option passed to <tt>csc</tt> when compiling <tt>myprogram.scm</tt> has taken care of setting up the application directory as the &quot;repository&quot; for extensions that the program will use at runtime:</p><pre> % myprogram/myprogram -:d
+ [debug] application startup...
+ [debug] heap resized to 500000 bytes
+ [debug] stack bottom is 0xbfdbdf60.
+ [debug] entering toplevel toplevel...
+ [debug] stack resized to 131072 bytes
+ [debug] entering toplevel library_toplevel...
+ [debug] entering toplevel eval_toplevel...
+ [debug] entering toplevel expand_toplevel...
+ [debug] loading compiled module `/home/felix/tmp/myprogram/defstruct.so' (handle is 0x886ce98)
+ ...</pre><p>There is one restriction that you should be aware of, though: any extension that you install inside an application directory must first be installed system-wide (unless you use a custom repository with the <tt>CHICKEN_REPOSITORY</tt> environment variable), so that <tt>csc</tt>/<tt>chicken</tt> will find an import library for the extension. Just make sure you have all the extensions installed that you use in an application (something you will normally have anyway).</p><p>You can execute the program from its location, or you can install a symbolic link pointing to it - it will find the correct directory where the actual executable is located.</p><p>The application directory is fully &quot;portable&quot; in the sense that it will run directly from an USB-stick or any other removable media. At runtime the program can find out its location by invoking the <tt>repository-path</tt> procedure, which will return the full pathname in which the application is located.</p><p>Should the program depend on more libraries which are not available by default on the intended target systems, and which you would like to include in your application, you will have to hunt them down yourself and place them in the application directory. If these again have dependencies, things will get complicated and will involve things like patching binaries or writing &quot;trampoline&quot; shell scripts to run your application.</p><p>Deployment is fully compatible with &quot;cross CHICKENs&quot; (see <a href="Cross%20development.html">Cross development</a>).</p><h4 id="sec:Platform-specific_notes"><a href="#sec:Platform-specific_notes">Platform-specific notes</a></h4><h5 id="sec:Linux"><a href="#sec:Linux">Linux</a></h5><p>Deployment is fully supported on Linux</p><h5 id="sec:Windows"><a href="#sec:Windows">Windows</a></h5><p>Deployment is fully supported on Windows. Since Windows looks up dynamic link libraries in the programs original location by default, adding third-party libraries to the application directory is no problem. The freely available <a href="http://dependencywalker.com">Dependency Walker</a> tool is helpful to find out what DLLs your application depends on.</p><h5 id="sec:MacOS_X"><a href="#sec:MacOS_X">MacOS X</a></h5><p>On the Macintosh, passing the <tt>-gui</tt> option to <tt>csc</tt> will result in a true GUI application bundle (named <tt>&lt;your-program&gt;.app</tt>).</p><p>Invoking</p><pre> % otool -L &lt;yourprogram&gt;</pre><p>will list dynamic libraries that your application needs.</p><h5 id="sec:Other_UNIX_flavors"><a href="#sec:Other_UNIX_flavors">Other UNIX flavors</a></h5><p>Setting up the application executable to load runtime libraries from the same directory is supported on FreeBSD, OpenBSD and Solaris. NetBSD supports this from version 5.0 onwards - this is currently disabled in <tt>csc</tt> for this particular platform.</p><h3 id="sec:Deploying_source_code"><a href="#sec:Deploying_source_code">Deploying source code</a></h3><p>An alternative to deploying binaries is deployment as compiled C sources. Usually, you just need to ship your application code, compiled to <tt>.c</tt> files and the <tt>chicken.h</tt> and <tt>runtime.c</tt> files from the CHICKEN sources. You will also need the <tt>.c</tt> files of any library units your program uses. Compiling everything and linking it together should work on most systems. Consult the CHICKEN makefiles for more information about optimization options, etc.</p><hr /><p>Previous: <a href="Extensions.html">Extensions</a></p><p>Next: <a href="Cross%20development.html">Cross development</a></p></div></div></body>

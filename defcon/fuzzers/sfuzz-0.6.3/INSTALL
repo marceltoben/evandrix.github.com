@@ -1,0 +1,25 @@
+simple fuzzer installation/building guide
+
+simple fuzzer uses a custom configure script for building a standard GNU make
+build script. running './configure' (or 'configure' for the windows users)
+should work to build a script for a "standard" simple fuzzer distribution.
+
+simple fuzzer also comes with some ssl plugin example, as well as a really 
+simple sniffer called snoop. these may be enabled by turning on / off the
+relevant switches during configuration. see './configure --help' for more
+information on what switches are avaiable.
+
+once configured, simply run 'make' and sfuzz, as well as the optional packages
+should be built. from there, a 'make install' will install simple fuzzer into
+PREFIX/bin and PREFIX/share/sfuzz-db. alternatively, you may simply run simple
+fuzzer from the local directory with ./sfuzz <options>
+
+uninstallation is simply running make uninstall.
+
+NOTES: Windows users - make install / uninstall do not work properly. Refrain
+       from using this procedure.
+
+simple fuzzer 0.6 has been tested to work only on the GNU/Linux operating
+system, and Windows XP currently. sqa efforts to test on freebsd, os x, and 
+windows Vista->7 are under way, and any resulting bugs will be fixed as a
+patch.

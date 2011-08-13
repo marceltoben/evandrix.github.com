@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit expand</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_expand">Unit expand</a>
+<ul>
+<li><a href="#sec:Macros">Macros</a>
+<ul>
+<li><a href="#sec:get-line-number">get-line-number</a></li>
+<li><a href="#sec:expand">expand</a></li>
+<li><a href="#sec:syntax-error">syntax-error</a></li>
+<li><a href="#sec:er-macro-transformer">er-macro-transformer</a></li>
+<li><a href="#sec:ir-macro-transformer">ir-macro-transformer</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_expand"><a href="#sec:Unit_expand">Unit expand</a></h2><p>This unit has support for syntax- and module handling. This unit is used by default, unless the program is compiled with the <tt>-explicit-use</tt> option.</p><h3 id="sec:Macros"><a href="#sec:Macros">Macros</a></h3><h4 id="sec:get-line-number"><a href="#sec:get-line-number">get-line-number</a></h4><dl class="defsig"><dt class="defsig" id="def:get-line-number"><span class="sig"><tt>(get-line-number EXPR)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>EXPR</tt> is a pair with the car being a symbol, and line-number information is available for this expression, then this procedure returns the associated source file and line number as a string. If line-number information is not available, then <tt>#f</tt> is returned. Note that line-number information for expressions is only available in the compiler.</p></dd>
+</dl>
+<h4 id="sec:expand"><a href="#sec:expand">expand</a></h4><dl class="defsig"><dt class="defsig" id="def:expand"><span class="sig"><tt>(expand X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>X</tt> is a macro-form, expand the macro (and repeat expansion until expression is a non-macro form).  Returns the resulting expression.</p></dd>
+</dl>
+<h4 id="sec:syntax-error"><a href="#sec:syntax-error">syntax-error</a></h4><dl class="defsig"><dt class="defsig" id="def:syntax-error"><span class="sig"><tt>(syntax-error [LOCATION] MESSAGE ARGUMENT ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Signals an exception of the kind <tt>(exn syntax)</tt>. Otherwise identical to <tt>error</tt>.</p></dd>
+</dl>
+<h4 id="sec:er-macro-transformer"><a href="#sec:er-macro-transformer">er-macro-transformer</a></h4><dl class="defsig"><dt class="defsig" id="def:er-macro-transformer"><span class="sig"><tt>(er-macro-transformer TRANSFORMER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns an explicit-renaming macro transformer procedure created from the procedural macro body <tt>TRANSFORMER</tt>, which is a procedure of three arguments.</p><p>Implementation note: this procedure currently just returns its argument unchanged and is available for writing low-level macros in a more portable fashion, without hard-coding the signature of a transformer procedure.</p></dd>
+</dl>
+<h4 id="sec:ir-macro-transformer"><a href="#sec:ir-macro-transformer">ir-macro-transformer</a></h4><dl class="defsig"><dt class="defsig" id="def:ir-macro-transformer"><span class="sig"><tt>(ir-macro-transformer TRANSFORMER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This procedure accepts a <i>reverse</i> syntax transformer, also known as an <i>implicit renaming macro transformer</i>.  This is a transformer which works almost like er-macro-transformer, except the rename and compare procedures it receives work a little differently.</p><p>The rename procedure is now called <tt>inject</tt> and instead of renaming the identifier to be resolved in the macro's definition environment, it will explicitly <i>inject</i> the identifier to be resolved in the expansion environment.  Any non-injected identifiers in the output expression produced by the transformer will be implicitly renamed to refer to the macro's environment instead.  All identifiers in the input expression are of course implicitly injected just like with explicit renaming macros.</p><p>To compare an input identifier you can generally compare to the bare symbol and only free identifiers will match.  In practice, this means that when you would call e.g.  <tt>(compare (cadr expression) (rename 'x))</tt> in an ER macro, you simply call <tt>(compare (cadr expression) 'x)</tt> in the IR macro.  Likewise, an <i>unhygienic</i> ER macro's comparison <tt>(compare sym 'abc)</tt> should be written as <tt>(compare sym (inject 'abc))</tt> in an IR macro.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20library.html">Unit library</a></p><p>Next: <a href="Unit%20data-structures.html">Unit data-structures</a></p></div></div></body>

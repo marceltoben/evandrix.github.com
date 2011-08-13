@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Modules</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Modules">Modules</a>
+<ul>
+<li><a href="#sec:module">module</a></li>
+<li><a href="#sec:export">export</a></li>
+<li><a href="#sec:import">import</a>
+<ul>
+<li><a href="#sec:only">only</a></li>
+<li><a href="#sec:except">except</a></li>
+<li><a href="#sec:rename">rename</a></li>
+<li><a href="#sec:prefix">prefix</a></li></ul></li>
+<li><a href="#sec:import-for-syntax">import-for-syntax</a></li>
+<li><a href="#sec:reexport">reexport</a></li></ul></li>
+<li><a href="#sec:import_libraries">import libraries</a></li>
+<li><a href="#sec:Predefined_modules">Predefined modules</a></li>
+<li><a href="#sec:Examples_of_using_modules">Examples of using modules</a></li>
+<li><a href="#sec:Caveats">Caveats</a></li></ul></div><h3 id="sec:Modules"><a href="#sec:Modules">Modules</a></h3><p>To allow some control over visible bindings and to organize code at the global level, a simple module system is available. A <i>module</i> defines a set of toplevel expressions that are initially evaluated in an empty syntactical environment. By <i>importing</i> other modules, exported value- and macro-bindings are made visible inside the environment of the module that imports them.</p><p>Note that modules are purely syntactical - they do not change the control flow or delay the execution of the contained toplevel forms. The body of a module is executed at load-time, when code is loaded or accessed via the <tt>uses</tt> declaration, just like normal toplevel expressions. Exported macro-definitions are compiled as well, and can be accessed in interpreted or compiled code by loading and importing the compiled file that contains the module.</p><p>Imported toplevel bindings can be assigned (with <tt>set!</tt>), any modifications to these will change the global value and will be visible to other modules that export or import the same toplevel binding.</p><p>A module is initially empty (has no visible bindings). You must at least import the <tt>scheme</tt> module to do anything useful. To access any of the non-standard macros and procedures, import the <tt>chicken</tt> module.</p><p>CHICKEN's module system has the following features and shortcomings:</p><ul><li>Indirect exports for syntax definitions must be listed</li>
+<li>Separation of compile/expansion-time and run-time code is provided, which allows cross compilation</li>
+<li>Module-generating code is only created, when needed</li>
+<li>Supports batch-compilation of separate compilation units</li>
+<li>No separate &quot;identifier&quot; type is used, all identifiers appearing in code and processed in expansions are symbols</li>
+<li>The module system is fully optional</li>
+</ul>
+<h4 id="sec:module"><a href="#sec:module">module</a></h4><dl class="defsig"><dt class="defsig" id="def:module"><span class="sig"><tt>(module NAME (EXPORT ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:module"><span class="sig"><tt>(module NAME (EXPORT ...) FILENAME)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:module"><span class="sig"><tt>(module NAME * BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines a module with the name <tt>NAME</tt>, a set of exported bindings and a contained sequence of toplevel expressions that are evaluated in an empty syntactical environment. <tt>EXPORT</tt> may be a symbol or a list of the form <tt>(IDENTIFIER1 IDENTIFIER2 ...)</tt>. In the former case the identifier given is exported from the module and can be imported at the toplevel or in other modules. The latter case exports <tt>IDENTIFIER1</tt> (which should name a macro) and also arranges for the remaining identifiers in the list to be visible in the expansion of the macro (this is a hint to the module expander to export bindings referenced by syntax-definitions which make use of them, but which would normally be internal to the module - which gives more opportunities for optimization).</p><p>When the <tt>BODY</tt> consists of a single string, it is handled as <tt>(include FILENAME)</tt>.</p><p>Nested modules, modules not at toplevel (i.e. local modules) or mutually recursive modules are not supported.</p><p>When compiled, the module information, including exported macros is stored in the generated binary and available when loading it into interpreted or compiled code. Note that this is different to normal macros (outside of module declarations), which are normally not exported from compiled code.</p><p>As a special case, specifying <tt>*</tt> instead of an export-list will export all definitions.</p><p>Note that the module system is only a device for controlling the mapping of identifiers to value or syntax bindings. Modules do not instantiate separate environments that contain their own bindings, as do many other module systems. Redefinition or assignment of value or syntax bindings will modify the original, imported definition.</p><p>Syntax expansions may result in module-definitions, but must be at toplevel.</p></dd>
+</dl>
+<h4 id="sec:export"><a href="#sec:export">export</a></h4><dl class="defsig"><dt class="defsig" id="def:export"><span class="sig"><tt>(export EXPORT ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Allows augmenting module-exports from inside the module-body. <tt>EXPORT</tt> is if the same form as an export-specifier in a <tt>module</tt> export list. An export must precede its first occurrence (either use or definition).</p><p>If used outside of a module, then this form does nothing.</p></dd>
+</dl>
+<h4 id="sec:import"><a href="#sec:import">import</a></h4><dl class="defsig"><dt class="defsig" id="def:import"><span class="sig"><tt>(import IMPORT ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Imports module bindings into the current syntactical environment. The visibility of any imported bindings is limited to the current module, if used inside a module-definition, or to the current compilation unit, if compiled and used outside of a module.</p><p>Importing a module does not load or link it - this is a separate operation from importing its bindings.</p><p><tt>IMPORT</tt> may be a module name or an <i>import specifier</i>, where a module name is either a symbol or a list of the form <tt>(srfi N)</tt>. An <tt>IMPORT</tt> defines a set of bindings that are to be made visible in the current scope.</p><p>Note that the imported bindings are only visible in the next toplevel expression (regardless of whether the import appears inside or outside a module):</p><pre> (begin
+   (import m1)
+   ...)              ; imports not visible here
+ 
+ ...                ; imports visible here</pre></dd>
+</dl>
+<h5 id="sec:only"><a href="#sec:only">only</a></h5><pre>[import specifier] (only IMPORT IDENTIFIER ...)</pre><p>Only import the listed value- or syntax bindings from the set given by <tt>IMPORT</tt>.</p><h5 id="sec:except"><a href="#sec:except">except</a></h5><pre>[import specifier] (except IMPORT IDENTIFIER ...)</pre><p>Remove the listed identifiers from the import-set defined by <tt>IMPORT</tt>.</p><h5 id="sec:rename"><a href="#sec:rename">rename</a></h5><pre>[import specifier] (rename IMPORT (OLD1 NEW1) ...)</pre><p>Renames identifiers imported from <tt>IMPORT</tt>.</p><h5 id="sec:prefix"><a href="#sec:prefix">prefix</a></h5><pre>[import specifier] (prefix IMPORT SYMBOL)</pre><p>Prefixes all imported identifiers with <tt>SYMBOL</tt>.</p><h4 id="sec:import-for-syntax"><a href="#sec:import-for-syntax">import-for-syntax</a></h4><dl class="defsig"><dt class="defsig" id="def:import-for-syntax"><span class="sig"><tt>(import-for-syntax IMPORT ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Similar to <tt>import</tt>, but imports exported bindings of a module into the environment in which macro transformers are evaluated.</p><p>Note: currently this isn't fully correct - value bindings are still imported into the normal environment because a separate import environment for syntax has not been implemented (syntactic bindings are kept separate correctly).</p></dd>
+</dl>
+<h4 id="sec:reexport"><a href="#sec:reexport">reexport</a></h4><dl class="defsig"><dt class="defsig" id="def:reexport"><span class="sig"><tt>(reexport IMPORT ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Imports <tt>IMPORT ...</tt> and automatically exports all imported identifiers. This can be used to build <i>compound modules</i>: modules that just extend other modules:</p><pre class="highlight"><span class="paren1">(<span class="default">module r4rs <span class="paren2">(<span class="default"></span>)</span>
+  <span class="paren2">(<span class="default">import scheme chicken</span>)</span>
+  <span class="paren2">(<span class="default">reexport 
+    <span class="paren3">(<span class="default">except scheme 
+      dynamic-wind values call-with-values eval scheme-report-environment
+      null-environment interaction-environment</span>)</span></span>)</span></span>)</span></pre></dd>
+</dl>
+<h3 id="sec:import_libraries"><a href="#sec:import_libraries">import libraries</a></h3><p><i>import libraries</i> allow the syntactical (compile-time) and run-time parts of a compiled module to be separated into a normal compiled file and a shared library that only contains macro definitions and module information. This reduces the size of executables and simplifies compiling code that uses modules for a different architecture than the machine the compiler is executing on (i.e. &quot;cross&quot; compilation).</p><p>By using the <tt>emit-import-library</tt> compiler-option or declaration, a separate file is generated that only contains syntactical information (including macros) for a module. <tt>import</tt> will automatically find and load an import library for a currently unknown module, if the import- library is either in the extension repository or the current include path. Import libraries may also be explicitly loaded into the compiler by using the <tt>-extend</tt> compiler option. Interpreted code can simply load the import library to make the module-definition available. Macro-support definitions defined with <tt>define-for-syntax</tt> and expansion-time expressions of the form <tt>(begin-for-syntax ...)</tt> will be added to import libraries to make them available for exported macros. Note that these definitions will ruthlessly pollute the toplevel namespace and so they should be used sparingly.</p><h3 id="sec:Predefined_modules"><a href="#sec:Predefined_modules">Predefined modules</a></h3><p>Import libraries for the following modules are initially available:</p><pre>[module] scheme</pre><p>Exports the standard R5RS bindings.</p><pre>[module] chicken</pre><p>Everything from the <tt>library</tt>, <tt>eval</tt> and <tt>expand</tt> library units.</p><pre>[module] extras
+[module] data-structures
+[module] ports
+[module] lolevel
+[module] posix
+[module] regex
+[module] srfi-1
+[module] srfi-4
+[module] srfi-13
+[module] srfi-14
+[module] srfi-18
+[module] srfi-69
+[module] tcp
+[module] utils</pre><p>Modules exporting the bindings from the respective library units.</p><pre>[module] foreign</pre><p>Exports all macros and procedures that are used to access foreign C/C++ code.</p><h3 id="sec:Examples_of_using_modules"><a href="#sec:Examples_of_using_modules">Examples of using modules</a></h3><p>Here is a silly little test module to demonstrate how modules are defined and used:</p><pre>;; hello.scm
+
+(module test (hello greet)
+  (import scheme)
+
+  (define-syntax greet
+    (syntax-rules ()
+      ((_ whom) 
+       (begin
+         (display &quot;Hello, &quot;)
+         (display whom)
+         (display &quot; !\n&quot;) ) ) ) )
+
+  (define (hello)
+    (greet &quot;world&quot;) )  )</pre><p>The module <tt>test</tt> exports one value (<tt>hello</tt>) and one syntax binding (<tt>greet</tt>). To use it in <tt>csi</tt>, the interpreter, simply load and import it:</p><pre> #;1&gt; ,l hello.scm
+ ; loading hello.scm ...
+ ; loading /usr/local/lib/chicken/4/scheme.import.so ...
+ #;1&gt; (import test)
+ #;2&gt; (hello)
+ Hello, world !
+ #;3&gt; (greet &quot;you&quot;)
+ Hello, you !</pre><p>The module can easily be compiled</p><pre> % csc -s hello.scm</pre><p>and used in an identical manner:</p><pre> #;1&gt; ,l hello.so
+ ; loading hello.so ...
+ #;1&gt; (import test)
+ #;2&gt; (hello)
+ Hello, world !
+ #;3&gt; (greet &quot;you&quot;)
+ Hello, you !</pre><p>If you want to keep macro-definitions in a separate file, use import libraries:</p><pre> % csc -s hello.scm -j test
+ % csc -s test.import.scm</pre><pre> #;1&gt; ,l hello.so
+ ; loading hello.so ...
+ #;1&gt; (import test)
+ ; loading ./test.import.so ...
+ #;2&gt; (hello)
+ Hello, world !
+ #;3&gt; (greet &quot;you&quot;)
+ Hello, you !</pre><p>If an import library (compiled or in source-form) is located somewhere in the extensions-repository or include path, it is automatically loaded on import. Otherwise you have to load it manually:</p><pre> #;1&gt; ,l hello.so
+ ; loading hello.so ...
+ #;1&gt; ,l test.import.so
+ ; loading test.import.so ...
+ #;1&gt; (import test)
+ #;2&gt; </pre><p>Note that you must us import libraries if you compile code that depends on other modules. The compiler will not execute the modules that are refered to by compiled code, and thus the binding information and exported syntax of the former must be available separately.</p><h3 id="sec:Caveats"><a href="#sec:Caveats">Caveats</a></h3><p>The macro- and module system has been implemented relatively recently and is likely to contain bugs. Please contact the maintainers if you encounter behavior that you think is not correct or that triggers an error where there shouldn't be one.</p><ul><li>In evaluated code, loading a file containing module information and importing from a module contained in that file will not work when the loading and import is performed in the same toplevel expression (this does not apply, when import libraries are used) </li>
+<li>Currently value bindings imported by <tt>import</tt> and <tt>import-for-syntax</tt> share the same import-environment.</li>
+</ul>
+<hr /><p>Previous: <a href="Macros.html">Macros</a></p><p>Next: <a href="Declarations.html">Declarations</a></p></div></div></body>

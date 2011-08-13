@@ -1,0 +1,808 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit posix</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_posix">Unit posix</a>
+<ul>
+<li><a href="#sec:Constants">Constants</a>
+<ul>
+<li><a href="#sec:File-control_Commands">File-control Commands</a></li>
+<li><a href="#sec:Standard_I.2fO_file-descriptors">Standard I/O file-descriptors</a></li>
+<li><a href="#sec:Open_flags">Open flags</a></li>
+<li><a href="#sec:Permission_bits">Permission bits</a></li></ul></li>
+<li><a href="#sec:Directories">Directories</a>
+<ul>
+<li><a href="#sec:change-directory">change-directory</a></li>
+<li><a href="#sec:current-directory">current-directory</a></li>
+<li><a href="#sec:create-directory">create-directory</a></li>
+<li><a href="#sec:delete-directory">delete-directory</a></li>
+<li><a href="#sec:directory">directory</a></li>
+<li><a href="#sec:directory.3f">directory?</a></li>
+<li><a href="#sec:glob">glob</a></li>
+<li><a href="#sec:set-root-directory.21">set-root-directory!</a></li></ul></li>
+<li><a href="#sec:Pipes">Pipes</a>
+<ul>
+<li><a href="#sec:call-with-input-pipe">call-with-input-pipe</a></li>
+<li><a href="#sec:call-with-output-pipe">call-with-output-pipe</a></li>
+<li><a href="#sec:close-input-pipe">close-input-pipe</a></li>
+<li><a href="#sec:close-output-pipe">close-output-pipe</a></li>
+<li><a href="#sec:create-pipe">create-pipe</a></li>
+<li><a href="#sec:open-input-pipe">open-input-pipe</a></li>
+<li><a href="#sec:open-output-pipe">open-output-pipe</a></li>
+<li><a href="#sec:pipe.2fbuf">pipe/buf</a></li>
+<li><a href="#sec:with-input-from-pipe">with-input-from-pipe</a></li>
+<li><a href="#sec:with-output-to-pipe">with-output-to-pipe</a></li></ul></li>
+<li><a href="#sec:Fifos">Fifos</a>
+<ul>
+<li><a href="#sec:create-fifo">create-fifo</a></li>
+<li><a href="#sec:fifo.3f">fifo?</a></li></ul></li>
+<li><a href="#sec:File_descriptors_and_low-level_I.2fO">File descriptors and low-level I/O</a>
+<ul>
+<li><a href="#sec:duplicate-fileno">duplicate-fileno</a></li>
+<li><a href="#sec:file-close">file-close</a></li>
+<li><a href="#sec:file-open">file-open</a></li>
+<li><a href="#sec:file-mkstemp">file-mkstemp</a></li>
+<li><a href="#sec:file-read">file-read</a></li>
+<li><a href="#sec:file-select">file-select</a></li>
+<li><a href="#sec:file-write">file-write</a></li>
+<li><a href="#sec:file-control">file-control</a></li>
+<li><a href="#sec:open-input-file.2a">open-input-file*</a></li>
+<li><a href="#sec:open-output-file.2a">open-output-file*</a></li>
+<li><a href="#sec:port-.3efileno">port-&gt;fileno</a></li></ul></li>
+<li><a href="#sec:Retrieving_file_attributes">Retrieving file attributes</a>
+<ul>
+<li><a href="#sec:file-access-time">file-access-time</a></li>
+<li><a href="#sec:file-change-time">file-change-time</a></li>
+<li><a href="#sec:file-modification-time">file-modification-time</a></li>
+<li><a href="#sec:file-stat">file-stat</a></li>
+<li><a href="#sec:file-position">file-position</a></li>
+<li><a href="#sec:file-size">file-size</a></li>
+<li><a href="#sec:regular-file.3f">regular-file?</a></li>
+<li><a href="#sec:file-owner">file-owner</a></li>
+<li><a href="#sec:file-permissions">file-permissions</a></li>
+<li><a href="#sec:file-read-access.3f">file-read-access?</a></li>
+<li><a href="#sec:file-write-access.3f">file-write-access?</a></li>
+<li><a href="#sec:file-execute-access.3f">file-execute-access?</a></li>
+<li><a href="#sec:file-type">file-type</a></li>
+<li><a href="#sec:character-device.3f">character-device?</a></li>
+<li><a href="#sec:block-device.3f">block-device?</a></li>
+<li><a href="#sec:socket.3f">socket?</a></li></ul></li>
+<li><a href="#sec:Changing_file_attributes">Changing file attributes</a>
+<ul>
+<li><a href="#sec:file-truncate">file-truncate</a></li>
+<li><a href="#sec:set-file-position.21">set-file-position!</a></li>
+<li><a href="#sec:change-file-mode">change-file-mode</a></li>
+<li><a href="#sec:change-file-owner">change-file-owner</a></li>
+<li><a href="#sec:file-creation-mode">file-creation-mode</a></li></ul></li>
+<li><a href="#sec:Processes">Processes</a>
+<ul>
+<li><a href="#sec:current-process-id">current-process-id</a></li>
+<li><a href="#sec:parent-process-id">parent-process-id</a></li>
+<li><a href="#sec:process-group-id">process-group-id</a></li>
+<li><a href="#sec:process-execute">process-execute</a></li>
+<li><a href="#sec:process-fork">process-fork</a></li>
+<li><a href="#sec:process-run">process-run</a></li>
+<li><a href="#sec:process-signal">process-signal</a></li>
+<li><a href="#sec:process-wait">process-wait</a></li>
+<li><a href="#sec:process">process</a></li>
+<li><a href="#sec:process.2a">process*</a></li>
+<li><a href="#sec:sleep">sleep</a></li>
+<li><a href="#sec:create-session">create-session</a></li></ul></li>
+<li><a href="#sec:Hard_and_symbolic_links">Hard and symbolic links</a>
+<ul>
+<li><a href="#sec:symbolic-link.3f">symbolic-link?</a></li>
+<li><a href="#sec:create-symbolic-link">create-symbolic-link</a></li>
+<li><a href="#sec:read-symbolic-link">read-symbolic-link</a></li>
+<li><a href="#sec:file-link">file-link</a></li></ul></li>
+<li><a href="#sec:Retrieving_user_.26_group_information">Retrieving user &amp; group information</a>
+<ul>
+<li><a href="#sec:current-user-id">current-user-id</a></li>
+<li><a href="#sec:current-effective-user-id">current-effective-user-id</a></li>
+<li><a href="#sec:user-information">user-information</a></li>
+<li><a href="#sec:current-group-id">current-group-id</a></li>
+<li><a href="#sec:current-effective-group-id">current-effective-group-id</a></li>
+<li><a href="#sec:group-information">group-information</a></li>
+<li><a href="#sec:get-groups">get-groups</a></li></ul></li>
+<li><a href="#sec:Changing_user_.26_group_information">Changing user &amp; group information</a>
+<ul>
+<li><a href="#sec:set-groups.21">set-groups!</a></li>
+<li><a href="#sec:initialize-groups">initialize-groups</a></li>
+<li><a href="#sec:set-process-group-id.21">set-process-group-id!</a></li></ul></li>
+<li><a href="#sec:Record_locking">Record locking</a>
+<ul>
+<li><a href="#sec:file-lock">file-lock</a></li>
+<li><a href="#sec:file-lock.2fblocking">file-lock/blocking</a></li>
+<li><a href="#sec:file-test-lock">file-test-lock</a></li>
+<li><a href="#sec:file-unlock">file-unlock</a></li></ul></li>
+<li><a href="#sec:Signal_handling">Signal handling</a>
+<ul>
+<li><a href="#sec:set-alarm.21">set-alarm!</a></li>
+<li><a href="#sec:set-signal-handler.21">set-signal-handler!</a></li>
+<li><a href="#sec:signal-handler">signal-handler</a></li>
+<li><a href="#sec:set-signal-mask.21">set-signal-mask!</a></li>
+<li><a href="#sec:signal-mask">signal-mask</a></li>
+<li><a href="#sec:signal-masked.3f">signal-masked?</a></li>
+<li><a href="#sec:signal-mask.21">signal-mask!</a></li>
+<li><a href="#sec:signal-unmask.21">signal-unmask!</a></li>
+<li><a href="#sec:Signal_codes">Signal codes</a></li></ul></li>
+<li><a href="#sec:Environment_access">Environment access</a>
+<ul>
+<li><a href="#sec:get-environment-variables">get-environment-variables</a></li>
+<li><a href="#sec:setenv">setenv</a></li>
+<li><a href="#sec:unsetenv">unsetenv</a></li></ul></li>
+<li><a href="#sec:Memory_mapped_I.2fO">Memory mapped I/O</a>
+<ul>
+<li><a href="#sec:memory-mapped-file.3f">memory-mapped-file?</a></li>
+<li><a href="#sec:map-file-to-memory">map-file-to-memory</a></li>
+<li><a href="#sec:memory-mapped-file-pointer">memory-mapped-file-pointer</a></li>
+<li><a href="#sec:unmap-file-from-memory">unmap-file-from-memory</a></li>
+<li><a href="#sec:Memory_Mapped_I.2fO_Example">Memory Mapped I/O Example</a></li></ul></li>
+<li><a href="#sec:Date_and_time_routines">Date and time routines</a>
+<ul>
+<li><a href="#sec:seconds-.3elocal-time">seconds-&gt;local-time</a></li>
+<li><a href="#sec:local-time-.3eseconds">local-time-&gt;seconds</a></li>
+<li><a href="#sec:local-timezone-abbreviation">local-timezone-abbreviation</a></li>
+<li><a href="#sec:seconds-.3estring">seconds-&gt;string</a></li>
+<li><a href="#sec:seconds-.3eutc-time">seconds-&gt;utc-time</a></li>
+<li><a href="#sec:utc-time-.3eseconds">utc-time-&gt;seconds</a></li>
+<li><a href="#sec:time-.3estring">time-&gt;string</a></li>
+<li><a href="#sec:string-.3etime">string-&gt;time</a></li></ul></li>
+<li><a href="#sec:Raw_exit">Raw exit</a>
+<ul>
+<li><a href="#sec:_exit">_exit</a></li></ul></li>
+<li><a href="#sec:ERRNO_values">ERRNO values</a></li>
+<li><a href="#sec:Finding_files">Finding files</a>
+<ul>
+<li><a href="#sec:find-files">find-files</a></li></ul></li>
+<li><a href="#sec:Getting_the_hostname_and_system_information">Getting the hostname and system information</a>
+<ul>
+<li><a href="#sec:get-host-name">get-host-name</a></li>
+<li><a href="#sec:system-information">system-information</a></li></ul></li>
+<li><a href="#sec:Setting_the_file_buffering_mode">Setting the file buffering mode</a>
+<ul>
+<li><a href="#sec:set-buffering-mode.21">set-buffering-mode!</a></li></ul></li>
+<li><a href="#sec:Terminal_ports">Terminal ports</a>
+<ul>
+<li><a href="#sec:terminal-name">terminal-name</a></li>
+<li><a href="#sec:terminal-port.3f">terminal-port?</a></li>
+<li><a href="#sec:terminal-size">terminal-size</a></li></ul></li>
+<li><a href="#sec:How_Scheme_procedures_relate_to_UNIX_C_functions">How Scheme procedures relate to UNIX C functions</a></li>
+<li><a href="#sec:Windows_specific_notes">Windows specific notes</a>
+<ul>
+<li><a href="#sec:Procedure_Changes">Procedure Changes</a></li>
+<li><a href="#sec:Unsupported_Definitions">Unsupported Definitions</a></li>
+<li><a href="#sec:Additional_Definitions">Additional Definitions</a></li>
+<li><a href="#sec:process-spawn">process-spawn</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_posix"><a href="#sec:Unit_posix">Unit posix</a></h2><p>This unit provides services as used on many UNIX-like systems.  Note that the following definitions are not all available on non-UNIX systems like Windows. See below for Windows specific notes.</p><p>This unit uses the <tt>regex</tt>, <tt>scheduler</tt>, <tt>extras</tt> and <tt>utils</tt> units.</p><p>All errors related to failing file-operations will signal a condition of kind <tt>(exn i/o file)</tt>.</p><h3 id="sec:Constants"><a href="#sec:Constants">Constants</a></h3><h4 id="sec:File-control_Commands"><a href="#sec:File-control_Commands">File-control Commands</a></h4><dl class="defsig"><dt class="defsig" id="def:fcntl.2fdupfd"><span class="sig"><tt>fcntl/dupfd</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:fcntl.2fgetfd"><span class="sig"><tt>fcntl/getfd</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:fcntl.2fsetfd"><span class="sig"><tt>fcntl/setfd</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:fcntl.2fgetfl"><span class="sig"><tt>fcntl/getfl</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:fcntl.2fsetfl"><span class="sig"><tt>fcntl/setfl</tt></span> <span class="type">constant</span></dt>
+<dd class="defsig"><p>Operations used with <tt>file-control</tt>.</p></dd>
+</dl>
+<h4 id="sec:Standard_I.2fO_file-descriptors"><a href="#sec:Standard_I.2fO_file-descriptors">Standard I/O file-descriptors</a></h4><dl class="defsig"><dt class="defsig" id="def:fileno.2fstdin"><span class="sig"><tt>fileno/stdin</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:fileno.2fstdout"><span class="sig"><tt>fileno/stdout</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:fileno.2fstderr"><span class="sig"><tt>fileno/stderr</tt></span> <span class="type">constant</span></dt>
+<dd class="defsig"><p>Standard I/O file descriptor numbers, used with procedures such as <tt>open-input-file*</tt> which take file descriptors.</p></dd>
+</dl>
+<h4 id="sec:Open_flags"><a href="#sec:Open_flags">Open flags</a></h4><dl class="defsig"><dt class="defsig" id="def:open.2frdonly"><span class="sig"><tt>open/rdonly</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fwronly"><span class="sig"><tt>open/wronly</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2frdwr"><span class="sig"><tt>open/rdwr</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fread"><span class="sig"><tt>open/read</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fwrite"><span class="sig"><tt>open/write</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fcreat"><span class="sig"><tt>open/creat</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fappend"><span class="sig"><tt>open/append</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fexcl"><span class="sig"><tt>open/excl</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fnoctty"><span class="sig"><tt>open/noctty</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fnonblock"><span class="sig"><tt>open/nonblock</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2ftrunc"><span class="sig"><tt>open/trunc</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fsync"><span class="sig"><tt>open/sync</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2ffsync"><span class="sig"><tt>open/fsync</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2fbinary"><span class="sig"><tt>open/binary</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:open.2ftext"><span class="sig"><tt>open/text</tt></span> <span class="type">constant</span></dt>
+<dd class="defsig"><p>Open flags used with the <tt>file-open</tt> procedure.  <tt>open/read</tt> is a convenience synonym for <tt>open/rdonly</tt>, as is <tt>open/write</tt> for <tt>open/wronly</tt>.</p></dd>
+</dl>
+<h4 id="sec:Permission_bits"><a href="#sec:Permission_bits">Permission bits</a></h4><dl class="defsig"><dt class="defsig" id="def:perm.2firusr"><span class="sig"><tt>perm/irusr</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fiwusr"><span class="sig"><tt>perm/iwusr</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fixusr"><span class="sig"><tt>perm/ixusr</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2firgrp"><span class="sig"><tt>perm/irgrp</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fiwgrp"><span class="sig"><tt>perm/iwgrp</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fixgrp"><span class="sig"><tt>perm/ixgrp</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2firoth"><span class="sig"><tt>perm/iroth</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fiwoth"><span class="sig"><tt>perm/iwoth</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fixoth"><span class="sig"><tt>perm/ixoth</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2firwxu"><span class="sig"><tt>perm/irwxu</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2firwxg"><span class="sig"><tt>perm/irwxg</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2firwxo"><span class="sig"><tt>perm/irwxo</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fisvtx"><span class="sig"><tt>perm/isvtx</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fisuid"><span class="sig"><tt>perm/isuid</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:perm.2fisgid"><span class="sig"><tt>perm/isgid</tt></span> <span class="type">constant</span></dt>
+<dd class="defsig"><p>Permission bits used with, for example, <tt>file-open</tt>.</p></dd>
+</dl>
+<h3 id="sec:Directories"><a href="#sec:Directories">Directories</a></h3><h4 id="sec:change-directory"><a href="#sec:change-directory">change-directory</a></h4><dl class="defsig"><dt class="defsig" id="def:change-directory"><span class="sig"><tt>(change-directory NAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Changes the current working directory to <tt>NAME</tt>.</p></dd>
+</dl>
+<h4 id="sec:current-directory"><a href="#sec:current-directory">current-directory</a></h4><dl class="defsig"><dt class="defsig" id="def:current-directory"><span class="sig"><tt>(current-directory [DIR])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the name of the current working directory. If the optional argument <tt>DIR</tt> is given, then <tt>(current-directory DIR)</tt> is equivalent to <tt>(change-directory DIR)</tt>.</p></dd>
+</dl>
+<h4 id="sec:create-directory"><a href="#sec:create-directory">create-directory</a></h4><dl class="defsig"><dt class="defsig" id="def:create-directory"><span class="sig"><tt>(create-directory NAME #!optional PARENTS?)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a directory with the pathname <tt>NAME</tt>.  If the <tt>PARENTS?</tt> argument is given and not false, any nonexistent parent directories are also created.</p></dd>
+</dl>
+<h4 id="sec:delete-directory"><a href="#sec:delete-directory">delete-directory</a></h4><dl class="defsig"><dt class="defsig" id="def:delete-directory"><span class="sig"><tt>(delete-directory NAME [RECURSIVE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Deletes the directory with the pathname <tt>NAME</tt>. If <tt>RECURSIVE</tt> is not given or false, then the directory has to be empty.</p></dd>
+</dl>
+<h4 id="sec:directory"><a href="#sec:directory">directory</a></h4><dl class="defsig"><dt class="defsig" id="def:directory"><span class="sig"><tt>(directory [PATHNAME [SHOW-DOTFILES?]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list with all files that are contained in the directory with the name <tt>PATHNAME</tt> (which defaults to the value of <tt>(current-directory)</tt>). Files beginning with <tt>.</tt> are included only if <tt>SHOW-DOTFILES?</tt> is given and not <tt>#f</tt>.</p></dd>
+</dl>
+<h4 id="sec:directory.3f"><a href="#sec:directory.3f">directory?</a></h4><dl class="defsig"><dt class="defsig" id="def:directory.3f"><span class="sig"><tt>(directory? FILE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>FILE</tt> designates directory. Otherwise, it returns <tt>#f</tt>. <tt>FILE</tt> may be a pathname or a file-descriptor.</p></dd>
+</dl>
+<h4 id="sec:glob"><a href="#sec:glob">glob</a></h4><dl class="defsig"><dt class="defsig" id="def:glob"><span class="sig"><tt>(glob PATTERN1 ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list of the pathnames of all existing files matching <tt>PATTERN1 ...</tt>, which should be strings containing the usual file-patterns (with <tt>*</tt> matching zero or more characters and <tt>?</tt> matching zero or one character).</p></dd>
+</dl>
+<h4 id="sec:set-root-directory.21"><a href="#sec:set-root-directory.21">set-root-directory!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-root-directory.21"><span class="sig"><tt>(set-root-directory! STRING)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the root directory for the current process to the path given in <tt>STRING</tt> (using the <tt>chroot</tt> function). If the current process has no root permissions, the operation will fail.</p></dd>
+</dl>
+<h3 id="sec:Pipes"><a href="#sec:Pipes">Pipes</a></h3><h4 id="sec:call-with-input-pipe"><a href="#sec:call-with-input-pipe">call-with-input-pipe</a></h4><h4 id="sec:call-with-output-pipe"><a href="#sec:call-with-output-pipe">call-with-output-pipe</a></h4><dl class="defsig"><dt class="defsig" id="def:call-with-input-pipe"><span class="sig"><tt>(call-with-input-pipe CMDLINE PROC [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:call-with-output-pipe"><span class="sig"><tt>(call-with-output-pipe CMDLINE PROC [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Call <tt>PROC</tt> with a single argument: a input- or output port for a pipe connected to the subprocess named in <tt>CMDLINE</tt>. If <tt>PROC</tt> returns normally, the pipe is closed and any result values are returned.</p></dd>
+</dl>
+<h4 id="sec:close-input-pipe"><a href="#sec:close-input-pipe">close-input-pipe</a></h4><h4 id="sec:close-output-pipe"><a href="#sec:close-output-pipe">close-output-pipe</a></h4><dl class="defsig"><dt class="defsig" id="def:close-input-pipe"><span class="sig"><tt>(close-input-pipe PORT)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:close-output-pipe"><span class="sig"><tt>(close-output-pipe PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Closes the pipe given in <tt>PORT</tt> and waits until the connected subprocess finishes. The exit-status code of the invoked process is returned.</p></dd>
+</dl>
+<h4 id="sec:create-pipe"><a href="#sec:create-pipe">create-pipe</a></h4><dl class="defsig"><dt class="defsig" id="def:create-pipe"><span class="sig"><tt>(create-pipe)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The fundamental pipe-creation operator. Calls the C function <tt>pipe()</tt> and returns 2 values: the file-descriptors of the input- and output-ends of the pipe.</p></dd>
+</dl>
+<h4 id="sec:open-input-pipe"><a href="#sec:open-input-pipe">open-input-pipe</a></h4><dl class="defsig"><dt class="defsig" id="def:open-input-pipe"><span class="sig"><tt>(open-input-pipe CMDLINE [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Spawns a subprocess with the command-line string <tt>CMDLINE</tt> and returns a port, from which the output of the process can be read. If <tt>MODE</tt> is specified, it should be the keyword <tt>#:text</tt> (the default) or <tt>#:binary</tt>.</p></dd>
+</dl>
+<h4 id="sec:open-output-pipe"><a href="#sec:open-output-pipe">open-output-pipe</a></h4><dl class="defsig"><dt class="defsig" id="def:open-output-pipe"><span class="sig"><tt>(open-output-pipe CMDLINE [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Spawns a subprocess with the command-line string <tt>CMDLINE</tt> and returns a port. Anything written to that port is treated as the input for the process.  If <tt>MODE</tt> is specified, it should be the keyword <tt>#:text</tt> (the default) or <tt>#:binary</tt>.</p></dd>
+</dl>
+<h4 id="sec:pipe.2fbuf"><a href="#sec:pipe.2fbuf">pipe/buf</a></h4><p>This variable contains the maximal number of bytes that can be written atomically into a pipe or FIFO.</p><h4 id="sec:with-input-from-pipe"><a href="#sec:with-input-from-pipe">with-input-from-pipe</a></h4><h4 id="sec:with-output-to-pipe"><a href="#sec:with-output-to-pipe">with-output-to-pipe</a></h4><dl class="defsig"><dt class="defsig" id="def:with-input-from-pipe"><span class="sig"><tt>(with-input-from-pipe CMDLINE THUNK [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:with-output-to-pipe"><span class="sig"><tt>(with-output-to-pipe CMDLINE THUNK [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Temporarily set the value of <tt>current-input-port/current-output-port</tt> to a port for a pipe connected to the subprocess named in <tt>CMDLINE</tt> and call the procedure <tt>THUNK</tt> with no arguments. After <tt>THUNK</tt> returns normally the pipe is closed and the standard input-/output port is restored to its previous value and any result values are returned.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">with-output-to-pipe</span></i>
+  <span class="string">&quot;gs -dNOPAUSE -sDEVICE=jpeg -dBATCH -sOutputFile=signballs.jpg -g600x600 -q -&quot;</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren3">(<span class="default"></span>)</span>
+    <span class="paren3">(<span class="default">print #&lt;&lt;EOF
+ %!IOPSC-1993 %%Creator: HAYAKAWA Takashi&lt;xxxxxxxx@xx.xxxxxx.xx.xx&gt;
+ /C/neg/d/mul/R/rlineto/E/exp/H{{cvx <i><span class="symbol">def}repeat}def/T/dup/g/gt/r/roll/J/ifelse</span></i> 8
+ H/A/copy<span class="paren4">(<span class="default">z&amp;v4QX&amp;93r9AxYQOZomQalxS2w!!O&amp;vMYa43d6r93rMYvx2dca!D&amp;cjSnjSnjjS3o!v&amp;6A
+ X&amp;55SAxM1CD7AjYxTTd62rmxCnTdSST0g&amp;12wECST!&amp;!J0g&amp;D1!&amp;xM0!J0g!l&amp;544dC2Ac96ra!m&amp;3A
+ F&amp;&amp;vGoGSnCT0g&amp;wDmlvGoS8wpn6wpS2wTCpS1Sd7ov7Uk7o4Qkdw!&amp;Mvlx1S7oZES3w!J!J!Q&amp;7185d
+ Z&amp;lx1CS9d9nE4!k&amp;X&amp;MY7!&amp;1!J!x&amp;jdnjdS3odS!N&amp;mmx1C2wEc!G&amp;150Nx4!n&amp;2o!j&amp;43r!U&amp;0777d
+ </span>]</span>&amp;2AY2A776ddT4oS3oSnMVC00VV0RRR45E42063rNz&amp;v7UX&amp;UOzF!F!J!<span class="paren4">[<span class="default">&amp;44ETCnVn!a&amp;1CDN!Y&amp;0M
+ V1c&amp;j2AYdjmMdjjd!o&amp;1r!M</span>)</span>{<span class="paren4">(<span class="default"> </span>)</span>T 0 4 3 r put T<span class="paren4">(<span class="default">/</span>)</span>g{T<span class="paren4">(<span class="default">9</span>)</span>g{cvn}{cvi}J}{<span class="paren4">(<span class="default">$</span>)</span>g<span class="paren4">[<span class="default"></span>]</span>J}J
+ cvx}forall/moveto/p/floor/w/div/S/add 29 H<span class="paren4">[<span class="default">{<span class="paren5">[<span class="default">{</span>]</span>setgray fill}for Y}for showpage
+ EOF
+ </span>)</span> </span>)</span> </span>)</span></span></span></pre></dd>
+</dl>
+<h3 id="sec:Fifos"><a href="#sec:Fifos">Fifos</a></h3><h4 id="sec:create-fifo"><a href="#sec:create-fifo">create-fifo</a></h4><dl class="defsig"><dt class="defsig" id="def:create-fifo"><span class="sig"><tt>(create-fifo FILENAME [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a FIFO with the name <tt>FILENAME</tt> and the permission bits <tt>MODE</tt>, which defaults to</p><pre class="highlight"> <span class="paren1">(<span class="default">+ perm/irwxu perm/irwxg perm/irwxo</span>)</span></pre></dd>
+</dl>
+<h4 id="sec:fifo.3f"><a href="#sec:fifo.3f">fifo?</a></h4><dl class="defsig"><dt class="defsig" id="def:fifo.3f"><span class="sig"><tt>(fifo? FILE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>FILE</tt> names a FIFO. <tt>FILE</tt> may be a filename or a file-descriptor.</p></dd>
+</dl>
+<h3 id="sec:File_descriptors_and_low-level_I.2fO"><a href="#sec:File_descriptors_and_low-level_I.2fO">File descriptors and low-level I/O</a></h3><h4 id="sec:duplicate-fileno"><a href="#sec:duplicate-fileno">duplicate-fileno</a></h4><dl class="defsig"><dt class="defsig" id="def:duplicate-fileno"><span class="sig"><tt>(duplicate-fileno OLD [NEW])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>NEW</tt> is given, then the file-descriptor <tt>NEW</tt> is opened to access the file with the file-descriptor <tt>OLD</tt>. Otherwise a fresh file-descriptor accessing the same file as <tt>OLD</tt> is returned.</p></dd>
+</dl>
+<h4 id="sec:file-close"><a href="#sec:file-close">file-close</a></h4><dl class="defsig"><dt class="defsig" id="def:file-close"><span class="sig"><tt>(file-close FILENO)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Closes the input/output file with the file-descriptor <tt>FILENO</tt>.</p></dd>
+</dl>
+<h4 id="sec:file-open"><a href="#sec:file-open">file-open</a></h4><dl class="defsig"><dt class="defsig" id="def:file-open"><span class="sig"><tt>(file-open FILENAME FLAGS [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Opens the file specified with the string <tt>FILENAME</tt> and open-flags <tt>FLAGS</tt> using the C function <tt>open(2)</tt>. On success a file-descriptor for the opened file is returned.</p><p><tt>FLAGS</tt> is a bitmask of <tt>open/...</tt> values <b>or</b>ed together using <tt>bitwise-ior</tt> (or simply added together).  You must provide exactly one of the access flags <tt>open/rdonly</tt>, <tt>open/wronly</tt>, or <tt>open/rdwr</tt>.  Additionally, you may provide zero or more creation flags (<tt>open/creat</tt>, <tt>open/excl</tt>, <tt>open/trunc</tt>, and <tt>open/noctty</tt>) and status flags (the remaining <tt>open/...</tt> values).  For example, to open a possibly new output file for appending:</p><pre>(file-open &quot;/tmp/hen.txt&quot; (+ open/wronly open/append open/creat))</pre><p>The optional <tt>MODE</tt> should be a bitmask composed of one or more permission values like <tt>perm/irusr</tt> and is only relevant when a new file is created. The default mode is <tt>perm/irwxu | perm/irgrp | perm/iroth</tt>.</p></dd>
+</dl>
+<h4 id="sec:file-mkstemp"><a href="#sec:file-mkstemp">file-mkstemp</a></h4><dl class="defsig"><dt class="defsig" id="def:file-mkstemp"><span class="sig"><tt>(file-mkstemp TEMPLATE-FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Create a file based on the given <tt>TEMPLATE-FILENAME</tt>, in which the six last characters must be <i>XXXXXX</i>.  These will be replaced with a string that makes the filename unique.  The file descriptor of the created file and the generated filename is returned.  See the <tt>mkstemp(3)</tt> manual page for details on how this function works.  The template string given is not modified.</p><p>Example usage:</p><pre class="highlight"> <span class="paren1">(<span class="default">let-values <span class="paren2">(<span class="default"><span class="paren3">(<span class="default"><span class="paren4">(<span class="default">fd temp-path</span>)</span> <span class="paren4">(<span class="default">file-mkstemp <span class="string">&quot;/tmp/mytemporary.XXXXXX&quot;</span></span>)</span></span>)</span></span>)</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">let</span></i> <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">temp-port <span class="paren5">(<span class="default">open-output-file* fd</span>)</span></span>)</span></span>)</span>
+    <span class="paren3">(<span class="default">format temp-port <span class="string">&quot;This file is ~A.~%&quot;</span> temp-path</span>)</span>
+    <span class="paren3">(<span class="default">close-output-port temp-port</span>)</span></span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:file-read"><a href="#sec:file-read">file-read</a></h4><dl class="defsig"><dt class="defsig" id="def:file-read"><span class="sig"><tt>(file-read FILENO SIZE [BUFFER])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Reads <tt>SIZE</tt> bytes from the file with the file-descriptor <tt>FILENO</tt>.  If a string or bytevector is passed in the optional argument <tt>BUFFER</tt>, then this string will be destructively modified to contain the read data. This procedure returns a list with two values: the buffer containing the data and the number of bytes read.</p></dd>
+</dl>
+<h4 id="sec:file-select"><a href="#sec:file-select">file-select</a></h4><dl class="defsig"><dt class="defsig" id="def:file-select"><span class="sig"><tt>(file-select READFDLIST WRITEFDLIST [TIMEOUT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Waits until any of the file-descriptors given in the lists <tt>READFDLIST</tt> and <tt>WRITEFDLIST</tt> is ready for input or output, respectively. If the optional argument <tt>TIMEOUT</tt> is given and not false, then it should specify the number of seconds after which the wait is to be aborted (the value may be a floating point number). This procedure returns two values: the lists of file-descriptors ready for input and output, respectively. <tt>READFDLIST</tt> and <b>WRITEFDLIST</b> may also by file-descriptors instead of lists.  In this case the returned values are booleans indicating whether input/output is ready by <tt>#t</tt> or <tt>#f</tt> otherwise.  You can also pass <tt>#f</tt> as <tt>READFDLIST</tt> or <tt>WRITEFDLIST</tt> argument, which is equivalent to <tt>()</tt>.</p></dd>
+</dl>
+<h4 id="sec:file-write"><a href="#sec:file-write">file-write</a></h4><dl class="defsig"><dt class="defsig" id="def:file-write"><span class="sig"><tt>(file-write FILENO BUFFER [SIZE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Writes the contents of the string or bytevector <tt>BUFFER</tt> into the file with the file-descriptor <tt>FILENO</tt>. If the optional argument <tt>SIZE</tt> is given, then only the specified number of bytes are written.</p></dd>
+</dl>
+<h4 id="sec:file-control"><a href="#sec:file-control">file-control</a></h4><dl class="defsig"><dt class="defsig" id="def:file-control"><span class="sig"><tt>(file-control FILENO COMMAND [ARGUMENT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Performs the fcntl operation <tt>COMMAND</tt> with the given <tt>FILENO</tt> and optional <tt>ARGUMENT</tt>. The return value is meaningful depending on the <tt>COMMAND</tt>.</p></dd>
+</dl>
+<h4 id="sec:open-input-file.2a"><a href="#sec:open-input-file.2a">open-input-file*</a></h4><h4 id="sec:open-output-file.2a"><a href="#sec:open-output-file.2a">open-output-file*</a></h4><dl class="defsig"><dt class="defsig" id="def:open-input-file.2a"><span class="sig"><tt>(open-input-file* FILENO [OPENMODE])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:open-output-file.2a"><span class="sig"><tt>(open-output-file* FILENO [OPENMODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Opens file for the file-descriptor <tt>FILENO</tt> for input or output and returns a port.  <tt>FILENO</tt> should be a positive exact integer. <tt>OPENMODE</tt> specifies an additional mode for opening the file (currently only the keyword <tt>#:append</tt> is supported, which opens an output-file for appending).</p></dd>
+</dl>
+<h4 id="sec:port-.3efileno"><a href="#sec:port-.3efileno">port-&gt;fileno</a></h4><dl class="defsig"><dt class="defsig" id="def:port-.3efileno"><span class="sig"><tt>(port-&gt;fileno PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>PORT</tt> is a file- or tcp-port, then a file-descriptor is returned for this port. Otherwise an error is signaled.</p></dd>
+</dl>
+<h3 id="sec:Retrieving_file_attributes"><a href="#sec:Retrieving_file_attributes">Retrieving file attributes</a></h3><h4 id="sec:file-access-time"><a href="#sec:file-access-time">file-access-time</a></h4><h4 id="sec:file-change-time"><a href="#sec:file-change-time">file-change-time</a></h4><h4 id="sec:file-modification-time"><a href="#sec:file-modification-time">file-modification-time</a></h4><dl class="defsig"><dt class="defsig" id="def:file-access-time"><span class="sig"><tt>(file-access-time FILE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:file-change-time"><span class="sig"><tt>(file-change-time FILE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:file-modification-time"><span class="sig"><tt>(file-modification-time FILE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (file-modification-time FILE) SECONDS)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns time (in seconds) of the last access, modification or change of <tt>FILE</tt>. <tt>FILE</tt> may be a filename or a file-descriptor. If the file does not exist, an error is signaled.</p><p><tt>(set! (file-modification-time FILE) SECONDS)</tt> sets the access- and modification time of <tt>FILE</tt> to <tt>SECONDS</tt>.</p></dd>
+</dl>
+<h4 id="sec:file-stat"><a href="#sec:file-stat">file-stat</a></h4><dl class="defsig"><dt class="defsig" id="def:file-stat"><span class="sig"><tt>(file-stat FILE [LINK])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a 13-element vector with the following contents: inode-number, mode (as with <tt>file-permissions</tt>), number of hard links, uid of owner (as with <tt>file-owner</tt>), gid of owner, size (as with <tt>file-size</tt>) and access-, change- and modification-time (as with <tt>file-access-time</tt>, <tt>file-change-time</tt> and <tt>file-modification-time</tt>, device id, device type (for special file inode, blocksize and blocks allocated.  On Windows systems the last 4 values are undefined.</p><p>By default, symbolic links are followed and the status of the referenced file is returned; however, if the optional argument <tt>LINK</tt> is given and not <tt>#f</tt>, the status of the link itself is returned.</p><p>Note that for very large files, the <tt>file-size</tt> value may be an inexact integer.</p></dd>
+</dl>
+<h4 id="sec:file-position"><a href="#sec:file-position">file-position</a></h4><dl class="defsig"><dt class="defsig" id="def:file-position"><span class="sig"><tt>(file-position FILE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the current file position of <tt>FILE</tt>, which should be a port or a file-descriptor.</p></dd>
+</dl>
+<h4 id="sec:file-size"><a href="#sec:file-size">file-size</a></h4><dl class="defsig"><dt class="defsig" id="def:file-size"><span class="sig"><tt>(file-size FILE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the size of the file designated by <tt>FILE</tt>.  <tt>FILE</tt> may be a filename or a file-descriptor.  If the file does not exist, an error is signaled. Note that for very large files, <tt>file-size</tt> may return an inexact integer.</p></dd>
+</dl>
+<h4 id="sec:regular-file.3f"><a href="#sec:regular-file.3f">regular-file?</a></h4><dl class="defsig"><dt class="defsig" id="def:regular-file.3f"><span class="sig"><tt>(regular-file? FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns true, if <tt>FILENAME</tt> names a regular file (not a directory, socket, etc.)  This operation follows symbolic links; use either <tt>symbolic-link?</tt> or <tt>file-type</tt> if you need to test for symlinks.</p></dd>
+</dl>
+<h4 id="sec:file-owner"><a href="#sec:file-owner">file-owner</a></h4><dl class="defsig"><dt class="defsig" id="def:file-owner"><span class="sig"><tt>(file-owner FILE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the user-id of <tt>FILE</tt>.  <tt>FILE</tt> may be a filename or a file-descriptor.</p></dd>
+</dl>
+<h4 id="sec:file-permissions"><a href="#sec:file-permissions">file-permissions</a></h4><dl class="defsig"><dt class="defsig" id="def:file-permissions"><span class="sig"><tt>(file-permissions FILE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the permission bits for <tt>FILE</tt>. You can test this value by performing bitwise operations on the result and the <tt>perm/...</tt> values.  <tt>FILE</tt> may be a filename or a file-descriptor.</p></dd>
+</dl>
+<h4 id="sec:file-read-access.3f"><a href="#sec:file-read-access.3f">file-read-access?</a></h4><h4 id="sec:file-write-access.3f"><a href="#sec:file-write-access.3f">file-write-access?</a></h4><h4 id="sec:file-execute-access.3f"><a href="#sec:file-execute-access.3f">file-execute-access?</a></h4><dl class="defsig"><dt class="defsig" id="def:file-read-access.3f"><span class="sig"><tt>(file-read-access? FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:file-write-access.3f"><span class="sig"><tt>(file-write-access? FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:file-execute-access.3f"><span class="sig"><tt>(file-execute-access? FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>These procedures return <tt>#t</tt> if the current user has read, write or execute permissions on the file named <tt>FILENAME</tt>.</p></dd>
+</dl>
+<h4 id="sec:file-type"><a href="#sec:file-type">file-type</a></h4><dl class="defsig"><dt class="defsig" id="def:file-type"><span class="sig"><tt>(file-type FILE [LINK [ERROR]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the file-type for <tt>FILE</tt>, which should be a filename or file-descriptor. If <tt>LINK</tt> is given and true, symbolic-links are not followed:</p><pre> regular-file
+ directory
+ fifo
+ socket
+ symbolic-link
+ character-device
+ block-device</pre><p>Note that not all types are supported on every platform. If <tt>ERROR</tt> is given and false, <tt>file-type</tt> signals an error if the file does not exist.</p></dd>
+</dl>
+<h4 id="sec:character-device.3f"><a href="#sec:character-device.3f">character-device?</a></h4><h4 id="sec:block-device.3f"><a href="#sec:block-device.3f">block-device?</a></h4><h4 id="sec:socket.3f"><a href="#sec:socket.3f">socket?</a></h4><dl class="defsig"><dt class="defsig" id="def:character-device.3f"><span class="sig"><tt>(character-device? FILE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:block-device.3f"><span class="sig"><tt>(block-device? FILE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:socket.3f"><span class="sig"><tt>(socket? FILE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>These procedures return <tt>#t</tt> if <tt>FILE</tt> given is of the appropriate type. <tt>FILE</tt> may be a filename or a file-descriptor. Note that these operations follow symbolic links. If the file does not exist, <tt>#f</tt> is returned.</p></dd>
+</dl>
+<h3 id="sec:Changing_file_attributes"><a href="#sec:Changing_file_attributes">Changing file attributes</a></h3><h4 id="sec:file-truncate"><a href="#sec:file-truncate">file-truncate</a></h4><dl class="defsig"><dt class="defsig" id="def:file-truncate"><span class="sig"><tt>(file-truncate FILE OFFSET)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Truncates the file <tt>FILE</tt> to the length <tt>OFFSET</tt>, which should be an integer. If the file-size is smaller or equal to <tt>OFFSET</tt> then nothing is done.  <tt>FILE</tt> should be a filename or a file-descriptor.</p></dd>
+</dl>
+<h4 id="sec:set-file-position.21"><a href="#sec:set-file-position.21">set-file-position!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-file-position.21"><span class="sig"><tt>(set-file-position! FILE POSITION [WHENCE])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (file-position FILE) POSITION)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the current read/write position of <tt>FILE</tt> to <tt>POSITION</tt>, which should be an exact integer. <tt>FILE</tt> should be a port or a file-descriptor.  <tt>WHENCE</tt> specifies how the position is to interpreted and should be one of the values <tt>seek/set, seek/cur</tt> and <tt>seek/end</tt>. It defaults to <tt>seek/set</tt>.</p><p>Exceptions: <tt>(exn bounds)</tt>, <tt>(exn i/o file)</tt></p></dd>
+</dl>
+<h4 id="sec:change-file-mode"><a href="#sec:change-file-mode">change-file-mode</a></h4><dl class="defsig"><dt class="defsig" id="def:change-file-mode"><span class="sig"><tt>(change-file-mode FILENAME MODE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Changes the current file mode of the file named <tt>FILENAME</tt> to <tt>MODE</tt> using the <tt>chmod()</tt> system call.  The <tt>perm/...</tt> variables contain the various permission bits and can be combinded with the <tt>bitwise-ior</tt> procedure.</p></dd>
+</dl>
+<h4 id="sec:change-file-owner"><a href="#sec:change-file-owner">change-file-owner</a></h4><dl class="defsig"><dt class="defsig" id="def:change-file-owner"><span class="sig"><tt>(change-file-owner FILENAME UID GID)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Changes the owner information of the file named <tt>FILENAME</tt> to the user- and group-ids <tt>UID</tt> and <tt>GID</tt> (which should be exact integers) using the <tt>chown()</tt> system call.</p></dd>
+</dl>
+<h4 id="sec:file-creation-mode"><a href="#sec:file-creation-mode">file-creation-mode</a></h4><dl class="defsig"><dt class="defsig" id="def:file-creation-mode"><span class="sig"><tt>(file-creation-mode MODE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the initial file permissions used for newly created files (as with <tt>umask(2)</tt>. You can set the mode by executing</p><pre> (set! (file-creation-mode) MODE)</pre><p>or</p><pre> (file-creation-mode MODE)</pre><p>where <tt>MODE</tt> is a bitwise combination of one or more of the <tt>perm/...</tt> flags.</p></dd>
+</dl>
+<h3 id="sec:Processes"><a href="#sec:Processes">Processes</a></h3><h4 id="sec:current-process-id"><a href="#sec:current-process-id">current-process-id</a></h4><dl class="defsig"><dt class="defsig" id="def:current-process-id"><span class="sig"><tt>(current-process-id)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the process ID of the current process.</p></dd>
+</dl>
+<h4 id="sec:parent-process-id"><a href="#sec:parent-process-id">parent-process-id</a></h4><dl class="defsig"><dt class="defsig" id="def:parent-process-id"><span class="sig"><tt>(parent-process-id)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the process ID of the parent of the current process.</p></dd>
+</dl>
+<h4 id="sec:process-group-id"><a href="#sec:process-group-id">process-group-id</a></h4><dl class="defsig"><dt class="defsig" id="def:process-group-id"><span class="sig"><tt>(process-group-id PID)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the process group ID of the process specified by <tt>PID</tt>.</p></dd>
+</dl>
+<h4 id="sec:process-execute"><a href="#sec:process-execute">process-execute</a></h4><dl class="defsig"><dt class="defsig" id="def:process-execute"><span class="sig"><tt>(process-execute PATHNAME [ARGUMENT-LIST [ENVIRONMENT-LIST]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a new child process and replaces the running process with it using the C library function <tt>execvp(3)</tt>. If the optional argument <tt>ARGUMENT-LIST</tt> is given, then it should contain a list of strings which are passed as arguments to the subprocess. If the optional argument <tt>ENVIRONMENT-LIST</tt> is supplied, then the library function <tt>execve(2)</tt> is used, and the environment passed in <tt>ENVIRONMENT-LIST</tt> (which should be of the form <tt>(&quot;&lt;NAME&gt;=&lt;VALUE&gt;&quot; ...)</tt> is given to the invoked process. Note that <tt>execvp(3)</tt> respects the current setting of the <tt>PATH</tt> environment variable while <tt>execve(3)</tt> does not.</p></dd>
+</dl>
+<h4 id="sec:process-fork"><a href="#sec:process-fork">process-fork</a></h4><dl class="defsig"><dt class="defsig" id="def:process-fork"><span class="sig"><tt>(process-fork [THUNK])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a new child process with the UNIX system call <tt>fork()</tt>. Returns either the PID of the child process or 0. If <tt>THUNK</tt> is given, then the child process calls it as a procedure with no arguments and terminates.</p></dd>
+</dl>
+<h4 id="sec:process-run"><a href="#sec:process-run">process-run</a></h4><dl class="defsig"><dt class="defsig" id="def:process-run"><span class="sig"><tt>(process-run COMMANDLINE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:process-run"><span class="sig"><tt>(process-run COMMAND ARGUMENT-LIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a new child process. The PID of the new process is returned.</p><ul><li>The single parameter version passes the <tt>COMMANDLINE</tt> to the system shell, so usual argument expansion can take place.</li>
+<li>The multiple parameter version directly invokes the <tt>COMMAND</tt> with the <tt>ARGUMENT-LIST</tt>.</li>
+</ul>
+</dd>
+</dl>
+<h4 id="sec:process-signal"><a href="#sec:process-signal">process-signal</a></h4><dl class="defsig"><dt class="defsig" id="def:process-signal"><span class="sig"><tt>(process-signal PID [SIGNAL])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sends <tt>SIGNAL</tt> to the process with the id <tt>PID</tt> using the UNIX system call <tt>kill()</tt>. <tt>SIGNAL</tt> defaults to the value of the variable <tt>signal/term</tt>.</p></dd>
+</dl>
+<h4 id="sec:process-wait"><a href="#sec:process-wait">process-wait</a></h4><dl class="defsig"><dt class="defsig" id="def:process-wait"><span class="sig"><tt>(process-wait [PID [NOHANG]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Suspends the current process until the child process with the id <tt>PID</tt> has terminated using the UNIX system call <tt>waitpid()</tt>. If <tt>PID</tt> is not given, then this procedure waits for any child process. If <tt>NOHANG</tt> is given and not <tt>#f</tt> then the current process is not suspended.  This procedure returns three values:</p><ul><li><tt>PID</tt> or 0, if <tt>NOHANG</tt> is true and the child process has not terminated yet.</li>
+<li><tt>#t</tt> if the process exited normally or <tt>#f</tt> otherwise.</li>
+<li>either the exit status, if the process terminated normally or the signal number that terminated/stopped the process.</li>
+</ul>
+<p>Note that suspending the current process implies that all threads are suspended as well.</p></dd>
+</dl>
+<h4 id="sec:process"><a href="#sec:process">process</a></h4><dl class="defsig"><dt class="defsig" id="def:process"><span class="sig"><tt>(process COMMANDLINE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:process"><span class="sig"><tt>(process COMMAND ARGUMENT-LIST [ENVIRONMENT-LIST])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a subprocess and returns three values: an input port from which data written by the sub-process can be read, an output port from which any data written to will be received as input in the sub-process and the process-id of the started sub-process. Blocking reads and writes to or from the ports returned by <tt>process</tt> only block the current thread, not other threads executing concurrently.</p><ul><li>The single parameter version passes the string <tt>COMMANDLINE</tt> to the host-system's shell that is invoked as a subprocess.</li>
+<li>The multiple parameter version directly invokes the <tt>COMMAND</tt> as a subprocess. The <tt>ARGUMENT-LIST</tt> is directly passed, as is <tt>ENVIRONMENT-LIST</tt>.</li>
+</ul>
+<p>Not using the shell may be preferrable for security reasons.</p><p>Once both the input- and output ports are closed, an implicit <tt>waitpid(3)</tt> is done to wait for the subprocess to finish or to reap a subprocess that has terminated. If the subprocess has not finished, waiting for it will necessarily block all executing threads.</p></dd>
+</dl>
+<h4 id="sec:process.2a"><a href="#sec:process.2a">process*</a></h4><dl class="defsig"><dt class="defsig" id="def:process.2a"><span class="sig"><tt>(process* COMMANDLINE)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:process.2a"><span class="sig"><tt>(process* COMMAND ARGUMENT-LIST [ENVIRONMENT-LIST])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Like <tt>process</tt> but returns 4 values: an input port from which data written by the sub-process can be read, an output port from which any data written to will be received as input in the sub-process, the process-id of the started sub-process, and an input port from which data written by the sub-process to <tt>stderr</tt> can be read.</p></dd>
+</dl>
+<h4 id="sec:sleep"><a href="#sec:sleep">sleep</a></h4><dl class="defsig"><dt class="defsig" id="def:sleep"><span class="sig"><tt>(sleep SECONDS)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Puts the process to sleep for <tt>SECONDS</tt>. Returns either 0 if the time has completely elapsed, or the number of remaining seconds, if a signal occurred.</p></dd>
+</dl>
+<h4 id="sec:create-session"><a href="#sec:create-session">create-session</a></h4><dl class="defsig"><dt class="defsig" id="def:create-session"><span class="sig"><tt>(create-session)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a new session if the calling process is not a process group leader and returns the session ID.</p></dd>
+</dl>
+<h3 id="sec:Hard_and_symbolic_links"><a href="#sec:Hard_and_symbolic_links">Hard and symbolic links</a></h3><h4 id="sec:symbolic-link.3f"><a href="#sec:symbolic-link.3f">symbolic-link?</a></h4><dl class="defsig"><dt class="defsig" id="def:symbolic-link.3f"><span class="sig"><tt>(symbolic-link? FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns true, if <tt>FILENAME</tt> names a symbolic link. If no such file exists, <tt>#f</tt> is returned.  This operation does not follow symbolic links itself.</p></dd>
+</dl>
+<h4 id="sec:create-symbolic-link"><a href="#sec:create-symbolic-link">create-symbolic-link</a></h4><dl class="defsig"><dt class="defsig" id="def:create-symbolic-link"><span class="sig"><tt>(create-symbolic-link OLDNAME NEWNAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a symbolic link with the filename <tt>NEWNAME</tt> that points to the file named <tt>OLDNAME</tt>.</p></dd>
+</dl>
+<h4 id="sec:read-symbolic-link"><a href="#sec:read-symbolic-link">read-symbolic-link</a></h4><dl class="defsig"><dt class="defsig" id="def:read-symbolic-link"><span class="sig"><tt>(read-symbolic-link FILENAME [CANONICALIZE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the filename to which the symbolic link <tt>FILENAME</tt> points. If <tt>CANONICALIZE</tt> is given and true, then symbolic links are resolved repeatedly until the result is not a link.</p></dd>
+</dl>
+<h4 id="sec:file-link"><a href="#sec:file-link">file-link</a></h4><dl class="defsig"><dt class="defsig" id="def:file-link"><span class="sig"><tt>(file-link OLDNAME NEWNAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a hard link from <tt>OLDNAME</tt> to <tt>NEWNAME</tt> (both strings).</p></dd>
+</dl>
+<h3 id="sec:Retrieving_user_.26_group_information"><a href="#sec:Retrieving_user_.26_group_information">Retrieving user &amp; group information</a></h3><h4 id="sec:current-user-id"><a href="#sec:current-user-id">current-user-id</a></h4><dl class="defsig"><dt class="defsig" id="def:current-user-id"><span class="sig"><tt>(current-user-id)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>[setter] (set! (current-user-id) UID)</pre><p>Get or set the real user-id of the current process.</p></dd>
+</dl>
+<h4 id="sec:current-effective-user-id"><a href="#sec:current-effective-user-id">current-effective-user-id</a></h4><dl class="defsig"><dt class="defsig" id="def:current-effective-user-id"><span class="sig"><tt>(current-effective-user-id)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>[setter] (set! (current-effective-user-id) UID)</pre><p>Get or set the effective user-id of the current process.</p></dd>
+</dl>
+<h4 id="sec:user-information"><a href="#sec:user-information">user-information</a></h4><dl class="defsig"><dt class="defsig" id="def:user-information"><span class="sig"><tt>(user-information USER [AS-VECTOR])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>USER</tt> specifes a valid username (as a string) or user ID, then the user database is consulted and a list of 7 values are returned: the user-name, the encrypted password, the user ID, the group ID, a user-specific string, the home directory and the default shell. When <tt>AS-VECTOR</tt> is <tt>#t</tt> a vector of 7 elements is returned instead of a list. If no user with this name or id then <tt>#f</tt> is returned.</p></dd>
+</dl>
+<h4 id="sec:current-group-id"><a href="#sec:current-group-id">current-group-id</a></h4><dl class="defsig"><dt class="defsig" id="def:current-group-id"><span class="sig"><tt>(current-group-id)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>[setter] (set! (current-group-id) GID)</pre><p>Get or set the real group-id of the current process.</p></dd>
+</dl>
+<h4 id="sec:current-effective-group-id"><a href="#sec:current-effective-group-id">current-effective-group-id</a></h4><dl class="defsig"><dt class="defsig" id="def:current-effective-group-id"><span class="sig"><tt>(current-effective-group-id)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>[setter] (set! (current-effective-group-id) GID)</pre><p>Get or set the effective group-id of the current process. ID can be found, then <tt>#f</tt> is returned.</p></dd>
+</dl>
+<h4 id="sec:group-information"><a href="#sec:group-information">group-information</a></h4><dl class="defsig"><dt class="defsig" id="def:group-information"><span class="sig"><tt>(group-information GROUP)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>GROUP</tt> specifies a valid group-name or group-id, then this procedure returns a list of four values: the group-name, the encrypted group password, the group ID and a list of the names of all group members. If no group with the given name or ID exists, then <tt>#f</tt> is returned.</p></dd>
+</dl>
+<h4 id="sec:get-groups"><a href="#sec:get-groups">get-groups</a></h4><dl class="defsig"><dt class="defsig" id="def:get-groups"><span class="sig"><tt>(get-groups)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list with the supplementary group IDs of the current user.</p></dd>
+</dl>
+<h3 id="sec:Changing_user_.26_group_information"><a href="#sec:Changing_user_.26_group_information">Changing user &amp; group information</a></h3><h4 id="sec:set-groups.21"><a href="#sec:set-groups.21">set-groups!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-groups.21"><span class="sig"><tt>(set-groups! GIDLIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the supplementrary group IDs of the current user to the IDs given in the list <tt>GIDLIST</tt>.</p><p>Only the superuser may invoke this procedure.</p></dd>
+</dl>
+<h4 id="sec:initialize-groups"><a href="#sec:initialize-groups">initialize-groups</a></h4><dl class="defsig"><dt class="defsig" id="def:initialize-groups"><span class="sig"><tt>(initialize-groups USERNAME BASEGID)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the supplementrary group IDs of the current user to the IDs from the user with name <tt>USERNAME</tt> (a string), including <tt>BASEGID</tt>.</p><p>Only the superuser may invoke this procedure.</p></dd>
+</dl>
+<h4 id="sec:set-process-group-id.21"><a href="#sec:set-process-group-id.21">set-process-group-id!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-process-group-id.21"><span class="sig"><tt>(set-process-group-id! PID PGID)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>[setter] (set! (process-group-id PID) PGID)</pre><p>Sets the process group ID of the process specifed by <tt>PID</tt> to <tt>PGID</tt>.</p></dd>
+</dl>
+<h3 id="sec:Record_locking"><a href="#sec:Record_locking">Record locking</a></h3><h4 id="sec:file-lock"><a href="#sec:file-lock">file-lock</a></h4><dl class="defsig"><dt class="defsig" id="def:file-lock"><span class="sig"><tt>(file-lock PORT [START [LEN]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Locks the file associated with <tt>PORT</tt> for reading or writing (according to whether <tt>PORT</tt> is an input- or output-port). <tt>START</tt> specifies the starting position in the file to be locked and defaults to 0. <tt>LEN</tt> specifies the length of the portion to be locked and defaults to <tt>#t</tt>, which means the complete file. <tt>file-lock</tt> returns a <i>lock</i>-object.</p></dd>
+</dl>
+<h4 id="sec:file-lock.2fblocking"><a href="#sec:file-lock.2fblocking">file-lock/blocking</a></h4><dl class="defsig"><dt class="defsig" id="def:file-lock.2fblocking"><span class="sig"><tt>(file-lock/blocking PORT [START [LEN]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Similar to <tt>file-lock</tt>, but if a lock is held on the file, the current process blocks (including all threads) until the lock is released.</p></dd>
+</dl>
+<h4 id="sec:file-test-lock"><a href="#sec:file-test-lock">file-test-lock</a></h4><dl class="defsig"><dt class="defsig" id="def:file-test-lock"><span class="sig"><tt>(file-test-lock PORT [START [LEN]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Tests whether the file associated with <tt>PORT</tt> is locked for reading or writing (according to whether <tt>PORT</tt> is an input- or output-port) and returns either <tt>#f</tt> or the process-id of the locking process.</p></dd>
+</dl>
+<h4 id="sec:file-unlock"><a href="#sec:file-unlock">file-unlock</a></h4><dl class="defsig"><dt class="defsig" id="def:file-unlock"><span class="sig"><tt>(file-unlock LOCK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Unlocks the previously locked portion of a file given in <tt>LOCK</tt>.</p></dd>
+</dl>
+<h3 id="sec:Signal_handling"><a href="#sec:Signal_handling">Signal handling</a></h3><h4 id="sec:set-alarm.21"><a href="#sec:set-alarm.21">set-alarm!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-alarm.21"><span class="sig"><tt>(set-alarm! SECONDS)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets an internal timer to raise the <tt>signal/alrm</tt> after <tt>SECONDS</tt> are elapsed.  You can use the <tt>set-signal-handler!</tt> procedure to write a handler for this signal.</p></dd>
+</dl>
+<h4 id="sec:set-signal-handler.21"><a href="#sec:set-signal-handler.21">set-signal-handler!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-signal-handler.21"><span class="sig"><tt>(set-signal-handler! SIGNUM PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Establishes the procedure of one argument <tt>PROC</tt> as the handler for the signal with the code <tt>SIGNUM</tt>. <tt>PROC</tt> is called with the signal number as its sole argument. If the argument <tt>PROC</tt> is <tt>#f</tt> then any signal handler will be removed, and the corresponding signal set to <tt>SIG_IGN</tt>.</p><p>Note that is is unspecified in which thread of execution the signal handler will be invoked.</p></dd>
+</dl>
+<h4 id="sec:signal-handler"><a href="#sec:signal-handler">signal-handler</a></h4><dl class="defsig"><dt class="defsig" id="def:signal-handler"><span class="sig"><tt>(signal-handler SIGNUM)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the signal handler for the code <tt>SIGNUM</tt> or <tt>#f</tt>.</p></dd>
+</dl>
+<h4 id="sec:set-signal-mask.21"><a href="#sec:set-signal-mask.21">set-signal-mask!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-signal-mask.21"><span class="sig"><tt>(set-signal-mask! SIGLIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the signal mask of the current process to block all signals given in the list <tt>SIGLIST</tt>.  Signals masked in that way will not be delivered to the current process.</p></dd>
+</dl>
+<h4 id="sec:signal-mask"><a href="#sec:signal-mask">signal-mask</a></h4><dl class="defsig"><dt class="defsig" id="def:signal-mask"><span class="sig"><tt>(signal-mask)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the signal mask of the current process.</p></dd>
+</dl>
+<h4 id="sec:signal-masked.3f"><a href="#sec:signal-masked.3f">signal-masked?</a></h4><dl class="defsig"><dt class="defsig" id="def:signal-masked.3f"><span class="sig"><tt>(signal-masked? SIGNUM)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns whether the signal for the code <tt>SIGNUM</tt> is currently masked.</p></dd>
+</dl>
+<h4 id="sec:signal-mask.21"><a href="#sec:signal-mask.21">signal-mask!</a></h4><dl class="defsig"><dt class="defsig" id="def:signal-mask.21"><span class="sig"><tt>(signal-mask! SIGNUM)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Masks (blocks) the signal for the code <tt>SIGNUM</tt>.</p></dd>
+</dl>
+<h4 id="sec:signal-unmask.21"><a href="#sec:signal-unmask.21">signal-unmask!</a></h4><dl class="defsig"><dt class="defsig" id="def:signal-unmask.21"><span class="sig"><tt>(signal-unmask! SIGNUM)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Unmasks (unblocks) the signal for the code <tt>SIGNUM</tt>.</p></dd>
+</dl>
+<h4 id="sec:Signal_codes"><a href="#sec:Signal_codes">Signal codes</a></h4><dl class="defsig"><dt class="defsig" id="def:signal.2fterm"><span class="sig"><tt>signal/term</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fkill"><span class="sig"><tt>signal/kill</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fint"><span class="sig"><tt>signal/int</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fhup"><span class="sig"><tt>signal/hup</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2ffpe"><span class="sig"><tt>signal/fpe</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fill"><span class="sig"><tt>signal/ill</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fsegv"><span class="sig"><tt>signal/segv</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fabrt"><span class="sig"><tt>signal/abrt</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2ftrap"><span class="sig"><tt>signal/trap</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fquit"><span class="sig"><tt>signal/quit</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2falrm"><span class="sig"><tt>signal/alrm</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fvtalrm"><span class="sig"><tt>signal/vtalrm</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fprof"><span class="sig"><tt>signal/prof</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fio"><span class="sig"><tt>signal/io</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2furg"><span class="sig"><tt>signal/urg</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fchld"><span class="sig"><tt>signal/chld</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fcont"><span class="sig"><tt>signal/cont</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fstop"><span class="sig"><tt>signal/stop</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2ftstp"><span class="sig"><tt>signal/tstp</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fpipe"><span class="sig"><tt>signal/pipe</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fxcpu"><span class="sig"><tt>signal/xcpu</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fxfsz"><span class="sig"><tt>signal/xfsz</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fusr1"><span class="sig"><tt>signal/usr1</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fusr2"><span class="sig"><tt>signal/usr2</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:signal.2fwinch"><span class="sig"><tt>signal/winch</tt></span> <span class="type">constant</span></dt>
+<dd class="defsig"><p>These variables contain signal codes for use with <tt>process-signal</tt>,  <tt>set-signal-handler!</tt>,  <tt>signal-handler</tt>,  <tt>signal-masked?</tt>,  <tt>signal-mask!</tt>,  or <tt>signal-unmask!</tt>.</p></dd>
+</dl>
+<h3 id="sec:Environment_access"><a href="#sec:Environment_access">Environment access</a></h3><h4 id="sec:get-environment-variables"><a href="#sec:get-environment-variables">get-environment-variables</a></h4><dl class="defsig"><dt class="defsig" id="def:get-environment-variables"><span class="sig"><tt>(get-environment-variables)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a association list of the environment variables and their current values (see also <a href="http://srfi.schemers.org/srfi-98/">SRFI-98</a>).</p></dd>
+</dl>
+<h4 id="sec:setenv"><a href="#sec:setenv">setenv</a></h4><dl class="defsig"><dt class="defsig" id="def:setenv"><span class="sig"><tt>(setenv VARIABLE VALUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the environment variable named <tt>VARIABLE</tt> to <tt>VALUE</tt>. Both arguments should be strings. If the variable is not defined in the environment, a new definition is created.</p></dd>
+</dl>
+<h4 id="sec:unsetenv"><a href="#sec:unsetenv">unsetenv</a></h4><dl class="defsig"><dt class="defsig" id="def:unsetenv"><span class="sig"><tt>(unsetenv VARIABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Removes the definition of the environment variable <tt>VARIABLE</tt> from the environment of the current process. If the variable is not defined, nothing happens.</p></dd>
+</dl>
+<h3 id="sec:Memory_mapped_I.2fO"><a href="#sec:Memory_mapped_I.2fO">Memory mapped I/O</a></h3><p>Memory mapped I/O takes the contents of a file descriptor and places them in memory.</p><pre></pre><h4 id="sec:memory-mapped-file.3f"><a href="#sec:memory-mapped-file.3f">memory-mapped-file?</a></h4><dl class="defsig"><dt class="defsig" id="def:memory-mapped-file.3f"><span class="sig"><tt>(memory-mapped-file? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt>, if <tt>X</tt> is an object representing a memory mapped file, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:map-file-to-memory"><a href="#sec:map-file-to-memory">map-file-to-memory</a></h4><dl class="defsig"><dt class="defsig" id="def:map-file-to-memory"><span class="sig"><tt>(map-file-to-memory ADDRESS LEN PROTECTION FLAG FILENO [OFFSET])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Maps a section of a file to memory using the C function <tt>mmap()</tt>.  <tt>ADDRESS</tt> should be a foreign pointer object or <tt>#f</tt>; <tt>LEN</tt> specifies the size of the section to be mapped; <tt>PROTECTION</tt> should be one or more of the flags <tt>prot/read, prot/write, prot/exec</tt> or <tt>prot/none</tt> <b>bitwise-ior</b>ed together; <tt>FLAG</tt> should be one or more of the flags <tt>map/fixed, map/shared, map/private, map/anonymous</tt> or <tt>map/file</tt>; <tt>FILENO</tt> should be the file-descriptor of the mapped file. The optional argument <tt>OFFSET</tt> gives the offset of the section of the file to be mapped and defaults to 0. This procedure returns an object representing the mapped file section.  The procedure <tt>move-memory!</tt> can be used to access the mapped memory.</p></dd>
+</dl>
+<h4 id="sec:memory-mapped-file-pointer"><a href="#sec:memory-mapped-file-pointer">memory-mapped-file-pointer</a></h4><dl class="defsig"><dt class="defsig" id="def:memory-mapped-file-pointer"><span class="sig"><tt>(memory-mapped-file-pointer MMAP)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a machine pointer to the start of the memory region to which the file is mapped.</p></dd>
+</dl>
+<h4 id="sec:unmap-file-from-memory"><a href="#sec:unmap-file-from-memory">unmap-file-from-memory</a></h4><dl class="defsig"><dt class="defsig" id="def:unmap-file-from-memory"><span class="sig"><tt>(unmap-file-from-memory MMAP [LEN])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Unmaps the section of a file mapped to memory using the C function <tt>munmap()</tt>.  <tt>MMAP</tt> should be a mapped file as returned by the procedure <tt>map-file-to-memory</tt>.  The optional argument <tt>LEN</tt> specifies the length of the section to be unmapped and defaults to the complete length given when the file was mapped.</p></dd>
+</dl>
+<h4 id="sec:Memory_Mapped_I.2fO_Example"><a href="#sec:Memory_Mapped_I.2fO_Example">Memory Mapped I/O Example</a></h4><pre class="highlight"><span class="comment">;; example-mmap.scm
+</span><span class="comment">;;
+</span><span class="comment">;; basic example of memory mapped I/O
+</span><span class="comment">;;
+</span><span class="comment">;; This example does no error checking or cleanup, and serves
+</span><span class="comment">;; only to demonstrate how the mmap functions work together.
+</span><span class="comment">;;
+</span><span class="paren1">(<span class="default">use posix</span>)</span>
+<span class="paren1">(<span class="default">use lolevel</span>)</span>
+
+       <span class="comment">; open a file using the posix module, so we have the file descriptor.
+</span><span class="paren1">(<span class="default"><i><span class="symbol">let*</span></i> <span class="paren2">(<span class="default"><span class="paren3">(<span class="default">fd   <span class="paren4">(<span class="default">file-open <span class="string">&quot;example-mmap.scm&quot;</span> <span class="paren5">(<span class="default">+ open/rdonly open/nonblock</span>)</span></span>)</span></span>)</span>
+       <span class="comment">; fstat(2) the file descriptor fd to determine its size
+</span>       <span class="paren3">(<span class="default">size <span class="paren4">(<span class="default">file-size fd</span>)</span></span>)</span>
+       <span class="comment">; mmap(2) the file for reading.
+</span>       <span class="paren3">(<span class="default">mmap <span class="paren4">(<span class="default">map-file-to-memory #f
+                                 size
+                                 prot/read
+                                 <span class="paren5">(<span class="default">+ map/file map/shared</span>)</span>
+                                 fd</span>)</span></span>)</span>
+       <span class="comment">; return a pointer object to the beginning of the memory map.
+</span>       <span class="paren3">(<span class="default">buf  <span class="paren4">(<span class="default">memory-mapped-file-pointer mmap</span>)</span></span>)</span>
+       <span class="comment">; allocate a string the same size as the file.
+</span>       <span class="paren3">(<span class="default">str  <span class="paren4">(<span class="default">make-string size</span>)</span></span>)</span></span>)</span>
+  <span class="comment">; copy the mapped memory into a string
+</span>  <span class="paren2">(<span class="default">move-memory! buf str size</span>)</span>
+  <span class="paren2">(<span class="default">display str</span>)</span>
+  <span class="comment">; alternately, print the string byte-by-byte without copying.
+</span>  <span class="paren2">(<span class="default"><i><span class="symbol">let</span></i> <i><span class="symbol">loop</span></i> <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">p buf</span>)</span>
+             <span class="paren4">(<span class="default">i 0</span>)</span></span>)</span>
+    <span class="paren3">(<span class="default">unless <span class="paren4">(<span class="default">= i size</span>)</span>
+      <span class="paren4">(<span class="default">display <span class="paren5">(<span class="default">integer-&gt;char <span class="paren6">(<span class="default">pointer-s8-ref p</span>)</span></span>)</span></span>)</span>
+      <span class="paren4">(<span class="default"><i><span class="symbol">loop</span></i> <span class="paren5">(<span class="default">pointer+ p 1</span>)</span> <span class="paren5">(<span class="default">+ i 1</span>)</span></span>)</span></span>)</span></span>)</span></span>)</span></pre><h3 id="sec:Date_and_time_routines"><a href="#sec:Date_and_time_routines">Date and time routines</a></h3><h4 id="sec:seconds-.3elocal-time"><a href="#sec:seconds-.3elocal-time">seconds-&gt;local-time</a></h4><dl class="defsig"><dt class="defsig" id="def:seconds-.3elocal-time"><span class="sig"><tt>(seconds-&gt;local-time [SECONDS])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Breaks down the time value represented in <tt>SECONDS</tt> into a 10 element vector of the form <tt>#(seconds minutes hours mday month year wday yday dstflag timezone)</tt>, in the following format:</p><dl><dt>seconds (0)</dt>
+<dd>the number of seconds after the minute (0 - 59)</dd><dt>minutes (1)</dt>
+<dd>the number of minutes after the hour (0 - 59)</dd><dt>hours (2)</dt>
+<dd>the number of hours past midnight (0 - 23)</dd><dt>mday (3)</dt>
+<dd>the day of the month (1 - 31)</dd><dt>month (4)</dt>
+<dd>the number of months since january (0 - 11)</dd><dt>year (5)</dt>
+<dd>the number of years since 1900</dd><dt>wday (6)</dt>
+<dd>the number of days since Sunday (0 - 6)</dd><dt>yday (7)</dt>
+<dd>the number of days since January 1 (0 - 365)</dd><dt>dstflag (8)</dt>
+<dd>a flag that is true if Daylight Saving Time is in effect at the time described.</dd><dt>timezone (9)</dt>
+<dd>the difference between UTC and the latest local standard time, in seconds west of UTC.</dd></dl>
+<p><tt>SECONDS</tt> defaults to the value of <tt>(current-seconds)</tt>.</p></dd>
+</dl>
+<h4 id="sec:local-time-.3eseconds"><a href="#sec:local-time-.3eseconds">local-time-&gt;seconds</a></h4><dl class="defsig"><dt class="defsig" id="def:local-time-.3eseconds"><span class="sig"><tt>(local-time-&gt;seconds VECTOR)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Converts the ten-element vector <tt>VECTOR</tt> representing the time value relative to the current timezone into the number of seconds since the first of January, 1970 UTC.</p></dd>
+</dl>
+<h4 id="sec:local-timezone-abbreviation"><a href="#sec:local-timezone-abbreviation">local-timezone-abbreviation</a></h4><dl class="defsig"><dt class="defsig" id="def:local-timezone-abbreviation"><span class="sig"><tt>(local-timezone-abbreviation)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the abbreviation for the local timezone as a string.</p></dd>
+</dl>
+<h4 id="sec:seconds-.3estring"><a href="#sec:seconds-.3estring">seconds-&gt;string</a></h4><dl class="defsig"><dt class="defsig" id="def:seconds-.3estring"><span class="sig"><tt>(seconds-&gt;string [SECONDS])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Converts the local time represented in <tt>SECONDS</tt> into a string of the form <tt>&quot;Tue May 21 13:46:22 1991&quot;</tt>. <tt>SECONDS</tt> defaults to the value of <tt>(current-seconds)</tt>.</p></dd>
+</dl>
+<h4 id="sec:seconds-.3eutc-time"><a href="#sec:seconds-.3eutc-time">seconds-&gt;utc-time</a></h4><dl class="defsig"><dt class="defsig" id="def:seconds-.3eutc-time"><span class="sig"><tt>(seconds-&gt;utc-time [SECONDS])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Similar to <tt>seconds-&gt;local-time</tt>, but interpretes <tt>SECONDS</tt> as UTC time. <tt>SECONDS</tt> defaults to the value of <tt>(current-seconds)</tt>.</p></dd>
+</dl>
+<h4 id="sec:utc-time-.3eseconds"><a href="#sec:utc-time-.3eseconds">utc-time-&gt;seconds</a></h4><dl class="defsig"><dt class="defsig" id="def:utc-time-.3eseconds"><span class="sig"><tt>(utc-time-&gt;seconds VECTOR)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Converts the ten-element vector <tt>VECTOR</tt> representing the UTC time value into the number of seconds since the first of January, 1970 UTC.</p></dd>
+</dl>
+<h4 id="sec:time-.3estring"><a href="#sec:time-.3estring">time-&gt;string</a></h4><dl class="defsig"><dt class="defsig" id="def:time-.3estring"><span class="sig"><tt>(time-&gt;string VECTOR [FORMAT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Converts the broken down time represented in the 10 element vector <tt>VECTOR</tt> into a string of the form represented by the <tt>FORMAT</tt> string. The default time form produces something like <tt>&quot;Tue May 21 13:46:22 1991&quot;</tt>.</p><p>The <tt>FORMAT</tt> string follows the rules for the C library procedure <tt>strftime</tt>. The default <tt>FORMAT</tt> string is &quot;%a %b %e %H:%M:%S %Z %Y&quot;.</p></dd>
+</dl>
+<h4 id="sec:string-.3etime"><a href="#sec:string-.3etime">string-&gt;time</a></h4><dl class="defsig"><dt class="defsig" id="def:string-.3etime"><span class="sig"><tt>(string-&gt;time TIME [FORMAT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Converts a string of the form represented by the <tt>FORMAT</tt> string into the broken down time represented in a 10 element vector. The default time form understands something like <tt>&quot;Tue May 21 13:46:22 1991&quot;</tt>.</p><p>The <tt>FORMAT</tt> string follows the rules for the C library procedure <tt>strptime</tt>. The default <tt>FORMAT</tt> string is &quot;%a %b %e %H:%M:%S %Z %Y&quot;.</p></dd>
+</dl>
+<h3 id="sec:Raw_exit"><a href="#sec:Raw_exit">Raw exit</a></h3><h4 id="sec:_exit"><a href="#sec:_exit">_exit</a></h4><dl class="defsig"><dt class="defsig" id="def:_exit"><span class="sig"><tt>(_exit [CODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Exits the current process without flushing any buffered output (using the C function <tt>_exit</tt>).  Note that the <tt>exit-handler</tt> is not called when this procedure is invoked. The optional return-code <tt>CODE</tt> defaults to <tt>0</tt>.</p></dd>
+</dl>
+<h3 id="sec:ERRNO_values"><a href="#sec:ERRNO_values">ERRNO values</a></h3><dl class="defsig"><dt class="defsig" id="def:errno.2fperm"><span class="sig"><tt>errno/perm</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fnoent"><span class="sig"><tt>errno/noent</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fsrch"><span class="sig"><tt>errno/srch</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fintr"><span class="sig"><tt>errno/intr</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fio"><span class="sig"><tt>errno/io</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fnoexec"><span class="sig"><tt>errno/noexec</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fbadf"><span class="sig"><tt>errno/badf</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fchild"><span class="sig"><tt>errno/child</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fnomem"><span class="sig"><tt>errno/nomem</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2facces"><span class="sig"><tt>errno/acces</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2ffault"><span class="sig"><tt>errno/fault</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fbusy"><span class="sig"><tt>errno/busy</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fnotdir"><span class="sig"><tt>errno/notdir</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fisdir"><span class="sig"><tt>errno/isdir</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2finval"><span class="sig"><tt>errno/inval</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fmfile"><span class="sig"><tt>errno/mfile</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fnospc"><span class="sig"><tt>errno/nospc</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fspipe"><span class="sig"><tt>errno/spipe</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fpipe"><span class="sig"><tt>errno/pipe</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fagain"><span class="sig"><tt>errno/again</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2frofs"><span class="sig"><tt>errno/rofs</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fexist"><span class="sig"><tt>errno/exist</tt></span> <span class="type">constant</span></dt>
+<dt class="defsig" id="def:errno.2fwouldblock"><span class="sig"><tt>errno/wouldblock</tt></span> <span class="type">constant</span></dt>
+<dd class="defsig"><p>These variables contain error codes as returned by <tt>errno</tt>.</p></dd>
+</dl>
+<h3 id="sec:Finding_files"><a href="#sec:Finding_files">Finding files</a></h3><h4 id="sec:find-files"><a href="#sec:find-files">find-files</a></h4><dl class="defsig"><dt class="defsig" id="def:find-files"><span class="sig"><tt>(find-files DIRECTORY #!key test action seed limit dotfiles follow-symlinks)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Recursively traverses the contents of <tt>DIRECTORY</tt> (which should be a string) and invokes the procedure <tt>action</tt> for all files in which the procedure <tt>test</tt> is true.  <tt>test</tt> may be a procedure of one argument or a regular-expression string that will be matched with a full pathname using <tt>irregex-match</tt>.  <tt>action</tt> should be a procedure of two arguments: the currently encountered file and the result of the previous invocation of <tt>action</tt>, or, if this is the first invocation, the value of <tt>seed</tt>. <tt>test</tt> defaults to <tt>(constantly #t)</tt>, <tt>action</tt> defaults to <tt>cons</tt>, <tt>seed</tt> defaults to <tt>()</tt>.  <tt>limit</tt> should be a procedure of one argument that is called for each nested directory and which should return true, if that directory is to be traversed recursively. <tt>limit</tt> may also be an exact integer that gives the maximum recursion depth. For example, a depth of <tt>0</tt> means that only files in the top-level, specified directory are to be traversed. In this case, all nested directories are ignored.  <tt>limit</tt> may also be <tt>#f</tt> (the default), which is equivalent to <tt>(constantly #t)</tt>.</p><p>If <tt>dotfiles</tt> is given and true, then files starting with a &quot;<tt>.</tt>&quot; character will not be ignored (but note that &quot;<tt>.</tt>&quot; and &quot;<tt>..</tt>&quot;  are always ignored). if <tt>follow-symlinks</tt> is given and true, then the traversal of a symbolic link that points to a directory will recursively traverse the latter. By default, symbolic links are not followed.</p><p>Note that <tt>action</tt> is called with the full pathname of each file, including the directory prefix.</p><p>This procedure's signature was changed in CHICKEN 4.6.   In older versions, <tt>find-files</tt> has a different signature:</p><pre> (find-files DIRECTORY [TEST [ACTION [SEED [LIMIT]]]])</pre><p>The old signature is still supported in CHICKEN 4.6 for compatibility reasons, but is deprecated.</p></dd>
+</dl>
+<h3 id="sec:Getting_the_hostname_and_system_information"><a href="#sec:Getting_the_hostname_and_system_information">Getting the hostname and system information</a></h3><h4 id="sec:get-host-name"><a href="#sec:get-host-name">get-host-name</a></h4><dl class="defsig"><dt class="defsig" id="def:get-host-name"><span class="sig"><tt>(get-host-name)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the hostname of the machine that this process is running on.</p></dd>
+</dl>
+<h4 id="sec:system-information"><a href="#sec:system-information">system-information</a></h4><dl class="defsig"><dt class="defsig" id="def:system-information"><span class="sig"><tt>(system-information)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Invokes the UNIX system call <tt>uname()</tt> and returns a list of 5 values: system-name, node-name, OS release, OS version and machine.</p></dd>
+</dl>
+<h3 id="sec:Setting_the_file_buffering_mode"><a href="#sec:Setting_the_file_buffering_mode">Setting the file buffering mode</a></h3><h4 id="sec:set-buffering-mode.21"><a href="#sec:set-buffering-mode.21">set-buffering-mode!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-buffering-mode.21"><span class="sig"><tt>(set-buffering-mode! PORT MODE [BUFSIZE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the buffering-mode for the file associated with <tt>PORT</tt> to <tt>MODE</tt>, which should be one of the keywords <tt>#:full</tt>, <tt>#:line</tt> or <tt>#:none</tt>. If <tt>BUFSIZE</tt> is specified it determines the size of the buffer to be used (if any).</p></dd>
+</dl>
+<h3 id="sec:Terminal_ports"><a href="#sec:Terminal_ports">Terminal ports</a></h3><h4 id="sec:terminal-name"><a href="#sec:terminal-name">terminal-name</a></h4><dl class="defsig"><dt class="defsig" id="def:terminal-name"><span class="sig"><tt>(terminal-name PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the name of the terminal that is connected to <tt>PORT</tt>.</p></dd>
+</dl>
+<h4 id="sec:terminal-port.3f"><a href="#sec:terminal-port.3f">terminal-port?</a></h4><dl class="defsig"><dt class="defsig" id="def:terminal-port.3f"><span class="sig"><tt>(terminal-port? PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>PORT</tt> is connected to a terminal and <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:terminal-size"><a href="#sec:terminal-size">terminal-size</a></h4><dl class="defsig"><dt class="defsig" id="def:terminal-size"><span class="sig"><tt>(terminal-size PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns two values, the number of columns and rows of the terminal that is connected to <tt>PORT</tt> or <tt>0</tt>, <tt>0</tt> if the terminal size can not be obtained. On Windows, this procedure always returns <tt>0</tt>, <tt>0</tt>.</p></dd>
+</dl>
+<h3 id="sec:How_Scheme_procedures_relate_to_UNIX_C_functions"><a href="#sec:How_Scheme_procedures_relate_to_UNIX_C_functions">How Scheme procedures relate to UNIX C functions</a></h3><dl><dt><tt>change-directory</tt></dt>
+<dd><tt>chdir</tt></dd><dt><tt>change-file-mode</tt></dt>
+<dd><tt>chmod</tt></dd><dt><tt>change-file-owner</tt></dt>
+<dd><tt>chown</tt></dd><dt><tt>create-directory</tt></dt>
+<dd><tt>mkdir</tt></dd><dt><tt>create-fifo</tt></dt>
+<dd><tt>mkfifo</tt></dd><dt><tt>create-pipe</tt></dt>
+<dd><tt>pipe</tt></dd><dt><tt>create-session</tt></dt>
+<dd><tt>setsid</tt></dd><dt><tt>create-symbolic-link</tt></dt>
+<dd><tt>link</tt></dd><dt><tt>current-directory</tt></dt>
+<dd><tt>curdir</tt></dd><dt><tt>current-effective-groupd-id</tt></dt>
+<dd><tt>getegid</tt></dd><dt><tt>current-effective-user-id</tt></dt>
+<dd><tt>geteuid</tt></dd><dt><tt>current-group-id</tt></dt>
+<dd><tt>getgid</tt></dd><dt><tt>current-parent-id</tt></dt>
+<dd><tt>getppid</tt></dd><dt><tt>current-process-id</tt></dt>
+<dd><tt>getpid</tt></dd><dt><tt>current-user-id</tt></dt>
+<dd><tt>getuid</tt></dd><dt><tt>delete-directory</tt></dt>
+<dd><tt>rmdir</tt></dd><dt><tt>duplicate-fileno</tt></dt>
+<dd><tt>dup/dup2</tt></dd><dt><tt>_exit</tt></dt>
+<dd><tt>_exit</tt></dd><dt><tt>file-close</tt></dt>
+<dd><tt>close</tt></dd><dt><tt>file-access-time</tt></dt>
+<dd><tt>stat</tt></dd><dt><tt>file-change-time</tt></dt>
+<dd><tt>stat</tt></dd><dt><tt>file-creation-mode</tt></dt>
+<dd><tt>umask</tt></dd><dt><tt>file-modification-time</tt></dt>
+<dd><tt>stat</tt></dd><dt><tt>file-execute-access?</tt></dt>
+<dd><tt>access</tt></dd><dt><tt>file-open</tt></dt>
+<dd><tt>open</tt></dd><dt><tt>file-lock</tt></dt>
+<dd><tt>fcntl</tt></dd><dt><tt>file-position</tt></dt>
+<dd><tt>ftell/lseek</tt></dd><dt><tt>file-read</tt></dt>
+<dd><tt>read</tt></dd><dt><tt>file-read-access?</tt></dt>
+<dd><tt>access</tt></dd><dt><tt>file-select</tt></dt>
+<dd><tt>select</tt></dd><dt><tt>file-control</tt></dt>
+<dd><tt>fcntl</tt></dd><dt><tt>file-stat</tt></dt>
+<dd><tt>stat</tt></dd><dt><tt>file-test-lock</tt></dt>
+<dd><tt>fcntl</tt></dd><dt><tt>file-truncate</tt></dt>
+<dd><tt>truncate/ftruncate</tt></dd><dt><tt>file-unlock</tt></dt>
+<dd><tt>fcntl</tt></dd><dt><tt>file-write</tt></dt>
+<dd><tt>write</tt></dd><dt><tt>file-write-access?</tt></dt>
+<dd><tt>access</tt></dd><dt><tt>get-groups</tt></dt>
+<dd><tt>getgroups</tt></dd><dt><tt>get-host-name</tt></dt>
+<dd><tt>gethostname</tt></dd><dt><tt>initialize-groups</tt></dt>
+<dd><tt>initgroups</tt></dd><dt><tt>local-time-&gt;seconds</tt></dt>
+<dd><tt>mktime</tt></dd><dt><tt>local-timezone-abbreviation</tt></dt>
+<dd><tt>localtime</tt></dd><dt><tt>map-file-to-memory</tt></dt>
+<dd><tt>mmap</tt></dd><dt><tt>open-input-file*</tt></dt>
+<dd><tt>fdopen</tt></dd><dt><tt>open-output-file*</tt></dt>
+<dd><tt>fdopen</tt></dd><dt><tt>open-input-pipe</tt></dt>
+<dd><tt>popen</tt></dd><dt><tt>open-output-pipe</tt></dt>
+<dd><tt>popen</tt></dd><dt><tt>port-&gt;fileno</tt></dt>
+<dd><tt>fileno</tt></dd><dt><tt>process-execute</tt></dt>
+<dd><tt>execvp</tt></dd><dt><tt>process-fork</tt></dt>
+<dd><tt>fork</tt></dd><dt><tt>process-group-id</tt></dt>
+<dd><tt>getpgid</tt></dd><dt><tt>process-signal</tt></dt>
+<dd><tt>kill</tt></dd><dt><tt>process-wait</tt></dt>
+<dd><tt>waitpid</tt></dd><dt><tt>close-input-pipe</tt></dt>
+<dd><tt>pclose</tt></dd><dt><tt>close-output-pipe</tt></dt>
+<dd><tt>pclose</tt></dd><dt><tt>read-symbolic-link</tt></dt>
+<dd><tt>readlink</tt></dd><dt><tt>seconds-&gt;local-time</tt></dt>
+<dd><tt>localtime</tt></dd><dt><tt>seconds-&gt;string</tt></dt>
+<dd><tt>ctime</tt></dd><dt><tt>seconds-&gt;utc-time</tt></dt>
+<dd><tt>gmtime</tt></dd><dt><tt>set-alarm!</tt></dt>
+<dd><tt>alarm</tt></dd><dt><tt>set-buffering-mode!</tt></dt>
+<dd><tt>setvbuf</tt></dd><dt><tt>set-file-position!</tt></dt>
+<dd><tt>fseek/seek</tt></dd><dt><tt>set-groups!</tt></dt>
+<dd><tt>setgroups</tt></dd><dt><tt>set-signal-mask!</tt></dt>
+<dd><tt>sigprocmask</tt></dd><dt><tt>set-group-id!</tt></dt>
+<dd><tt>setgid</tt></dd><dt><tt>set-process-group-id!</tt></dt>
+<dd><tt>setpgid</tt></dd><dt><tt>set-user-id!</tt></dt>
+<dd><tt>setuid</tt></dd><dt><tt>set-root-directory!</tt></dt>
+<dd><tt>chroot</tt></dd><dt><tt>setenv</tt></dt>
+<dd><tt>setenv/putenv</tt></dd><dt><tt>sleep</tt></dt>
+<dd><tt>sleep</tt></dd><dt><tt>system-information</tt></dt>
+<dd><tt>uname</tt></dd><dt><tt>terminal-name</tt></dt>
+<dd><tt>ttyname</tt></dd><dt><tt>terminal-port?</tt></dt>
+<dd><tt>isatty</tt></dd><dt><tt>time-&gt;string</tt></dt>
+<dd><tt>asctime</tt></dd><dt><tt>unsetenv</tt></dt>
+<dd><tt>putenv</tt></dd><dt><tt>unmap-file-from-memory</tt></dt>
+<dd><tt>munmap</tt></dd><dt><tt>user-information</tt></dt>
+<dd><tt>getpwnam/getpwuid</tt></dd><dt><tt>utc-time-&gt;seconds</tt></dt>
+<dd><tt>timegm</tt></dd></dl>
+<h3 id="sec:Windows_specific_notes"><a href="#sec:Windows_specific_notes">Windows specific notes</a></h3><p>Use of UTF8 encoded strings is for pathnames is not supported. Windows uses a 16-bit UNICODE encoding with special system calls for wide-character support. Only single-byte string encoding can be used.</p><h4 id="sec:Procedure_Changes"><a href="#sec:Procedure_Changes">Procedure Changes</a></h4><p>Exceptions to the above procedure definitions.</p><dl class="defsig"><dt class="defsig" id="def:create-pipe"><span class="sig"><tt>(create-pipe [MODE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The optional parameter <tt>MODE</tt>, default <tt>open/binary | open/noinherit</tt>. This can be <tt>open/binary</tt> or <tt>open/text</tt>, optionally or'ed with <tt>open/noinherit</tt>.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:process-wait"><span class="sig"><tt>(process-wait [PID [NOHANG]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>process-wait</tt> always returns <tt>#t</tt> for a terminated process and only the exit status is available. (Windows does not provide signals as an interprocess communication method.)</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:process-execute"><span class="sig"><tt>(process-execute PATHNAME [ARGUMENT-LIST [ENVIRONMENT-LIST [EXACT-FLAG]]])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:process"><span class="sig"><tt>(process COMMAND ARGUMENT-LIST [ENVIRONMENT-LIST [EXACT-FLAG]])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:process.2a"><span class="sig"><tt>(process* COMMAND ARGUMENT-LIST [ENVIRONMENT-LIST [EXACT-FLAG]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The optional parameter <tt>EXACT-FLAG</tt>, default <tt>#f</tt>. When <tt>#f</tt> any argument string with embedded whitespace will be wrapped in quotes. When <tt>#t</tt> no such wrapping occurs.</p></dd>
+</dl>
+<h4 id="sec:Unsupported_Definitions"><a href="#sec:Unsupported_Definitions">Unsupported Definitions</a></h4><p>The following definitions are not supported for native Windows builds (compiled with the Microsoft tools or with MinGW):</p><pre>open/noctty  open/nonblock  open/fsync  open/sync
+perm/isvtx  perm/isuid  perm/isgid
+file-select file-control
+signal/... (except signal/term, signal/int, signal/fpe, signal/ill, signal/segv, signal/abrt, signal/break)
+set-signal-mask!  signal-mask  signal-masked?  signal-mask!  signal-unmask!
+user-information  group-information  get-groups  set-groups!  initialize-groups
+errno/wouldblock
+change-file-owner
+current-user-id  current-group-id  current-effective-user-id  current-effective-groupd-id
+set-user-id!  set-group-id!
+create-session
+process-group-id  set-process-group-id!
+create-symbolic-link  read-symbolic-link
+file-truncate
+file-lock  file-lock/blocking  file-unlock  file-test-lock
+create-fifo  fifo?
+prot/...
+map/...
+map-file-to-memory  unmap-file-from-memory  memory-mapped-file-pointer  memory-mapped-file?
+set-alarm!
+terminal-port?  terminal-name
+process-fork  process-signal
+parent-process-id
+set-root-directory!
+utc-time-&gt;seconds</pre><h4 id="sec:Additional_Definitions"><a href="#sec:Additional_Definitions">Additional Definitions</a></h4><p>Only available for Windows</p><ul><li>open/noinherit</li>
+</ul>
+<p>This variable is a mode value for <tt>create-pipe</tt>. Useful when spawning a child process.</p><ul><li>spawn/overlay</li>
+<li>spawn/wait</li>
+<li>spawn/nowait</li>
+<li>spawn/nowaito</li>
+<li>spawn/detach</li>
+</ul>
+<p>These variables contains special flags that specify the exact semantics of <tt>process-spawn</tt>: <tt>spawn/overlay</tt> replaces the current process with the new one. <tt>spawn/wait</tt> suspends execution of the current process until the spawned process returns. <tt>spawn/nowait</tt> does the opposite (<tt>spawn/nowaito</tt> is identical, according to the Microsoft documentation) and runs the process asynchronously. <tt>spawn/detach</tt> runs the new process in the background, without being attached to a console.</p><h4 id="sec:process-spawn"><a href="#sec:process-spawn">process-spawn</a></h4><dl class="defsig"><dt class="defsig" id="def:process-spawn"><span class="sig"><tt>(process-spawn MODE COMMAND [ARGUMENT-LIST [ENVIRONMENT-LIST [EXACT-FLAG]]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates and runs a new process with the given <tt>COMMAND</tt> filename and the optional <tt>ARGUMENT-LIST</tt> and <tt>ENVIRONMENT-LIST</tt>. <tt>MODE</tt> specifies how exactly the process should be executed and must be one or more of the <tt>spawn/...</tt> flags defined above.</p><p>The <tt>EXACT-FLAG</tt>, default <tt>#f</tt>, controls quote-wrapping of argument strings. When <tt>#t</tt> quote-wrapping is not performed.</p><p>Returns:</p><ul><li>the exit status when synchronous</li>
+<li>the PID when asynchronous</li>
+<li>-1 when failure</li>
+</ul>
+</dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20srfi-69.html">Unit srfi-69</a></p><p>Next: <a href="Unit%20utils.html">Unit utils</a></p></div></div></body>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit data-structures</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_data-structures">Unit data-structures</a>
+<ul>
+<li><a href="#sec:Lists">Lists</a>
+<ul>
+<li><a href="#sec:alist-ref">alist-ref</a></li>
+<li><a href="#sec:alist-update.21">alist-update!</a></li>
+<li><a href="#sec:atom.3f">atom?</a></li>
+<li><a href="#sec:rassoc">rassoc</a></li>
+<li><a href="#sec:butlast">butlast</a></li>
+<li><a href="#sec:chop">chop</a></li>
+<li><a href="#sec:compress">compress</a></li>
+<li><a href="#sec:flatten">flatten</a></li>
+<li><a href="#sec:intersperse">intersperse</a></li>
+<li><a href="#sec:join">join</a></li>
+<li><a href="#sec:shuffle">shuffle</a></li>
+<li><a href="#sec:tail.3f">tail?</a></li></ul></li>
+<li><a href="#sec:Queues">Queues</a>
+<ul>
+<li><a href="#sec:list-.3equeue">list-&gt;queue</a></li>
+<li><a href="#sec:make-queue">make-queue</a></li>
+<li><a href="#sec:queue.3f">queue?</a></li>
+<li><a href="#sec:queue-.3elist">queue-&gt;list</a></li>
+<li><a href="#sec:queue-add.21">queue-add!</a></li>
+<li><a href="#sec:queue-empty.3f">queue-empty?</a></li>
+<li><a href="#sec:queue-first">queue-first</a></li>
+<li><a href="#sec:queue-last">queue-last</a></li>
+<li><a href="#sec:queue-remove.21">queue-remove!</a></li>
+<li><a href="#sec:queue-push-back.21">queue-push-back!</a></li>
+<li><a href="#sec:queue-push-back-list.21">queue-push-back-list!</a></li></ul></li>
+<li><a href="#sec:Sorting">Sorting</a>
+<ul>
+<li><a href="#sec:merge">merge</a></li>
+<li><a href="#sec:sort">sort</a></li>
+<li><a href="#sec:sorted.3f">sorted?</a></li>
+<li><a href="#sec:topological-sort">topological-sort</a></li></ul></li>
+<li><a href="#sec:Random_numbers">Random numbers</a>
+<ul>
+<li><a href="#sec:random-seed">random-seed</a></li></ul></li>
+<li><a href="#sec:Strings">Strings</a>
+<ul>
+<li><a href="#sec:conc">conc</a></li>
+<li><a href="#sec:-.3estring">-&gt;string</a></li>
+<li><a href="#sec:string-chop">string-chop</a></li>
+<li><a href="#sec:string-chomp">string-chomp</a></li>
+<li><a href="#sec:string-compare3">string-compare3</a></li>
+<li><a href="#sec:string-intersperse">string-intersperse</a></li>
+<li><a href="#sec:string-split">string-split</a></li>
+<li><a href="#sec:string-translate">string-translate</a></li>
+<li><a href="#sec:string-translate.2a">string-translate*</a></li>
+<li><a href="#sec:substring.3d.3f">substring=?</a></li>
+<li><a href="#sec:substring-index">substring-index</a></li>
+<li><a href="#sec:reverse-string-append">reverse-string-append</a></li></ul></li>
+<li><a href="#sec:Combinators">Combinators</a>
+<ul>
+<li><a href="#sec:any.3f">any?</a></li>
+<li><a href="#sec:none.3f">none?</a></li>
+<li><a href="#sec:always.3f">always?</a></li>
+<li><a href="#sec:never.3f">never?</a></li>
+<li><a href="#sec:constantly">constantly</a></li>
+<li><a href="#sec:complement">complement</a></li>
+<li><a href="#sec:compose">compose</a></li>
+<li><a href="#sec:conjoin">conjoin</a></li>
+<li><a href="#sec:disjoin">disjoin</a></li>
+<li><a href="#sec:each">each</a></li>
+<li><a href="#sec:flip">flip</a></li>
+<li><a href="#sec:identity">identity</a></li>
+<li><a href="#sec:list-of.3f">list-of?</a></li>
+<li><a href="#sec:o">o</a></li></ul></li>
+<li><a href="#sec:Binary_searching">Binary searching</a>
+<ul>
+<li><a href="#sec:binary-search">binary-search</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_data-structures"><a href="#sec:Unit_data-structures">Unit data-structures</a></h2><p>This unit contains a collection of procedures related to data structures.  This unit is used by default, unless the program is compiled with the <tt>-explicit-use</tt> option.</p><h3 id="sec:Lists"><a href="#sec:Lists">Lists</a></h3><h4 id="sec:alist-ref"><a href="#sec:alist-ref">alist-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:alist-ref"><span class="sig"><tt>(alist-ref KEY ALIST [TEST [DEFAULT]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Looks up <tt>KEY</tt> in <tt>ALIST</tt> using <tt>TEST</tt> as the comparison function (or <tt>eqv?</tt> if no test was given) and returns the cdr of the found pair, or <tt>DEFAULT</tt> (which defaults to <tt>#f</tt>).</p></dd>
+</dl>
+<h4 id="sec:alist-update.21"><a href="#sec:alist-update.21">alist-update!</a></h4><dl class="defsig"><dt class="defsig" id="def:alist-update.21"><span class="sig"><tt>(alist-update! KEY VALUE ALIST [TEST])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If the list <tt>ALIST</tt> contains a pair of the form <tt>(KEY . X)</tt>, then this procedure replaces <tt>X</tt> with <tt>VALUE</tt> and returns <tt>ALIST</tt>. If <tt>ALIST</tt> contains no such item, then <tt>alist-update!</tt> returns <tt>((KEY . VALUE) . ALIST)</tt>. The optional argument <tt>TEST</tt> specifies the comparison procedure to search a matching pair in <tt>ALIST</tt> and defaults to <tt>eqv?</tt>.</p></dd>
+</dl>
+<h4 id="sec:atom.3f"><a href="#sec:atom.3f">atom?</a></h4><dl class="defsig"><dt class="defsig" id="def:atom.3f"><span class="sig"><tt>(atom? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is not a pair. This is identical to <tt>not-pair?</tt> from <a href="Unit%20srfi-1.html">Unit srfi-1</a> but kept for historical reasons.</p></dd>
+</dl>
+<h4 id="sec:rassoc"><a href="#sec:rassoc">rassoc</a></h4><dl class="defsig"><dt class="defsig" id="def:rassoc"><span class="sig"><tt>(rassoc KEY LIST [TEST])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Similar to <tt>assoc</tt>, but compares <tt>KEY</tt> with the <tt>cdr</tt> of each pair in <tt>LIST</tt> using <tt>TEST</tt> as the comparison procedures (which defaults to <tt>eqv?</tt>.</p></dd>
+</dl>
+<h4 id="sec:butlast"><a href="#sec:butlast">butlast</a></h4><dl class="defsig"><dt class="defsig" id="def:butlast"><span class="sig"><tt>(butlast LIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a fresh list with all elements but the last of <tt>LIST</tt>.</p></dd>
+</dl>
+<h4 id="sec:chop"><a href="#sec:chop">chop</a></h4><dl class="defsig"><dt class="defsig" id="def:chop"><span class="sig"><tt>(chop LIST N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new list of sublists, where each sublist contains <tt>N</tt> elements of <tt>LIST</tt>. If <tt>LIST</tt> has a length that is not a multiple of <tt>N</tt>, then the last sublist contains the remaining elements.</p><pre class="highlight"><span class="paren1">(<span class="default">chop &#x27;<span class="paren2">(<span class="default">1 2 3 4 5 6</span>)</span> 2</span>)</span> ==&gt; <span class="paren1">(<span class="default"><span class="paren2">(<span class="default">1 2</span>)</span> <span class="paren2">(<span class="default">3 4</span>)</span> <span class="paren2">(<span class="default">5 6</span>)</span></span>)</span>
+<span class="paren1">(<span class="default">chop &#x27;<span class="paren2">(<span class="default">a b c d</span>)</span> 3</span>)</span>     ==&gt; <span class="paren1">(<span class="default"><span class="paren2">(<span class="default">a b c</span>)</span> <span class="paren2">(<span class="default">d</span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:compress"><a href="#sec:compress">compress</a></h4><dl class="defsig"><dt class="defsig" id="def:compress"><span class="sig"><tt>(compress BLIST LIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new list with elements taken from <tt>LIST</tt> with corresponding true values in the list <tt>BLIST</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> nums &#x27;<span class="paren2">(<span class="default">99 100 110 401 1234</span>)</span></span>)</span>
+<span class="paren1">(<span class="default">compress <span class="paren2">(<span class="default">map odd? nums</span>)</span> nums</span>)</span>      ==&gt; <span class="paren1">(<span class="default">99 401</span>)</span></pre></dd>
+</dl>
+<h4 id="sec:flatten"><a href="#sec:flatten">flatten</a></h4><dl class="defsig"><dt class="defsig" id="def:flatten"><span class="sig"><tt>(flatten LIST1 ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>LIST1 ...</tt> concatenated together, with nested lists removed (flattened).</p></dd>
+</dl>
+<h4 id="sec:intersperse"><a href="#sec:intersperse">intersperse</a></h4><dl class="defsig"><dt class="defsig" id="def:intersperse"><span class="sig"><tt>(intersperse LIST X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new list with <tt>X</tt> placed between each element.</p></dd>
+</dl>
+<h4 id="sec:join"><a href="#sec:join">join</a></h4><dl class="defsig"><dt class="defsig" id="def:join"><span class="sig"><tt>(join LISTOFLISTS [LIST])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Concatenates the lists in <tt>LISTOFLISTS</tt> with <tt>LIST</tt> placed between each sublist. <tt>LIST</tt> defaults to the empty list.</p><pre class="highlight"><span class="paren1">(<span class="default">join &#x27;<span class="paren2">(<span class="default"><span class="paren3">(<span class="default">a b</span>)</span> <span class="paren3">(<span class="default">c d</span>)</span> <span class="paren3">(<span class="default">e</span>)</span></span>)</span> &#x27;<span class="paren2">(<span class="default">x y</span>)</span></span>)</span> ==&gt; <span class="paren1">(<span class="default">a b x y c d x y e</span>)</span>
+<span class="paren1">(<span class="default">join &#x27;<span class="paren2">(<span class="default"><span class="paren3">(<span class="default">p q</span>)</span> <span class="paren3">(<span class="default"></span>)</span> <span class="paren3">(<span class="default">r <span class="paren4">(<span class="default">s</span>)</span> t</span>)</span></span>)</span> &#x27;<span class="paren2">(<span class="default">-</span>)</span></span>)</span>  ==&gt; <span class="paren1">(<span class="default">p q - - r <span class="paren2">(<span class="default">s</span>)</span> t</span>)</span></pre><p><tt>join</tt> could be implemented as follows:</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren2">(<span class="default">join lstoflsts #!optional <span class="paren3">(<span class="default">lst &#x27;<span class="paren4">(<span class="default"></span>)</span></span>)</span></span>)</span>
+  <span class="paren2">(<span class="default">apply append <span class="paren3">(<span class="default">intersperse lstoflists lst</span>)</span></span>)</span> </span>)</span></pre></dd>
+</dl>
+<h4 id="sec:shuffle"><a href="#sec:shuffle">shuffle</a></h4><dl class="defsig"><dt class="defsig" id="def:shuffle"><span class="sig"><tt>(shuffle LIST RANDOM)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>LIST</tt> with its elements sorted in a random order given by procedure <tt>RANDOM</tt>.</p></dd>
+</dl>
+<h4 id="sec:tail.3f"><a href="#sec:tail.3f">tail?</a></h4><dl class="defsig"><dt class="defsig" id="def:tail.3f"><span class="sig"><tt>(tail? X LIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns true if <tt>X</tt> is one of the tails (cdr's) of <tt>LIST</tt>.</p></dd>
+</dl>
+<h3 id="sec:Queues"><a href="#sec:Queues">Queues</a></h3><h4 id="sec:list-.3equeue"><a href="#sec:list-.3equeue">list-&gt;queue</a></h4><dl class="defsig"><dt class="defsig" id="def:list-.3equeue"><span class="sig"><tt>(list-&gt;queue LIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>LIST</tt> converted into a queue, where the first element of the list is the same as the first element of the queue. The resulting queue may share memory with the list and the list should not be modified after this operation.</p></dd>
+</dl>
+<h4 id="sec:make-queue"><a href="#sec:make-queue">make-queue</a></h4><dl class="defsig"><dt class="defsig" id="def:make-queue"><span class="sig"><tt>(make-queue)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a newly created queue.</p></dd>
+</dl>
+<h4 id="sec:queue.3f"><a href="#sec:queue.3f">queue?</a></h4><dl class="defsig"><dt class="defsig" id="def:queue.3f"><span class="sig"><tt>(queue? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a queue, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:queue-.3elist"><a href="#sec:queue-.3elist">queue-&gt;list</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-.3elist"><span class="sig"><tt>(queue-&gt;list QUEUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>QUEUE</tt> converted into a list, where the first element of the list is the same as the first element of the queue. The resulting list may share memory with the queue object and should not be modified.</p></dd>
+</dl>
+<h4 id="sec:queue-add.21"><a href="#sec:queue-add.21">queue-add!</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-add.21"><span class="sig"><tt>(queue-add! QUEUE X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Adds <tt>X</tt> to the rear of <tt>QUEUE</tt>.</p></dd>
+</dl>
+<h4 id="sec:queue-empty.3f"><a href="#sec:queue-empty.3f">queue-empty?</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-empty.3f"><span class="sig"><tt>(queue-empty? QUEUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>QUEUE</tt> is empty, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:queue-first"><a href="#sec:queue-first">queue-first</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-first"><span class="sig"><tt>(queue-first QUEUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the first element of <tt>QUEUE</tt>. If <tt>QUEUE</tt> is empty an error is signaled</p></dd>
+</dl>
+<h4 id="sec:queue-last"><a href="#sec:queue-last">queue-last</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-last"><span class="sig"><tt>(queue-last QUEUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the last element of <tt>QUEUE</tt>. If <tt>QUEUE</tt> is empty an error is signaled</p></dd>
+</dl>
+<h4 id="sec:queue-remove.21"><a href="#sec:queue-remove.21">queue-remove!</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-remove.21"><span class="sig"><tt>(queue-remove! QUEUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Removes and returns the first element of <tt>QUEUE</tt>. If <tt>QUEUE</tt> is empty an error is signaled</p></dd>
+</dl>
+<h4 id="sec:queue-push-back.21"><a href="#sec:queue-push-back.21">queue-push-back!</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-push-back.21"><span class="sig"><tt>(queue-push-back! QUEUE ITEM)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Pushes an item into the first position of a queue, i.e. the next <tt>queue-remove!</tt> will return <tt>ITEM</tt>.</p></dd>
+</dl>
+<h4 id="sec:queue-push-back-list.21"><a href="#sec:queue-push-back-list.21">queue-push-back-list!</a></h4><dl class="defsig"><dt class="defsig" id="def:queue-push-back-list.21"><span class="sig"><tt>(queue-push-back-list! QUEUE LIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Pushes the items in item-list back onto the queue, so that <tt>(car LIST)</tt> becomes the next removable item.</p></dd>
+</dl>
+<h3 id="sec:Sorting"><a href="#sec:Sorting">Sorting</a></h3><h4 id="sec:merge"><a href="#sec:merge">merge</a></h4><dl class="defsig"><dt class="defsig" id="def:merge"><span class="sig"><tt>(merge LIST1 LIST2 LESS?)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:merge.21"><span class="sig"><tt>(merge! LIST1 LIST2 LESS?)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Joins two lists in sorted order. <tt>merge!</tt> is the destructive version of merge. <tt>LESS?  </tt> should be a procedure of two arguments, that returns true if the first argument is to be ordered before the second argument.</p></dd>
+</dl>
+<h4 id="sec:sort"><a href="#sec:sort">sort</a></h4><dl class="defsig"><dt class="defsig" id="def:sort"><span class="sig"><tt>(sort SEQUENCE LESS?)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:sort.21"><span class="sig"><tt>(sort! SEQUENCE LESS?)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sort <tt>SEQUENCE</tt>, which should be a list or a vector. <tt>sort!</tt> is the destructive version of sort.</p></dd>
+</dl>
+<h4 id="sec:sorted.3f"><a href="#sec:sorted.3f">sorted?</a></h4><dl class="defsig"><dt class="defsig" id="def:sorted.3f"><span class="sig"><tt>(sorted? SEQUENCE LESS?)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns true if the list or vector <tt>SEQUENCE</tt> is already sorted.</p></dd>
+</dl>
+<h4 id="sec:topological-sort"><a href="#sec:topological-sort">topological-sort</a></h4><dl class="defsig"><dt class="defsig" id="def:topological-sort"><span class="sig"><tt>(topological-sort DAG PRED)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sorts the directed acyclic graph dag <tt>DAG</tt> so that for every edge from vertex u to v, u will come before v in the resulting list of vertices.</p><p><tt>DAG</tt> is a list of sublists. The car of each sublist is a vertex. The cdr is the adjacency list of that vertex, i.e. a list of all vertices to which there exists an edge from the car vertex. <tt>pred</tt> is procedure of two arguments that should compare vertices for equality.</p><p>Time complexity: O (|V| + |E|)</p><pre class="highlight"><span class="paren1">(<span class="default">require &#x27;tsort</span>)</span>
+<span class="paren1">(<span class="default">topological-sort
+       &#x27;<span class="paren2">(<span class="default"><span class="paren3">(<span class="default">shirt tie belt</span>)</span>
+         <span class="paren3">(<span class="default">tie jacket</span>)</span>
+         <span class="paren3">(<span class="default">belt jacket</span>)</span>
+         <span class="paren3">(<span class="default">watch</span>)</span>
+         <span class="paren3">(<span class="default">pants shoes belt</span>)</span>
+         <span class="paren3">(<span class="default">undershorts pants shoes</span>)</span>
+         <span class="paren3">(<span class="default">socks shoes</span>)</span></span>)</span>
+       eq?</span>)</span>
+
+=&gt;
+
+<span class="paren1">(<span class="default">socks undershorts pants shoes watch shirt belt tie jacket</span>)</span></pre></dd>
+</dl>
+<h3 id="sec:Random_numbers"><a href="#sec:Random_numbers">Random numbers</a></h3><h4 id="sec:random-seed"><a href="#sec:random-seed">random-seed</a></h4><dl class="defsig"><dt class="defsig" id="def:random-seed"><span class="sig"><tt>(random-seed [SEED])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Seeds the random number generator with <tt>SEED</tt> (an exact integer) or <tt>(current-seconds)</tt> if <tt>SEED</tt> is not given.</p></dd>
+</dl>
+<h3 id="sec:Strings"><a href="#sec:Strings">Strings</a></h3><h4 id="sec:conc"><a href="#sec:conc">conc</a></h4><dl class="defsig"><dt class="defsig" id="def:conc"><span class="sig"><tt>(conc X ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a string with the string-represenation of all arguments concatenated together. <tt>conc</tt> could be implemented as</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren2">(<span class="default">conc . args</span>)</span>
+  <span class="paren2">(<span class="default">apply string-append <span class="paren3">(<span class="default">map -&gt;string args</span>)</span></span>)</span> </span>)</span></pre></dd>
+</dl>
+<h4 id="sec:-.3estring"><a href="#sec:-.3estring">-&gt;string</a></h4><dl class="defsig"><dt class="defsig" id="def:-.3estring"><span class="sig"><tt>(-&gt;string X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a string-representation of <tt>X</tt>.</p></dd>
+</dl>
+<h4 id="sec:string-chop"><a href="#sec:string-chop">string-chop</a></h4><dl class="defsig"><dt class="defsig" id="def:string-chop"><span class="sig"><tt>(string-chop STRING LENGTH)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list of substrings taken by <i>chopping</i> <tt>STRING</tt> every <tt>LENGTH</tt> characters:</p><pre class="highlight"><span class="paren1">(<span class="default">string-chop <span class="string">&quot;one two three&quot;</span> 4</span>)</span>  ==&gt;  <span class="paren1">(<span class="default"><span class="string">&quot;one &quot;</span> <span class="string">&quot;two &quot;</span> <span class="string">&quot;thre&quot;</span> <span class="string">&quot;e&quot;</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:string-chomp"><a href="#sec:string-chomp">string-chomp</a></h4><dl class="defsig"><dt class="defsig" id="def:string-chomp"><span class="sig"><tt>(string-chomp STRING [SUFFIX])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>STRING</tt> ends with <tt>SUFFIX</tt>, then this procedure returns a copy of its first argument with the suffix removed, otherwise returns <tt>STRING</tt> unchanged. <tt>SUFFIX</tt> defaults to <tt>&quot;\n&quot;</tt>.</p></dd>
+</dl>
+<h4 id="sec:string-compare3"><a href="#sec:string-compare3">string-compare3</a></h4><dl class="defsig"><dt class="defsig" id="def:string-compare3"><span class="sig"><tt>(string-compare3 STRING1 STRING2)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-compare3-ci"><span class="sig"><tt>(string-compare3-ci STRING1 STRING2)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Perform a three-way comparison between the <tt>STRING1</tt> and <tt>STRING2</tt>, returning either <tt>-1</tt> if <tt>STRING1</tt> is lexicographically less than <tt>STRING2</tt>, <tt>0</tt> if it is equal, or <tt>1</tt> if it s greater. <tt>string-compare3-ci</tt> performs a case-insensitive comparison.</p></dd>
+</dl>
+<h4 id="sec:string-intersperse"><a href="#sec:string-intersperse">string-intersperse</a></h4><dl class="defsig"><dt class="defsig" id="def:string-intersperse"><span class="sig"><tt>(string-intersperse LIST [STRING])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a string that contains all strings in <tt>LIST</tt> concatenated together.  <tt>STRING</tt> is placed between each concatenated string and defaults to <tt>&quot; &quot;</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default">string-intersperse &#x27;<span class="paren2">(<span class="default"><span class="string">&quot;one&quot;</span> <span class="string">&quot;two&quot;</span></span>)</span> <span class="string">&quot;three&quot;</span></span>)</span></pre><p>is equivalent to</p><pre class="highlight"><span class="paren1">(<span class="default">apply string-append <span class="paren2">(<span class="default">intersperse &#x27;<span class="paren3">(<span class="default"><span class="string">&quot;one&quot;</span> <span class="string">&quot;two&quot;</span></span>)</span> <span class="string">&quot;three&quot;</span></span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:string-split"><a href="#sec:string-split">string-split</a></h4><dl class="defsig"><dt class="defsig" id="def:string-split"><span class="sig"><tt>(string-split STRING [DELIMITER-STRING [KEEPEMPTY]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Split string into substrings delimited by any of the characters given in the delimiter string. If no delimiters are specified, a string comprising the tab, newline and space characters is assumed. If the parameter <tt>KEEPEMPTY</tt> is given and not <tt>#f</tt>, then empty substrings are retained:</p><pre class="highlight"><span class="paren1">(<span class="default">string-split <span class="string">&quot;one  two  three&quot;</span></span>)</span> ==&gt; <span class="paren1">(<span class="default"><span class="string">&quot;one&quot;</span> <span class="string">&quot;two&quot;</span> <span class="string">&quot;three&quot;</span></span>)</span>
+<span class="paren1">(<span class="default">string-split <span class="string">&quot;foo:bar::baz:&quot;</span> <span class="string">&quot;:&quot;</span> #t</span>)</span> ==&gt; <span class="paren1">(<span class="default"><span class="string">&quot;foo&quot;</span> <span class="string">&quot;bar&quot;</span> <span class="string">&quot;&quot;</span> <span class="string">&quot;baz&quot;</span> <span class="string">&quot;&quot;</span></span>)</span>
+<span class="paren1">(<span class="default">string-split <span class="string">&quot;foo:bar:baz,quux,zot&quot;</span> <span class="string">&quot;:,&quot;</span> </span>)</span> ==&gt; <span class="paren1">(<span class="default"><span class="string">&quot;foo&quot;</span> <span class="string">&quot;bar&quot;</span> <span class="string">&quot;baz&quot;</span> <span class="string">&quot;quux&quot;</span> <span class="string">&quot;zot&quot;</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:string-translate"><a href="#sec:string-translate">string-translate</a></h4><dl class="defsig"><dt class="defsig" id="def:string-translate"><span class="sig"><tt>(string-translate STRING FROM [TO])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a fresh copy of <tt>STRING</tt> with characters matching <tt>FROM</tt> translated to <tt>TO</tt>.  If <tt>TO</tt> is omitted, then matching characters are removed. <tt>FROM</tt> and <tt>TO</tt> may be a character, a string or a list. If both <tt>FROM</tt> and <tt>TO</tt> are strings, then the character at the same position in <tt>TO</tt> as the matching character in <tt>FROM</tt> is substituted.</p></dd>
+</dl>
+<h4 id="sec:string-translate.2a"><a href="#sec:string-translate.2a">string-translate*</a></h4><dl class="defsig"><dt class="defsig" id="def:string-translate.2a"><span class="sig"><tt>(string-translate* STRING SMAP)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Substitutes elements of <tt>STRING</tt> according to <tt>SMAP</tt>. <tt>SMAP</tt> should be an association-list where each element of the list is a pair of the form <tt>(MATCH \. REPLACEMENT)</tt>. Every occurrence of the string <tt>MATCH</tt> in <tt>STRING</tt> will be replaced by the string <tt>REPLACEMENT</tt>:</p><pre class="highlight"><span class="paren1">(<span class="default">string-translate*
+  <span class="string">&quot;&lt;h1&gt;this is a </span><span class="string">\&quot;</span><span class="string">string</span><span class="string">\&quot;</span><span class="string">&lt;/h1&gt;&quot;</span>
+  &#x27;<span class="paren2">(<span class="default"><span class="paren3">(<span class="default"><span class="string">&quot;&lt;&quot;</span> . <span class="string">&quot;&amp;lt;&quot;</span></span>)</span> <span class="paren3">(<span class="default"><span class="string">&quot;&gt;&quot;</span> . <span class="string">&quot;&amp;gt;&quot;</span></span>)</span> <span class="paren3">(<span class="default"><span class="string">&quot;</span><span class="string">\&quot;</span><span class="string">&quot;</span> . <span class="string">&quot;&amp;quot;&quot;</span></span>)</span></span>)</span> </span>)</span>
+=&gt;  <span class="string">&quot;&amp;lt;h1&amp;gt;this is a &amp;quot;string&amp;quot;&amp;lt;/h1&amp;gt;&quot;</span></pre></dd>
+</dl>
+<h4 id="sec:substring.3d.3f"><a href="#sec:substring.3d.3f">substring=?</a></h4><dl class="defsig"><dt class="defsig" id="def:substring.3d.3f"><span class="sig"><tt>(substring=? STRING1 STRING2 [START1 [START2 [LENGTH]]])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:substring-ci.3d.3f"><span class="sig"><tt>(substring-ci=? STRING1 STRING2 [START1 [START2 [LENGTH]]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if the strings <tt>STRING1</tt> and <tt>STRING2</tt> are equal, or <tt>#f</tt> otherwise. The comparison starts at the positions <tt>START1</tt> and <tt>START2</tt> (which default to 0), comparing <tt>LENGTH</tt> characters (which defaults to the minimum of the remaining length of both strings).</p></dd>
+</dl>
+<h4 id="sec:substring-index"><a href="#sec:substring-index">substring-index</a></h4><dl class="defsig"><dt class="defsig" id="def:substring-index"><span class="sig"><tt>(substring-index WHICH WHERE [START])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:substring-index-ci"><span class="sig"><tt>(substring-index-ci WHICH WHERE [START])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Searches for first index in string <tt>WHERE</tt> where string <tt>WHICH</tt> occurs.  If the optional argument <tt>START</tt> is given, then the search starts at that index.  <tt>substring-index-ci</tt> is a case-insensitive version of <tt>substring-index</tt>.</p></dd>
+</dl>
+<h4 id="sec:reverse-string-append"><a href="#sec:reverse-string-append">reverse-string-append</a></h4><dl class="defsig"><dt class="defsig" id="def:reverse-string-append"><span class="sig"><tt>(reverse-string-append LIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>(apply string-append (reverse LIST))</tt></p></dd>
+</dl>
+<h3 id="sec:Combinators"><a href="#sec:Combinators">Combinators</a></h3><h4 id="sec:any.3f"><a href="#sec:any.3f">any?</a></h4><dl class="defsig"><dt class="defsig" id="def:any.3f"><span class="sig"><tt>(any? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Ignores its argument and always returns <tt>#t</tt>. This is actually useful sometimes.</p></dd>
+</dl>
+<h4 id="sec:none.3f"><a href="#sec:none.3f">none?</a></h4><dl class="defsig"><dt class="defsig" id="def:none.3f"><span class="sig"><tt>(none? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Ignores its argument and always returns <tt>#f</tt>. This is actually useful sometimes.</p></dd>
+</dl>
+<h4 id="sec:always.3f"><a href="#sec:always.3f">always?</a></h4><dl class="defsig"><dt class="defsig" id="def:always.3f"><span class="sig"><tt>(always? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Ignores its arguments and always returns <tt>#t</tt>. This is actually useful sometimes.</p></dd>
+</dl>
+<h4 id="sec:never.3f"><a href="#sec:never.3f">never?</a></h4><dl class="defsig"><dt class="defsig" id="def:never.3f"><span class="sig"><tt>(never? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Ignores its arguments and always returns <tt>#f</tt>. This is actually useful sometimes.</p></dd>
+</dl>
+<h4 id="sec:constantly"><a href="#sec:constantly">constantly</a></h4><dl class="defsig"><dt class="defsig" id="def:constantly"><span class="sig"><tt>(constantly X ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a procedure that always returns the values <tt>X ...</tt> regardless of the number and value of its arguments.</p><pre class="highlight"><span class="paren1">(<span class="default">constantly X</span>)</span> &lt;=&gt; <span class="paren1">(<span class="default"><i><span class="symbol">lambda</span></i> args X</span>)</span></pre></dd>
+</dl>
+<h4 id="sec:complement"><a href="#sec:complement">complement</a></h4><dl class="defsig"><dt class="defsig" id="def:complement"><span class="sig"><tt>(complement PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a procedure that returns the boolean inverse of <tt>PROC</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default">complement PROC</span>)</span> &lt;=&gt; <span class="paren1">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren2">(<span class="default">x</span>)</span> <span class="paren2">(<span class="default">not <span class="paren3">(<span class="default">PROC x</span>)</span></span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:compose"><a href="#sec:compose">compose</a></h4><dl class="defsig"><dt class="defsig" id="def:compose"><span class="sig"><tt>(compose PROC1 PROC2 ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a procedure that represents the composition of the argument-procedures <tt>PROC1 PROC2 ...</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default">compose F G</span>)</span> &lt;=&gt; <span class="paren1">(<span class="default"><i><span class="symbol">lambda</span></i> args
+                      <span class="paren2">(<span class="default">call-with-values
+                         <span class="paren3">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren4">(<span class="default"></span>)</span> <span class="paren4">(<span class="default">apply G args</span>)</span></span>)</span>
+                         F</span>)</span></span>)</span></pre><p><tt>(compose)</tt> is equivalent to <tt>values</tt>.</p></dd>
+</dl>
+<h4 id="sec:conjoin"><a href="#sec:conjoin">conjoin</a></h4><dl class="defsig"><dt class="defsig" id="def:conjoin"><span class="sig"><tt>(conjoin PRED ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a procedure that returns <tt>#t</tt> if its argument satisfies the predicates <tt>PRED ...</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default"><span class="paren2">(<span class="default">conjoin odd? positive?</span>)</span> 33</span>)</span>   ==&gt;  #t
+<span class="paren1">(<span class="default"><span class="paren2">(<span class="default">conjoin odd? positive?</span>)</span> -33</span>)</span>  ==&gt;  #f</pre></dd>
+</dl>
+<h4 id="sec:disjoin"><a href="#sec:disjoin">disjoin</a></h4><dl class="defsig"><dt class="defsig" id="def:disjoin"><span class="sig"><tt>(disjoin PRED ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a procedure that returns <tt>#t</tt> if its argument satisfies any predicate <tt>PRED ...</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default"><span class="paren2">(<span class="default">disjoin odd? positive?</span>)</span> 32</span>)</span>    ==&gt;  #t
+<span class="paren1">(<span class="default"><span class="paren2">(<span class="default">disjoin odd? positive?</span>)</span> -32</span>)</span>   ==&gt;  #f</pre></dd>
+</dl>
+<h4 id="sec:each"><a href="#sec:each">each</a></h4><dl class="defsig"><dt class="defsig" id="def:each"><span class="sig"><tt>(each PROC ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a procedure that applies <tt>PROC ...</tt> to its arguments, and returns the result(s) of the last procedure application. For example</p><pre class="highlight"><span class="paren1">(<span class="default">each pp eval</span>)</span></pre><p>is equivalent to</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">lambda</span></i> args 
+  <span class="paren2">(<span class="default">apply pp args</span>)</span>
+  <span class="paren2">(<span class="default">apply eval args</span>)</span> </span>)</span></pre><p><tt>(each PROC)</tt> is equivalent to <tt>PROC</tt> and <tt>(each)</tt> is equivalent to <tt>void</tt>.</p></dd>
+</dl>
+<h4 id="sec:flip"><a href="#sec:flip">flip</a></h4><dl class="defsig"><dt class="defsig" id="def:flip"><span class="sig"><tt>(flip PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a two-argument procedure that calls <tt>PROC</tt> with its arguments swapped:</p><pre class="highlight"><span class="paren1">(<span class="default">flip PROC</span>)</span> &lt;=&gt; <span class="paren1">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren2">(<span class="default">x y</span>)</span> <span class="paren2">(<span class="default">PROC y x</span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:identity"><a href="#sec:identity">identity</a></h4><dl class="defsig"><dt class="defsig" id="def:identity"><span class="sig"><tt>(identity X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns its sole argument <tt>X</tt>.</p></dd>
+</dl>
+<h4 id="sec:list-of.3f"><a href="#sec:list-of.3f">list-of?</a></h4><dl class="defsig"><dt class="defsig" id="def:list-of.3f"><span class="sig"><tt>(list-of? PRED)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a procedure of one argument that returns <tt>#t</tt> when applied to a list of elements that all satisfy the predicate procedure <tt>PRED</tt>, or <tt>#f</tt> otherwise.</p><pre class="highlight"><span class="paren1">(<span class="default"><span class="paren2">(<span class="default">list-of? even?</span>)</span> &#x27;<span class="paren2">(<span class="default">1 2 3</span>)</span></span>)</span>   ==&gt; #f
+<span class="paren1">(<span class="default"><span class="paren2">(<span class="default">list-of? number?</span>)</span> &#x27;<span class="paren2">(<span class="default">1 2 3</span>)</span></span>)</span> ==&gt; #t</pre></dd>
+</dl>
+<h4 id="sec:o"><a href="#sec:o">o</a></h4><dl class="defsig"><dt class="defsig" id="def:o"><span class="sig"><tt>(o PROC ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>A single value version of <tt>compose</tt> (slightly faster). <tt>(o)</tt> is equivalent to <tt>identity</tt>.</p></dd>
+</dl>
+<h3 id="sec:Binary_searching"><a href="#sec:Binary_searching">Binary searching</a></h3><h4 id="sec:binary-search"><a href="#sec:binary-search">binary-search</a></h4><dl class="defsig"><dt class="defsig" id="def:binary-search"><span class="sig"><tt>(binary-search SEQUENCE PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Performs a binary search in <tt>SEQUENCE</tt>, which should be a sorted list or vector.  <tt>PROC</tt> is called to compare items in the sequence, should accept a single argument and return an exact integer: zero if the searched value is equal to the current item, negative if the searched value is <i>less</i> than the current item, and positive otherwise. Returns the index of the found value or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20expand.html">Unit expand</a></p><p>Next: <a href="Unit%20ports.html">Unit ports</a></p></div></div></body>

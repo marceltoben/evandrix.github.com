@@ -1,0 +1,39 @@
+
+Welcome to Funk!
+
+Prerequisites:
+1) Chicken Scheme (from http://www.callcc.org)
+2) easyffi egg    (install with 'chicken-setup easyffi')
+3) srfi-66 egg    (install with 'chicken-setup srfi-66')
+
+QuickStart instructions:
+
+1) ./configure
+2) make
+
+   This will build the remote_chicken read-eval-print loop that will let you
+   interact with Chicken, and package the provided eggs into the eggs/ directory.
+   It also builds the demo programs into bin/
+
+3) 
+(as root) chicken-setup bit-cat crc16 raw-sockets
+   This will download and install the these three eggs from 
+   the official Chicken egg repository.
+
+ALTERNATIVELY:
+(as root) make install
+
+   This will install the three eggs that are packaged with funk: 
+   bit-cat, crc16, and raw-sockets
+
+OPTIONAL:
+4) (as root) ./setuid_repl.sh
+
+   This will setuid-root the remote_chicken REPL.  This allows the remote
+   Chicken interpreter to act as root, which will let you generate raw
+   packets with Funk directly from Eclipse.  This is a gaping security hole, 
+   so be careful who has access to the binary.
+
+
+Ben Kurtz - July 2007
+bk2@alum.wpi.edu

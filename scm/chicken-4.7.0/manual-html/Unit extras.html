@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit extras</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_extras">Unit extras</a>
+<ul>
+<li><a href="#sec:Random_numbers">Random numbers</a>
+<ul>
+<li><a href="#sec:randomize">randomize</a></li>
+<li><a href="#sec:random">random</a></li></ul></li>
+<li><a href="#sec:Formatted_output">Formatted output</a>
+<ul>
+<li><a href="#sec:printf">printf</a></li>
+<li><a href="#sec:fprintf">fprintf</a></li>
+<li><a href="#sec:sprintf">sprintf</a></li>
+<li><a href="#sec:format">format</a></li></ul></li>
+<li><a href="#sec:Pretty-printing">Pretty-printing</a>
+<ul>
+<li><a href="#sec:pretty-print">pretty-print</a></li>
+<li><a href="#sec:pretty-print-width">pretty-print-width</a></li></ul></li>
+<li><a href="#sec:Input.2fOutput_extensions">Input/Output extensions</a>
+<ul>
+<li><a href="#sec:read-byte">read-byte</a></li>
+<li><a href="#sec:write-byte">write-byte</a></li>
+<li><a href="#sec:read-file">read-file</a></li>
+<li><a href="#sec:read-line">read-line</a></li>
+<li><a href="#sec:write-line">write-line</a></li>
+<li><a href="#sec:read-lines">read-lines</a></li>
+<li><a href="#sec:read-string">read-string</a></li>
+<li><a href="#sec:read-string.21">read-string!</a></li>
+<li><a href="#sec:write-string">write-string</a></li>
+<li><a href="#sec:read-token">read-token</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_extras"><a href="#sec:Unit_extras">Unit extras</a></h2><p>This unit contains a collection of useful utility definitions. The unit is used in <tt>csi</tt> by default.</p><h3 id="sec:Random_numbers"><a href="#sec:Random_numbers">Random numbers</a></h3><h4 id="sec:randomize"><a href="#sec:randomize">randomize</a></h4><dl class="defsig"><dt class="defsig" id="def:randomize"><span class="sig"><tt>(randomize [SEED])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Set random-number seed. If <tt>SEED</tt> (an <tt>exact integer</tt>) is not supplied, the current time is used. On startup (when Unit <tt>extras</tt> is initialized), the random number generator is initialized with the current time.</p></dd>
+</dl>
+<h4 id="sec:random"><a href="#sec:random">random</a></h4><dl class="defsig"><dt class="defsig" id="def:random"><span class="sig"><tt>(random N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a pseudo-random <tt>integer</tt> in <tt>[0, N-1]</tt>. <tt>N</tt> is an <tt>integer</tt>.</p><p>On Windows, <tt>N</tt> and the random value are <tt>exact integer</tt>.</p><p><b>Warning</b>: This procedure uses <i>rand(3)</i> internally and exhibits its deficiencies, including low quality pseudo-randomness:</p><ul><li>On Windows and Solaris, only 32768 unique random values can be generated in the range <tt>[0, N-1]</tt>.  If <tt>N &gt;= 32768</tt>, there will be gaps in the result set.</li>
+<li>On Mac OS X, Windows and some other platforms, little variance in output is seen with nearby seeds.  Since the random generator is seeded with <tt>current-seconds</tt> at startup, new processes may see similar or identical random sequences for up to a minute.</li>
+<li>On Linux, <i>rand(3)</i> is an alias to <i>random(3)</i>, which provides output of reasonable quality.</li>
+</ul>
+</dd>
+</dl>
+<h3 id="sec:Formatted_output"><a href="#sec:Formatted_output">Formatted output</a></h3><h4 id="sec:printf"><a href="#sec:printf">printf</a></h4><h4 id="sec:fprintf"><a href="#sec:fprintf">fprintf</a></h4><h4 id="sec:sprintf"><a href="#sec:sprintf">sprintf</a></h4><dl class="defsig"><dt class="defsig" id="def:fprintf"><span class="sig"><tt>(fprintf PORT FORMATSTRING [ARG...])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:printf"><span class="sig"><tt>(printf FORMATSTRING [ARG...])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:sprintf"><span class="sig"><tt>(sprintf FORMATSTRING [ARG...])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Simple formatted output to a given port (<tt>fprintf</tt>), the value of <tt>(current-output-port)</tt> (<tt>printf</tt>), or a string (<tt>sprintf</tt>).  The <tt>FORMATSTRING</tt> can contain any sequence of characters.  There must be at least as many <tt>ARG</tt> arguments given as there are format directives that require an argument in <tt>FORMATSTRING</tt>.  Extra <tt>ARG</tt> arguments are ignored.  The character `~' prefixes special formatting directives:</p><table>
+<tr><td>~%</td><td>
+write newline character
+</td></tr>
+<tr><td> ~N</td><td>
+the same as <tt>~%</tt>
+</td></tr>
+<tr><td> ~S</td><td>
+write the next argument
+</td></tr>
+<tr><td> ~A</td><td>
+display the next argument
+</td></tr>
+<tr><td> ~\n</td><td>
+skip all whitespace in the format-string until the next non-whitespace character
+</td></tr>
+<tr><td> ~B</td><td>
+write the next argument as a binary number
+</td></tr>
+<tr><td> ~O</td><td>
+write the next argument as an octal number
+</td></tr>
+<tr><td> ~X</td><td>
+write the next argument as a hexadecimal number
+</td></tr>
+<tr><td> ~C</td><td>
+write the next argument as a character
+</td></tr>
+<tr><td> ~~</td><td>
+display `~'
+</td></tr>
+<tr><td> ~!</td><td>
+flush all pending output
+</td></tr>
+<tr><td> ~?</td><td>
+invoke formatted output routine recursively with the next two arguments as format-string and list of parameters
+</td></tr>
+</table>
+</dd>
+</dl>
+<h4 id="sec:format"><a href="#sec:format">format</a></h4><dl class="defsig"><dt class="defsig" id="def:format"><span class="sig"><tt>(format [DESTINATION] FORMATSTRING [ARG...])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The parameters <tt>FORMATSTRING</tt> and <tt>ARG...</tt> are as for <tt>printf</tt>.</p><p>The optional <tt>DESTINATION</tt>, when supplied, performs:</p><dl><dt><tt>#f</tt></dt>
+<dd><tt>sprintf</tt></dd><dt><tt>#t</tt></dt>
+<dd><tt>printf</tt></dd><dt><tt>output-port</tt></dt>
+<dd><tt>fprintf</tt></dd><dt></dt>
+<dd><tt>sprintf</tt></dd></dl>
+</dd>
+</dl>
+<h3 id="sec:Pretty-printing"><a href="#sec:Pretty-printing">Pretty-printing</a></h3><h4 id="sec:pretty-print"><a href="#sec:pretty-print">pretty-print</a></h4><dl class="defsig"><dt class="defsig" id="def:pretty-print"><span class="sig"><tt>(pretty-print EXP [PORT])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:pp"><span class="sig"><tt>(pp EXP [PORT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Print expression nicely formatted. <tt>PORT</tt> defaults to the value of <tt>(current-output-port)</tt>.</p></dd>
+</dl>
+<h4 id="sec:pretty-print-width"><a href="#sec:pretty-print-width">pretty-print-width</a></h4><dl class="defsig"><dt class="defsig" id="def:pretty-print-width"><span class="sig"><tt>pretty-print-width</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>Specifies the maximal line-width for pretty printing, after which line wrap will occur.</p></dd>
+</dl>
+<h3 id="sec:Input.2fOutput_extensions"><a href="#sec:Input.2fOutput_extensions">Input/Output extensions</a></h3><h4 id="sec:read-byte"><a href="#sec:read-byte">read-byte</a></h4><h4 id="sec:write-byte"><a href="#sec:write-byte">write-byte</a></h4><dl class="defsig"><dt class="defsig" id="def:read-byte"><span class="sig"><tt>(read-byte [PORT])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:write-byte"><span class="sig"><tt>(write-byte BYTE [PORT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Read/write a byte to the port given in <tt>PORT</tt>, which default to the values of <tt>(current-input-port)</tt> and <tt>(current-output-port)</tt>, respectively.</p></dd>
+</dl>
+<h4 id="sec:read-file"><a href="#sec:read-file">read-file</a></h4><dl class="defsig"><dt class="defsig" id="def:read-file"><span class="sig"><tt>(read-file [FILE-OR-PORT [READER [MAXCOUNT]]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list containing all toplevel expressions read from the file or port <tt>FILE-OR-PORT</tt>. If no argument is given, input is read from the port that is the current value of <tt>(current-input-port)</tt>. After all expressions are read, and if the argument is a port, then the port will not be closed. The <tt>READER</tt> argument specifies the procedure used to read expressions from the given file or port and defaults to <tt>read</tt>. The reader procedure will be called with a single argument (an input port). If <tt>MAXCOUNT</tt> is given then only up to <tt>MAXCOUNT</tt> expressions will be read in.</p></dd>
+</dl>
+<h4 id="sec:read-line"><a href="#sec:read-line">read-line</a></h4><h4 id="sec:write-line"><a href="#sec:write-line">write-line</a></h4><dl class="defsig"><dt class="defsig" id="def:read-line"><span class="sig"><tt>(read-line [PORT [LIMIT]])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:write-line"><span class="sig"><tt>(write-line STRING [PORT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Line-input and -output. <tt>PORT</tt> defaults to the value of <tt>(current-input-port)</tt> and <tt>(current-output-port)</tt>, respectively. If the optional argument <tt>LIMIT</tt> is given and not <tt>#f</tt>, then <tt>read-line</tt> reads at most <tt>LIMIT</tt> characters per line. <tt>read-line</tt> returns a string without the terminating newline and <tt>write-line</tt> adds a terminating newline  before outputting.</p></dd>
+</dl>
+<h4 id="sec:read-lines"><a href="#sec:read-lines">read-lines</a></h4><dl class="defsig"><dt class="defsig" id="def:read-lines"><span class="sig"><tt>(read-lines [PORT [MAX]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Read <tt>MAX</tt> or fewer lines from <tt>PORT</tt>. <tt>PORT</tt> defaults to the value of <tt>(current-input-port)</tt>. <tt>PORT</tt> may optionally be a string naming a file. Returns a list of strings, each string representing a line read, not including any line separation character(s).</p></dd>
+</dl>
+<h4 id="sec:read-string"><a href="#sec:read-string">read-string</a></h4><h4 id="sec:read-string.21"><a href="#sec:read-string.21">read-string!</a></h4><h4 id="sec:write-string"><a href="#sec:write-string">write-string</a></h4><dl class="defsig"><dt class="defsig" id="def:read-string"><span class="sig"><tt>(read-string [NUM [PORT]])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:read-string.21"><span class="sig"><tt>(read-string! NUM STRING [PORT [START]])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:write-string"><span class="sig"><tt>(write-string STRING [NUM [PORT]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Read or write <tt>NUM</tt> characters from/to <tt>PORT</tt>, which defaults to the value of <tt>(current-input-port)</tt> or <tt>(current-output-port)</tt>, respectively. If <tt>NUM</tt> is <tt>#f</tt> or not given, then all data up to the end-of-file is read, or, in the case of <tt>write-string</tt> the whole string is written. If no more input is available, <tt>read-string</tt> returns the empty string. <tt>read-string!</tt> reads destructively into the given <tt>STRING</tt> argument, but never more characters than would fit into <tt>STRING</tt>. If <tt>START</tt> is given, then the read characters are stored starting at that position. <tt>read-string!</tt> returns the actual number of characters read.</p></dd>
+</dl>
+<h4 id="sec:read-token"><a href="#sec:read-token">read-token</a></h4><dl class="defsig"><dt class="defsig" id="def:read-token"><span class="sig"><tt>(read-token PREDICATE [PORT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Reads characters from <tt>PORT</tt> (which defaults to the value of <tt>(current-input-port)</tt>) and calls the procedure <tt>PREDICATE</tt> with each character until <tt>PREDICATE</tt> returns false. Returns a string with the accumulated characters.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20files.html">Unit files</a></p><p>Next: <a href="Unit%20irregex.html">Unit irregex</a></p></div></div></body>

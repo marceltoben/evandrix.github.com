@@ -1,0 +1,73 @@
+#basic smtp. these files aren't wildly imaginative.
+
+# make sure to define the following variables for best results:
+#   smtp-server
+#   from-address
+#   to-address
+
+include basic-fuzz-strings.list
+
+reqwait=200
+maxseqlen=50050
+
+endcfg
+HELO FUZZ
+--
+EHLO FUZZ
+--
+LHLO FUZZ
+--
+HELO smtp-server
+EXPN FUZZ
+--
+EHLO smtp-server
+EXPN FUZZ
+--
+LHLO smtp-server
+EXPN FUZZ
+--
+HELO smtp-server
+XTRN FUZZ
+--
+EHLO smtp-server
+XTRN FUZZ
+--
+LHLO smtp-server
+XTRN FUZZ
+--
+HELO smtp-server
+MAIL FROM:<FUZZ>
+--
+HELO smtp-server
+MAIL FROM:<from-address>
+RCPT TO:<FUZZ>
+--
+HELO smtp-server
+MAIL FROM:<from-address>
+RCPT TO:<to-address>
+FUZZ
+--
+EHLO smtp-server
+MAIL FROM:<FUZZ>
+--
+EHLO smtp-server
+MAIL FROM:<from-address>
+RCPT TO:<FUZZ>
+--
+EHLO smtp-server
+MAIL FROM:<from-address>
+RCPT TO:<to-address>
+FUZZ
+--
+LHLO smtp-server
+MAIL FROM:<FUZZ>
+--
+LHLO smtp-server
+MAIL FROM:<from-address>
+RCPT TO:<FUZZ>
+--
+LHLO smtp-server
+MAIL FROM:<from-address>
+RCPT TO:<to-address>
+FUZZ
+--

@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit srfi-69</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_srfi-69">Unit srfi-69</a>
+<ul>
+<li><a href="#sec:Hash_Table_Procedures">Hash Table Procedures</a>
+<ul>
+<li><a href="#sec:make-hash-table">make-hash-table</a></li>
+<li><a href="#sec:alist-.3ehash-table">alist-&gt;hash-table</a></li>
+<li><a href="#sec:hash-table.3f">hash-table?</a></li>
+<li><a href="#sec:hash-table-size">hash-table-size</a></li>
+<li><a href="#sec:hash-table-equivalence-function">hash-table-equivalence-function</a></li>
+<li><a href="#sec:hash-table-hash-function">hash-table-hash-function</a></li>
+<li><a href="#sec:hash-table-min-load">hash-table-min-load</a></li>
+<li><a href="#sec:hash-table-max-load">hash-table-max-load</a></li>
+<li><a href="#sec:hash-table-weak-keys">hash-table-weak-keys</a></li>
+<li><a href="#sec:hash-table-weak-values">hash-table-weak-values</a></li>
+<li><a href="#sec:hash-table-has-initial.3f">hash-table-has-initial?</a></li>
+<li><a href="#sec:hash-table-initial">hash-table-initial</a></li>
+<li><a href="#sec:hash-table-keys">hash-table-keys</a></li>
+<li><a href="#sec:hash-table-values">hash-table-values</a></li>
+<li><a href="#sec:hash-table-.3ealist">hash-table-&gt;alist</a></li>
+<li><a href="#sec:hash-table-ref">hash-table-ref</a></li>
+<li><a href="#sec:hash-table-ref.2fdefault">hash-table-ref/default</a></li>
+<li><a href="#sec:hash-table-exists.3f">hash-table-exists?</a></li>
+<li><a href="#sec:hash-table-set.21">hash-table-set!</a></li>
+<li><a href="#sec:hash-table-update.21">hash-table-update!</a></li>
+<li><a href="#sec:hash-table-update.21.2fdefault">hash-table-update!/default</a></li>
+<li><a href="#sec:hash-table-copy">hash-table-copy</a></li>
+<li><a href="#sec:hash-table-delete.21">hash-table-delete!</a></li>
+<li><a href="#sec:hash-table-remove.21">hash-table-remove!</a></li>
+<li><a href="#sec:hash-table-clear.21">hash-table-clear!</a></li>
+<li><a href="#sec:hash-table-merge">hash-table-merge</a></li>
+<li><a href="#sec:hash-table-merge.21">hash-table-merge!</a></li>
+<li><a href="#sec:hash-table-map">hash-table-map</a></li>
+<li><a href="#sec:hash-table-fold">hash-table-fold</a></li>
+<li><a href="#sec:hash-table-for-each">hash-table-for-each</a></li>
+<li><a href="#sec:hash-table-walk">hash-table-walk</a></li></ul></li>
+<li><a href="#sec:Hashing_Functions">Hashing Functions</a>
+<ul>
+<li><a href="#sec:number-hash">number-hash</a></li>
+<li><a href="#sec:object-uid-hash">object-uid-hash</a></li>
+<li><a href="#sec:symbol-hash">symbol-hash</a></li>
+<li><a href="#sec:keyword-hash">keyword-hash</a></li>
+<li><a href="#sec:string-hash">string-hash</a></li>
+<li><a href="#sec:string-ci-hash">string-ci-hash</a></li>
+<li><a href="#sec:eq.3f-hash">eq?-hash</a></li>
+<li><a href="#sec:eqv.3f-hash">eqv?-hash</a></li>
+<li><a href="#sec:equal.3f-hash">equal?-hash</a></li>
+<li><a href="#sec:hash">hash</a></li>
+<li><a href="#sec:hash-by-identity">hash-by-identity</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_srfi-69"><a href="#sec:Unit_srfi-69">Unit srfi-69</a></h2><p>CHICKEN implements SRFI 69 with SRFI 90 extensions. For more information, see <a href="http://srfi.schemers.org/srfi-69/srfi-69.html">SRFI-69</a> and <a href="http://srfi.schemers.org/srfi-90/srfi-90.html">SRFI-90</a>.</p><h3 id="sec:Hash_Table_Procedures"><a href="#sec:Hash_Table_Procedures">Hash Table Procedures</a></h3><h4 id="sec:make-hash-table"><a href="#sec:make-hash-table">make-hash-table</a></h4><dl class="defsig"><dt class="defsig" id="def:make-hash-table"><span class="sig"><tt>(make-hash-table [TEST HASH SIZE] [#:test TEST] [#:hash HASH] [#:size SIZE] [#:initial INITIAL] [#:min-load MIN-LOAD] [#:max-load MAX-LOAD] [#:weak-keys WEAK-KEYS] [#:weak-values WEAK-VALUES])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new <tt>HASH-TABLE</tt> with the supplied configuration.</p><dl><dt><tt>TEST</tt></dt>
+<dd>The equivalence function.</dd><dt><tt>HASH</tt></dt>
+<dd>The hash function.</dd><dt><tt>SIZE</tt></dt>
+<dd>The expected number of table elements.</dd><dt><tt>INITIAL</tt></dt>
+<dd>The default initial value.</dd><dt><tt>MIN-LOAD</tt></dt>
+<dd>The minimum load factor. A <tt>flonum</tt> in (0.0 1.0).</dd><dt><tt>MAX-LOAD</tt></dt>
+<dd>The maximum load factor. A <tt>flonum</tt> in (0.0 1.0).</dd><dt><tt>WEAK-KEYS</tt></dt>
+<dd>Use weak references for keys. (Ignored)</dd><dt><tt>WEAK-VALUES</tt></dt>
+<dd>Use weak references for values. (Ignored)</dd></dl>
+</dd>
+</dl>
+<h4 id="sec:alist-.3ehash-table"><a href="#sec:alist-.3ehash-table">alist-&gt;hash-table</a></h4><dl class="defsig"><dt class="defsig" id="def:alist-.3ehash-table"><span class="sig"><tt>(alist-&gt;hash-table A-LIST [#:test TEST] [#:hash HASH] [#:size SIZE] [#:initial INITIAL] [#:min-load MIN-LOAD] [#:max-load MAX-LOAD] [#:weak-keys WEAK-KEYS] [#:weak-values WEAK-VALUES])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new <tt>HASH-TABLE</tt>. The <tt>HASH-TABLE</tt> is populated from the <tt>A-LIST</tt>. The keyword arguments are per <tt>make-hash-table</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table.3f"><a href="#sec:hash-table.3f">hash-table?</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table.3f"><span class="sig"><tt>(hash-table? OBJECT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Is the <tt>OBJECT</tt> a <tt>hash-table</tt>?</p></dd>
+</dl>
+<h4 id="sec:hash-table-size"><a href="#sec:hash-table-size">hash-table-size</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-size"><span class="sig"><tt>(hash-table-size HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The <tt>HASH-TABLE</tt> size.</p></dd>
+</dl>
+<h4 id="sec:hash-table-equivalence-function"><a href="#sec:hash-table-equivalence-function">hash-table-equivalence-function</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-equivalence-function"><span class="sig"><tt>(hash-table-equivalence-function HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The <tt>HASH-TABLE</tt> <tt>equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-hash-function"><a href="#sec:hash-table-hash-function">hash-table-hash-function</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-hash-function"><span class="sig"><tt>(hash-table-hash-function HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The <tt>HASH-TABLE</tt> <tt>hash-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-min-load"><a href="#sec:hash-table-min-load">hash-table-min-load</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-min-load"><span class="sig"><tt>(hash-table-min-load HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The <tt>HASH-TABLE</tt> minimum load factor.</p></dd>
+</dl>
+<h4 id="sec:hash-table-max-load"><a href="#sec:hash-table-max-load">hash-table-max-load</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-max-load"><span class="sig"><tt>(hash-table-max-load HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The <tt>HASH-TABLE</tt> maximum load factor.</p></dd>
+</dl>
+<h4 id="sec:hash-table-weak-keys"><a href="#sec:hash-table-weak-keys">hash-table-weak-keys</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-weak-keys"><span class="sig"><tt>(hash-table-weak-keys HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Does the <tt>HASH-TABLE</tt> use weak references for keys?</p></dd>
+</dl>
+<h4 id="sec:hash-table-weak-values"><a href="#sec:hash-table-weak-values">hash-table-weak-values</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-weak-values"><span class="sig"><tt>(hash-table-weak-values HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Does the <tt>HASH-TABLE</tt> use weak references for values?</p></dd>
+</dl>
+<h4 id="sec:hash-table-has-initial.3f"><a href="#sec:hash-table-has-initial.3f">hash-table-has-initial?</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-has-initial.3f"><span class="sig"><tt>(hash-table-has-initial? HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Does the <tt>HASH-TABLE</tt> have a default initial value?</p></dd>
+</dl>
+<h4 id="sec:hash-table-initial"><a href="#sec:hash-table-initial">hash-table-initial</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-initial"><span class="sig"><tt>(hash-table-initial HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The <tt>HASH-TABLE</tt> default initial value.</p></dd>
+</dl>
+<h4 id="sec:hash-table-keys"><a href="#sec:hash-table-keys">hash-table-keys</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-keys"><span class="sig"><tt>(hash-table-keys HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list of the keys in the <tt>HASH-TABLE</tt> population.</p></dd>
+</dl>
+<h4 id="sec:hash-table-values"><a href="#sec:hash-table-values">hash-table-values</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-values"><span class="sig"><tt>(hash-table-values HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list of the values in the <tt>HASH-TABLE</tt> population.</p></dd>
+</dl>
+<h4 id="sec:hash-table-.3ealist"><a href="#sec:hash-table-.3ealist">hash-table-&gt;alist</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-.3ealist"><span class="sig"><tt>(hash-table-&gt;alist HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the population of the <tt>HASH-TABLE</tt> as an <tt>a-list</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-ref"><a href="#sec:hash-table-ref">hash-table-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-ref"><span class="sig"><tt>(hash-table-ref HASH-TABLE KEY)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the <tt>VALUE</tt> for the <tt>KEY</tt> in the <tt>HASH-TABLE</tt>.</p><p>Aborts with an exception when the <tt>KEY</tt> is missing.</p></dd>
+</dl>
+<h4 id="sec:hash-table-ref.2fdefault"><a href="#sec:hash-table-ref.2fdefault">hash-table-ref/default</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-ref.2fdefault"><span class="sig"><tt>(hash-table-ref/default HASH-TABLE KEY DEFAULT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the <tt>VALUE</tt> for the <tt>KEY</tt> in the <tt>HASH-TABLE</tt>, or the <tt>DEFAULT</tt> when the <tt>KEY</tt> is missing.</p></dd>
+</dl>
+<h4 id="sec:hash-table-exists.3f"><a href="#sec:hash-table-exists.3f">hash-table-exists?</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-exists.3f"><span class="sig"><tt>(hash-table-exists? HASH-TABLE KEY)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Does the <tt>KEY</tt> exist in the <tt>HASH-TABLE</tt>?</p></dd>
+</dl>
+<h4 id="sec:hash-table-set.21"><a href="#sec:hash-table-set.21">hash-table-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-set.21"><span class="sig"><tt>(hash-table-set! HASH-TABLE KEY VALUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Set the <tt>VALUE</tt> for the <tt>KEY</tt> in the <tt>HASH-TABLE</tt>.</p><p>A setter for <tt>hash-table-ref</tt> is defined, so</p><pre class="highlight"><span class="paren1">(<span class="default">set! <span class="paren2">(<span class="default">hash-table-ref HASH-TABLE KEY</span>)</span> VALUE</span>)</span></pre><p>is equivalent to</p><pre class="highlight"><span class="paren1">(<span class="default">hash-table-set! HASH-TABLE KEY VALUE</span>)</span></pre></dd>
+</dl>
+<h4 id="sec:hash-table-update.21"><a href="#sec:hash-table-update.21">hash-table-update!</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-update.21"><span class="sig"><tt>(hash-table-update! HASH-TABLE KEY [UPDATE-FUNCTION [DEFAULT-VALUE-FUNCTION]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets or replaces the <tt>VALUE</tt> for <tt>KEY</tt> in the <tt>HASH-TABLE</tt>.</p><p>The <tt>UPDATE-FUNCTION</tt> takes the existing <tt>VALUE</tt> for <tt>KEY</tt> and returns the new <tt>VALUE</tt>. The default is <tt>identity</tt></p><p>The <tt>DEFAULT-VALUE-FUNCTION</tt> is called when the entry for <tt>KEY</tt> is missing. The default uses the <tt>(hash-table-initial-value)</tt>, if provided. Otherwise aborts with an exception.</p><p>Returns the new <tt>VALUE</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-update.21.2fdefault"><a href="#sec:hash-table-update.21.2fdefault">hash-table-update!/default</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-update.21.2fdefault"><span class="sig"><tt>(hash-table-update!/default HASH-TABLE KEY UPDATE-FUNCTION DEFAULT-VALUE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets or replaces the <tt>VALUE</tt> for <tt>KEY</tt> in the <tt>HASH-TABLE</tt>.</p><p>The <tt>UPDATE-FUNCTION</tt> takes the existing <tt>VALUE</tt> for <tt>KEY</tt> and returns the new <tt>VALUE</tt>.</p><p>The <tt>DEFAULT-VALUE</tt> is used when the entry for <tt>KEY</tt> is missing.</p><p>Returns the new <tt>VALUE</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-copy"><a href="#sec:hash-table-copy">hash-table-copy</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-copy"><span class="sig"><tt>(hash-table-copy HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a shallow copy of the <tt>HASH-TABLE</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-delete.21"><a href="#sec:hash-table-delete.21">hash-table-delete!</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-delete.21"><span class="sig"><tt>(hash-table-delete! HASH-TABLE KEY)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Deletes the entry for <tt>KEY</tt> in the <tt>HASH-TABLE</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-remove.21"><a href="#sec:hash-table-remove.21">hash-table-remove!</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-remove.21"><span class="sig"><tt>(hash-table-remove! HASH-TABLE PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Calls <tt>PROC</tt> for all entries in <tt>HASH-TABLE</tt> with the key and value of each entry. If <tt>PROC</tt> returns true, then that entry is removed.</p></dd>
+</dl>
+<h4 id="sec:hash-table-clear.21"><a href="#sec:hash-table-clear.21">hash-table-clear!</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-clear.21"><span class="sig"><tt>(hash-table-clear! HASH-TABLE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Deletes all entries in <tt>HASH-TABLE</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-merge"><a href="#sec:hash-table-merge">hash-table-merge</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-merge"><span class="sig"><tt>(hash-table-merge HASH-TABLE-1 HASH-TABLE-2)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new <tt>HASH-TABLE</tt> with the union of <tt>HASH-TABLE-1</tt> and <tt>HASH-TABLE-2</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-merge.21"><a href="#sec:hash-table-merge.21">hash-table-merge!</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-merge.21"><span class="sig"><tt>(hash-table-merge! HASH-TABLE-1 HASH-TABLE-2)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>HASH-TABLE-1</tt> as the union of <tt>HASH-TABLE-1</tt> and <tt>HASH-TABLE-2</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-table-map"><a href="#sec:hash-table-map">hash-table-map</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-map"><span class="sig"><tt>(hash-table-map HASH-TABLE FUNC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Calls <tt>FUNC</tt> for all entries in <tt>HASH-TABLE</tt> with the key and value of each entry.</p><p>Returns a list of the results of each call.</p></dd>
+</dl>
+<h4 id="sec:hash-table-fold"><a href="#sec:hash-table-fold">hash-table-fold</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-fold"><span class="sig"><tt>(hash-table-fold HASH-TABLE FUNC INIT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Calls <tt>FUNC</tt> for all entries in <tt>HASH-TABLE</tt> with the key and value of each entry, and the current folded value. The initial folded value is <tt>INIT</tt>.</p><p>Returns the final folded value.</p></dd>
+</dl>
+<h4 id="sec:hash-table-for-each"><a href="#sec:hash-table-for-each">hash-table-for-each</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-for-each"><span class="sig"><tt>(hash-table-for-each HASH-TABLE PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Calls <tt>PROC</tt> for all entries in <tt>HASH-TABLE</tt> with the key and value of each entry.</p></dd>
+</dl>
+<h4 id="sec:hash-table-walk"><a href="#sec:hash-table-walk">hash-table-walk</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-table-walk"><span class="sig"><tt>(hash-table-walk HASH-TABLE PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Calls <tt>PROC</tt> for all entries in <tt>HASH-TABLE</tt> with the key and value of each entry.</p></dd>
+</dl>
+<h3 id="sec:Hashing_Functions"><a href="#sec:Hashing_Functions">Hashing Functions</a></h3><p>All hash functions return a <tt>fixnum</tt> in the range [0 <tt>BOUND</tt>).</p><h4 id="sec:number-hash"><a href="#sec:number-hash">number-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:number-hash"><span class="sig"><tt>(number-hash NUMBER [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>=</tt> as a <tt>hash-table-equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:object-uid-hash"><a href="#sec:object-uid-hash">object-uid-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:object-uid-hash"><span class="sig"><tt>(object-uid-hash OBJECT [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Currently a synonym for <tt>equal?-hash</tt>.</p></dd>
+</dl>
+<h4 id="sec:symbol-hash"><a href="#sec:symbol-hash">symbol-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:symbol-hash"><span class="sig"><tt>(symbol-hash SYMBOL [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>eq?</tt> as a <tt>hash-table-equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:keyword-hash"><a href="#sec:keyword-hash">keyword-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:keyword-hash"><span class="sig"><tt>(keyword-hash KEYWORD [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>eq?</tt> as a <tt>hash-table-equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:string-hash"><a href="#sec:string-hash">string-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:string-hash"><span class="sig"><tt>(string-hash STRING [BOUND START END])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>string=?</tt> as a <tt>hash-table-equivalence-function</tt>. The optional <tt>START</tt> and <tt>END</tt> arguments may be given to limit the hash calculation to a specific sub-section of <tt>STRING</tt>.</p></dd>
+</dl>
+<h4 id="sec:string-ci-hash"><a href="#sec:string-ci-hash">string-ci-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:string-hash-ci"><span class="sig"><tt>(string-hash-ci STRING [BOUND START END])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-ci-hash"><span class="sig"><tt>(string-ci-hash STRING [BOUND START END])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>string-ci=?</tt> as a <tt>hash-table-equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:eq.3f-hash"><a href="#sec:eq.3f-hash">eq?-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:eq.3f-hash"><span class="sig"><tt>(eq?-hash OBJECT [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>eq?</tt> as a <tt>hash-table-equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:eqv.3f-hash"><a href="#sec:eqv.3f-hash">eqv?-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:eqv.3f-hash"><span class="sig"><tt>(eqv?-hash OBJECT [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>eqv?</tt> as a <tt>hash-table-equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:equal.3f-hash"><a href="#sec:equal.3f-hash">equal?-hash</a></h4><dl class="defsig"><dt class="defsig" id="def:equal.3f-hash"><span class="sig"><tt>(equal?-hash OBJECT [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For use with <tt>equal?</tt> as a <tt>hash-table-equivalence-function</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash"><a href="#sec:hash">hash</a></h4><dl class="defsig"><dt class="defsig" id="def:hash"><span class="sig"><tt>(hash OBJECT [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Synonym for <tt>equal?-hash</tt>.</p></dd>
+</dl>
+<h4 id="sec:hash-by-identity"><a href="#sec:hash-by-identity">hash-by-identity</a></h4><dl class="defsig"><dt class="defsig" id="def:hash-by-identity"><span class="sig"><tt>(hash-by-identity OBJECT [BOUND])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Synonym for <tt>eq?-hash</tt>.</p><p>Previous: <a href="Unit%20srfi-18.html">Unit srfi-18</a> Next: <a href="Unit%20posix.html">Unit posix</a></p></dd>
+</dl>
+</div></div></body>

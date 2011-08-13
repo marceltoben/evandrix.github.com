@@ -1,0 +1,48 @@
+.PHONY: all install uninstall clean dist-clean distclean release
+
+sfuzz sfuzz.exe: $(SF_OBJS)
+	@echo "[LINK] $@"
+	@$(CCPATH)/$(CC) -o $@ $(SF_OBJS) $(LDFLAGS) $(LIBS)
+
+snoop snoop.exe: $(SNOOP_OBJS)
+	@echo "[LINK] $@"
+	@$(CCPATH)/$(CC) -o $@ $(SNOOP_OBJS) $(LDFLAGS) $(LIBS)
+
+%.so: %.c $(SHARED_INC)
+	@echo "[LINK] $@"
+	@$(CCPATH)/$(CC) $(CFLAGS) -D__PLUGIN_BUILD__ -o $@ $< $(SHARED_INC) $(SHARED_OPTS)
+
+%.o: %.c
+	@echo "[CC] $@"
+	@$(CCPATH)/$(CC) -c -o $@ $(CFLAGS) $<
+
+install: all
+	@echo "Installing to: $(PREFIX)"
+	@$(INSTALL) sfuzz $(BIN_DIR)
+	@$(MKDIR) $(SHARE_DIR)sfuzz-db
+	@$(CP) $(SFUZZ_SAMPLE)* $(SHARE_DIR)sfuzz-db
+	@$(CP) *.so $(SHARE_DIR)sfuzz-db
+	@echo Installed.
+
+uninstall:
+	@$(RM) -rf $(SHARE_DIR)sfuzz-db
+	@$(RM) -f  $(BIN_DIR)sfuzz
+	@$(RM) -f  $(BIN_DIR)sfuzz.exe
+	@echo "Uninstalled."
+
+clean:
+	@$(RM) -f core *~ *.o snoop snoop.exe sfuzz sfuzz.exe *.so
+
+distclean dist-clean: clean
+	@$(RM) -f Makefile Makefile.old
+	@echo Makefile / configuration removed.
+
+release: distclean
+	@echo Making a release tree:
+	@$(RM) -rf /tmp/sfuzz-release
+	@$(MKDIR) /tmp/sfuzz-release
+	@$(CP) -dPar * /tmp/sfuzz-release
+	@$(RM) -rf /tmp/sfuzz-release/CVS
+	@$(RM) -rf /tmp/sfuzz-release/sfuzz-sample/CVS
+	@$(RM) -rf /tmp/sfuzz-release/.git
+	@echo /tmp/sfuzz-release is built.

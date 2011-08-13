@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit eval</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_eval">Unit eval</a>
+<ul>
+<li><a href="#sec:Loading_code">Loading code</a>
+<ul>
+<li><a href="#sec:load">load</a></li>
+<li><a href="#sec:load-relative">load-relative</a></li>
+<li><a href="#sec:load-noisily">load-noisily</a></li>
+<li><a href="#sec:load-library">load-library</a></li>
+<li><a href="#sec:set-dynamic-load-mode.21">set-dynamic-load-mode!</a></li></ul></li>
+<li><a href="#sec:Read-eval-print_loop">Read-eval-print loop</a>
+<ul>
+<li><a href="#sec:repl">repl</a></li></ul></li>
+<li><a href="#sec:Loading_extension_libraries">Loading extension libraries</a>
+<ul>
+<li><a href="#sec:repository-path">repository-path</a></li>
+<li><a href="#sec:extension-information">extension-information</a></li>
+<li><a href="#sec:provide">provide</a></li>
+<li><a href="#sec:provided.3f">provided?</a></li>
+<li><a href="#sec:require">require</a></li></ul></li>
+<li><a href="#sec:System_information">System information</a>
+<ul>
+<li><a href="#sec:chicken-home">chicken-home</a></li></ul></li>
+<li><a href="#sec:Eval">Eval</a>
+<ul>
+<li><a href="#sec:eval">eval</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_eval"><a href="#sec:Unit_eval">Unit eval</a></h2><p>This unit has support for evaluation and macro-handling. This unit is used by default, unless the program is compiled with the <tt>-explicit-use</tt> option.</p><h3 id="sec:Loading_code"><a href="#sec:Loading_code">Loading code</a></h3><h4 id="sec:load"><a href="#sec:load">load</a></h4><dl class="defsig"><dt class="defsig" id="def:load"><span class="sig"><tt>(load FILE [EVALPROC])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Loads and evaluates expressions from the given source file, which may be either a string or an input port. Each expression read is passed to <tt>EVALPROC</tt> (which defaults to <tt>eval</tt>). On platforms that support it (currently BSD, Haiku, MacOS X, Linux, Solaris, and Windows), <tt>load</tt> can be used to load compiled programs:</p><pre>% cat x.scm
+(define (hello) (print &quot;Hello!&quot;))
+% csc -s x.scm
+% csi -q
+#;1&gt; (load &quot;x.so&quot;)
+; loading x.so ...
+#;2&gt; (hello)
+Hello!
+#;3&gt;</pre><p>The second argument to <tt>load</tt> is ignored when loading compiled code. If source code is loaded from a port, then that port is closed after all expressions have been read.</p><p>Compiled code can be re-loaded, but care has to be taken, if code from the replaced dynamically loaded module is still executing (i.e. if an active continuation refers to compiled code in the old module).</p><p>Support for reloading compiled code dynamically is still experimental.</p></dd>
+</dl>
+<h4 id="sec:load-relative"><a href="#sec:load-relative">load-relative</a></h4><dl class="defsig"><dt class="defsig" id="def:load-relative"><span class="sig"><tt>(load-relative FILE [EVALPROC])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Similar to <tt>load</tt>, but loads <tt>FILE</tt> relative to the path of the currently loaded file.</p></dd>
+</dl>
+<h4 id="sec:load-noisily"><a href="#sec:load-noisily">load-noisily</a></h4><dl class="defsig"><dt class="defsig" id="def:load-noisily"><span class="sig"><tt>(load-noisily FILE #!key EVALUATOR TIME PRINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>As <tt>load</tt> but the result(s) of each evaluated toplevel-expression is written to standard output. If <tt>EVALUATOR</tt> is given and not <tt>#f</tt>, then each expression is evaluated by calling this argument with the read expression as argument. If <tt>TIME</tt> is given and not false, then the execution time of each expression is shown (as with the <tt>time</tt> macro). If <tt>PRINTER</tt> is given and not false, then each expression is printed before evaluation by applying the expression to the value of this argument, which should be a one-argument procedure.</p><p>See also the <a href="Parameters.html#sec:load-verbose">load-verbose</a> parameter.</p></dd>
+</dl>
+<h4 id="sec:load-library"><a href="#sec:load-library">load-library</a></h4><dl class="defsig"><dt class="defsig" id="def:load-library"><span class="sig"><tt>(load-library UNIT [LIBRARYFILE])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>On platforms that support dynamic loading, <tt>load-library</tt> loads the compiled library unit <tt>UNIT</tt> (which should be a symbol). If the string <tt>LIBRARYFILE</tt> is given, then the given shared library will be loaded and the toplevel code of the contained unit will be executed. If no <tt>LIBRARYFILE</tt> argument is given, then the following libraries are checked for the required unit:</p><ul><li>a file named <i><tt>&lt;UNIT&gt;.so</tt></i></li>
+<li>the files given in the parameter <tt>dynamic-load-libraries</tt></li>
+</ul>
+<p>If the unit is not found, an error is signaled. When the library unit can be successfully loaded, a feature-identifier named <tt>UNIT</tt> is registered. If the feature is already registered before loading, the <tt>load-library</tt> does nothing.</p></dd>
+</dl>
+<h4 id="sec:set-dynamic-load-mode.21"><a href="#sec:set-dynamic-load-mode.21">set-dynamic-load-mode!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-dynamic-load-mode.21"><span class="sig"><tt>(set-dynamic-load-mode! MODELIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>On systems that support dynamic loading of compiled code via the <tt>dlopen(3)</tt> interface (for example Linux and Solaris), some options can be specified to fine-tune the behaviour of the dynamic linker. <tt>MODE</tt> should be a list of symbols (or a single symbol) taken from the following set:</p><dl><dt><tt>local</tt></dt>
+<dd>If <tt>local</tt> is given, then any C/C++ symbols defined in the dynamically loaded file are not available for subsequently loaded files and libraries. Use this if you have linked foreign code into your dynamically loadable file and if you don't want to export them (for example because you want to load another file that defines the same symbols).</dd><dt><tt>global</tt></dt>
+<dd>The default is <tt>global</tt>, which means all C/C++ symbols are available to code loaded at a later stage.</dd><dt><tt>now</tt></dt>
+<dd>If <tt>now</tt> is specified, all symbols are resolved immediately.</dd><dt><tt>lazy</tt></dt>
+<dd>Unresolved symbols are resolved as code from the file is executed. This is the default. </dd></dl>
+<p>Note that this procedure does not control the way Scheme variables are handled - this facility is mainly of interest when accessing foreign code.</p></dd>
+</dl>
+<h3 id="sec:Read-eval-print_loop"><a href="#sec:Read-eval-print_loop">Read-eval-print loop</a></h3><h4 id="sec:repl"><a href="#sec:repl">repl</a></h4><dl class="defsig"><dt class="defsig" id="def:repl"><span class="sig"><tt>(repl)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Start a new read-eval-print loop. Sets the <tt>reset-handler</tt> so that any invocation of <tt>reset</tt> restarts the read-eval-print loop. Also changes the current exception-handler to display a message, write any arguments to the value of <tt>(current-error-port)</tt> and reset.</p></dd>
+</dl>
+<h3 id="sec:Loading_extension_libraries"><a href="#sec:Loading_extension_libraries">Loading extension libraries</a></h3><p>This functionality is only available on platforms that support dynamic loading of compiled code. Currently Linux, BSD, Solaris, Windows (with Cygwin) and HP/UX are supported.</p><h4 id="sec:repository-path"><a href="#sec:repository-path">repository-path</a></h4><dl class="defsig"><dt class="defsig" id="def:repository-path"><span class="sig"><tt>repository-path</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>Contains a string naming the path to the extension repository, which defaults to either the value of the environment variable <tt>CHICKEN_REPOSITORY</tt> or the default library path (usually <tt>/usr/local/lib/chicken</tt> on UNIX systems).</p></dd>
+</dl>
+<h4 id="sec:extension-information"><a href="#sec:extension-information">extension-information</a></h4><dl class="defsig"><dt class="defsig" id="def:extension-information"><span class="sig"><tt>(extension-information ID)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If an extension with the name <tt>ID</tt> is installed and if it has a setup-information list registered in the extension repository, then the info-list is returned. Otherwise <tt>extension-information</tt> returns <tt>#f</tt>.</p></dd>
+</dl>
+<h4 id="sec:provide"><a href="#sec:provide">provide</a></h4><dl class="defsig"><dt class="defsig" id="def:provide"><span class="sig"><tt>(provide ID ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Registers the extension IDs <tt>ID ...</tt> as loaded. This is mainly intended to provide aliases for certain extension identifiers.</p></dd>
+</dl>
+<h4 id="sec:provided.3f"><a href="#sec:provided.3f">provided?</a></h4><dl class="defsig"><dt class="defsig" id="def:provided.3f"><span class="sig"><tt>(provided? ID ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if the extension with the IDs <tt>ID ...</tt> are currently loaded, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:require"><a href="#sec:require">require</a></h4><dl class="defsig"><dt class="defsig" id="def:require"><span class="sig"><tt>(require ID ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If the extension library <tt>ID</tt> is not already loaded into the system, then <tt>require</tt> will lookup the location of the shared extension library and load it. If <tt>ID</tt> names a library-unit of the base system, then it is loaded via <tt>load-library</tt>. If no extension library is available for the given ID, then an attempt is made to load the file <tt>ID.so</tt> or <tt>ID.scm</tt> (in that order) from one of the following locations:</p><ul><li>the current include path, which defaults to the pathnames given in <tt>CHICKEN_INCLUDE_PATH</tt>.</li>
+<li>the current directory</li>
+</ul>
+<p><tt>ID</tt> should be a string or a symbol.</p></dd>
+</dl>
+<h3 id="sec:System_information"><a href="#sec:System_information">System information</a></h3><h4 id="sec:chicken-home"><a href="#sec:chicken-home">chicken-home</a></h4><dl class="defsig"><dt class="defsig" id="def:chicken-home"><span class="sig"><tt>(chicken-home)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a string which represents the installation directory (usually <tt>/usr/local/share/chicken</tt> on UNIX-like systems). As a last option, if the environment variable <tt>CHICKEN_PREFIX</tt> is set, then <tt>chicken-home</tt> will return <tt>$CHICKEN_PREFIX/share</tt>.</p></dd>
+</dl>
+<h3 id="sec:Eval"><a href="#sec:Eval">Eval</a></h3><h4 id="sec:eval"><a href="#sec:eval">eval</a></h4><dl class="defsig"><dt class="defsig" id="def:eval"><span class="sig"><tt>(eval EXP [ENVIRONMENT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Evaluates <tt>EXP</tt> and returns the result of the evaluation. The second argument is optional and defaults to the value of <tt>(interaction-environment)</tt>.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20library.html">Unit library</a></p><p>Next: <a href="Unit%20expand.html">Unit expand</a></p></div></div></body>

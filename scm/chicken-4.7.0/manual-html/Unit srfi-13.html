@@ -1,0 +1,478 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit srfi-13</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main"><h2 id="sec:Unit_srfi-13"><a href="#sec:Unit_srfi-13">Unit srfi-13</a></h2><p>SRFI 13 (string library).  Certain procedures contained in this SRFI, such as <tt>string-append</tt>, are identical to R5RS versions and are omitted from this document.  For full documentation, see the <a href="http://srfi.schemers.org/srfi-13/srfi-13.html">original SRFI-13 document</a>.</p><p>On systems that support dynamic loading, the <tt>srfi-13</tt> unit can be made available in the Chicken interpreter (<tt>csi</tt>) by entering</p><pre class="highlight"><span class="paren1">(<span class="default">require-extension srfi-13</span>)</span></pre><p>The <tt>string-hash</tt> and <tt>string-hash-ci</tt> procedures are not provided in this library unit.  <a href="Unit%20srfi-69.html">Unit srfi-69</a> has compatible definitions.</p>
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_srfi-13">Unit srfi-13</a></li>
+<li><a href="#sec:Notes">Notes</a>
+<ul>
+<li><a href="#sec:Strings_are_code-point_sequences">Strings are code-point sequences</a></li>
+<li><a href="#sec:Case_mapping_and_case-folding">Case mapping and case-folding</a></li>
+<li><a href="#sec:String_equality_.26_string_normalisation">String equality &amp; string normalisation</a></li>
+<li><a href="#sec:String_inequality">String inequality</a></li>
+<li><a href="#sec:Naming_conventions">Naming conventions</a></li>
+<li><a href="#sec:Shared_storage">Shared storage</a></li></ul></li>
+<li><a href="#sec:Procedure_Specification">Procedure Specification</a>
+<ul>
+<li><a href="#sec:Main_procedures">Main procedures</a>
+<ul>
+<li><a href="#sec:Predicates">Predicates</a></li>
+<li><a href="#sec:Constructors">Constructors</a></li>
+<li><a href="#sec:List_.26_string_conversion">List &amp; string conversion</a></li>
+<li><a href="#sec:Selection">Selection</a></li>
+<li><a href="#sec:Modification">Modification</a></li>
+<li><a href="#sec:Comparison">Comparison</a></li>
+<li><a href="#sec:Prefixes_.26_suffixes">Prefixes &amp; suffixes</a></li>
+<li><a href="#sec:Searching">Searching</a></li>
+<li><a href="#sec:Alphabetic_case_mapping">Alphabetic case mapping</a></li>
+<li><a href="#sec:Reverse_.26_append">Reverse &amp; append</a></li>
+<li><a href="#sec:Fold.2c_unfold_.26_map">Fold, unfold &amp; map</a></li>
+<li><a href="#sec:Replicate_.26_rotate">Replicate &amp; rotate</a></li>
+<li><a href="#sec:Miscellaneous:_insertion.2c_parsing">Miscellaneous: insertion, parsing</a></li>
+<li><a href="#sec:Filtering_.26_deleting">Filtering &amp; deleting</a></li></ul></li>
+<li><a href="#sec:Low-level_procedures">Low-level procedures</a>
+<ul>
+<li><a href="#sec:Start.2fend_optional-argument_parsing_.26_checking_utilities">Start/end optional-argument parsing &amp; checking utilities</a></li>
+<li><a href="#sec:Knuth-Morris-Pratt_searching">Knuth-Morris-Pratt searching</a></li></ul></li></ul></li></ul></div><h2 id="sec:Notes"><a href="#sec:Notes">Notes</a></h2><h3 id="sec:Strings_are_code-point_sequences"><a href="#sec:Strings_are_code-point_sequences">Strings are code-point sequences</a></h3><p>This SRFI considers strings simply to be a sequence of &quot;code points&quot; or character encodings. Operations such as comparison or reversal are always done code point by code point.</p><p>Chicken's native strings are simple byte sequences (not Unicode code points). Comparison or reversal is done byte-wise.  If Unicode semantics are desired, see the <a href="http://wiki.call-cc.org/egg/utf8">utf8</a> egg.</p><h3 id="sec:Case_mapping_and_case-folding"><a href="#sec:Case_mapping_and_case-folding">Case mapping and case-folding</a></h3><p>Upper- and lower-casing characters is complex in super-ASCII encodings. SRFI 13 makes no attempt to deal with these issues; it uses a simple 1-1 locale- and context-independent case-mapping, specifically Unicode's 1-1 case-mappings given in <a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a>.</p><p>On Chicken, case-mapping is restricted to operate on ASCII characters.</p><h3 id="sec:String_equality_.26_string_normalisation"><a href="#sec:String_equality_.26_string_normalisation">String equality &amp; string normalisation</a></h3><p>SRFI 13 string equality is simply based upon comparing the encoding values used for the characters.  On Chicken, strings are compared byte-wise.</p><h3 id="sec:String_inequality"><a href="#sec:String_inequality">String inequality</a></h3><p>SRFI 13 string ordering is strictly based upon a character-by-character comparison of the values used for representing the string.</p><h3 id="sec:Naming_conventions"><a href="#sec:Naming_conventions">Naming conventions</a></h3><ul><li>Procedures whose names end in &quot;-ci&quot; are case-insensitive variants. </li>
+<li>Procedures whose names end in &quot;!&quot; are side-effecting variants. What values these procedures return is usually not specified. </li>
+<li>The order of common parameters is consistent across the different procedures. </li>
+<li>Left/right/both directionality: Procedures that have left/right directional variants use the following convention: </li>
+</ul>
+<table>
+<tr><th>Direction</th><th>Suffix</th></tr>
+
+<tr><td>left-to-right</td><td><i>none</i></td></tr>
+
+<tr><td>right-to-left</td><td><tt>-right</tt></td></tr>
+
+<tr><td>both</td><td><tt>-both</tt></td></tr>
+</table>
+<h3 id="sec:Shared_storage"><a href="#sec:Shared_storage">Shared storage</a></h3><p>Chicken does not currently have shared-text substrings, nor does its implementation of SRFI 13 routines ever return one of the strings that was passed in as a parameter, as is allowed by the specification.</p><p>On the other hand, the functionality is present to allow one to write efficient code <i>without</i> shared-text substrings. You can write efficient code that works by passing around start/end ranges indexing into a string instead of simply building a shared-text substring.</p><h2 id="sec:Procedure_Specification"><a href="#sec:Procedure_Specification">Procedure Specification</a></h2><p>In the following procedure specifications:</p><ul><li>An S parameter is a string. </li>
+<li>A CHAR parameter is a character. </li>
+<li>START and END parameters are half-open string indices specifying a substring within a string parameter; when optional, they default to 0 and the length of the string, respectively. When specified, it must be the case that 0 &lt;= START &lt;= END &lt;= <tt>(string-length S)</tt>, for the corresponding parameter S. They typically restrict a procedure's action to the indicated substring. </li>
+<li>A PRED parameter is a unary character predicate procedure, returning a true/false value when applied to a character. </li>
+<li>A CHAR/CHAR-SET/PRED parameter is a value used to select/search for a character in a string. If it is a character, it is used in an equality test; if it is a character set, it is used as a membership test; if it is a procedure, it is applied to the characters as a test predicate. </li>
+<li>An I parameter is an exact non-negative integer specifying an index into a string. </li>
+<li>LEN and NCHARS parameters are exact non-negative integers specifying a length of a string or some number of characters. </li>
+<li>An OBJ parameter may be any value at all. </li>
+</ul>
+<p>Passing values to procedures with these parameters that do not satisfy these types is an error.</p><p>Parameters given in square brackets are optional. Unless otherwise noted in the text describing the procedure, any prefix of these optional parameters may be supplied, from zero arguments to the full list. When a procedure returns multiple values, this is shown by listing the return values in square brackets, as well. So, for example, the procedure with signature</p><pre>halts? F [X INIT-STORE] -&gt; [BOOLEAN INTEGER]</pre><p>would take one (F), two (F, X) or three (F, X, INIT-STORE) input parameters, and return two values, a boolean and an integer.</p><p>A parameter followed by &quot;<tt>...</tt>&quot; means zero-or-more elements. So the procedure with the signature</p><pre>sum-squares X ...  -&gt; NUMBER</pre><p>takes zero or more arguments (X ...), while the procedure with signature</p><pre>spell-check DOC DICT_1 DICT_2 ... -&gt; STRING-LIST</pre><p>takes two required parameters (DOC and DICT_1) and zero or more optional parameters (DICT_2 ...).</p><p>If a procedure is said to return &quot;unspecified,&quot; this means that nothing at all is said about what the procedure returns. Such a procedure is not even required to be consistent from call to call. It is simply required to return a value (or values) that may be passed to a command continuation, <i>e.g.</i> as the value of an expression appearing as a non-terminal subform of a <tt>begin</tt> expression. Note that in R5RS, this restricts such a procedure to returning a single value; non-R5RS systems may not even provide this restriction.</p><h3 id="sec:Main_procedures"><a href="#sec:Main_procedures">Main procedures</a></h3><h4 id="sec:Predicates"><a href="#sec:Predicates">Predicates</a></h4><dl class="defsig"><dt class="defsig" id="def:string-null.3f"><span class="sig"><tt>(string-null? s) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Is S the empty string?</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-every"><span class="sig"><tt>(string-every char/char-set/pred s [start end]) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-any"><span class="sig"><tt>(string-any char/char-set/pred s [start end]) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Checks to see if the given criteria is true of every / any character in S, proceeding from left (index START) to right (index END).</p><p>If CHAR/CHAR-SET/PRED is a character, it is tested for equality with the elements of S.</p><p>If CHAR/CHAR-SET/PRED is a character set, the elements of S are tested for membership in the set.</p><p>If CHAR/CHAR-SET/PRED is a predicate procedure, it is applied to the elements of S. The predicate is &quot;witness-generating:&quot;</p><ul><li>If <tt>string-any</tt> returns true, the returned true value is the one produced by the application of the predicate. </li>
+<li>If <tt>string-every</tt> returns true, the returned true value is the one produced by the final application of the predicate to S[END-1]. If <tt>string-every</tt> is applied to an empty sequence of characters, it simply returns <tt>#t</tt>. </li>
+</ul>
+<p>If <tt>string-every</tt> or <tt>string-any</tt> apply the predicate to the final element of the selected sequence (<i>i.e.</i>, S[END-1]), that final application is a tail call.</p><p>The names of these procedures do not end with a question mark -- this is to indicate that, in the predicate case, they do not return a simple boolean (<tt>#t</tt> or <tt>#f</tt>), but a general value.</p></dd>
+</dl>
+<h4 id="sec:Constructors"><a href="#sec:Constructors">Constructors</a></h4><dl class="defsig"><dt class="defsig" id="def:string-tabulate"><span class="sig"><tt>(string-tabulate proc len) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>PROC is an integer-&gt;char procedure. Construct a string of size LEN by applying PROC to each index to produce the corresponding string element. The order in which PROC is applied to the indices is not specified.</p></dd>
+</dl>
+<h4 id="sec:List_.26_string_conversion"><a href="#sec:List_.26_string_conversion">List &amp; string conversion</a></h4><dl class="defsig"><dt class="defsig" id="def:string-.3elist"><span class="sig"><tt>(string-&gt;list s [start end]) -&gt; char-list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>string-&gt;list</tt> is extended from the R5RS definition to take optional START/END arguments.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:reverse-list-.3estring"><span class="sig"><tt>(reverse-list-&gt;string char-list) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>An efficient implementation of <tt>(compose list-&gt;string reverse)</tt>:</p><pre>(reverse-list-&gt;string '(#\a #\B #\c)) -&gt; &quot;cBa&quot;</pre><p>This is a common idiom in the epilog of string-processing loops that accumulate an answer in a reverse-order list. (See also <tt>string-concatenate-reverse</tt> for the &quot;chunked&quot; variant.)</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-join"><span class="sig"><tt>(string-join string-list [delimiter grammar]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This procedure is a simple unparser --- it pastes strings together using the delimiter string.</p><p>The GRAMMAR argument is a symbol that determines how the delimiter is used, and defaults to <tt>'infix</tt>.</p><ul><li><tt>'infix</tt> means an infix or separator grammar: insert the delimiter between list elements. An empty list will produce an empty string -- note, however, that parsing an empty string with an infix or separator grammar is ambiguous. Is it an empty list, or a list of one element, the empty string? </li>
+<li><tt>'strict-infix</tt> means the same as <tt>'infix</tt>, but will raise an error if given an empty list. </li>
+<li><tt>'suffix</tt> means a suffix or terminator grammar: insert the delimiter after every list element. This grammar has no ambiguities. </li>
+<li><tt>'prefix</tt> means a prefix grammar: insert the delimiter before every list element. This grammar has no ambiguities. </li>
+</ul>
+<p>The delimiter is the string used to delimit elements; it defaults to a single space &quot; &quot;.</p><pre>(string-join '(&quot;foo&quot; &quot;bar&quot; &quot;baz&quot;) &quot;:&quot;)         =&gt; &quot;foo:bar:baz&quot;
+(string-join '(&quot;foo&quot; &quot;bar&quot; &quot;baz&quot;) &quot;:&quot; 'suffix) =&gt; &quot;foo:bar:baz:&quot;
+ 
+;; Infix grammar is ambiguous wrt empty list vs. empty string,
+(string-join '()   &quot;:&quot;) =&gt; &quot;&quot;
+(string-join '(&quot;&quot;) &quot;:&quot;) =&gt; &quot;&quot;
+ 
+;; but suffix &amp; prefix grammars are not.
+(string-join '()   &quot;:&quot; 'suffix) =&gt; &quot;&quot;
+(string-join '(&quot;&quot;) &quot;:&quot; 'suffix) =&gt; &quot;:&quot;</pre></dd>
+</dl>
+<h4 id="sec:Selection"><a href="#sec:Selection">Selection</a></h4><dl class="defsig"><dt class="defsig" id="def:string-copy"><span class="sig"><tt>(string-copy s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:substring.2fshared"><span class="sig"><tt>(substring/shared s start [end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>[R5RS+] <tt>substring/shared</tt> returns a string whose contents are the characters of S beginning with index START (inclusive) and ending with index END (exclusive). It differs from the R5RS <tt>substring</tt> in two ways:</p><ul><li>The END parameter is optional, not required. </li>
+<li><tt>substring/shared</tt> may return a value that shares memory with S or is <tt>eq?</tt> to S. </li>
+</ul>
+<p><tt>string-copy</tt> is extended from its R5RS definition by the addition of its optional START/END parameters. In contrast to <tt>substring/shared</tt>, it is guaranteed to produce a freshly-allocated string.</p><p>Use <tt>string-copy</tt> when you want to indicate explicitly in your code that you wish to allocate new storage; use <tt>substring/shared</tt> when you don't care if you get a fresh copy or share storage with the original string.</p><pre>(string-copy &quot;Beta substitution&quot;) =&gt; &quot;Beta substitution&quot;
+(string-copy &quot;Beta substitution&quot; 1 10) 
+    =&gt; &quot;eta subst&quot;
+(string-copy &quot;Beta substitution&quot; 5) =&gt; &quot;substitution&quot;</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-copy.21"><span class="sig"><tt>(string-copy! target tstart s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Copy the sequence of characters from index range [START,END) in string S to string TARGET, beginning at index TSTART. The characters are copied left-to-right or right-to-left as needed -- the copy is guaranteed to work, even if TARGET and S are the same string.</p><p>It is an error if the copy operation runs off the end of the target string, <i>e.g.</i></p><pre>(string-copy! (string-copy &quot;Microsoft&quot;) 0
+              &quot;Regional Microsoft Operating Companies&quot;) =&gt; ''error''</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-take"><span class="sig"><tt>(string-take s nchars) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-drop"><span class="sig"><tt>(string-drop s nchars) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-take-right"><span class="sig"><tt>(string-take-right s nchars) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-drop-right"><span class="sig"><tt>(string-drop-right s nchars) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>string-take</tt> returns the first NCHARS of S; <tt>string-drop</tt> returns all but the first NCHARS of S. <tt>string-take-right</tt> returns the last NCHARS of S; <tt>string-drop-right</tt> returns all but the last NCHARS of S. If these procedures produce the entire string, they may return either S or a copy of S; in some implementations, proper substrings may share memory with S.</p><pre>(string-take &quot;Pete Szilagyi&quot; 6) =&gt; &quot;Pete S&quot;
+(string-drop &quot;Pete Szilagyi&quot; 6) =&gt; &quot;zilagyi&quot;
+ 
+(string-take-right &quot;Beta rules&quot; 5) =&gt; &quot;rules&quot;
+(string-drop-right &quot;Beta rules&quot; 5) =&gt; &quot;Beta &quot;</pre><p>It is an error to take or drop more characters than are in the string:</p><pre>(string-take &quot;foo&quot; 37) =&gt; ''error''</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-pad"><span class="sig"><tt>(string-pad s len [char start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-pad-right"><span class="sig"><tt>(string-pad-right s len [char start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Build a string of length LEN comprised of S padded on the left (right) by as many occurrences of the character CHAR as needed. If S has more than LEN chars, it is truncated on the left (right) to length LEN. CHAR defaults to #\space.</p><p>If LEN &lt;= END-START, the returned value is allowed to share storage with S, or be exactly S (if LEN = END-START).</p><pre>(string-pad     &quot;325&quot; 5) =&gt; &quot;  325&quot;
+(string-pad   &quot;71325&quot; 5) =&gt; &quot;71325&quot;
+(string-pad &quot;8871325&quot; 5) =&gt; &quot;71325&quot;</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-trim"><span class="sig"><tt>(string-trim s [char/char-set/pred start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-trim-right"><span class="sig"><tt>(string-trim-right s [char/char-set/pred start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-trim-both"><span class="sig"><tt>(string-trim-both s [char/char-set/pred start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Trim S by skipping over all characters on the left / on the right / on both sides that satisfy the second parameter CHAR/CHAR-SET/PRED:</p><ul><li>if it is a character CHAR, characters equal to CHAR are trimmed; </li>
+<li>if it is a char set CS, characters contained in CS are trimmed; </li>
+<li>if it is a predicate PRED, it is a test predicate that is applied to the characters in S; a character causing it to return true is skipped. </li>
+</ul>
+<p>CHAR/CHAR-SET/PRED defaults to the character set <tt>char-set:whitespace</tt> defined in SRFI 14.</p><p>If no trimming occurs, these functions may return either S or a copy of S; in some implementations, proper substrings may share memory with S.</p><pre>(string-trim-both &quot;  The outlook wasn't brilliant,  \n\r&quot;)
+    =&gt; &quot;The outlook wasn't brilliant,&quot;</pre></dd>
+</dl>
+<h4 id="sec:Modification"><a href="#sec:Modification">Modification</a></h4><dl class="defsig"><dt class="defsig" id="def:string-fill.21"><span class="sig"><tt>(string-fill! s char [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>[R5RS+] Stores CHAR in every element of S.</p><p><tt>string-fill!</tt> is extended from the R5RS definition to take optional START/END arguments.</p></dd>
+</dl>
+<h4 id="sec:Comparison"><a href="#sec:Comparison">Comparison</a></h4><dl class="defsig"><dt class="defsig" id="def:string-compare"><span class="sig"><tt>(string-compare s1 s2 proc&lt; proc= proc&gt; [start1 end1 start2 end2]) -&gt; values</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-compare-ci"><span class="sig"><tt>(string-compare-ci s1 s2 proc&lt; proc= proc&gt; [start1 end1 start2 end2]) -&gt; values</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Apply PROC&lt;, PROC=, or PROC&gt; to the mismatch index, depending upon whether S1 is less than, equal to, or greater than S2. The &quot;mismatch index&quot; is the largest index I such that for every 0 &lt;= J &lt; I, S1[J] = S2[J] -- that is, I is the first position that doesn't match.</p><p><tt>string-compare-ci</tt> is the case-insensitive variant. Case-insensitive comparison is done by case-folding characters with the operation</p><pre>(char-downcase (char-upcase C))</pre><p>where the two case-mapping operations are assumed to be 1-1, locale- and context-insensitive, and compatible with the 1-1 case mappings specified by Unicode's UnicodeData.txt table:</p><p><a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a></p><p>The optional start/end indices restrict the comparison to the indicated substrings of S1 and S2. The mismatch index is always an index into S1; in the case of PROC=, it is always END1; we observe the protocol in this redundant case for uniformity.</p><pre>(string-compare &quot;The cat in the hat&quot; &quot;abcdefgh&quot; 
+                values values values
+                4 6         ; Select &quot;ca&quot; 
+                2 4)        ; &amp; &quot;cd&quot;
+    =&gt; 5    ; Index of S1's &quot;a&quot;</pre><p>Comparison is simply done on individual code-points of the string. True text collation is not handled by this SRFI.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string.3d"><span class="sig"><tt>(string= s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string.3c.3e"><span class="sig"><tt>(string&lt;&gt; s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string.3c"><span class="sig"><tt>(string&lt; s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string.3e"><span class="sig"><tt>(string&gt; s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string.3c.3d"><span class="sig"><tt>(string&lt;= s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string.3e.3d"><span class="sig"><tt>(string&gt;= s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>These procedures are the lexicographic extensions to strings of the corresponding orderings on characters. For example, <tt>string&lt;</tt> is the lexicographic ordering on strings induced by the ordering <tt>char&lt;?</tt> on characters. If two strings differ in length but are the same up to the length of the shorter string, the shorter string is considered to be lexicographically less than the longer string.</p><p>The optional start/end indices restrict the comparison to the indicated substrings of S1 and S2.</p><p>Comparison is simply done on individual code-points of the string. True text collation is not handled by this SRFI.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-ci.3d"><span class="sig"><tt>(string-ci= s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-ci.3c.3e"><span class="sig"><tt>(string-ci&lt;&gt; s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-ci.3c"><span class="sig"><tt>(string-ci&lt; s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-ci.3e"><span class="sig"><tt>(string-ci&gt; s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-ci.3c.3d"><span class="sig"><tt>(string-ci&lt;= s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-ci.3e.3d"><span class="sig"><tt>(string-ci&gt;= s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Case-insensitive variants.</p><p>Case-insensitive comparison is done by case-folding characters with the operation</p><pre>(char-downcase (char-upcase C))</pre><p>where the two case-mapping operations are assumed to be 1-1, locale- and context-insensitive, and compatible with the 1-1 case mappings specified by Unicode's UnicodeData.txt table:</p><p><a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a></p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-hash"><span class="sig"><tt>(string-hash s [bound start end]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-hash-ci"><span class="sig"><tt>(string-hash-ci s [bound start end]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Compute a hash value for the string S. BOUND is a non-negative exact integer specifying the range of the hash function. A positive value restricts the return value to the range [0,BOUND).</p><p>If BOUND is either zero or not given, the implementation may use an implementation-specific default value, chosen to be as large as is efficiently practical. For instance, the default range might be chosen for a given implementation to map all strings into the range of integers that can be represented with a single machine word.</p><p>The optional start/end indices restrict the hash operation to the indicated substring of S.</p><p><tt>string-hash-ci</tt> is the case-insensitive variant. Case-insensitive comparison is done by case-folding characters with the operation</p><pre>(char-downcase (char-upcase C))</pre><p>where the two case-mapping operations are assumed to be 1-1, locale- and context-insensitive, and compatible with the 1-1 case mappings specified by Unicode's UnicodeData.txt table:</p><p><a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a></p><p>Invariants:</p><pre>(&lt;= 0 (string-hash s b) (- b 1)) ; When B &gt; 0.
+(string=    s1 s2)  =&gt;  (= (string-hash s1 b)    (string-hash s2 b))
+(string-ci= s1 s2)  =&gt;  (= (string-hash-ci s1 b) (string-hash-ci s2 b))</pre><p>A legal but nonetheless discouraged implementation:</p><pre>(define (string-hash    s . other-args) 1)
+(define (string-hash-ci s . other-args) 1)</pre><p>Rationale: allowing the user to specify an explicit bound simplifies user code by removing the mod operation that typically accompanies every hash computation, and also may allow the implementation of the hash function to exploit a reduced range to efficiently compute the hash value. <i>E.g.</i>, for small bounds, the hash function may be computed in a fashion such that intermediate values never overflow into bignum integers, allowing the implementor to provide a fixnum-specific &quot;fast path&quot; for computing the common cases very rapidly.</p></dd>
+</dl>
+<h4 id="sec:Prefixes_.26_suffixes"><a href="#sec:Prefixes_.26_suffixes">Prefixes &amp; suffixes</a></h4><dl class="defsig"><dt class="defsig" id="def:string-prefix-length"><span class="sig"><tt>(string-prefix-length s1 s2 [start1 end1 start2 end2]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-suffix-length"><span class="sig"><tt>(string-suffix-length s1 s2 [start1 end1 start2 end2]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-prefix-length-ci"><span class="sig"><tt>(string-prefix-length-ci s1 s2 [start1 end1 start2 end2]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-suffix-length-ci"><span class="sig"><tt>(string-suffix-length-ci s1 s2 [start1 end1 start2 end2]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return the length of the longest common prefix/suffix of the two strings. For prefixes, this is equivalent to the &quot;mismatch index&quot; for the strings (modulo the STARTi index offsets).</p><p>The optional start/end indices restrict the comparison to the indicated substrings of S1 and S2.</p><p><tt>string-prefix-length-ci</tt> and <tt>string-suffix-length-ci</tt> are the case-insensitive variants. Case-insensitive comparison is done by case-folding characters with the operation</p><pre>(char-downcase (char-upcase c))</pre><p>where the two case-mapping operations are assumed to be 1-1, locale- and context-insensitive, and compatible with the 1-1 case mappings specified by Unicode's UnicodeData.txt table:</p><p><a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a></p><p>Comparison is simply done on individual code-points of the string.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-prefix.3f"><span class="sig"><tt>(string-prefix? s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-suffix.3f"><span class="sig"><tt>(string-suffix? s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-prefix-ci.3f"><span class="sig"><tt>(string-prefix-ci? s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-suffix-ci.3f"><span class="sig"><tt>(string-suffix-ci? s1 s2 [start1 end1 start2 end2]) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Is S1 a prefix/suffix of S2?</p><p>The optional start/end indices restrict the comparison to the indicated substrings of S1 and S2.</p><p><tt>string-prefix-ci?</tt> and <tt>string-suffix-ci?</tt> are the case-insensitive variants. Case-insensitive comparison is done by case-folding characters with the operation</p><pre>(char-downcase (char-upcase c))</pre><p>where the two case-mapping operations are assumed to be 1-1, locale- and context-insensitive, and compatible with the 1-1 case mappings specified by Unicode's UnicodeData.txt table:</p><p><a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a></p><p>Comparison is simply done on individual code-points of the string.</p></dd>
+</dl>
+<h4 id="sec:Searching"><a href="#sec:Searching">Searching</a></h4><dl class="defsig"><dt class="defsig" id="def:string-index"><span class="sig"><tt>(string-index s char/char-set/pred [start end]) -&gt; integer or #f</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-index-right"><span class="sig"><tt>(string-index-right s char/char-set/pred [start end]) -&gt; integer or #f</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-skip"><span class="sig"><tt>(string-skip s char/char-set/pred [start end]) -&gt; integer or #f</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-skip-right"><span class="sig"><tt>(string-skip-right s char/char-set/pred [start end]) -&gt; integer or #f</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>string-index</tt> (<tt>string-index-right</tt>) searches through the string from the left (right), returning the index of the first occurrence of a character which</p><ul><li>equals CHAR/CHAR-SET/PRED (if it is a character); </li>
+<li>is in CHAR/CHAR-SET/PRED (if it is a character set); </li>
+<li>satisfies the predicate CHAR/CHAR-SET/PRED (if it is a procedure). </li>
+</ul>
+<p>If no match is found, the functions return false.</p><p>The START and END parameters specify the beginning and end indices of the search; the search includes the start index, but not the end index. Be careful of &quot;fencepost&quot; considerations: when searching right-to-left, the first index considered is</p><p>END-1</p><p>whereas when searching left-to-right, the first index considered is</p><p>START</p><p>That is, the start/end indices describe a same half-open interval [START,END) in these procedures that they do in all the other SRFI 13 procedures.</p><p>The skip functions are similar, but use the complement of the criteria: they search for the first char that <i>doesn't</i> satisfy the test. <i>E.g.</i>, to skip over initial whitespace, say</p><pre>(cond ((string-skip s char-set:whitespace) =&gt;</pre><pre>       (lambda (i) ...)) ; s[i] is not whitespace.
+      ...)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-count"><span class="sig"><tt>(string-count s char/char-set/pred [start end]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return a count of the number of characters in S that satisfy the CHAR/CHAR-SET/PRED argument. If this argument is a procedure, it is applied to the character as a predicate; if it is a character set, the character is tested for membership; if it is a character, it is used in an equality test.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-contains"><span class="sig"><tt>(string-contains s1 s2 [start1 end1 start2 end2]) -&gt; integer or false</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-contains-ci"><span class="sig"><tt>(string-contains-ci s1 s2 [start1 end1 start2 end2]) -&gt; integer or false</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Does string S1 contain string S2?</p><p>Return the index in S1 where S2 occurs as a substring, or false. The optional start/end indices restrict the operation to the indicated substrings.</p><p>The returned index is in the range [START1,END1). A successful match must lie entirely in the [START1,END1) range of S1.</p><pre>(string-contains &quot;eek -- what a geek.&quot; &quot;ee&quot;
+                 12 18) ; Searches &quot;a geek&quot;
+    =&gt; 15</pre><p><tt>string-contains-ci</tt> is the case-insensitive variant. Case-insensitive comparison is done by case-folding characters with the operation</p><pre>(char-downcase (char-upcase C))</pre><p>where the two case-mapping operations are assumed to be 1-1, locale- and context-insensitive, and compatible with the 1-1 case mappings specified by Unicode's UnicodeData.txt table:</p><p><a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a></p><p>Comparison is simply done on individual code-points of the string.</p><p>The names of these procedures do not end with a question mark -- this is to indicate that they do not return a simple boolean (<tt>#t</tt> or <tt>#f</tt>). Rather, they return either false (<tt>#f</tt>) or an exact non-negative integer.</p></dd>
+</dl>
+<h4 id="sec:Alphabetic_case_mapping"><a href="#sec:Alphabetic_case_mapping">Alphabetic case mapping</a></h4><dl class="defsig"><dt class="defsig" id="def:string-titlecase"><span class="sig"><tt>(string-titlecase s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-titlecase.21"><span class="sig"><tt>(string-titlecase! s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>For every character C in the selected range of S, if C is preceded by a cased character, it is downcased; otherwise it is titlecased.</p><p><tt>string-titlecase</tt> returns the result string and does not alter its S parameter. <tt>string-titlecase!</tt> is the in-place side-effecting variant.</p><pre>(string-titlecase &quot;--capitalize tHIS sentence.&quot;) =&gt;
+  &quot;--Capitalize This Sentence.&quot;
+ 
+(string-titlecase &quot;see Spot run. see Nix run.&quot;) =&gt;
+  &quot;See Spot Run. See Nix Run.&quot;
+ 
+(string-titlecase &quot;3com makes routers.&quot;) =&gt;
+  &quot;3Com Makes Routers.&quot;</pre><p>Note that if a START index is specified, then the character preceding S[START] has no effect on the titlecase decision for character S[START]:</p><pre>(string-titlecase &quot;greasy fried chicken&quot; 2) =&gt; &quot;Easy Fried Chicken&quot;</pre><p>Titlecase and cased information must be compatible with the Unicode specification.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-upcase"><span class="sig"><tt>(string-upcase s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-upcase.21"><span class="sig"><tt>(string-upcase! s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-downcase"><span class="sig"><tt>(string-downcase s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-downcase.21"><span class="sig"><tt>(string-downcase! s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Raise or lower the case of the alphabetic characters in the string.</p><p><tt>string-upcase</tt> and <tt>string-downcase</tt> return the result string and do not alter their S parameter. <tt>string-upcase!</tt> and <tt>string-downcase!</tt> are the in-place side-effecting variants.</p><p>These procedures use the locale- and context-insensitive 1-1 case mappings defined by Unicode's UnicodeData.txt table:</p><p><a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt">ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt</a></p></dd>
+</dl>
+<h4 id="sec:Reverse_.26_append"><a href="#sec:Reverse_.26_append">Reverse &amp; append</a></h4><dl class="defsig"><dt class="defsig" id="def:string-reverse"><span class="sig"><tt>(string-reverse s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-reverse.21"><span class="sig"><tt>(string-reverse! s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Reverse the string.</p><p><tt>string-reverse</tt> returns the result string and does not alter its S parameter. <tt>string-reverse!</tt> is the in-place side-effecting variant.</p><pre>(string-reverse &quot;Able was I ere I saw elba.&quot;) 
+    =&gt; &quot;.able was I ere I saw elbA&quot;
+ 
+;;; In-place rotate-left, the Bell Labs way:
+(lambda (s i)
+  (let ((i (modulo i (string-length s))))
+    (string-reverse! s 0 i)
+    (string-reverse! s i)
+    (string-reverse! s)))</pre><p>Unicode note: Reversing a string simply reverses the sequence of code-points it contains. So a zero-width accent character A coming <i>after</i> a base character B in string S would come out <i>before</i> B in the reversed result.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-concatenate"><span class="sig"><tt>(string-concatenate string-list) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Append the elements of <tt>string-list</tt> together into a single string. Guaranteed to return a freshly allocated string.</p><p>Note that the <tt>(apply string-append STRING-LIST)</tt> idiom is not robust for long lists of strings, as some Scheme implementations limit the number of arguments that may be passed to an n-ary procedure.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-concatenate.2fshared"><span class="sig"><tt>(string-concatenate/shared string-list) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-append.2fshared"><span class="sig"><tt>(string-append/shared s_1 ...) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>These two procedures are variants of <tt>string-concatenate</tt> and <tt>string-append</tt> that are permitted to return results that share storage with their parameters. In particular, if <tt>string-append/shared</tt> is applied to just one argument, it may return exactly that argument, whereas <tt>string-append</tt> is required to allocate a fresh string.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-concatenate-reverse"><span class="sig"><tt>(string-concatenate-reverse string-list [final-string end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-concatenate-reverse.2fshared"><span class="sig"><tt>(string-concatenate-reverse/shared string-list [final-string end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>With no optional arguments, these functions are equivalent to</p><pre>(string-concatenate (reverse STRING-LIST))</pre><p>and</p><pre>(string-concatenate/shared (reverse STRING-LIST))</pre><p>respectively.</p><p>If the optional argument FINAL-STRING is specified, it is consed onto the beginning of STRING-LIST before performing the list-reverse and string-concatenate operations.</p><p>If the optional argument END is given, only the first END characters of FINAL-STRING are added to the string list, thus producing</p><pre>(string-concatenate 
+  (reverse (cons (substring/shared FINAL-STRING 0 END)
+                 STRING-LIST)))</pre><p><i>E.g.</i></p><pre>(string-concatenate-reverse '(&quot; must be&quot; &quot;Hello, I&quot;) &quot; going.XXXX&quot; 7)
+  =&gt; &quot;Hello, I must be going.&quot;</pre><p>This procedure is useful in the construction of procedures that accumulate character data into lists of string buffers, and wish to convert the accumulated data into a single string when done.</p><p>Unicode note: Reversing a string simply reverses the sequence of code-points it contains. So a zero-width accent character AC coming <i>after</i> a base character BC in string S would come out <i>before</i> BC in the reversed result.</p></dd>
+</dl>
+<h4 id="sec:Fold.2c_unfold_.26_map"><a href="#sec:Fold.2c_unfold_.26_map">Fold, unfold &amp; map</a></h4><dl class="defsig"><dt class="defsig" id="def:string-map"><span class="sig"><tt>(string-map proc s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-map.21"><span class="sig"><tt>(string-map! proc s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>PROC is a char-&gt;char procedure; it is mapped over S.</p><p><tt>string-map</tt> returns the result string and does not alter its S parameter. <tt>string-map!</tt> is the in-place side-effecting variant.</p><p>Note: The order in which PROC is applied to the elements of S is not specified.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-fold"><span class="sig"><tt>(string-fold kons knil s [start end]) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-fold-right"><span class="sig"><tt>(string-fold-right kons knil s [start end]) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>These are the fundamental iterators for strings.</p><p>The left-fold operator maps the KONS procedure across the string from left to right</p><pre>(... (KONS S[2] (KONS S[1] (KONS S[0] KNIL))))</pre><p>In other words, <tt>string-fold</tt> obeys the (tail) recursion</p><pre>(string-fold KONS KNIL S START END) =
+    (string-fold KONS (KONS S[START] KNIL) START+1 END)</pre><p>The right-fold operator maps the KONS procedure across the string from right to left</p><pre>(KONS S[0] (... (KONS S[END-3] (KONS S[END-2] (KONS S[END-1] KNIL)))))</pre><p>obeying the (tail) recursion</p><pre>(string-fold-right KONS KNIL S START END) =
+    (string-fold-right KONS (KONS S[END-1] KNIL) START END-1)</pre><p>Examples:</p><pre>;;; Convert a string to a list of chars.
+(string-fold-right cons '() s)
+ 
+;;; Count the number of lower-case characters in a string.
+(string-fold (lambda (c count)
+               (if (char-lower-case? c)
+                   (+ count 1)
+                   count))
+             0
+             s)
+ 
+;;; Double every backslash character in S.
+(let* ((ans-len (string-fold (lambda (c sum)
+                               (+ sum (if (char=? c #\\) 2 1)))
+                             0 s))
+       (ans (make-string ans-len)))
+  (string-fold (lambda (c i)
+                 (let ((i (if (char=? c #\\)
+                              (begin (string-set! ans i #\\) (+ i 1))
+                              i)))
+                   (string-set! ans i c)
+                   (+ i 1)))
+               0 s)
+  ans)</pre><p>The right-fold combinator is sometimes called a &quot;catamorphism.&quot;</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-unfold"><span class="sig"><tt>(string-unfold p f g seed [base make-final]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This is a fundamental constructor for strings.</p><ul><li>G is used to generate a series of &quot;seed&quot; values from the initial seed: SEED, (G SEED), (G^2 SEED), (G^3 SEED), ... </li>
+<li>P tells us when to stop -- when it returns true when applied to one of these seed values. </li>
+<li>F maps each seed value to the corresponding character in the result string. These chars are assembled into the string in a left-to-right order. </li>
+<li>BASE is the optional initial/leftmost portion of the constructed string; it defaults to the empty string &quot;&quot;. </li>
+<li>MAKE-FINAL is applied to the terminal seed value (on which P returns true) to produce the final/rightmost portion of the constructed string. It defaults to <tt>(lambda (x) &quot;&quot;)</tt>. </li>
+</ul>
+<p>More precisely, the following (simple, inefficient) definitions hold:</p><pre>;;; Iterative
+(define (string-unfold p f g seed base make-final)
+  (let lp ((seed seed) (ans base))
+    (if (p seed) 
+        (string-append ans (make-final seed))
+        (lp (g seed) (string-append ans (string (f seed)))))))
+                                    
+;;; Recursive
+(define (string-unfold p f g seed base make-final)
+  (string-append base
+                 (let recur ((seed seed))
+                   (if (p seed) (make-final seed)
+                       (string-append (string (f seed))
+                                      (recur (g seed)))))))</pre><p><tt>string-unfold</tt> is a fairly powerful string constructor -- you can use it to convert a list to a string, read a port into a string, reverse a string, copy a string, and so forth. Examples:</p><pre>(port-&gt;string p) = (string-unfold eof-object? values
+                                  (lambda (x) (read-char p))
+                                  (read-char p))
+ 
+(list-&gt;string lis) = (string-unfold null? car cdr lis)
+ 
+(string-tabulate f size) = (string-unfold (lambda (i) (= i size)) f add1 0)</pre><p>To map F over a list LIS, producing a string:</p><pre>(string-unfold null? (compose f car) cdr lis)</pre><p>Interested functional programmers may enjoy noting that <tt>string-fold-right</tt> and <tt>string-unfold</tt> are in some sense inverses. That is, given operations KNULL?, KAR, KDR, KONS, and KNIL satisfying</p><pre>(KONS (KAR x) (KDR x)) = x  and (KNULL? KNIL) = #t</pre><p>then</p><pre>(string-fold-right KONS KNIL (string-unfold KNULL? KAR KDR X)) = X</pre><p>and</p><pre>(string-unfold KNULL? KAR KDR (string-fold-right KONS KNIL S)) = S.</pre><p>The final string constructed does not share storage with either BASE or the value produced by MAKE-FINAL.</p><p>This combinator sometimes is called an &quot;anamorphism.&quot;</p><p>Note: implementations should take care that runtime stack limits do not cause overflow when constructing large (<i>e.g.</i>, megabyte) strings with <tt>string-unfold</tt>.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-unfold-right"><span class="sig"><tt>(string-unfold-right p f g seed [base make-final]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This is a fundamental constructor for strings.</p><ul><li>G is used to generate a series of &quot;seed&quot; values from the initial seed: SEED, (G SEED), (G^2 SEED), (G^3 SEED), ... </li>
+<li>P tells us when to stop -- when it returns true when applied to one of these seed values. </li>
+<li>F maps each seed value to the corresponding character in the result string. These chars are assembled into the string in a right-to-left order. </li>
+<li>BASE is the optional initial/rightmost portion of the constructed string; it defaults to the empty string &quot;&quot;. </li>
+<li>MAKE-FINAL is applied to the terminal seed value (on which P returns true) to produce the final/leftmost portion of the constructed string. It defaults to <tt>(lambda (x) &quot;&quot;)</tt>. </li>
+</ul>
+<p>More precisely, the following (simple, inefficient) definitions hold:</p><pre>;;; Iterative
+(define (string-unfold-right p f g seed base make-final)
+  (let lp ((seed seed) (ans base))
+    (if (p seed) 
+        (string-append (make-final seed) ans)
+        (lp (g seed) (string-append (string (f seed)) ans)))))
+ 
+;;; Recursive
+(define (string-unfold-right p f g seed base make-final)
+  (string-append (let recur ((seed seed))
+                   (if (p seed) (make-final seed)
+                       (string-append (recur (g seed))
+                                      (string (f seed)))))
+                 base))</pre><p>Interested functional programmers may enjoy noting that <tt>string-fold</tt> and <tt>string-unfold-right</tt> are in some sense inverses. That is, given operations KNULL?, KAR, KDR, KONS, and KNIL satisfying</p><p><tt>(KONS (KAR X) (KDR X))</tt> = X and <tt>(KNULL? KNIL)</tt> = #t</p><p>then</p><pre>(string-fold KONS KNIL (string-unfold-right KNULL? KAR KDR X)) = X</pre><p>and</p><pre>(string-unfold-right KNULL? KAR KDR (string-fold KONS KNIL S)) = S.</pre><p>The final string constructed does not share storage with either BASE or the value produced by MAKE-FINAL.</p><p>Note: implementations should take care that runtime stack limits do not cause overflow when constructing large (<i>e.g.</i>, megabyte) strings with <tt>string-unfold-right.</tt></p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-for-each"><span class="sig"><tt>(string-for-each proc s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Apply PROC to each character in S. <tt>string-for-each</tt> is required to iterate from START to END in increasing order.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-for-each-index"><span class="sig"><tt>(string-for-each-index proc s [start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Apply PROC to each index of S, in order. The optional START/END pairs restrict the endpoints of the loop. This is simply a method of looping over a string that is guaranteed to be safe and correct. Example:</p><pre>(let* ((len (string-length s))
+       (ans (make-string len)))
+  (string-for-each-index
+      (lambda (i) (string-set! ans (- len i) (string-ref s i)))
+      s)
+  ans)</pre></dd>
+</dl>
+<h4 id="sec:Replicate_.26_rotate"><a href="#sec:Replicate_.26_rotate">Replicate &amp; rotate</a></h4><dl class="defsig"><dt class="defsig" id="def:xsubstring"><span class="sig"><tt>(xsubstring s from [to start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This is the &quot;extended substring&quot; procedure that implements replicated copying of a substring of some string.</p><p>S is a string; START and END are optional arguments that demarcate a substring of S, defaulting to 0 and the length of S (<i>i.e.</i>, the whole string). Replicate this substring up and down index space, in both the positive and negative directions. For example, if S = &quot;abcdefg&quot;, START=3, and END=6, then we have the conceptual bidirectionally-infinite string</p><table>
+<tr><td>...</td><td>d</td><td>e</td><td>f</td><td>d</td><td>e</td><td>f</td><td>d</td><td>e</td><td>f</td><td>d</td><td>e</td><td>f</td><td>d</td><td>e</td><td>f</td><td>d</td><td>e</td><td>f</td><td>d</td><td>...</td></tr>
+
+<tr><td>...</td><td>-9</td><td>-8</td><td>-7</td><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>0</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td><td>+7</td><td>+8</td><td>+9</td><td>...</td></tr>
+</table>
+<p><tt>xsubstring</tt> returns the substring of this string beginning at index FROM, and ending at TO (which defaults to FROM+(END-START)).</p><p>You can use <tt>xsubstring</tt> to perform a variety of tasks:</p><ul><li>To rotate a string left: <tt>(xsubstring &quot;abcdef&quot; 2)</tt> =&gt; <tt>&quot;cdefab&quot;</tt> </li>
+<li>To rotate a string right: <tt>(xsubstring &quot;abcdef&quot; -2)</tt> =&gt; <tt>&quot;efabcd&quot;</tt> </li>
+<li>To replicate a string: <tt>(xsubstring &quot;abc&quot; 0 7)</tt> =&gt; <tt>&quot;abcabca&quot;</tt> </li>
+</ul>
+<p>Note that</p><ul><li>The FROM/TO indices give a half-open range -- the characters from index FROM up to, but not including, index TO. </li>
+<li>The FROM/TO indices are not in terms of the index space for string S. They are in terms of the replicated index space of the substring defined by S, START, and END. </li>
+</ul>
+<p>It is an error if START=END -- although this is allowed by special dispensation when FROM=TO.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-xcopy.21"><span class="sig"><tt>(string-xcopy! target tstart s sfrom [sto start end]) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Exactly the same as <tt>xsubstring,</tt> but the extracted text is written into the string TARGET starting at index TSTART. This operation is not defined if <tt>(eq? TARGET S)</tt> or these two arguments share storage -- you cannot copy a string on top of itself.</p></dd>
+</dl>
+<h4 id="sec:Miscellaneous:_insertion.2c_parsing"><a href="#sec:Miscellaneous:_insertion.2c_parsing">Miscellaneous: insertion, parsing</a></h4><dl class="defsig"><dt class="defsig" id="def:string-replace"><span class="sig"><tt>(string-replace s1 s2 start1 end1 [start2 end2]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns</p><pre>(string-append (substring/shared S1 0 START1)
+               (substring/shared S2 START2 END2)
+               (substring/shared S1 END1 (string-length S1)))</pre><p>That is, the segment of characters in S1 from START1 to END1 is replaced by the segment of characters in S2 from START2 to END2. If START1=END1, this simply splices the S2 characters into S1 at the specified index.</p><p>Examples:</p><pre>(string-replace &quot;The TCL programmer endured daily ridicule.&quot;
+                &quot;another miserable perl drone&quot; 4 7 8 22 ) =&gt;
+    &quot;The miserable perl programmer endured daily ridicule.&quot;
+ 
+(string-replace &quot;It's easy to code it up in Scheme.&quot; &quot;lots of fun&quot; 5 9) =&gt;
+    &quot;It's lots of fun to code it up in Scheme.&quot;
+ 
+(define (string-insert s i t) (string-replace s t i i))
+ 
+(string-insert &quot;It's easy to code it up in Scheme.&quot; 5 &quot;really &quot;) =&gt;
+    &quot;It's really easy to code it up in Scheme.&quot;</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-tokenize"><span class="sig"><tt>(string-tokenize s [token-set start end]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Split the string S into a list of substrings, where each substring is a maximal non-empty contiguous sequence of characters from the character set TOKEN-SET.</p><ul><li>TOKEN-SET defaults to <tt>char-set:graphic</tt> (see SRFI 14 for more on character sets and <tt>char-set:graphic</tt>). </li>
+<li>If START or END indices are provided, they restrict <tt>string-tokenize</tt> to operating on the indicated substring of S. </li>
+</ul>
+<p>This function provides a minimal parsing facility for simple applications. More sophisticated parsers that handle quoting and backslash effects can easily be constructed using regular-expression systems; be careful not to use <tt>string-tokenize</tt> in contexts where more serious parsing is needed.</p><pre>(string-tokenize &quot;Help make programs run, run, RUN!&quot;) =&gt;
+  (&quot;Help&quot; &quot;make&quot; &quot;programs&quot; &quot;run,&quot; &quot;run,&quot; &quot;RUN!&quot;)</pre></dd>
+</dl>
+<h4 id="sec:Filtering_.26_deleting"><a href="#sec:Filtering_.26_deleting">Filtering &amp; deleting</a></h4><dl class="defsig"><dt class="defsig" id="def:string-filter"><span class="sig"><tt>(string-filter char/char-set/pred s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-delete"><span class="sig"><tt>(string-delete har/char-set/pred s [start end]) -&gt; string</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Filter the string S, retaining only those characters that satisfy / do not satisfy the CHAR/CHAR-SET/PRED argument. If this argument is a procedure, it is applied to the character as a predicate; if it is a char-set, the character is tested for membership; if it is a character, it is used in an equality test.</p><p>If the string is unaltered by the filtering operation, these functions may return either S or a copy of S.</p></dd>
+</dl>
+<h3 id="sec:Low-level_procedures"><a href="#sec:Low-level_procedures">Low-level procedures</a></h3><p>The following procedures are useful for writing other string-processing functions. In a Scheme system that has a module or package system, these procedures should be contained in a module named &quot;string-lib-internals&quot;.</p><h4 id="sec:Start.2fend_optional-argument_parsing_.26_checking_utilities"><a href="#sec:Start.2fend_optional-argument_parsing_.26_checking_utilities">Start/end optional-argument parsing &amp; checking utilities</a></h4><dl class="defsig"><dt class="defsig" id="def:string-parse-start.2bend"><span class="sig"><tt>(string-parse-start+end proc s args) -&gt; [rest start end]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:string-parse-final-start.2bend"><span class="sig"><tt>(string-parse-final-start+end proc s args) -&gt; [start end]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>string-parse-start+end</tt> may be used to parse a pair of optional START/END arguments from an argument list, defaulting them to 0 and the length of some string S, respectively. Let the length of string S be SLEN.</p><ul><li>If ARGS = (), the function returns <tt>(values '() 0 SLEN)</tt> </li>
+<li>If ARGS = (I), I is checked to ensure it is an exact integer, and that 0 &lt;= i &lt;= SLEN. Returns <tt>(values (cdr ARGS) I SLEN)</tt>. </li>
+<li>If ARGS = <tt>(I J ...)</tt>, I and J are checked to ensure they are exact integers, and that 0 &lt;= I &lt;= J &lt;= SLEN. Returns <tt>(values (cddr ARGS) I J)</tt>. </li>
+</ul>
+<p>If any of the checks fail, an error condition is raised, and PROC is used as part of the error condition -- it should be the client procedure whose argument list <tt>string-parse-start+end</tt> is parsing.</p><p><tt>string-parse-final-start+end</tt> is exactly the same, except that the ARGS list passed to it is required to be of length two or less; if it is longer, an error condition is raised. It may be used when the optional START/END parameters are final arguments to the procedure.</p><p>Note that in all cases, these functions ensure that S is a string (by necessity, since all cases apply <tt>string-length</tt> to S either to default END or to bounds-check it).</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:let-string-start.2bend"><span class="sig"><tt>(let-string-start+end (start end [rest]) proc-exp s-exp args-exp body ...) -&gt; value(s)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>[Syntax] Syntactic sugar for an application of <tt>string-parse-start+end</tt> or <tt>string-parse-final-start+end.</tt></p><p>If a REST variable is given, the form is equivalent to</p><pre>(call-with-values
+    (lambda () (string-parse-start+end PROC-EXP S-EXP ARGS-EXP))
+  (lambda (REST START END) BODY ...))</pre><p>If no REST variable is given, the form is equivalent to</p><pre>(call-with-values
+    (lambda () (string-parse-final-start+end PROC-EXP S-EXP ARGS-EXP))
+  (lambda (START END) BODY ...))</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:check-substring-spec"><span class="sig"><tt>(check-substring-spec proc s start end) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:substring-spec-ok.3f"><span class="sig"><tt>(substring-spec-ok? s start end) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Check values S, START and END to ensure they specify a valid substring. This means that S is a string, START and END are exact integers, and 0 &lt;= START &lt;= END &lt;= <tt>(string-length S)</tt></p><p>If the values are not proper</p><ul><li><tt>check-substring-spec</tt> raises an error condition. PROC is used as part of the error condition, and should be the procedure whose parameters we are checking. </li>
+<li><tt>substring-spec-ok?</tt> returns false. </li>
+</ul>
+<p>Otherwise, <tt>substring-spec-ok?</tt> returns true, and <tt>check-substring-spec</tt> simply returns (what it returns is not specified).</p></dd>
+</dl>
+<h4 id="sec:Knuth-Morris-Pratt_searching"><a href="#sec:Knuth-Morris-Pratt_searching">Knuth-Morris-Pratt searching</a></h4><p>The Knuth-Morris-Pratt string-search algorithm is a method of rapidly scanning a sequence of text for the occurrence of some fixed string. It has the advantage of never requiring backtracking -- hence, it is useful for searching not just strings, but also other sequences of text that do not support backtracking or random-access, such as input ports. These routines package up the initialisation and searching phases of the algorithm for general use. They also support searching through sequences of text that arrive in buffered chunks, in that intermediate search state can be carried across applications of the search loop from the end of one buffer application to the next.</p><p>A second critical property of KMP search is that it requires the allocation of auxiliary memory proportional to the length of the pattern, but <i>constant</i> in the size of the character type. Alternate searching algorithms frequently require the construction of a table with an entry for every possible character -- which can be prohibitively expensive in a 16- or 32-bit character representation.</p><dl class="defsig"><dt class="defsig" id="def:make-kmp-restart-vector"><span class="sig"><tt>(make-kmp-restart-vector s [c= start end]) -&gt; integer-vector</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Build a Knuth-Morris-Pratt &quot;restart vector,&quot; which is useful for quickly searching character sequences for the occurrence of string S (or the substring of S demarcated by the optional START/END parameters, if provided). C= is a character-equality function used to construct the restart vector. It defaults to <tt>char=?</tt>; use <tt>char-ci=?</tt> instead for case-folded string search.</p><p>The definition of the restart vector RV for string S is: If we have matched chars 0..I-1 of S against some search string SS, and S[I] doesn't match SS[K], then reset I := RV[I], and try again to match SS[K]. If RV[I] = -1, then punt SS[K] completely, and move on to SS[K+1] and S[0].</p><p>In other words, if you have matched the first I chars of S, but the I+1'th char doesn't match, RV[I] tells you what the next-longest prefix of S is that you have matched.</p><p>The following string-search function shows how a restart vector is used to search. Note the attractive feature of the search process: it is &quot;on line,&quot; that is, it never needs to back up and reconsider previously seen data. It simply consumes characters one-at-a-time until declaring a complete match or reaching the end of the sequence. Thus, it can be easily adapted to search other character sequences (such as ports) that do not provide random access to their contents.</p><pre>(define (find-substring pattern source start end)
+  (let ((plen (string-length pattern))
+        (rv (make-kmp-restart-vector pattern)))
+ 
+    ;; The search loop. SJ &amp; PJ are redundant state.
+    (let lp ((si start) (pi 0)
+             (sj (- end start))     ; (- end si)  -- how many chars left.
+             (pj plen))             ; (- plen pi) -- how many chars left.
+ 
+      (if (= pi plen) (- si plen)                   ; Win.
+ 
+          (and (&lt;= pj sj)                           ; Lose.
+ 
+               (if (char=? (string-ref source si)           ; Test.
+                           (string-ref pattern pi))
+                   (lp (+ 1 si) (+ 1 pi) (- sj 1) (- pj 1)) ; Advance.
+ 
+                   (let ((pi (vector-ref rv pi)))           ; Retreat.
+                     (if (= pi -1)
+                         (lp (+ si 1)  0   (- sj 1)  plen)  ; Punt.
+                         (lp si        pi  sj        (- plen pi))))))))))</pre><p>The optional START/END parameters restrict the restart vector to the indicated substring of PAT; RV is END - START elements long. If START &gt; 0, then RV is offset by START elements from PAT. That is, RV[I] describes pattern element PAT[I + START]. Elements of RV are themselves indices that range just over [0, END-START), <i>not</i> [START, END).</p><p>Rationale: the actual value of RV is &quot;position independent&quot; -- it does not depend on where in the PAT string the pattern occurs, but only on the actual characters comprising the pattern.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:kmp-step"><span class="sig"><tt>(kmp-step pat rv c i c= p-start) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This function encapsulates the work performed by one step of the KMP string search; it can be used to scan strings, input ports, or other on-line character sources for fixed strings.</p><p>PAT is the non-empty string specifying the text for which we are searching. RV is the Knuth-Morris-Pratt restart vector for the pattern, as constructed by <tt>make-kmp-restart-vector.</tt> The pattern begins at PAT[P-START], and is <tt>(string-length RV)</tt> characters long. C= is the character-equality function used to construct the restart vector, typically <tt>char=?</tt> or <tt>char-ci=?</tt>.</p><p>Suppose the pattern is N characters in length: PAT[P-START, P-START + N). We have already matched I characters: PAT[P-START, P-START + I). (P-START is typically zero.) C is the next character in the input stream. <tt>kmp-step</tt> returns the new I value -- that is, how much of the pattern we have matched, <i>including</i> character C. When I reaches N, the entire pattern has been matched.</p><p>Thus a typical search loop looks like this:</p><pre>(let lp ((i 0))
+  (or (= i n)                           ; Win -- #t
+      (and (not (end-of-stream))        ; Lose -- #f
+           (lp (kmp-step pat rv (get-next-character) i char=? 0)))))</pre><p>Example:</p><pre>;; Read chars from IPORT until we find string PAT or hit EOF.
+(define (port-skip pat iport)
+  (let* ((rv (make-kmp-restart-vector pat))
+         (patlen (string-length pat)))
+    (let lp ((i 0) (nchars 0))
+      (if (= i patlen) nchars                    ; Win -- nchars skipped
+          (let ((c (read-char iport)))
+            (if (eof-object? c) c                ; Fail -- EOF
+                (lp (kmp-step pat rv c i char=? 0) ; Continue
+                    (+ nchars 1))))))))</pre><p>This procedure could be defined as follows:</p><pre>(define (kmp-step pat rv c i c= p-start)
+  (let lp ((i i))
+    (if (c= c (string-ref pat (+ i p-start)))     ; Match =&gt;
+        (+ i 1)                                   ;   Done.
+        (let ((i (vector-ref rv i)))              ; Back up in PAT.
+          (if (= i -1) 0                          ; Can't back up more.
+              (lp i)))))))                        ; Keep going.</pre><p>Rationale: this procedure takes no optional arguments because it is intended as an inner-loop primitive and we do not want any run-time penalty for optional-argument parsing and defaulting, nor do we wish barriers to procedure integration/inlining.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:string-kmp-partial-search"><span class="sig"><tt>(string-kmp-partial-search pat rv s i [c= p-start s-start s-end]) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Applies <tt>kmp-step</tt> across S; optional S-START/S-END bounds parameters restrict search to a substring of S. The pattern is <tt>(vector-length RV)</tt> characters long; optional P-START index indicates non-zero start of pattern in PAT.</p><p>Suppose PLEN = <tt>(vector-length RV)</tt> is the length of the pattern. I is an integer index into the pattern (that is, 0 &lt;= I &lt; PLEN) indicating how much of the pattern has already been matched. (This means the pattern must be non-empty -- PLEN &gt; 0.)</p><ul><li>On success, returns -J, where J is the index in S bounding the <i>end</i> of the pattern -- <i>e.g.</i>, a value that could be used as the END parameter in a call to <tt>substring/shared</tt>. </li>
+<li>On continue, returns the current search state I' (an index into RV) when the search reached the end of the string. This is a non-negative integer. </li>
+</ul>
+<p>Hence:</p><ul><li>A negative return value indicates success, and says where in the string the match occurred. </li>
+<li>A non-negative return value provides the I to use for continued search in a following string. </li>
+</ul>
+<p>This utility is designed to allow searching for occurrences of a fixed string that might extend across multiple buffers of text. This is why, for example, we do not provide the index of the <i>start</i> of the match on success -- it may have occurred in a previous buffer.</p><p>To search a character sequence that arrives in &quot;chunks,&quot; write a loop of this form:</p><pre>(let lp ((i 0))
+  (and (not (end-of-data?))             ; Lose -- return #f.
+       (let* ((buf (get-next-chunk))    ; Get or fill up the buffer.
+              (i (string-kmp-partial-search pat rv buf i)))
+         (if (&lt; i 0) (- i)              ; Win -- return end index.
+             (lp i)))))                 ; Keep looking.</pre><p>Modulo start/end optional-argument parsing, this procedure could be defined as follows:</p><pre>(define (string-kmp-partial-search pat rv s i c= p-start s-start s-end)
+  (let ((patlen (vector-length rv)))
+    (let lp ((si s-start)       ; An index into S.
+             (vi i))            ; An index into RV.
+      (cond ((= vi patlen) (- si))      ; Win.
+            ((= si end) vi)             ; Ran off the end.
+            (else (lp (+ si 1)          ; Match s[si] &amp; loop.
+                      (kmp-step pat rv (string-ref s si)
+                                vi c= p-start)))))))</pre></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20srfi-4.html">Unit srfi-4</a></p><p>Next: <a href="Unit%20srfi-14.html">Unit srfi-14</a></p></div></div></body>

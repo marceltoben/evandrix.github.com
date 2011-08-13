@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit lolevel</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_lolevel">Unit lolevel</a>
+<ul>
+<li><a href="#sec:Foreign_pointers">Foreign pointers</a>
+<ul>
+<li><a href="#sec:address-.3epointer">address-&gt;pointer</a></li>
+<li><a href="#sec:allocate">allocate</a></li>
+<li><a href="#sec:free">free</a></li>
+<li><a href="#sec:null-pointer">null-pointer</a></li>
+<li><a href="#sec:null-pointer.3f">null-pointer?</a></li>
+<li><a href="#sec:object-.3epointer">object-&gt;pointer</a></li>
+<li><a href="#sec:pointer-.3eobject">pointer-&gt;object</a></li>
+<li><a href="#sec:pointer.3f">pointer?</a></li>
+<li><a href="#sec:pointer-like.3f">pointer-like?</a></li>
+<li><a href="#sec:pointer.3d.3f">pointer=?</a></li>
+<li><a href="#sec:pointer-.3eaddress">pointer-&gt;address</a></li>
+<li><a href="#sec:pointer.2b">pointer+</a></li>
+<li><a href="#sec:align-to-word">align-to-word</a></li></ul></li>
+<li><a href="#sec:SRFI-4_Foreign_pointers">SRFI-4 Foreign pointers</a>
+<ul>
+<li><a href="#sec:pointer-u8-ref">pointer-u8-ref</a></li>
+<li><a href="#sec:pointer-s8-ref">pointer-s8-ref</a></li>
+<li><a href="#sec:pointer-u16-ref">pointer-u16-ref</a></li>
+<li><a href="#sec:pointer-s16-ref">pointer-s16-ref</a></li>
+<li><a href="#sec:pointer-u32-ref">pointer-u32-ref</a></li>
+<li><a href="#sec:pointer-s32-ref">pointer-s32-ref</a></li>
+<li><a href="#sec:pointer-f32-ref">pointer-f32-ref</a></li>
+<li><a href="#sec:pointer-f64-ref">pointer-f64-ref</a></li>
+<li><a href="#sec:pointer-u8-set.21">pointer-u8-set!</a></li>
+<li><a href="#sec:pointer-s8-set.21">pointer-s8-set!</a></li>
+<li><a href="#sec:pointer-u16-set.21">pointer-u16-set!</a></li>
+<li><a href="#sec:pointer-s16-set.21">pointer-s16-set!</a></li>
+<li><a href="#sec:pointer-u32-set.21">pointer-u32-set!</a></li>
+<li><a href="#sec:pointer-s32-set.21">pointer-s32-set!</a></li>
+<li><a href="#sec:pointer-f32-set.21">pointer-f32-set!</a></li>
+<li><a href="#sec:pointer-f64-set.21">pointer-f64-set!</a></li></ul></li>
+<li><a href="#sec:Tagged_pointers">Tagged pointers</a>
+<ul>
+<li><a href="#sec:tag-pointer">tag-pointer</a></li>
+<li><a href="#sec:tagged-pointer.3f">tagged-pointer?</a></li>
+<li><a href="#sec:pointer-tag">pointer-tag</a></li></ul></li>
+<li><a href="#sec:Pointer_vectors">Pointer vectors</a>
+<ul>
+<li><a href="#sec:make-pointer-vector_">make-pointer-vector </a></li>
+<li><a href="#sec:pointer-vector.3f">pointer-vector?</a></li>
+<li><a href="#sec:pointer-vector">pointer-vector</a></li>
+<li><a href="#sec:pointer-vector-ref">pointer-vector-ref</a></li>
+<li><a href="#sec:pointer-vector-set.21">pointer-vector-set!</a></li></ul></li>
+<li><a href="#sec:Locatives">Locatives</a>
+<ul>
+<li><a href="#sec:make-locative">make-locative</a></li>
+<li><a href="#sec:make-weak-locative">make-weak-locative</a></li>
+<li><a href="#sec:locative.3f">locative?</a></li>
+<li><a href="#sec:locative-ref">locative-ref</a></li>
+<li><a href="#sec:locative-set.21">locative-set!</a></li>
+<li><a href="#sec:locative-.3eobject">locative-&gt;object</a></li></ul></li>
+<li><a href="#sec:Extending_procedures_with_data">Extending procedures with data</a>
+<ul>
+<li><a href="#sec:extend-procedure">extend-procedure</a></li>
+<li><a href="#sec:extended-procedure.3f">extended-procedure?</a></li>
+<li><a href="#sec:procedure-data">procedure-data</a></li>
+<li><a href="#sec:set-procedure-data.21">set-procedure-data!</a></li></ul></li>
+<li><a href="#sec:Low-level_data_access">Low-level data access</a>
+<ul>
+<li><a href="#sec:vector-like.3f">vector-like?</a></li>
+<li><a href="#sec:block-ref">block-ref</a></li>
+<li><a href="#sec:block-set.21">block-set!</a></li>
+<li><a href="#sec:number-of-slots">number-of-slots</a></li>
+<li><a href="#sec:number-of-bytes">number-of-bytes</a></li>
+<li><a href="#sec:object-copy">object-copy</a></li>
+<li><a href="#sec:move-memory.21">move-memory!</a></li></ul></li>
+<li><a href="#sec:Data_in_unmanaged_memory">Data in unmanaged memory</a>
+<ul>
+<li><a href="#sec:object-evict">object-evict</a></li>
+<li><a href="#sec:object-evict-to-location">object-evict-to-location</a></li>
+<li><a href="#sec:object-evicted.3f">object-evicted?</a></li>
+<li><a href="#sec:object-release">object-release</a></li>
+<li><a href="#sec:object-unevict">object-unevict</a></li>
+<li><a href="#sec:object-size">object-size</a></li></ul></li>
+<li><a href="#sec:Record_instance">Record instance</a>
+<ul>
+<li><a href="#sec:make-record-instance">make-record-instance</a></li>
+<li><a href="#sec:record-instance.3f">record-instance?</a></li>
+<li><a href="#sec:record-instance-type">record-instance-type</a></li>
+<li><a href="#sec:record-instance-length">record-instance-length</a></li>
+<li><a href="#sec:record-instance-slot">record-instance-slot</a></li>
+<li><a href="#sec:record-instance-slot-set.21">record-instance-slot-set!</a></li>
+<li><a href="#sec:record-.3evector">record-&gt;vector</a></li></ul></li>
+<li><a href="#sec:Magic">Magic</a>
+<ul>
+<li><a href="#sec:object-become.21">object-become!</a></li>
+<li><a href="#sec:mutate-procedure">mutate-procedure</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_lolevel"><a href="#sec:Unit_lolevel">Unit lolevel</a></h2><p>This unit provides a number of handy low-level operations. <b>Use at your own risk.</b></p><p>This unit uses the <tt>srfi-4</tt> and <tt>extras</tt> units.</p><h3 id="sec:Foreign_pointers"><a href="#sec:Foreign_pointers">Foreign pointers</a></h3><p>The abstract class of <i>pointer</i> is divided into 2 categories:</p><dl><dt><i>pointer object</i></dt>
+<dd>is a foreign pointer object, a <a href="#sec:Tagged_pointers">tagged foreign pointer object</a>, or a SWIG-pointer.</dd><dt><i>pointer-like object</i></dt>
+<dd>is a closure, port, <a href="#sec:Locatives">locative</a>, or a pointer object.</dd></dl>
+<p>SWIG-pointers are currently an issue due to &quot;bitrot&quot; in the SWIG Chicken translator. While they are considered a pointer object unexpected results are possible.</p><p>Note that Locatives, while technically pointers, are not considered a <i>pointer object</i>, but a <i>pointer-like object</i>. The distinction is artificial.</p><h4 id="sec:address-.3epointer"><a href="#sec:address-.3epointer">address-&gt;pointer</a></h4><dl class="defsig"><dt class="defsig" id="def:address-.3epointer"><span class="sig"><tt>(address-&gt;pointer ADDRESS)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a new foreign pointer object initialized to point to the address given in the integer <tt>ADDRESS</tt>.</p></dd>
+</dl>
+<h4 id="sec:allocate"><a href="#sec:allocate">allocate</a></h4><dl class="defsig"><dt class="defsig" id="def:allocate"><span class="sig"><tt>(allocate BYTES)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a foreign pointer object to a freshly allocated region of static memory.</p><p>This procedure could be defined as follows:</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> allocate <span class="paren2">(<span class="default">foreign-lambda c-pointer <span class="string">&quot;malloc&quot;</span> integer</span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:free"><a href="#sec:free">free</a></h4><dl class="defsig"><dt class="defsig" id="def:free"><span class="sig"><tt>(free POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Frees the memory pointed to by <tt>POINTER</tt>.</p><p>This procedure could be defined as follows:</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> free <span class="paren2">(<span class="default">foreign-lambda void <span class="string">&quot;free&quot;</span> c-pointer</span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:null-pointer"><a href="#sec:null-pointer">null-pointer</a></h4><dl class="defsig"><dt class="defsig" id="def:null-pointer"><span class="sig"><tt>(null-pointer)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Another way to say <tt>(address-&gt;pointer 0)</tt>.</p></dd>
+</dl>
+<h4 id="sec:null-pointer.3f"><a href="#sec:null-pointer.3f">null-pointer?</a></h4><dl class="defsig"><dt class="defsig" id="def:null-pointer.3f"><span class="sig"><tt>(null-pointer? POINTER*)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if the pointer-like object <tt>POINTER*</tt> contains a <tt>NULL</tt> pointer, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:object-.3epointer"><a href="#sec:object-.3epointer">object-&gt;pointer</a></h4><dl class="defsig"><dt class="defsig" id="def:object-.3epointer"><span class="sig"><tt>(object-&gt;pointer X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a foreign pointer object pointing to the Scheme object X, which should be a non-immediate object. (&quot;foreign&quot; here is a bit of a misnomer.)</p><p>Note that data in the garbage collected heap moves during garbage collection.</p></dd>
+</dl>
+<h4 id="sec:pointer-.3eobject"><a href="#sec:pointer-.3eobject">pointer-&gt;object</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-.3eobject"><span class="sig"><tt>(pointer-&gt;object POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the Scheme object pointed to by the pointer object <tt>POINTER</tt>.</p><p>Whether the <tt>POINTER</tt> actually points to a Scheme object is not guaranteed. Use at your own risk.</p></dd>
+</dl>
+<h4 id="sec:pointer.3f"><a href="#sec:pointer.3f">pointer?</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer.3f"><span class="sig"><tt>(pointer? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a pointer object, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:pointer-like.3f"><a href="#sec:pointer-like.3f">pointer-like?</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-like.3f"><span class="sig"><tt>(pointer-like? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a pointer-like object, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:pointer.3d.3f"><a href="#sec:pointer.3d.3f">pointer=?</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer.3d.3f"><span class="sig"><tt>(pointer=? POINTER*1 POINTER*2)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if the pointer-like objects <tt>POINTER*1</tt> and <tt>POINTER*2</tt> point to the same address, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:pointer-.3eaddress"><a href="#sec:pointer-.3eaddress">pointer-&gt;address</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-.3eaddress"><span class="sig"><tt>(pointer-&gt;address POINTER*)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the address, to which the pointer-like object <tt>POINTER*</tt> points.</p></dd>
+</dl>
+<h4 id="sec:pointer.2b"><a href="#sec:pointer.2b">pointer+</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer.2b"><span class="sig"><tt>(pointer+ POINTER* N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new foreign pointer object representing the pointer-like object <tt>POINTER*</tt> address value increased by the byte-offset <tt>N</tt>.</p><p>Use of anything other than a pointer object as an argument is questionable.</p></dd>
+</dl>
+<h4 id="sec:align-to-word"><a href="#sec:align-to-word">align-to-word</a></h4><dl class="defsig"><dt class="defsig" id="def:align-to-word"><span class="sig"><tt>(align-to-word POINTER*-OR-INT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Accepts either a pointer-like object or an integer as the argument and returns a new foreign pointer or integer aligned to the native word size of the host platform.</p><p>Use of anything other than an integer or pointer object as an argument is questionable.</p></dd>
+</dl>
+<h3 id="sec:SRFI-4_Foreign_pointers"><a href="#sec:SRFI-4_Foreign_pointers">SRFI-4 Foreign pointers</a></h3><p>These procedures actually accept a pointer-like object as the <tt>POINTER</tt> argument. However, as usual, use of anything other than a pointer object is questionable.</p><h4 id="sec:pointer-u8-ref"><a href="#sec:pointer-u8-ref">pointer-u8-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-u8-ref"><span class="sig"><tt>(pointer-u8-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the unsigned byte at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-s8-ref"><a href="#sec:pointer-s8-ref">pointer-s8-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-s8-ref"><span class="sig"><tt>(pointer-s8-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the signed byte at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-u16-ref"><a href="#sec:pointer-u16-ref">pointer-u16-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-u16-ref"><span class="sig"><tt>(pointer-u16-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the unsigned 16-bit integer at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-s16-ref"><a href="#sec:pointer-s16-ref">pointer-s16-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-s16-ref"><span class="sig"><tt>(pointer-s16-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the signed 16-bit integer at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-u32-ref"><a href="#sec:pointer-u32-ref">pointer-u32-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-u32-ref"><span class="sig"><tt>(pointer-u32-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the unsigned 32-bit integer at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-s32-ref"><a href="#sec:pointer-s32-ref">pointer-s32-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-s32-ref"><span class="sig"><tt>(pointer-s32-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the signed 32-bit integer at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-f32-ref"><a href="#sec:pointer-f32-ref">pointer-f32-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-f32-ref"><span class="sig"><tt>(pointer-f32-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the 32-bit float at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-f64-ref"><a href="#sec:pointer-f64-ref">pointer-f64-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-f64-ref"><span class="sig"><tt>(pointer-f64-ref POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the 64-bit double at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-u8-set.21"><a href="#sec:pointer-u8-set.21">pointer-u8-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-u8-set.21"><span class="sig"><tt>(pointer-u8-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-u8-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the unsigned byte <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-s8-set.21"><a href="#sec:pointer-s8-set.21">pointer-s8-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-s8-set.21"><span class="sig"><tt>(pointer-s8-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-s8-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the signed byte <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-u16-set.21"><a href="#sec:pointer-u16-set.21">pointer-u16-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-u16-set.21"><span class="sig"><tt>(pointer-u16-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-u16-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the unsigned 16-bit integer <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-s16-set.21"><a href="#sec:pointer-s16-set.21">pointer-s16-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-s16-set.21"><span class="sig"><tt>(pointer-s16-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-s16-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the signed 16-bit integer <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-u32-set.21"><a href="#sec:pointer-u32-set.21">pointer-u32-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-u32-set.21"><span class="sig"><tt>(pointer-u32-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-u32-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the unsigned 32-bit integer <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-s32-set.21"><a href="#sec:pointer-s32-set.21">pointer-s32-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-s32-set.21"><span class="sig"><tt>(pointer-s32-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-s32-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the 32-bit integer <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-f32-set.21"><a href="#sec:pointer-f32-set.21">pointer-f32-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-f32-set.21"><span class="sig"><tt>(pointer-f32-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-f32-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the 32-bit floating-point number <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h4 id="sec:pointer-f64-set.21"><a href="#sec:pointer-f64-set.21">pointer-f64-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-f64-set.21"><span class="sig"><tt>(pointer-f64-set! POINTER N)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (pointer-f64-ref POINTER) N)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Stores the 64-bit floating-point number <tt>N</tt> at the address designated by <tt>POINTER</tt>.</p></dd>
+</dl>
+<h3 id="sec:Tagged_pointers"><a href="#sec:Tagged_pointers">Tagged pointers</a></h3><p><i>Tagged</i> pointers are foreign pointer objects with an extra tag object.</p><h4 id="sec:tag-pointer"><a href="#sec:tag-pointer">tag-pointer</a></h4><dl class="defsig"><dt class="defsig" id="def:tag-pointer"><span class="sig"><tt>(tag-pointer POINTER* TAG)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a new tagged foreign pointer object from the pointer-like object <tt>POINTER*</tt> with the tag <tt>TAG</tt>, which may an arbitrary Scheme object.</p><p>Use of anything other than a pointer object is questionable.</p></dd>
+</dl>
+<h4 id="sec:tagged-pointer.3f"><a href="#sec:tagged-pointer.3f">tagged-pointer?</a></h4><dl class="defsig"><dt class="defsig" id="def:tagged-pointer.3f"><span class="sig"><tt>(tagged-pointer? X [TAG])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a tagged foreign pointer object, or <tt>#f</tt> otherwise.</p><p>Further, returns <tt>#t</tt> when <tt>X</tt> has the optional tag <tt>TAG</tt> (using an <tt>equal?</tt> comparison), or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:pointer-tag"><a href="#sec:pointer-tag">pointer-tag</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-tag"><span class="sig"><tt>(pointer-tag POINTER*)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>POINTER</tt> is a tagged foreign pointer object, its tag is returned. If <tt>POINTER*</tt> is any other kind of pointer-like object <tt>#f</tt> is returned. Otherwise an error is signalled.</p></dd>
+</dl>
+<h3 id="sec:Pointer_vectors"><a href="#sec:Pointer_vectors">Pointer vectors</a></h3><p>/Pointer-vectors/ are specialized and space-efficient vectors or foreign pointer objects. All procedures defined below that accept a pointer object allow <tt>#f</tt> as an alternative representation of the <tt>NULL</tt>-pointer.</p><h4 id="sec:make-pointer-vector_"><a href="#sec:make-pointer-vector_">make-pointer-vector </a></h4><dl class="defsig"><dt class="defsig" id="def:make-pointer-vector"><span class="sig"><tt>(make-pointer-vector LENGTH [INIT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a pointer-vector of the given length and optionally initializes each element to <tt>INIT</tt>, which should be a pointer or <tt>#f}, which represents the {{NULL</tt> pointer.</p></dd>
+</dl>
+<h4 id="sec:pointer-vector.3f"><a href="#sec:pointer-vector.3f">pointer-vector?</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-vector.3f"><span class="sig"><tt>(pointer-vector? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a pointer-vector or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:pointer-vector"><a href="#sec:pointer-vector">pointer-vector</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-vector"><span class="sig"><tt>(pointer-vector POINTER ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a pointer-vector from the given pointer arguments.</p></dd>
+</dl>
+<h4 id="sec:pointer-vector-ref"><a href="#sec:pointer-vector-ref">pointer-vector-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-vector-ref"><span class="sig"><tt>(pointer-vector-ref POINTERVECTOR INDEX)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the pointer at <tt>INDEX</tt> in the given pointer-vector or <tt>#f</tt> if the element is a <tt>NULL</tt>- pointer.</p></dd>
+</dl>
+<h4 id="sec:pointer-vector-set.21"><a href="#sec:pointer-vector-set.21">pointer-vector-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:pointer-vector-set.21"><span class="sig"><tt>(pointer-vector-set! POINTERVECTOR INDEX POINTER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the element at the position <tt>INDEX</tt> in the given pointer-vector to <tt>POINTER</tt>. The alternative syntax</p><pre> (set! (pointer-vector-ref POINTERVECTOR INDEX) POINTER)</pre><p>is also allowed.</p></dd>
+</dl>
+<h3 id="sec:Locatives"><a href="#sec:Locatives">Locatives</a></h3><p>A <i>locative</i> is an object that points to an element of a containing object, much like a <i>pointer</i> in low-level, imperative programming languages like <i>C</i>. The element can be accessed and changed indirectly, by performing access or change operations on the locative. The container object can be computed by calling the <tt>locative-&gt;object</tt> procedure.</p><p>Locatives may be passed to foreign procedures that expect pointer arguments. The effect of creating locatives for evicted data (see <tt>object-evict</tt>) is undefined.</p><h4 id="sec:make-locative"><a href="#sec:make-locative">make-locative</a></h4><dl class="defsig"><dt class="defsig" id="def:make-locative"><span class="sig"><tt>(make-locative OBJ [INDEX])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a locative that refers to the element of the non-immediate object <tt>OBJ</tt> at position <tt>INDEX</tt>. <tt>OBJ</tt> may be a vector, pair, string, blob, SRFI-4 number-vector, or record structure. <tt>INDEX</tt> should be a fixnum. <tt>INDEX</tt> defaults to 0.</p></dd>
+</dl>
+<h4 id="sec:make-weak-locative"><a href="#sec:make-weak-locative">make-weak-locative</a></h4><dl class="defsig"><dt class="defsig" id="def:make-weak-locative"><span class="sig"><tt>(make-weak-locative OBJ [INDEX])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates a <i>weak</i> locative. Even though the locative refers to an element of a container object, the container object will still be reclaimed by garbage collection if no other references to it exist.</p></dd>
+</dl>
+<h4 id="sec:locative.3f"><a href="#sec:locative.3f">locative?</a></h4><dl class="defsig"><dt class="defsig" id="def:locative.3f"><span class="sig"><tt>(locative? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a locative, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:locative-ref"><a href="#sec:locative-ref">locative-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:locative-ref"><span class="sig"><tt>(locative-ref LOC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the element to which the locative <tt>LOC</tt> refers. If the containing object has been reclaimed by garbage collection, an error is signalled.</p><pre>(locative-ref (make-locative &quot;abc&quot; 1)) ==&gt; #\b</pre></dd>
+</dl>
+<h4 id="sec:locative-set.21"><a href="#sec:locative-set.21">locative-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:locative-set.21"><span class="sig"><tt>(locative-set! LOC X)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (locative-ref LOC) X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Changes the element to which the locative <tt>LOC</tt> refers to <tt>X</tt>. If the containing object has been reclaimed by garbage collection, an error is signalled.</p></dd>
+</dl>
+<h4 id="sec:locative-.3eobject"><a href="#sec:locative-.3eobject">locative-&gt;object</a></h4><dl class="defsig"><dt class="defsig" id="def:locative-.3eobject"><span class="sig"><tt>(locative-&gt;object LOC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the object that contains the element referred to by <tt>LOC</tt> or <tt>#f</tt> if the container has been reclaimed by garbage collection.</p><pre>(locative-&gt;object (make-locative &quot;abc&quot; 1)) ==&gt; &quot;abc&quot;</pre></dd>
+</dl>
+<h3 id="sec:Extending_procedures_with_data"><a href="#sec:Extending_procedures_with_data">Extending procedures with data</a></h3><h4 id="sec:extend-procedure"><a href="#sec:extend-procedure">extend-procedure</a></h4><dl class="defsig"><dt class="defsig" id="def:extend-procedure"><span class="sig"><tt>(extend-procedure PROCEDURE X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a copy of the procedure <tt>PROCEDURE</tt> which contains an additional data slot initialized to <tt>X</tt>. If <tt>PROCEDURE</tt> is already an extended procedure, then its data slot is changed to contain <tt>X</tt> and the same procedure is returned. Signals an error when <tt>PROCEDURE</tt> is not a procedure.</p></dd>
+</dl>
+<h4 id="sec:extended-procedure.3f"><a href="#sec:extended-procedure.3f">extended-procedure?</a></h4><dl class="defsig"><dt class="defsig" id="def:extended-procedure.3f"><span class="sig"><tt>(extended-procedure? PROCEDURE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>PROCEDURE</tt> is an extended procedure, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:procedure-data"><a href="#sec:procedure-data">procedure-data</a></h4><dl class="defsig"><dt class="defsig" id="def:procedure-data"><span class="sig"><tt>(procedure-data PROCEDURE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the data object contained in the extended procedure <tt>PROCEDURE</tt>, or <tt>#f</tt> if it is not an extended procedure.</p></dd>
+</dl>
+<h4 id="sec:set-procedure-data.21"><a href="#sec:set-procedure-data.21">set-procedure-data!</a></h4><dl class="defsig"><dt class="defsig" id="def:set-procedure-data.21"><span class="sig"><tt>(set-procedure-data! PROCEDURE X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Changes the data object contained in the extended procedure <tt>PROCEDURE</tt> to <tt>X</tt>. Signals an error when <tt>PROCEDURE</tt> is not an extended procedure.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> foo
+  <span class="paren2">(<span class="default">letrec <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">f <span class="paren5">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren6">(<span class="default"></span>)</span> <span class="paren6">(<span class="default">procedure-data x</span>)</span></span>)</span></span>)</span>
+           <span class="paren4">(<span class="default">x #f</span>)</span> </span>)</span>
+    <span class="paren3">(<span class="default">set! x <span class="paren4">(<span class="default">extend-procedure f 123</span>)</span></span>)</span>
+    x</span>)</span> </span>)</span>
+<span class="paren1">(<span class="default">foo</span>)</span>                                         ==&gt; 123
+<span class="paren1">(<span class="default">set-procedure-data! foo &#x27;hello</span>)</span>
+<span class="paren1">(<span class="default">foo</span>)</span>                                         ==&gt; hello</pre></dd>
+</dl>
+<h3 id="sec:Low-level_data_access"><a href="#sec:Low-level_data_access">Low-level data access</a></h3><p>These procedures operate with what are known as <tt>vector-like objects</tt>. A <tt>vector-like object</tt> is a vector, record structure, pair, symbol or keyword.</p><p>Note that strings and blobs are not considered vector-like.</p><h4 id="sec:vector-like.3f"><a href="#sec:vector-like.3f">vector-like?</a></h4><dl class="defsig"><dt class="defsig" id="def:vector-like.3f"><span class="sig"><tt>(vector-like? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> when <tt>X</tt> is a vector-like object, returns <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:block-ref"><a href="#sec:block-ref">block-ref</a></h4><dl class="defsig"><dt class="defsig" id="def:block-ref"><span class="sig"><tt>(block-ref VECTOR* INDEX)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the contents of the <tt>INDEX</tt>th slot of the vector-like object <tt>VECTOR*</tt>.</p></dd>
+</dl>
+<h4 id="sec:block-set.21"><a href="#sec:block-set.21">block-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:block-set.21"><span class="sig"><tt>(block-set! VECTOR* INDEX X)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (block-ref VECTOR* INDEX) X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the contents of the <tt>INDEX</tt>th slot of the vector-like object <tt>VECTOR*</tt> to the value of <tt>X</tt>.</p></dd>
+</dl>
+<h4 id="sec:number-of-slots"><a href="#sec:number-of-slots">number-of-slots</a></h4><dl class="defsig"><dt class="defsig" id="def:number-of-slots"><span class="sig"><tt>(number-of-slots VECTOR*)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the number of slots that the vector-like object <tt>VECTOR*</tt> contains.</p></dd>
+</dl>
+<h4 id="sec:number-of-bytes"><a href="#sec:number-of-bytes">number-of-bytes</a></h4><dl class="defsig"><dt class="defsig" id="def:number-of-bytes"><span class="sig"><tt>(number-of-bytes BLOCK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the number of bytes that the object <tt>BLOCK</tt> contains. <tt>BLOCK</tt> may be any non-immediate value.</p></dd>
+</dl>
+<h4 id="sec:object-copy"><a href="#sec:object-copy">object-copy</a></h4><dl class="defsig"><dt class="defsig" id="def:object-copy"><span class="sig"><tt>(object-copy X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Copies <tt>X</tt> recursively and returns the fresh copy. Objects allocated in static memory are copied back into garbage collected storage.</p></dd>
+</dl>
+<h4 id="sec:move-memory.21"><a href="#sec:move-memory.21">move-memory!</a></h4><dl class="defsig"><dt class="defsig" id="def:move-memory.21"><span class="sig"><tt>(move-memory! FROM TO [BYTES [FROM-OFFSET [TO-OFFSET]]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Copies <tt>BYTES</tt> bytes of memory from <tt>FROM</tt> to <tt>TO</tt>. <tt>FROM</tt> and <tt>TO</tt> may be strings, blobs, <a href="Unit%20srfi-4.html">SRFI-4 number-vectors</a>, memory mapped files, foreign pointers (as obtained from a call to <tt>foreign-lambda</tt>, for example), tagged-pointers or locatives. if <tt>BYTES</tt> is not given and the size of the source or destination operand is known then the maximal number of bytes will be copied. Moving memory to the storage returned by locatives will cause havoc, if the locative refers to containers of non-immediate data, like vectors or pairs.</p><p>The additional fourth and fifth argument specify starting offsets (in bytes) for the source and destination arguments.</p><p>Signals an error if any of the above constraints is violated.</p></dd>
+</dl>
+<h3 id="sec:Data_in_unmanaged_memory"><a href="#sec:Data_in_unmanaged_memory">Data in unmanaged memory</a></h3><h4 id="sec:object-evict"><a href="#sec:object-evict">object-evict</a></h4><dl class="defsig"><dt class="defsig" id="def:object-evict"><span class="sig"><tt>(object-evict X [ALLOCATOR])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Copies the object <tt>X</tt> recursively into the memory pointed to by the foreign pointer object returned by <tt>ALLOCATOR</tt>, which should be a procedure of a single argument (the number of bytes to allocate). The freshly copied object is returned.</p><p>This facility allows moving arbitrary objects into static memory, but care should be taken when mutating evicted data: setting slots in evicted vector-like objects to non-evicted data is not allowed. It <b>is</b> possible to set characters/bytes in evicted strings or byte-vectors, though.  It is advisable <b>not</b> to evict ports, because they might be mutated by certain file-operations.  <tt>object-evict</tt> is able to handle circular and shared structures, but evicted symbols are no longer unique: a fresh copy of the symbol is created, so</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> x &#x27;foo</span>)</span>
+<span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> y <span class="paren2">(<span class="default">object-evict &#x27;foo</span>)</span></span>)</span>
+y                              ==&gt; foo
+<span class="paren1">(<span class="default">eq? x y</span>)</span>                      ==&gt; #f
+<span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> z <span class="paren2">(<span class="default">object-evict &#x27;<span class="paren3">(<span class="default">bar bar</span>)</span></span>)</span></span>)</span>
+<span class="paren1">(<span class="default">eq? <span class="paren2">(<span class="default">car z</span>)</span> <span class="paren2">(<span class="default">cadr z</span>)</span></span>)</span>         ==&gt; #t</pre><p>The <tt>ALLOCATOR</tt> defaults to <tt>allocate</tt>.</p></dd>
+</dl>
+<h4 id="sec:object-evict-to-location"><a href="#sec:object-evict-to-location">object-evict-to-location</a></h4><dl class="defsig"><dt class="defsig" id="def:object-evict-to-location"><span class="sig"><tt>(object-evict-to-location X POINTER* [LIMIT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>As <tt>object-evict</tt> but moves the object at the address pointed to by the pointer-like object <tt>POINTER*</tt>. If the number of copied bytes exceeds the optional <tt>LIMIT</tt> then an error is signalled (specifically a composite condition of types <tt>exn</tt> and <tt>evict</tt>. The latter provides a <tt>limit</tt> property which holds the exceeded limit. Two values are returned: the evicted object and a new pointer pointing to the first free address after the evicted object.</p><p>Use of anything other than a pointer object as the <tt>POINTER*</tt> argument is questionable.</p></dd>
+</dl>
+<h4 id="sec:object-evicted.3f"><a href="#sec:object-evicted.3f">object-evicted?</a></h4><dl class="defsig"><dt class="defsig" id="def:object-evicted.3f"><span class="sig"><tt>(object-evicted? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a non-immediate evicted data object, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:object-release"><a href="#sec:object-release">object-release</a></h4><dl class="defsig"><dt class="defsig" id="def:object-release"><span class="sig"><tt>(object-release X [RELEASER])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Frees memory occupied by the evicted object <tt>X</tt> recursively. <tt>RELEASER</tt> should be a procedure of a single argument (a foreign pointer object to the static memory to be freed) and defaults to <tt>free</tt>.</p></dd>
+</dl>
+<h4 id="sec:object-unevict"><a href="#sec:object-unevict">object-unevict</a></h4><dl class="defsig"><dt class="defsig" id="def:object-unevict"><span class="sig"><tt>(object-unevict X [FULL])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Copies the object <tt>X</tt> and nested objects back into the normal Scheme heap. Symbols are re-interned into the symbol table. Strings and byte-vectors are <b>not</b> copied, unless <tt>FULL</tt> is given and not <tt>#f</tt>.</p></dd>
+</dl>
+<h4 id="sec:object-size"><a href="#sec:object-size">object-size</a></h4><dl class="defsig"><dt class="defsig" id="def:object-size"><span class="sig"><tt>(object-size X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the number of bytes that would be needed to evict the data object <tt>X</tt>.</p></dd>
+</dl>
+<h3 id="sec:Record_instance"><a href="#sec:Record_instance">Record instance</a></h3><h4 id="sec:make-record-instance"><a href="#sec:make-record-instance">make-record-instance</a></h4><dl class="defsig"><dt class="defsig" id="def:make-record-instance"><span class="sig"><tt>(make-record-instance SYMBOL ARG1 ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new instance of the record type <tt>SYMBOL</tt>, with its slots initialized to <tt>ARG1 ...</tt>.  To illustrate:</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define-record-type</span></i> point <span class="paren2">(<span class="default">make-point x y</span>)</span> point?
+  <span class="paren2">(<span class="default">x point-x point-x-set!</span>)</span>
+  <span class="paren2">(<span class="default">y point-y point-y-set!</span>)</span></span>)</span></pre><p>expands into something quite similar to:</p><pre class="highlight"><span class="paren1">(<span class="default">begin
+  <span class="paren2">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren3">(<span class="default">make-point x y</span>)</span>
+    <span class="paren3">(<span class="default">make-record-instance &#x27;point x y</span>)</span> </span>)</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren3">(<span class="default">point? x</span>)</span>
+    <span class="paren3">(<span class="default">and <span class="paren4">(<span class="default">record-instance? x</span>)</span>
+         <span class="paren4">(<span class="default">eq? &#x27;point <span class="paren5">(<span class="default">block-ref x 0</span>)</span></span>)</span> </span>)</span> </span>)</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren3">(<span class="default">point-x p</span>)</span> <span class="paren3">(<span class="default">block-ref p 1</span>)</span></span>)</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren3">(<span class="default">point-x-set! p x</span>)</span> <span class="paren3">(<span class="default">block-set! p 1 x</span>)</span></span>)</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren3">(<span class="default">point-y p</span>)</span> <span class="paren3">(<span class="default">block-ref p 2</span>)</span></span>)</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren3">(<span class="default">point-y-set! p y</span>)</span> <span class="paren3">(<span class="default">block-set! p 1 y</span>)</span></span>)</span> </span>)</span></pre></dd>
+</dl>
+<h4 id="sec:record-instance.3f"><a href="#sec:record-instance.3f">record-instance?</a></h4><dl class="defsig"><dt class="defsig" id="def:record-instance.3f"><span class="sig"><tt>(record-instance? X [SYMBOL])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a record structure, or <tt>#f</tt> otherwise.</p><p>Further, returns <tt>#t</tt> if <tt>X</tt> is of type <tt>SYMBOL</tt>, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:record-instance-type"><a href="#sec:record-instance-type">record-instance-type</a></h4><dl class="defsig"><dt class="defsig" id="def:record-instance-type"><span class="sig"><tt>(record-instance-type RECORD)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns type symbol of the record structure <tt>RECORD</tt>. Signals an error if <tt>RECORD</tt> is not a record structure.</p></dd>
+</dl>
+<h4 id="sec:record-instance-length"><a href="#sec:record-instance-length">record-instance-length</a></h4><dl class="defsig"><dt class="defsig" id="def:record-instance-length"><span class="sig"><tt>(record-instance-length RECORD)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns number of slots for the record structure <tt>RECORD</tt>. The record-instance type is not counted. Signals an error if <tt>RECORD</tt> is not a record structure.</p></dd>
+</dl>
+<h4 id="sec:record-instance-slot"><a href="#sec:record-instance-slot">record-instance-slot</a></h4><dl class="defsig"><dt class="defsig" id="def:record-instance-slot"><span class="sig"><tt>(record-instance-slot RECORD INDEX)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the contents of the <tt>INDEX</tt>th slot of the record structure <tt>RECORD</tt>. The slot index range is the open interval (([0 record-instance-length)}}. Signals an error if <tt>RECORD</tt> is not a record structure.</p></dd>
+</dl>
+<h4 id="sec:record-instance-slot-set.21"><a href="#sec:record-instance-slot-set.21">record-instance-slot-set!</a></h4><dl class="defsig"><dt class="defsig" id="def:record-instance-slot-set.21"><span class="sig"><tt>(record-instance-slot-set! RECORD INDEX X)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:set.21"><span class="sig"><tt>(set! (record-instance-slot RECORD INDEX) X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Sets the <tt>INDEX</tt>th slot of the record structure <tt>RECORD</tt> to <tt>X</tt>. The slot index range is the open interval (([0 record-instance-length)}}. Signals an error if <tt>RECORD</tt> is not a record structure.</p></dd>
+</dl>
+<h4 id="sec:record-.3evector"><a href="#sec:record-.3evector">record-&gt;vector</a></h4><dl class="defsig"><dt class="defsig" id="def:record-.3evector"><span class="sig"><tt>(record-&gt;vector RECORD)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a new vector with the type and the elements of the record structure <tt>RECORD</tt>. Signals an error if <tt>RECORD</tt> is not a record structure.</p></dd>
+</dl>
+<h3 id="sec:Magic"><a href="#sec:Magic">Magic</a></h3><h4 id="sec:object-become.21"><a href="#sec:object-become.21">object-become!</a></h4><dl class="defsig"><dt class="defsig" id="def:object-become.21"><span class="sig"><tt>(object-become! ALIST)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Changes the identity of the value of the car of each pair in <tt>ALIST</tt> to the value of the cdr. Both values may not be immediate (i.e. exact integers, characters, booleans or the empty list).</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> x <span class="string">&quot;i used to be a string&quot;</span></span>)</span>
+<span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> y &#x27;#<span class="paren2">(<span class="default">and now i am a vector</span>)</span></span>)</span>
+<span class="paren1">(<span class="default">object-become! <span class="paren2">(<span class="default">list <span class="paren3">(<span class="default">cons x y</span>)</span></span>)</span></span>)</span>
+x                                    ==&gt; #<span class="paren1">(<span class="default">and now i am a vector</span>)</span>
+y                                    ==&gt; #<span class="paren1">(<span class="default">and now i am a vector</span>)</span>
+<span class="paren1">(<span class="default">eq? x y</span>)</span>                            ==&gt; #t</pre><p>Note: this operation invokes a major garbage collection.</p><p>The effect of using <tt>object-become!</tt> on evicted data (see <tt>object-evict</tt>) is undefined.</p></dd>
+</dl>
+<h4 id="sec:mutate-procedure"><a href="#sec:mutate-procedure">mutate-procedure</a></h4><dl class="defsig"><dt class="defsig" id="def:mutate-procedure"><span class="sig"><tt>(mutate-procedure OLD PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Replaces the procedure <tt>OLD</tt> with the result of calling the one-argument procedure <tt>PROC</tt>. <tt>PROC</tt> will receive a copy of <tt>OLD</tt> that will be identical in behaviour to the result of <tt>PROC</tt>:</p><pre class="highlight"> <span class="comment">;;; Replace arbitrary procedure with tracing one:
+</span>
+ <span class="paren1">(<span class="default">mutate-procedure my-proc
+   <span class="paren2">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren3">(<span class="default">new</span>)</span>
+     <span class="paren3">(<span class="default"><i><span class="symbol">lambda</span></i> args
+       <span class="paren4">(<span class="default">printf <span class="string">&quot;~s called with arguments: ~s~%&quot;</span> new args</span>)</span>
+       <span class="paren4">(<span class="default">apply new args</span>)</span> </span>)</span> </span>)</span> </span>)</span></pre></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20tcp.html">Unit tcp</a></p><p>Next: <a href="Interface%20to%20external%20functions%20and%20variables.html">Interface to external functions and variables</a></p></div></div></body>

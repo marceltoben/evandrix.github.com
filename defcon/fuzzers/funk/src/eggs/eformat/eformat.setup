@@ -1,0 +1,7 @@
+
+(compile eformat.scm -O2 -s -dynamic -G -d0 -explicit-use -no-trace)
+
+(install-extension 'eformat
+                   '("eformat.so" "eformat.exports")
+                   '((version 2.0)))
+

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit files</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_files">Unit files</a>
+<ul>
+<li><a href="#sec:Pathname_operations">Pathname operations</a>
+<ul>
+<li><a href="#sec:absolute-pathname.3f">absolute-pathname?</a></li>
+<li><a href="#sec:decompose-pathname">decompose-pathname</a></li>
+<li><a href="#sec:make-pathname">make-pathname</a></li>
+<li><a href="#sec:make-absolute-pathname">make-absolute-pathname</a></li>
+<li><a href="#sec:pathname-directory">pathname-directory</a></li>
+<li><a href="#sec:pathname-file">pathname-file</a></li>
+<li><a href="#sec:pathname-extension">pathname-extension</a></li>
+<li><a href="#sec:pathname-replace-directory">pathname-replace-directory</a></li>
+<li><a href="#sec:pathname-replace-file">pathname-replace-file</a></li>
+<li><a href="#sec:pathname-replace-extension">pathname-replace-extension</a></li>
+<li><a href="#sec:pathname-strip-directory">pathname-strip-directory</a></li>
+<li><a href="#sec:pathname-strip-extension">pathname-strip-extension</a></li>
+<li><a href="#sec:normalize-pathname">normalize-pathname</a></li>
+<li><a href="#sec:directory-null.3f">directory-null?</a></li>
+<li><a href="#sec:decompose-directory">decompose-directory</a></li></ul></li>
+<li><a href="#sec:Temporary_files_and_directories">Temporary files and directories</a>
+<ul>
+<li><a href="#sec:create-temporary-file">create-temporary-file</a></li>
+<li><a href="#sec:create-temporary-directory">create-temporary-directory</a></li></ul></li>
+<li><a href="#sec:Deleting_a_file_without_signalling_an_error">Deleting a file without signalling an error</a>
+<ul>
+<li><a href="#sec:delete-file.2a">delete-file*</a></li></ul></li>
+<li><a href="#sec:File_move.2fcopy">File move/copy</a>
+<ul>
+<li><a href="#sec:file-copy">file-copy</a></li>
+<li><a href="#sec:file-move">file-move</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_files"><a href="#sec:Unit_files">Unit files</a></h2><p>This unit contains file- and pathname-oriented procedures. It uses the <tt>regex</tt> unit.</p><h3 id="sec:Pathname_operations"><a href="#sec:Pathname_operations">Pathname operations</a></h3><h4 id="sec:absolute-pathname.3f"><a href="#sec:absolute-pathname.3f">absolute-pathname?</a></h4><dl class="defsig"><dt class="defsig" id="def:absolute-pathname.3f"><span class="sig"><tt>(absolute-pathname? PATHNAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if the string <tt>PATHNAME</tt> names an absolute pathname, and returns <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h4 id="sec:decompose-pathname"><a href="#sec:decompose-pathname">decompose-pathname</a></h4><dl class="defsig"><dt class="defsig" id="def:decompose-pathname"><span class="sig"><tt>(decompose-pathname PATHNAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns three values: the directory-, filename- and extension-components of the file named by the string <tt>PATHNAME</tt>. For any component that is not contained in <tt>PATHNAME</tt>, <tt>#f</tt> is returned.</p></dd>
+</dl>
+<h4 id="sec:make-pathname"><a href="#sec:make-pathname">make-pathname</a></h4><h4 id="sec:make-absolute-pathname"><a href="#sec:make-absolute-pathname">make-absolute-pathname</a></h4><dl class="defsig"><dt class="defsig" id="def:make-pathname"><span class="sig"><tt>(make-pathname DIRECTORY FILENAME [EXTENSION])</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:make-absolute-pathname"><span class="sig"><tt>(make-absolute-pathname DIRECTORY FILENAME [EXTENSION])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a string that names the file with the components <tt>DIRECTORY, FILENAME</tt> and (optionally) <tt>EXTENSION</tt> with <tt>SEPARATOR</tt> being the directory separation indicator (usually <tt>/</tt> on UNIX systems and <tt>\</tt> on Windows, defaulting to whatever platform this is running on). <tt>DIRECTORY</tt> can be <tt>#f</tt> (meaning no directory component), a string or a list of strings. <tt>FILENAME</tt> and <tt>EXTENSION</tt> should be strings or <tt>#f</tt>. <tt>make-absolute-pathname</tt> returns always an absolute pathname.</p></dd>
+</dl>
+<h4 id="sec:pathname-directory"><a href="#sec:pathname-directory">pathname-directory</a></h4><h4 id="sec:pathname-file"><a href="#sec:pathname-file">pathname-file</a></h4><h4 id="sec:pathname-extension"><a href="#sec:pathname-extension">pathname-extension</a></h4><dl class="defsig"><dt class="defsig" id="def:pathname-directory"><span class="sig"><tt>(pathname-directory PATHNAME)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:pathname-file"><span class="sig"><tt>(pathname-file PATHNAME)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:pathname-extension"><span class="sig"><tt>(pathname-extension PATHNAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Accessors for the components of <tt>PATHNAME</tt>. If the pathname does not contain the accessed component, then <tt>#f</tt> is returned.</p></dd>
+</dl>
+<h4 id="sec:pathname-replace-directory"><a href="#sec:pathname-replace-directory">pathname-replace-directory</a></h4><h4 id="sec:pathname-replace-file"><a href="#sec:pathname-replace-file">pathname-replace-file</a></h4><h4 id="sec:pathname-replace-extension"><a href="#sec:pathname-replace-extension">pathname-replace-extension</a></h4><dl class="defsig"><dt class="defsig" id="def:pathname-replace-directory"><span class="sig"><tt>(pathname-replace-directory PATHNAME DIRECTORY)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:pathname-replace-file"><span class="sig"><tt>(pathname-replace-file PATHNAME FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:pathname-replace-extension"><span class="sig"><tt>(pathname-replace-extension PATHNAME EXTENSION)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return a new pathname with the specified component of <tt>PATHNAME</tt> replaced by a new value.</p></dd>
+</dl>
+<h4 id="sec:pathname-strip-directory"><a href="#sec:pathname-strip-directory">pathname-strip-directory</a></h4><h4 id="sec:pathname-strip-extension"><a href="#sec:pathname-strip-extension">pathname-strip-extension</a></h4><dl class="defsig"><dt class="defsig" id="def:pathname-strip-directory"><span class="sig"><tt>(pathname-strip-directory PATHNAME)</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:pathname-strip-extension"><span class="sig"><tt>(pathname-strip-extension PATHNAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return a new pathname with the specified component of <tt>PATHNAME</tt> stripped.</p></dd>
+</dl>
+<h4 id="sec:normalize-pathname"><a href="#sec:normalize-pathname">normalize-pathname</a></h4><dl class="defsig"><dt class="defsig" id="def:normalize-pathname"><span class="sig"><tt>(normalize-pathname PATHNAME [PLATFORM])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Performs a simple &quot;normalization&quot; on the <tt>PATHNAME</tt>, suitably for <tt>PLATFORM</tt>, which should be one of the symbols <tt>windows</tt> or <tt>unix</tt> and defaults to on whatever platform is currently in use. All relative path elements and duplicate separators are processed and removed.  If <tt>NAME</tt> ends with a <tt>/</tt> or is empty, the appropriate slash is appended to the tail. Tilde <tt>~</tt> and variable <tt>$&lt;name&gt;/...</tt> expansion is also done.</p><p>No directories or files are actually tested for existence; this procedure only canonicalises path syntax.</p></dd>
+</dl>
+<h4 id="sec:directory-null.3f"><a href="#sec:directory-null.3f">directory-null?</a></h4><dl class="defsig"><dt class="defsig" id="def:directory-null.3f"><span class="sig"><tt>(directory-null? DIRECTORY)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Does the <tt>DIRECTORY</tt> consist only of path separators and the period?</p><p><tt>DIRECTORY</tt> may be a string or a list of strings.</p></dd>
+</dl>
+<h4 id="sec:decompose-directory"><a href="#sec:decompose-directory">decompose-directory</a></h4><dl class="defsig"><dt class="defsig" id="def:decompose-directory"><span class="sig"><tt>(decompose-directory DIRECTORY)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns 3 values: the <tt>base-origin</tt>, <tt>base-directory</tt>, and the <tt>directory-elements</tt> for the <tt>DIRECTORY</tt>.</p><dl><dt><tt>base-origin</tt></dt>
+<dd>a <tt>string</tt> or <tt>#f</tt>. The drive, if any.</dd><dt><tt>base-directory</tt></dt>
+<dd>a <tt>string</tt> or <tt>#f</tt>. A directory-separator when <tt>DIRECTORY</tt> is an <tt>absolute-pathname</tt>.</dd><dt><tt>directory-elements</tt></dt>
+<dd>a <tt>list-of string</tt> or <tt>#f</tt>. The non-directory-separator bits.</dd></dl>
+<p><tt>DIRECTORY</tt> is a <tt>string</tt>.</p><ul><li>On Windows <tt>(decompose-directory &quot;c:foo/bar&quot;)</tt> =&gt; <tt>&quot;c:&quot; #f (&quot;foo&quot; &quot;bar&quot;)</tt></li>
+</ul>
+</dd>
+</dl>
+<h3 id="sec:Temporary_files_and_directories"><a href="#sec:Temporary_files_and_directories">Temporary files and directories</a></h3><h4 id="sec:create-temporary-file"><a href="#sec:create-temporary-file">create-temporary-file</a></h4><dl class="defsig"><dt class="defsig" id="def:create-temporary-file"><span class="sig"><tt>(create-temporary-file [EXTENSION])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates an empty temporary file and returns its pathname. If <tt>EXTENSION</tt> is not given, then <tt>.tmp</tt> is used. If the environment variable <tt>TMPDIR, TEMP</tt> or <tt>TMP</tt> is set, then the pathname names a file in that directory. If none of the environment variables is given the location of the temporary file defaults to <tt>/tmp</tt> if it exists or the current-directory</p></dd>
+</dl>
+<h4 id="sec:create-temporary-directory"><a href="#sec:create-temporary-directory">create-temporary-directory</a></h4><dl class="defsig"><dt class="defsig" id="def:create-temporary-directory"><span class="sig"><tt>(create-temporary-directory)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates an empty temporary directory and returns its pathname. If the environment variable <tt>TMPDIR, TEMP</tt> or <tt>TMP</tt> is set, then the temporary directory is created at that location.</p></dd>
+</dl>
+<h3 id="sec:Deleting_a_file_without_signalling_an_error"><a href="#sec:Deleting_a_file_without_signalling_an_error">Deleting a file without signalling an error</a></h3><h4 id="sec:delete-file.2a"><a href="#sec:delete-file.2a">delete-file*</a></h4><dl class="defsig"><dt class="defsig" id="def:delete-file.2a"><span class="sig"><tt>(delete-file* FILENAME)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If the file <tt>FILENAME</tt> exists, it is deleted and <tt>#t</tt> is returned.  If the file does not exist, nothing happens and <tt>#f</tt> is returned.</p></dd>
+</dl>
+<h3 id="sec:File_move.2fcopy"><a href="#sec:File_move.2fcopy">File move/copy</a></h3><h4 id="sec:file-copy"><a href="#sec:file-copy">file-copy</a></h4><dl class="defsig"><dt class="defsig" id="def:file-copy"><span class="sig"><tt>(file-copy ORIGFILE NEWFILE #!optional CLOBBER BLOCKSIZE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Copies <tt>ORIGFILE</tt> (a string denoting some filename) to <tt>NEWFILE</tt>, <tt>BLOCKSIZE</tt> bytes at a time.  <tt>BLOCKSIZE</tt> defaults to 1024, and must be a positive integer.  Returns the number of bytes copied on success, or errors on failure.  <tt>CLOBBER</tt> determines the behaviour of <tt>file-copy</tt> when <tt>NEWFILE</tt> is already extant.  When set to <tt>#f</tt> (default), an error is signalled.  When set to any other value, <tt>NEWFILE</tt> is overwritten. <tt>file-copy</tt> will work across filesystems and devices and is not platform-dependent.</p></dd>
+</dl>
+<h4 id="sec:file-move"><a href="#sec:file-move">file-move</a></h4><dl class="defsig"><dt class="defsig" id="def:file-move"><span class="sig"><tt>(file-move ORIGFILE NEWFILE #!optional CLOBBER BLOCKSIZE)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Moves <tt>ORIGFILE</tt> (a string denoting some filename) to <tt>NEWFILE</tt>, with the same semantics as <tt>file-copy</tt>, above.  <tt>file-move</tt> is safe across filesystems and devices (unlike <tt>rename-file</tt>).  It is possible for an error to be signalled despite partial success if <tt>NEWFILE</tt> could be created and fully written but removing <tt>ORIGFILE</tt> fails.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20ports.html">Unit ports</a></p><p>Next: <a href="Unit%20extras.html">Unit extras</a></p></div></div></body>

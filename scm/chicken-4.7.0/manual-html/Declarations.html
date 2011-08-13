@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Declarations</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Declarations">Declarations</a>
+<ul>
+<li><a href="#sec:declare">declare</a></li>
+<li><a href="#sec:always-bound">always-bound</a></li>
+<li><a href="#sec:block">block</a></li>
+<li><a href="#sec:block-global">block-global</a></li>
+<li><a href="#sec:hide">hide</a></li>
+<li><a href="#sec:bound-to-procedure">bound-to-procedure</a></li>
+<li><a href="#sec:check-c-syntax">check-c-syntax</a></li>
+<li><a href="#sec:constant">constant</a></li>
+<li><a href="#sec:export">export</a></li>
+<li><a href="#sec:emit-external-prototypes-first">emit-external-prototypes-first</a></li>
+<li><a href="#sec:disable-interrupts">disable-interrupts</a></li>
+<li><a href="#sec:emit-import-library">emit-import-library</a></li>
+<li><a href="#sec:inline">inline</a></li>
+<li><a href="#sec:inline-global">inline-global</a></li>
+<li><a href="#sec:inline-limit">inline-limit</a></li>
+<li><a href="#sec:interrupts-enabled">interrupts-enabled</a></li>
+<li><a href="#sec:keep-shadowed-macros">keep-shadowed-macros</a></li>
+<li><a href="#sec:local">local</a></li>
+<li><a href="#sec:no-argc-checks">no-argc-checks</a></li>
+<li><a href="#sec:no-bound-checks">no-bound-checks</a></li>
+<li><a href="#sec:no-procedure-checks">no-procedure-checks</a></li>
+<li><a href="#sec:no-procedure-checks-for-usual-bindings">no-procedure-checks-for-usual-bindings</a></li>
+<li><a href="#sec:no-procedure-checks-for-toplevel-bindings">no-procedure-checks-for-toplevel-bindings</a></li>
+<li><a href="#sec:post-process">post-process</a></li>
+<li><a href="#sec:profile">profile</a></li>
+<li><a href="#sec:number-type">number-type</a></li>
+<li><a href="#sec:fixnum-arithmetic">fixnum-arithmetic</a></li>
+<li><a href="#sec:compile-syntax">compile-syntax</a></li>
+<li><a href="#sec:safe-globals">safe-globals</a></li>
+<li><a href="#sec:scrutinize">scrutinize</a></li>
+<li><a href="#sec:standard-bindings">standard-bindings</a></li>
+<li><a href="#sec:type">type</a></li>
+<li><a href="#sec:extended-bindings">extended-bindings</a></li>
+<li><a href="#sec:usual-integrations">usual-integrations</a></li>
+<li><a href="#sec:unit">unit</a></li>
+<li><a href="#sec:unsafe">unsafe</a></li>
+<li><a href="#sec:unused">unused</a></li>
+<li><a href="#sec:uses">uses</a></li>
+<li><a href="#sec:unsafe-specialized-arithmetic">unsafe-specialized-arithmetic</a></li></ul></li></ul></div><h2 id="sec:Declarations"><a href="#sec:Declarations">Declarations</a></h2><h3 id="sec:declare"><a href="#sec:declare">declare</a></h3><dl class="defsig"><dt class="defsig" id="def:declare"><span class="sig"><tt>(declare DECLSPEC ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Process declaration specifiers. Declarations always override any command-line settings.  Declarations are valid for the whole compilation-unit (source file), the position of the declaration in the source file can be arbitrary. Declarations are ignored in the interpreter but not in code evaluated at compile-time (by <tt>eval-when</tt> or in syntax extensions loaded via <tt>require-extension</tt>). <tt>DECLSPEC</tt> may be any of the following:</p></dd>
+</dl>
+<h3 id="sec:always-bound"><a href="#sec:always-bound">always-bound</a></h3><pre>[declaration specifier] (always-bound SYMBOL ...)</pre><p>Declares that the given variables are always bound and accesses to those have not to be checked.</p><h3 id="sec:block"><a href="#sec:block">block</a></h3><pre>[declaration specifier] (block)</pre><p>Assume global variables are never redefined. This is the same as specifying the <tt>-block</tt> option.</p><h3 id="sec:block-global"><a href="#sec:block-global">block-global</a></h3><h3 id="sec:hide"><a href="#sec:hide">hide</a></h3><pre>[declaration specifier] (block-global SYMBOL ...)
+[declaration specifier] (hide SYMBOL ...)</pre><p>Declares that the toplevel bindings for <tt>SYMBOL ...</tt> should not be accessible from code in other compilation units or by <tt>eval</tt>. Access to toplevel bindings declared as block global is also more efficient. <tt>(declare (hide))</tt> is equivalent to <tt>(declare (block))</tt>.</p><h3 id="sec:bound-to-procedure"><a href="#sec:bound-to-procedure">bound-to-procedure</a></h3><pre>[declaration specifier] (bound-to-procedure SYMBOL ...)</pre><p>Declares that the given identifiers are always bound to procedure values.</p><h3 id="sec:check-c-syntax"><a href="#sec:check-c-syntax">check-c-syntax</a></h3><pre>[declaration specifier] (check-c-syntax)
+[declaration specifier] (not check-c-syntax)</pre><p>Enables or disables syntax-checking of embedded C/C++ code fragments. Checking C syntax is the default.</p><h3 id="sec:constant"><a href="#sec:constant">constant</a></h3><pre>[declaration specifier] (constant SYMBOL ...)</pre><p>Declares the procedures with the names <tt>SYMBOL ...</tt> as constant, that is, as not having any side effects. This can help the compiler to remove non-side-effecting expressions.</p><h3 id="sec:export"><a href="#sec:export">export</a></h3><pre>[declaration specifier] (export SYMBOL ...)</pre><p>The opposite of <tt>hide</tt>. All given identifiers will be exported and all toplevel variables not listed will be hidden and not be accessible outside of this compilation unit.</p><h3 id="sec:emit-external-prototypes-first"><a href="#sec:emit-external-prototypes-first">emit-external-prototypes-first</a></h3><pre>[declaration specifier] (emit-external-prototypes-first)</pre><p>Emit prototypes for callbacks defined with <tt>define-external</tt> before any other foreign declarations. Equivalent to giving the <tt>-emit-external-prototypes-first</tt> option to the compiler.</p><h3 id="sec:disable-interrupts"><a href="#sec:disable-interrupts">disable-interrupts</a></h3><pre>[declaration specifier] (disable-interrupts)
+[declaration specifier] (not interrupts-enabled)</pre><p>Disable timer-interrupts checks in the compiled program. Threads can not be preempted in main- or library-units that contain this declaration.</p><h3 id="sec:emit-import-library"><a href="#sec:emit-import-library">emit-import-library</a></h3><pre>[declaration specifier] (emit-import-library MODULENAME | (MODULENAME FILENAME) ...)</pre><p>Declares that any following definition of a module named <tt>MODULENAME</tt> should be written to an external file (either a specified one or a file named <tt>&quot;MODULENAME.import.scm&quot;</tt>). The compiler option <tt>-emit-import-library</tt> may also be used instead.</p><p>Note that the import library is only generated if it cannot be found in the current directory, or if it exists but is not equal to the one that would be generated.</p><h3 id="sec:inline"><a href="#sec:inline">inline</a></h3><pre>[declaration specifier] (inline)
+[declaration specifier] (not inline)
+[declaration specifier] (inline IDENTIFIER ...)
+[declaration specifier] (not inline IDENTIFIER ...)</pre><p>If given without an identifier-list, inlining of known procedures is enabled (this is equivalent to the <tt>-inline</tt> compiler option). When an identifier-list is given, then inlining is enabled only for the specified global procedures. The negated forms <tt>(not inline)</tt> and <tt>(not inline IDENTIFIER)</tt> disable global inlining, or inlining for the given global procedures only, respectively.</p><h3 id="sec:inline-global"><a href="#sec:inline-global">inline-global</a></h3><pre> [declaration specifier] (inline-global)
+ [declaration specifier] (not inline-global)
+ [declaration specifier] (inline-global IDENTIFIER ...)
+ [declaration specifier] (not inline-global IDENTIFIER ...)</pre><p>Declare that then given toplevel procedures (or all) are subject to cross-module inlining. Potentially inlinable procedures in the current compilation unit will be written to an external <tt>&lt;source-filename&gt;.inline</tt> file in the current directory. Globally inlinable procedures from other compilation units referred to via <tt>(declare (uses ...))</tt> or <tt>require-extension</tt> are loaded from <tt>.inline</tt> files (if available in the current include path) and inlined in the current compilation unit.</p><p>Enabling global inlining implies <tt>(declare (inline))</tt>.</p><h3 id="sec:inline-limit"><a href="#sec:inline-limit">inline-limit</a></h3><pre>[declaration specifier] (inline-limit THRESHOLD)</pre><p>Sets the maximum size of procedures which may potentially be inlined. The default threshold is <tt>20</tt>.</p><h3 id="sec:interrupts-enabled"><a href="#sec:interrupts-enabled">interrupts-enabled</a></h3><pre>[declaration specifier] (interrupts-enabled)</pre><p>Enable timer-interrupts checks in the compiled program (the default).</p><h3 id="sec:keep-shadowed-macros"><a href="#sec:keep-shadowed-macros">keep-shadowed-macros</a></h3><pre>[declaration specifier] (keep-shadowed-macros)</pre><p>Normally, when a toplevel variable is assigned or defined that has the same name as a macro, the macro-definition will be removed (in addition to showing a warning). This declaration will disable the removal of the macro.</p><h3 id="sec:local"><a href="#sec:local">local</a></h3><pre>[declaration specifier] (local)
+[declaration specifier] (local SYMBOL ...)</pre><p>Declares that the listed (or all) toplevel variables defined in the current compilation unit are not modified from code outside of this compilation unit. See also the documentation for the <tt>-local</tt> compiler option about the implications of this.</p><h3 id="sec:no-argc-checks"><a href="#sec:no-argc-checks">no-argc-checks</a></h3><pre>[declaration specifier] (no-argc-checks)</pre><p>Disables argument count checking.</p><h3 id="sec:no-bound-checks"><a href="#sec:no-bound-checks">no-bound-checks</a></h3><pre>[declaration specifier] (no-bound-checks)</pre><p>Disables the bound-checking of toplevel bindings.</p><h3 id="sec:no-procedure-checks"><a href="#sec:no-procedure-checks">no-procedure-checks</a></h3><pre>[declaration specifier] (no-procedure-checks)</pre><p>Disables checking of values in operator position for being of procedure type.</p><h3 id="sec:no-procedure-checks-for-usual-bindings"><a href="#sec:no-procedure-checks-for-usual-bindings">no-procedure-checks-for-usual-bindings</a></h3><pre>[declaration specifier] (no-procedure-checks-for-usual-bindings)</pre><p>Disables checking of procedures for the default standard- and extended toplevel bindings.</p><h3 id="sec:no-procedure-checks-for-toplevel-bindings"><a href="#sec:no-procedure-checks-for-toplevel-bindings">no-procedure-checks-for-toplevel-bindings</a></h3><pre>[declaration specifier] (no-procedure-checks-for-toplevel-bindings)</pre><p>Disables checking of procedures for calls to procedures referenced via a toplevel variable (calls to explicitly named procedures).</p><h3 id="sec:post-process"><a href="#sec:post-process">post-process</a></h3><pre>[declaration specifier] (post-process STRING ...)</pre><p>Arranges for the shell commands <tt>STRING ...</tt> to be invoked after the current file has been translated to C. Any occurrences of the substring <tt>$@@</tt> in the strings given for this declaration will be replaced by the pathname of the currently compiled file, without the file-extension. This declaration will only work if the source file is compiled with the <tt>csc</tt> compiler driver.</p><h3 id="sec:profile"><a href="#sec:profile">profile</a></h3><pre>[declaration specifier] (profile IDENTIFIER ...)</pre><p>Enable profiling exclusively for given identifiers. Normally the compiler enables profiling decorations for all globally defined procedures. With this declaration, profiling can be enabled for selected procedures.</p><h3 id="sec:number-type"><a href="#sec:number-type">number-type</a></h3><h3 id="sec:fixnum-arithmetic"><a href="#sec:fixnum-arithmetic">fixnum-arithmetic</a></h3><pre>[declaration specifier] ([number-type] TYPE)
+[declaration specifier] (fixnum-arithmetic)</pre><p>Declares that only numbers of the given type are used. <tt>TYPE</tt> may be <tt>fixnum</tt> or <tt>generic</tt> (which is the default).</p><h3 id="sec:compile-syntax"><a href="#sec:compile-syntax">compile-syntax</a></h3><pre>[declaration specifier] (compile-syntax)</pre><p>Equivalent to the compiler option of the same name - macros defined in the compiled code are also made available at runtime.</p><h3 id="sec:safe-globals"><a href="#sec:safe-globals">safe-globals</a></h3><pre>[declaration specifier] (safe-globals)</pre><p>Assumes variables assigned in the current compilation unit are always bound and that any calls to these variables can always be assumed to be calls to proper procedures.</p><h3 id="sec:scrutinize"><a href="#sec:scrutinize">scrutinize</a></h3><pre>[declaration specifier] (scrutinize)</pre><p>Enables scrutiny. This is equivalent to passing the <tt>-scrutinize</tt> option to the compiler.</p><h3 id="sec:standard-bindings"><a href="#sec:standard-bindings">standard-bindings</a></h3><pre>[declaration specifier] (standard-bindings SYMBOL ...)
+[declaration specifier] (not standard-bindings SYMBOL ...)</pre><p>Declares that all given standard procedures (or all if no symbols are specified) are never globally redefined.  If <tt>not</tt> is specified, then all but the given standard bindings are assumed to be never redefined.</p><h3 id="sec:type"><a href="#sec:type">type</a></h3><pre> [declaration specifier] (type (SYMBOL TYPESPEC) ...)</pre><p>Declares toplevel procedures to have a specific type for scrutiny. <tt>SYMBOL</tt> should name a toplevel variable and <tt>TYPESPEC</tt> should be a type specification, following the syntax given here:</p><pre> TYPESPEC --&gt; *
+           |  deprecated
+           |  VAL
+ 
+ VAL --&gt; (or VAL1 ...)
+      |  (struct NAME)
+      |  (procedure [NAME] (VAL1 ... [#!optional VALOPT1 ...] [#!rest [VAL]]) . RESULTS)
+      |  BASIC
+ 
+ BASIC --&gt; * 
+        |  string 
+        |  symbol 
+        |  char 
+        |  number 
+        |  boolean 
+        |  list 
+        |  pair 
+        |  procedure 
+        |  vector 
+        |  null 
+        |  eof 
+        |  port
+        |  blob 
+        |  pointer
+        |  locative
+        |  fixnum
+        |  float
+        |  pointer-vector
+ 
+ RESULTS --&gt; * 
+          |  (RVAL1 ...)
+ 
+ RVAL --&gt; undefined
+       |  noreturn
+       |  VAL</pre><p>A type-declaration overrides any previous declaration for the same identifier.</p><h3 id="sec:extended-bindings"><a href="#sec:extended-bindings">extended-bindings</a></h3><pre>[declaration specifier] (extended-bindings SYMBOL ...)
+[declaration specifier] (not extended-bindings SYMBOL ...)</pre><p>Declares that all given non-standard and CHICKEN-specific procedures (or all if no symbols are specified) are never globally redefined. If <tt>not</tt> is specified, then all but the given extended bindings are assumed to be never redefined.</p><h3 id="sec:usual-integrations"><a href="#sec:usual-integrations">usual-integrations</a></h3><pre>[declaration specifier] (usual-integrations SYMBOL ...)
+[declaration specifier] (not usual-integrations SYMBOL ...)</pre><p>Declares that all given standard and extended bindings (or all if no symbols are specified) are never globally redefined.  If <tt>not</tt> is specified, then all but the given standard and extended bindings are assumed to be never redefined. Note that this is the default behaviour, unless the <tt>-no-usual-integrations</tt> option has been given.</p><h3 id="sec:unit"><a href="#sec:unit">unit</a></h3><pre>[declaration specifier] (unit SYMBOL)</pre><p>Specify compilation unit-name (if this is a library)</p><h3 id="sec:unsafe"><a href="#sec:unsafe">unsafe</a></h3><pre>[declaration specifier] (unsafe)
+[declaration specifier] (not safe)</pre><p>Do not generate safety-checks. This is the same as specifying the <tt>-unsafe</tt> option.  Also implies</p><pre>(declare (no-bound-checks) (no-procedure-checks) (no-argc-checks))</pre><h3 id="sec:unused"><a href="#sec:unused">unused</a></h3><pre>[declaration specifier] (unused SYMBOL ...)</pre><p>Disables any warnings when the global variable <tt>SYMBOL</tt> is not defined but used, or defined but never used and not exported.</p><h3 id="sec:uses"><a href="#sec:uses">uses</a></h3><pre>[declaration specifier] (uses SYMBOL ...)</pre><p>Gives a list of used library-units. Before the toplevel-expressions of the main-module are executed, all used units evaluate their toplevel-expressions in the order in which they appear in this declaration. If a library unit A uses another unit B, then B's toplevel expressions are evaluated before A's.  Furthermore, the used symbols are registered as features during compile-time, so <tt>cond-expand</tt> knows about them.</p><h3 id="sec:unsafe-specialized-arithmetic"><a href="#sec:unsafe-specialized-arithmetic">unsafe-specialized-arithmetic</a></h3><pre>[declaration specifier] (unsafe-specialized-arithmetic)</pre><p>Assume specialized arithmetic operations like <tt>fp+</tt>, <tt>fpsin</tt>, etc. are always called with arguments of correct type and perform unboxing of intermediate results if possible and if the <tt>-unboxing</tt> compiler-option has been enabled (done by default on optimization levels 2 and higher).</p><hr /><p>Previous: <a href="Modules.html">Modules</a></p><p>Next: <a href="Parameters.html">Parameters</a></p></div></div></body>

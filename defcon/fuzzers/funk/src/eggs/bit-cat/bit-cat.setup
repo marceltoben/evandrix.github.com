@@ -1,0 +1,6 @@
+
+(define easyffi? (string>=? (chicken-version) "2.424"))
+
+(compile -R srfi-66 -s -O2 -d1 ,@(if easyffi? '(-extend easyffi) '()) bit-cat.scm)
+(install-extension 'bit-cat '("bit-cat.so" "bit-cat.html") 
+		   '((version 0.1) (documentation "bit-cat.html")))

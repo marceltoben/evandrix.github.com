@@ -1,0 +1,10 @@
+;;; crc16.meta
+
+((egg "crc16.egg")
+ (files "crc16.scm" "crc16.html" "crc16.setup")
+ (category crypt)
+ (needs easyffi srfi-66)
+ (synopsis "CRC16 Algorithm")
+ (eggdoc "doc.scm")
+ (author "Ben Kurtz")
+ (license "BSD"))

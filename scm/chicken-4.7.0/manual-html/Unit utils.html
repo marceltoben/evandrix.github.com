@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit utils</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_utils">Unit utils</a>
+<ul>
+<li><a href="#sec:Executing_shell_commands_with_formatstring_and_error_checking">Executing shell commands with formatstring and error checking</a>
+<ul>
+<li><a href="#sec:system.2a">system*</a></li></ul></li>
+<li><a href="#sec:Reading_a_file.27s_contents">Reading a file's contents</a>
+<ul>
+<li><a href="#sec:read-all">read-all</a></li></ul></li>
+<li><a href="#sec:Shell_argument_quoting">Shell argument quoting</a>
+<ul>
+<li><a href="#sec:qs">qs</a></li></ul></li>
+<li><a href="#sec:Dynamic_compilation">Dynamic compilation</a>
+<ul>
+<li><a href="#sec:compile-file">compile-file</a></li>
+<li><a href="#sec:compile-file-options">compile-file-options</a></li></ul></li>
+<li><a href="#sec:Scanning_through_an_input_port">Scanning through an input port</a>
+<ul>
+<li><a href="#sec:scan-input-lines">scan-input-lines</a></li></ul></li>
+<li><a href="#sec:Asking_the_user_for_confirmation">Asking the user for confirmation</a>
+<ul>
+<li><a href="#sec:yes-or-no.3f">yes-or-no?</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_utils"><a href="#sec:Unit_utils">Unit utils</a></h2><p>This unit contains a &quot;grab bag&quot; of procedures without a good home, and which don't have to be available by default (as compared to the <a href="Unit%20extras.html">extras</a> unit).</p><p>This unit uses the <tt>extras</tt> and <tt>srfi-13</tt> units.</p><h3 id="sec:Executing_shell_commands_with_formatstring_and_error_checking"><a href="#sec:Executing_shell_commands_with_formatstring_and_error_checking">Executing shell commands with formatstring and error checking</a></h3><h4 id="sec:system.2a"><a href="#sec:system.2a">system*</a></h4><dl class="defsig"><dt class="defsig" id="def:system.2a"><span class="sig"><tt>(system* FORMATSTRING ARGUMENT1 ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Similar to <tt>(system (sprintf FORMATSTRING ARGUMENT1 ...))</tt>, but signals an error should the invoked program return a nonzero exit status.</p></dd>
+</dl>
+<h3 id="sec:Reading_a_file.27s_contents"><a href="#sec:Reading_a_file.27s_contents">Reading a file's contents</a></h3><h4 id="sec:read-all"><a href="#sec:read-all">read-all</a></h4><dl class="defsig"><dt class="defsig" id="def:read-all"><span class="sig"><tt>(read-all [FILE-OR-PORT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>If <tt>FILE-OR-PORT</tt> is a string, then this procedure returns the contents of the file as a string. If <tt>FILE-OR-PORT</tt> is a port, all remaining input is read and returned as a string. The port is not closed. If no argument is provided, input will be read from the port that is the current value of <tt>(current-input-port)</tt>.</p></dd>
+</dl>
+<h3 id="sec:Shell_argument_quoting"><a href="#sec:Shell_argument_quoting">Shell argument quoting</a></h3><h4 id="sec:qs"><a href="#sec:qs">qs</a></h4><dl class="defsig"><dt class="defsig" id="def:qs"><span class="sig"><tt>(qs STRING [PLATFORM])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Escapes <tt>STRING</tt> suitably for passing to a shell command on <tt>PLATFORM</tt>. <tt>PLATFORM</tt> defaults to the value of <tt>(build-platform)</tt> and indicates in which style the argument should be quoted. On Windows systems, the string is simply enclosed in double-quote (<tt>&quot;</tt>) characters, on UNIXish systems, characters that would have a special meaning to the shell are escaped using backslash (<tt>\</tt>).</p></dd>
+</dl>
+<h3 id="sec:Dynamic_compilation"><a href="#sec:Dynamic_compilation">Dynamic compilation</a></h3><h4 id="sec:compile-file"><a href="#sec:compile-file">compile-file</a></h4><dl class="defsig"><dt class="defsig" id="def:compile-file"><span class="sig"><tt>(compile-file FILENAME #!key options output-file load)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Compiles the Scheme source file <tt>FILENAME</tt> into a dynamically loadable library by invoking the <tt>csc</tt> compiler driver. If the library can be successfully created and <tt>load</tt> is not given or true, the file is loaded into the current Scheme process. <tt>options</tt> may be a list of strings which are passed as additional command line options to <tt>csc</tt>. If <tt>output-file</tt> is not given, then the compiled file is stored in a temporary location and will be deleted when the process exits successfully. When compilation and loading succeeds, the name of the compiled file is returned, otherwise <tt>#f</tt> is returned.</p><p>Notes:</p><ul><li>loading the same compiled file multiple times is only supported on Linux in the moment and should be considered unreliable. For this reason, a new temporary file is created for every invocation of <tt>compile-file</tt>, unless an explicit output file name is given.</li>
+<li>this procedure is compatible to the <tt>scheme-compile-file</tt> command in <tt>emacs</tt>' <tt>scheme-mode</tt>.</li>
+</ul>
+</dd>
+</dl>
+<h4 id="sec:compile-file-options"><a href="#sec:compile-file-options">compile-file-options</a></h4><dl class="defsig"><dt class="defsig" id="def:compile-file-options"><span class="sig"><tt>compile-file-options</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>A parameter that holds a list of default options that should be given to <tt>csc</tt> after invocation of the <tt>compile-file</tt> procedure. The initial default options are <tt>-scrutinize -O2 -d2</tt>.</p></dd>
+</dl>
+<h3 id="sec:Scanning_through_an_input_port"><a href="#sec:Scanning_through_an_input_port">Scanning through an input port</a></h3><h4 id="sec:scan-input-lines"><a href="#sec:scan-input-lines">scan-input-lines</a></h4><dl class="defsig"><dt class="defsig" id="def:scan-input-lines"><span class="sig"><tt>(scan-input-lines REGEXP [PORT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Reads lines from <tt>PORT</tt> (defaults to the result of <tt>(current-input-port)</tt>) using <tt>read-line</tt> and returns the result of <tt>(irregex-search REGEXP LINE)</tt>, if the match succeeds. If no match could be found, <tt>#f</tt> is returned.</p><p><tt>REGEXP</tt> may also be a procedure of one argument which is called for each input line and should return a non-false value on success, which will then be the result of the call to <tt>scan-input-lines</tt>.</p></dd>
+</dl>
+<h3 id="sec:Asking_the_user_for_confirmation"><a href="#sec:Asking_the_user_for_confirmation">Asking the user for confirmation</a></h3><h4 id="sec:yes-or-no.3f"><a href="#sec:yes-or-no.3f">yes-or-no?</a></h4><dl class="defsig"><dt class="defsig" id="def:yes-or-no.3f"><span class="sig"><tt>(yes-or-no? MESSAGE #!key default title abort)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Prints the string <tt>MESSAGE</tt> and asks for entering &quot;yes&quot;, &quot;no&quot; or &quot;abort&quot;. If running under Windows in GUI mode, then a suitable dialog box is shown. Returns either <tt>#t</tt> or <tt>#f</tt> depending on whether <tt>yes</tt> or <tt>no</tt> was entered. The <tt>default</tt> keyword argument specifies the default answer that is effective if the user just presses ENTER (or the default button in case of a dialog box). <tt>title</tt> specifies the text shown in the caption of the dialog box and is ignored when not running in GUI mode. <tt>abort</tt> should be a zero-argument procedure that is called when the user selects &quot;abort&quot;. The default value for <tt>abort</tt> is the <tt>reset</tt> procedure. A value of <tt>#f</tt> for <tt>abort</tt> disables aborting completely.</p><p>Previous: <a href="Unit%20posix.html">Unit posix</a></p><p>Next: <a href="Unit%20tcp.html">Unit tcp</a></p></dd>
+</dl>
+</div></div></body>

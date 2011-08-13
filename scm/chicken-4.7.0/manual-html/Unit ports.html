@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit ports</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_ports">Unit ports</a>
+<ul>
+<li><a href="#sec:Input.2foutput_port_extensions">Input/output port extensions</a>
+<ul>
+<li><a href="#sec:with-output-to-port">with-output-to-port</a></li>
+<li><a href="#sec:make-input-port">make-input-port</a></li>
+<li><a href="#sec:make-output-port">make-output-port</a></li>
+<li><a href="#sec:with-error-output-to-port">with-error-output-to-port</a></li>
+<li><a href="#sec:with-input-from-port">with-input-from-port</a></li></ul></li>
+<li><a href="#sec:String-port_extensions">String-port extensions</a>
+<ul>
+<li><a href="#sec:call-with-input-string">call-with-input-string</a></li>
+<li><a href="#sec:call-with-output-string">call-with-output-string</a></li>
+<li><a href="#sec:with-input-from-string">with-input-from-string</a></li>
+<li><a href="#sec:with-output-to-string">with-output-to-string</a></li></ul></li>
+<li><a href="#sec:Port_iterators">Port iterators</a>
+<ul>
+<li><a href="#sec:port-for-each">port-for-each</a></li>
+<li><a href="#sec:port-map">port-map</a></li>
+<li><a href="#sec:port-fold">port-fold</a></li>
+<li><a href="#sec:copy-port">copy-port</a></li></ul></li>
+<li><a href="#sec:Funky_ports">Funky ports</a>
+<ul>
+<li><a href="#sec:make-broadcast-port">make-broadcast-port</a></li>
+<li><a href="#sec:make-concatenated-port">make-concatenated-port</a></li></ul></li></ul></li></ul></div><h2 id="sec:Unit_ports"><a href="#sec:Unit_ports">Unit ports</a></h2><p>This unit contains various extended port definitions. This unit is used by default, unless the program is compiled with the <tt>-explicit-use</tt> option.</p><h3 id="sec:Input.2foutput_port_extensions"><a href="#sec:Input.2foutput_port_extensions">Input/output port extensions</a></h3><h4 id="sec:with-output-to-port"><a href="#sec:with-output-to-port">with-output-to-port</a></h4><dl class="defsig"><dt class="defsig" id="def:with-output-to-port"><span class="sig"><tt>(with-output-to-port PORT THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Call procedure <tt>THUNK</tt> with the current output-port temporarily bound to <tt>PORT</tt>.</p></dd>
+</dl>
+<h4 id="sec:make-input-port"><a href="#sec:make-input-port">make-input-port</a></h4><dl class="defsig"><dt class="defsig" id="def:make-input-port"><span class="sig"><tt>(make-input-port READ READY? CLOSE [PEEK])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a custom input port. Common operations on this port are handled by the given parameters, which should be procedures of no arguments. <tt>READ</tt> is called when the next character is to be read and should return a character or <tt>#!eof</tt>. <tt>READY?</tt> is called when <tt>char-ready?</tt> is called on this port and should return <tt>#t</tt> or <tt>#f</tt>.  <tt>CLOSE</tt> is called when the port is closed. <tt>PEEK</tt> is called when <tt>peek-char</tt> is called on this port and should return a character or <tt>#!eof</tt>. if the argument <tt>PEEK</tt> is not given, then <tt>READ</tt> is used instead and the created port object handles peeking automatically (by calling <tt>READ</tt> and buffering the character).</p></dd>
+</dl>
+<h4 id="sec:make-output-port"><a href="#sec:make-output-port">make-output-port</a></h4><dl class="defsig"><dt class="defsig" id="def:make-output-port"><span class="sig"><tt>(make-output-port WRITE CLOSE [FLUSH])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a custom output port. Common operations on this port are handled by the given parameters, which should be procedures.  <tt>WRITE</tt> is called when output is sent to the port and receives a single argument, a string.  <tt>CLOSE</tt> is called when the port is closed and should be a procedure of no arguments. <tt>FLUSH</tt> (if provided) is called for flushing the output port.</p></dd>
+</dl>
+<h4 id="sec:with-error-output-to-port"><a href="#sec:with-error-output-to-port">with-error-output-to-port</a></h4><dl class="defsig"><dt class="defsig" id="def:with-error-output-to-port"><span class="sig"><tt>(with-error-output-to-port PORT THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Call procedure <tt>THUNK</tt> with the current error output-port temporarily bound to <tt>PORT</tt>.</p></dd>
+</dl>
+<h4 id="sec:with-input-from-port"><a href="#sec:with-input-from-port">with-input-from-port</a></h4><dl class="defsig"><dt class="defsig" id="def:with-input-from-port"><span class="sig"><tt>(with-input-from-port PORT THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Call procedure <tt>THUNK</tt> with the current input-port temporarily bound to <tt>PORT</tt>.</p></dd>
+</dl>
+<h3 id="sec:String-port_extensions"><a href="#sec:String-port_extensions">String-port extensions</a></h3><h4 id="sec:call-with-input-string"><a href="#sec:call-with-input-string">call-with-input-string</a></h4><dl class="defsig"><dt class="defsig" id="def:call-with-input-string"><span class="sig"><tt>(call-with-input-string STRING PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Calls the procedure <tt>PROC</tt> with a single argument that is a string-input-port with the contents of <tt>STRING</tt>.</p></dd>
+</dl>
+<h4 id="sec:call-with-output-string"><a href="#sec:call-with-output-string">call-with-output-string</a></h4><dl class="defsig"><dt class="defsig" id="def:call-with-output-string"><span class="sig"><tt>(call-with-output-string PROC)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Calls the procedure <tt>PROC</tt> with a single argument that is a string-output-port.  Returns the accumulated output-string.</p></dd>
+</dl>
+<h4 id="sec:with-input-from-string"><a href="#sec:with-input-from-string">with-input-from-string</a></h4><dl class="defsig"><dt class="defsig" id="def:with-input-from-string"><span class="sig"><tt>(with-input-from-string STRING THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Call procedure <tt>THUNK</tt> with the current input-port temporarily bound to an input-string-port with the contents of <tt>STRING</tt>.</p></dd>
+</dl>
+<h4 id="sec:with-output-to-string"><a href="#sec:with-output-to-string">with-output-to-string</a></h4><dl class="defsig"><dt class="defsig" id="def:with-output-to-string"><span class="sig"><tt>(with-output-to-string THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Call procedure <tt>THUNK</tt> with the current output-port temporarily bound to a string-output-port and return the accumulated output string.</p></dd>
+</dl>
+<h3 id="sec:Port_iterators"><a href="#sec:Port_iterators">Port iterators</a></h3><h4 id="sec:port-for-each"><a href="#sec:port-for-each">port-for-each</a></h4><dl class="defsig"><dt class="defsig" id="def:port-for-each"><span class="sig"><tt>(port-for-each FN THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Apply <tt>FN</tt> to successive results of calling the zero argument procedure <tt>THUNK</tt> until it returns <tt>#!eof</tt>, discarding the results.</p></dd>
+</dl>
+<h4 id="sec:port-map"><a href="#sec:port-map">port-map</a></h4><dl class="defsig"><dt class="defsig" id="def:port-map"><span class="sig"><tt>(port-map FN THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Apply <tt>FN</tt> to successive results of calling the zero argument procedure <tt>THUNK</tt> until it returns <tt>#!eof</tt>, returning a list of the collected results.</p></dd>
+</dl>
+<h4 id="sec:port-fold"><a href="#sec:port-fold">port-fold</a></h4><dl class="defsig"><dt class="defsig" id="def:port-fold"><span class="sig"><tt>(port-fold FN ACC THUNK)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Apply <tt>FN</tt> to successive results of calling the zero argument procedure <tt>THUNK</tt>, passing the <tt>ACC</tt> value as the second argument. The <tt>FN</tt> result becomes the new <tt>ACC</tt> value. When <tt>THUNK</tt> returns <tt>#!eof</tt>, the last <tt>FN</tt> result is returned.</p></dd>
+</dl>
+<h4 id="sec:copy-port"><a href="#sec:copy-port">copy-port</a></h4><dl class="defsig"><dt class="defsig" id="def:copy-port"><span class="sig"><tt>(copy-port FROM TO [READ [WRITE]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Reads all remaining data from port <tt>FROM</tt> using the reader procedure <tt>READ</tt> and writes it to port <tt>TO</tt> using the writer procedure <tt>WRITE</tt>. <tt>READ</tt> defaults to <tt>read-char</tt> and <tt>WRITE} to {{write-char</tt>. Note that this procedure does not check <tt>FROM</tt> and <tt>TO</tt> for being ports, so the reader and writer procedures may perform arbitrary operations as long as they can be invoked as <tt>(READ FROM)</tt> and <tt>(WRITE X TO)</tt>, respectively. <tt>copy-port</tt> returns an undefined value.</p></dd>
+</dl>
+<h3 id="sec:Funky_ports"><a href="#sec:Funky_ports">Funky ports</a></h3><h4 id="sec:make-broadcast-port"><a href="#sec:make-broadcast-port">make-broadcast-port</a></h4><dl class="defsig"><dt class="defsig" id="def:make-broadcast-port"><span class="sig"><tt>(make-broadcast-port PORT ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a custom output port that emits everything written into it to the ports given as <tt>PORT ...</tt>. Closing the broadcast port does not close any of the argument ports.</p></dd>
+</dl>
+<h4 id="sec:make-concatenated-port"><a href="#sec:make-concatenated-port">make-concatenated-port</a></h4><dl class="defsig"><dt class="defsig" id="def:make-concatenated-port"><span class="sig"><tt>(make-concatenated-port PORT1 PORT2 ...)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a custom input port that reads its input from <tt>PORT1</tt>, until it is empty, then from <tt>PORT2</tt> and so on. Closing the concatenated port does not close any of the argument ports.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20data-structures.html">Unit data-structures</a></p><p>Next: <a href="Unit%20files.html">Unit files</a></p></div></div></body>

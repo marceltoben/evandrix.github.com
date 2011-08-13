@@ -1,0 +1,327 @@
+Tmacdll
+v3
+r1
+cCheck dependencies
+cCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/dyld.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.c normal i386 c com.apple.compilers.llvmgcc42
+cMig /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MachExceptions.defs i386
+cCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/implementation.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.c normal i386 c com.apple.compilers.llvmgcc42
+cCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/MacDll.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.c normal i386 c com.apple.compilers.llvmgcc42
+cCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/Exception.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.c normal i386 c com.apple.compilers.llvmgcc42
+cCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/MachExceptionsServer.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c normal i386 c com.apple.compilers.llvmgcc42
+cLd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/libmacdll.dylib normal i386
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/stdbool.h
+c000000004DD0AF080000000000000644
+t1305521928
+s1604
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.c
+c000000004E46ED6300000000000043ED
+t1313271139
+s17389
+i<assert.h>
+i<stdio.h>
+i<stdlib.h>
+i<mach/mach.h>
+i<pthread.h>
+i<unistd.h>
+i<stdbool.h>
+i"MachExceptionsServer.h"
+i"Exception.h"
+i"implementation.h"
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.h
+c000000004E46ED630000000000000178
+t1313271139
+s376
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.c
+c000000004E46ED63000000000000350E
+t1313271139
+s13582
+i<stdio.h>
+i<sys/types.h>
+i<sys/stat.h>
+i<sys/ptrace.h>
+i<stdio.h>
+i"MacDll.h"
+i"dyld.h"
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.h
+c000000004E46ED630000000000001041
+t1313271139
+s4161
+i<mach/mach.h>
+i"windows.h"
+i"implementation.h"
+i"Exception.h"
+i<signal.h>
+i<stdlib.h>
+i<stdio.h>
+i<mach/mach_traps.h>
+i<mach/mach_types.h>
+i<string.h>
+i<mach/thread_status.h>
+i<unistd.h>
+i<mach/mach.h>
+i<sys/types.h>
+i<sys/sysctl.h>
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MachExceptions.defs
+c000000004E46ED630000000000000019
+t1313271139
+s25
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/libmacdll.dylib
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.h
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/Exception.o
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/MacDll.o
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/MachExceptionsServer.o
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/dyld.o
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/implementation.o
+t2
+s0
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/macdll.LinkFileList
+c000000004E46EDAE0000000000000274
+t1313271214
+s628
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.c
+c000000004E46ED630000000000000A50
+t1313271139
+s2640
+i<mach-o/ldsyms.h>
+i"MacDll.h"
+i"dyld.h"
+i"implementation.h"
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.h
+c000000004E46ED630000000000000138
+t1313271139
+s312
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.c
+c000000004E46ED6300000000000028D4
+t1313271139
+s10452
+i<stdlib.h>
+i<sys/types.h>
+i<sys/ptrace.h>
+i<stdio.h>
+i<mach/mach.h>
+i<mach/mach_traps.h>
+i<mach/mach_types.h>
+i<string.h>
+i<mach/thread_status.h>
+i<unistd.h>
+i<signal.h>
+i<setjmp.h>
+i<implementation.h>
+i"Exception.h"
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.h
+c000000004E46ED6300000000000006E8
+t1313271139
+s1768
+
+N/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/windows.h
+c000000004E46ED630000000000001507
+t1313271139
+s5383
+
+N/usr/include/assert.h
+c000000004E05497A0000000000000F6E
+t1308969338
+s3950
+
+N/usr/include/mach-o/ldsyms.h
+c000000004DFA9F7D000000000000151C
+t1308270461
+s5404
+
+N/usr/include/mach/mach.h
+c000000004DFD008A0000000000001057
+t1308426378
+s4183
+
+N/usr/include/mach/mach_traps.h
+c000000004DFD01D400000000000010D1
+t1308426708
+s4305
+
+N/usr/include/mach/mach_types.h
+c000000004DFD01D40000000000001EDA
+t1308426708
+s7898
+
+N/usr/include/mach/thread_status.h
+c000000004DFD01DB0000000000000DA4
+t1308426715
+s3492
+
+N/usr/include/pthread.h
+c000000004E05497B0000000000003CF0
+t1308969339
+s15600
+
+N/usr/include/setjmp.h
+c000000004E05497A0000000000000438
+t1308969338
+s1080
+
+N/usr/include/signal.h
+c000000004E05497C00000000000014F0
+t1308969340
+s5360
+
+N/usr/include/stdio.h
+c000000004E05497C0000000000004763
+t1308969340
+s18275
+
+N/usr/include/stdlib.h
+c000000004E05497C00000000000030A7
+t1308969340
+s12455
+
+N/usr/include/string.h
+c000000004E05497C0000000000001A3A
+t1308969340
+s6714
+
+N/usr/include/sys/ptrace.h
+c000000004DFD01D5000000000000118F
+t1308426709
+s4495
+
+N/usr/include/sys/stat.h
+c000000004DFD01DB0000000000004B2F
+t1308426715
+s19247
+
+N/usr/include/sys/sysctl.h
+c000000004DFD01DB0000000000007D09
+t1308426715
+s32009
+
+N/usr/include/sys/types.h
+c000000004DFD01DF0000000000002905
+t1308426719
+s10501
+
+N/usr/include/unistd.h
+c000000004E05497C0000000000006662
+t1308969340
+s26210
+
+CCheck dependencies
+r0
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies28b8f82d25f7b341^e7013c2e25f7b341^---0#1#0#--18"Check dependencies
+
+CCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/Exception.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.c normal i386 c com.apple.compilers.llvmgcc42
+s334964014.674854
+e334964014.824052
+r1
+xCompileC
+xbuild/macdll.build/Debug/macdll.build/Objects-normal/i386/Exception.o
+x/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.c5072af2e25f7b341^a302d32e25f7b341^---0#0#0#-19%DVTDocumentLocation2@81"file://localhost/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.c0000000000000000^1260"CompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/Exception.o Exception.c normal i386 c com.apple.compilers.llvmgcc42    cd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wunused-function -Wunused-label -Wunused-parameter -Wunused-variable -Wunused-value -fasm-blocks -mmacosx-version-min=10.4 -gdwarf-2 -fvisibility=hidden -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/macdll.hmap -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/include -I/Library/Frameworks/Python.framework/Versions/2.4/include/python2.4 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources -Wall -F/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug -c /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/Exception.c -o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/Exception.o
+
+CCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/MacDll.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.c normal i386 c com.apple.compilers.llvmgcc42
+s334964014.261307
+e334964014.777124
+r1
+xCompileC
+xbuild/macdll.build/Debug/macdll.build/Objects-normal/i386/MacDll.o
+x/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Compile /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.c800e432e25f7b341^581bc72e25f7b341^---0#0#0#-19%DVTDocumentLocation2@78"file://localhost/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.c0000000000000000^1248"CompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/MacDll.o MacDll.c normal i386 c com.apple.compilers.llvmgcc42    cd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wunused-function -Wunused-label -Wunused-parameter -Wunused-variable -Wunused-value -fasm-blocks -mmacosx-version-min=10.4 -gdwarf-2 -fvisibility=hidden -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/macdll.hmap -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/include -I/Library/Frameworks/Python.framework/Versions/2.4/include/python2.4 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources -Wall -F/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug -c /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MacDll.c -o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/MacDll.o
+
+CCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/MachExceptionsServer.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c normal i386 c com.apple.compilers.llvmgcc42
+s334964014.778949
+e334964014.861764
+r1
+xCompileC
+xbuild/macdll.build/Debug/macdll.build/Objects-normal/i386/MachExceptionsServer.o
+x/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection142"Compile /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.cc495c72e25f7b341^fe9adc2e25f7b341^---0#0#0#-19%DVTDocumentLocation2@150"file://localhost/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c0000000000000000^1420"CompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/MachExceptionsServer.o build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c normal i386 c com.apple.compilers.llvmgcc42    cd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wunused-function -Wunused-label -Wunused-parameter -Wunused-variable -Wunused-value -fasm-blocks -mmacosx-version-min=10.4 -gdwarf-2 -fvisibility=hidden -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/macdll.hmap -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/include -I/Library/Frameworks/Python.framework/Versions/2.4/include/python2.4 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources -Wall -F/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug -c /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c -o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/MachExceptionsServer.o
+
+CCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/dyld.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.c normal i386 c com.apple.compilers.llvmgcc42
+s334964014.243272
+e334964014.673388
+r1
+xCompileC
+xbuild/macdll.build/Debug/macdll.build/Objects-normal/i386/dyld.o
+x/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.c5875422e25f7b341^35b5ac2e25f7b341^---0#0#0#-19%DVTDocumentLocation2@76"file://localhost/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.c0000000000000000^1240"CompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/dyld.o dyld.c normal i386 c com.apple.compilers.llvmgcc42    cd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wunused-function -Wunused-label -Wunused-parameter -Wunused-variable -Wunused-value -fasm-blocks -mmacosx-version-min=10.4 -gdwarf-2 -fvisibility=hidden -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/macdll.hmap -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/include -I/Library/Frameworks/Python.framework/Versions/2.4/include/python2.4 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources -Wall -F/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug -c /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/dyld.c -o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/dyld.o
+
+CCompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/implementation.o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.c normal i386 c com.apple.compilers.llvmgcc42
+s334964014.254818
+e334964014.674339
+r1
+xCompileC
+xbuild/macdll.build/Debug/macdll.build/Objects-normal/i386/implementation.o
+x/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.c5feb422e25f7b341^338caf2e25f7b341^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.c0000000000000000^1280"CompileC build/macdll.build/Debug/macdll.build/Objects-normal/i386/implementation.o implementation.c normal i386 c com.apple.compilers.llvmgcc42    cd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wunused-function -Wunused-label -Wunused-parameter -Wunused-variable -Wunused-value -fasm-blocks -mmacosx-version-min=10.4 -gdwarf-2 -fvisibility=hidden -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/macdll.hmap -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/include -I/Library/Frameworks/Python.framework/Versions/2.4/include/python2.4 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386 -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources -Wall -F/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug -c /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/implementation.c -o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/implementation.o
+
+CLd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/libmacdll.dylib normal i386
+s334964014.869263
+e334964014.961906
+r1
+xLd
+x/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/libmacdll.dylib
+xnormal
+xi386
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Link /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/libmacdll.dylib16a3de2e25f7b341^083ef62e25f7b341^---0#0#0#--728"Ld build/Debug/libmacdll.dylib normal i386    cd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll    setenv MACOSX_DEPLOYMENT_TARGET 10.4    /Developer/usr/bin/llvm-gcc-4.2 -arch i386 -dynamiclib -L/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug -F/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug -filelist /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/Objects-normal/i386/macdll.LinkFileList -install_name /usr/local/lib/libmacdll.dylib -mmacosx-version-min=10.4 -Wl,-read_only_relocs,suppress -single_module -compatibility_version 1 -current_version 1 -o /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/libmacdll.dylib
+
+CMig /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MachExceptions.defs i386
+s334964014.244364
+e334964014.471304
+r1
+xMig
+x/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MachExceptions.defs
+xi386
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Mig /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MachExceptions.defsba143f2e25f7b341^dec8782e25f7b341^---0#0#0#-19%DVTDocumentLocation2@89"file://localhost/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MachExceptions.defs0000000000000000^784"Mig MachExceptions.defs i386    cd /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll    setenv MIGCC /Developer/usr/bin/gcc    setenv MIGCOM /Developer/usr/bin/../libexec/migcom    setenv SDKROOT     /Developer/usr/bin/mig -arch i386 -header /dev/null -user /dev/null -sheader /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.h -server /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/macdll.build/Debug/macdll.build/DerivedSources/i386/MachExceptionsServer.c -I/Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/build/Debug/include -I/Library/Frameworks/Python.framework/Versions/2.4/include/python2.4 /Users/lwy08/Downloads/paimei-read-only/MacOSX/macdll/MachExceptions.defs
+

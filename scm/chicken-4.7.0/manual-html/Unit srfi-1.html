@@ -1,0 +1,491 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit srfi-1</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main"><h2 id="sec:Unit_srfi-1"><a href="#sec:Unit_srfi-1">Unit srfi-1</a></h2><p>SRFI 1 (list library) procedures.  A few procedures that can be found in R5RS, such as <tt>car</tt> and <tt>append</tt>, are omitted below.  For more information, see the <a href="http://srfi.schemers.org/srfi-1/srfi-1.html">original SRFI 1 document</a>.</p>
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_srfi-1">Unit srfi-1</a></li>
+<li><a href="#sec:The_procedures">The procedures</a>
+<ul>
+<li><a href="#sec:Constructors">Constructors</a></li>
+<li><a href="#sec:Predicates">Predicates</a></li>
+<li><a href="#sec:Selectors">Selectors</a></li>
+<li><a href="#sec:Miscellaneous">Miscellaneous</a></li>
+<li><a href="#sec:Fold.2c_unfold_.26_map">Fold, unfold &amp; map</a></li>
+<li><a href="#sec:Filtering_.26_partitioning">Filtering &amp; partitioning</a></li>
+<li><a href="#sec:Searching">Searching</a></li>
+<li><a href="#sec:Deletion">Deletion</a></li>
+<li><a href="#sec:Association_lists">Association lists</a></li>
+<li><a href="#sec:Set_operations_on_lists">Set operations on lists</a></li></ul></li></ul></div><h2 id="sec:The_procedures"><a href="#sec:The_procedures">The procedures</a></h2><p>The templates given below obey the following conventions for procedure formals:</p><table>
+<tr><th>LIST</th><td>A proper (finite, nil-terminated) list</td></tr>
+
+<tr><th>CLIST</th><td>A proper or circular list</td></tr>
+
+<tr><th>FLIST</th><td>A finite (proper or dotted) list</td></tr>
+
+<tr><th>PAIR</th><td>A pair</td></tr>
+
+<tr><th>X, Y, D, A</th><td>Any value</td></tr>
+
+<tr><th>OBJECT, VALUE</th><td>Any value</td></tr>
+
+<tr><th>N, I</th><td>A natural number (an integer &gt;= 0)</td></tr>
+
+<tr><th>PROC</th><td>A procedure</td></tr>
+
+<tr><th>PRED</th><td>A procedure whose return value is treated as a boolean</td></tr>
+
+<tr><th>=</th><td>A boolean procedure taking two arguments</td></tr>
+</table>
+<p>It is an error to pass a circular or dotted list to a procedure not defined to accept such an argument.</p><h3 id="sec:Constructors"><a href="#sec:Constructors">Constructors</a></h3><dl class="defsig"><dt class="defsig" id="def:xcons"><span class="sig"><tt>(xcons d a) -&gt; pair</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>(lambda (d a) (cons a d))</pre><p>Of utility only as a value to be conveniently passed to higher-order procedures.</p><pre>(xcons '(b c) 'a) =&gt; (a b c)</pre><p>The name stands for &quot;eXchanged CONS.&quot;</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:cons.2a"><span class="sig"><tt>(cons* elt_1 elt_2 ...) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Like <tt>list</tt>, but the last argument provides the tail of the constructed list, returning</p><p><tt> (cons ELT_1 (cons ELT_2 (cons ... ELT_N))) </tt></p><p>This function is called <tt>list*</tt> in Common Lisp and about half of the Schemes that provide it, and <tt>cons*</tt> in the other half.</p><pre>(cons* 1 2 3 4) =&gt; (1 2 3 . 4)
+(cons* 1) =&gt; 1</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:make-list"><span class="sig"><tt>(make-list n [fill]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns an N-element list, whose elements are all the value FILL. If the FILL argument is not given, the elements of the list may be arbitrary values.</p><pre>(make-list 4 'c) =&gt; (c c c c)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:list-tabulate"><span class="sig"><tt>(list-tabulate n init-proc) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns an N-element list. Element I of the list, where 0 &lt;= I &lt; N, is produced by <tt>(INIT-PROC I)</tt>. No guarantee is made about the dynamic order in which INIT-PROC is applied to these indices.</p><pre>(list-tabulate 4 values) =&gt; (0 1 2 3)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:list-copy"><span class="sig"><tt>(list-copy flist) -&gt; flist</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Copies the spine of the argument.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:circular-list"><span class="sig"><tt>(circular-list elt_1 elt_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Constructs a circular list of the elements.</p><pre>(circular-list 'z 'q) =&gt; (z q z q z q ...)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:iota"><span class="sig"><tt>(iota count [start step]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns a list containing the elements</p><pre>(START START+STEP ... START+(COUNT-1)*STEP)</pre><p>The START and STEP parameters default to 0 and 1, respectively. This procedure takes its name from the APL primitive.</p><pre>(iota 5) =&gt; (0 1 2 3 4)
+(iota 5 0 -0.1) =&gt; (0 -0.1 -0.2 -0.3 -0.4)</pre></dd>
+</dl>
+<h3 id="sec:Predicates"><a href="#sec:Predicates">Predicates</a></h3><p>Note: the predicates <tt>proper-list?</tt>, <tt>circular-list?</tt>, and <tt>dotted-list?</tt> partition the entire universe of Scheme values.</p><dl class="defsig"><dt class="defsig" id="def:proper-list.3f"><span class="sig"><tt>(proper-list? x) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns true iff X is a proper list -- a finite, nil-terminated list.</p><p>More carefully: The empty list is a proper list. A pair whose cdr is a proper list is also a proper list:</p><pre>&lt;proper-list&gt; ::= ()                            (Empty proper list)
+              |   (cons &lt;x&gt; &lt;proper-list&gt;)      (Proper-list pair)</pre><p>Note that this definition rules out circular lists. This function is required to detect this case and return false.</p><p>Nil-terminated lists are called &quot;proper&quot; lists by R5RS and Common Lisp. The opposite of proper is improper.</p><p>R5RS binds this function to the variable <tt>list?</tt>.</p><pre>(not (proper-list? X)) = (or (dotted-list? X) (circular-list? X))</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:circular-list.3f"><span class="sig"><tt>(circular-list? x) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>True if X is a circular list. A circular list is a value such that for every N &gt;= 0, cdr^N(X) is a pair.</p><p>Terminology: The opposite of circular is finite.</p><pre>(not (circular-list? X)) = (or (proper-list? X) (dotted-list? X))</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:dotted-list.3f"><span class="sig"><tt>(dotted-list? x) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>True if X is a finite, non-nil-terminated list. That is, there exists an N &gt;= 0 such that cdr^N(X) is neither a pair nor (). This includes non-pair, non-() values (<i>e.g.</i> symbols, numbers), which are considered to be dotted lists of length 0.</p><pre>(not (dotted-list? X)) = (or (proper-list? X) (circular-list? X))</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:null-list.3f"><span class="sig"><tt>(null-list? list) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>LIST is a proper or circular list. This procedure returns true if the argument is the empty list (), and false otherwise. It is an error to pass this procedure a value which is not a proper or circular list. This procedure is recommended as the termination condition for list-processing procedures that are not defined on dotted lists.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:not-pair.3f"><span class="sig"><tt>(not-pair? x) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>(lambda (x) (not (pair? x)))</pre><p>Provided as a procedure as it can be useful as the termination condition for list-processing procedures that wish to handle all finite lists, both proper and dotted.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:list.3d"><span class="sig"><tt>(list= elt= list_1 ...) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Determines list equality, given an element-equality procedure. Proper list A equals proper list B if they are of the same length, and their corresponding elements are equal, as determined by ELT=. If the element-comparison procedure's first argument is from LIST_I, then its second argument is from LIST_I+1, <i>i.e.</i> it is always called as <tt>(ELT= A B)</tt> for A an element of list A, and B an element of list B.</p><p>In the N-ary case, every LIST_I is compared to LIST_I+1 (as opposed, for example, to comparing LIST_1 to every LIST_I, for I&gt;1). If there are no list arguments at all, <tt>list=</tt> simply returns true.</p><p>It is an error to apply <tt>list=</tt> to anything except proper lists. While implementations may choose to extend it to circular lists, note that it cannot reasonably be extended to dotted lists, as it provides no way to specify an equality procedure for comparing the list terminators.</p><p>Note that the dynamic order in which the ELT= procedure is applied to pairs of elements is not specified. For example, if <tt>list=</tt> is applied to three lists, A, B, and C, it may first completely compare A to B, then compare B to C, or it may compare the first elements of A and B, then the first elements of B and C, then the second elements of A and B, and so forth.</p><p>The equality procedure must be consistent with <tt>eq?</tt>. That is, it must be the case that</p><p><tt>(eq? X Y)</tt> =&gt; <tt>(ELT= X Y)</tt>.</p><p>Note that this implies that two lists which are <tt>eq?</tt> are always LIST=, as well; implementations may exploit this fact to &quot;short-cut&quot; the element-by-element comparisons.</p><pre>(list= eq?) =&gt; #t       ; Trivial cases
+(list= eq? '(a)) =&gt; #t</pre></dd>
+</dl>
+<h3 id="sec:Selectors"><a href="#sec:Selectors">Selectors</a></h3><dl class="defsig"><dt class="defsig" id="def:first"><span class="sig"><tt>(first pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:second"><span class="sig"><tt>(second pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:third"><span class="sig"><tt>(third pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:fourth"><span class="sig"><tt>(fourth pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:fifth"><span class="sig"><tt>(fifth pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:sixth"><span class="sig"><tt>(sixth pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:seventh"><span class="sig"><tt>(seventh pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:eighth"><span class="sig"><tt>(eighth pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:ninth"><span class="sig"><tt>(ninth pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:tenth"><span class="sig"><tt>(tenth pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Synonyms for <tt>car</tt>, <tt>cadr</tt>, <tt>caddr</tt>, ...</p><pre>(third '(a b c d e)) =&gt; c</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:car.2bcdr"><span class="sig"><tt>(car+cdr pair) -&gt; [x y]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The fundamental pair deconstructor:</p><pre>(lambda (p) (values (car p) (cdr p)))</pre><p>This can, of course, be implemented more efficiently by a compiler.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:take"><span class="sig"><tt>(take x i) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:drop"><span class="sig"><tt>(drop x i) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>take</tt> returns the first I elements of list X. <tt>drop</tt> returns all but the first I elements of list X.</p><pre>(take '(a b c d e)  2) =&gt; (a b)
+(drop '(a b c d e)  2) =&gt; (c d e)</pre><p>X may be any value -- a proper, circular, or dotted list:</p><pre>(take '(1 2 3 . d) 2) =&gt; (1 2)
+(drop '(1 2 3 . d) 2) =&gt; (3 . d)
+(take '(1 2 3 . d) 3) =&gt; (1 2 3)
+(drop '(1 2 3 . d) 3) =&gt; d</pre><p>For a legal I, <tt>take</tt> and <tt>drop</tt> partition the list in a manner which can be inverted with <tt>append</tt>:</p><pre>(append (take X I) (drop X I)) = X</pre><p><tt>drop</tt> is exactly equivalent to performing I cdr operations on X; the returned value shares a common tail with X. If the argument is a list of non-zero length, <tt>take</tt> is guaranteed to return a freshly-allocated list, even in the case where the entire list is taken, <i>e.g.</i> <tt>(take lis (length lis))</tt>.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:take-right"><span class="sig"><tt>(take-right flist i) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:drop-right"><span class="sig"><tt>(drop-right flist i) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>take-right</tt> returns the last I elements of FLIST. <tt>drop-right</tt> returns all but the last I elements of FLIST.</p><pre>(take-right '(a b c d e) 2) =&gt; (d e)
+(drop-right '(a b c d e) 2) =&gt; (a b c)</pre><p>The returned list may share a common tail with the argument list.</p><p>FLIST may be any finite list, either proper or dotted:</p><pre>(take-right '(1 2 3 . d) 2) =&gt; (2 3 . d)
+(drop-right '(1 2 3 . d) 2) =&gt; (1)
+(take-right '(1 2 3 . d) 0) =&gt; d
+(drop-right '(1 2 3 . d) 0) =&gt; (1 2 3)</pre><p>For a legal I, <tt>take-right</tt> and <tt>drop-right</tt> partition the list in a manner which can be inverted with <tt>append</tt>:</p><pre>(append (take FLIST I) (drop FLIST I)) = FLIST</pre><p><tt>take-right</tt>'s return value is guaranteed to share a common tail with FLIST. If the argument is a list of non-zero length, <tt>drop-right</tt> is guaranteed to return a freshly-allocated list, even in the case where nothing is dropped, <i>e.g.</i> <tt>(drop-right lis 0)</tt>.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:take.21"><span class="sig"><tt>(take! x i) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:drop-right.21"><span class="sig"><tt>(drop-right! flist i) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>take!</tt> and <tt>drop-right!</tt> are &quot;linear-update&quot; variants of <tt>take</tt> and <tt>drop-right</tt>: the procedure is allowed, but not required, to alter the argument list to produce the result.</p><p>If X is circular, <tt>take!</tt> may return a shorter-than-expected list:</p><pre>(take! (circular-list 1 3 5) 8) =&gt; (1 3)
+(take! (circular-list 1 3 5) 8) =&gt; (1 3 5 1 3 5 1 3)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:split-at"><span class="sig"><tt>(split-at x i) -&gt; [list object]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:split-at.21"><span class="sig"><tt>(split-at! x i) -&gt; [list object]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>split-at</tt> splits the list X at index I, returning a list of the first I elements, and the remaining tail. It is equivalent to</p><pre>(values (take x i) (drop x i))</pre><p><tt>split-at!</tt> is the linear-update variant. It is allowed, but not required, to alter the argument list to produce the result.</p><pre>(split-at '(a b c d e f g h) 3) =&gt;
+    (a b c)
+    (d e f g h)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:last"><span class="sig"><tt>(last pair) -&gt; object</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:last-pair"><span class="sig"><tt>(last-pair pair) -&gt; pair</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>last</tt> returns the last element of the non-empty, finite list PAIR. <tt>last-pair</tt> returns the last pair in the non-empty, finite list PAIR.</p><pre>(last '(a b c)) =&gt; c
+(last-pair '(a b c)) =&gt; (c)</pre></dd>
+</dl>
+<h3 id="sec:Miscellaneous"><a href="#sec:Miscellaneous">Miscellaneous</a></h3><dl class="defsig"><dt class="defsig" id="def:length.2b"><span class="sig"><tt>(length+ clist) -&gt; integer or #f</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Both <tt>length</tt> and <tt>length+</tt> return the length of the argument. It is an error to pass a value to <tt>length</tt> which is not a proper list (finite and nil-terminated). In particular, this means an implementation may diverge or signal an error when <tt>length</tt> is applied to a circular list.</p><p><tt>length+</tt>, on the other hand, returns <tt>#F</tt> when applied to a circular list.</p><p>The length of a proper list is a non-negative integer N such that <tt>cdr</tt> applied N times to the list produces the empty list.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:append.21"><span class="sig"><tt>(append! list_1 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>append!</tt> is the &quot;linear-update&quot; variant of <tt>append</tt> -- it is allowed, but not required, to alter cons cells in the argument lists to construct the result list. The last argument is never altered; the result list shares structure with this parameter.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:concatenate"><span class="sig"><tt>(concatenate list-of-lists) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:concatenate.21"><span class="sig"><tt>(concatenate! list-of-lists) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>These functions append the elements of their argument together. That is, <tt>concatenate</tt> returns</p><pre>(apply append list-of-lists)</pre><p>or, equivalently,</p><pre>(reduce-right append '() list-of-lists)</pre><p><tt>concatenate!</tt> is the linear-update variant, defined in terms of <tt>append!</tt> instead of <tt>append</tt>.</p><p>Note that some Scheme implementations do not support passing more than a certain number (<i>e.g.</i>, 64) of arguments to an n-ary procedure. In these implementations, the <tt>(apply append ...)</tt> idiom would fail when applied to long lists, but <tt>concatenate</tt> would continue to function properly.</p><p>As with <tt>append</tt> and <tt>append!</tt>, the last element of the input list may be any value at all.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:reverse.21"><span class="sig"><tt>(reverse! list) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>reverse!</tt> is the linear-update variant of <tt>reverse</tt>. It is permitted, but not required, to alter the argument's cons cells to produce the reversed list.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:append-reverse"><span class="sig"><tt>(append-reverse rev-head tail) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:append-reverse.21"><span class="sig"><tt>(append-reverse! rev-head tail) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>append-reverse</tt> returns <tt>(append (reverse REV-HEAD) TAIL)</tt>. It is provided because it is a common operation -- a common list-processing style calls for this exact operation to transfer values accumulated in reverse order onto the front of another list, and because the implementation is significantly more efficient than the simple composition it replaces. (But note that this pattern of iterative computation followed by a reverse can frequently be rewritten as a recursion, dispensing with the <tt>reverse</tt> and <tt>append-reverse</tt> steps, and shifting temporary, intermediate storage from the heap to the stack, which is typically a win for reasons of cache locality and eager storage reclamation.)</p><p><tt>append-reverse!</tt> is just the linear-update variant -- it is allowed, but not required, to alter REV-HEAD's cons cells to construct the result.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:zip"><span class="sig"><tt>(zip clist_1 clist_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>(lambda lists (apply map list lists))</pre><p>If <tt>zip</tt> is passed N lists, it returns a list as long as the shortest of these lists, each element of which is an N-element list comprised of the corresponding elements from the parameter lists.</p><pre>(zip '(one two three) 
+     '(1 2 3)
+     '(odd even odd even odd even odd even))
+    =&gt; ((one 1 odd) (two 2 even) (three 3 odd))
+ 
+(zip '(1 2 3)) =&gt; ((1) (2) (3))</pre><p>At least one of the argument lists must be finite:</p><pre>(zip '(3 1 4 1) (circular-list #f #t)) 
+    =&gt; ((3 #f) (1 #t) (4 #f) (1 #t))</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:unzip1"><span class="sig"><tt>(unzip1 list) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:unzip2"><span class="sig"><tt>(unzip2 list) -&gt; [list list]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:unzip3"><span class="sig"><tt>(unzip3 list) -&gt; [list list list]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:unzip4"><span class="sig"><tt>(unzip4 list) -&gt; [list list list list]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:unzip5"><span class="sig"><tt>(unzip5 list) -&gt; [list list list list list]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>unzip1</tt> takes a list of lists, where every list must contain at least one element, and returns a list containing the initial element of each such list. That is, it returns <tt>(map car lists)</tt>. <tt>unzip2</tt> takes a list of lists, where every list must contain at least two elements, and returns two values: a list of the first elements, and a list of the second elements. <tt>unzip3</tt> does the same for the first three elements of the lists, and so forth.</p><pre>(unzip2 '((1 one) (2 two) (3 three))) =&gt;
+    (1 2 3) 
+    (one two three)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:count"><span class="sig"><tt>(count pred clist_1 clist_2) -&gt; integer</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>PRED is a procedure taking as many arguments as there are lists and returning a single value. It is applied element-wise to the elements of the LISTs, and a count is tallied of the number of elements that produce a true value. This count is returned. <tt>count</tt> is &quot;iterative&quot; in that it is guaranteed to apply PRED to the LIST elements in a left-to-right order. The counting stops when the shortest list expires.</p><pre>(count even? '(3 1 4 1 5 9 2 5 6)) =&gt; 3
+(count &lt; '(1 2 4 8) '(2 4 6 8 10 12 14 16)) =&gt; 3</pre><p>At least one of the argument lists must be finite:</p><pre>(count &lt; '(3 1 4 1) (circular-list 1 10)) =&gt; 2</pre></dd>
+</dl>
+<h3 id="sec:Fold.2c_unfold_.26_map"><a href="#sec:Fold.2c_unfold_.26_map">Fold, unfold &amp; map</a></h3><dl class="defsig"><dt class="defsig" id="def:fold"><span class="sig"><tt>(fold kons knil clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The fundamental list iterator.</p><p>First, consider the single list-parameter case. If CLIST_1 = (E_1 E_2 ... E_N), then this procedure returns</p><p><tt>(KONS E_N ... (KONS E_2 (KONS E_1 KNIL)) ... )</tt></p><p>That is, it obeys the (tail) recursion</p><pre>(fold KONS KNIL LIS) = (fold KONS (KONS (car LIS) KNIL) (cdr LIS))
+(fold KONS KNIL '()) = KNIL</pre><p>Examples:</p><pre>(fold + 0 lis)			; Add up the elements of LIS.
+ 
+(fold cons '() lis)		; Reverse LIS.
+ 
+(fold cons tail rev-head)	; See APPEND-REVERSE.
+ 
+;; How many symbols in LIS?
+(fold (lambda (x count) (if (symbol? x) (+ count 1) count))
+      0
+      lis)
+ 
+;; Length of the longest string in LIS:
+(fold (lambda (s max-len) (max max-len (string-length s)))
+      0
+      lis)</pre><p>If N list arguments are provided, then the KONS function must take N+1 parameters: one element from each list, and the &quot;seed&quot; or fold state, which is initially KNIL. The fold operation terminates when the shortest list runs out of values:</p><pre>(fold cons* '() '(a b c) '(1 2 3 4 5)) =&gt; (c 3 b 2 a 1)</pre><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:fold-right"><span class="sig"><tt>(fold-right kons knil clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>The fundamental list recursion operator.</p><p>First, consider the single list-parameter case. If CLIST_1 = <tt>(E_1 E_2 ... E_N)</tt>, then this procedure returns</p><p><tt> (KONS E_1 (KONS E_2 ... (KONS E_N KNIL))) </tt></p><p>That is, it obeys the recursion</p><pre>(fold-right KONS KNIL LIS) = (KONS (car LIS) (fold-right KONS KNIL (cdr LIS)))
+(fold-right KONS KNIL '()) = KNIL</pre><p>Examples:</p><pre>(fold-right cons '() lis)		; Copy LIS.
+ 
+;; Filter the even numbers out of LIS.
+(fold-right (lambda (x l) (if (even? x) (cons x l) l)) '() lis))</pre><p>If N list arguments are provided, then the KONS function must take N+1 parameters: one element from each list, and the &quot;seed&quot; or fold state, which is initially KNIL. The fold operation terminates when the shortest list runs out of values:</p><pre>(fold-right cons* '() '(a b c) '(1 2 3 4 5)) =&gt; (a 1 b 2 c 3)</pre><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:pair-fold"><span class="sig"><tt>(pair-fold kons knil clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Analogous to <tt>fold</tt>, but KONS is applied to successive sublists of the lists, rather than successive elements -- that is, KONS is applied to the pairs making up the lists, giving this (tail) recursion:</p><pre>(pair-fold KONS KNIL LIS) = (let ((tail (cdr LIS)))
+                              (pair-fold KONS (KONS LIS KNIL) tail))
+(pair-fold KONS KNIL {{'()}}) = KNIL</pre><p>For finite lists, the KONS function may reliably apply <tt>set-cdr!</tt> to the pairs it is given without altering the sequence of execution.</p><p>Example:</p><pre>;;; Destructively reverse a list.
+(pair-fold (lambda (pair tail) (set-cdr! pair tail) pair) '() lis))</pre><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:pair-fold-right"><span class="sig"><tt>(pair-fold-right kons knil clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Holds the same relationship with <tt>fold-right</tt> that <tt>pair-fold</tt> holds with <tt>fold</tt>. Obeys the recursion</p><pre>(pair-fold-right KONS KNIL LIS) = 
+    (KONS LIS (pair-fold-right KONS KNIL (cdr LIS)))
+(pair-fold-right KONS KNIL {{'()}}) = KNIL</pre><p>Example:</p><pre>(pair-fold-right cons '() '(a b c)) =&gt; ((a b c) (b c) (c))</pre><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:reduce"><span class="sig"><tt>(reduce f ridentity list) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>reduce</tt> is a variant of <tt>fold</tt>.</p><p>RIDENTITY should be a &quot;right identity&quot; of the procedure F -- that is, for any value X acceptable to F,</p><pre>(F X RIDENTITY) = X</pre><p><tt>reduce</tt> has the following definition:</p><p>If LIST = (), return RIDENTITY; Otherwise, return <tt>(fold F (car LIST) (cdr LIST))</tt>.</p><p>...in other words, we compute <tt>(fold F RIDENTITY LIST)</tt>.</p><p>Note that RIDENTITY is used <i>only</i> in the empty-list case. You typically use <tt>reduce</tt> when applying F is expensive and you'd like to avoid the extra application incurred when <tt>fold</tt> applies F to the head of LIST and the identity value, redundantly producing the same value passed in to F. For example, if F involves searching a file directory or performing a database query, this can be significant. In general, however, <tt>fold</tt> is useful in many contexts where <tt>reduce</tt> is not (consider the examples given in the <tt>fold</tt> definition -- only one of the five folds uses a function with a right identity. The other four may not be performed with <tt>reduce</tt>).</p><p>Note: MIT Scheme and Haskell flip F's arg order for their <tt>reduce</tt> and <tt>fold</tt> functions.</p><pre>;; Take the max of a list of non-negative integers.
+(reduce max 0 nums) ; i.e., (apply max 0 nums)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:reduce-right"><span class="sig"><tt>(reduce-right f ridentity list) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>reduce-right</tt> is the fold-right variant of <tt>reduce</tt>. It obeys the following definition:</p><pre>(reduce-right F RIDENTITY '()) = RIDENTITY
+(reduce-right F RIDENTITY '(E_1)) = (F E_1 RIDENTITY) = E_1
+ 
+(reduce-right F RIDENTITY '(E_1 E_2 ...)) =
+    (F E_1 (reduce F RIDENTITY (E_2 ...)))</pre><p>...in other words, we compute <tt>(fold-right F RIDENTITY LIST)</tt>.</p><pre>;; Append a bunch of lists together.
+;; I.e., (apply append list-of-lists)
+(reduce-right append '() list-of-lists)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:unfold"><span class="sig"><tt>(unfold p f g seed [tail-gen]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>unfold</tt> is best described by its basic recursion:</p><pre>(unfold P F G SEED) = 
+    (if (P SEED) (TAIL-GEN SEED)
+        (cons (F SEED)
+              (unfold P F G (G SEED))))</pre><dl><dt>P</dt>
+<dd>Determines when to stop unfolding.</dd><dt>F</dt>
+<dd>Maps each seed value to the corresponding list element.</dd><dt>G</dt>
+<dd>Maps each seed value to next seed value.</dd><dt>SEED</dt>
+<dd>The &quot;state&quot; value for the unfold.</dd><dt>TAIL-GEN</dt>
+<dd>Creates the tail of the list; defaults to <tt>(lambda (x) '())</tt></dd></dl>
+<p>In other words, we use G to generate a sequence of seed values</p><p>SEED, G(SEED), G^2(SEED), G^3(SEED), ...</p><p>These seed values are mapped to list elements by F, producing the elements of the result list in a left-to-right order. P says when to stop.</p><p><tt>unfold</tt> is the fundamental recursive list constructor, just as <tt>fold-right</tt> is the fundamental recursive list consumer. While <tt>unfold</tt> may seem a bit abstract to novice functional programmers, it can be used in a number of ways:</p><pre>;; List of squares: 1^2 ... 10^2
+(unfold (lambda (x) (&gt; x 10))
+        (lambda (x) (* x x))
+	(lambda (x) (+ x 1))
+	1)
+		
+(unfold null-list? car cdr lis) ; Copy a proper list.
+ 
+;; Read current input port into a list of values.
+(unfold eof-object? values (lambda (x) (read)) (read))
+ 
+;; Copy a possibly non-proper list:
+(unfold not-pair? car cdr lis 
+              values)
+ 
+;; Append HEAD onto TAIL:
+(unfold null-list? car cdr head 
+              (lambda (x) tail))</pre><p>Interested functional programmers may enjoy noting that <tt>fold-right</tt> and <tt>unfold</tt> are in some sense inverses. That is, given operations KNULL?, KAR, KDR, KONS, and KNIL satisfying</p><p><tt>(KONS (KAR X) (KDR X))</tt> = <tt>x</tt> and <tt>(KNULL? KNIL)</tt> = <tt>#t</tt></p><p>then</p><p><tt>(fold-right KONS KNIL (unfold KNULL? KAR KDR X))</tt> = X</p><p>and</p><p><tt>(unfold KNULL? KAR KDR (fold-right KONS KNIL X))</tt> = X.</p><p>This combinator sometimes is called an &quot;anamorphism;&quot; when an explicit TAIL-GEN procedure is supplied, it is called an &quot;apomorphism.&quot;</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:unfold-right"><span class="sig"><tt>(unfold-right p f g seed [tail]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>unfold-right</tt> constructs a list with the following loop:</p><pre>(let lp ((seed seed) (lis tail))
+  (if (p seed) lis
+      (lp (g seed)
+          (cons (f seed) lis))))</pre><dl><dt>P</dt>
+<dd>Determines when to stop unfolding.</dd><dt>F</dt>
+<dd>Maps each seed value to the corresponding list element.</dd><dt>G</dt>
+<dd>Maps each seed value to next seed value.</dd><dt>SEED</dt>
+<dd>The &quot;state&quot; value for the unfold.</dd><dt>TAIL</dt>
+<dd>list terminator; defaults to <tt>'()</tt>.</dd></dl>
+<p>In other words, we use G to generate a sequence of seed values</p><p>SEED, G(SEED), G^2(SEED), G^3(SEED), ...</p><p>These seed values are mapped to list elements by F, producing the elements of the result list in a right-to-left order. P says when to stop.</p><p><tt>unfold-right</tt> is the fundamental iterative list constructor, just as <tt>fold</tt> is the fundamental iterative list consumer. While <tt>unfold-right</tt> may seem a bit abstract to novice functional programmers, it can be used in a number of ways:</p><pre>;; List of squares: 1^2 ... 10^2
+(unfold-right zero? 
+              (lambda (x) (* x x))
+              (lambda (x) (- x 1))
+              10)
+	
+;; Reverse a proper list.
+(unfold-right null-list? car cdr lis)
+ 
+;; Read current input port into a list of values.
+(unfold-right eof-object? values (lambda (x) (read)) (read))
+ 
+;; (append-reverse rev-head tail)
+(unfold-right null-list? car cdr rev-head tail)</pre><p>Interested functional programmers may enjoy noting that <tt>fold</tt> and <tt>unfold-right</tt> are in some sense inverses. That is, given operations KNULL?, KAR, KDR, KONS, and KNIL satisfying</p><p><tt>(KONS (KAR X) (KDR X))</tt> = <tt>x</tt> and <tt>(KNULL? KNIL)</tt> = <tt>#t</tt></p><p>then</p><p><tt>(fold KONS KNIL (unfold-right KNULL? KAR KDR X))</tt> = X</p><p>and</p><p><tt>(unfold-right KNULL? KAR KDR (fold KONS KNIL X))</tt> = X.</p><p>This combinator presumably has some pretentious mathematical name; interested readers are invited to communicate it to the author.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:map"><span class="sig"><tt>(map proc clist_1 clist_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This procedure is extended from its R5RS specification to allow the arguments to be of unequal length; it terminates when the shortest list runs out.</p><p>At least one of the argument lists must be finite:</p><pre>(map + '(3 1 4 1) (circular-list 1 0)) =&gt; (4 1 5 1)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:for-each"><span class="sig"><tt>(for-each proc clist_1 clist_2 ...) -&gt; unspecified</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>This procedure is extended from its R5RS specification to allow the arguments to be of unequal length; it terminates when the shortest list runs out.</p><p>At least one of the argument lists must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:append-map"><span class="sig"><tt>(append-map f clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:append-map.21"><span class="sig"><tt>(append-map! f clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Equivalent to</p><p><tt> (apply append (map F CLIST_1 CLIST_2 ...)) </tt></p><p>and</p><p><tt> (apply append! (map F CLIST_1 CLIST_2 ...)) </tt></p><p>Map F over the elements of the lists, just as in the <tt>map</tt> function. However, the results of the applications are appended together to make the final result. <tt>append-map</tt> uses <tt>append</tt> to append the results together; <tt>append-map!</tt> uses <tt>append!</tt>.</p><p>The dynamic order in which the various applications of F are made is not specified.</p><p>Example:</p><pre>(append-map! (lambda (x) (list x (- x))) '(1 3 8))
+    =&gt; (1 -1 3 -3 8 -8)</pre><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:map.21"><span class="sig"><tt>(map! f list_1 clist_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Linear-update variant of <tt>map</tt> -- <tt>map!</tt> is allowed, but not required, to alter the cons cells of LIST_1 to construct the result list.</p><p>The dynamic order in which the various applications of F are made is not specified. In the n-ary case, CLIST_2, CLIST_3, ... must have at least as many elements as LIST_1.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:map-in-order"><span class="sig"><tt>(map-in-order f) clist_1 clist_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>A variant of the <tt>map</tt> procedure that guarantees to apply F across the elements of the LIST_I arguments in a left-to-right order. This is useful for mapping procedures that both have side effects and return useful values.</p><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:pair-for-each"><span class="sig"><tt>(pair-for-each f clist_1 clist_2 ...) -&gt; unspecific</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Like <tt>for-each</tt>, but F is applied to successive sublists of the argument lists. That is, F is applied to the cons cells of the lists, rather than the lists' elements. These applications occur in left-to-right order.</p><p>The F procedure may reliably apply <tt>set-cdr!</tt> to the pairs it is given without altering the sequence of execution.</p><pre>(pair-for-each (lambda (pair) (display pair) (newline)) '(a b c)) ==&gt;
+    (a b c)
+    (b c)
+    (c)</pre><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:filter-map"><span class="sig"><tt>(filter-map f clist_1 clist_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Like <tt>map</tt>, but only true values are saved.</p><pre>(filter-map (lambda (x) (and (number? x) (* x x))) '(a 1 b 3 c 7))
+    =&gt; (1 9 49)</pre><p>The dynamic order in which the various applications of F are made is not specified.</p><p>At least one of the list arguments must be finite.</p></dd>
+</dl>
+<h3 id="sec:Filtering_.26_partitioning"><a href="#sec:Filtering_.26_partitioning">Filtering &amp; partitioning</a></h3><dl class="defsig"><dt class="defsig" id="def:filter"><span class="sig"><tt>(filter pred list) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return all the elements of LIST that satisfy predicate PRED. The list is not disordered -- elements that appear in the result list occur in the same order as they occur in the argument list. The returned list may share a common tail with the argument list. The dynamic order in which the various applications of PRED are made is not specified.</p><pre>(filter even? '(0 7 8 8 43 -4)) =&gt; (0 8 8 -4)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:partition"><span class="sig"><tt>(partition pred list) -&gt; [list list]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Partitions the elements of LIST with predicate PRED, and returns two values: the list of in-elements and the list of out-elements. The list is not disordered -- elements occur in the result lists in the same order as they occur in the argument list. The dynamic order in which the various applications of PRED are made is not specified. One of the returned lists may share a common tail with the argument list.</p><pre>(partition symbol? '(one 2 3 four five 6)) =&gt; 
+    (one four five)
+    (2 3 6)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:remove"><span class="sig"><tt>(remove pred list) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns LIST without the elements that satisfy predicate PRED:</p><pre>(lambda (pred list) (filter (lambda (x) (not (pred x))) list))</pre><p>The list is not disordered -- elements that appear in the result list occur in the same order as they occur in the argument list. The returned list may share a common tail with the argument list. The dynamic order in which the various applications of PRED are made is not specified.</p><pre>(remove even? '(0 7 8 8 43 -4)) =&gt; (7 43)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:filter.21"><span class="sig"><tt>(filter! pred list) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:partition.21"><span class="sig"><tt>(partition! pred list) -&gt; [list list]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:remove.21"><span class="sig"><tt>(remove! pred list) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Linear-update variants of <tt>filter</tt>, <tt>partition</tt> and <tt>remove</tt>. These procedures are allowed, but not required, to alter the cons cells in the argument list to construct the result lists.</p></dd>
+</dl>
+<h3 id="sec:Searching"><a href="#sec:Searching">Searching</a></h3><p>The following procedures all search lists for a leftmost element satisfying some criteria. This means they do not always examine the entire list; thus, there is no efficient way for them to reliably detect and signal an error when passed a dotted or circular list. Here are the general rules describing how these procedures work when applied to different kinds of lists:</p><dl><dt>Proper lists</dt>
+<dd>The standard, canonical behavior happens in this case.</dd><dt>Dotted lists</dt>
+<dd>It is an error to pass these procedures a dotted list that does not contain an element satisfying the search criteria. That is, it is an error if the procedure has to search all the way to the end of the dotted list. However, this SRFI does <i>not</i> specify anything at all about the behavior of these procedures when passed a dotted list containing an element satisfying the search criteria. It may finish successfully, signal an error, or perform some third action. Different implementations may provide different functionality in this case; code which is compliant with this SRFI may not rely on any particular behavior. Future SRFI's may refine SRFI-1 to define specific behavior in this case. In brief, SRFI-1 compliant code may not pass a dotted list argument to these procedures.</dd><dt>Circular lists</dt>
+<dd>It is an error to pass these procedures a circular list that does not contain an element satisfying the search criteria. Note that the procedure is not required to detect this case; it may simply diverge. It is, however, acceptable to search a circular list <i>if the search is successful</i> -- that is, if the list contains an element satisfying the search criteria.</dd></dl>
+<p>Here are some examples, using the <tt>find</tt> and <tt>any</tt> procedures as canonical representatives:</p><pre>;; Proper list -- success
+(find even? '(1 2 3))	=&gt; 2
+(any  even? '(1 2 3))	=&gt; #t
+ 
+;; proper list -- failure
+(find even? '(1 7 3))	=&gt; #f
+(any  even? '(1 7 3))	=&gt; #f
+ 
+;; Failure is error on a dotted list.
+(find even? '(1 3 . x))	=&gt; error
+(any  even? '(1 3 . x))	=&gt; error
+ 
+;; The dotted list contains an element satisfying the search.
+;; This case is not specified -- it could be success, an error, 
+;; or some third possibility.
+(find even? '(1 2 . x))	=&gt; error/undefined
+(any  even? '(1 2 . x))	=&gt; error/undefined ; success, error or other.
+ 
+;; circular list -- success
+(find even? (circular-list 1 6 3)) =&gt; 6
+(any  even? (circular-list 1 6 3)) =&gt; #t
+ 
+;; circular list -- failure is error. Procedure may diverge.
+(find even? (circular-list 1 3)) =&gt; error
+(any  even? (circular-list 1 3)) =&gt; error</pre><dl class="defsig"><dt class="defsig" id="def:find"><span class="sig"><tt>(find pred clist) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return the first element of CLIST that satisfies predicate PRED; false if no element does.</p><pre>(find even? '(3 1 4 1 5 9)) =&gt; 4</pre><p>Note that <tt>find</tt> has an ambiguity in its lookup semantics -- if <tt>find</tt> returns <tt>#f</tt>, you cannot tell (in general) if it found a <tt>#f</tt> element that satisfied PRED, or if it did not find any element at all. In many situations, this ambiguity cannot arise -- either the list being searched is known not to contain any <tt>#f</tt> elements, or the list is guaranteed to have an element satisfying PRED. However, in cases where this ambiguity can arise, you should use <tt>find-tail</tt> instead of <tt>find</tt> -- <tt>find-tail</tt> has no such ambiguity:</p><pre>(cond ((find-tail pred lis) =&gt; (lambda (pair) ...)) ; Handle (CAR PAIR)
+      (else ...)) ; Search failed.</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:find-tail"><span class="sig"><tt>(find-tail pred clist) -&gt; pair or false</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return the first pair of CLIST whose car satisfies PRED. If no pair does, return false.</p><p><tt>find-tail</tt> can be viewed as a general-predicate variant of the <tt>member</tt> function.</p><p>Examples:</p><pre>(find-tail even? '(3 1 37 -8 -5 0 0)) =&gt; (-8 -5 0 0)
+(find-tail even? '(3 1 37 -5)) =&gt; #f
+ 
+;; MEMBER X LIS:
+(find-tail (lambda (elt) (equal? x elt)) lis)</pre><p>In the circular-list case, this procedure &quot;rotates&quot; the list.</p><p><tt>Find-tail</tt> is essentially <tt>drop-while</tt>, where the sense of the predicate is inverted: <tt>Find-tail</tt> searches until it finds an element satisfying the predicate; <tt>drop-while</tt> searches until it finds an element that <i>doesn't</i> satisfy the predicate.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:take-while"><span class="sig"><tt>(take-while pred clist) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:take-while.21"><span class="sig"><tt>(take-while! pred clist) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the longest initial prefix of CLIST whose elements all satisfy the predicate PRED.</p><p><tt>Take-while!</tt> is the linear-update variant. It is allowed, but not required, to alter the argument list to produce the result.</p><pre>(take-while even? '(2 18 3 10 22 9)) =&gt; (2 18)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:drop-while"><span class="sig"><tt>(drop-while pred clist) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Drops the longest initial prefix of CLIST whose elements all satisfy the predicate PRED, and returns the rest of the list.</p><pre>(drop-while even? '(2 18 3 10 22 9)) =&gt; (3 10 22 9)</pre><p>The circular-list case may be viewed as &quot;rotating&quot; the list.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:span"><span class="sig"><tt>(span pred clist) -&gt; [list clist]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:span.21"><span class="sig"><tt>(span! pred list) -&gt; [list list]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:break"><span class="sig"><tt>(break pred clist) -&gt; [list clist]</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:break.21"><span class="sig"><tt>(break! pred list) -&gt; [list list]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>Span</tt> splits the list into the longest initial prefix whose elements all satisfy PRED, and the remaining tail. <tt>Break</tt> inverts the sense of the predicate: the tail commences with the first element of the input list that satisfies the predicate.</p><p>In other words: <tt>span</tt> finds the intial span of elements satisfying PRED, and <tt>break</tt> breaks the list at the first element satisfying PRED.</p><p><tt>Span</tt> is equivalent to</p><pre>(values (take-while PRED CLIST) 
+        (drop-while PRED CLIST))</pre><p><tt>Span!</tt> and <tt>break!</tt> are the linear-update variants. They are allowed, but not required, to alter the argument list to produce the result.</p><pre>(span even? '(2 18 3 10 22 9)) =&gt;
+  (2 18)
+  (3 10 22 9)
+ 
+(break even? '(3 1 4 1 5 9)) =&gt;
+  (3 1)
+  (4 1 5 9)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:any"><span class="sig"><tt>(any pred clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Applies the predicate across the lists, returning true if the predicate returns true on any application.</p><p>If there are N list arguments CLIST_1 ... CLIST_N, then PRED must be a procedure taking N arguments and returning a boolean result.</p><p><tt>any</tt> applies PRED to the first elements of the CLIST_I parameters. If this application returns a true value, <tt>any</tt> immediately returns that value. Otherwise, it iterates, applying PRED to the second elements of the CLIST_I parameters, then the third, and so forth. The iteration stops when a true value is produced or one of the lists runs out of values; in the latter case, <tt>any</tt> returns <tt>#f</tt>. The application of PRED to the last element of the lists is a tail call.</p><p>Note the difference between <tt>find</tt> and <tt>any</tt> -- <tt>find</tt> returns the element that satisfied the predicate; <tt>any</tt> returns the true value that the predicate produced.</p><p>Like <tt>every</tt>, <tt>any</tt>'s name does not end with a question mark -- this is to indicate that it does not return a simple boolean (<tt>#t</tt> or <tt>#f</tt>), but a general value.</p><pre>(any integer? '(a 3 b 2.7))   =&gt; #t
+(any integer? '(a 3.1 b 2.7)) =&gt; #f
+(any &lt; '(3 1 4 1 5)
+       '(2 7 1 8 2)) =&gt; #t</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:every"><span class="sig"><tt>(every pred clist_1 clist_2 ...) -&gt; value</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Applies the predicate across the lists, returning true if the predicate returns true on every application.</p><p>If there are N list arguments CLIST_1 ... CLIST_N, then PRED must be a procedure taking N arguments and returning a boolean result.</p><p><tt>every</tt> applies PRED to the first elements of the CLIST_I parameters. If this application returns false, <tt>every</tt> immediately returns false. Otherwise, it iterates, applying PRED to the second elements of the CLIST_I parameters, then the third, and so forth. The iteration stops when a false value is produced or one of the lists runs out of values. In the latter case, <tt>every</tt> returns the true value produced by its final application of PRED. The application of PRED to the last element of the lists is a tail call.</p><p>If one of the CLIST_I has no elements, <tt>every</tt> simply returns <tt>#t</tt>.</p><p>Like <tt>any</tt>, <tt>every</tt>'s name does not end with a question mark -- this is to indicate that it does not return a simple boolean (<tt>#t</tt> or <tt>#f</tt>), but a general value.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:list-index"><span class="sig"><tt>(list-index pred clist_1 clist_2 ...) -&gt; integer or false</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Return the index of the leftmost element that satisfies PRED.</p><p>If there are N list arguments CLIST_1 ... CLIST_N, then PRED must be a function taking N arguments and returning a boolean result.</p><p><tt>list-index</tt> applies PRED to the first elements of the CLIST_I parameters. If this application returns true, <tt>list-index</tt> immediately returns zero. Otherwise, it iterates, applying PRED to the second elements of the CLIST_I parameters, then the third, and so forth. When it finds a tuple of list elements that cause PRED to return true, it stops and returns the zero-based index of that position in the lists.</p><p>The iteration stops when one of the lists runs out of values; in this case, <tt>list-index</tt> returns <tt>#f</tt>.</p><pre>(list-index even? '(3 1 4 1 5 9)) =&gt; 2
+(list-index &lt; '(3 1 4 1 5 9 2 5 6) '(2 7 1 8 2)) =&gt; 1
+(list-index = '(3 1 4 1 5 9 2 5 6) '(2 7 1 8 2)) =&gt; #f</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:member"><span class="sig"><tt>(member x list [=]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>member</tt> is extended from its R5RS definition to allow the client to pass in an optional equality procedure = used to compare keys.</p><p>The comparison procedure is used to compare the elements E_I of LIST to the key X in this way:</p><p><tt> (= X E_I) ; list is (E1 ... En) </tt></p><p>That is, the first argument is always X, and the second argument is one of the list elements. Thus one can reliably find the first element of LIST that is greater than five with <tt>(member 5 LIST &lt;)</tt></p><p>Note that fully general list searching may be performed with the <tt>find-tail</tt> and <tt>find</tt> procedures, <i>e.g.</i></p><pre>(find-tail even? list) ; Find the first elt with an even key.</pre></dd>
+</dl>
+<h3 id="sec:Deletion"><a href="#sec:Deletion">Deletion</a></h3><dl class="defsig"><dt class="defsig" id="def:delete"><span class="sig"><tt>(delete x list [=]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:delete.21"><span class="sig"><tt>(delete! x list [=]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>delete</tt> uses the comparison procedure =, which defaults to <tt>equal?</tt>, to find all elements of LIST that are equal to X, and deletes them from LIST. The dynamic order in which the various applications of = are made is not specified.</p><p>The list is not disordered -- elements that appear in the result list occur in the same order as they occur in the argument list. The result may share a common tail with the argument list.</p><p>Note that fully general element deletion can be performed with the <tt>remove</tt> and <tt>remove!</tt> procedures, <i>e.g.</i>:</p><pre>;; Delete all the even elements from LIS:
+(remove even? lis)</pre><p>The comparison procedure is used in this way: <tt>(= X E_I)</tt>. That is, X is always the first argument, and a list element is always the second argument. The comparison procedure will be used to compare each element of LIST exactly once; the order in which it is applied to the various E_I is not specified. Thus, one can reliably remove all the numbers greater than five from a list with <tt>(delete 5 list &lt;)</tt></p><p><tt>delete!</tt> is the linear-update variant of <tt>delete</tt>. It is allowed, but not required, to alter the cons cells in its argument list to construct the result.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:delete-duplicates"><span class="sig"><tt>(delete-duplicates list [=]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:delete-duplicates.21"><span class="sig"><tt>(delete-duplicates! list [=]) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>delete-duplicates</tt> removes duplicate elements from the list argument. If there are multiple equal elements in the argument list, the result list only contains the first or leftmost of these elements in the result. The order of these surviving elements is the same as in the original list -- <tt>delete-duplicates</tt> does not disorder the list (hence it is useful for &quot;cleaning up&quot; association lists).</p><p>The = parameter is used to compare the elements of the list; it defaults to <tt>equal?</tt>. If X comes before Y in LIST, then the comparison is performed <tt>(= X Y)</tt>. The comparison procedure will be used to compare each pair of elements in LIST no more than once; the order in which it is applied to the various pairs is not specified.</p><p>Implementations of <tt>delete-duplicates</tt> are allowed to share common tails between argument and result lists -- for example, if the list argument contains only unique elements, it may simply return exactly this list.</p><p>Be aware that, in general, <tt>delete-duplicates</tt> runs in time O(n^2) for N-element lists. Uniquifying long lists can be accomplished in O(n lg n) time by sorting the list to bring equal elements together, then using a linear-time algorithm to remove equal elements. Alternatively, one can use algorithms based on element-marking, with linear-time results.</p><p><tt>delete-duplicates!</tt> is the linear-update variant of <tt>delete-duplicates</tt>; it is allowed, but not required, to alter the cons cells in its argument list to construct the result.</p><pre>(delete-duplicates '(a b a c a b c z)) =&gt; (a b c z)
+ 
+;; Clean up an alist:
+(delete-duplicates '((a . 3) (b . 7) (a . 9) (c . 1))
+                   (lambda (x y) (eq? (car x) (car y))))
+    =&gt; ((a . 3) (b . 7) (c . 1))</pre></dd>
+</dl>
+<h3 id="sec:Association_lists"><a href="#sec:Association_lists">Association lists</a></h3><p>An &quot;association list&quot; (or &quot;alist&quot;) is a list of pairs. The car of each pair contains a key value, and the cdr contains the associated data value. They can be used to construct simple look-up tables in Scheme. Note that association lists are probably inappropriate for performance-critical use on large data; in these cases, hash tables or some other alternative should be employed.</p><dl class="defsig"><dt class="defsig" id="def:assoc"><span class="sig"><tt>(assoc key alist [=]) -&gt; pair or #f</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>assoc</tt> is extended from its R5RS definition to allow the client to pass in an optional equality procedure = used to compare keys.</p><p>The comparison procedure is used to compare the elements E_I of LIST to the KEY parameter in this way:</p><p><tt> (= KEY (car E_I)) ; list is (E1 ... En) </tt></p><p>That is, the first argument is always KEY, and the second argument is one of the list elements. Thus one can reliably find the first entry of ALIST whose key is greater than five with <tt>(assoc 5 ALIST &lt;)</tt></p><p>Note that fully general alist searching may be performed with the <tt>find-tail</tt> and <tt>find</tt> procedures, <i>e.g.</i></p><pre>;; Look up the first association in ALIST with an even key:
+(find (lambda (a) (even? (car a))) alist)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:alist-cons"><span class="sig"><tt>(alist-cons key datum alist) -&gt; alist</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><pre>(lambda (key datum alist) (cons (cons key datum) alist))</pre><p>Cons a new alist entry mapping KEY -&gt; DATUM onto ALIST.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:alist-copy"><span class="sig"><tt>(alist-copy alist) -&gt; alist</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Make a fresh copy of ALIST. This means copying each pair that forms an association as well as the spine of the list, <i>i.e.</i></p><pre>(lambda (a) (map (lambda (elt) (cons (car elt) (cdr elt))) a))</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:alist-delete"><span class="sig"><tt>(alist-delete key alist [=]) -&gt; alist</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:alist-delete.21"><span class="sig"><tt>(alist-delete! key alist [=]) -&gt; alist</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p><tt>alist-delete</tt> deletes all associations from ALIST with the given KEY, using key-comparison procedure =, which defaults to <tt>equal?</tt>. The dynamic order in which the various applications of = are made is not specified.</p><p>Return values may share common tails with the ALIST argument. The alist is not disordered -- elements that appear in the result alist occur in the same order as they occur in the argument alist.</p><p>The comparison procedure is used to compare the element keys K_I of ALIST's entries to the KEY parameter in this way: <tt>(= KEY K_I)</tt>. Thus, one can reliably remove all entries of ALIST whose key is greater than five with <tt>(alist-delete 5 ALIST &lt;)</tt></p><p><tt>alist-delete!</tt> is the linear-update variant of <tt>alist-delete</tt>. It is allowed, but not required, to alter cons cells from the ALIST parameter to construct the result.</p></dd>
+</dl>
+<h3 id="sec:Set_operations_on_lists"><a href="#sec:Set_operations_on_lists">Set operations on lists</a></h3><p>These procedures implement operations on sets represented as lists of elements. They all take an = argument used to compare elements of lists. This equality procedure is required to be consistent with <tt>eq?</tt>. That is, it must be the case that</p><p><tt>(eq? X Y)</tt> =&gt; <tt>(= X Y)</tt>.</p><p>Note that this implies, in turn, that two lists that are <tt>eq?</tt> are also set-equal by any legal comparison procedure. This allows for constant-time determination of set operations on <tt>eq?</tt> lists.</p><p>Be aware that these procedures typically run in time O(N * M) for N- and M-element list arguments. Performance-critical applications operating upon large sets will probably wish to use other data structures and algorithms.</p><dl class="defsig"><dt class="defsig" id="def:lset.3c.3d"><span class="sig"><tt>(lset&lt;= = list_1 ...) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns true iff every LIST_I is a subset of LIST_I+1, using = for the element-equality procedure. List A is a subset of list B if every element in A is equal to some element of B. When performing an element comparison, the = procedure's first argument is an element of A; its second, an element of B.</p><pre>(lset&lt;= eq? '(a) '(a b a) '(a b c c)) =&gt; #t
+ 
+(lset&lt;= eq?) =&gt; #t             ; Trivial cases
+(lset&lt;= eq? '(a)) =&gt; #t</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset.3d"><span class="sig"><tt>(lset= = list_1 list_2 ...) -&gt; boolean</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns true iff every LIST_I is set-equal to LIST_I+1, using = for the element-equality procedure. &quot;Set-equal&quot; simply means that LIST_I is a subset of LIST_I+1, and LIST_I+1 is a subset of LIST_I. The = procedure's first argument is an element of LIST_I; its second is an element of LIST_I+1.</p><pre>(lset= eq? '(b e a) '(a e b) '(e e b a)) =&gt; #t
+ 
+(lset= eq?) =&gt; #t               ; Trivial cases
+(lset= eq? '(a)) =&gt; #t</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset-adjoin"><span class="sig"><tt>(lset-adjoin = list elt_1 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Adds the ELT_I elements not already in the list parameter to the result list. The result shares a common tail with the list parameter. The new elements are added to the front of the list, but no guarantees are made about their order. The = parameter is an equality procedure used to determine if an ELT_I is already a member of LIST. Its first argument is an element of LIST; its second is one of the ELT_I.</p><p>The list parameter is always a suffix of the result -- even if the list parameter contains repeated elements, these are not reduced.</p><pre>(lset-adjoin eq? '(a b c d c e) 'a 'e 'i 'o 'u) =&gt; (u o i a b c d c e)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset-union"><span class="sig"><tt>(lset-union = list_1 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the union of the lists, using = for the element-equality procedure.</p><p>The union of lists A and B is constructed as follows:</p><ul><li>If A is the empty list, the answer is B (or a copy of B). </li>
+<li>Otherwise, the result is initialised to be list A (or a copy of A). </li>
+<li>Proceed through the elements of list B in a left-to-right order. If B is such an element of B, compare every element R of the current result list to B: <tt>(= R B)</tt>. If all comparisons fail, B is consed onto the front of the result. </li>
+</ul>
+<p>However, there is no guarantee that = will be applied to every pair of arguments from A and B. In particular, if A is <tt>eq</tt>? to B, the operation may immediately terminate.</p><p>In the n-ary case, the two-argument list-union operation is simply folded across the argument lists.</p><pre>(lset-union eq? '(a b c d e) '(a e i o u)) =&gt; 
+    (u o i a b c d e)
+ 
+;; Repeated elements in LIST1 are preserved.
+(lset-union eq? '(a a c) '(x a x)) =&gt; (x a a c)
+ 
+;; Trivial cases
+(lset-union eq?) =&gt; ()
+(lset-union eq? '(a b c)) =&gt; (a b c)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset-intersection"><span class="sig"><tt>(lset-intersection = list_1 list_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the intersection of the lists, using = for the element-equality procedure.</p><p>The intersection of lists A and B is comprised of every element of A that is = to some element of B: <tt>(= A B)</tt>, for A in A, and B in B. Note this implies that an element which appears in B and multiple times in list A will also appear multiple times in the result.</p><p>The order in which elements appear in the result is the same as they appear in LIST_1 -- that is, <tt>lset-intersection</tt> essentially filters LIST_1, without disarranging element order. The result may share a common tail with LIST_1.</p><p>In the n-ary case, the two-argument list-intersection operation is simply folded across the argument lists. However, the dynamic order in which the applications of = are made is not specified. The procedure may check an element of LIST_1 for membership in every other list before proceeding to consider the next element of LIST_1, or it may completely intersect LIST_1 and LIST_2 before proceeding to LIST_3, or it may go about its work in some third order.</p><pre>(lset-intersection eq? '(a b c d e) '(a e i o u)) =&gt; (a e)
+ 
+;; Repeated elements in LIST1 are preserved.
+(lset-intersection eq? '(a x y a) '(x a x z)) =&gt; '(a x a)
+ 
+(lset-intersection eq? '(a b c)) =&gt; (a b c)     ; Trivial case</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset-difference"><span class="sig"><tt>(lset-difference = list_1 list_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the difference of the lists, using = for the element-equality procedure -- all the elements of LIST_1 that are not = to any element from one of the other LIST_I parameters.</p><p>The = procedure's first argument is always an element of LIST_1; its second is an element of one of the other LIST_I. Elements that are repeated multiple times in the LIST_1 parameter will occur multiple times in the result. The order in which elements appear in the result is the same as they appear in LIST_1 -- that is, <tt>lset-difference</tt> essentially filters LIST_1, without disarranging element order. The result may share a common tail with LIST_1. The dynamic order in which the applications of = are made is not specified. The procedure may check an element of LIST_1 for membership in every other list before proceeding to consider the next element of LIST_1, or it may completely compute the difference of LIST_1 and LIST_2 before proceeding to LIST_3, or it may go about its work in some third order.</p><pre>(lset-difference eq? '(a b c d e) '(a e i o u)) =&gt; (b c d)
+ 
+(lset-difference eq? '(a b c)) =&gt; (a b c) ; Trivial case</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset-xor"><span class="sig"><tt>(lset-xor = list_1 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the exclusive-or of the sets, using = for the element-equality procedure. If there are exactly two lists, this is all the elements that appear in exactly one of the two lists. The operation is associative, and thus extends to the n-ary case -- the elements that appear in an odd number of the lists. The result may share a common tail with any of the LIST_I parameters.</p><p>More precisely, for two lists A and B, A xor B is a list of</p><ul><li>every element A of A such that there is no element B of B such that <tt>(= A B)</tt>, and </li>
+<li>every element B of B such that there is no element A of A such that <tt>(= B A)</tt>. </li>
+</ul>
+<p>However, an implementation is allowed to assume that = is symmetric -- that is, that</p><p><tt>(= A B)</tt> =&gt; <tt>(= B A)</tt>.</p><p>This means, for example, that if a comparison <tt>(= A B)</tt> produces true for some A in A and B in B, both A and B may be removed from inclusion in the result.</p><p>In the n-ary case, the binary-xor operation is simply folded across the lists.</p><pre>(lset-xor eq? '(a b c d e) '(a e i o u)) =&gt; (d c b i o u)
+ 
+;; Trivial cases.
+(lset-xor eq?) =&gt; ()
+(lset-xor eq? '(a b c d e)) =&gt; (a b c d e)</pre></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset-diff.2bintersection"><span class="sig"><tt>(lset-diff+intersection = list_1 list_2 ...) -&gt; [list list]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns two values -- the difference and the intersection of the lists. Is equivalent to</p><pre>(values (lset-difference = LIST_1 LIST_2 ...)
+        (lset-intersection = LIST_1
+                             (lset-union = LIST_2 ...)))</pre><p>but can be implemented more efficiently.</p><p>The = procedure's first argument is an element of LIST_1; its second is an element of one of the other LIST_I.</p><p>Either of the answer lists may share a common tail with LIST_1. This operation essentially partitions LIST_1.</p></dd>
+</dl>
+<dl class="defsig"><dt class="defsig" id="def:lset-union.21"><span class="sig"><tt>(lset-union! = list_1 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:lset-intersection.21"><span class="sig"><tt>(lset-intersection! = list_1 list_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:lset-difference.21"><span class="sig"><tt>(lset-difference! = list_1 list_2 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:lset-xor.21"><span class="sig"><tt>(lset-xor! = list_1 ...) -&gt; list</tt></span> <span class="type">procedure</span></dt>
+<dt class="defsig" id="def:lset-diff.2bintersection.21"><span class="sig"><tt>(lset-diff+intersection! = list_1 list_2 ...) -&gt; [list list]</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>These are linear-update variants. They are allowed, but not required, to use the cons cells in their first list parameter to construct their answer. <tt>lset-union!</tt> is permitted to recycle cons cells from <i>any</i> of its list arguments.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Unit%20irregex.html">Unit irregex</a></p><p>Next: <a href="Unit%20srfi-4.html">Unit srfi-4</a></p></div></div></body>

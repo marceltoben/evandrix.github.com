@@ -1,0 +1,515 @@
+sfuzz plugin reference guide
+
+foreward.
+   this guide needs a lot of work. i have only included a set of cookbooks.
+
+i. introduction
+   the sfuzz plugin system provides a few key hook points for accessing fuzz
+data. it allows for additional config line options, adding new transport types,
+modification of fuzzed payload before transmission and analysis of the returned
+fuzz data. this gives plugin writers much more control over how the engine 
+behaves.
+   currently, only one plugin may be loaded at any given time. however, future
+versions may lift this restriction.
+   sfuzz does include 3 sample plugins, as well as a configuration file for one
+of the provided samples. the server plugin (sfuzz-server-plugin.so) is used to
+convert sfuzz from a client-based fuzzer, to a server-based fuzzer. this can
+be useful, for instance, to fuzz different client side software. at the moment
+the server-based fuzzer is rather 'dumb' - it just blindly sends whenever a
+client connects. a better version is in the works.
+
+ii. cookbook of plugin-fu
+  all plugins need to provide a plugin_init function which takes a 
+plugin_provisor structure. further, all plugins must fill in the capex, name,
+and version function pointers with appropriate functions. the following table
+lists each function hook point, and how to signal to the engine that you would
+like to overload that hook point.
+
+NOTE: currently, due to the way windows links, in order to properly load a
+      ".so" file generated, it is imperative that the .c file containing the
+      plugin has the following line:
+
+      plugin_provisor *g_plugin;
+
+      Hopefully, this will be resolved before 1.0 release. No promises.
+
+  hook     |  structure  | prototype                | capex return code
+function   |   member    |                          |
+-------------------------------------------------------------------------------
+transport  |   trans     | int foo                  | return 
+           |             | (option_block *, void *, |PLUGIN_PROVIDES_TRANSPORT_ 
+           |             |  int );                  |TYPE; 
+-------------------------------------------------------------------------------
+per-line   |   config    | void foo (option_block*, | return
+config     |             |    char *, int);         |PLUGIN_PROVIDES_LINE_OPTS;
+-------------------------------------------------------------------------------
+pre-subst  |  payload_trans | void foo (option_block*,| return
+           |                |    void *i, int il,   |PLUGIN_PROVIDES_PAYLOAD_
+           |                |    void *o, int ol);  |PARSE;
+-------------------------------------------------------------------------------
+post-subst | fuzz_trans  | void foo(option_block*,  | return
+           |             |    void *i, int il,      |PLUGIN_PROVIDES_FUZZ_
+           |             |    void *o, int ol);     |MODIFICATION;
+-------------------------------------------------------------------------------
+response   | post_fuzz   | void foo(option_block*,  | return
+           |             |    void *rbuf, int rbl); |PLUGIN_PROVIDES_POST_FUZZ
+-------------------------------------------------------------------------------
+
+   be sure to familiarize yourself with the option_block structure, and the
+entirety of file-utils.c and sfuzz.c before delving too deep in plugin writing.
+
+iii. building a plugin
+  this will cover the "hello world" of plugins. we're going to provide a new
+transport type (icmp), a config option (whether we do correct checksum), and
+some substitution parsing.
+
+first, all plugins require a name, version, and capex. For an empty shell of a
+plugin, the following will work:
+---------------------------------cut below-------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+/*always include this last!*/
+#include "sfuzz-plugin.h"
+
+char *skel_name()
+{
+    return "skeleton plugin";
+}
+
+char *skel_ver()
+{
+    return "0.1";
+}
+
+int skel_capex()
+{
+    return 0;
+}
+
+void plugin_init(plugin_provisor *pp)
+{
+    pp->capex   = skel_capex;
+    pp->name    = skel_name;
+    pp->version = skel_ver;
+
+    printf("loaded plugin!\n");
+}
+
+-------------------------------------------------------------------------------
+
+to build, make sure you have the header files available, and (on linux) simply:
+gcc -I(PATH_TO_SFUZZ_HEADERS) -shared -o skel-plugin.so skel-plugin.c
+
+obviously, this plugin doesn't do anything, and the capex return value indicates
+that it offers nothing (return value of 0). lets add a config line parsing
+feature.
+
+for the following example, delete the existing capex function and replace it 
+with the code below.
+
+---------------------------------cut below-------------------------------------
+
+int skel_capex()
+{
+    return PLUGIN_PROVIDES_LINE_OPTS;
+}
+
+#include <string.h>
+
+int icmp_code_val = 0;
+int icmp_type_val = 0;
+/**
+ * the following function will read a config option of icmp_code and set the
+ * icmp_code_val global to the correct value
+ */
+int skel_line_parse(option_block *opts, char *line, int len)
+{
+    char *delim;
+    int sze;
+    if(!strncasecmp(line, "icmp_code", 9))
+    {
+        delim = strstr(line, "=");
+        if(delim == NULL)
+        {
+            file_error("icmp_code not assigned!", opts);
+        }
+        sze = strlen(delim+1);
+        if(sze == 0)
+        {
+            file_error("icmp_code is null!", opts);
+        }
+        icmp_code_val = atoi(delim+1);
+        printf("icmp_code is: [%d]\n", icmp_code_val);
+        return 0; /* return 0 to indicate success*/
+    }
+
+    if(!strncasecmp(line, "icmp_type", 9))
+    {
+        delim = strstr(line, "=");
+        if(delim == NULL)
+        {
+            file_error("icmp_type not assigned!", opts);
+        }
+        sze = strlen(delim+1);
+        if(sze == 0)
+        {
+            file_error("icmp_type is null!", opts);
+        }
+        icmp_type_val = atoi(delim+1);
+        printf("icmp_type is: [%d]\n", icmp_type_val);
+        return 0; /* return 0 to indicate success*/
+    }
+
+    /*return non-zero to indicate parse error.*/
+    return 1;
+}
+
+-------------------------------------------------------------------------------
+
+now modify the plugin init function by adding this line:
+
+pp->config = skel_line_parse;
+
+and recompile.
+
+now lets build a test config to use this new plugin:
+
+---------------------------------cut below-------------------------------------
+plugin ./skel-plugin.so
+
+icmp_code=0
+icmp_type=8
+
+endcfg
+ICMP_CKSUM_CORRECT
+--
+ICMP_CKSUM_INCORRECT
+--
+
+-------------------------------------------------------------------------------
+
+try it out. just make a simple fuzz command line, that outputs to the screen.
+voila! the first two lines should read:
+
+loaded plugin!
+icmp_code is: [0]
+icmp_type is: [8]
+
+congratulations! you've gotten your first plugin with option parsing working.
+now lets add icmp transport functionality.
+
+take a break, have a drink (beer, coffee, juice, water, etc.), stretch. we're
+going to add the underlying icmp raw socket next, and that requires some 
+knowledge of icmp.
+
+ready? good.
+
+we have a new configuration option, and now we need to write the transport layer
+modification code to support our icmp transport.
+
+lets build the payload 'fuzz' piece.
+
+---------------------------------cut below-------------------------------------
+
+#ifdef __WIN32__
+#include "winsock.h"
+typedef char * caddr_t;
+#else
+#include <stdlib.h>
+#include <time.h>
+#include <sys/time.h>
+#include <string.h>
+
+#include <sys/socket.h>
+#include <netinet/in_systm.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <netinet/ip.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+
+#include <errno.h>
+#endif
+
+#include <sys/types.h>
+#include <unistd.h>
+
+#include "sfuzz.h"
+#include "os-abs.h"
+
+typedef struct _ip_hdr4_t
+{
+  char           verHdrlen;
+  char           tos;
+  unsigned short ipPktLen;
+  unsigned short id;
+  unsigned short flagOffset;
+  char           ipttl;
+  char           ipproto;
+  unsigned short cksum;
+  unsigned int   src;
+  unsigned int   dst;
+} ipHdr4_t;
+
+typedef struct _icmp_hdr_t
+{
+  char           type;
+  char           code;
+  unsigned short cksum;
+  unsigned short id;
+  unsigned short seq;
+} icmpHdr_t;
+
+int inet_cksum(unsigned short *addr, int len)
+{
+  register int nleft = len;
+  register unsigned short *w = addr;
+  register int sum = 0;
+  unsigned short answer = 0;
+
+  while (nleft > 1)
+  {
+    sum += *w++;
+    nleft -= 2;
+  }
+
+  if(nleft)
+  {
+    *(unsigned char *)(&answer) = *(unsigned char *)w;
+    sum += answer;
+  }
+
+  sum = (sum >> 16) + (sum &0xffff);
+  sum += (sum >> 16);
+  answer =~ sum;
+  return answer;
+}
+
+extern int fuzznum;
+
+int skel_payload_xform(option_block *opts, void *i, int il, void *o, int *ol)
+{
+   icmpHdr_t *icp = o;
+
+   icp->type = icmp_type_val; /*value of ICMP echo Request*/
+   icp->code = icmp_code_val;
+   icp->id = htons(fuzznum);
+   icp->seq = htons(fuzznum);
+   icp->cksum = 0;
+   
+   *ol = sizeof(icmpHdr_t);
+   *ol = *ol + 42;
+
+   icp->cksum = inet_cksum((unsigned short *)icp, *ol);
+   
+   return 0;
+}
+
+int skel_transport(option_block *opts, void *i, int il)
+{
+    FILE *log = stdout;
+    struct timeval tv;
+    fd_set fds;
+#ifdef __WIN32__
+    WSADATA wsda;
+#endif
+    int sockfd;
+    struct sockaddr_in server;
+    int ret;
+    unsigned long int to = MAX(100, opts->time_out);
+    
+#ifdef __WIN32__
+    WSAStartup(0x0101, &wsda);
+#endif
+    if(opts->fp_log)
+        log = opts->fp_log;
+    
+    if(opts->sockfd != -1)
+    {
+        sockfd = opts->sockfd;
+    }
+    else
+    {
+        sockfd = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP);
+        opts->sockfd = sockfd;
+        
+        if(sockfd < 0)
+        {
+            fprintf(stderr,"[%s] error: unable to acquire socket.\n",
+                    get_time_as_log());
+            
+            fprintf(log,"[%s] error: unable to acquire socket.\n",
+                    get_time_as_log());
+            return -1;
+        }
+     }
+        
+     server.sin_family = AF_INET;
+     server.sin_addr.s_addr = opts->host; /*should be in network order*/
+
+     ret = sendto(sockfd, (char *)i, il, 0, (struct sockaddr*)&server, 
+                  sizeof(struct sockaddr_in));
+
+     if((ret < 0) || (ret != il))
+     {
+        fprintf(stderr, "[%s] error: unable to transmit.\n",
+                get_time_as_log());
+        fprintf(log, "[%s] error: unable to transmit.\n",
+                get_time_as_log());
+        return -1;
+     }
+
+     if(opts->verbosity != QUIET)
+        fprintf(log, "[%s] info: tx fuzz - scanning for reply.\n",
+                get_time_as_log());
+    
+    FD_ZERO(&fds);
+    FD_SET(sockfd, &fds);
+
+    tv.tv_sec  = to / 1000;
+    tv.tv_usec = (to % 1000) * 1000; /*time out*/
+
+    ret = select(sockfd+1, &fds, NULL, NULL, &tv);
+    if(ret > 0)
+    {
+        if(FD_ISSET(sockfd, &fds))
+        {
+            char buf[8192] = {0};
+            int r_len = 0;
+            r_len = read(sockfd, &buf, 8192);
+            if(opts->verbosity != QUIET)
+                fprintf(log, "[%s] read:\n%s\n===============================================================================\n", 
+                        get_time_as_log(),
+                        buf);            
+        }
+    }
+    
+    if(opts->close_conn)
+        opts->sockfd = -1;
+    
+    if((opts->close_conn) && (!opts->forget_conn))
+    {
+#ifdef __WIN32__
+        WSACleanup();
+        closesocket(sockfd);
+#else
+        close(sockfd);
+#endif
+    }
+    
+    mssleep(opts->reqw_inms);
+    return 0;
+}
+
+-------------------------------------------------------------------------------
+
+and we'll edit the capex function to specify that we'd like to include payload,
+and transportation hooks.
+
+---------------------------------cut below-------------------------------------
+
+int skel_capex()
+{
+    return PLUGIN_PROVIDES_LINE_OPTS | PLUGIN_PROVIDES_TRANSPORT_TYPE |
+           PLUGIN_PROVIDES_PAYLOAD_PARSE;
+}
+
+void plugin_init(plugin_provisor *pp)
+{
+    pp->capex   = skel_capex;
+    pp->name    = skel_name;
+    pp->version = skel_ver;
+
+    pp->config  = skel_line_parse;
+    pp->trans   = skel_transport;
+    pp->payload_trans = skel_payload_xform;
+
+    printf("loaded plugin!\n");
+
+}
+
+-------------------------------------------------------------------------------
+
+now, lets compile and test. remember, since we're using a raw socket here, we
+must run as root. in the future there may be a hook added to automatically
+promote to root for socket creation purposes, but since that would require a
+suid binary don't hold your breath.
+
+you should see something similar to the following if you run with the following
+commandline:
+
+///////////////////////////////////////////////////////////////////////////////
+
+$ sudo ./sfuzz -X -f skel_icmp.cfg -O -S 127.0.0.1 -p 0
+loaded plugin!
+icmp_code is: [0]
+icmp_type is: [8]
+[12:34:09] dumping options:
+        filename: <skel_icmp.cfg>
+        state:    <8>
+        lineno:   <7>
+        literals:  [0]
+        sequences: [0]
+        symbols: [0]
+        req_del:  <0>
+        mseq_len: <0>
+        plugin: <skeleton plugin>
+[12:34:09] info: beginning fuzz - method: io, config from: [skel_icmp.cfg], out: [127.0.0.1:0]
+[12:34:09] attempting fuzz - 1.
+
+0000: 08 00 E5 FB 00 01 00 01 F0 EB A0 AA AE 7F 00 00   ................
+0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0020: FF FF FF FF 00 00 00 00 71 01 00 00 00 00 00 00   ........q.......
+0030: 60 EA                                             `.
+
+[12:34:09] info: tx fuzz - scanning for reply.
+[12:34:09] read:
+E
+===============================================================================
+[12:34:09] attempting fuzz - 2.
+
+0000: 08 00 47 E7 00 02 00 02 60 EA A0 AA AE 7F 00 00   ..G.....`.......
+0010: 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00   ................
+0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0030: 00 00                                             ..
+
+[12:34:09] info: tx fuzz - scanning for reply.
+[12:34:09] read:
+E
+===============================================================================
+[12:34:09] completed fuzzing.
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+notice the random looking 'E'? that is the icmp response message. let's try and
+map an icmp header onto that response and print out the actual values.
+
+modify the 60th line of the transport function to look similar to the 
+following:
+
+---------------------------------cut below-------------------------------------
+            {
+                icmpHdr_t *icp = (icmpHdr_t *)(buf+sizeof(ipHdr4_t));
+                fprintf(log, "[%s] read:\n", get_time_as_log());
+                fprintf(log, 
+                        "\ticmp type:[%d]\n\ticmp code:[%d]\n\ticmp id:[%d]\n",
+                        icp->type, icp->code, ntohs(icp->id));
+                fprintf(log, "===============================================================================\n");
+            }
+-------------------------------------------------------------------------------
+
+recompile the plugin and run it.
+
+this time, you should see ICMP echo requests going and the reply should make 
+much more sense (instead of being a garbled mess).
+
+now - as an exercise left to the reader - it should be easy to understand where
+to add the processing code to transform the fuzz cases:
+
+ICMP_CKSUM_CORRECT
+and
+ICMP_CKSUM_INCORRECT
+
+to the icmp plugin.

@@ -1,0 +1,26 @@
+;;;; egg:      raw-sockets
+;;;; file:     raw-sockets.meta
+;;;; author:   Lenny Frank <elf@ephemeral.net>
+;;;; author:   Benjamin L. Kurtz <bk2@alum.wpi.edu>
+;;;; date:     06 Nov 2007
+;;;; licence:  BSD (see LICENCE)
+;;;; version:  2.0
+;;;; purpose:  metadata for chicken-setup
+;;;;
+;;;; history:  2.0  Added header (elf)
+;;;;           1.1  Added elf as author (elf)
+;;;;           1.0  Initial release (bk2)
+
+
+
+((egg       "raw-sockets.egg")
+ (files     "raw-sockets.scm"
+            "raw-sockets.html"
+            "raw-sockets.setup"
+            "raw-sockets.exports")
+ (category  net)
+ (synopsis  "UNIX raw sockets interface")
+ (eggdoc    "doc.scm")
+ (author    "Elf and Benjamin Kurtz")
+ (license   "BSD"))
+

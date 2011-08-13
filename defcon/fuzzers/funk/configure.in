@@ -1,0 +1,27 @@
+dnl Process this file with autoconf to produce a configure script.
+dnl Use the name of an existing source file for your program here:
+AC_INIT(src/scm/repl/remote_chicken.scm)
+
+dnl Use the name and version of your package (which doesn't have to match
+dnl the names of your executables):
+AM_INIT_AUTOMAKE(funk, 1.0)
+
+AC_PREREQ(2.12)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+
+dnl Test for presence of csc (we should probably bail out with error if
+dnl we fail to find it):
+AC_CHECK_PROG(CSC, csc, YES)
+
+AC_CHECK_PROG(CHICKEN, chicken, YES)
+
+dnl Use here any special flags you require.  For example, if you want
+dnl R5RS macros, use "-require-extension syntax-case"
+AC_SUBST(CHICKENFLAGS,"")
+
+AC_OUTPUT(Makefile)

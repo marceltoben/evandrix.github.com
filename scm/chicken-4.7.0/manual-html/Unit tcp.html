@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Unit tcp</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Unit_tcp">Unit tcp</a>
+<ul>
+<li><a href="#sec:tcp-listen">tcp-listen</a></li>
+<li><a href="#sec:tcp-listener.3f">tcp-listener?</a></li>
+<li><a href="#sec:tcp-close">tcp-close</a></li>
+<li><a href="#sec:tcp-accept">tcp-accept</a></li>
+<li><a href="#sec:tcp-accept-ready.3f">tcp-accept-ready?</a></li>
+<li><a href="#sec:tcp-listener-port">tcp-listener-port</a></li>
+<li><a href="#sec:tcp-listener-fileno">tcp-listener-fileno</a></li>
+<li><a href="#sec:tcp-connect">tcp-connect</a></li>
+<li><a href="#sec:tcp-addresses">tcp-addresses</a></li>
+<li><a href="#sec:tcp-port-numbers">tcp-port-numbers</a></li>
+<li><a href="#sec:tcp-abandon-port">tcp-abandon-port</a></li>
+<li><a href="#sec:tcp-buffer-size">tcp-buffer-size</a></li>
+<li><a href="#sec:tcp-read-timeout">tcp-read-timeout</a></li>
+<li><a href="#sec:tcp-write-timeout">tcp-write-timeout</a></li>
+<li><a href="#sec:tcp-connect-timeout">tcp-connect-timeout</a></li>
+<li><a href="#sec:tcp-accept-timeout">tcp-accept-timeout</a></li>
+<li><a href="#sec:Example">Example</a></li></ul></li></ul></div><h2 id="sec:Unit_tcp"><a href="#sec:Unit_tcp">Unit tcp</a></h2><p>This unit provides basic facilities for communicating over TCP sockets. The socket interface should be mostly compatible to the one found in PLT Scheme.</p><p>This unit uses the <tt>extras</tt> unit.</p><p>All errors related to failing network operations will raise a condition of kind <tt>(exn i/o network)</tt>.</p><h3 id="sec:tcp-listen"><a href="#sec:tcp-listen">tcp-listen</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-listen"><span class="sig"><tt>(tcp-listen TCPPORT [BACKLOG [HOST]])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Creates and returns a TCP listener object that listens for connections on <tt>TCPPORT</tt>, which should be an exact integer. <tt>BACKLOG</tt> specifies the number of maximally pending connections (and defaults to 4). If the optional argument <tt>HOST</tt> is given and not <tt>#f</tt>, then only incoming connections for the given host (or IP) are accepted.</p></dd>
+</dl>
+<h3 id="sec:tcp-listener.3f"><a href="#sec:tcp-listener.3f">tcp-listener?</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-listener.3f"><span class="sig"><tt>(tcp-listener? X)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if <tt>X</tt> is a TCP listener object, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h3 id="sec:tcp-close"><a href="#sec:tcp-close">tcp-close</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-close"><span class="sig"><tt>(tcp-close LISTENER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Reclaims any resources associated with <tt>LISTENER</tt>.</p></dd>
+</dl>
+<h3 id="sec:tcp-accept"><a href="#sec:tcp-accept">tcp-accept</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-accept"><span class="sig"><tt>(tcp-accept LISTENER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Waits until a connection is established on the port on which <tt>LISTENER</tt> is listening and returns two values: an input- and output-port that can be used to communicate with the remote process. The current value of <tt>tcp-accept-timeout</tt> is used to determine the maximal number of milliseconds (if any) to wait until a connection is established. When a client connects any read- and write-operations on the returned ports will use the current values (at the time of the connection) of <tt>tcp-read-timeout</tt> and <tt>tcp-write-timeout</tt>, respectively, to determine the maximal number of milliseconds to wait for input/output before a timeout error is signalled.</p><p>Note: this operation and any I/O on the ports returned will not block other running threads.</p></dd>
+</dl>
+<h3 id="sec:tcp-accept-ready.3f"><a href="#sec:tcp-accept-ready.3f">tcp-accept-ready?</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-accept-ready.3f"><span class="sig"><tt>(tcp-accept-ready? LISTENER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns <tt>#t</tt> if there are any connections pending on <tt>LISTENER</tt>, or <tt>#f</tt> otherwise.</p></dd>
+</dl>
+<h3 id="sec:tcp-listener-port"><a href="#sec:tcp-listener-port">tcp-listener-port</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-listener-port"><span class="sig"><tt>(tcp-listener-port LISTENER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the port number assigned to <tt>LISTENER</tt> (If you pass <tt>0</tt> to <tt>tcp-listen</tt>, then the system will choose a port-number for you).</p></dd>
+</dl>
+<h3 id="sec:tcp-listener-fileno"><a href="#sec:tcp-listener-fileno">tcp-listener-fileno</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-listener-fileno"><span class="sig"><tt>(tcp-listener-fileno LISTENER)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns the file-descriptor associated with <tt>LISTENER</tt>.</p></dd>
+</dl>
+<h3 id="sec:tcp-connect"><a href="#sec:tcp-connect">tcp-connect</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-connect"><span class="sig"><tt>(tcp-connect HOSTNAME [TCPPORT])</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Establishes a client-side TCP connection to the machine with the name <tt>HOSTNAME</tt> (a string) at <tt>TCPPORT</tt> (an exact integer) and returns two values: an input- and output-port for communicating with the remote process. The current value of <tt>tcp-connect-timeout</tt> is used to determine the maximal number of milliseconds (if any) to wait until the connection is established. When the connection takes place any read- and write-operations on the returned ports will use the current values (at the time of the call to <tt>tcp-connect</tt>) of <tt>tcp-read-timeout</tt> and <tt>tcp-write-timeout</tt>, respectively, to determine the maximal number of milliseconds to wait for input/output before a timeout error is signalled.</p><p>If the <tt>TCPPORT</tt> is omitted, the port is parsed from the <tt>HOSTNAME</tt> string.  The format expected is <tt>HOSTNAME:PORT</tt>.  The <tt>PORT</tt> can either be a string representation of an integer or a service name which is translated to an integer using the POSIX function <a href="http://www.opengroup.org/onlinepubs/009695399/functions/getservbyname.html"><tt>getservbyname</tt></a>.</p><p>Note: any I/O on the ports returned will not block other running threads.</p></dd>
+</dl>
+<h3 id="sec:tcp-addresses"><a href="#sec:tcp-addresses">tcp-addresses</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-addresses"><span class="sig"><tt>(tcp-addresses PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns two values for the input- or output-port <tt>PORT</tt> (which should be a port returned by either <tt>tcp-accept</tt> or <tt>tcp-connect</tt>): the IP address of the local and the remote machine that are connected over the socket associated with <tt>PORT</tt>. The returned addresses are strings in <tt>XXX.XXX.XXX.XXX</tt> notation.</p></dd>
+</dl>
+<h3 id="sec:tcp-port-numbers"><a href="#sec:tcp-port-numbers">tcp-port-numbers</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-port-numbers"><span class="sig"><tt>(tcp-port-numbers PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Returns two values for the input- or output-port <tt>PORT</tt> (which should be a port returned by either <tt>tcp-accept</tt> or <tt>tcp-connect</tt>): the TCP port numbers of the local and the remote machine that are connected over the socket associated with <tt>PORT</tt>.</p></dd>
+</dl>
+<h3 id="sec:tcp-abandon-port"><a href="#sec:tcp-abandon-port">tcp-abandon-port</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-abandon-port"><span class="sig"><tt>(tcp-abandon-port PORT)</tt></span> <span class="type">procedure</span></dt>
+<dd class="defsig"><p>Marks the socket port <tt>PORT</tt> as abandoned. This is mainly useful to close down a port without breaking the connection.</p></dd>
+</dl>
+<h3 id="sec:tcp-buffer-size"><a href="#sec:tcp-buffer-size">tcp-buffer-size</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-buffer-size"><span class="sig"><tt>tcp-buffer-size</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>Sets the size of the output buffer. By default no output-buffering for TCP output is done, but to improve performance by minimizing the number of TCP packets, buffering may be turned on by setting this parameter to an exact integer greater zero. A buffer size of zero or <tt>#f</tt> turns buffering off. The setting of this parameter takes effect at the time when the I/O ports for a particular socket are created, i.e. when <tt>tcp-connect</tt> or <tt>tcp-accept</tt> is called.</p><p>Note that since output is not immediately written to the associated socket, you may need to call <tt>flush-output</tt>, once you want the output to be transmitted. Closing the output port will flush automatically.</p></dd>
+</dl>
+<h3 id="sec:tcp-read-timeout"><a href="#sec:tcp-read-timeout">tcp-read-timeout</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-read-timeout"><span class="sig"><tt>tcp-read-timeout</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>Determines the timeout for TCP read operations in milliseconds. A timeout of <tt>#f</tt> disables timeout checking. The default read timeout is 60000, i.e. 1 minute. If timeout occurs while reading, a condition object of kinds <tt>(exn i/o net timeout)</tt> is thrown.</p></dd>
+</dl>
+<h3 id="sec:tcp-write-timeout"><a href="#sec:tcp-write-timeout">tcp-write-timeout</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-write-timeout"><span class="sig"><tt>tcp-write-timeout</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>Determines the timeout for TCP write operations in milliseconds. A timeout of <tt>#f</tt> disables timeout checking. The default write timeout is 60000, i.e. 1 minute. If timeout occurs while writing, a condition object of kinds <tt>(exn i/o net timeout)</tt> is thrown.</p></dd>
+</dl>
+<h3 id="sec:tcp-connect-timeout"><a href="#sec:tcp-connect-timeout">tcp-connect-timeout</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-connect-timeout"><span class="sig"><tt>tcp-connect-timeout</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>Determines the timeout for <tt>tcp-connect</tt> operations in milliseconds. A timeout of <tt>#f</tt> disables timeout checking and is the default. If timeout occurs while trying to connect, a condition object of kinds <tt>(exn i/o net timeout)</tt> is thrown.</p></dd>
+</dl>
+<h3 id="sec:tcp-accept-timeout"><a href="#sec:tcp-accept-timeout">tcp-accept-timeout</a></h3><dl class="defsig"><dt class="defsig" id="def:tcp-accept-timeout"><span class="sig"><tt>tcp-accept-timeout</tt></span> <span class="type">parameter</span></dt>
+<dd class="defsig"><p>Determines the timeout for <tt>tcp-accept</tt> operations in milliseconds. A timeout of <tt>#f</tt> disables timeout checking and is the default. If timeout occurs while waiting for connections, a condition object of kinds <tt>(exn i/o net timeout)</tt> is thrown.</p></dd>
+</dl>
+<h3 id="sec:Example"><a href="#sec:Example">Example</a></h3><p>A very simple example follows. Say we have the two files <tt>client.scm</tt> and <tt>server.scm</tt>:</p><pre class="highlight"> <span class="comment">; client.scm
+</span> <span class="paren1">(<span class="default">declare <span class="paren2">(<span class="default">uses tcp</span>)</span></span>)</span>
+ <span class="paren1">(<span class="default"><i><span class="symbol">define-values</span></i> <span class="paren2">(<span class="default">i o</span>)</span> <span class="paren2">(<span class="default">tcp-connect <span class="string">&quot;localhost&quot;</span> 4242</span>)</span></span>)</span>
+ <span class="paren1">(<span class="default">write-line <span class="string">&quot;Good Bye!&quot;</span> o</span>)</span>
+ <span class="paren1">(<span class="default">print <span class="paren2">(<span class="default">read-line i</span>)</span></span>)</span></pre><pre class="highlight"> <span class="comment">; server.scm
+</span> <span class="paren1">(<span class="default">declare <span class="paren2">(<span class="default">uses tcp</span>)</span></span>)</span>
+ <span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> l <span class="paren2">(<span class="default">tcp-listen 4242</span>)</span></span>)</span>
+ <span class="paren1">(<span class="default"><i><span class="symbol">define-values</span></i> <span class="paren2">(<span class="default">i o</span>)</span> <span class="paren2">(<span class="default">tcp-accept l</span>)</span></span>)</span>
+ <span class="paren1">(<span class="default">write-line <span class="string">&quot;Hello!&quot;</span> o</span>)</span>
+ <span class="paren1">(<span class="default">print <span class="paren2">(<span class="default">read-line i</span>)</span></span>)</span>
+ <span class="paren1">(<span class="default">close-input-port i</span>)</span>
+ <span class="paren1">(<span class="default">close-output-port o</span>)</span></pre><pre>% csc server.scm
+% csc client.scm
+% ./server &amp;
+% ./client
+Good Bye!
+Hello!</pre><hr /><p>Previous: <a href="Unit%20utils.html">Unit utils</a></p><p>Next: <a href="Unit%20lolevel.html">Unit lolevel</a></p></div></div></body>

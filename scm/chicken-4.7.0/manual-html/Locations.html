@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Locations</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Locations">Locations</a>
+<ul>
+<li><a href="#sec:define-location">define-location</a></li>
+<li><a href="#sec:let-location">let-location</a></li>
+<li><a href="#sec:location">location</a></li></ul></li></ul></div><h2 id="sec:Locations"><a href="#sec:Locations">Locations</a></h2><p>It is also possible to define variables containing unboxed C data, so called <i>locations</i>. It should be noted that locations may only contain simple data, that is: everything that fits into a machine word, and double-precision floating point values.</p><h3 id="sec:define-location"><a href="#sec:define-location">define-location</a></h3><dl class="defsig"><dt class="defsig" id="def:define-location"><span class="sig"><tt>(define-location NAME TYPE [INIT])</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Identical to <tt>(define-external NAME TYPE [INIT])</tt>, but the variable is not accessible from outside of the current compilation unit (it is declared <tt>static</tt>).</p></dd>
+</dl>
+<h3 id="sec:let-location"><a href="#sec:let-location">let-location</a></h3><dl class="defsig"><dt class="defsig" id="def:let-location"><span class="sig"><tt>(let-location ((NAME TYPE [INIT]) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines a lexically bound location.</p></dd>
+</dl>
+<h3 id="sec:location"><a href="#sec:location">location</a></h3><dl class="defsig"><dt class="defsig" id="def:location"><span class="sig"><tt>(location NAME)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:location"><span class="sig"><tt>(location X)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:.23.24"><span class="sig"><tt>#$</tt></span> <span class="type">read</span></dt>
+<dd class="defsig"><p>This form returns a pointer object that contains the address of the variable <tt>NAME</tt>. If the argument to <tt>location</tt> is not a location defined by <tt>define-location</tt>, <tt>define-external</tt> or <tt>let-location</tt>, then</p><pre>(location X)</pre><p>is essentially equivalent to</p><pre>(make-locative X)</pre><p>(See the <a href="Unit%20lolevel.html#sec:locatives">manual section on locatives</a> for more information about locatives)</p><p>Note that <tt>(location X)</tt> may be abbreviated as <tt>#$X</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define-external</span></i> foo int</span>)</span>
+<span class="paren1">(<span class="default"><span class="paren2">(<span class="default">foreign-lambda* void <span class="paren3">(<span class="default"><span class="paren4">(<span class="default"><span class="paren5">(<span class="default">c-pointer int</span>)</span> ip</span>)</span></span>)</span> <span class="string">&quot;*ip = 123;&quot;</span></span>)</span> 
+  <span class="paren2">(<span class="default">location foo</span>)</span></span>)</span>
+foo                                                                    ==&gt; 123</pre><p>This facility is especially useful in situations, where a C function returns more than one result value:</p><pre class="highlight">#&gt;
+#include &lt;math.h&gt;
+&lt;#
+
+<span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> modf
+  <span class="paren2">(<span class="default">foreign-lambda double <span class="string">&quot;modf&quot;</span> double <span class="paren3">(<span class="default">c-pointer double</span>)</span></span>)</span> </span>)</span>
+
+<span class="paren1">(<span class="default">let-location <span class="paren2">(<span class="default"><span class="paren3">[<span class="default">i double</span>]</span></span>)</span>
+  <span class="paren2">(<span class="default"><i><span class="symbol">let</span></i> <span class="paren3">(<span class="default"><span class="paren4">[<span class="default">f <span class="paren5">(<span class="default">modf 1.99 <span class="paren6">(<span class="default">location i</span>)</span></span>)</span></span>]</span></span>)</span>
+    <span class="paren3">(<span class="default">print <span class="string">&quot;i=&quot;</span> i <span class="string">&quot;, f=&quot;</span> f</span>)</span> </span>)</span> </span>)</span></pre><p>See <a href="http://wiki.call-cc.org/location-and-c-string-star">location and c-string*</a> for a tip on returning a <tt>c-string*</tt> type.</p><p><tt>location</tt> returns a value of type <tt>c-pointer</tt>, when given the name of a callback-procedure defined with <tt>define-external</tt>.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Callbacks.html">Callbacks</a></p><p>Next: <a href="Other%20support%20procedures.html">Other support procedures</a></p></div></div></body>

@@ -1,0 +1,6 @@
+
+(define easyffi? (string>=? (chicken-version) "2.424"))
+
+(compile -R srfi-66 -s -O2 -d1 ,@(if easyffi? '(-extend easyffi) '()) crc16.scm)
+(install-extension 'crc16 '("crc16.so" "crc16.html") 
+		   '((version 0.1) (documentation "crc16.html")))

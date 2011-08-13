@@ -1,0 +1,26 @@
+;;;; egg:      raw-sockets-experimental
+;;;; file:     raw-sockets-experimental.setup
+;;;; author:   Lenny Frank <elf@ephemeral.net>
+;;;; author:   Benjamin L. Kurtz <bk2@alum.wpi.edu>
+;;;; date:     18 Sep 2007
+;;;; licence:  BSD (see LICENCE)
+;;;; version:  3.0
+;;;; purpose:  chicken-setup installation instructions
+;;;;
+;;;; history:  3.0  Cleaned up compilation command line (elf)
+;;;;           2.1  Added exports (elf)
+;;;;           1.0  Initial release (bk2)
+
+
+
+
+(compile raw-sockets-experimental.scm -O2 -s -G -E -profile)
+
+(install-extension 'raw-sockets-experimental
+                   '("raw-sockets-experimental.so"
+                     "raw-sockets-experimental.html"
+                     "raw-sockets-experimental.exports")
+                   '((version        3.0)
+                     (documentation  "raw-sockets-experimental.html")
+                     (exports        "raw-sockets-experimental.exports")))
+

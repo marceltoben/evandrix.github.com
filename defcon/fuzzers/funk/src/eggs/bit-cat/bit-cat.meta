@@ -1,0 +1,10 @@
+;;; bit-cat.meta
+
+((egg "bit-cat.egg")
+ (files "bit-cat.scm" "bit-cat.html" "bit-cat.setup")
+ (category data)
+ (needs easyffi srfi-66)
+ (synopsis "Bitstring Concatenator for u8vectors")
+ (eggdoc "doc.scm")
+ (author "Ben Kurtz")
+ (license "BSD"))

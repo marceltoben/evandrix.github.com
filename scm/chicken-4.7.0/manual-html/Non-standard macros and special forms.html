@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="manual.css" type="text/css" /></head>
+<title>Chicken &raquo; Non-standard macros and special forms</title>
+<meta name="viewport" content="initial-scale=1" /></html>
+<body>
+<div id="body">
+<div id="main">
+<div id="toc">
+<h2>TOC &raquo;</h2>
+<ul>
+<li><a href="#sec:Non-standard_macros_and_special_forms">Non-standard macros and special forms</a>
+<ul>
+<li><a href="#sec:Making_extra_libraries_and_extensions_available">Making extra libraries and extensions available</a>
+<ul>
+<li><a href="#sec:require-library">require-library</a></li>
+<li><a href="#sec:require-extension">require-extension</a></li>
+<li><a href="#sec:use">use</a></li></ul></li>
+<li><a href="#sec:Binding_forms_for_optional_arguments">Binding forms for optional arguments</a>
+<ul>
+<li><a href="#sec:optional">optional</a></li>
+<li><a href="#sec:case-lambda">case-lambda</a></li>
+<li><a href="#sec:let-optionals">let-optionals</a></li>
+<li><a href="#sec:let-optionals.2a">let-optionals*</a></li></ul></li>
+<li><a href="#sec:Other_binding_forms">Other binding forms</a>
+<ul>
+<li><a href="#sec:and-let.2a">and-let*</a></li>
+<li><a href="#sec:rec">rec</a></li>
+<li><a href="#sec:cut">cut</a></li>
+<li><a href="#sec:define-values">define-values</a></li>
+<li><a href="#sec:fluid-let">fluid-let</a></li>
+<li><a href="#sec:let-values">let-values</a></li>
+<li><a href="#sec:let.2a-values">let*-values</a></li>
+<li><a href="#sec:letrec-values">letrec-values</a></li>
+<li><a href="#sec:parameterize">parameterize</a></li>
+<li><a href="#sec:receive">receive</a></li>
+<li><a href="#sec:set.21-values">set!-values</a></li></ul></li>
+<li><a href="#sec:Substitution_forms_and_macros">Substitution forms and macros</a>
+<ul>
+<li><a href="#sec:define-constant">define-constant</a></li>
+<li><a href="#sec:define-inline">define-inline</a></li>
+<li><a href="#sec:define-for-syntax">define-for-syntax</a></li>
+<li><a href="#sec:define-compiler-syntax">define-compiler-syntax</a></li>
+<li><a href="#sec:let-compiler-syntax">let-compiler-syntax</a></li></ul></li>
+<li><a href="#sec:Conditional_forms">Conditional forms</a>
+<ul>
+<li><a href="#sec:select">select</a></li>
+<li><a href="#sec:unless">unless</a></li>
+<li><a href="#sec:when">when</a></li></ul></li>
+<li><a href="#sec:Record_structures">Record structures</a>
+<ul>
+<li><a href="#sec:define-record">define-record</a></li>
+<li><a href="#sec:define-record-type">define-record-type</a></li>
+<li><a href="#sec:define-record-printer">define-record-printer</a></li></ul></li>
+<li><a href="#sec:Other_forms">Other forms</a>
+<ul>
+<li><a href="#sec:assert">assert</a></li>
+<li><a href="#sec:begin-for-syntax">begin-for-syntax</a></li>
+<li><a href="#sec:cond-expand">cond-expand</a></li>
+<li><a href="#sec:ensure">ensure</a></li>
+<li><a href="#sec:eval-when">eval-when</a></li>
+<li><a href="#sec:include">include</a></li>
+<li><a href="#sec:nth-value">nth-value</a></li>
+<li><a href="#sec:time">time</a></li></ul></li></ul></li></ul></div><h2 id="sec:Non-standard_macros_and_special_forms"><a href="#sec:Non-standard_macros_and_special_forms">Non-standard macros and special forms</a></h2><h3 id="sec:Making_extra_libraries_and_extensions_available"><a href="#sec:Making_extra_libraries_and_extensions_available">Making extra libraries and extensions available</a></h3><h4 id="sec:require-library"><a href="#sec:require-library">require-library</a></h4><dl class="defsig"><dt class="defsig" id="def:require-library"><span class="sig"><tt>(require-library ID ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>This form does all the necessary steps to make the libraries or extensions given in <tt>ID ...</tt> available. It loads syntactic extensions, if needed and generates code for loading/linking with core library modules or separately installed extensions.</p><p>During interpretation/evaluation <tt>require-library</tt> performs one of the following:</p><ul><li>If <tt>ID</tt> names a built-in feature <tt>chicken srfi-0 srfi-2 srfi-6 srfi-8 srfi-9 srfi-10 srfi-17 srfi-23 srfi-30 srfi-39 srfi-55</tt>, then nothing is done.</li>
+<li>If <tt>ID</tt> names one of the syntactic extensions <tt>chicken-syntax chicken-ffi-syntax</tt>, then this extension will be loaded.</li>
+<li>If <tt>ID</tt> names one of the core library units shipped with CHICKEN, then a <tt>(load-library 'ID)</tt> will be performed.</li>
+<li>If <tt>ID</tt> names an installed extension with the <tt>syntax</tt> or <tt>require-at-runtime</tt> attribute, then the extensions is loaded at compile-time, probably doing a run-time <tt>(require ...)</tt> for any run-time requirements.</li>
+<li>Otherwise, <tt>(require-library ID)</tt> is equivalent to <tt>(require 'ID)</tt>.</li>
+</ul>
+<p>During compilation, one of the following happens instead:</p><ul><li>If <tt>ID</tt> names a built-in feature <tt>chicken srfi-0 srfi-2 srfi-6 srfi-8 srfi-9 srfi-10 srfi-17 srfi-23 srfi-30 srfi-39 srfi-55</tt>, then nothing is done.</li>
+<li>If <tt>ID</tt> names one of the syntactic extensions <tt>chicken-syntax chicken-ffi-syntax</tt>, then this extension will be loaded at compile-time, making the syntactic extensions available in compiled code.</li>
+<li>If <tt>ID</tt> names one of the core library units shipped with CHICKEN, or if the option <tt>-uses ID</tt> has been passed to the compiler, then a <tt>(declare (uses ID))</tt> is generated.</li>
+<li>If <tt>ID</tt> names an installed extension with the <tt>syntax</tt> or <tt>require-at-runtime</tt> attribute, then the extension is loaded at compile-time, and code is emitted to <tt>(require ...)</tt> any needed run-time requirements.</li>
+<li>Otherwise <tt>(require-library ID)</tt> is equivalent to <tt>(require 'ID)</tt>.</li>
+</ul>
+<p>To make long matters short - just use <tt>require-library</tt> and it will normally figure everything out for dynamically loadable extensions and core library units.</p><p><tt>ID</tt> should be a pure extension name and should not contain any path prefixes (for example <tt>dir/lib...</tt>) is illegal).</p><p><tt>ID</tt> may also be a list that designates an extension-specifier. Currently the following extension specifiers are defined:</p><ul><li><tt>(srfi NUMBER ...)</tt> is required for SRFI-55 compatibility and is fully implemented</li>
+<li><tt>(version ID NUMBER)</tt> is equivalent to <tt>ID</tt>, but checks at compile-time whether the extension named <tt>ID</tt> is installed and whether its version is equal or higher than <tt>NUMBER</tt>. <tt>NUMBER</tt> may be a string or a number, the comparison is done lexicographically (using <tt>string&gt;=?</tt>).</li>
+</ul>
+<p>See also: <tt>set-extension-specifier!</tt></p></dd>
+</dl>
+<h4 id="sec:require-extension"><a href="#sec:require-extension">require-extension</a></h4><dl class="defsig"><dt class="defsig" id="def:require-extension"><span class="sig"><tt>(require-extension ID ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>This is equivalent to <tt>(require-library ID ...)</tt> but performs an implicit <tt>import</tt>, if necessary. <tt>ID</tt> may also be an import specification (using <tt>rename</tt>, <tt>only</tt>, <tt>except</tt> or <tt>prefix</tt>).</p><p>This implementation of <tt>require-extension</tt> is compliant with <a href="http://srfi.schemers.org/srfi-55/srfi-55.html">SRFI-55</a> (see the <a href="http://srfi.schemers.org/srfi-55/srfi-55.html">SRFI-55</a> document for more information).</p></dd>
+</dl>
+<h4 id="sec:use"><a href="#sec:use">use</a></h4><dl class="defsig"><dt class="defsig" id="def:use"><span class="sig"><tt>(use ID ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p><tt>use</tt> is just a shorter alias for <tt>require-extension</tt>.</p></dd>
+</dl>
+<h3 id="sec:Binding_forms_for_optional_arguments"><a href="#sec:Binding_forms_for_optional_arguments">Binding forms for optional arguments</a></h3><h4 id="sec:optional"><a href="#sec:optional">optional</a></h4><dl class="defsig"><dt class="defsig" id="def:optional"><span class="sig"><tt>(optional ARGS DEFAULT)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Use this form for procedures that take a single optional argument. If <tt>ARGS</tt> is the empty list <tt>DEFAULT</tt> is evaluated and returned, otherwise the first element of the list <tt>ARGS</tt>. It is an error if <tt>ARGS</tt> contains more than one value.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> <span class="paren2">(<span class="default">incr x . i</span>)</span> <span class="paren2">(<span class="default">+ x <span class="paren3">(<span class="default">optional i 1</span>)</span></span>)</span></span>)</span>
+<span class="paren1">(<span class="default">incr 10</span>)</span>                                   ==&gt; 11
+<span class="paren1">(<span class="default">incr 12 5</span>)</span>                                 ==&gt; 17</pre></dd>
+</dl>
+<h4 id="sec:case-lambda"><a href="#sec:case-lambda">case-lambda</a></h4><dl class="defsig"><dt class="defsig" id="def:case-lambda"><span class="sig"><tt>(case-lambda (LAMBDA-LIST1 EXP1 ...) ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Expands into a lambda that invokes the body following the first matching lambda-list.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> plus
+  <span class="paren2">(<span class="default">case-lambda 
+    <span class="paren3">(<span class="default"><span class="paren4">(<span class="default"></span>)</span> 0</span>)</span>
+    <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">x</span>)</span> x</span>)</span>
+    <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">x y</span>)</span> <span class="paren4">(<span class="default">+ x y</span>)</span></span>)</span>
+    <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">x y z</span>)</span> <span class="paren4">(<span class="default">+ <span class="paren5">(<span class="default">+ x y</span>)</span> z</span>)</span></span>)</span>
+    <span class="paren3">(<span class="default">args <span class="paren4">(<span class="default">apply + args</span>)</span></span>)</span></span>)</span></span>)</span>
+
+<span class="paren1">(<span class="default">plus</span>)</span>                      ==&gt; 0
+<span class="paren1">(<span class="default">plus 1</span>)</span>                    ==&gt; 1
+<span class="paren1">(<span class="default">plus 1 2 3</span>)</span>                ==&gt; 6</pre><p>For more information see the documentation for <a href="http://srfi.schemers.org/srfi-16/srfi-16.html">SRFI-16</a></p></dd>
+</dl>
+<h4 id="sec:let-optionals"><a href="#sec:let-optionals">let-optionals</a></h4><dl class="defsig"><dt class="defsig" id="def:let-optionals"><span class="sig"><tt> (let-optionals ARGS ((VAR1 DEFAULT1) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Binding constructs for optional procedure arguments. <tt>ARGS</tt> should be a rest-parameter taken from a lambda-list. <tt>let-optionals</tt> binds <tt>VAR1 ...</tt> to available arguments in parallel, or to <tt>DEFAULT1 ...</tt> if not enough arguments were provided. <tt>let-optionals*</tt> binds <tt>VAR1 ...</tt> sequentially, so every variable sees the previous ones. it is an error if any excess arguments are provided.</p><pre class="highlight"><span class="paren1">(<span class="default">let-optionals &#x27;<span class="paren2">(<span class="default">one two</span>)</span> <span class="paren2">(<span class="default"><span class="paren3">(<span class="default">a 1</span>)</span> <span class="paren3">(<span class="default">b 2</span>)</span> <span class="paren3">(<span class="default">c 3</span>)</span></span>)</span>
+  <span class="paren2">(<span class="default">list a b c</span>)</span> </span>)</span>                               ==&gt; <span class="paren1">(<span class="default">one two 3</span>)</span></pre></dd>
+</dl>
+<h4 id="sec:let-optionals.2a"><a href="#sec:let-optionals.2a">let-optionals*</a></h4><dl class="defsig"><dt class="defsig" id="def:let-optionals.2a"><span class="sig"><tt> (let-optionals* ARGS ((VAR1 DEFAULT1) ... [RESTVAR]) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Binding constructs for optional procedure arguments. <tt>ARGS</tt> should be a rest-parameter taken from a lambda-list. <tt>let-optionals</tt> binds <tt>VAR1 ...</tt> to available arguments in parallel, or to <tt>DEFAULT1 ...</tt> if not enough arguments were provided. <tt>let-optionals*</tt> binds <tt>VAR1 ...</tt> sequentially, so every variable sees the previous ones. If a single variable <tt>RESTVAR</tt> is given, then it is bound to any remaining arguments, otherwise it is an error if any excess arguments are provided.</p><pre class="highlight"><span class="paren1">(<span class="default">let-optionals* &#x27;<span class="paren2">(<span class="default">one two</span>)</span> <span class="paren2">(<span class="default"><span class="paren3">(<span class="default">a 1</span>)</span> <span class="paren3">(<span class="default">b 2</span>)</span> <span class="paren3">(<span class="default">c a</span>)</span></span>)</span>
+  <span class="paren2">(<span class="default">list a b c</span>)</span> </span>)</span>                               ==&gt; <span class="paren1">(<span class="default">one two one</span>)</span></pre></dd>
+</dl>
+<h3 id="sec:Other_binding_forms"><a href="#sec:Other_binding_forms">Other binding forms</a></h3><h4 id="sec:and-let.2a"><a href="#sec:and-let.2a">and-let*</a></h4><dl class="defsig"><dt class="defsig" id="def:and-let.2a"><span class="sig"><tt>(and-let* (BINDING ...) EXP1 EXP2 ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>SRFI-2. Bind sequentially and execute body. <tt>BINDING</tt> can be a list of a variable and an expression, a list with a single expression, or a single variable. If the value of an expression bound to a variable is <tt>#f</tt>, the <tt>and-let*</tt> form evaluates to <tt>#f</tt> (and the subsequent bindings and the body are not executed).  Otherwise the next binding is performed. If all bindings/expressions evaluate to a true result, the body is executed normally and the result of the last expression is the result of the <tt>and-let*</tt> form. See also the documentation for <a href="http://srfi.schemers.org/srfi-2/srfi-2.html">SRFI-2</a>.</p></dd>
+</dl>
+<h4 id="sec:rec"><a href="#sec:rec">rec</a></h4><dl class="defsig"><dt class="defsig" id="def:rec"><span class="sig"><tt>(rec NAME EXPRESSION)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:rec"><span class="sig"><tt>(rec (NAME VARIABLE ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Allows simple definition of recursive definitions. <tt>(rec NAME EXPRESSION)</tt> is equivalent to <tt>(letrec ((NAME EXPRESSION)) NAME)</tt> and <tt>(rec (NAME VARIABLE ...) BODY ...)</tt> is the same as <tt>(letrec ((NAME (lambda (VARIABLE ...) BODY ...))) NAME)</tt>.</p></dd>
+</dl>
+<h4 id="sec:cut"><a href="#sec:cut">cut</a></h4><dl class="defsig"><dt class="defsig" id="def:cut"><span class="sig"><tt>(cut SLOT ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:cute"><span class="sig"><tt>(cute SLOT ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p><a href="http://srfi.schemers.org/srfi-26/srfi-26.html">Syntactic sugar for specializing parameters</a>.</p></dd>
+</dl>
+<h4 id="sec:define-values"><a href="#sec:define-values">define-values</a></h4><dl class="defsig"><dt class="defsig" id="def:define-values"><span class="sig"><tt>(define-values (NAME ...) EXP)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines several variables at once, with the result values of expression <tt>EXP</tt>.</p></dd>
+</dl>
+<h4 id="sec:fluid-let"><a href="#sec:fluid-let">fluid-let</a></h4><dl class="defsig"><dt class="defsig" id="def:fluid-let"><span class="sig"><tt>(fluid-let ((VAR1 X1) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Binds the variables <tt>VAR1 ...</tt> dynamically to the values <tt>X1 ...</tt> during execution of <tt>BODY ...</tt>. This implements <a href="http://srfi.schemers.org/srfi-15/srfi-15.html">SRFI-15</a>.</p></dd>
+</dl>
+<h4 id="sec:let-values"><a href="#sec:let-values">let-values</a></h4><dl class="defsig"><dt class="defsig" id="def:let-values"><span class="sig"><tt>(let-values (((NAME ...) EXP) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Binds multiple variables to the result values of <tt>EXP ...</tt>. All variables are bound simultaneously. This implements <a href="http://srfi.schemers.org/srfi-11/srfi-11.html">SRFI-11</a>.</p></dd>
+</dl>
+<h4 id="sec:let.2a-values"><a href="#sec:let.2a-values">let*-values</a></h4><dl class="defsig"><dt class="defsig" id="def:let.2a-values"><span class="sig"><tt>(let*-values (((NAME ...) EXP) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Binds multiple variables to the result values of <tt>EXP ...</tt>. The variables are bound sequentially. This is also part of <a href="http://srfi.schemers.org/srfi-11/srfi-11.html">SRFI-11</a>.</p><pre class="highlight"><span class="paren1">(<span class="default">let*-values <span class="paren2">(<span class="default"><span class="paren3">(<span class="default"><span class="paren4">(<span class="default">a b</span>)</span> <span class="paren4">(<span class="default">values 2 3</span>)</span></span>)</span>
+              <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">p</span>)</span> <span class="paren4">(<span class="default">+ a b</span>)</span></span>)</span> </span>)</span>
+  p</span>)</span>                               ==&gt; 5</pre></dd>
+</dl>
+<h4 id="sec:letrec-values"><a href="#sec:letrec-values">letrec-values</a></h4><dl class="defsig"><dt class="defsig" id="def:letrec-values"><span class="sig"><tt>(letrec-values (((NAME ...) EXP) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Binds the result values of <tt>EXP ...</tt> to multiple variables at once. All variables are mutually recursive.</p><pre class="highlight"><span class="paren1">(<span class="default">letrec-values <span class="paren2">(<span class="default"><span class="paren3">(<span class="default"><span class="paren4">(<span class="default">odd even</span>)</span>
+                   <span class="paren4">(<span class="default">values 
+                     <span class="paren5">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren6">(<span class="default">n</span>)</span> <span class="paren6">(<span class="default"><i><span class="symbol">if</span></i> <span class="paren1">(<span class="default">zero? n</span>)</span> #f <span class="paren1">(<span class="default">even <span class="paren2">(<span class="default">sub1 n</span>)</span></span>)</span></span>)</span></span>)</span>
+                     <span class="paren5">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren6">(<span class="default">n</span>)</span> <span class="paren6">(<span class="default"><i><span class="symbol">if</span></i> <span class="paren1">(<span class="default">zero? n</span>)</span> #t <span class="paren1">(<span class="default">odd <span class="paren2">(<span class="default">sub1 n</span>)</span></span>)</span></span>)</span></span>)</span> </span>)</span> </span>)</span> </span>)</span>
+  <span class="paren2">(<span class="default">odd 17</span>)</span> </span>)</span>                           ==&gt; #t</pre></dd>
+</dl>
+<h4 id="sec:parameterize"><a href="#sec:parameterize">parameterize</a></h4><dl class="defsig"><dt class="defsig" id="def:parameterize"><span class="sig"><tt>(parameterize ((PARAMETER1 X1) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Binds the parameters <tt>PARAMETER1 ...</tt> dynamically to the values <tt>X1 ...</tt> during execution of <tt>BODY ...</tt>.  (see also: <tt>make-parameter</tt> in <a href="Parameters.html">Parameters</a>). Note that <tt>PARAMETER</tt> may be any expression that evaluates to a parameter procedure.</p></dd>
+</dl>
+<h4 id="sec:receive"><a href="#sec:receive">receive</a></h4><dl class="defsig"><dt class="defsig" id="def:receive"><span class="sig"><tt>(receive (NAME ...) VALUEEXP BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:receive"><span class="sig"><tt>(receive (NAME1 ... NAMEn . NAMEn+1) VALUEEXP BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:receive"><span class="sig"><tt>(receive VALUEEXP)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p><a href="http://srfi.schemers.org/srfi-8/srfi-8.html">SRFI-8</a>. Syntactic sugar for <tt>call-with-values</tt>. Binds variables to the result values of <tt>VALUEEXP</tt> and evaluates <tt>BODY ...</tt>.</p><p><tt>(receive VALUEEXP)</tt> is equivalent to <tt>(receive _ VALUEEXP _)</tt>.</p></dd>
+</dl>
+<h4 id="sec:set.21-values"><a href="#sec:set.21-values">set!-values</a></h4><dl class="defsig"><dt class="defsig" id="def:set.21-values"><span class="sig"><tt>(set!-values (NAME ...) EXP)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Assigns the result values of expression <tt>EXP</tt> to multiple variables.</p></dd>
+</dl>
+<h3 id="sec:Substitution_forms_and_macros"><a href="#sec:Substitution_forms_and_macros">Substitution forms and macros</a></h3><h4 id="sec:define-constant"><a href="#sec:define-constant">define-constant</a></h4><dl class="defsig"><dt class="defsig" id="def:define-constant"><span class="sig"><tt>(define-constant NAME CONST)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Define a variable with a constant value, evaluated at compile-time. Any reference to such a constant should appear textually <b>after</b> its definition. This construct is equivalent to <tt>define</tt> when evaluated or interpreted. Constant definitions should only appear at toplevel. Note that constants are local to the current compilation unit and are not available outside of the source file in which they are defined. Names of constants still exist in the Scheme namespace and can be lexically shadowed.  If the value is mutable, then the compiler is careful to preserve its identity. <tt>CONST</tt> may be any constant expression, and may also refer to constants defined via <tt>define-constant</tt> previously. This form should only be used at top-level.</p></dd>
+</dl>
+<h4 id="sec:define-inline"><a href="#sec:define-inline">define-inline</a></h4><dl class="defsig"><dt class="defsig" id="def:define-inline"><span class="sig"><tt>(define-inline (NAME VAR ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:define-inline"><span class="sig"><tt>(define-inline (NAME VAR1 ... VARn . VARn+1) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:define-inline"><span class="sig"><tt>(define-inline NAME EXP)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines an inline procedure. Any occurrence of <tt>NAME</tt> will be replaced by <tt>EXP</tt> or <tt>(lambda (VAR ... [. VAR]) BODY ...)</tt>. This is similar to a macro, but variable-names and -scope will be correctly handled.  Inline substitutions take place <b>after</b> macro-expansion.  <tt>EXP</tt> should be a lambda-expression. Any reference to <tt>NAME</tt> should appear textually <b>after</b> its definition. Note that inline procedures are local to the current compilation unit and are not available outside of the source file in which they are defined. Names of inline procedures still exist in the Scheme namespace and can be lexically shadowed.  This construct is equivalent to <tt>define</tt> when evaluated or interpreted. Inline definitions should only appear at toplevel.</p></dd>
+</dl>
+<h4 id="sec:define-for-syntax"><a href="#sec:define-for-syntax">define-for-syntax</a></h4><dl class="defsig"><dt class="defsig" id="def:define-for-syntax"><span class="sig"><tt>(define-for-syntax (NAME VAR ...) EXP1 ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:define-for-syntax"><span class="sig"><tt>(define-for-syntax (NAME VAR1 ... VARn . VARn+1) EXP1 ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:define-for-syntax"><span class="sig"><tt>(define-for-syntax NAME [VALUE])</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines the toplevel variable <tt>NAME</tt> at macro-expansion time. This can be helpful when you want to define support procedures for use in macro-transformers, for example.</p></dd>
+</dl>
+<h4 id="sec:define-compiler-syntax"><a href="#sec:define-compiler-syntax">define-compiler-syntax</a></h4><dl class="defsig"><dt class="defsig" id="def:define-compiler-syntax"><span class="sig"><tt>(define-compiler-syntax NAME)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:define-compiler-syntax"><span class="sig"><tt>(define-compiler-syntax NAME TRANSFORMER)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:define-compiler-syntax"><span class="sig"><tt>(define-compiler-syntax (NAME VAR ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines what is usually called a <i>compiler macro</i> in Lisp: <tt>NAME</tt> should be the name of a globally or locally bound procedure. Any direct call to this procedure will be transformed before compilation, which allows arbitrary rewritings of function calls.</p><p><tt>TRANSFORMER</tt> can be a <tt>syntax-rules</tt> expression or an explicit-renaming transformer procedure. Returning the original form in an explicit-renaming macro or simply &quot;falling trough&quot; all patterns in a <tt>syntax-rules</tt> form will keep the original expression and compile it normally.</p><p>In the interpreter this form does nothing and returns an unspecified value.</p><p>Compiler-syntax is always local to the current compilation unit and can not be exported. Compiler-syntax defined inside a module is not visible outside of that module.</p><p><tt>define-compiler-syntax</tt> should only be used at top-level. Local compiler-syntax can be defined with <tt>let-compiler-syntax</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define-compiler-syntax</span></i> +
+  <span class="paren2">(<span class="default">syntax-rules <span class="paren3">(<span class="default"></span>)</span>
+    <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">_</span>)</span> 1</span>)</span>
+    <span class="paren3">(<span class="default"><span class="paren4">(<span class="default">_ x 0</span>)</span> x</span>)</span> </span>)</span> </span>)</span></pre><p>If no transformer is given, then <tt>(define-compiler-syntax NAME)</tt> removes any compiler-syntax definitions for <tt>NAME</tt>.</p></dd>
+</dl>
+<h4 id="sec:let-compiler-syntax"><a href="#sec:let-compiler-syntax">let-compiler-syntax</a></h4><dl class="defsig"><dt class="defsig" id="def:let-compiler-syntax"><span class="sig"><tt>(let-compiler-syntax ((NAME [TRANSFORMER]) ...) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Allows definition local compiler macros, which are only applicable inside <tt>BODY ...</tt>. By not providing a <tt>TRANSFORMER</tt> expression, compiler-syntax for specific identifiers can be temporarily disabled.</p></dd>
+</dl>
+<h3 id="sec:Conditional_forms"><a href="#sec:Conditional_forms">Conditional forms</a></h3><h4 id="sec:select"><a href="#sec:select">select</a></h4><dl class="defsig"><dt class="defsig" id="def:select"><span class="sig"><tt>(select EXP ((KEY ...) EXP1 ...) ... [(else EXPn ...)])</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>This is similar to <tt>case</tt>, but the keys are evaluated.</p></dd>
+</dl>
+<h4 id="sec:unless"><a href="#sec:unless">unless</a></h4><dl class="defsig"><dt class="defsig" id="def:unless"><span class="sig"><tt>(unless TEST EXP1 EXP2 ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Equivalent to:</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">if</span></i> <span class="paren2">(<span class="default">not TEST</span>)</span> <span class="paren2">(<span class="default">begin EXP1 EXP2 ...</span>)</span></span>)</span></pre></dd>
+</dl>
+<h4 id="sec:when"><a href="#sec:when">when</a></h4><dl class="defsig"><dt class="defsig" id="def:when"><span class="sig"><tt>(when TEST EXP1 EXP2 ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Equivalent to:</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">if</span></i> TEST <span class="paren2">(<span class="default">begin EXP1 EXP2 ...</span>)</span></span>)</span></pre></dd>
+</dl>
+<h3 id="sec:Record_structures"><a href="#sec:Record_structures">Record structures</a></h3><h4 id="sec:define-record"><a href="#sec:define-record">define-record</a></h4><dl class="defsig"><dt class="defsig" id="def:define-record"><span class="sig"><tt>(define-record NAME SLOTNAME ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines a record type. Call <tt>make-NAME</tt> to create an instance of the structure (with one initialization-argument for each slot). <tt>(NAME? STRUCT)</tt> tests any object for being an instance of this structure.  Slots are accessed via <tt>(NAME-SLOTNAME STRUCT)</tt> and updated using <tt>(NAME-SLOTNAME-set!</tt> <tt>STRUCT</tt> <tt>VALUE)</tt>.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define-record</span></i> point x y</span>)</span>
+<span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> p1 <span class="paren2">(<span class="default">make-point 123 456</span>)</span></span>)</span>
+<span class="paren1">(<span class="default">point? p1</span>)</span>                      ==&gt; #t
+<span class="paren1">(<span class="default">point-x p1</span>)</span>                     ==&gt; 123
+<span class="paren1">(<span class="default">point-y-set! p1 99</span>)</span>
+<span class="paren1">(<span class="default">point-y p1</span>)</span>                     ==&gt; 99</pre><p><tt>SLOTNAME</tt> may alternatively also be of the form</p><pre> (setter SLOTNAME)</pre><p>In this case the slot can be read with <tt>(NAME-SLOTNAME STRUCT)</tt> and written with <tt>(set! (NAME-SLOTNAME STRUCT) VALUE)</tt> (the slot-accessor has an associated SRFI-17 &quot;setter&quot; procedure).</p></dd>
+</dl>
+<h4 id="sec:define-record-type"><a href="#sec:define-record-type">define-record-type</a></h4><dl class="defsig"><dt class="defsig" id="def:define-record-type"><span class="sig"><tt>(define-record-type NAME (CONSTRUCTOR TAG ...) PREDICATE (FIELD ACCESSOR [MODIFIER]) ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>SRFI-9 record types. For more information see the documentation for <a href="http://srfi.schemers.org/srfi-9/srfi-9.html">SRFI-9</a>.</p><p>As an extension the <tt>MODIFIER</tt> may have the form <tt>(setter PROCEDURE)</tt>, which will define a SRFI-17 setter-procedure for the given <tt>PROCEDURE</tt> that sets the field value. Usually <tt>PROCEDURE</tt> has the same name is <tt>ACCESSOR</tt> (but it doesn't have to).</p></dd>
+</dl>
+<h4 id="sec:define-record-printer"><a href="#sec:define-record-printer">define-record-printer</a></h4><dl class="defsig"><dt class="defsig" id="def:define-record-printer"><span class="sig"><tt>(define-record-printer (NAME RECORDVAR PORTVAR) BODY ...)</tt></span> <span class="type">syntax</span></dt>
+<dt class="defsig" id="def:define-record-printer"><span class="sig"><tt>(define-record-printer NAME PROCEDURE)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Defines a printing method for record of the type <tt>NAME</tt> by associating a procedure with the record type. When a record of this type is written using <tt>display, write</tt> or <tt>print</tt>, then the procedure is called with two arguments: the record to be printed and an output-port.</p><pre class="highlight"><span class="paren1">(<span class="default"><i><span class="symbol">define-record-type</span></i> foo <span class="paren2">(<span class="default">make-foo x y z</span>)</span> foo?
+  <span class="paren2">(<span class="default">x foo-x</span>)</span>
+  <span class="paren2">(<span class="default">y foo-y</span>)</span>
+  <span class="paren2">(<span class="default">z foo-z</span>)</span></span>)</span>
+<span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> f <span class="paren2">(<span class="default">make-foo 1 2 3</span>)</span></span>)</span>
+<span class="paren1">(<span class="default"><i><span class="symbol">define-record-printer</span></i> <span class="paren2">(<span class="default">foo x out</span>)</span>
+  <span class="paren2">(<span class="default">fprintf out <span class="string">&quot;#,(foo ~S ~S ~S)&quot;</span>
+           <span class="paren3">(<span class="default">foo-x x</span>)</span> <span class="paren3">(<span class="default">foo-y x</span>)</span> <span class="paren3">(<span class="default">foo-z x</span>)</span></span>)</span> </span>)</span>
+<span class="paren1">(<span class="default"><i><span class="symbol">define-reader-ctor</span></i> &#x27;foo make-foo</span>)</span>
+<span class="paren1">(<span class="default"><i><span class="symbol">define</span></i> s <span class="paren2">(<span class="default"><i><span class="symbol">with-output-to-string</span></i>
+              <span class="paren3">(<span class="default"><i><span class="symbol">lambda</span></i> <span class="paren4">(<span class="default"></span>)</span> <span class="paren4">(<span class="default">write f</span>)</span></span>)</span></span>)</span></span>)</span>
+s                                   ==&gt; <span class="string">&quot;#,(foo 1 2 3)&quot;</span>
+<span class="paren1">(<span class="default">equal? f <span class="paren2">(<span class="default"><i><span class="symbol">with-input-from-string</span></i>
+              s read</span>)</span></span>)</span>)             ==&gt; #t</pre></dd>
+</dl>
+<h3 id="sec:Other_forms"><a href="#sec:Other_forms">Other forms</a></h3><h4 id="sec:assert"><a href="#sec:assert">assert</a></h4><dl class="defsig"><dt class="defsig" id="def:assert"><span class="sig"><tt>(assert EXP [STRING ARG ...])</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Signals an error if <tt>EXP</tt> evaluates to false. An optional message <tt>STRING</tt> and arguments <tt>ARG ...</tt> may be supplied to give a more informative error-message.  If compiled in <i>unsafe</i> mode (either by specifying the <tt>-unsafe</tt> compiler option or by declaring <tt>(unsafe)</tt>), then this expression expands to an unspecified value. The result is the value of <tt>EXP</tt>.</p></dd>
+</dl>
+<h4 id="sec:begin-for-syntax"><a href="#sec:begin-for-syntax">begin-for-syntax</a></h4><dl class="defsig"><dt class="defsig" id="def:begin-for-syntax"><span class="sig"><tt>(begin-for-syntax EXP ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Equivalent to <tt>(begin EXP ...)</tt>, but performs the evaluation of the expression during macro-expansion time.</p></dd>
+</dl>
+<h4 id="sec:cond-expand"><a href="#sec:cond-expand">cond-expand</a></h4><dl class="defsig"><dt class="defsig" id="def:cond-expand"><span class="sig"><tt>(cond-expand FEATURE-CLAUSE ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Expands by selecting feature clauses. This form is allowed to appear in non-toplevel expressions.</p><p>Predefined feature-identifiers are &quot;situation&quot; specific:</p><dl><dt>compile</dt>
+<dd><tt>chicken</tt>, <tt>compiling</tt>, <tt>library</tt>, <tt>eval</tt>, <tt>extras</tt>, <tt>utils</tt>, <tt>regex</tt>, <tt>srfi-0</tt>, <tt>srfi-1</tt>, <tt>srfi-2</tt>, <tt>srfi-4</tt>, <tt>srfi-6</tt>, <tt>srfi-8</tt>, <tt>srfi-9</tt>, <tt>srfi-10</tt>, <tt>srfi-11</tt>, <tt>srfi-12</tt>, <tt>srfi-15</tt>, <tt>srfi-16</tt>, <tt>srfi-17</tt>, <tt>srfi-23</tt>, <tt>srfi-26</tt>, <tt>srfi-28</tt>, <tt>srfi-30</tt>, <tt>srfi-31</tt>, <tt>srfi-39</tt>, <tt>srfi-55</tt>, <tt>srfi-61</tt>, <tt>srfi-62</tt>, <tt>srfi-69</tt></dd><dt>load</dt>
+<dd><tt>chicken</tt>, <tt>extras</tt>, <tt>srfi-0</tt>, <tt>srfi-2</tt>, <tt>srfi-6</tt>, <tt>srfi-8</tt>, <tt>srfi-9</tt>, <tt>srfi-10</tt>, <tt>srfi-12</tt>, <tt>srfi-17</tt>, <tt>srfi-23</tt>, <tt>srfi-28</tt>, <tt>srfi-30</tt>, <tt>srfi-39</tt>, <tt>srfi-55</tt>, <tt>srfi-61</tt>, <tt>srfi-62</tt>, <tt>srfi-69</tt>. <tt>library</tt> is implicit.</dd><dt>eval</dt>
+<dd><tt>csi</tt>, <tt>chicken</tt>, <tt>extras</tt>, <tt>srfi-0</tt>, <tt>srfi-2</tt>, <tt>srfi-6</tt>, <tt>srfi-8</tt>, <tt>srfi-9</tt>, <tt>srfi-10</tt>, <tt>srfi-11</tt>, <tt>srfi-12</tt>, <tt>srfi-15</tt>, <tt>srfi-16</tt>, <tt>srfi-17</tt>, <tt>srfi-23</tt>, <tt>srfi-26</tt>, <tt>srfi-28</tt>, <tt>srfi-30</tt>, <tt>srfi-31</tt>, <tt>srfi-39</tt>, <tt>srfi-55</tt>, <tt>srfi-61</tt>, <tt>srfi-62</tt>, <tt>srfi-69</tt>. <tt>library</tt> is implicit.</dd></dl>
+<p>The following feature-identifier classes are available in all situations: <tt>(machine-byte-order)</tt>, <tt>(machine-type)</tt>, <tt>(software-type)</tt>, <tt>(software-version)</tt>, where the actual feature-identifier is platform dependent.</p><p>In addition the following feature-identifiers may exist: <tt>cross-chicken</tt>, <tt>dload</tt>, <tt>manyargs</tt>, <tt>ptables</tt>.</p><p>For further information, see the documentation for <a href="http://srfi.schemers.org/srfi-0/srfi-0.html">SRFI-0</a>.</p></dd>
+</dl>
+<h4 id="sec:ensure"><a href="#sec:ensure">ensure</a></h4><dl class="defsig"><dt class="defsig" id="def:ensure"><span class="sig"><tt>(ensure PREDICATE EXP [ARGUMENTS ...])</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Evaluates the expression <tt>EXP</tt> and applies the one-argument procedure <tt>PREDICATE</tt> to the result. If the predicate returns <tt>#f</tt> an error is signaled, otherwise the result of <tt>EXP</tt> is returned.  If compiled in <i>unsafe</i> mode (either by specifying the <tt>-unsafe</tt> compiler option or by declaring <tt>(unsafe)</tt>), then this expression expands to an unspecified value.  If specified, the optional <tt>ARGUMENTS</tt> are used as arguments to the invocation of the error-signalling code, as in <tt>(error ARGUMENTS ...)</tt>. If no <tt>ARGUMENTS</tt> are given, a generic error message is displayed with the offending value and <tt>PREDICATE</tt> expression.</p></dd>
+</dl>
+<h4 id="sec:eval-when"><a href="#sec:eval-when">eval-when</a></h4><dl class="defsig"><dt class="defsig" id="def:eval-when"><span class="sig"><tt>(eval-when (SITUATION ...) EXP ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Controls evaluation/compilation of subforms. <tt>SITUATION</tt> should be one of the symbols <tt>eval</tt>, <tt>compile</tt> or <tt>load</tt>. When encountered in the evaluator, and the situation specifier <tt>eval</tt> is not given, then this form is not evaluated and an unspecified value is returned.  When encountered while compiling code, and the situation specifier <tt>compile</tt> is given, then this form is evaluated at compile-time.  When encountered while compiling code, and the situation specifier <tt>load</tt> is not given, then this form is ignored and an expression resulting into an unspecified value is compiled instead.</p><p>The following table should make this clearer:</p><table>
+<tr><th></th><th>In compiled code</th><th>In interpreted code</th></tr>
+
+<tr><td><tt>eval</tt></td><td>ignore</td><td>evaluate</td></tr>
+
+<tr><td><tt>compile</tt></td><td>evaluate at compile time</td><td>ignore</td></tr>
+
+<tr><td><tt>load</tt></td><td>compile as normal</td><td>ignore</td></tr>
+</table>
+</dd>
+</dl>
+<h4 id="sec:include"><a href="#sec:include">include</a></h4><dl class="defsig"><dt class="defsig" id="def:include"><span class="sig"><tt>(include STRING)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Include toplevel-expressions from the given source file in the currently compiled/interpreted program.  If the included file has the extension <tt>.scm</tt>, then it may be omitted.  The file is searched in the current directory and, if not found, in all directories specified in the <tt>-include-path</tt> option.</p></dd>
+</dl>
+<h4 id="sec:nth-value"><a href="#sec:nth-value">nth-value</a></h4><dl class="defsig"><dt class="defsig" id="def:nth-value"><span class="sig"><tt>(nth-value N EXP)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Returns the <tt>N</tt>th value (counting from zero) of the values returned by expression <tt>EXP</tt>.</p></dd>
+</dl>
+<h4 id="sec:time"><a href="#sec:time">time</a></h4><dl class="defsig"><dt class="defsig" id="def:time"><span class="sig"><tt>(time EXP1 ...)</tt></span> <span class="type">syntax</span></dt>
+<dd class="defsig"><p>Performs a major garbage collection, evaluates <tt>EXP1 ...</tt> and prints elapsed CPU time and some values about GC use, like time spent in major GCs, number of minor and major GCs. The output is sent to the port that is the current value of <tt>(current-error-port)</tt>. Nested invocations of this form will give incorrect results for all output but the innermost.</p></dd>
+</dl>
+<hr /><p>Previous: <a href="Non-standard%20read%20syntax.html">Non-standard read syntax</a></p><p>Next: <a href="Macros.html">Macros</a></p></div></div></body>
