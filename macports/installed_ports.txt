@@ -266,6 +266,7 @@ The following ports are currently installed:
   p5-locale-maketext-simple @0.21_0 (active)
   p5-lwp-mediatypes @6.01_0 (active)
   p5-lwp-protocol-https @6.02_0 (active)
+  p5-lwp-useragent-determined @1.05_1 (active)
   p5-mime-base64 @3.13_1 (active)
   p5-mime-types @1.26_1 (active)
   p5-module-build @0.3800_0 (active)

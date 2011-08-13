@@ -453,53 +453,34 @@ d3.layout.force = function() {
     this
       .on("mouseover.force", d3_layout_forceDragOver)
       .on("mouseout.force", d3_layout_forceDragOut)
-      .on("mousedown.force", d3_layout_forceDragDown);
+      .on("mousedown.force", dragdown)
+      .on("touchstart.force", dragdown);
 
     d3.select(window)
-      .on("mousemove.force", dragmove)
-      .on("mouseup.force", dragup, true)
+      .on("mousemove.force", d3_layout_forceDragMove)
+      .on("touchmove.force", d3_layout_forceDragMove)
+      .on("mouseup.force", d3_layout_forceDragUp, true)
+      .on("touchend.force", d3_layout_forceDragUp, true)
       .on("click.force", d3_layout_forceDragClick, true);
 
     return force;
   };
 
-  function dragmove() {
-    if (!d3_layout_forceDragNode) return;
-    var parent = d3_layout_forceDragElement.parentNode;
-
-    // O NOES! The drag element was removed from the DOM.
-    if (!parent) {
-      d3_layout_forceDragNode.fixed = false;
-      d3_layout_forceDragOffset = d3_layout_forceDragNode = d3_layout_forceDragElement = null;
-      return;
-    }
-
-    var m = d3.svg.mouse(parent);
-    d3_layout_forceDragMoved = true;
-    d3_layout_forceDragNode.px = m[0] - d3_layout_forceDragOffset[0];
-    d3_layout_forceDragNode.py = m[1] - d3_layout_forceDragOffset[1];
-    force.resume(); // restart annealing
-  }
-
-  function dragup() {
-    if (!d3_layout_forceDragNode) return;
-
-    // If the node was moved, prevent the mouseup from propagating.
-    // Also prevent the subsequent click from propagating (e.g., for anchors).
-    if (d3_layout_forceDragMoved) {
-      d3_layout_forceStopClick = true;
-      d3_layout_forceCancel();
-    }
-
-    dragmove();
-    d3_layout_forceDragNode.fixed = false;
-    d3_layout_forceDragOffset = d3_layout_forceDragNode = d3_layout_forceDragElement = null;
+  function dragdown(d, i) {
+    var m = d3_layout_forcePoint(this.parentNode);
+    (d3_layout_forceDragNode = d).fixed = true;
+    d3_layout_forceDragMoved = false;
+    d3_layout_forceDragElement = this;
+    d3_layout_forceDragForce = force;
+    d3_layout_forceDragOffset = [m[0] - d.x, m[1] - d.y];
+    d3_layout_forceCancel();
   }
 
   return force;
 };
 
-var d3_layout_forceDragNode,
+var d3_layout_forceDragForce,
+    d3_layout_forceDragNode,
     d3_layout_forceDragMoved,
     d3_layout_forceDragOffset,
     d3_layout_forceStopClick,
@@ -515,13 +496,51 @@ function d3_layout_forceDragOut(d) {
   }
 }
 
-function d3_layout_forceDragDown(d, i) {
-  var m = d3.svg.mouse(this.parentNode);
-  (d3_layout_forceDragNode = d).fixed = true;
-  d3_layout_forceDragMoved = false;
-  d3_layout_forceDragElement = this;
-  d3_layout_forceDragOffset = [m[0] - d.x, m[1] - d.y];
+function d3_layout_forcePoint(container) {
+  return d3.event.touches
+      ? d3.svg.touches(container)[0]
+      : d3.svg.mouse(container);
+}
+
+function d3_layout_forceDragMove() {
+  if (!d3_layout_forceDragNode) return;
+  var parent = d3_layout_forceDragElement.parentNode;
+
+  // O NOES! The drag element was removed from the DOM.
+  if (!parent) {
+    d3_layout_forceDragNode.fixed = false;
+    d3_layout_forceDragOffset = d3_layout_forceDragNode = d3_layout_forceDragElement = null;
+    return;
+  }
+
+  var m = d3_layout_forcePoint(parent);
+  d3_layout_forceDragMoved = true;
+  d3_layout_forceDragNode.px = m[0] - d3_layout_forceDragOffset[0];
+  d3_layout_forceDragNode.py = m[1] - d3_layout_forceDragOffset[1];
   d3_layout_forceCancel();
+  d3_layout_forceDragForce.resume(); // restart annealing
+}
+
+function d3_layout_forceDragUp() {
+  if (!d3_layout_forceDragNode) return;
+
+  // If the node was moved, prevent the mouseup from propagating.
+  // Also prevent the subsequent click from propagating (e.g., for anchors).
+  if (d3_layout_forceDragMoved) {
+    d3_layout_forceStopClick = true;
+    d3_layout_forceCancel();
+  }
+
+  // Don't trigger this for touchend.
+  if (d3.event.type === "mouseup") {
+    d3_layout_forceDragMove();
+  }
+
+  d3_layout_forceDragNode.fixed = false;
+  d3_layout_forceDragForce =
+  d3_layout_forceDragOffset =
+  d3_layout_forceDragNode =
+  d3_layout_forceDragElement = null;
 }
 
 function d3_layout_forceDragClick() {
@@ -541,12 +560,18 @@ function d3_layout_forceAccumulate(quad) {
       cy = 0;
   quad.count = 0;
   if (!quad.leaf) {
-    quad.nodes.forEach(function(c) {
+    var nodes = quad.nodes,
+        n = nodes.length,
+        i = -1,
+        c;
+    while (++i < n) {
+      c = nodes[i];
+      if (c == null) continue;
       d3_layout_forceAccumulate(c);
       quad.count += c.count;
       cx += c.count * c.cx;
       cy += c.count * c.cy;
-    });
+    }
   }
   if (quad.point) {
     // jitter internal nodes that are coincident
@@ -650,6 +675,7 @@ d3.layout.pie = function() {
     // Compute the arcs!
     var arcs = index.map(function(i) {
       return {
+        data: data[i],
         value: d = values[i],
         startAngle: a,
         endAngle: a += d * k
@@ -963,7 +989,7 @@ d3.layout.histogram = function() {
         i = -1,
         n = values.length,
         m = thresholds.length - 1,
-        k = frequency ? 1 / n : 1,
+        k = frequency ? 1 : 1 / n,
         x;
 
     // Initialize the bins.
@@ -1687,25 +1713,28 @@ d3.layout.treemap = function() {
   var hierarchy = d3.layout.hierarchy(),
       round = Math.round,
       size = [1, 1], // width, height
+      padding = null,
+      pad = d3_layout_treemapPadNull,
       sticky = false,
       stickies,
       ratio = 0.5 * (1 + Math.sqrt(5)); // golden ratio
 
-  // Recursively compute the node area based on value & scale.
-  function scale(node, k) {
-    var children = node.children;
-    node.area = node.value * k;
-    if (children) {
-      var i = -1,
-          n = children.length;
-      while (++i < n) scale(children[i], k);
+  // Compute the area for each child based on value & scale.
+  function scale(children, k) {
+    var i = -1,
+        n = children.length,
+        child,
+        area;
+    while (++i < n) {
+      area = (child = children[i]).value * (k < 0 ? 0 : k);
+      child.area = isNaN(area) || area <= 0 ? 0 : area;
     }
   }
 
   // Recursively arranges the specified node's children into squarified rows.
   function squarify(node) {
     if (!node.children) return;
-    var rect = {x: node.x, y: node.y, dx: node.dx, dy: node.dy},
+    var rect = pad(node),
         row = [],
         children = node.children.slice(), // copy-on-write
         child,
@@ -1713,6 +1742,7 @@ d3.layout.treemap = function() {
         score, // the current row score
         u = Math.min(rect.dx, rect.dy), // initial orientation
         n;
+    scale(children, rect.dx * rect.dy / node.value);
     row.area = 0;
     while ((n = children.length) > 0) {
       row.push(child = children[n - 1]);
@@ -1739,10 +1769,11 @@ d3.layout.treemap = function() {
   // Preserves the existing layout!
   function stickify(node) {
     if (!node.children) return;
-    var rect = {x: node.x, y: node.y, dx: node.dx, dy: node.dy},
+    var rect = pad(node),
         children = node.children.slice(), // copy-on-write
         child,
         row = [];
+    scale(children, rect.dx * rect.dy / node.value);
     row.area = 0;
     while (child = children.pop()) {
       row.push(child);
@@ -1764,13 +1795,15 @@ d3.layout.treemap = function() {
         i = -1,
         n = row.length;
     while (++i < n) {
-      r = row[i].area;
+      if (!(r = row[i].area)) continue;
       if (r < rmin) rmin = r;
       if (r > rmax) rmax = r;
     }
     s *= s;
     u *= u;
-    return Math.max((u * rmax * ratio) / s, s / (u * rmin * ratio));
+    return s
+        ? Math.max((u * rmax * ratio) / s, s / (u * rmin * ratio))
+        : Infinity;
   }
 
   // Positions the specified row of nodes. Modifies `rect`.
@@ -1788,7 +1821,7 @@ d3.layout.treemap = function() {
         o.x = x;
         o.y = y;
         o.dy = v;
-        x += o.dx = round(o.area / v);
+        x += o.dx = v ? round(o.area / v) : 0;
       }
       o.z = true;
       o.dx += rect.x + rect.dx - x; // rounding error
@@ -1801,7 +1834,7 @@ d3.layout.treemap = function() {
         o.x = x;
         o.y = y;
         o.dx = v;
-        y += o.dy = round(o.area / v);
+        y += o.dy = v ? round(o.area / v) : 0;
       }
       o.z = false;
       o.dy += rect.y + rect.dy - y; // rounding error
@@ -1818,7 +1851,7 @@ d3.layout.treemap = function() {
     root.dx = size[0];
     root.dy = size[1];
     if (stickies) hierarchy.revalue(root);
-    scale(root, size[0] * size[1] / root.value);
+    scale([root], root.dx * root.dy / root.value);
     (stickies ? stickify : squarify)(root);
     if (sticky) stickies = nodes;
     return nodes;
@@ -1827,6 +1860,28 @@ d3.layout.treemap = function() {
   treemap.size = function(x) {
     if (!arguments.length) return size;
     size = x;
+    return treemap;
+  };
+
+  treemap.padding = function(x) {
+    if (!arguments.length) return padding;
+
+    function padFunction(node) {
+      var p = x.call(treemap, node, node.depth);
+      return p == null
+          ? d3_layout_treemapPadNull(node)
+          : d3_layout_treemapPad(node, typeof p === "number" ? [p, p, p, p] : p);
+    }
+
+    function padConstant(node) {
+      return d3_layout_treemapPad(node, x);
+    }
+
+    var type;
+    pad = (padding = x) == null ? d3_layout_treemapPadNull
+        : (type = typeof x) === "function" ? padFunction
+        : type === "number" ? (x = [x, x, x, x], padConstant)
+        : padConstant;
     return treemap;
   };
 
@@ -1851,4 +1906,18 @@ d3.layout.treemap = function() {
 
   return d3_layout_hierarchyRebind(treemap, hierarchy);
 };
+
+function d3_layout_treemapPadNull(node) {
+  return {x: node.x, y: node.y, dx: node.dx, dy: node.dy};
+}
+
+function d3_layout_treemapPad(node, padding) {
+  var x = node.x + padding[3],
+      y = node.y + padding[0],
+      dx = node.dx - padding[1] - padding[3],
+      dy = node.dy - padding[0] - padding[2];
+  if (dx < 0) { x += dx / 2; dx = 0; }
+  if (dy < 0) { y += dy / 2; dy = 0; }
+  return {x: x, y: y, dx: dx, dy: dy};
+}
 })();
