@@ -1,0 +1,63 @@
+exception=EXC_ARITHMETIC:signal=8:is_exploitable= no:instruction_disassembly=idivl	%ecx:instruction_address=0x000000010fccaf3a:access_type=:access_address=0x0000000000000000:
+Arithmetic exception at 0x000000010fccaf3a, probably not exploitable.
+Test case was divzero
+
+
+
+Process:         divzero [40147]
+Path:            /Users/lwy08/Downloads/crashwrangler/divzero
+Identifier:      divzero
+Version:         ??? (???)
+Code Type:       X86-64 (Native)
+Parent Process:  exc_handler [40146]
+
+Date/Time:       2011-08-14 00:57:34.134 +0100
+OS Version:      Mac OS X 10.7 (11A511)
+Report Version:  9
+
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+
+Exception Type:  EXC_ARITHMETIC (SIGFPE)
+Exception Codes: EXC_I386_DIV (divide by zero)
+
+Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
+0   divzero                       	0x000000010fccaf3a main + 26
+1   divzero                       	0x000000010fccaf14 start + 52
+
+Thread 0 crashed with X86 Thread State (64-bit):
+  rax: 0x0000000000000000  rbx: 0x0000000000000000  rcx: 0x0000000000000000  rdx: 0x0000000000000000
+  rdi: 0x0000000000000001  rsi: 0x00007fff6f8c9460  rbp: 0x00007fff6f8c9440  rsp: 0x00007fff6f8c9440
+   r8: 0x0000000000000001   r9: 0x0000000000000000  r10: 0x000000000000002c  r11: 0x0000000000000206
+  r12: 0x0000000000000000  r13: 0x0000000000000000  r14: 0x0000000000000000  r15: 0x0000000000000000
+  rip: 0x000000010fccaf3a  rfl: 0x0000000000010246  cr2: 0x00007fff740aa000
+Logical CPU: 0
+
+Binary Images:
+       0x10fcca000 -        0x10fccafff +divzero (??? - ???) <7DDE7962-44B3-3FBB-8554-DA0BDBF3C6AD> /Users/lwy08/Downloads/crashwrangler/divzero
+    0x7fff6f8ca000 -     0x7fff6f8feac7  dyld (195.5 - ???) <4A6E2B28-C7A2-3528-ADB7-4076B9836041> /usr/lib/dyld
+    0x7fff82d78000 -     0x7fff82d7cfff  libdyld.dylib (195.5.0 - compatibility 1.0.0) <F1903B7A-D3FF-3390-909A-B24E09BAD1A5> /usr/lib/system/libdyld.dylib
+    0x7fff82dc9000 -     0x7fff82dcbfff  libquarantine.dylib (36.0.0 - compatibility 1.0.0) <4C3BFBC7-E592-3939-B376-1C2E2D7C5389> /usr/lib/system/libquarantine.dylib
+    0x7fff83138000 -     0x7fff83140fff  libsystem_dnssd.dylib (??? - ???) <7749128E-D0C5-3832-861C-BC9913F774FA> /usr/lib/system/libsystem_dnssd.dylib
+    0x7fff83ec7000 -     0x7fff83ed0fff  libnotify.dylib (80.0.0 - compatibility 1.0.0) <BD08553D-8088-38A8-8007-CF5C0B8F0404> /usr/lib/system/libnotify.dylib
+    0x7fff8402c000 -     0x7fff84068fff  libsystem_info.dylib (??? - ???) <BC49C624-1DAB-3A37-890F-6EFD46538424> /usr/lib/system/libsystem_info.dylib
+    0x7fff849d5000 -     0x7fff849dfff7  liblaunch.dylib (392.18.0 - compatibility 1.0.0) <39EF04F2-7F0C-3435-B785-BF283727FFBD> /usr/lib/system/liblaunch.dylib
+    0x7fff84cac000 -     0x7fff84cb0fff  libmathCommon.A.dylib (2026.0.0 - compatibility 1.0.0) <FF83AFF7-42B2-306E-90AF-D539C51A4542> /usr/lib/system/libmathCommon.A.dylib
+    0x7fff84cdb000 -     0x7fff84d1dff7  libcommonCrypto.dylib (55010.0.0 - compatibility 1.0.0) <A5B9778E-11C3-3F61-B740-1F2114E967FB> /usr/lib/system/libcommonCrypto.dylib
+    0x7fff8509b000 -     0x7fff850a1ff7  libunwind.dylib (30.0.0 - compatibility 1.0.0) <1E9C6C8C-CBE8-3F4B-A5B5-E03E3AB53231> /usr/lib/system/libunwind.dylib
+    0x7fff8519b000 -     0x7fff8519bfff  libkeymgr.dylib (23.0.0 - compatibility 1.0.0) <61EFED6A-A407-301E-B454-CD18314F0075> /usr/lib/system/libkeymgr.dylib
+    0x7fff85665000 -     0x7fff85666fff  libsystem_sandbox.dylib (??? - ???) <8D14139B-B671-35F4-9E5A-023B4C523C38> /usr/lib/system/libsystem_sandbox.dylib
+    0x7fff86a4b000 -     0x7fff86a4cfff  libdnsinfo.dylib (395.6.0 - compatibility 1.0.0) <718A135F-6349-354A-85D5-430B128EFD57> /usr/lib/system/libdnsinfo.dylib
+    0x7fff86b2e000 -     0x7fff86b33fff  libcompiler_rt.dylib (6.0.0 - compatibility 1.0.0) <98ECD5F6-E85C-32A5-98CD-8911230CB66A> /usr/lib/system/libcompiler_rt.dylib
+    0x7fff86c5d000 -     0x7fff86c62ff7  libsystem_network.dylib (??? - ???) <4ABCEEF3-A3F9-3E06-9682-CE00F17138B7> /usr/lib/system/libsystem_network.dylib
+    0x7fff88a3e000 -     0x7fff88a45fff  libcopyfile.dylib (85.1.0 - compatibility 1.0.0) <172B1985-F24A-34E9-8D8B-A2403C9A0399> /usr/lib/system/libcopyfile.dylib
+    0x7fff891b6000 -     0x7fff891b7ff7  libsystem_blocks.dylib (53.0.0 - compatibility 1.0.0) <8BCA214A-8992-34B2-A8B9-B74DEACA1869> /usr/lib/system/libsystem_blocks.dylib
+    0x7fff8a2eb000 -     0x7fff8a3c8fef  libsystem_c.dylib (763.11.0 - compatibility 1.0.0) <1D61CA57-3C6D-30F7-89CB-CC6F0787B1DC> /usr/lib/system/libsystem_c.dylib
+    0x7fff8a3c9000 -     0x7fff8a3d7fff  libdispatch.dylib (187.5.0 - compatibility 1.0.0) <698F8EFB-7075-3111-94E3-891156C88172> /usr/lib/system/libdispatch.dylib
+    0x7fff8b130000 -     0x7fff8b150fff  libsystem_kernel.dylib (1699.22.73 - compatibility 1.0.0) <69F2F501-72D8-3B3B-8357-F4418B3E1348> /usr/lib/system/libsystem_kernel.dylib
+    0x7fff8b32b000 -     0x7fff8b330fff  libcache.dylib (47.0.0 - compatibility 1.0.0) <B7757E2E-5A7D-362E-AB71-785FE79E1527> /usr/lib/system/libcache.dylib
+    0x7fff8d37d000 -     0x7fff8d37efff  libunc.dylib (24.0.0 - compatibility 1.0.0) <C67B3B14-866C-314F-87FF-8025BEC2CAAC> /usr/lib/system/libunc.dylib
+    0x7fff8d7c4000 -     0x7fff8d7f1fe7  libSystem.B.dylib (159.0.0 - compatibility 1.0.0) <7B4D685D-939C-3ABE-8780-77A1889E0DE9> /usr/lib/libSystem.B.dylib
+    0x7fff8da99000 -     0x7fff8dab6ff7  libxpc.dylib (77.16.0 - compatibility 1.0.0) <0A4B4775-29A9-30D6-956B-3BE1DBF98090> /usr/lib/system/libxpc.dylib
+    0x7fff8f072000 -     0x7fff8f073ff7  libremovefile.dylib (21.0.0 - compatibility 1.0.0) <C6C49FB7-1892-32E4-86B5-25AD165131AA> /usr/lib/system/libremovefile.dylib
+    0x7fff8f116000 -     0x7fff8f11cfff  libmacho.dylib (800.0.0 - compatibility 1.0.0) <D86F63EC-D2BD-32E0-8955-08B5EAFAD2CC> /usr/lib/system/libmacho.dylib
+

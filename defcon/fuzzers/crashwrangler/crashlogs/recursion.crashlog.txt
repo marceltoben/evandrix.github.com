@@ -1,0 +1,574 @@
+exception=EXC_BAD_ACCESS:signal=11:is_exploitable= no:instruction_disassembly=callq	CONSTANT:instruction_address=0x000000010d67eef4:access_type=recursion:access_address=0x00007fff6ca7dff8:
+Crash accessing invalid address.  Consider running it again with libgmalloc(3) to see if the log changes.
+The crash is suspected to be due to unbounded recursion since there were 513 stack frames.
+Test case was recursion
+
+
+
+Process:         recursion [40246]
+Path:            /Users/lwy08/Downloads/crashwrangler/recursion
+Identifier:      recursion
+Version:         ??? (???)
+Code Type:       X86-64 (Native)
+Parent Process:  exc_handler [40245]
+
+Date/Time:       2011-08-14 00:57:36.256 +0100
+OS Version:      Mac OS X 10.7 (11A511)
+Report Version:  9
+
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: KERN_PROTECTION_FAILURE at 0x00007fff6ca7dff8
+
+Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
+0   recursion                     	0x000000010d67eef4 foo + 4
+1   recursion                     	0x000000010d67eef9 foo + 9
+2   recursion                     	0x000000010d67eef9 foo + 9
+3   recursion                     	0x000000010d67eef9 foo + 9
+4   recursion                     	0x000000010d67eef9 foo + 9
+5   recursion                     	0x000000010d67eef9 foo + 9
+6   recursion                     	0x000000010d67eef9 foo + 9
+7   recursion                     	0x000000010d67eef9 foo + 9
+8   recursion                     	0x000000010d67eef9 foo + 9
+9   recursion                     	0x000000010d67eef9 foo + 9
+10  recursion                     	0x000000010d67eef9 foo + 9
+11  recursion                     	0x000000010d67eef9 foo + 9
+12  recursion                     	0x000000010d67eef9 foo + 9
+13  recursion                     	0x000000010d67eef9 foo + 9
+14  recursion                     	0x000000010d67eef9 foo + 9
+15  recursion                     	0x000000010d67eef9 foo + 9
+16  recursion                     	0x000000010d67eef9 foo + 9
+17  recursion                     	0x000000010d67eef9 foo + 9
+18  recursion                     	0x000000010d67eef9 foo + 9
+19  recursion                     	0x000000010d67eef9 foo + 9
+20  recursion                     	0x000000010d67eef9 foo + 9
+21  recursion                     	0x000000010d67eef9 foo + 9
+22  recursion                     	0x000000010d67eef9 foo + 9
+23  recursion                     	0x000000010d67eef9 foo + 9
+24  recursion                     	0x000000010d67eef9 foo + 9
+25  recursion                     	0x000000010d67eef9 foo + 9
+26  recursion                     	0x000000010d67eef9 foo + 9
+27  recursion                     	0x000000010d67eef9 foo + 9
+28  recursion                     	0x000000010d67eef9 foo + 9
+29  recursion                     	0x000000010d67eef9 foo + 9
+30  recursion                     	0x000000010d67eef9 foo + 9
+31  recursion                     	0x000000010d67eef9 foo + 9
+32  recursion                     	0x000000010d67eef9 foo + 9
+33  recursion                     	0x000000010d67eef9 foo + 9
+34  recursion                     	0x000000010d67eef9 foo + 9
+35  recursion                     	0x000000010d67eef9 foo + 9
+36  recursion                     	0x000000010d67eef9 foo + 9
+37  recursion                     	0x000000010d67eef9 foo + 9
+38  recursion                     	0x000000010d67eef9 foo + 9
+39  recursion                     	0x000000010d67eef9 foo + 9
+40  recursion                     	0x000000010d67eef9 foo + 9
+41  recursion                     	0x000000010d67eef9 foo + 9
+42  recursion                     	0x000000010d67eef9 foo + 9
+43  recursion                     	0x000000010d67eef9 foo + 9
+44  recursion                     	0x000000010d67eef9 foo + 9
+45  recursion                     	0x000000010d67eef9 foo + 9
+46  recursion                     	0x000000010d67eef9 foo + 9
+47  recursion                     	0x000000010d67eef9 foo + 9
+48  recursion                     	0x000000010d67eef9 foo + 9
+49  recursion                     	0x000000010d67eef9 foo + 9
+50  recursion                     	0x000000010d67eef9 foo + 9
+51  recursion                     	0x000000010d67eef9 foo + 9
+52  recursion                     	0x000000010d67eef9 foo + 9
+53  recursion                     	0x000000010d67eef9 foo + 9
+54  recursion                     	0x000000010d67eef9 foo + 9
+55  recursion                     	0x000000010d67eef9 foo + 9
+56  recursion                     	0x000000010d67eef9 foo + 9
+57  recursion                     	0x000000010d67eef9 foo + 9
+58  recursion                     	0x000000010d67eef9 foo + 9
+59  recursion                     	0x000000010d67eef9 foo + 9
+60  recursion                     	0x000000010d67eef9 foo + 9
+61  recursion                     	0x000000010d67eef9 foo + 9
+62  recursion                     	0x000000010d67eef9 foo + 9
+63  recursion                     	0x000000010d67eef9 foo + 9
+64  recursion                     	0x000000010d67eef9 foo + 9
+65  recursion                     	0x000000010d67eef9 foo + 9
+66  recursion                     	0x000000010d67eef9 foo + 9
+67  recursion                     	0x000000010d67eef9 foo + 9
+68  recursion                     	0x000000010d67eef9 foo + 9
+69  recursion                     	0x000000010d67eef9 foo + 9
+70  recursion                     	0x000000010d67eef9 foo + 9
+71  recursion                     	0x000000010d67eef9 foo + 9
+72  recursion                     	0x000000010d67eef9 foo + 9
+73  recursion                     	0x000000010d67eef9 foo + 9
+74  recursion                     	0x000000010d67eef9 foo + 9
+75  recursion                     	0x000000010d67eef9 foo + 9
+76  recursion                     	0x000000010d67eef9 foo + 9
+77  recursion                     	0x000000010d67eef9 foo + 9
+78  recursion                     	0x000000010d67eef9 foo + 9
+79  recursion                     	0x000000010d67eef9 foo + 9
+80  recursion                     	0x000000010d67eef9 foo + 9
+81  recursion                     	0x000000010d67eef9 foo + 9
+82  recursion                     	0x000000010d67eef9 foo + 9
+83  recursion                     	0x000000010d67eef9 foo + 9
+84  recursion                     	0x000000010d67eef9 foo + 9
+85  recursion                     	0x000000010d67eef9 foo + 9
+86  recursion                     	0x000000010d67eef9 foo + 9
+87  recursion                     	0x000000010d67eef9 foo + 9
+88  recursion                     	0x000000010d67eef9 foo + 9
+89  recursion                     	0x000000010d67eef9 foo + 9
+90  recursion                     	0x000000010d67eef9 foo + 9
+91  recursion                     	0x000000010d67eef9 foo + 9
+92  recursion                     	0x000000010d67eef9 foo + 9
+93  recursion                     	0x000000010d67eef9 foo + 9
+94  recursion                     	0x000000010d67eef9 foo + 9
+95  recursion                     	0x000000010d67eef9 foo + 9
+96  recursion                     	0x000000010d67eef9 foo + 9
+97  recursion                     	0x000000010d67eef9 foo + 9
+98  recursion                     	0x000000010d67eef9 foo + 9
+99  recursion                     	0x000000010d67eef9 foo + 9
+100 recursion                     	0x000000010d67eef9 foo + 9
+101 recursion                     	0x000000010d67eef9 foo + 9
+102 recursion                     	0x000000010d67eef9 foo + 9
+103 recursion                     	0x000000010d67eef9 foo + 9
+104 recursion                     	0x000000010d67eef9 foo + 9
+105 recursion                     	0x000000010d67eef9 foo + 9
+106 recursion                     	0x000000010d67eef9 foo + 9
+107 recursion                     	0x000000010d67eef9 foo + 9
+108 recursion                     	0x000000010d67eef9 foo + 9
+109 recursion                     	0x000000010d67eef9 foo + 9
+110 recursion                     	0x000000010d67eef9 foo + 9
+111 recursion                     	0x000000010d67eef9 foo + 9
+112 recursion                     	0x000000010d67eef9 foo + 9
+113 recursion                     	0x000000010d67eef9 foo + 9
+114 recursion                     	0x000000010d67eef9 foo + 9
+115 recursion                     	0x000000010d67eef9 foo + 9
+116 recursion                     	0x000000010d67eef9 foo + 9
+117 recursion                     	0x000000010d67eef9 foo + 9
+118 recursion                     	0x000000010d67eef9 foo + 9
+119 recursion                     	0x000000010d67eef9 foo + 9
+120 recursion                     	0x000000010d67eef9 foo + 9
+121 recursion                     	0x000000010d67eef9 foo + 9
+122 recursion                     	0x000000010d67eef9 foo + 9
+123 recursion                     	0x000000010d67eef9 foo + 9
+124 recursion                     	0x000000010d67eef9 foo + 9
+125 recursion                     	0x000000010d67eef9 foo + 9
+126 recursion                     	0x000000010d67eef9 foo + 9
+127 recursion                     	0x000000010d67eef9 foo + 9
+128 recursion                     	0x000000010d67eef9 foo + 9
+129 recursion                     	0x000000010d67eef9 foo + 9
+130 recursion                     	0x000000010d67eef9 foo + 9
+131 recursion                     	0x000000010d67eef9 foo + 9
+132 recursion                     	0x000000010d67eef9 foo + 9
+133 recursion                     	0x000000010d67eef9 foo + 9
+134 recursion                     	0x000000010d67eef9 foo + 9
+135 recursion                     	0x000000010d67eef9 foo + 9
+136 recursion                     	0x000000010d67eef9 foo + 9
+137 recursion                     	0x000000010d67eef9 foo + 9
+138 recursion                     	0x000000010d67eef9 foo + 9
+139 recursion                     	0x000000010d67eef9 foo + 9
+140 recursion                     	0x000000010d67eef9 foo + 9
+141 recursion                     	0x000000010d67eef9 foo + 9
+142 recursion                     	0x000000010d67eef9 foo + 9
+143 recursion                     	0x000000010d67eef9 foo + 9
+144 recursion                     	0x000000010d67eef9 foo + 9
+145 recursion                     	0x000000010d67eef9 foo + 9
+146 recursion                     	0x000000010d67eef9 foo + 9
+147 recursion                     	0x000000010d67eef9 foo + 9
+148 recursion                     	0x000000010d67eef9 foo + 9
+149 recursion                     	0x000000010d67eef9 foo + 9
+150 recursion                     	0x000000010d67eef9 foo + 9
+151 recursion                     	0x000000010d67eef9 foo + 9
+152 recursion                     	0x000000010d67eef9 foo + 9
+153 recursion                     	0x000000010d67eef9 foo + 9
+154 recursion                     	0x000000010d67eef9 foo + 9
+155 recursion                     	0x000000010d67eef9 foo + 9
+156 recursion                     	0x000000010d67eef9 foo + 9
+157 recursion                     	0x000000010d67eef9 foo + 9
+158 recursion                     	0x000000010d67eef9 foo + 9
+159 recursion                     	0x000000010d67eef9 foo + 9
+160 recursion                     	0x000000010d67eef9 foo + 9
+161 recursion                     	0x000000010d67eef9 foo + 9
+162 recursion                     	0x000000010d67eef9 foo + 9
+163 recursion                     	0x000000010d67eef9 foo + 9
+164 recursion                     	0x000000010d67eef9 foo + 9
+165 recursion                     	0x000000010d67eef9 foo + 9
+166 recursion                     	0x000000010d67eef9 foo + 9
+167 recursion                     	0x000000010d67eef9 foo + 9
+168 recursion                     	0x000000010d67eef9 foo + 9
+169 recursion                     	0x000000010d67eef9 foo + 9
+170 recursion                     	0x000000010d67eef9 foo + 9
+171 recursion                     	0x000000010d67eef9 foo + 9
+172 recursion                     	0x000000010d67eef9 foo + 9
+173 recursion                     	0x000000010d67eef9 foo + 9
+174 recursion                     	0x000000010d67eef9 foo + 9
+175 recursion                     	0x000000010d67eef9 foo + 9
+176 recursion                     	0x000000010d67eef9 foo + 9
+177 recursion                     	0x000000010d67eef9 foo + 9
+178 recursion                     	0x000000010d67eef9 foo + 9
+179 recursion                     	0x000000010d67eef9 foo + 9
+180 recursion                     	0x000000010d67eef9 foo + 9
+181 recursion                     	0x000000010d67eef9 foo + 9
+182 recursion                     	0x000000010d67eef9 foo + 9
+183 recursion                     	0x000000010d67eef9 foo + 9
+184 recursion                     	0x000000010d67eef9 foo + 9
+185 recursion                     	0x000000010d67eef9 foo + 9
+186 recursion                     	0x000000010d67eef9 foo + 9
+187 recursion                     	0x000000010d67eef9 foo + 9
+188 recursion                     	0x000000010d67eef9 foo + 9
+189 recursion                     	0x000000010d67eef9 foo + 9
+190 recursion                     	0x000000010d67eef9 foo + 9
+191 recursion                     	0x000000010d67eef9 foo + 9
+192 recursion                     	0x000000010d67eef9 foo + 9
+193 recursion                     	0x000000010d67eef9 foo + 9
+194 recursion                     	0x000000010d67eef9 foo + 9
+195 recursion                     	0x000000010d67eef9 foo + 9
+196 recursion                     	0x000000010d67eef9 foo + 9
+197 recursion                     	0x000000010d67eef9 foo + 9
+198 recursion                     	0x000000010d67eef9 foo + 9
+199 recursion                     	0x000000010d67eef9 foo + 9
+200 recursion                     	0x000000010d67eef9 foo + 9
+201 recursion                     	0x000000010d67eef9 foo + 9
+202 recursion                     	0x000000010d67eef9 foo + 9
+203 recursion                     	0x000000010d67eef9 foo + 9
+204 recursion                     	0x000000010d67eef9 foo + 9
+205 recursion                     	0x000000010d67eef9 foo + 9
+206 recursion                     	0x000000010d67eef9 foo + 9
+207 recursion                     	0x000000010d67eef9 foo + 9
+208 recursion                     	0x000000010d67eef9 foo + 9
+209 recursion                     	0x000000010d67eef9 foo + 9
+210 recursion                     	0x000000010d67eef9 foo + 9
+211 recursion                     	0x000000010d67eef9 foo + 9
+212 recursion                     	0x000000010d67eef9 foo + 9
+213 recursion                     	0x000000010d67eef9 foo + 9
+214 recursion                     	0x000000010d67eef9 foo + 9
+215 recursion                     	0x000000010d67eef9 foo + 9
+216 recursion                     	0x000000010d67eef9 foo + 9
+217 recursion                     	0x000000010d67eef9 foo + 9
+218 recursion                     	0x000000010d67eef9 foo + 9
+219 recursion                     	0x000000010d67eef9 foo + 9
+220 recursion                     	0x000000010d67eef9 foo + 9
+221 recursion                     	0x000000010d67eef9 foo + 9
+222 recursion                     	0x000000010d67eef9 foo + 9
+223 recursion                     	0x000000010d67eef9 foo + 9
+224 recursion                     	0x000000010d67eef9 foo + 9
+225 recursion                     	0x000000010d67eef9 foo + 9
+226 recursion                     	0x000000010d67eef9 foo + 9
+227 recursion                     	0x000000010d67eef9 foo + 9
+228 recursion                     	0x000000010d67eef9 foo + 9
+229 recursion                     	0x000000010d67eef9 foo + 9
+230 recursion                     	0x000000010d67eef9 foo + 9
+231 recursion                     	0x000000010d67eef9 foo + 9
+232 recursion                     	0x000000010d67eef9 foo + 9
+233 recursion                     	0x000000010d67eef9 foo + 9
+234 recursion                     	0x000000010d67eef9 foo + 9
+235 recursion                     	0x000000010d67eef9 foo + 9
+236 recursion                     	0x000000010d67eef9 foo + 9
+237 recursion                     	0x000000010d67eef9 foo + 9
+238 recursion                     	0x000000010d67eef9 foo + 9
+239 recursion                     	0x000000010d67eef9 foo + 9
+240 recursion                     	0x000000010d67eef9 foo + 9
+241 recursion                     	0x000000010d67eef9 foo + 9
+242 recursion                     	0x000000010d67eef9 foo + 9
+243 recursion                     	0x000000010d67eef9 foo + 9
+244 recursion                     	0x000000010d67eef9 foo + 9
+245 recursion                     	0x000000010d67eef9 foo + 9
+246 recursion                     	0x000000010d67eef9 foo + 9
+247 recursion                     	0x000000010d67eef9 foo + 9
+248 recursion                     	0x000000010d67eef9 foo + 9
+249 recursion                     	0x000000010d67eef9 foo + 9
+250 recursion                     	0x000000010d67eef9 foo + 9
+251 recursion                     	0x000000010d67eef9 foo + 9
+252 recursion                     	0x000000010d67eef9 foo + 9
+253 recursion                     	0x000000010d67eef9 foo + 9
+254 recursion                     	0x000000010d67eef9 foo + 9
+255 recursion                     	0x000000010d67eef9 foo + 9
+256 recursion                     	0x000000010d67eef9 foo + 9
+257 recursion                     	0x000000010d67eef9 foo + 9
+258 recursion                     	0x000000010d67eef9 foo + 9
+259 recursion                     	0x000000010d67eef9 foo + 9
+260 recursion                     	0x000000010d67eef9 foo + 9
+261 recursion                     	0x000000010d67eef9 foo + 9
+262 recursion                     	0x000000010d67eef9 foo + 9
+263 recursion                     	0x000000010d67eef9 foo + 9
+264 recursion                     	0x000000010d67eef9 foo + 9
+265 recursion                     	0x000000010d67eef9 foo + 9
+266 recursion                     	0x000000010d67eef9 foo + 9
+267 recursion                     	0x000000010d67eef9 foo + 9
+268 recursion                     	0x000000010d67eef9 foo + 9
+269 recursion                     	0x000000010d67eef9 foo + 9
+270 recursion                     	0x000000010d67eef9 foo + 9
+271 recursion                     	0x000000010d67eef9 foo + 9
+272 recursion                     	0x000000010d67eef9 foo + 9
+273 recursion                     	0x000000010d67eef9 foo + 9
+274 recursion                     	0x000000010d67eef9 foo + 9
+275 recursion                     	0x000000010d67eef9 foo + 9
+276 recursion                     	0x000000010d67eef9 foo + 9
+277 recursion                     	0x000000010d67eef9 foo + 9
+278 recursion                     	0x000000010d67eef9 foo + 9
+279 recursion                     	0x000000010d67eef9 foo + 9
+280 recursion                     	0x000000010d67eef9 foo + 9
+281 recursion                     	0x000000010d67eef9 foo + 9
+282 recursion                     	0x000000010d67eef9 foo + 9
+283 recursion                     	0x000000010d67eef9 foo + 9
+284 recursion                     	0x000000010d67eef9 foo + 9
+285 recursion                     	0x000000010d67eef9 foo + 9
+286 recursion                     	0x000000010d67eef9 foo + 9
+287 recursion                     	0x000000010d67eef9 foo + 9
+288 recursion                     	0x000000010d67eef9 foo + 9
+289 recursion                     	0x000000010d67eef9 foo + 9
+290 recursion                     	0x000000010d67eef9 foo + 9
+291 recursion                     	0x000000010d67eef9 foo + 9
+292 recursion                     	0x000000010d67eef9 foo + 9
+293 recursion                     	0x000000010d67eef9 foo + 9
+294 recursion                     	0x000000010d67eef9 foo + 9
+295 recursion                     	0x000000010d67eef9 foo + 9
+296 recursion                     	0x000000010d67eef9 foo + 9
+297 recursion                     	0x000000010d67eef9 foo + 9
+298 recursion                     	0x000000010d67eef9 foo + 9
+299 recursion                     	0x000000010d67eef9 foo + 9
+300 recursion                     	0x000000010d67eef9 foo + 9
+301 recursion                     	0x000000010d67eef9 foo + 9
+302 recursion                     	0x000000010d67eef9 foo + 9
+303 recursion                     	0x000000010d67eef9 foo + 9
+304 recursion                     	0x000000010d67eef9 foo + 9
+305 recursion                     	0x000000010d67eef9 foo + 9
+306 recursion                     	0x000000010d67eef9 foo + 9
+307 recursion                     	0x000000010d67eef9 foo + 9
+308 recursion                     	0x000000010d67eef9 foo + 9
+309 recursion                     	0x000000010d67eef9 foo + 9
+310 recursion                     	0x000000010d67eef9 foo + 9
+311 recursion                     	0x000000010d67eef9 foo + 9
+312 recursion                     	0x000000010d67eef9 foo + 9
+313 recursion                     	0x000000010d67eef9 foo + 9
+314 recursion                     	0x000000010d67eef9 foo + 9
+315 recursion                     	0x000000010d67eef9 foo + 9
+316 recursion                     	0x000000010d67eef9 foo + 9
+317 recursion                     	0x000000010d67eef9 foo + 9
+318 recursion                     	0x000000010d67eef9 foo + 9
+319 recursion                     	0x000000010d67eef9 foo + 9
+320 recursion                     	0x000000010d67eef9 foo + 9
+321 recursion                     	0x000000010d67eef9 foo + 9
+322 recursion                     	0x000000010d67eef9 foo + 9
+323 recursion                     	0x000000010d67eef9 foo + 9
+324 recursion                     	0x000000010d67eef9 foo + 9
+325 recursion                     	0x000000010d67eef9 foo + 9
+326 recursion                     	0x000000010d67eef9 foo + 9
+327 recursion                     	0x000000010d67eef9 foo + 9
+328 recursion                     	0x000000010d67eef9 foo + 9
+329 recursion                     	0x000000010d67eef9 foo + 9
+330 recursion                     	0x000000010d67eef9 foo + 9
+331 recursion                     	0x000000010d67eef9 foo + 9
+332 recursion                     	0x000000010d67eef9 foo + 9
+333 recursion                     	0x000000010d67eef9 foo + 9
+334 recursion                     	0x000000010d67eef9 foo + 9
+335 recursion                     	0x000000010d67eef9 foo + 9
+336 recursion                     	0x000000010d67eef9 foo + 9
+337 recursion                     	0x000000010d67eef9 foo + 9
+338 recursion                     	0x000000010d67eef9 foo + 9
+339 recursion                     	0x000000010d67eef9 foo + 9
+340 recursion                     	0x000000010d67eef9 foo + 9
+341 recursion                     	0x000000010d67eef9 foo + 9
+342 recursion                     	0x000000010d67eef9 foo + 9
+343 recursion                     	0x000000010d67eef9 foo + 9
+344 recursion                     	0x000000010d67eef9 foo + 9
+345 recursion                     	0x000000010d67eef9 foo + 9
+346 recursion                     	0x000000010d67eef9 foo + 9
+347 recursion                     	0x000000010d67eef9 foo + 9
+348 recursion                     	0x000000010d67eef9 foo + 9
+349 recursion                     	0x000000010d67eef9 foo + 9
+350 recursion                     	0x000000010d67eef9 foo + 9
+351 recursion                     	0x000000010d67eef9 foo + 9
+352 recursion                     	0x000000010d67eef9 foo + 9
+353 recursion                     	0x000000010d67eef9 foo + 9
+354 recursion                     	0x000000010d67eef9 foo + 9
+355 recursion                     	0x000000010d67eef9 foo + 9
+356 recursion                     	0x000000010d67eef9 foo + 9
+357 recursion                     	0x000000010d67eef9 foo + 9
+358 recursion                     	0x000000010d67eef9 foo + 9
+359 recursion                     	0x000000010d67eef9 foo + 9
+360 recursion                     	0x000000010d67eef9 foo + 9
+361 recursion                     	0x000000010d67eef9 foo + 9
+362 recursion                     	0x000000010d67eef9 foo + 9
+363 recursion                     	0x000000010d67eef9 foo + 9
+364 recursion                     	0x000000010d67eef9 foo + 9
+365 recursion                     	0x000000010d67eef9 foo + 9
+366 recursion                     	0x000000010d67eef9 foo + 9
+367 recursion                     	0x000000010d67eef9 foo + 9
+368 recursion                     	0x000000010d67eef9 foo + 9
+369 recursion                     	0x000000010d67eef9 foo + 9
+370 recursion                     	0x000000010d67eef9 foo + 9
+371 recursion                     	0x000000010d67eef9 foo + 9
+372 recursion                     	0x000000010d67eef9 foo + 9
+373 recursion                     	0x000000010d67eef9 foo + 9
+374 recursion                     	0x000000010d67eef9 foo + 9
+375 recursion                     	0x000000010d67eef9 foo + 9
+376 recursion                     	0x000000010d67eef9 foo + 9
+377 recursion                     	0x000000010d67eef9 foo + 9
+378 recursion                     	0x000000010d67eef9 foo + 9
+379 recursion                     	0x000000010d67eef9 foo + 9
+380 recursion                     	0x000000010d67eef9 foo + 9
+381 recursion                     	0x000000010d67eef9 foo + 9
+382 recursion                     	0x000000010d67eef9 foo + 9
+383 recursion                     	0x000000010d67eef9 foo + 9
+384 recursion                     	0x000000010d67eef9 foo + 9
+385 recursion                     	0x000000010d67eef9 foo + 9
+386 recursion                     	0x000000010d67eef9 foo + 9
+387 recursion                     	0x000000010d67eef9 foo + 9
+388 recursion                     	0x000000010d67eef9 foo + 9
+389 recursion                     	0x000000010d67eef9 foo + 9
+390 recursion                     	0x000000010d67eef9 foo + 9
+391 recursion                     	0x000000010d67eef9 foo + 9
+392 recursion                     	0x000000010d67eef9 foo + 9
+393 recursion                     	0x000000010d67eef9 foo + 9
+394 recursion                     	0x000000010d67eef9 foo + 9
+395 recursion                     	0x000000010d67eef9 foo + 9
+396 recursion                     	0x000000010d67eef9 foo + 9
+397 recursion                     	0x000000010d67eef9 foo + 9
+398 recursion                     	0x000000010d67eef9 foo + 9
+399 recursion                     	0x000000010d67eef9 foo + 9
+400 recursion                     	0x000000010d67eef9 foo + 9
+401 recursion                     	0x000000010d67eef9 foo + 9
+402 recursion                     	0x000000010d67eef9 foo + 9
+403 recursion                     	0x000000010d67eef9 foo + 9
+404 recursion                     	0x000000010d67eef9 foo + 9
+405 recursion                     	0x000000010d67eef9 foo + 9
+406 recursion                     	0x000000010d67eef9 foo + 9
+407 recursion                     	0x000000010d67eef9 foo + 9
+408 recursion                     	0x000000010d67eef9 foo + 9
+409 recursion                     	0x000000010d67eef9 foo + 9
+410 recursion                     	0x000000010d67eef9 foo + 9
+411 recursion                     	0x000000010d67eef9 foo + 9
+412 recursion                     	0x000000010d67eef9 foo + 9
+413 recursion                     	0x000000010d67eef9 foo + 9
+414 recursion                     	0x000000010d67eef9 foo + 9
+415 recursion                     	0x000000010d67eef9 foo + 9
+416 recursion                     	0x000000010d67eef9 foo + 9
+417 recursion                     	0x000000010d67eef9 foo + 9
+418 recursion                     	0x000000010d67eef9 foo + 9
+419 recursion                     	0x000000010d67eef9 foo + 9
+420 recursion                     	0x000000010d67eef9 foo + 9
+421 recursion                     	0x000000010d67eef9 foo + 9
+422 recursion                     	0x000000010d67eef9 foo + 9
+423 recursion                     	0x000000010d67eef9 foo + 9
+424 recursion                     	0x000000010d67eef9 foo + 9
+425 recursion                     	0x000000010d67eef9 foo + 9
+426 recursion                     	0x000000010d67eef9 foo + 9
+427 recursion                     	0x000000010d67eef9 foo + 9
+428 recursion                     	0x000000010d67eef9 foo + 9
+429 recursion                     	0x000000010d67eef9 foo + 9
+430 recursion                     	0x000000010d67eef9 foo + 9
+431 recursion                     	0x000000010d67eef9 foo + 9
+432 recursion                     	0x000000010d67eef9 foo + 9
+433 recursion                     	0x000000010d67eef9 foo + 9
+434 recursion                     	0x000000010d67eef9 foo + 9
+435 recursion                     	0x000000010d67eef9 foo + 9
+436 recursion                     	0x000000010d67eef9 foo + 9
+437 recursion                     	0x000000010d67eef9 foo + 9
+438 recursion                     	0x000000010d67eef9 foo + 9
+439 recursion                     	0x000000010d67eef9 foo + 9
+440 recursion                     	0x000000010d67eef9 foo + 9
+441 recursion                     	0x000000010d67eef9 foo + 9
+442 recursion                     	0x000000010d67eef9 foo + 9
+443 recursion                     	0x000000010d67eef9 foo + 9
+444 recursion                     	0x000000010d67eef9 foo + 9
+445 recursion                     	0x000000010d67eef9 foo + 9
+446 recursion                     	0x000000010d67eef9 foo + 9
+447 recursion                     	0x000000010d67eef9 foo + 9
+448 recursion                     	0x000000010d67eef9 foo + 9
+449 recursion                     	0x000000010d67eef9 foo + 9
+450 recursion                     	0x000000010d67eef9 foo + 9
+451 recursion                     	0x000000010d67eef9 foo + 9
+452 recursion                     	0x000000010d67eef9 foo + 9
+453 recursion                     	0x000000010d67eef9 foo + 9
+454 recursion                     	0x000000010d67eef9 foo + 9
+455 recursion                     	0x000000010d67eef9 foo + 9
+456 recursion                     	0x000000010d67eef9 foo + 9
+457 recursion                     	0x000000010d67eef9 foo + 9
+458 recursion                     	0x000000010d67eef9 foo + 9
+459 recursion                     	0x000000010d67eef9 foo + 9
+460 recursion                     	0x000000010d67eef9 foo + 9
+461 recursion                     	0x000000010d67eef9 foo + 9
+462 recursion                     	0x000000010d67eef9 foo + 9
+463 recursion                     	0x000000010d67eef9 foo + 9
+464 recursion                     	0x000000010d67eef9 foo + 9
+465 recursion                     	0x000000010d67eef9 foo + 9
+466 recursion                     	0x000000010d67eef9 foo + 9
+467 recursion                     	0x000000010d67eef9 foo + 9
+468 recursion                     	0x000000010d67eef9 foo + 9
+469 recursion                     	0x000000010d67eef9 foo + 9
+470 recursion                     	0x000000010d67eef9 foo + 9
+471 recursion                     	0x000000010d67eef9 foo + 9
+472 recursion                     	0x000000010d67eef9 foo + 9
+473 recursion                     	0x000000010d67eef9 foo + 9
+474 recursion                     	0x000000010d67eef9 foo + 9
+475 recursion                     	0x000000010d67eef9 foo + 9
+476 recursion                     	0x000000010d67eef9 foo + 9
+477 recursion                     	0x000000010d67eef9 foo + 9
+478 recursion                     	0x000000010d67eef9 foo + 9
+479 recursion                     	0x000000010d67eef9 foo + 9
+480 recursion                     	0x000000010d67eef9 foo + 9
+481 recursion                     	0x000000010d67eef9 foo + 9
+482 recursion                     	0x000000010d67eef9 foo + 9
+483 recursion                     	0x000000010d67eef9 foo + 9
+484 recursion                     	0x000000010d67eef9 foo + 9
+485 recursion                     	0x000000010d67eef9 foo + 9
+486 recursion                     	0x000000010d67eef9 foo + 9
+487 recursion                     	0x000000010d67eef9 foo + 9
+488 recursion                     	0x000000010d67eef9 foo + 9
+489 recursion                     	0x000000010d67eef9 foo + 9
+490 recursion                     	0x000000010d67eef9 foo + 9
+491 recursion                     	0x000000010d67eef9 foo + 9
+492 recursion                     	0x000000010d67eef9 foo + 9
+493 recursion                     	0x000000010d67eef9 foo + 9
+494 recursion                     	0x000000010d67eef9 foo + 9
+495 recursion                     	0x000000010d67eef9 foo + 9
+496 recursion                     	0x000000010d67eef9 foo + 9
+497 recursion                     	0x000000010d67eef9 foo + 9
+498 recursion                     	0x000000010d67eef9 foo + 9
+499 recursion                     	0x000000010d67eef9 foo + 9
+500 recursion                     	0x000000010d67eef9 foo + 9
+501 recursion                     	0x000000010d67eef9 foo + 9
+502 recursion                     	0x000000010d67eef9 foo + 9
+503 recursion                     	0x000000010d67eef9 foo + 9
+504 recursion                     	0x000000010d67eef9 foo + 9
+505 recursion                     	0x000000010d67eef9 foo + 9
+506 recursion                     	0x000000010d67eef9 foo + 9
+507 recursion                     	0x000000010d67eef9 foo + 9
+508 recursion                     	0x000000010d67eef9 foo + 9
+509 recursion                     	0x000000010d67eef9 foo + 9
+510 recursion                     	0x000000010d67eef9 foo + 9
+511 recursion                     	0x000000010d67eef9 foo + 9
+
+Thread 0 crashed with X86 Thread State (64-bit):
+  rax: 0x000000010d67eeb0  rbx: 0x0000000000000000  rcx: 0x00007fff6d27d600  rdx: 0x00007fff6d27d470
+  rdi: 0x0000000000000001  rsi: 0x00007fff6d27d460  rbp: 0x00007fff6ca7e000  rsp: 0x00007fff6ca7e000
+   r8: 0x0000000000000001   r9: 0x0000000000000000  r10: 0x000000000000002c  r11: 0x0000000000000206
+  r12: 0x0000000000000000  r13: 0x0000000000000000  r14: 0x0000000000000000  r15: 0x0000000000000000
+  rip: 0x000000010d67eef4  rfl: 0x0000000000010206  cr2: 0x00007fff6ca7dff8
+Logical CPU: 1
+
+Binary Images:
+       0x10d67e000 -        0x10d67efff +recursion (??? - ???) <F19AEC21-BE36-3890-BCF0-705995D35D74> /Users/lwy08/Downloads/crashwrangler/recursion
+    0x7fff6d27e000 -     0x7fff6d2b2ac7  dyld (195.5 - ???) <4A6E2B28-C7A2-3528-ADB7-4076B9836041> /usr/lib/dyld
+    0x7fff82d78000 -     0x7fff82d7cfff  libdyld.dylib (195.5.0 - compatibility 1.0.0) <F1903B7A-D3FF-3390-909A-B24E09BAD1A5> /usr/lib/system/libdyld.dylib
+    0x7fff82dc9000 -     0x7fff82dcbfff  libquarantine.dylib (36.0.0 - compatibility 1.0.0) <4C3BFBC7-E592-3939-B376-1C2E2D7C5389> /usr/lib/system/libquarantine.dylib
+    0x7fff83138000 -     0x7fff83140fff  libsystem_dnssd.dylib (??? - ???) <7749128E-D0C5-3832-861C-BC9913F774FA> /usr/lib/system/libsystem_dnssd.dylib
+    0x7fff83ec7000 -     0x7fff83ed0fff  libnotify.dylib (80.0.0 - compatibility 1.0.0) <BD08553D-8088-38A8-8007-CF5C0B8F0404> /usr/lib/system/libnotify.dylib
+    0x7fff8402c000 -     0x7fff84068fff  libsystem_info.dylib (??? - ???) <BC49C624-1DAB-3A37-890F-6EFD46538424> /usr/lib/system/libsystem_info.dylib
+    0x7fff849d5000 -     0x7fff849dfff7  liblaunch.dylib (392.18.0 - compatibility 1.0.0) <39EF04F2-7F0C-3435-B785-BF283727FFBD> /usr/lib/system/liblaunch.dylib
+    0x7fff84cac000 -     0x7fff84cb0fff  libmathCommon.A.dylib (2026.0.0 - compatibility 1.0.0) <FF83AFF7-42B2-306E-90AF-D539C51A4542> /usr/lib/system/libmathCommon.A.dylib
+    0x7fff84cdb000 -     0x7fff84d1dff7  libcommonCrypto.dylib (55010.0.0 - compatibility 1.0.0) <A5B9778E-11C3-3F61-B740-1F2114E967FB> /usr/lib/system/libcommonCrypto.dylib
+    0x7fff8509b000 -     0x7fff850a1ff7  libunwind.dylib (30.0.0 - compatibility 1.0.0) <1E9C6C8C-CBE8-3F4B-A5B5-E03E3AB53231> /usr/lib/system/libunwind.dylib
+    0x7fff8519b000 -     0x7fff8519bfff  libkeymgr.dylib (23.0.0 - compatibility 1.0.0) <61EFED6A-A407-301E-B454-CD18314F0075> /usr/lib/system/libkeymgr.dylib
+    0x7fff85665000 -     0x7fff85666fff  libsystem_sandbox.dylib (??? - ???) <8D14139B-B671-35F4-9E5A-023B4C523C38> /usr/lib/system/libsystem_sandbox.dylib
+    0x7fff86a4b000 -     0x7fff86a4cfff  libdnsinfo.dylib (395.6.0 - compatibility 1.0.0) <718A135F-6349-354A-85D5-430B128EFD57> /usr/lib/system/libdnsinfo.dylib
+    0x7fff86b2e000 -     0x7fff86b33fff  libcompiler_rt.dylib (6.0.0 - compatibility 1.0.0) <98ECD5F6-E85C-32A5-98CD-8911230CB66A> /usr/lib/system/libcompiler_rt.dylib
+    0x7fff86c5d000 -     0x7fff86c62ff7  libsystem_network.dylib (??? - ???) <4ABCEEF3-A3F9-3E06-9682-CE00F17138B7> /usr/lib/system/libsystem_network.dylib
+    0x7fff88a3e000 -     0x7fff88a45fff  libcopyfile.dylib (85.1.0 - compatibility 1.0.0) <172B1985-F24A-34E9-8D8B-A2403C9A0399> /usr/lib/system/libcopyfile.dylib
+    0x7fff891b6000 -     0x7fff891b7ff7  libsystem_blocks.dylib (53.0.0 - compatibility 1.0.0) <8BCA214A-8992-34B2-A8B9-B74DEACA1869> /usr/lib/system/libsystem_blocks.dylib
+    0x7fff8a2eb000 -     0x7fff8a3c8fef  libsystem_c.dylib (763.11.0 - compatibility 1.0.0) <1D61CA57-3C6D-30F7-89CB-CC6F0787B1DC> /usr/lib/system/libsystem_c.dylib
+    0x7fff8a3c9000 -     0x7fff8a3d7fff  libdispatch.dylib (187.5.0 - compatibility 1.0.0) <698F8EFB-7075-3111-94E3-891156C88172> /usr/lib/system/libdispatch.dylib
+    0x7fff8b130000 -     0x7fff8b150fff  libsystem_kernel.dylib (1699.22.73 - compatibility 1.0.0) <69F2F501-72D8-3B3B-8357-F4418B3E1348> /usr/lib/system/libsystem_kernel.dylib
+    0x7fff8b32b000 -     0x7fff8b330fff  libcache.dylib (47.0.0 - compatibility 1.0.0) <B7757E2E-5A7D-362E-AB71-785FE79E1527> /usr/lib/system/libcache.dylib
+    0x7fff8d37d000 -     0x7fff8d37efff  libunc.dylib (24.0.0 - compatibility 1.0.0) <C67B3B14-866C-314F-87FF-8025BEC2CAAC> /usr/lib/system/libunc.dylib
+    0x7fff8d7c4000 -     0x7fff8d7f1fe7  libSystem.B.dylib (159.0.0 - compatibility 1.0.0) <7B4D685D-939C-3ABE-8780-77A1889E0DE9> /usr/lib/libSystem.B.dylib
+    0x7fff8da99000 -     0x7fff8dab6ff7  libxpc.dylib (77.16.0 - compatibility 1.0.0) <0A4B4775-29A9-30D6-956B-3BE1DBF98090> /usr/lib/system/libxpc.dylib
+    0x7fff8f072000 -     0x7fff8f073ff7  libremovefile.dylib (21.0.0 - compatibility 1.0.0) <C6C49FB7-1892-32E4-86B5-25AD165131AA> /usr/lib/system/libremovefile.dylib
+    0x7fff8f116000 -     0x7fff8f11cfff  libmacho.dylib (800.0.0 - compatibility 1.0.0) <D86F63EC-D2BD-32E0-8955-08B5EAFAD2CC> /usr/lib/system/libmacho.dylib
+

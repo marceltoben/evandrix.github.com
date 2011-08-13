@@ -1,0 +1,475 @@
+exception=EXC_BAD_ACCESS:signal=11:is_exploitable= no:instruction_disassembly=movb	$CONSTANT,(%rax):instruction_address=0x0000000104d9deed:access_type=write:access_address=0x0000000088888888:
+Crash accessing invalid address.  Consider running it again with libgmalloc(3) to see if the log changes.
+The crash is suspected to be due to unbounded recursion since there were 414 stack frames.
+Test case was recursive_write
+
+
+
+Process:         recursive_write [40262]
+Path:            /Users/lwy08/Downloads/crashwrangler/recursive_write
+Identifier:      recursive_write
+Version:         ??? (???)
+Code Type:       X86-64 (Native)
+Parent Process:  exc_handler [40257]
+
+Date/Time:       2011-08-14 00:57:36.362 +0100
+OS Version:      Mac OS X 10.7 (11A511)
+Report Version:  9
+
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: KERN_INVALID_ADDRESS at 0x0000000088888888
+
+Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
+0   recursive_write               	0x0000000104d9deed f1 + 61
+1   recursive_write               	0x0000000104d9ded9 f1 + 41
+2   recursive_write               	0x0000000104d9ded9 f1 + 41
+3   recursive_write               	0x0000000104d9ded9 f1 + 41
+4   recursive_write               	0x0000000104d9ded9 f1 + 41
+5   recursive_write               	0x0000000104d9ded9 f1 + 41
+6   recursive_write               	0x0000000104d9ded9 f1 + 41
+7   recursive_write               	0x0000000104d9ded9 f1 + 41
+8   recursive_write               	0x0000000104d9ded9 f1 + 41
+9   recursive_write               	0x0000000104d9ded9 f1 + 41
+10  recursive_write               	0x0000000104d9ded9 f1 + 41
+11  recursive_write               	0x0000000104d9ded9 f1 + 41
+12  recursive_write               	0x0000000104d9ded9 f1 + 41
+13  recursive_write               	0x0000000104d9ded9 f1 + 41
+14  recursive_write               	0x0000000104d9ded9 f1 + 41
+15  recursive_write               	0x0000000104d9ded9 f1 + 41
+16  recursive_write               	0x0000000104d9ded9 f1 + 41
+17  recursive_write               	0x0000000104d9ded9 f1 + 41
+18  recursive_write               	0x0000000104d9ded9 f1 + 41
+19  recursive_write               	0x0000000104d9ded9 f1 + 41
+20  recursive_write               	0x0000000104d9ded9 f1 + 41
+21  recursive_write               	0x0000000104d9ded9 f1 + 41
+22  recursive_write               	0x0000000104d9ded9 f1 + 41
+23  recursive_write               	0x0000000104d9ded9 f1 + 41
+24  recursive_write               	0x0000000104d9ded9 f1 + 41
+25  recursive_write               	0x0000000104d9ded9 f1 + 41
+26  recursive_write               	0x0000000104d9ded9 f1 + 41
+27  recursive_write               	0x0000000104d9ded9 f1 + 41
+28  recursive_write               	0x0000000104d9ded9 f1 + 41
+29  recursive_write               	0x0000000104d9ded9 f1 + 41
+30  recursive_write               	0x0000000104d9ded9 f1 + 41
+31  recursive_write               	0x0000000104d9ded9 f1 + 41
+32  recursive_write               	0x0000000104d9ded9 f1 + 41
+33  recursive_write               	0x0000000104d9ded9 f1 + 41
+34  recursive_write               	0x0000000104d9ded9 f1 + 41
+35  recursive_write               	0x0000000104d9ded9 f1 + 41
+36  recursive_write               	0x0000000104d9ded9 f1 + 41
+37  recursive_write               	0x0000000104d9ded9 f1 + 41
+38  recursive_write               	0x0000000104d9ded9 f1 + 41
+39  recursive_write               	0x0000000104d9ded9 f1 + 41
+40  recursive_write               	0x0000000104d9ded9 f1 + 41
+41  recursive_write               	0x0000000104d9ded9 f1 + 41
+42  recursive_write               	0x0000000104d9ded9 f1 + 41
+43  recursive_write               	0x0000000104d9ded9 f1 + 41
+44  recursive_write               	0x0000000104d9ded9 f1 + 41
+45  recursive_write               	0x0000000104d9ded9 f1 + 41
+46  recursive_write               	0x0000000104d9ded9 f1 + 41
+47  recursive_write               	0x0000000104d9ded9 f1 + 41
+48  recursive_write               	0x0000000104d9ded9 f1 + 41
+49  recursive_write               	0x0000000104d9ded9 f1 + 41
+50  recursive_write               	0x0000000104d9ded9 f1 + 41
+51  recursive_write               	0x0000000104d9ded9 f1 + 41
+52  recursive_write               	0x0000000104d9ded9 f1 + 41
+53  recursive_write               	0x0000000104d9ded9 f1 + 41
+54  recursive_write               	0x0000000104d9ded9 f1 + 41
+55  recursive_write               	0x0000000104d9ded9 f1 + 41
+56  recursive_write               	0x0000000104d9ded9 f1 + 41
+57  recursive_write               	0x0000000104d9ded9 f1 + 41
+58  recursive_write               	0x0000000104d9ded9 f1 + 41
+59  recursive_write               	0x0000000104d9ded9 f1 + 41
+60  recursive_write               	0x0000000104d9ded9 f1 + 41
+61  recursive_write               	0x0000000104d9ded9 f1 + 41
+62  recursive_write               	0x0000000104d9ded9 f1 + 41
+63  recursive_write               	0x0000000104d9ded9 f1 + 41
+64  recursive_write               	0x0000000104d9ded9 f1 + 41
+65  recursive_write               	0x0000000104d9ded9 f1 + 41
+66  recursive_write               	0x0000000104d9ded9 f1 + 41
+67  recursive_write               	0x0000000104d9ded9 f1 + 41
+68  recursive_write               	0x0000000104d9ded9 f1 + 41
+69  recursive_write               	0x0000000104d9ded9 f1 + 41
+70  recursive_write               	0x0000000104d9ded9 f1 + 41
+71  recursive_write               	0x0000000104d9ded9 f1 + 41
+72  recursive_write               	0x0000000104d9ded9 f1 + 41
+73  recursive_write               	0x0000000104d9ded9 f1 + 41
+74  recursive_write               	0x0000000104d9ded9 f1 + 41
+75  recursive_write               	0x0000000104d9ded9 f1 + 41
+76  recursive_write               	0x0000000104d9ded9 f1 + 41
+77  recursive_write               	0x0000000104d9ded9 f1 + 41
+78  recursive_write               	0x0000000104d9ded9 f1 + 41
+79  recursive_write               	0x0000000104d9ded9 f1 + 41
+80  recursive_write               	0x0000000104d9ded9 f1 + 41
+81  recursive_write               	0x0000000104d9ded9 f1 + 41
+82  recursive_write               	0x0000000104d9ded9 f1 + 41
+83  recursive_write               	0x0000000104d9ded9 f1 + 41
+84  recursive_write               	0x0000000104d9ded9 f1 + 41
+85  recursive_write               	0x0000000104d9ded9 f1 + 41
+86  recursive_write               	0x0000000104d9ded9 f1 + 41
+87  recursive_write               	0x0000000104d9ded9 f1 + 41
+88  recursive_write               	0x0000000104d9ded9 f1 + 41
+89  recursive_write               	0x0000000104d9ded9 f1 + 41
+90  recursive_write               	0x0000000104d9ded9 f1 + 41
+91  recursive_write               	0x0000000104d9ded9 f1 + 41
+92  recursive_write               	0x0000000104d9ded9 f1 + 41
+93  recursive_write               	0x0000000104d9ded9 f1 + 41
+94  recursive_write               	0x0000000104d9ded9 f1 + 41
+95  recursive_write               	0x0000000104d9ded9 f1 + 41
+96  recursive_write               	0x0000000104d9ded9 f1 + 41
+97  recursive_write               	0x0000000104d9ded9 f1 + 41
+98  recursive_write               	0x0000000104d9ded9 f1 + 41
+99  recursive_write               	0x0000000104d9ded9 f1 + 41
+100 recursive_write               	0x0000000104d9ded9 f1 + 41
+101 recursive_write               	0x0000000104d9ded9 f1 + 41
+102 recursive_write               	0x0000000104d9ded9 f1 + 41
+103 recursive_write               	0x0000000104d9ded9 f1 + 41
+104 recursive_write               	0x0000000104d9ded9 f1 + 41
+105 recursive_write               	0x0000000104d9ded9 f1 + 41
+106 recursive_write               	0x0000000104d9ded9 f1 + 41
+107 recursive_write               	0x0000000104d9ded9 f1 + 41
+108 recursive_write               	0x0000000104d9ded9 f1 + 41
+109 recursive_write               	0x0000000104d9ded9 f1 + 41
+110 recursive_write               	0x0000000104d9ded9 f1 + 41
+111 recursive_write               	0x0000000104d9ded9 f1 + 41
+112 recursive_write               	0x0000000104d9ded9 f1 + 41
+113 recursive_write               	0x0000000104d9ded9 f1 + 41
+114 recursive_write               	0x0000000104d9ded9 f1 + 41
+115 recursive_write               	0x0000000104d9ded9 f1 + 41
+116 recursive_write               	0x0000000104d9ded9 f1 + 41
+117 recursive_write               	0x0000000104d9ded9 f1 + 41
+118 recursive_write               	0x0000000104d9ded9 f1 + 41
+119 recursive_write               	0x0000000104d9ded9 f1 + 41
+120 recursive_write               	0x0000000104d9ded9 f1 + 41
+121 recursive_write               	0x0000000104d9ded9 f1 + 41
+122 recursive_write               	0x0000000104d9ded9 f1 + 41
+123 recursive_write               	0x0000000104d9ded9 f1 + 41
+124 recursive_write               	0x0000000104d9ded9 f1 + 41
+125 recursive_write               	0x0000000104d9ded9 f1 + 41
+126 recursive_write               	0x0000000104d9ded9 f1 + 41
+127 recursive_write               	0x0000000104d9ded9 f1 + 41
+128 recursive_write               	0x0000000104d9ded9 f1 + 41
+129 recursive_write               	0x0000000104d9ded9 f1 + 41
+130 recursive_write               	0x0000000104d9ded9 f1 + 41
+131 recursive_write               	0x0000000104d9ded9 f1 + 41
+132 recursive_write               	0x0000000104d9ded9 f1 + 41
+133 recursive_write               	0x0000000104d9ded9 f1 + 41
+134 recursive_write               	0x0000000104d9ded9 f1 + 41
+135 recursive_write               	0x0000000104d9ded9 f1 + 41
+136 recursive_write               	0x0000000104d9ded9 f1 + 41
+137 recursive_write               	0x0000000104d9ded9 f1 + 41
+138 recursive_write               	0x0000000104d9ded9 f1 + 41
+139 recursive_write               	0x0000000104d9ded9 f1 + 41
+140 recursive_write               	0x0000000104d9ded9 f1 + 41
+141 recursive_write               	0x0000000104d9ded9 f1 + 41
+142 recursive_write               	0x0000000104d9ded9 f1 + 41
+143 recursive_write               	0x0000000104d9ded9 f1 + 41
+144 recursive_write               	0x0000000104d9ded9 f1 + 41
+145 recursive_write               	0x0000000104d9ded9 f1 + 41
+146 recursive_write               	0x0000000104d9ded9 f1 + 41
+147 recursive_write               	0x0000000104d9ded9 f1 + 41
+148 recursive_write               	0x0000000104d9ded9 f1 + 41
+149 recursive_write               	0x0000000104d9ded9 f1 + 41
+150 recursive_write               	0x0000000104d9ded9 f1 + 41
+151 recursive_write               	0x0000000104d9ded9 f1 + 41
+152 recursive_write               	0x0000000104d9ded9 f1 + 41
+153 recursive_write               	0x0000000104d9ded9 f1 + 41
+154 recursive_write               	0x0000000104d9ded9 f1 + 41
+155 recursive_write               	0x0000000104d9ded9 f1 + 41
+156 recursive_write               	0x0000000104d9ded9 f1 + 41
+157 recursive_write               	0x0000000104d9ded9 f1 + 41
+158 recursive_write               	0x0000000104d9ded9 f1 + 41
+159 recursive_write               	0x0000000104d9ded9 f1 + 41
+160 recursive_write               	0x0000000104d9ded9 f1 + 41
+161 recursive_write               	0x0000000104d9ded9 f1 + 41
+162 recursive_write               	0x0000000104d9ded9 f1 + 41
+163 recursive_write               	0x0000000104d9ded9 f1 + 41
+164 recursive_write               	0x0000000104d9ded9 f1 + 41
+165 recursive_write               	0x0000000104d9ded9 f1 + 41
+166 recursive_write               	0x0000000104d9ded9 f1 + 41
+167 recursive_write               	0x0000000104d9ded9 f1 + 41
+168 recursive_write               	0x0000000104d9ded9 f1 + 41
+169 recursive_write               	0x0000000104d9ded9 f1 + 41
+170 recursive_write               	0x0000000104d9ded9 f1 + 41
+171 recursive_write               	0x0000000104d9ded9 f1 + 41
+172 recursive_write               	0x0000000104d9ded9 f1 + 41
+173 recursive_write               	0x0000000104d9ded9 f1 + 41
+174 recursive_write               	0x0000000104d9ded9 f1 + 41
+175 recursive_write               	0x0000000104d9ded9 f1 + 41
+176 recursive_write               	0x0000000104d9ded9 f1 + 41
+177 recursive_write               	0x0000000104d9ded9 f1 + 41
+178 recursive_write               	0x0000000104d9ded9 f1 + 41
+179 recursive_write               	0x0000000104d9ded9 f1 + 41
+180 recursive_write               	0x0000000104d9ded9 f1 + 41
+181 recursive_write               	0x0000000104d9ded9 f1 + 41
+182 recursive_write               	0x0000000104d9ded9 f1 + 41
+183 recursive_write               	0x0000000104d9ded9 f1 + 41
+184 recursive_write               	0x0000000104d9ded9 f1 + 41
+185 recursive_write               	0x0000000104d9ded9 f1 + 41
+186 recursive_write               	0x0000000104d9ded9 f1 + 41
+187 recursive_write               	0x0000000104d9ded9 f1 + 41
+188 recursive_write               	0x0000000104d9ded9 f1 + 41
+189 recursive_write               	0x0000000104d9ded9 f1 + 41
+190 recursive_write               	0x0000000104d9ded9 f1 + 41
+191 recursive_write               	0x0000000104d9ded9 f1 + 41
+192 recursive_write               	0x0000000104d9ded9 f1 + 41
+193 recursive_write               	0x0000000104d9ded9 f1 + 41
+194 recursive_write               	0x0000000104d9ded9 f1 + 41
+195 recursive_write               	0x0000000104d9ded9 f1 + 41
+196 recursive_write               	0x0000000104d9ded9 f1 + 41
+197 recursive_write               	0x0000000104d9ded9 f1 + 41
+198 recursive_write               	0x0000000104d9ded9 f1 + 41
+199 recursive_write               	0x0000000104d9ded9 f1 + 41
+200 recursive_write               	0x0000000104d9ded9 f1 + 41
+201 recursive_write               	0x0000000104d9ded9 f1 + 41
+202 recursive_write               	0x0000000104d9ded9 f1 + 41
+203 recursive_write               	0x0000000104d9ded9 f1 + 41
+204 recursive_write               	0x0000000104d9ded9 f1 + 41
+205 recursive_write               	0x0000000104d9ded9 f1 + 41
+206 recursive_write               	0x0000000104d9ded9 f1 + 41
+207 recursive_write               	0x0000000104d9ded9 f1 + 41
+208 recursive_write               	0x0000000104d9ded9 f1 + 41
+209 recursive_write               	0x0000000104d9ded9 f1 + 41
+210 recursive_write               	0x0000000104d9ded9 f1 + 41
+211 recursive_write               	0x0000000104d9ded9 f1 + 41
+212 recursive_write               	0x0000000104d9ded9 f1 + 41
+213 recursive_write               	0x0000000104d9ded9 f1 + 41
+214 recursive_write               	0x0000000104d9ded9 f1 + 41
+215 recursive_write               	0x0000000104d9ded9 f1 + 41
+216 recursive_write               	0x0000000104d9ded9 f1 + 41
+217 recursive_write               	0x0000000104d9ded9 f1 + 41
+218 recursive_write               	0x0000000104d9ded9 f1 + 41
+219 recursive_write               	0x0000000104d9ded9 f1 + 41
+220 recursive_write               	0x0000000104d9ded9 f1 + 41
+221 recursive_write               	0x0000000104d9ded9 f1 + 41
+222 recursive_write               	0x0000000104d9ded9 f1 + 41
+223 recursive_write               	0x0000000104d9ded9 f1 + 41
+224 recursive_write               	0x0000000104d9ded9 f1 + 41
+225 recursive_write               	0x0000000104d9ded9 f1 + 41
+226 recursive_write               	0x0000000104d9ded9 f1 + 41
+227 recursive_write               	0x0000000104d9ded9 f1 + 41
+228 recursive_write               	0x0000000104d9ded9 f1 + 41
+229 recursive_write               	0x0000000104d9ded9 f1 + 41
+230 recursive_write               	0x0000000104d9ded9 f1 + 41
+231 recursive_write               	0x0000000104d9ded9 f1 + 41
+232 recursive_write               	0x0000000104d9ded9 f1 + 41
+233 recursive_write               	0x0000000104d9ded9 f1 + 41
+234 recursive_write               	0x0000000104d9ded9 f1 + 41
+235 recursive_write               	0x0000000104d9ded9 f1 + 41
+236 recursive_write               	0x0000000104d9ded9 f1 + 41
+237 recursive_write               	0x0000000104d9ded9 f1 + 41
+238 recursive_write               	0x0000000104d9ded9 f1 + 41
+239 recursive_write               	0x0000000104d9ded9 f1 + 41
+240 recursive_write               	0x0000000104d9ded9 f1 + 41
+241 recursive_write               	0x0000000104d9ded9 f1 + 41
+242 recursive_write               	0x0000000104d9ded9 f1 + 41
+243 recursive_write               	0x0000000104d9ded9 f1 + 41
+244 recursive_write               	0x0000000104d9ded9 f1 + 41
+245 recursive_write               	0x0000000104d9ded9 f1 + 41
+246 recursive_write               	0x0000000104d9ded9 f1 + 41
+247 recursive_write               	0x0000000104d9ded9 f1 + 41
+248 recursive_write               	0x0000000104d9ded9 f1 + 41
+249 recursive_write               	0x0000000104d9ded9 f1 + 41
+250 recursive_write               	0x0000000104d9ded9 f1 + 41
+251 recursive_write               	0x0000000104d9ded9 f1 + 41
+252 recursive_write               	0x0000000104d9ded9 f1 + 41
+253 recursive_write               	0x0000000104d9ded9 f1 + 41
+254 recursive_write               	0x0000000104d9ded9 f1 + 41
+255 recursive_write               	0x0000000104d9ded9 f1 + 41
+256 recursive_write               	0x0000000104d9ded9 f1 + 41
+257 recursive_write               	0x0000000104d9ded9 f1 + 41
+258 recursive_write               	0x0000000104d9ded9 f1 + 41
+259 recursive_write               	0x0000000104d9ded9 f1 + 41
+260 recursive_write               	0x0000000104d9ded9 f1 + 41
+261 recursive_write               	0x0000000104d9ded9 f1 + 41
+262 recursive_write               	0x0000000104d9ded9 f1 + 41
+263 recursive_write               	0x0000000104d9ded9 f1 + 41
+264 recursive_write               	0x0000000104d9ded9 f1 + 41
+265 recursive_write               	0x0000000104d9ded9 f1 + 41
+266 recursive_write               	0x0000000104d9ded9 f1 + 41
+267 recursive_write               	0x0000000104d9ded9 f1 + 41
+268 recursive_write               	0x0000000104d9ded9 f1 + 41
+269 recursive_write               	0x0000000104d9ded9 f1 + 41
+270 recursive_write               	0x0000000104d9ded9 f1 + 41
+271 recursive_write               	0x0000000104d9ded9 f1 + 41
+272 recursive_write               	0x0000000104d9ded9 f1 + 41
+273 recursive_write               	0x0000000104d9ded9 f1 + 41
+274 recursive_write               	0x0000000104d9ded9 f1 + 41
+275 recursive_write               	0x0000000104d9ded9 f1 + 41
+276 recursive_write               	0x0000000104d9ded9 f1 + 41
+277 recursive_write               	0x0000000104d9ded9 f1 + 41
+278 recursive_write               	0x0000000104d9ded9 f1 + 41
+279 recursive_write               	0x0000000104d9ded9 f1 + 41
+280 recursive_write               	0x0000000104d9ded9 f1 + 41
+281 recursive_write               	0x0000000104d9ded9 f1 + 41
+282 recursive_write               	0x0000000104d9ded9 f1 + 41
+283 recursive_write               	0x0000000104d9ded9 f1 + 41
+284 recursive_write               	0x0000000104d9ded9 f1 + 41
+285 recursive_write               	0x0000000104d9ded9 f1 + 41
+286 recursive_write               	0x0000000104d9ded9 f1 + 41
+287 recursive_write               	0x0000000104d9ded9 f1 + 41
+288 recursive_write               	0x0000000104d9ded9 f1 + 41
+289 recursive_write               	0x0000000104d9ded9 f1 + 41
+290 recursive_write               	0x0000000104d9ded9 f1 + 41
+291 recursive_write               	0x0000000104d9ded9 f1 + 41
+292 recursive_write               	0x0000000104d9ded9 f1 + 41
+293 recursive_write               	0x0000000104d9ded9 f1 + 41
+294 recursive_write               	0x0000000104d9ded9 f1 + 41
+295 recursive_write               	0x0000000104d9ded9 f1 + 41
+296 recursive_write               	0x0000000104d9ded9 f1 + 41
+297 recursive_write               	0x0000000104d9ded9 f1 + 41
+298 recursive_write               	0x0000000104d9ded9 f1 + 41
+299 recursive_write               	0x0000000104d9ded9 f1 + 41
+300 recursive_write               	0x0000000104d9ded9 f1 + 41
+301 recursive_write               	0x0000000104d9ded9 f1 + 41
+302 recursive_write               	0x0000000104d9ded9 f1 + 41
+303 recursive_write               	0x0000000104d9ded9 f1 + 41
+304 recursive_write               	0x0000000104d9ded9 f1 + 41
+305 recursive_write               	0x0000000104d9ded9 f1 + 41
+306 recursive_write               	0x0000000104d9ded9 f1 + 41
+307 recursive_write               	0x0000000104d9ded9 f1 + 41
+308 recursive_write               	0x0000000104d9ded9 f1 + 41
+309 recursive_write               	0x0000000104d9ded9 f1 + 41
+310 recursive_write               	0x0000000104d9ded9 f1 + 41
+311 recursive_write               	0x0000000104d9ded9 f1 + 41
+312 recursive_write               	0x0000000104d9ded9 f1 + 41
+313 recursive_write               	0x0000000104d9ded9 f1 + 41
+314 recursive_write               	0x0000000104d9ded9 f1 + 41
+315 recursive_write               	0x0000000104d9ded9 f1 + 41
+316 recursive_write               	0x0000000104d9ded9 f1 + 41
+317 recursive_write               	0x0000000104d9ded9 f1 + 41
+318 recursive_write               	0x0000000104d9ded9 f1 + 41
+319 recursive_write               	0x0000000104d9ded9 f1 + 41
+320 recursive_write               	0x0000000104d9ded9 f1 + 41
+321 recursive_write               	0x0000000104d9ded9 f1 + 41
+322 recursive_write               	0x0000000104d9ded9 f1 + 41
+323 recursive_write               	0x0000000104d9ded9 f1 + 41
+324 recursive_write               	0x0000000104d9ded9 f1 + 41
+325 recursive_write               	0x0000000104d9ded9 f1 + 41
+326 recursive_write               	0x0000000104d9ded9 f1 + 41
+327 recursive_write               	0x0000000104d9ded9 f1 + 41
+328 recursive_write               	0x0000000104d9ded9 f1 + 41
+329 recursive_write               	0x0000000104d9ded9 f1 + 41
+330 recursive_write               	0x0000000104d9ded9 f1 + 41
+331 recursive_write               	0x0000000104d9ded9 f1 + 41
+332 recursive_write               	0x0000000104d9ded9 f1 + 41
+333 recursive_write               	0x0000000104d9ded9 f1 + 41
+334 recursive_write               	0x0000000104d9ded9 f1 + 41
+335 recursive_write               	0x0000000104d9ded9 f1 + 41
+336 recursive_write               	0x0000000104d9ded9 f1 + 41
+337 recursive_write               	0x0000000104d9ded9 f1 + 41
+338 recursive_write               	0x0000000104d9ded9 f1 + 41
+339 recursive_write               	0x0000000104d9ded9 f1 + 41
+340 recursive_write               	0x0000000104d9ded9 f1 + 41
+341 recursive_write               	0x0000000104d9ded9 f1 + 41
+342 recursive_write               	0x0000000104d9ded9 f1 + 41
+343 recursive_write               	0x0000000104d9ded9 f1 + 41
+344 recursive_write               	0x0000000104d9ded9 f1 + 41
+345 recursive_write               	0x0000000104d9ded9 f1 + 41
+346 recursive_write               	0x0000000104d9ded9 f1 + 41
+347 recursive_write               	0x0000000104d9ded9 f1 + 41
+348 recursive_write               	0x0000000104d9ded9 f1 + 41
+349 recursive_write               	0x0000000104d9ded9 f1 + 41
+350 recursive_write               	0x0000000104d9ded9 f1 + 41
+351 recursive_write               	0x0000000104d9ded9 f1 + 41
+352 recursive_write               	0x0000000104d9ded9 f1 + 41
+353 recursive_write               	0x0000000104d9ded9 f1 + 41
+354 recursive_write               	0x0000000104d9ded9 f1 + 41
+355 recursive_write               	0x0000000104d9ded9 f1 + 41
+356 recursive_write               	0x0000000104d9ded9 f1 + 41
+357 recursive_write               	0x0000000104d9ded9 f1 + 41
+358 recursive_write               	0x0000000104d9ded9 f1 + 41
+359 recursive_write               	0x0000000104d9ded9 f1 + 41
+360 recursive_write               	0x0000000104d9ded9 f1 + 41
+361 recursive_write               	0x0000000104d9ded9 f1 + 41
+362 recursive_write               	0x0000000104d9ded9 f1 + 41
+363 recursive_write               	0x0000000104d9ded9 f1 + 41
+364 recursive_write               	0x0000000104d9ded9 f1 + 41
+365 recursive_write               	0x0000000104d9ded9 f1 + 41
+366 recursive_write               	0x0000000104d9ded9 f1 + 41
+367 recursive_write               	0x0000000104d9ded9 f1 + 41
+368 recursive_write               	0x0000000104d9ded9 f1 + 41
+369 recursive_write               	0x0000000104d9ded9 f1 + 41
+370 recursive_write               	0x0000000104d9ded9 f1 + 41
+371 recursive_write               	0x0000000104d9ded9 f1 + 41
+372 recursive_write               	0x0000000104d9ded9 f1 + 41
+373 recursive_write               	0x0000000104d9ded9 f1 + 41
+374 recursive_write               	0x0000000104d9ded9 f1 + 41
+375 recursive_write               	0x0000000104d9ded9 f1 + 41
+376 recursive_write               	0x0000000104d9ded9 f1 + 41
+377 recursive_write               	0x0000000104d9ded9 f1 + 41
+378 recursive_write               	0x0000000104d9ded9 f1 + 41
+379 recursive_write               	0x0000000104d9ded9 f1 + 41
+380 recursive_write               	0x0000000104d9ded9 f1 + 41
+381 recursive_write               	0x0000000104d9ded9 f1 + 41
+382 recursive_write               	0x0000000104d9ded9 f1 + 41
+383 recursive_write               	0x0000000104d9ded9 f1 + 41
+384 recursive_write               	0x0000000104d9ded9 f1 + 41
+385 recursive_write               	0x0000000104d9ded9 f1 + 41
+386 recursive_write               	0x0000000104d9ded9 f1 + 41
+387 recursive_write               	0x0000000104d9ded9 f1 + 41
+388 recursive_write               	0x0000000104d9ded9 f1 + 41
+389 recursive_write               	0x0000000104d9ded9 f1 + 41
+390 recursive_write               	0x0000000104d9ded9 f1 + 41
+391 recursive_write               	0x0000000104d9ded9 f1 + 41
+392 recursive_write               	0x0000000104d9ded9 f1 + 41
+393 recursive_write               	0x0000000104d9ded9 f1 + 41
+394 recursive_write               	0x0000000104d9ded9 f1 + 41
+395 recursive_write               	0x0000000104d9ded9 f1 + 41
+396 recursive_write               	0x0000000104d9ded9 f1 + 41
+397 recursive_write               	0x0000000104d9ded9 f1 + 41
+398 recursive_write               	0x0000000104d9ded9 f1 + 41
+399 recursive_write               	0x0000000104d9ded9 f1 + 41
+400 recursive_write               	0x0000000104d9ded9 f1 + 41
+401 recursive_write               	0x0000000104d9ded9 f1 + 41
+402 recursive_write               	0x0000000104d9ded9 f1 + 41
+403 recursive_write               	0x0000000104d9ded9 f1 + 41
+404 recursive_write               	0x0000000104d9ded9 f1 + 41
+405 recursive_write               	0x0000000104d9ded9 f1 + 41
+406 recursive_write               	0x0000000104d9ded9 f1 + 41
+407 recursive_write               	0x0000000104d9ded9 f1 + 41
+408 recursive_write               	0x0000000104d9ded9 f1 + 41
+409 recursive_write               	0x0000000104d9ded9 f1 + 41
+410 recursive_write               	0x0000000104d9ded9 f1 + 41
+411 recursive_write               	0x0000000104d9df0d main + 13
+412 recursive_write               	0x0000000104d9dea4 start + 52
+
+Thread 0 crashed with X86 Thread State (64-bit):
+  rax: 0x0000000088888888  rbx: 0x0000000000000000  rcx: 0x00007fff6499c5e8  rdx: 0x00007fff6499c458
+  rdi: 0x0000000000000001  rsi: 0x00007fff6499c448  rbp: 0x00007fff649990c0  rsp: 0x00007fff649990b0
+   r8: 0x0000000000000001   r9: 0x0000000000000000  r10: 0x000000000000002c  r11: 0x0000000000000206
+  r12: 0x0000000000000000  r13: 0x0000000000000000  r14: 0x0000000000000000  r15: 0x0000000000000000
+  rip: 0x0000000104d9deed  rfl: 0x0000000000010202  cr2: 0x0000000088888888
+Logical CPU: 2
+
+Binary Images:
+       0x104d9d000 -        0x104d9dfff +recursive_write (??? - ???) <314653A1-8ED1-34FB-8BD9-AE502DE5E6D6> /Users/lwy08/Downloads/crashwrangler/recursive_write
+    0x7fff6499d000 -     0x7fff649d1ac7  dyld (195.5 - ???) <4A6E2B28-C7A2-3528-ADB7-4076B9836041> /usr/lib/dyld
+    0x7fff82d78000 -     0x7fff82d7cfff  libdyld.dylib (195.5.0 - compatibility 1.0.0) <F1903B7A-D3FF-3390-909A-B24E09BAD1A5> /usr/lib/system/libdyld.dylib
+    0x7fff82dc9000 -     0x7fff82dcbfff  libquarantine.dylib (36.0.0 - compatibility 1.0.0) <4C3BFBC7-E592-3939-B376-1C2E2D7C5389> /usr/lib/system/libquarantine.dylib
+    0x7fff83138000 -     0x7fff83140fff  libsystem_dnssd.dylib (??? - ???) <7749128E-D0C5-3832-861C-BC9913F774FA> /usr/lib/system/libsystem_dnssd.dylib
+    0x7fff83ec7000 -     0x7fff83ed0fff  libnotify.dylib (80.0.0 - compatibility 1.0.0) <BD08553D-8088-38A8-8007-CF5C0B8F0404> /usr/lib/system/libnotify.dylib
+    0x7fff8402c000 -     0x7fff84068fff  libsystem_info.dylib (??? - ???) <BC49C624-1DAB-3A37-890F-6EFD46538424> /usr/lib/system/libsystem_info.dylib
+    0x7fff849d5000 -     0x7fff849dfff7  liblaunch.dylib (392.18.0 - compatibility 1.0.0) <39EF04F2-7F0C-3435-B785-BF283727FFBD> /usr/lib/system/liblaunch.dylib
+    0x7fff84cac000 -     0x7fff84cb0fff  libmathCommon.A.dylib (2026.0.0 - compatibility 1.0.0) <FF83AFF7-42B2-306E-90AF-D539C51A4542> /usr/lib/system/libmathCommon.A.dylib
+    0x7fff84cdb000 -     0x7fff84d1dff7  libcommonCrypto.dylib (55010.0.0 - compatibility 1.0.0) <A5B9778E-11C3-3F61-B740-1F2114E967FB> /usr/lib/system/libcommonCrypto.dylib
+    0x7fff8509b000 -     0x7fff850a1ff7  libunwind.dylib (30.0.0 - compatibility 1.0.0) <1E9C6C8C-CBE8-3F4B-A5B5-E03E3AB53231> /usr/lib/system/libunwind.dylib
+    0x7fff8519b000 -     0x7fff8519bfff  libkeymgr.dylib (23.0.0 - compatibility 1.0.0) <61EFED6A-A407-301E-B454-CD18314F0075> /usr/lib/system/libkeymgr.dylib
+    0x7fff85665000 -     0x7fff85666fff  libsystem_sandbox.dylib (??? - ???) <8D14139B-B671-35F4-9E5A-023B4C523C38> /usr/lib/system/libsystem_sandbox.dylib
+    0x7fff86a4b000 -     0x7fff86a4cfff  libdnsinfo.dylib (395.6.0 - compatibility 1.0.0) <718A135F-6349-354A-85D5-430B128EFD57> /usr/lib/system/libdnsinfo.dylib
+    0x7fff86b2e000 -     0x7fff86b33fff  libcompiler_rt.dylib (6.0.0 - compatibility 1.0.0) <98ECD5F6-E85C-32A5-98CD-8911230CB66A> /usr/lib/system/libcompiler_rt.dylib
+    0x7fff86c5d000 -     0x7fff86c62ff7  libsystem_network.dylib (??? - ???) <4ABCEEF3-A3F9-3E06-9682-CE00F17138B7> /usr/lib/system/libsystem_network.dylib
+    0x7fff88a3e000 -     0x7fff88a45fff  libcopyfile.dylib (85.1.0 - compatibility 1.0.0) <172B1985-F24A-34E9-8D8B-A2403C9A0399> /usr/lib/system/libcopyfile.dylib
+    0x7fff891b6000 -     0x7fff891b7ff7  libsystem_blocks.dylib (53.0.0 - compatibility 1.0.0) <8BCA214A-8992-34B2-A8B9-B74DEACA1869> /usr/lib/system/libsystem_blocks.dylib
+    0x7fff8a2eb000 -     0x7fff8a3c8fef  libsystem_c.dylib (763.11.0 - compatibility 1.0.0) <1D61CA57-3C6D-30F7-89CB-CC6F0787B1DC> /usr/lib/system/libsystem_c.dylib
+    0x7fff8a3c9000 -     0x7fff8a3d7fff  libdispatch.dylib (187.5.0 - compatibility 1.0.0) <698F8EFB-7075-3111-94E3-891156C88172> /usr/lib/system/libdispatch.dylib
+    0x7fff8b130000 -     0x7fff8b150fff  libsystem_kernel.dylib (1699.22.73 - compatibility 1.0.0) <69F2F501-72D8-3B3B-8357-F4418B3E1348> /usr/lib/system/libsystem_kernel.dylib
+    0x7fff8b32b000 -     0x7fff8b330fff  libcache.dylib (47.0.0 - compatibility 1.0.0) <B7757E2E-5A7D-362E-AB71-785FE79E1527> /usr/lib/system/libcache.dylib
+    0x7fff8d37d000 -     0x7fff8d37efff  libunc.dylib (24.0.0 - compatibility 1.0.0) <C67B3B14-866C-314F-87FF-8025BEC2CAAC> /usr/lib/system/libunc.dylib
+    0x7fff8d7c4000 -     0x7fff8d7f1fe7  libSystem.B.dylib (159.0.0 - compatibility 1.0.0) <7B4D685D-939C-3ABE-8780-77A1889E0DE9> /usr/lib/libSystem.B.dylib
+    0x7fff8da99000 -     0x7fff8dab6ff7  libxpc.dylib (77.16.0 - compatibility 1.0.0) <0A4B4775-29A9-30D6-956B-3BE1DBF98090> /usr/lib/system/libxpc.dylib
+    0x7fff8f072000 -     0x7fff8f073ff7  libremovefile.dylib (21.0.0 - compatibility 1.0.0) <C6C49FB7-1892-32E4-86B5-25AD165131AA> /usr/lib/system/libremovefile.dylib
+    0x7fff8f116000 -     0x7fff8f11cfff  libmacho.dylib (800.0.0 - compatibility 1.0.0) <D86F63EC-D2BD-32E0-8955-08B5EAFAD2CC> /usr/lib/system/libmacho.dylib
+
