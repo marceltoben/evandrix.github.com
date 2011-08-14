@@ -224,6 +224,7 @@ The following ports are currently installed:
   netpbm @10.47.26_0 (active)
   netpipes @4.2_0 (active)
   nginx @1.0.0_0 (active)
+  ngrep @1.45_0 (active)
   nmap @5.51_0 (active)
   nodejs @0.4.10_0+ssl (active)
   nspr @4.8.8_0 (active)
@@ -312,7 +313,9 @@ The following ports are currently installed:
   pdflib @7.0.5_1 (active)
   perl5 @5.12.3_1+perl5_12 (active)
   perl5.8 @5.8.9_4 (active)
-  perl5.12 @5.12.3_1+universal (active)
+  perl5.12 @5.12.3_1+universal
+  perl5.12 @5.12.3_1+threads+universal (active)
+  perl5.14 @5.14.1_0+threads (active)
   pgf @2.10_0 (active)
   phantomjs @1.0.0_0 (active)
   pkgconfig @0.26_0+universal (active)

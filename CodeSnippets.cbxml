@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>ED9396CE-321D-4CEA-B5B8-7002C9BE928A</UUID>
-        <nextObjectID>281</nextObjectID>
+        <nextObjectID>283</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -815,7 +815,7 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z221"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z215 z272 z219 z280 z225"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z225 z283 z237 z215 z219 z280 z272"></relationship>
     </object>
     <object type="ASSET" id="z218">
         <attribute name="sort" type="int32">-1</attribute>
@@ -849,11 +849,11 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
     </object>
     <object type="TAG" id="z222">
         <attribute name="name" type="string">MacPorts</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z215 z272 z219 z280 z225"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z225 z283 z237 z215 z219 z280 z272"></relationship>
     </object>
     <object type="TAG" id="z223">
         <attribute name="name" type="string">port</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z272 z280 z225"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z272 z280 z237 z225 z283"></relationship>
     </object>
     <object type="ASSET" id="z224">
         <attribute name="sort" type="int32">-1</attribute>
@@ -948,7 +948,7 @@ Z29kYgpjZCAkKHBvcnQgd29yayBtb25nb2RiKS9tb25nb2RiKgpzdWRvIGN1cmwgLU8gaHR0cHM6Ly9q
     </object>
     <object type="TAG" id="z236">
         <attribute name="name" type="string">lion</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z280 z237 z272"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z272 z237 z280 z283"></relationship>
     </object>
     <object type="SNIPPET" id="z237">
         <attribute name="name" type="string">port.mongodb</attribute>
@@ -1274,5 +1274,22 @@ dCBiaXRzX2NvdW50ZXJfdjAodW5zaWduZWQgaW50IHgpIHsKICAgIHVuc2lnbmVkIGludCBjb3VudCA9
 IExpb24gMTAuNzoKCkRvd25sb2FkIHRoZSBzb3VyY2UgJiBydW4gdGhpcyBjb21tYW5kIHRvIGNvbXBpbGU6CnN1ZG8gbWFrZSBDX0NPTVBJTEVSPWdjYy00LjIgUExBVEZPUk09bWFjb3N4IEFSQ0g9eDg2LTY0IHtjbGVhbiwgYnVpbGQsaW5zdGFsbH0=
 </attribute>
         <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z280"></relationship>
+    </object>
+    <object type="ASSET" id="z282">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.mdown</attribute>
+        <attribute name="notes" type="string">http://lists.macosforge.org/pipermail/macports-tickets/2011-August/088390.html</attribute>
+        <attribute name="content" type="binary">T0ssIHRoaXMgaXMgYSBidWcgaW4gdGhlIG5ncmVwIE1ha2VmaWxlLmluLgoKIEFzIGRlc2NyaWJl
+ZCBpbiBbdGhpcyBodHRwOi8vd3d3Lm1haWwtYXJjaGl2ZS5jb20vYnVnLQogbWFrZSBhdCBnbnUub3JnL21zZzAwMTAyLmh0bWwgdGhyZWFkXSwgTUFLRUZMQUdTIHNob3VsZCBub3QgYmUgcGFzc2VkCiByZWN1cnNpdmVseSB0byBjYWxscyB0byAnbWFrZScgd2l0aGluIHRoZSBNYWtlZmlsZS4gTGluZSA2NiBvZiBNYWtlZmlsZS5pbgogY29udGFpbnMgc3VjaCBhbiBlcnJvci4gUmVtb3ZpbmcgdGhlICIkKE1BS0VGTEFHUykiIGJpdCBmcm9tIHRoYXQgbGluZQogYWxsb3dzIG5ncmVwIHRvIGJ1aWxkIHdpdGggIm1ha2UgLWoyIC13IGFsbCIuCgogQSByZWlucGxhY2Ugc2hvdWxkIGJlIGVub3VnaCB0byBzdHJpcCB0aGF0IG91dCBwcmlvciB0byBjYWxsaW5nIGNvbmZpZ3VyZS4KCiBJIHRoaW5rIHRoZSBmb2xsb3dpbmcgc2hvdWxkIGhhbmRsZSBpdC4KCiB7e3sKIHByZS1jb25maWd1cmUgewogICAgIHJlaW5wbGFjZSBzfFwkKE1BS0UpIFwkKE1BS0VGTEFHUyl8JChNQUtFKXwgJHt3b3Jrc3JjcGF0aH0vTWFrZWZpbGUuaW4KIH0KIH19fQo=
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z283"></relationship>
+    </object>
+    <object type="SNIPPET" id="z283">
+        <attribute name="name" type="string">port.ngrep</attribute>
+        <attribute name="modified" type="date">335051799.36343902349472045898</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z217"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z282"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z222 z223 z236"></relationship>
     </object>
 </database>
