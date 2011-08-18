@@ -1,0 +1,58 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+		<meta name="author" content="Matthew Trost" /> 
+		<meta name="description" content="A JavaScript implementation of the A* algorithm, used for pathfinding and graph traversal." /> 
+		<meta name="keywords" content="a*, a star, a-star, algorithm, a star algorithm, pathfinding, wayfinding, graph traversal, path, way, finding, graph, traversal, path-finding, game, node, goal, manhattan, diagonal, euclidean, heuristic, function" /> 
+		<meta name="copyright" content="This implementation of the A* (A-star) Pathfinding Algorithm in JavaScript by Matthew Trost is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License" /> 
+		<title>A* pathfinding algorithm in JavaScript</title> 
+		<link rel="stylesheet" type="text/css" media="screen" href="global.css" /> 
+		<script type="text/javascript" src="astar.js"></script> 
+		<script type="text/javascript" src="map.js"></script> 
+	</head>	
+	<body> 
+		<div id="content""> 
+			<canvas id="canvas"> 
+				<p id="nocanvas" class="copy">A JavaScript implementation of the A* algorithm for pathfinding and graph traversal. Designed for browser-based games using HTML5/canvas with JavaScript. Your browser must support <span class="code">canvas</a> to view this demo. Your browser must have JavaScript enabled.</p> 
+			</canvas> 
+		</div> 
+		<div id="menu"> 
+			<div id="crown"> 
+				<img src="ASTAR.png" alt="A-star logo" /> 
+			</div> 
+			<div class="menu-element" id="heuristics"> 
+				<div class="header"> 
+					<img src="selectDistance.png" alt="Select distance heuristic function" /> 
+				</div> 
+				<div class="buttons"> 
+					<div class="heuristic-button" alt="Toggle Manhattan method" id="manhattan" onclick="setHeuristic('manhattan')"><a href="#"><img src="manhattanOn.png" id="manhattanimg" /></a></div> 
+					<div class="heuristic-button" alt="Toggle diagonal method" id="diagonal" onclick="setHeuristic('diagonal')"><a href="#"><img src="diagonalOff.png" id="diagonalimg" /></a></div> 
+					<div class="heuristic-button" alt="Toggle Euclidean method" id="euclidean" onclick="setHeuristic('euclidean')"><a href="#"><img src="euclideanOff.png" id="euclideanimg" /></a></div> 
+				</div> 
+				<div class="button-labels"> 
+					<div class="heuristic-label" alt="Manhattan" id="manhattan"><img src="Manhattan.png" /></div> 
+					<div class="heuristic-label" alt="Diagonal" id="diagonal"><img src="Diagonal.png" /></div> 
+					<div class="heuristic-label" alt="Euclidean" id="euclidean"><img src="Euclidean.png" /></div> 
+				</div> 
+			</div> 
+			<div class="menu-element" id="corners"> 
+				<div class="header"> 
+					<img src="toggleCorners.png" alt="Toggle corner-cutting" /> 
+				</div> 
+				<div class="buttons"> 
+					<div id="corner-button" onclick="setCornerCutting()"><a href="#"><img src="cornersOff.png" alt="Toggle corner-cutting" id="cornercuttingimg" /></a></div> 
+				</div> 
+			</div> 
+			<div class="menu-element" id="reload" onclick="drawNewMap(document.getElementById('canvas'), 20)"> 
+				<a href="#"><img src="generateNewMap.png" alt="Generate new map" /></a> 
+			</div> 
+			<div class="menu-element" id="misc"> 
+				<p><a href="js/astar.js">See the code &#0187;</a></p> 
+				<p><a href="documentation.html" alt="Documentation">Documentation &#0187;</a></p> 
+				<p><a href="about.html" alt="About">About &#0187;</a></p> 
+			</div> 
+		</div> 
+	</body> 
+</html>

@@ -1,0 +1,174 @@
+/* =================================== GENERAL == */
+body {
+	background: white;
+	padding: 0;
+	margin: 0;
+}
+img {
+	display: block;
+	border: 0;
+}
+
+/* =================================== LAYOUT == */
+#content {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1000px;
+	height: 590px;
+}
+#menu {
+	position: absolute;
+	left: 800px;
+	top: 0px;
+	width: 224px;
+	height: 590px;
+}
+#crown {
+	position: relative;
+	left: 24px;
+}
+#reload {
+	margin-right: auto;
+	margin-left: auto;
+	width: 105px;
+}
+#manhattan {
+	left: 0px;
+}
+#diagonal {
+	left: 80px;
+}
+#euclidean {
+	left: 160px;
+}
+#corners {
+	top: 90px;
+}
+#reload {
+	top: 100px;
+}
+#misc {
+	top: 90px;
+}
+#logo {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#text-content {
+	position: absolute;
+	top: 0px;
+	left: 250px;
+	width: 500px;
+}
+.heuristic-button {
+	position: absolute;
+	margin-top: 6px;
+	width: 68px;
+	height: 54px;
+}
+.heuristic-label {
+	position: absolute;
+	margin-top: 68px;
+	width: 69px;
+	height: 15px;
+}
+.menu-element {
+	position: relative;
+	left: 12px;
+	margin-top: 24px;
+}
+#divider {
+	position: fixed;
+	left: 800px;
+	top: 0px;
+	height: 100%;
+	width: 1px;
+}
+
+/* =================================== TEXT == */
+p {
+	font-family: palatino;
+	font-size: 10pt;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+a {
+	color: #6e2bea;
+	outline: none;
+	text-decoration: none;
+}
+p.copy {
+	font-family: palatino;
+	font-size: 12pt;
+	margin-top: 12px;
+	margin-bottom: 16px;
+}
+p.code {
+	font-family: courier;
+	background: #CCFFFF;
+	font-size: 10pt;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	left: 12px;
+}
+.code {
+	font-family: courier;
+	background: #CCFFFF;
+}
+.codeval {
+	font-family: courier;
+	background: #FFFFCC;
+}
+h1 {
+	font-family: helvetica;
+	font-size: 18px;
+	margin-bottom: 12px;
+	margin-top: 28px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+h2 {
+	font-family: palatino;
+	font-size: 34px;
+	margin-bottom: 6px;
+	margin-top: 24px;
+}
+h3 {
+	font-family: palatino;
+	font-size: 28px;
+	margin-bottom: 4px;
+	margin-top: 18px;
+}
+h1 {
+	font-family: helvetica;
+	font-size: 18px;
+	margin-bottom: 12px;
+	margin-top: 28px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+h2 {
+	font-family: palatino;
+	font-size: 34px;
+	margin-bottom: 6px;
+	margin-top: 24px;
+}
+h3 {
+	font-family: palatino;
+	font-size: 28px;
+	margin-bottom: 4px;
+	margin-top: 18px;
+}
+ul {
+	font-family: palatino;
+	left: 12px;
+	margin-top: 6px;
+	margin-bottom: 12px;
+}
+li {
+	font-family: palatino;
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
