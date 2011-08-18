@@ -1,0 +1,21 @@
+<div id="editor">some text</div>
+<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+window.onload = function() {
+    var editor = ace.edit("editor");
+	editor.setTheme("ace/theme/twilight");
+	
+	var JavaScriptMode = require("ace/mode/javascript").Mode;
+    editor.getSession().setMode(new JavaScriptMode());
+};
+</script>
+
+<style>
+#editor {
+    width: 99%;
+    height: 98%;
+}
+</style>
+
+<script src="src/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
