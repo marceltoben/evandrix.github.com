@@ -75,6 +75,8 @@
  * [SQLAlchemy ORM](http://www.sqlalchemy.org)
  * [SQL Azure (pending) - sharding = "federations"](http://www.microsoft.com/windowsazure/sqlazure)
 
+### Database > MongoDB Cloud Hosting
+ * [MongoHQ](https://mongohq.com)
 ---
 
 ### CSS > Minifying (Online options)
