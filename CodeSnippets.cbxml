@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>ED9396CE-321D-4CEA-B5B8-7002C9BE928A</UUID>
-        <nextObjectID>283</nextObjectID>
+        <nextObjectID>289</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -603,7 +603,7 @@ bnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0wLjUsIHVzZXItc2NhbGFibGU9bm8i
     </object>
     <object type="TAG" id="z184">
         <attribute name="name" type="string">osx</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z162 z269"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z284 z269 z162"></relationship>
     </object>
     <object type="SNIPPET" id="z185">
         <attribute name="name" type="string">XCode3: copystrings error</attribute>
@@ -815,7 +815,7 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z221"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z225 z283 z237 z215 z219 z280 z272"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z289 z237 z280 z272 z225 z283 z215 z219"></relationship>
     </object>
     <object type="ASSET" id="z218">
         <attribute name="sort" type="int32">-1</attribute>
@@ -838,7 +838,7 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z221"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z162 z269"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z284 z269 z162"></relationship>
     </object>
     <object type="FOLDER" id="z221">
         <attribute name="sort" type="int16">4</attribute>
@@ -849,11 +849,11 @@ YW1lPikKCjIuIEVkaXRpbmcgdGhlIFBvcnRmaWxlCglzdWRvIHBvcnQgZWRpdCAtLWVkaXRvciBuYW5v
     </object>
     <object type="TAG" id="z222">
         <attribute name="name" type="string">MacPorts</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z225 z283 z237 z215 z219 z280 z272"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z289 z237 z280 z272 z225 z283 z215 z219"></relationship>
     </object>
     <object type="TAG" id="z223">
         <attribute name="name" type="string">port</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z272 z280 z237 z225 z283"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z272 z283 z225 z289 z280"></relationship>
     </object>
     <object type="ASSET" id="z224">
         <attribute name="sort" type="int32">-1</attribute>
@@ -948,7 +948,7 @@ Z29kYgpjZCAkKHBvcnQgd29yayBtb25nb2RiKS9tb25nb2RiKgpzdWRvIGN1cmwgLU8gaHR0cHM6Ly9q
     </object>
     <object type="TAG" id="z236">
         <attribute name="name" type="string">lion</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z272 z237 z280 z283"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z237 z272 z283 z289 z280"></relationship>
     </object>
     <object type="SNIPPET" id="z237">
         <attribute name="name" type="string">port.mongodb</attribute>
@@ -1291,5 +1291,48 @@ ZCBpbiBbdGhpcyBodHRwOi8vd3d3Lm1haWwtYXJjaGl2ZS5jb20vYnVnLQogbWFrZSBhdCBnbnUub3Jn
         <relationship name="list" type="1/1" destination="LIST" idrefs="z217"></relationship>
         <relationship name="assets" type="0/0" destination="ASSET" idrefs="z282"></relationship>
         <relationship name="tags" type="0/0" destination="TAG" idrefs="z222 z223 z236"></relationship>
+    </object>
+    <object type="SNIPPET" id="z284">
+        <attribute name="name" type="string">pidof utility</attribute>
+        <attribute name="modified" type="date">335375991.98425298929214477539</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z220"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z286"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z184 z285 z287"></relationship>
+    </object>
+    <object type="TAG" id="z285">
+        <attribute name="name" type="string">unix</attribute>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z284"></relationship>
+    </object>
+    <object type="ASSET" id="z286">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">pidof.sh</attribute>
+        <attribute name="notes" type="string">http://www.mac-forums.com/forums/os-x-operating-system/113711-pidof-utility.html</attribute>
+        <attribute name="content" type="binary">IyEvYmluL3NoCmlmIFsgJCMgLW5lIDEgXSA7IHRoZW4gCgllY2hvICJVc2FnZTogJDAgPHByb2Nl
+c3NuYW1lPiIKCWV4aXQKZmkKCnBzIGF4Y3xhd2sgIntpZiAoXCQ1PT1cIiQxXCIpIHByaW50IFwkMX0ifHRyICdcbicgJyAnIAplY2hv
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z284"></relationship>
+    </object>
+    <object type="TAG" id="z287">
+        <attribute name="name" type="string">binutils</attribute>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z284"></relationship>
+    </object>
+    <object type="ASSET" id="z288">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.mdown</attribute>
+        <attribute name="notes" type="string">http://www.infobean.de/2011/08/running_a_local_postfix_mta_on.html
+https://discussions.apple.com/thread/3247974?start=0\u2600tstart=0</attribute>
+        <attribute name="content" type="binary">KioqCiAgICBVc2UgcG9ydC5leGltIGluc3RlYWQsIG1vdmUgc2FtcGxlIGNvbmZpZyBmcm9tIC9v
+cHQvbG9jYWwvZXRjL2V4aW0vZXhpbS5jb25mLnNhbXBsZSB0byBleGltLmNvbmYKKioqCgpDaGFuZ2VzIHRvIG1ha2UgYWZ0ZXIgaW5zdGFsbGluZyBwb3N0Zml4IGZyb20gTWFjUG9ydHM6CgoxLiBQb3N0Zml4IGxvZ3MgYXJlIHN0b3JlZCBhdCBgdGFpbCAtZiAvdmFyL2xvZy9tYWlsLmxvZ2AKCkVycm9yIG1lc3NhZ2VzIGVuY291bnRlcmVkOgpwb3N0Zml4L3NtdHBkWzEwMDFdOiBmYXRhbDogb3BlbiAvZXRjL3Bvc3RmaXgvc3VibWl0LmNyZWQ6IE5vIHN1Y2ggZmlsZSBvciBkaXJlY3RvcnkKcG9zdGZpeC9tYXN0ZXJbOTcxXTogd2FybmluZzogcHJvY2VzcyAvdXNyL2xpYmV4ZWMvcG9zdGZpeC9zbXRwZCBwaWQgMTAwMSBleGl0IHN0YXR1cyAxCnBvc3RmaXgvbWFzdGVyWzk3MV06IHdhcm5pbmc6IC91c3IvbGliZXhlYy9wb3N0Zml4L3NtdHBkOiBiYWQgY29tbWFuZCBzdGFydHVwIC0tIHRocm90dGxpbmcKCkZpeDoKQ2hhbmdlZCBpbmV0X3Byb3RvY29scyA9IGFsbCB0byBpbmV0X3Byb3RvY29scyA9IGlwdjQgaW4gdGhlIG1haW4uY2YgYW5kIHRoZSBwb3N0Zml4IG10YSBzdGFydGVkIGFzIHN1cHBvc2VkLgoKMi4gTG9va2luZyBhdCB0aGUgc3lzbG9nLCBJIGtlcHQgZ2V0dGluZzoKIApwb3N0Zml4L3NtdHBkWzEwMDFdOiBmYXRhbDogb3BlbiAvZXRjL3Bvc3RmaXgvc3VibWl0LmNyZWQ6IE5vIHN1Y2ggZmlsZSBvciBkaXJlY3RvcnkKcG9zdGZpeC9tYXN0ZXJbOTcxXTogd2FybmluZzogcHJvY2VzcyAvdXNyL2xpYmV4ZWMvcG9zdGZpeC9zbXRwZCBwaWQgMTAwMSBleGl0IHN0YXR1cyAxCnBvc3RmaXgvbWFzdGVyWzk3MV06IHdhcm5pbmc6IC91c3IvbGliZXhlYy9wb3N0Zml4L3NtdHBkOiBiYWQgY29tbWFuZCBzdGFydHVwIC0tIHRocm90dGxpbmcKIApVcG9uIGNoZWNraW5nLCB0aGF0IC9ldGMvcG9zdGZpeC9zdWJtaXQuY3JlZCBmaWxlIHdhcyBtaXNzaW5nLiBDcmVhdGVkIGEgYmxhbmsgb25lLiBTeXNsb2cgdGhlbiBzaG93ZWQ6CiAKcG9zdGZpeC9zbXRwZFsxMDQxXTogZmF0YWw6IHVuc2FmZSBvd25lcnNoaXAgb3IgcGVybWlzc2lvbnMgb24gL2V0Yy9wb3N0Zml4L3N1Ym1pdC5jcmVkOiB1aWQvZ2lkL21vZGUgYXJlIDAvMC82NDQgc2hvdWxkIGJlIDAvMC8wNjAwCnBvc3RmaXgvbWFzdGVyWzEwMzVdOiB3YXJuaW5nOiBwcm9jZXNzIC91c3IvbGliZXhlYy9wb3N0Zml4L3NtdHBkIHBpZCAxMDQxIGV4aXQgc3RhdHVzIDEKcG9zdGZpeC9tYXN0ZXJbMTAzNV06IHdhcm5pbmc6IC91c3IvbGliZXhlYy9wb3N0Zml4L3NtdHBkOiBiYWQgY29tbWFuZCBzdGFydHVwIC0tIHRocm90dGxpbmcKIApEaWQgdGhlIGNobW9kIDA2MDAgb24gaXQuCiAKRklOQUxMWSBzbXRwZCBzdGFydGVkIGFjY2VwdGluZyBjb25uZWN0aW9ucyEKIApTeXNsb2cgc3RpbGwgc2hvd2VkIGEgd2FybmluZzoKIApwb3N0Zml4L3NtdHBkWzE0MjBdOiB3YXJuaW5nOiBubyB2YWxpZCBob3N0cG9ydHx1c2VybmFtZXxwYXNzd29yZCBlbnRyaWVzIGluIC9ldGMvcG9zdGZpeC9zdWJtaXQuY3JlZAogClNvIEkganVzdCBjb21tZW50ZWQgaXQgb3V0IG9mIC9ldGMvcG9zdGZpeC9tYWluLmNmOgogCiMgKEFQUExFKSBDcmVkZW50aWFscyBmb3IgdXNpbmcgVVJMQVVUSCB3aXRoIElNQVAgc2VydmVycy4KI2ltYXBfc3VibWl0X2NyZWRfZmlsZSA9IC9ldGMvcG9zdGZpeC9zdWJtaXQuY3JlZAo=
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z289"></relationship>
+    </object>
+    <object type="SNIPPET" id="z289">
+        <attribute name="name" type="string">port.postfix</attribute>
+        <attribute name="modified" type="date">335407133.63411998748779296875</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z217"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z288"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z236 z222 z223"></relationship>
     </object>
 </database>
