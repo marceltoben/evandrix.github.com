@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>ED9396CE-321D-4CEA-B5B8-7002C9BE928A</UUID>
-        <nextObjectID>293</nextObjectID>
+        <nextObjectID>295</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -1119,11 +1119,11 @@ IHdlcmUgVlBOcywgdGhlcmUgd2FzIHNzaC4gQW5kIHdoZW4geW91IGRvbuKAmXQgaGF2ZSBhY2Nlc3Mg
         <attribute name="expanded" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="FOLDER" idrefs="z232"></relationship>
         <relationship name="children" type="0/0" destination="FOLDER"></relationship>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z263"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z263 z295"></relationship>
     </object>
     <object type="TAG" id="z262">
         <attribute name="name" type="string">ssh</attribute>
-        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z263"></relationship>
+        <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z263 z295"></relationship>
     </object>
     <object type="SNIPPET" id="z263">
         <attribute name="name" type="string">SSH</attribute>
@@ -1358,5 +1358,22 @@ ZSAtLXRhZ3MKCuKApm9yIHdpdGggd2lsZGNhcmRzOgokIC4vZ2l0IHRhZyAtbCB2MS4wLioKCi0tLSBD
     <object type="TAG" id="z293">
         <attribute name="name" type="string">tags</attribute>
         <relationship name="snippets" type="0/0" destination="SNIPPET" idrefs="z292"></relationship>
+    </object>
+    <object type="ASSET" id="z294">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">README.sh</attribute>
+        <attribute name="notes" type="string">http://blog.retep.org/2009/04/09/ssh-askpass-on-osx-10-5/</attribute>
+        <attribute name="content" type="binary">MS4gJCBzdWRvIHBvcnQgaW5zdGFsbGVkIHNzaHBhc3MKVGhlIGZvbGxvd2luZyBwb3J0cyBhcmUg
+Y3VycmVudGx5IGluc3RhbGxlZDoKICBzc2hwYXNzIEAxLjA0XzAgKGFjdGl2ZSkKCjIuIHN1ZG8gbmFubyAvdXNyL2xpYmV4ZWMvc3NoLWFza3Bhc3MKCiMhIC9iaW4vc2gKIwojIEFuIFNTSF9BU0tQQVNTIGNvbW1hbmQgZm9yIE1hY09TIFgKIwojIEF1dGhvcjogSm9zZXBoIE1vY2tlciwgU3VuIE1pY3Jvc3lzdGVtcwoKZWNobyAiPHBhc3N3b3JkPiIKZXhpdCAwCgpUSVRMRT0ke01BQ09TX0FTS1BBU1NfVElUTEU6LSJTU0gifQpESUFMT0c9ImRpc3BsYXkgZGlhbG9nIFwiJEBcIiBkZWZhdWx0IGFuc3dlciBcIlwiIHdpdGggdGl0bGUgXCIkVElUTEVcIiIKRElBTE9HPSIkRElBTE9HIHdpdGggaWNvbiBjYXV0aW9uIHdpdGggaGlkZGVuIGFuc3dlciIKcmVzdWx0PWBvc2FzY3JpcHQgLWUgJ3RlbGwgYXBwbGljYXRpb24gIkZpbmRlciInIC1lICJhY3RpdmF0ZSIgIC1lICIkRElBTE9HIiAtZSAnZW5kIHRlbGwnYAppZiBbICIkcmVzdWx0IiA9ICIiIF07IHRoZW4KICAgIGV4aXQgMQplbHNlCiAgICBlY2hvICIkcmVzdWx0IiB8IHNlZCAtZSAncy9edGV4dCByZXR1cm5lZDovLycgLWUgJ3MvLCBidXR0b24gcmV0dXJuZWQ6LiokLy8nCiAgICBleGl0IDAKZmkKCjMuIHN1ZG8gY2htb2QgK3ggL3Vzci9saWJleGVjL3NzaC1hc2twYXNzCgpGaW5hbGx5LCB0byBydW46CglzdWRvIHNzaHBhc3Mgc3NoIC1vIFN0cmljdEhvc3RLZXlDaGVja2luZz1ubyBsd3kwOEBzaGVsbDQuZG9jLmljLmFjLnVrCg==
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z295"></relationship>
+    </object>
+    <object type="SNIPPET" id="z295">
+        <attribute name="name" type="string">Autologin</attribute>
+        <attribute name="modified" type="date">335493454.74800598621368408203</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST" idrefs="z261"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z294"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z262"></relationship>
     </object>
 </database>
