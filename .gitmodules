@@ -16,3 +16,15 @@
 [submodule "xcode-ios/PagePeel"]
 	path = xcode-ios/PagePeel
 	url  = git://github.com/markrickert/iOS-PagePeel-Example.git
+[submodule "HTML5/bootstrap"]
+	path = HTML5/bootstrap
+	url  = git://github.com/twitter/bootstrap.git
+[submodule "webkit-headless/html2pdf-WEBKIT-MacRuby/1-slidedown"]
+	path = webkit-headless/html2pdf-WEBKIT-MacRuby/1-slidedown
+	url  = git://github.com/nakajima/slidedown.git
+[submodule "webkit-headless/html2pdf-WEBKIT-MacRuby/2-slidedown-to-pdf"]
+	path = webkit-headless/html2pdf-WEBKIT-MacRuby/2-slidedown-to-pdf
+	url  = git://github.com/nmerouze/slidedown-to-pdf.git
+[submodule "webkit-headless/html2pdf-WEBKIT-MacRuby/macruby-snapper"]
+	path =webkit-headless/html2pdf-WEBKIT-MacRuby/macruby-snapper
+	url  = git://github.com/tomafro/macruby-snapper.git
