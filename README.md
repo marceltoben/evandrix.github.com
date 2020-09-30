@@ -99,10 +99,10 @@
  * [googleVis](http://code.google.com/p/google-motion-charts-with-r)
  * Instructions
    - Install:
-     - install.packages('googleVis')
-     - install.packages('RJSONIO')
+     - Install.packages('googleVis')
+     - Install.packages('RJSONIO')
    - Usage example:
-     - library(googleVis)
+     - Library(googleVis)
      - Fruits ## Example data
      - M <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year")
      - plot(M)
@@ -124,11 +124,11 @@
  * Replace Illustrator for [Inkscape](http://inkscape.org)+[MyPaint](http://mypaint.intilinux.com)
  * Replace Indesign for [Scribus](http://www.scribus.net/canvas/Scribus)
  * Others:
-   - color picker:    [gpick](http://code.google.com/p/gpick/downloads/list)/[agave](http://home.gna.org/colorscheme)
-   - font management: [font-manager](http://code.google.com/p/font-manager)/[fontforge](http://fontforge.sourceforge.net)
-   - image batch processor: [phatch](http://photobatch.stani.be)
-   - measure onscreen: [screen ruler](http://gnomecoder.wordpress.com/screenruler)
-   - writing tool: [PyRoom](http://pyroom.org)
+   - Color Picker:    [gpick](http://code.google.com/p/gpick/downloads/list)/[agave](http://home.gna.org/colorscheme)
+   - Font Management: [font-manager](http://code.google.com/p/font-manager)/[fontforge](http://fontforge.sourceforge.net)
+   - Image Batch Processor: [phatch](http://photobatch.stani.be)
+   - Measure OnScreen: [screen ruler](http://gnomecoder.wordpress.com/screenruler)
+   - Writing Tool: [PyRoom](http://pyroom.org)
 
 ---
 
